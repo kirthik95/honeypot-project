@@ -1,0 +1,5001 @@
+session_id,timestamp,email,password,mouse_movements,time_to_submit,honeypot_filled,honeypot_total_length,keystrokes,focus_events,paste_events,email_length,password_length,cookies_enabled,is_attack,attack_type
+session_000000,2026-01-31T22:59:33.941068,user0@yahoo.com,***,6,8.41,0,0,35,5,0,15,15,1,0,legitimate
+session_000001,2026-01-11T22:59:33.941068,user1@yahoo.com,***,22,18.33,0,0,35,4,0,15,10,1,0,legitimate
+session_000002,2026-01-12T22:59:33.941068,user2@yahoo.com,***,48,15.91,0,0,34,9,0,15,14,1,0,legitimate
+session_000003,2026-02-01T22:59:33.941068,user3@outlook.com,***,46,4.17,0,0,28,5,0,17,10,1,0,legitimate
+session_000004,2026-01-10T22:59:33.941068,user4@company.com,***,31,18.93,0,0,35,6,0,17,12,1,0,legitimate
+session_000005,2026-01-30T22:59:33.941068,user5@gmail.com,***,17,15.16,0,0,26,7,0,15,9,1,0,legitimate
+session_000006,2026-01-13T22:59:33.941068,bot6@automated.com,botpass6927,0,0.23,1,18,0,0,1,18,11,1,1,bot
+session_000007,2026-01-11T22:59:33.942058,user7@outlook.com,***,24,12.73,0,0,29,9,1,17,11,1,0,legitimate
+session_000008,2026-01-15T22:59:33.942058,user8@gmail.com,***,26,5.64,0,0,26,9,1,15,10,1,0,legitimate
+session_000009,2026-01-10T22:59:33.942058,user9@yahoo.com,***,23,10.97,0,0,32,3,0,15,12,1,0,legitimate
+session_000010,2026-01-18T22:59:33.942058,user10@yahoo.com,***,12,12.63,0,0,34,5,0,16,8,1,0,legitimate
+session_000011,2026-01-13T22:59:33.942058,' OR 'a'='a,,0,0.96,0,0,20,0,0,11,0,1,1,sql_injection
+session_000012,2026-01-29T22:59:33.942058,user12@company.com,***,16,6.07,0,0,29,5,1,18,9,1,0,legitimate
+session_000013,2026-01-22T22:59:33.942058,user13@yahoo.com,***,16,12.55,0,0,34,8,0,16,16,1,0,legitimate
+session_000014,2026-01-11T22:59:33.942058,user14@yahoo.com,***,40,3.9,0,0,30,7,0,16,10,1,0,legitimate
+session_000015,2026-01-18T22:59:33.942058,user15@company.com,***,35,19.3,0,0,44,2,0,18,16,1,0,legitimate
+session_000016,2026-01-29T22:59:33.942058,user16@company.com,***,33,8.7,0,0,29,10,0,18,9,1,0,legitimate
+session_000017,2026-01-30T22:59:33.942058,user17@company.com,***,26,11.76,0,0,33,5,0,18,15,1,0,legitimate
+session_000018,2026-02-05T22:59:33.942058,user18@yahoo.com,***,10,13.39,0,0,29,2,0,16,12,1,0,legitimate
+session_000019,2026-01-11T22:59:33.942058,user19@yahoo.com,***,5,15.05,0,0,25,4,0,16,9,1,0,legitimate
+session_000020,2026-01-14T22:59:33.942058,user20@outlook.com,***,8,11.58,0,0,37,9,0,18,12,1,0,legitimate
+session_000021,2026-01-17T22:59:33.942058,user21@gmail.com,***,28,12.56,0,0,28,3,0,16,12,1,0,legitimate
+session_000022,2026-01-27T22:59:33.942058,bot22@automated.com,botpass8828,0,0.27,1,19,0,0,1,19,11,1,1,bot
+session_000023,2026-01-15T22:59:33.942058,user23@gmail.com,***,31,8.1,0,0,40,6,0,16,14,1,0,legitimate
+session_000024,2026-02-01T22:59:33.942058,<iframe src=javascript:alert(1)>,,1,0.69,0,0,32,0,1,32,0,1,1,xss
+session_000025,2026-01-23T22:59:33.942058,user25@company.com,***,35,8.24,0,0,34,10,1,18,14,1,0,legitimate
+session_000026,2026-01-26T22:59:33.942058,..\..\..\windows\system32,test,0,0.64,0,0,25,1,1,25,4,1,1,path_traversal
+session_000027,2026-01-18T22:59:33.942058,admin,pass550,0,0.59,0,0,6,1,0,5,7,1,1,brute_force
+session_000028,2026-02-05T22:59:33.942058,user28@gmail.com,***,14,13.54,0,0,31,3,1,16,15,1,0,legitimate
+session_000029,2026-02-04T22:59:33.942058,user29@yahoo.com,***,40,8.16,0,0,36,4,0,16,12,1,0,legitimate
+session_000030,2026-02-07T22:59:33.942058,..%2F..%2F..%2Fetc%2Fpasswd,test,1,0.68,0,0,27,1,1,27,4,1,1,path_traversal
+session_000031,2026-01-14T22:59:33.942058,user31@company.com,***,18,16.39,0,0,41,8,0,18,16,1,0,legitimate
+session_000032,2026-02-01T22:59:33.942058,....//....//....//etc/passwd,test,2,1.2,0,0,28,0,1,28,4,1,1,path_traversal
+session_000033,2026-01-18T22:59:33.942058,admin'--,123,3,1.03,1,8,9,0,1,8,3,1,1,sql_injection
+session_000034,2026-01-11T22:59:33.942058,user34@gmail.com,***,44,14.05,0,0,33,10,0,16,10,1,0,legitimate
+session_000035,2026-02-06T22:59:33.942058,user35@company.com,***,26,15.6,0,0,34,9,1,18,9,1,0,legitimate
+session_000036,2026-01-12T22:59:33.942058,user36@outlook.com,***,44,11.33,0,0,28,5,0,18,8,1,0,legitimate
+session_000037,2026-02-07T22:59:33.942058,admin' OR '1'='1'--,,0,1.12,1,19,5,1,0,19,0,1,1,sql_injection
+session_000038,2026-01-23T22:59:33.942058,user38@outlook.com,***,37,15.46,0,0,31,4,1,18,11,1,0,legitimate
+session_000039,2026-01-12T22:59:33.942058,user39@yahoo.com,***,30,13.88,0,0,34,5,1,16,8,1,0,legitimate
+session_000040,2026-01-30T22:59:33.942058,user40@company.com,***,41,15.66,0,0,41,3,0,18,15,1,0,legitimate
+session_000041,2026-01-14T22:59:33.942058,user41@outlook.com,***,18,11.21,0,0,36,3,0,18,16,1,0,legitimate
+session_000042,2026-01-15T22:59:33.942058,....//....//....//etc/passwd,test,1,0.45,0,0,28,0,1,28,4,1,1,path_traversal
+session_000043,2026-01-17T22:59:33.942058,user43@company.com,***,25,18.15,0,0,39,6,0,18,13,1,0,legitimate
+session_000044,2026-01-13T22:59:33.942058,user44@yahoo.com,***,45,12.12,0,0,35,10,0,16,13,1,0,legitimate
+session_000045,2026-01-12T22:59:33.942058,user45@yahoo.com,***,10,10.34,0,0,26,8,0,16,9,1,0,legitimate
+session_000046,2026-02-01T22:59:33.942058,user46@yahoo.com,***,48,8.79,0,0,32,4,0,16,16,1,0,legitimate
+session_000047,2026-01-29T22:59:33.942058,....//....//....//etc/passwd,test,1,1.12,0,0,28,1,1,28,4,1,1,path_traversal
+session_000048,2026-01-09T22:59:33.942058,user48@outlook.com,***,39,6.43,0,0,29,5,1,18,9,1,0,legitimate
+session_000049,2026-01-25T22:59:33.942058,user49@company.com,***,30,17.18,0,0,33,4,0,18,12,1,0,legitimate
+session_000050,2026-01-23T22:59:33.942058,user50@company.com,***,41,5.06,0,0,35,6,1,18,14,1,0,legitimate
+session_000051,2026-02-07T22:59:33.942058,user51@gmail.com,***,30,11.15,0,0,38,5,1,16,14,1,0,legitimate
+session_000052,2026-01-10T22:59:33.942058,user52@outlook.com,***,21,19.01,0,0,34,8,0,18,14,1,0,legitimate
+session_000053,2026-01-13T22:59:33.942058,bot53@automated.com,botpass8192,0,0.44,1,19,0,0,1,19,11,1,1,bot
+session_000054,2026-01-28T22:59:33.942058,bot54@automated.com,botpass3480,0,0.18,1,19,0,0,1,19,11,1,1,bot
+session_000055,2026-02-02T22:59:33.942058,user55@company.com,***,32,10.58,0,0,27,4,0,18,9,1,0,legitimate
+session_000056,2026-01-25T22:59:33.942058,user56@yahoo.com,***,49,12.08,0,0,34,9,0,16,12,1,0,legitimate
+session_000057,2026-01-29T22:59:33.942058,user57@gmail.com,***,15,19.52,0,0,37,4,1,16,13,1,0,legitimate
+session_000058,2026-01-24T22:59:33.942058,user58@company.com,***,29,14.83,0,0,39,10,0,18,13,1,0,legitimate
+session_000059,2026-01-09T22:59:33.942058,user59@outlook.com,***,31,3.6,0,0,36,5,0,18,10,1,0,legitimate
+session_000060,2026-01-31T22:59:33.942058,user60@company.com,***,49,12.28,0,0,36,3,0,18,11,1,0,legitimate
+session_000061,2026-02-06T22:59:33.942058,admin,pass31,0,0.86,0,0,4,2,0,5,6,1,1,brute_force
+session_000062,2026-02-07T22:59:33.942058,bot62@automated.com,botpass3716,0,0.12,1,19,0,0,1,19,11,1,1,bot
+session_000063,2026-01-29T22:59:33.942058,user63@yahoo.com,***,23,7.42,0,0,31,8,1,16,11,1,0,legitimate
+session_000064,2026-01-24T22:59:33.942058,user64@outlook.com,***,48,9.34,0,0,26,9,0,18,8,1,0,legitimate
+session_000065,2026-02-04T22:59:33.942058,user65@yahoo.com,***,46,7.36,0,0,29,2,0,16,12,1,0,legitimate
+session_000066,2026-01-09T22:59:33.942058,user66@gmail.com,***,32,3.27,0,0,24,7,1,16,8,1,0,legitimate
+session_000067,2026-01-18T22:59:33.942058,user67@outlook.com,***,43,4.38,0,0,32,7,0,18,11,1,0,legitimate
+session_000068,2026-02-05T22:59:33.942058,user68@gmail.com,***,25,19.59,0,0,30,5,1,16,9,1,0,legitimate
+session_000069,2026-01-18T22:59:33.942058,user69@company.com,***,26,19.56,0,0,27,3,0,18,9,1,0,legitimate
+session_000070,2026-01-10T22:59:33.942058,user70@gmail.com,***,49,5.56,0,0,32,7,1,16,16,1,0,legitimate
+session_000071,2026-02-03T22:59:33.942058,user71@yahoo.com,***,15,7.63,0,0,34,10,1,16,13,1,0,legitimate
+session_000072,2026-02-01T22:59:33.942058,user72@outlook.com,***,38,9.05,0,0,38,6,1,18,16,1,0,legitimate
+session_000073,2026-01-25T22:59:33.942058,user73@gmail.com,***,33,14.61,0,0,37,3,1,16,13,1,0,legitimate
+session_000074,2026-02-04T22:59:33.942058,..\..\..\windows\system32,test,1,0.76,0,0,25,1,1,25,4,1,1,path_traversal
+session_000075,2026-01-15T22:59:33.942058,user75@outlook.com,***,45,4.76,0,0,35,6,0,18,15,1,0,legitimate
+session_000076,2026-01-25T22:59:33.942058,admin,pass792,0,0.52,0,0,10,2,0,5,7,1,1,brute_force
+session_000077,2026-01-26T22:59:33.943067,user77@yahoo.com,***,8,8.82,0,0,27,5,0,16,11,1,0,legitimate
+session_000078,2026-01-10T22:59:33.943067,user78@gmail.com,***,7,5.48,0,0,34,9,0,16,9,1,0,legitimate
+session_000079,2026-01-18T22:59:33.943067,<body onload=alert('XSS')>,,1,0.78,0,0,26,0,1,26,0,1,1,xss
+session_000080,2026-01-26T22:59:33.943067,user80@yahoo.com,***,17,5.29,0,0,29,6,0,16,11,1,0,legitimate
+session_000081,2026-01-23T22:59:33.943067,<input onfocus=alert(1) autofocus>,pass,0,0.66,0,0,34,0,1,34,4,1,1,xss
+session_000082,2026-01-28T22:59:33.943067,user82@outlook.com,***,39,6.45,0,0,42,10,0,18,14,1,0,legitimate
+session_000083,2026-01-24T22:59:33.943067,user83@yahoo.com,***,37,19.22,0,0,37,4,1,16,14,1,0,legitimate
+session_000084,2026-01-30T22:59:33.943067,bot84@automated.com,botpass7470,0,0.25,1,19,0,0,1,19,11,1,1,bot
+session_000085,2026-02-08T22:59:33.943067,....//....//....//etc/passwd,test,2,1.07,0,0,28,1,1,28,4,1,1,path_traversal
+session_000086,2026-01-14T22:59:33.943067,user86@company.com,***,20,17.15,0,0,42,10,0,18,16,1,0,legitimate
+session_000087,2026-02-04T22:59:33.943067,admin,pass592,1,0.67,0,0,9,2,0,5,7,1,1,brute_force
+session_000088,2026-01-25T22:59:33.943067,user88@yahoo.com,***,14,10.68,0,0,36,4,0,16,15,1,0,legitimate
+session_000089,2026-01-16T22:59:33.943067,....//....//....//etc/passwd,test,0,1.16,0,0,28,0,1,28,4,1,1,path_traversal
+session_000090,2026-02-04T22:59:33.943067,user90@outlook.com,***,45,7.33,0,0,31,4,0,18,10,1,0,legitimate
+session_000091,2026-01-19T22:59:33.943067,user91@company.com,***,22,11.57,0,0,34,5,0,18,11,1,0,legitimate
+session_000092,2026-01-10T22:59:33.943067,user92@yahoo.com,***,8,12.73,0,0,30,10,0,16,11,1,0,legitimate
+session_000093,2026-01-20T22:59:33.943067,user93@yahoo.com,***,49,14.69,0,0,37,2,0,16,12,1,0,legitimate
+session_000094,2026-01-23T22:59:33.943067,test@test.com| cat /etc/passwd,| nc -e /bin/sh,2,0.28,0,0,25,0,1,30,15,1,1,command_injection
+session_000095,2026-01-28T22:59:33.943067,user95@outlook.com,***,35,9.36,0,0,36,9,0,18,11,1,0,legitimate
+session_000096,2026-02-08T22:59:33.943067,user96@company.com,***,44,11.56,0,0,35,6,0,18,11,1,0,legitimate
+session_000097,2026-02-02T22:59:33.943067,user97@gmail.com,***,31,2.73,0,0,33,4,0,16,10,1,0,legitimate
+session_000098,2026-01-18T22:59:33.943067,user98@yahoo.com,***,10,2.39,0,0,39,5,1,16,15,1,0,legitimate
+session_000099,2026-01-18T22:59:33.943067,bot99@automated.com,botpass1923,0,0.43,1,19,0,0,1,19,11,1,1,bot
+session_000100,2026-01-21T22:59:33.943067,javascript:alert(1),test,2,0.71,0,0,19,0,1,19,4,1,1,xss
+session_000101,2026-01-31T22:59:33.943067,user101@gmail.com,***,43,3.74,0,0,27,10,0,17,9,1,0,legitimate
+session_000102,2026-01-09T22:59:33.943067,user102@yahoo.com,***,45,13.61,0,0,37,8,0,17,16,1,0,legitimate
+session_000103,2026-01-10T22:59:33.943067,user103@yahoo.com,***,24,6.89,0,0,34,6,0,17,9,1,0,legitimate
+session_000104,2026-02-07T22:59:33.943067,user104@yahoo.com,***,18,3.67,0,0,36,5,0,17,11,1,0,legitimate
+session_000105,2026-01-17T22:59:33.943067,test@test.com`cat /etc/shadow`,| nc -e /bin/sh,0,0.7,0,0,20,2,1,30,15,1,1,command_injection
+session_000106,2026-01-13T22:59:33.943067,user106@gmail.com,***,10,2.09,0,0,29,2,0,17,8,1,0,legitimate
+session_000107,2026-01-09T22:59:33.943067,user107@yahoo.com,***,8,11.58,0,0,41,5,0,17,15,1,0,legitimate
+session_000108,2026-01-22T22:59:33.943067,user108@gmail.com,***,5,10.31,0,0,30,5,0,17,10,1,0,legitimate
+session_000109,2026-01-17T22:59:33.943067,user109@gmail.com,***,47,12.64,0,0,37,4,0,17,14,1,0,legitimate
+session_000110,2026-02-02T22:59:33.943067,user110@gmail.com,***,30,9.62,0,0,26,5,0,17,8,1,0,legitimate
+session_000111,2026-01-23T22:59:33.943067,user111@outlook.com,***,19,7.19,0,0,36,3,0,19,10,1,0,legitimate
+session_000112,2026-02-01T22:59:33.943067,user112@company.com,***,26,7.91,0,0,35,10,0,19,14,1,0,legitimate
+session_000113,2026-01-19T22:59:33.943067,user113@yahoo.com,***,5,15.5,0,0,33,2,1,17,16,1,0,legitimate
+session_000114,2026-02-08T22:59:33.943067,user114@outlook.com,***,28,8.3,0,0,44,8,1,19,15,1,0,legitimate
+session_000115,2026-01-30T22:59:33.943067,user115@yahoo.com,***,8,6.72,0,0,29,9,1,17,8,1,0,legitimate
+session_000116,2026-01-27T22:59:33.943067,bot116@automated.com,botpass2542,0,0.4,1,20,0,0,1,20,11,1,1,bot
+session_000117,2026-02-01T22:59:33.943067,..%2F..%2F..%2Fetc%2Fpasswd,test,0,0.74,0,0,27,0,1,27,4,1,1,path_traversal
+session_000118,2026-01-14T22:59:33.943067,user118@outlook.com,***,41,13.84,0,0,37,5,0,19,14,1,0,legitimate
+session_000119,2026-02-04T22:59:33.943067,user119@gmail.com,***,18,7.74,0,0,27,9,1,17,10,1,0,legitimate
+session_000120,2026-01-19T22:59:33.943067,user120@company.com,***,9,5.1,0,0,41,9,1,19,12,1,0,legitimate
+session_000121,2026-01-19T22:59:33.943067,<iframe src=javascript:alert(1)>,test,2,0.59,0,0,32,0,1,32,4,1,1,xss
+session_000122,2026-01-22T22:59:33.943067,user122@yahoo.com,***,34,13.03,0,0,34,2,0,17,12,1,0,legitimate
+session_000123,2026-02-02T22:59:33.943067,user123@yahoo.com,***,8,10.86,0,0,38,3,0,17,11,1,0,legitimate
+session_000124,2026-01-11T22:59:33.943067,user124@outlook.com,***,19,11.81,0,0,30,7,0,19,9,1,0,legitimate
+session_000125,2026-01-20T22:59:33.943067,user125@gmail.com,***,34,8.61,0,0,32,2,1,17,10,1,0,legitimate
+session_000126,2026-02-03T22:59:33.943067,user126@company.com,***,34,7.61,0,0,34,4,1,19,10,1,0,legitimate
+session_000127,2026-01-25T22:59:33.943067,user127@company.com,***,47,19.02,0,0,32,8,0,19,11,1,0,legitimate
+session_000128,2026-02-08T22:59:33.943067,bot128@automated.com,botpass4262,0,0.24,1,20,0,0,1,20,11,1,1,bot
+session_000129,2026-02-05T22:59:33.943067,user129@company.com,***,25,6.81,0,0,41,4,0,19,14,1,0,legitimate
+session_000130,2026-01-10T22:59:33.943067,test@test.com| cat /etc/passwd,`cat /etc/shadow`,0,0.33,0,0,25,0,1,30,17,1,1,command_injection
+session_000131,2026-01-17T22:59:33.943067,user131@outlook.com,***,27,10.26,0,0,41,9,0,19,15,1,0,legitimate
+session_000132,2026-01-09T22:59:33.943067,user132@yahoo.com,***,14,14.83,0,0,34,6,0,17,11,1,0,legitimate
+session_000133,2026-01-23T22:59:33.943067,....//....//....//etc/passwd,test,0,0.41,0,0,28,0,1,28,4,1,1,path_traversal
+session_000134,2026-01-28T22:59:33.943067,user134@gmail.com,***,6,13.51,0,0,40,10,1,17,16,1,0,legitimate
+session_000135,2026-01-27T22:59:33.943067,user135@company.com,***,22,6.86,0,0,32,4,0,19,8,1,0,legitimate
+session_000136,2026-01-13T22:59:33.943067,user136@gmail.com,***,10,8.89,0,0,37,7,1,17,16,1,0,legitimate
+session_000137,2026-01-11T22:59:33.943067,test,pass243,0,0.96,0,0,6,0,0,4,7,1,1,brute_force
+session_000138,2026-01-16T22:59:33.943067,user138@gmail.com,***,24,8.64,0,0,37,4,0,17,14,1,0,legitimate
+session_000139,2026-02-08T22:59:33.943067,user139@yahoo.com,***,47,13.32,0,0,41,5,0,17,16,1,0,legitimate
+session_000140,2026-01-27T22:59:33.943067,test@test.com`cat /etc/shadow`,| cat /etc/passwd,0,0.63,0,0,17,2,1,30,17,1,1,command_injection
+session_000141,2026-02-06T22:59:33.943067,user141@outlook.com,***,14,18.96,0,0,44,4,0,19,15,1,0,legitimate
+session_000142,2026-02-01T22:59:33.943067,user142@outlook.com,***,39,18.87,0,0,37,9,1,19,14,1,0,legitimate
+session_000143,2026-01-26T22:59:33.943067,user143@company.com,***,26,7.93,0,0,35,3,1,19,12,1,0,legitimate
+session_000144,2026-01-14T22:59:33.943067,user144@gmail.com,***,21,12.58,0,0,31,8,1,17,11,1,0,legitimate
+session_000145,2026-02-03T22:59:33.943067,test,pass133,1,0.42,0,0,8,0,0,4,7,1,1,brute_force
+session_000146,2026-01-13T22:59:33.943067,user146@company.com,***,9,5.94,0,0,40,7,0,19,11,1,0,legitimate
+session_000147,2026-01-15T22:59:33.943067,user147@gmail.com,***,40,9.95,0,0,36,2,0,17,11,1,0,legitimate
+session_000148,2026-01-29T22:59:33.943067,admin,pass9,1,0.62,0,0,10,1,0,5,5,1,1,brute_force
+session_000149,2026-01-25T22:59:33.943067,user149@yahoo.com,***,7,16.56,0,0,33,4,0,17,15,1,0,legitimate
+session_000150,2026-01-09T22:59:33.943067,user150@yahoo.com,***,11,13.95,0,0,32,3,0,17,10,1,0,legitimate
+session_000151,2026-02-02T22:59:33.943067,user151@gmail.com,***,10,2.2,0,0,40,10,0,17,15,1,0,legitimate
+session_000152,2026-01-15T22:59:33.943067,user152@company.com,***,35,7.73,0,0,35,6,0,19,9,1,0,legitimate
+session_000153,2026-02-08T22:59:33.943067,user153@yahoo.com,***,23,16.0,0,0,34,8,1,17,15,1,0,legitimate
+session_000154,2026-02-04T22:59:33.943067,..\..\..\windows\system32,test,0,0.35,0,0,25,0,1,25,4,1,1,path_traversal
+session_000155,2026-01-24T22:59:33.943067,user155@yahoo.com,***,39,19.21,0,0,33,3,1,17,8,1,0,legitimate
+session_000156,2026-01-14T22:59:33.943067,user156@gmail.com,***,17,8.33,0,0,43,10,0,17,16,1,0,legitimate
+session_000157,2026-01-24T22:59:33.943067,user157@company.com,***,38,19.43,0,0,30,9,1,19,8,1,0,legitimate
+session_000158,2026-02-07T22:59:33.943067,user158@outlook.com,***,41,8.61,0,0,34,2,0,19,10,1,0,legitimate
+session_000159,2026-02-07T22:59:33.943067,user159@company.com,***,19,12.42,0,0,38,7,1,19,13,1,0,legitimate
+session_000160,2026-01-15T22:59:33.943067,user160@yahoo.com,***,39,3.58,0,0,36,10,0,17,11,1,0,legitimate
+session_000161,2026-01-22T22:59:33.943067,user161@yahoo.com,***,5,14.46,0,0,33,9,0,17,13,1,0,legitimate
+session_000162,2026-01-31T22:59:33.943067,user162@gmail.com,***,34,18.34,0,0,33,8,0,17,16,1,0,legitimate
+session_000163,2026-01-22T22:59:33.943067,admin'--,,0,0.75,0,0,13,1,1,8,0,1,1,sql_injection
+session_000164,2026-01-26T22:59:33.943067,user164@outlook.com,***,44,9.63,0,0,27,7,0,19,8,1,0,legitimate
+session_000165,2026-01-16T22:59:33.943067,user165@yahoo.com,***,23,13.59,0,0,30,6,0,17,9,1,0,legitimate
+session_000166,2026-01-09T22:59:33.943067,user166@gmail.com,***,18,7.54,0,0,30,7,0,17,9,1,0,legitimate
+session_000167,2026-01-22T22:59:33.943067,user167@company.com,***,22,10.83,0,0,40,5,0,19,14,1,0,legitimate
+session_000168,2026-01-30T22:59:33.943067,user168@company.com,***,12,13.15,0,0,38,2,1,19,10,1,0,legitimate
+session_000169,2026-01-17T22:59:33.943067,user169@gmail.com,***,39,5.44,0,0,41,2,1,17,16,1,0,legitimate
+session_000170,2026-01-25T22:59:33.943067,user170@gmail.com,***,36,8.62,0,0,29,7,0,17,12,1,0,legitimate
+session_000171,2026-01-28T22:59:33.943067,user171@outlook.com,***,48,11.19,0,0,34,3,0,19,12,1,0,legitimate
+session_000172,2026-01-25T22:59:33.943067,' UNION SELECT NULL--,admin,0,0.91,0,0,19,0,1,21,5,1,1,sql_injection
+session_000173,2026-01-20T22:59:33.943067,test@test.com`cat /etc/shadow`,| nc -e /bin/sh,0,0.15,0,0,15,1,1,30,15,1,1,command_injection
+session_000174,2026-01-26T22:59:33.943067,user174@company.com,***,26,11.83,0,0,38,2,0,19,10,1,0,legitimate
+session_000175,2026-01-22T22:59:33.943067,admin' OR '1'='1,,3,1.08,1,16,15,1,0,16,0,1,1,sql_injection
+session_000176,2026-01-12T22:59:33.943067,..\..\..\windows\system32,test,2,0.99,0,0,25,0,1,25,4,1,1,path_traversal
+session_000177,2026-01-31T22:59:33.943067,user177@company.com,***,13,4.59,0,0,41,9,0,19,14,1,0,legitimate
+session_000178,2026-02-06T22:59:33.943067,user178@outlook.com,***,44,4.77,0,0,36,3,0,19,13,1,0,legitimate
+session_000179,2026-01-12T22:59:33.943067,user179@yahoo.com,***,14,10.75,0,0,40,4,0,17,14,1,0,legitimate
+session_000180,2026-01-27T22:59:33.943067,user180@gmail.com,***,21,15.53,0,0,36,2,0,17,12,1,0,legitimate
+session_000181,2026-01-26T22:59:33.943067,user181@gmail.com,***,37,19.84,0,0,36,9,0,17,9,1,0,legitimate
+session_000182,2026-02-02T22:59:33.943067,user182@gmail.com,***,7,9.01,0,0,33,8,0,17,8,1,0,legitimate
+session_000183,2026-02-05T22:59:33.943067,user183@gmail.com,***,6,19.99,0,0,31,2,0,17,8,1,0,legitimate
+session_000184,2026-01-23T22:59:33.943067,user184@company.com,***,23,18.71,0,0,39,9,0,19,12,1,0,legitimate
+session_000185,2026-02-05T22:59:33.943067,user185@yahoo.com,***,39,3.42,0,0,32,3,0,17,11,1,0,legitimate
+session_000186,2026-02-07T22:59:33.943067,user186@outlook.com,***,18,13.56,0,0,38,10,0,19,14,1,0,legitimate
+session_000187,2026-02-01T22:59:33.943067,user187@gmail.com,***,12,15.13,0,0,31,3,0,17,11,1,0,legitimate
+session_000188,2026-01-31T22:59:33.943067,....//....//....//etc/passwd,test,0,0.41,0,0,28,0,1,28,4,1,1,path_traversal
+session_000189,2026-01-25T22:59:33.943067,user189@outlook.com,***,31,9.63,0,0,36,7,0,19,12,1,0,legitimate
+session_000190,2026-02-04T22:59:33.943067,user190@outlook.com,***,5,15.93,0,0,33,4,1,19,8,1,0,legitimate
+session_000191,2026-01-23T22:59:33.943067,user191@company.com,***,25,18.09,0,0,31,5,0,19,10,1,0,legitimate
+session_000192,2026-02-04T22:59:33.943067,user192@gmail.com,***,30,8.54,0,0,30,2,0,17,13,1,0,legitimate
+session_000193,2026-02-02T22:59:33.944067,user193@yahoo.com,***,30,17.43,0,0,30,9,0,17,12,1,0,legitimate
+session_000194,2026-01-30T22:59:33.944067,user194@gmail.com,***,7,19.35,0,0,36,8,0,17,13,1,0,legitimate
+session_000195,2026-01-23T22:59:33.944067,user195@company.com,***,32,19.75,0,0,44,3,0,19,15,1,0,legitimate
+session_000196,2026-01-15T22:59:33.944067,admin'--,,3,0.29,1,8,20,0,1,8,0,1,1,sql_injection
+session_000197,2026-01-21T22:59:33.944067,user197@gmail.com,***,5,9.4,0,0,35,7,0,17,16,1,0,legitimate
+session_000198,2026-02-08T22:59:33.944067,user198@gmail.com,***,27,2.08,0,0,31,3,0,17,8,1,0,legitimate
+session_000199,2026-01-23T22:59:33.944067,user199@company.com,***,11,8.36,0,0,31,5,0,19,12,1,0,legitimate
+session_000200,2026-02-01T22:59:33.944067,user200@outlook.com,***,14,16.45,0,0,33,8,0,19,8,1,0,legitimate
+session_000201,2026-01-19T22:59:33.944067,user201@company.com,***,15,7.62,0,0,29,2,0,19,10,1,0,legitimate
+session_000202,2026-02-04T22:59:33.944067,user202@company.com,***,12,7.38,0,0,35,6,0,19,14,1,0,legitimate
+session_000203,2026-01-11T22:59:33.944067,bot203@automated.com,botpass8675,0,0.3,1,20,0,0,1,20,11,1,1,bot
+session_000204,2026-01-20T22:59:33.944067,admin'--,123,1,0.79,0,0,12,1,1,8,3,1,1,sql_injection
+session_000205,2026-01-22T22:59:33.944067,admin,pass930,1,0.91,0,0,8,0,0,5,7,1,1,brute_force
+session_000206,2026-01-10T22:59:33.944067,user206@yahoo.com,***,18,7.48,0,0,30,10,0,17,13,1,0,legitimate
+session_000207,2026-01-28T22:59:33.944067,user207@company.com,***,44,2.8,0,0,28,7,0,19,9,1,0,legitimate
+session_000208,2026-01-20T22:59:33.944067,user208@outlook.com,***,29,16.68,0,0,34,3,1,19,15,1,0,legitimate
+session_000209,2026-02-05T22:59:33.944067,user209@outlook.com,***,42,9.24,0,0,38,10,0,19,13,1,0,legitimate
+session_000210,2026-01-27T22:59:33.944067,user210@company.com,***,19,10.1,0,0,31,4,1,19,10,1,0,legitimate
+session_000211,2026-01-29T22:59:33.944067,user211@outlook.com,***,17,13.51,0,0,36,4,0,19,10,1,0,legitimate
+session_000212,2026-01-10T22:59:33.944067,user212@yahoo.com,***,16,19.22,0,0,27,4,1,17,8,1,0,legitimate
+session_000213,2026-01-11T22:59:33.944067,user213@yahoo.com,***,32,11.05,0,0,34,9,0,17,15,1,0,legitimate
+session_000214,2026-01-12T22:59:33.944067,user214@outlook.com,***,39,13.83,0,0,36,5,0,19,8,1,0,legitimate
+session_000215,2026-01-25T22:59:33.944067,user215@gmail.com,***,45,19.25,0,0,35,3,1,17,9,1,0,legitimate
+session_000216,2026-02-05T22:59:33.944067,<script>alert('XSS')</script>,test,0,0.97,0,0,29,1,1,29,4,1,1,xss
+session_000217,2026-01-09T22:59:33.944067,user217@company.com,***,40,2.39,0,0,39,5,0,19,16,1,0,legitimate
+session_000218,2026-01-28T22:59:33.944067,1' AND '1'='1,123,2,1.01,0,0,18,2,1,13,3,1,1,sql_injection
+session_000219,2026-01-23T22:59:33.944067,user219@outlook.com,***,34,17.93,0,0,33,9,0,19,9,1,0,legitimate
+session_000220,2026-01-10T22:59:33.944067,user220@outlook.com,***,23,9.09,0,0,42,6,0,19,14,1,0,legitimate
+session_000221,2026-01-31T22:59:33.944067,user221@outlook.com,***,24,11.07,0,0,37,3,0,19,15,1,0,legitimate
+session_000222,2026-02-01T22:59:33.944067,"'""><script>alert(String.fromCharCode(88,83,83))</script>",,2,0.35,0,0,56,0,1,56,0,1,1,xss
+session_000223,2026-01-24T22:59:33.944067,test,pass879,1,0.55,0,0,10,0,0,4,7,1,1,brute_force
+session_000224,2026-01-12T22:59:33.944067,user224@yahoo.com,***,17,19.91,0,0,32,2,0,17,8,1,0,legitimate
+session_000225,2026-01-26T22:59:33.944067,user225@company.com,***,14,13.41,0,0,35,3,0,19,15,1,0,legitimate
+session_000226,2026-01-12T22:59:33.944067,user226@gmail.com,***,39,6.43,0,0,34,10,0,17,8,1,0,legitimate
+session_000227,2026-01-22T22:59:33.944067,user227@outlook.com,***,12,17.76,0,0,33,10,1,19,13,1,0,legitimate
+session_000228,2026-01-23T22:59:33.944067,user228@company.com,***,22,3.55,0,0,32,10,0,19,9,1,0,legitimate
+session_000229,2026-01-28T22:59:33.944067,' OR 'a'='a,,1,1.13,1,11,14,0,1,11,0,1,1,sql_injection
+session_000230,2026-01-24T22:59:33.944067,user230@gmail.com,***,27,10.51,0,0,26,9,1,17,9,1,0,legitimate
+session_000231,2026-01-12T22:59:33.944067,' OR 1=1--,,3,0.5,1,10,9,1,0,10,0,1,1,sql_injection
+session_000232,2026-01-11T22:59:33.944067,user232@outlook.com,***,12,18.68,0,0,35,9,0,19,8,1,0,legitimate
+session_000233,2026-02-04T22:59:33.944067,user233@gmail.com,***,29,16.36,0,0,39,4,0,17,12,1,0,legitimate
+session_000234,2026-01-28T22:59:33.944067,..\..\..\windows\system32,test,2,0.59,0,0,25,1,1,25,4,1,1,path_traversal
+session_000235,2026-01-15T22:59:33.944067,user235@yahoo.com,***,40,17.35,0,0,36,6,0,17,16,1,0,legitimate
+session_000236,2026-01-30T22:59:33.944067,user236@company.com,***,35,16.67,0,0,38,8,0,19,9,1,0,legitimate
+session_000237,2026-02-07T22:59:33.944067,user237@gmail.com,***,22,19.22,0,0,30,3,0,17,10,1,0,legitimate
+session_000238,2026-02-05T22:59:33.944067,user238@outlook.com,***,7,18.58,0,0,36,7,1,19,12,1,0,legitimate
+session_000239,2026-01-16T22:59:33.944067,user239@outlook.com,***,29,18.47,0,0,34,4,0,19,12,1,0,legitimate
+session_000240,2026-01-25T22:59:33.944067,user240@gmail.com,***,50,15.18,0,0,35,4,0,17,8,1,0,legitimate
+session_000241,2026-01-19T22:59:33.944067,user241@outlook.com,***,11,5.74,0,0,38,4,0,19,12,1,0,legitimate
+session_000242,2026-01-16T22:59:33.944067,user242@company.com,***,26,2.77,0,0,36,9,0,19,13,1,0,legitimate
+session_000243,2026-01-10T22:59:33.944067,user243@company.com,***,23,16.85,0,0,38,7,0,19,11,1,0,legitimate
+session_000244,2026-01-28T22:59:33.944067,user244@company.com,***,18,3.54,0,0,32,6,1,19,11,1,0,legitimate
+session_000245,2026-01-26T22:59:33.944067,bot245@automated.com,botpass5081,0,0.26,1,20,0,0,1,20,11,1,1,bot
+session_000246,2026-02-02T22:59:33.944067,test@test.com`cat /etc/shadow`,&& whoami,1,0.23,0,0,22,1,1,30,9,1,1,command_injection
+session_000247,2026-02-07T22:59:33.944067,user247@company.com,***,16,18.65,0,0,33,3,0,19,10,1,0,legitimate
+session_000248,2026-01-24T22:59:33.944067,user248@company.com,***,18,13.78,0,0,29,9,0,19,9,1,0,legitimate
+session_000249,2026-01-22T22:59:33.944067,test@test.com`cat /etc/shadow`,&& whoami,1,0.64,0,0,16,0,1,30,9,1,1,command_injection
+session_000250,2026-01-18T22:59:33.944067,user250@gmail.com,***,32,3.17,0,0,40,2,1,17,16,1,0,legitimate
+session_000251,2026-01-26T22:59:33.944067,bot251@automated.com,botpass4572,0,0.46,1,20,0,0,1,20,11,1,1,bot
+session_000252,2026-01-26T22:59:33.944067,user252@company.com,***,39,16.94,0,0,43,2,0,19,14,1,0,legitimate
+session_000253,2026-01-22T22:59:33.944067,user253@company.com,***,10,17.89,0,0,33,9,0,19,11,1,0,legitimate
+session_000254,2026-01-12T22:59:33.944067,../../../etc/passwd,test,2,0.38,0,0,19,1,1,19,4,1,1,path_traversal
+session_000255,2026-02-03T22:59:33.944067,admin,pass364,0,0.36,0,0,3,2,0,5,7,1,1,brute_force
+session_000256,2026-01-18T22:59:33.944067,<iframe src=javascript:alert(1)>,,2,0.6,0,0,32,1,1,32,0,1,1,xss
+session_000257,2026-02-04T22:59:33.944067,user257@yahoo.com,***,15,12.3,0,0,31,4,0,17,13,1,0,legitimate
+session_000258,2026-01-12T22:59:33.944067,user258@company.com,***,19,14.28,0,0,33,9,0,19,14,1,0,legitimate
+session_000259,2026-01-31T22:59:33.944067,user259@company.com,***,35,16.33,0,0,31,9,0,19,12,1,0,legitimate
+session_000260,2026-02-07T22:59:33.944067,user260@gmail.com,***,41,4.31,0,0,34,10,0,17,9,1,0,legitimate
+session_000261,2026-01-20T22:59:33.944067,user261@company.com,***,5,14.47,0,0,36,5,0,19,12,1,0,legitimate
+session_000262,2026-02-01T22:59:33.944067,admin,pass808,0,0.54,0,0,9,0,0,5,7,1,1,brute_force
+session_000263,2026-01-25T22:59:33.944067,user263@yahoo.com,***,49,15.62,0,0,34,3,1,17,12,1,0,legitimate
+session_000264,2026-02-04T22:59:33.944067,user264@yahoo.com,***,18,16.29,0,0,30,9,1,17,12,1,0,legitimate
+session_000265,2026-02-06T22:59:33.944067,user265@outlook.com,***,27,8.03,0,0,28,6,0,19,9,1,0,legitimate
+session_000266,2026-01-28T22:59:33.944067,../../../etc/passwd,test,1,0.58,0,0,19,1,1,19,4,1,1,path_traversal
+session_000267,2026-01-26T22:59:33.944067,user267@company.com,***,25,19.73,0,0,34,4,0,19,11,1,0,legitimate
+session_000268,2026-02-08T22:59:33.944067,user268@yahoo.com,***,48,11.54,0,0,42,7,0,17,16,1,0,legitimate
+session_000269,2026-02-01T22:59:33.944067,user269@company.com,***,43,19.86,0,0,33,3,0,19,13,1,0,legitimate
+session_000270,2026-01-14T22:59:33.944067,administrator,pass794,1,0.67,0,0,8,2,0,13,7,1,1,brute_force
+session_000271,2026-01-20T22:59:33.944067,test@test.com| nc -e /bin/sh,; rm -rf /,0,0.16,0,0,15,2,1,28,10,1,1,command_injection
+session_000272,2026-01-29T22:59:33.944067,user272@gmail.com,***,47,5.94,0,0,36,2,0,17,9,1,0,legitimate
+session_000273,2026-01-30T22:59:33.944067,user273@yahoo.com,***,5,3.46,0,0,36,10,0,17,15,1,0,legitimate
+session_000274,2026-02-05T22:59:33.944067,admin' OR '1'='1,test,1,0.11,0,0,11,2,1,16,4,1,1,sql_injection
+session_000275,2026-02-03T22:59:33.944067,user275@company.com,***,16,10.67,0,0,40,10,0,19,15,1,0,legitimate
+session_000276,2026-01-23T22:59:33.944067,user276@company.com,***,27,13.95,0,0,36,5,0,19,13,1,0,legitimate
+session_000277,2026-02-02T22:59:33.944067,user277@yahoo.com,***,42,18.98,0,0,32,3,0,17,9,1,0,legitimate
+session_000278,2026-02-01T22:59:33.944067,user278@company.com,***,42,15.96,0,0,36,3,0,19,8,1,0,legitimate
+session_000279,2026-01-22T22:59:33.944067,user279@gmail.com,***,46,20.0,0,0,40,3,1,17,14,1,0,legitimate
+session_000280,2026-01-23T22:59:33.944067,admin' UNION SELECT,test,0,1.5,1,19,5,0,1,19,4,1,1,sql_injection
+session_000281,2026-02-07T22:59:33.944067,user281@gmail.com,***,46,14.58,0,0,42,5,0,17,16,1,0,legitimate
+session_000282,2026-02-01T22:59:33.944067,user282@company.com,***,48,6.09,0,0,43,6,1,19,14,1,0,legitimate
+session_000283,2026-02-04T22:59:33.944067,bot283@automated.com,botpass3082,0,0.12,1,20,0,0,1,20,11,1,1,bot
+session_000284,2026-01-23T22:59:33.944067,user284@company.com,***,11,10.31,0,0,41,10,0,19,12,1,0,legitimate
+session_000285,2026-01-22T22:59:33.944067,user285@outlook.com,***,38,11.38,0,0,31,7,0,19,9,1,0,legitimate
+session_000286,2026-02-08T22:59:33.944067,administrator,pass244,1,0.43,0,0,3,1,0,13,7,1,1,brute_force
+session_000287,2026-01-12T22:59:33.944067,<input onfocus=alert(1) autofocus>,test,1,0.79,0,0,34,1,1,34,4,1,1,xss
+session_000288,2026-01-22T22:59:33.944067,user288@company.com,***,29,4.59,0,0,35,10,0,19,15,1,0,legitimate
+session_000289,2026-01-18T22:59:33.944067,bot289@automated.com,botpass7515,0,0.37,1,20,0,0,1,20,11,1,1,bot
+session_000290,2026-01-29T22:59:33.944067,user290@gmail.com,***,32,11.58,0,0,42,4,0,17,16,1,0,legitimate
+session_000291,2026-01-20T22:59:33.944067,user291@yahoo.com,***,15,17.52,0,0,25,6,0,17,8,1,0,legitimate
+session_000292,2026-02-01T22:59:33.944067,admin,pass484,0,0.98,0,0,3,2,0,5,7,1,1,brute_force
+session_000293,2026-02-07T22:59:33.944067,user293@company.com,***,5,11.66,0,0,36,5,1,19,14,1,0,legitimate
+session_000294,2026-01-18T22:59:33.944067,user294@outlook.com,***,50,11.3,0,0,41,3,0,19,16,1,0,legitimate
+session_000295,2026-01-11T22:59:33.944067,user295@company.com,***,42,2.41,0,0,34,5,1,19,8,1,0,legitimate
+session_000296,2026-01-11T22:59:33.944067,user296@gmail.com,***,26,17.79,0,0,33,4,0,17,12,1,0,legitimate
+session_000297,2026-02-02T22:59:33.944067,<iframe src=javascript:alert(1)>,pass,2,0.67,0,0,32,0,1,32,4,1,1,xss
+session_000298,2026-02-05T22:59:33.944067,user298@gmail.com,***,17,16.85,0,0,35,5,0,17,16,1,0,legitimate
+session_000299,2026-01-20T22:59:33.944067,user299@gmail.com,***,9,2.75,0,0,40,9,0,17,15,1,0,legitimate
+session_000300,2026-01-12T22:59:33.944067,user300@company.com,***,12,7.87,0,0,42,3,0,19,14,1,0,legitimate
+session_000301,2026-01-30T22:59:33.944067,user301@gmail.com,***,5,10.94,0,0,33,2,1,17,10,1,0,legitimate
+session_000302,2026-01-23T22:59:33.944067,user302@yahoo.com,***,8,18.37,0,0,39,7,1,17,15,1,0,legitimate
+session_000303,2026-02-03T22:59:33.944067,user303@gmail.com,***,25,6.38,0,0,38,3,1,17,13,1,0,legitimate
+session_000304,2026-01-10T22:59:33.944067,user304@outlook.com,***,20,3.95,0,0,30,5,0,19,8,1,0,legitimate
+session_000305,2026-01-23T22:59:33.944067,user305@gmail.com,***,50,17.72,0,0,40,6,0,17,14,1,0,legitimate
+session_000306,2026-01-10T22:59:33.944067,test@test.com; rm -rf /,`cat /etc/shadow`,0,0.17,0,0,11,2,1,23,17,1,1,command_injection
+session_000307,2026-01-23T22:59:33.944067,user307@gmail.com,***,12,16.44,0,0,27,10,1,17,8,1,0,legitimate
+session_000308,2026-01-13T22:59:33.944067,bot308@automated.com,botpass4734,0,0.34,1,20,0,0,1,20,11,1,1,bot
+session_000309,2026-01-12T22:59:33.944067,user309@gmail.com,***,21,12.1,0,0,26,6,0,17,8,1,0,legitimate
+session_000310,2026-01-27T22:59:33.944067,user310@company.com,***,10,13.15,0,0,35,7,0,19,11,1,0,legitimate
+session_000311,2026-02-07T22:59:33.945071,user311@gmail.com,***,33,11.34,0,0,36,2,0,17,10,1,0,legitimate
+session_000312,2026-01-26T22:59:33.945071,user312@yahoo.com,***,19,2.67,0,0,36,3,1,17,12,1,0,legitimate
+session_000313,2026-02-07T22:59:33.945071,user313@gmail.com,***,38,17.85,0,0,36,8,0,17,15,1,0,legitimate
+session_000314,2026-02-03T22:59:33.945071,' OR 1=1--,test,0,1.5,1,10,14,2,1,10,4,1,1,sql_injection
+session_000315,2026-02-07T22:59:33.945071,user315@gmail.com,***,50,4.33,0,0,31,9,0,17,9,1,0,legitimate
+session_000316,2026-01-17T22:59:33.945071,..\..\..\windows\system32,test,0,0.67,0,0,25,0,1,25,4,1,1,path_traversal
+session_000317,2026-01-30T22:59:33.945071,user317@yahoo.com,***,14,2.1,0,0,35,4,0,17,12,1,0,legitimate
+session_000318,2026-01-29T22:59:33.945071,user318@gmail.com,***,34,12.63,0,0,39,4,0,17,12,1,0,legitimate
+session_000319,2026-01-30T22:59:33.945071,user319@company.com,***,8,12.47,0,0,41,5,0,19,16,1,0,legitimate
+session_000320,2026-01-17T22:59:33.945071,user320@gmail.com,***,11,6.11,0,0,33,6,1,17,9,1,0,legitimate
+session_000321,2026-02-06T22:59:33.945071,user321@gmail.com,***,15,6.5,0,0,33,9,1,17,14,1,0,legitimate
+session_000322,2026-02-02T22:59:33.945071,user322@company.com,***,44,4.13,0,0,40,7,1,19,13,1,0,legitimate
+session_000323,2026-01-11T22:59:33.945071,user323@gmail.com,***,23,12.39,0,0,28,10,0,17,9,1,0,legitimate
+session_000324,2026-02-08T22:59:33.945071,user324@gmail.com,***,32,16.7,0,0,38,2,0,17,12,1,0,legitimate
+session_000325,2026-01-25T22:59:33.945071,user325@outlook.com,***,6,4.72,0,0,36,7,1,19,11,1,0,legitimate
+session_000326,2026-01-14T22:59:33.945071,user326@company.com,***,8,9.48,0,0,35,4,1,19,9,1,0,legitimate
+session_000327,2026-01-20T22:59:33.945071,user327@gmail.com,***,25,3.3,0,0,31,7,0,17,12,1,0,legitimate
+session_000328,2026-01-15T22:59:33.945071,user328@gmail.com,***,44,10.72,0,0,34,5,0,17,9,1,0,legitimate
+session_000329,2026-01-09T22:59:33.945071,user329@gmail.com,***,49,10.25,0,0,31,8,0,17,11,1,0,legitimate
+session_000330,2026-02-04T22:59:33.945071,user330@company.com,***,28,11.44,0,0,40,10,0,19,15,1,0,legitimate
+session_000331,2026-01-22T22:59:33.945071,user331@gmail.com,***,47,9.39,0,0,35,7,0,17,14,1,0,legitimate
+session_000332,2026-01-18T22:59:33.945071,user332@company.com,***,16,10.22,0,0,37,9,0,19,16,1,0,legitimate
+session_000333,2026-02-05T22:59:33.945071,user333@outlook.com,***,33,12.92,0,0,30,6,1,19,11,1,0,legitimate
+session_000334,2026-01-18T22:59:33.945071,user334@company.com,***,14,10.71,0,0,38,7,0,19,16,1,0,legitimate
+session_000335,2026-01-17T22:59:33.945071,..\..\..\windows\system32,test,2,0.6,0,0,25,1,1,25,4,1,1,path_traversal
+session_000336,2026-01-24T22:59:33.945071,test@test.com&& whoami,; ls -la,2,0.2,0,0,20,0,1,22,8,1,1,command_injection
+session_000337,2026-02-06T22:59:33.945071,root,pass246,1,0.38,0,0,3,1,0,4,7,1,1,brute_force
+session_000338,2026-01-21T22:59:33.945071,user338@company.com,***,13,4.59,0,0,37,8,1,19,12,1,0,legitimate
+session_000339,2026-01-16T22:59:33.945071,<input onfocus=alert(1) autofocus>,test,2,0.92,0,0,34,1,1,34,4,1,1,xss
+session_000340,2026-02-08T22:59:33.945071,user340@outlook.com,***,16,13.68,0,0,41,4,0,19,15,1,0,legitimate
+session_000341,2026-01-15T22:59:33.945071,user341@company.com,***,27,3.16,0,0,31,2,0,19,8,1,0,legitimate
+session_000342,2026-01-16T22:59:33.945071,user342@outlook.com,***,44,7.84,0,0,43,4,0,19,15,1,0,legitimate
+session_000343,2026-02-01T22:59:33.945071,user343@company.com,***,40,4.09,0,0,37,5,1,19,8,1,0,legitimate
+session_000344,2026-02-02T22:59:33.945071,user344@outlook.com,***,8,13.77,0,0,40,8,0,19,16,1,0,legitimate
+session_000345,2026-01-29T22:59:33.945071,test@test.com; ls -la,; rm -rf /,0,0.44,0,0,23,0,1,21,10,1,1,command_injection
+session_000346,2026-01-14T22:59:33.945071,user346@gmail.com,***,45,10.09,0,0,39,2,0,17,14,1,0,legitimate
+session_000347,2026-01-20T22:59:33.945071,user347@company.com,***,33,11.37,0,0,36,9,0,19,11,1,0,legitimate
+session_000348,2026-02-07T22:59:33.945071,administrator,pass53,1,0.46,0,0,6,2,0,13,6,1,1,brute_force
+session_000349,2026-01-24T22:59:33.945071,bot349@automated.com,botpass5291,0,0.24,1,20,0,0,1,20,11,1,1,bot
+session_000350,2026-01-28T22:59:33.945071,user350@gmail.com,***,13,7.16,0,0,35,8,0,17,16,1,0,legitimate
+session_000351,2026-01-17T22:59:33.945071,user351@yahoo.com,***,19,16.95,0,0,30,8,0,17,8,1,0,legitimate
+session_000352,2026-02-03T22:59:33.945071,user352@outlook.com,***,21,7.73,0,0,36,8,0,19,9,1,0,legitimate
+session_000353,2026-01-19T22:59:33.945071,user353@gmail.com,***,24,17.43,0,0,37,4,0,17,12,1,0,legitimate
+session_000354,2026-01-29T22:59:33.945071,administrator,pass690,0,0.47,0,0,9,0,0,13,7,1,1,brute_force
+session_000355,2026-01-18T22:59:33.945071,user355@gmail.com,***,29,17.55,0,0,31,10,0,17,13,1,0,legitimate
+session_000356,2026-02-05T22:59:33.945071,test@test.com`cat /etc/shadow`,`cat /etc/shadow`,1,0.54,0,0,17,2,1,30,17,1,1,command_injection
+session_000357,2026-01-21T22:59:33.945071,user357@outlook.com,***,25,16.42,0,0,37,2,1,19,10,1,0,legitimate
+session_000358,2026-01-28T22:59:33.945071,user358@company.com,***,15,11.88,0,0,31,10,0,19,9,1,0,legitimate
+session_000359,2026-01-11T22:59:33.945071,..\..\..\windows\system32,test,0,0.63,0,0,25,0,1,25,4,1,1,path_traversal
+session_000360,2026-01-22T22:59:33.945071,user360@gmail.com,***,16,7.41,0,0,35,2,0,17,9,1,0,legitimate
+session_000361,2026-01-28T22:59:33.945071,test@test.com| cat /etc/passwd,; rm -rf /,0,0.77,0,0,21,1,1,30,10,1,1,command_injection
+session_000362,2026-01-28T22:59:33.945071,user362@outlook.com,***,48,6.1,0,0,36,4,0,19,13,1,0,legitimate
+session_000363,2026-01-15T22:59:33.945071,user363@outlook.com,***,43,5.32,0,0,38,10,0,19,10,1,0,legitimate
+session_000364,2026-01-27T22:59:33.945071,user364@yahoo.com,***,39,9.76,0,0,42,9,1,17,15,1,0,legitimate
+session_000365,2026-01-21T22:59:33.945071,user365@company.com,***,36,2.87,0,0,37,8,0,19,12,1,0,legitimate
+session_000366,2026-02-07T22:59:33.945071,user366@gmail.com,***,15,17.61,0,0,35,6,0,17,9,1,0,legitimate
+session_000367,2026-01-15T22:59:33.945071,..\..\..\windows\system32,test,0,0.79,0,0,25,0,1,25,4,1,1,path_traversal
+session_000368,2026-01-21T22:59:33.945071,user368@outlook.com,***,8,11.51,0,0,36,2,0,19,11,1,0,legitimate
+session_000369,2026-01-30T22:59:33.945071,user369@gmail.com,***,12,4.66,0,0,39,7,1,17,15,1,0,legitimate
+session_000370,2026-01-12T22:59:33.945071,bot370@automated.com,botpass8152,0,0.21,1,20,0,0,1,20,11,1,1,bot
+session_000371,2026-01-13T22:59:33.945071,user371@outlook.com,***,46,15.03,0,0,41,5,0,19,15,1,0,legitimate
+session_000372,2026-01-28T22:59:33.945071,user372@yahoo.com,***,25,17.74,0,0,29,3,0,17,10,1,0,legitimate
+session_000373,2026-01-13T22:59:33.945071,admin'--,test,3,0.89,0,0,16,1,1,8,4,1,1,sql_injection
+session_000374,2026-01-29T22:59:33.945071,user374@yahoo.com,***,15,2.36,0,0,34,2,0,17,15,1,0,legitimate
+session_000375,2026-01-10T22:59:33.945071,user375@company.com,***,47,5.74,0,0,39,6,0,19,14,1,0,legitimate
+session_000376,2026-01-09T22:59:33.945071,<body onload=alert('XSS')>,,2,0.52,0,0,26,1,1,26,0,1,1,xss
+session_000377,2026-01-28T22:59:33.945071,user377@company.com,***,24,11.39,0,0,33,2,1,19,13,1,0,legitimate
+session_000378,2026-01-13T22:59:33.945071,<body onload=alert('XSS')>,test,0,0.99,0,0,26,1,1,26,4,1,1,xss
+session_000379,2026-01-20T22:59:33.945071,user379@outlook.com,***,14,15.95,0,0,30,6,0,19,9,1,0,legitimate
+session_000380,2026-02-01T22:59:33.945071,user380@outlook.com,***,33,12.77,0,0,43,9,1,19,15,1,0,legitimate
+session_000381,2026-01-31T22:59:33.945071,user381@company.com,***,31,18.34,0,0,34,2,0,19,13,1,0,legitimate
+session_000382,2026-01-19T22:59:33.945071,user382@outlook.com,***,9,4.35,0,0,29,9,0,19,10,1,0,legitimate
+session_000383,2026-01-31T22:59:33.945071,user383@yahoo.com,***,25,19.32,0,0,34,3,0,17,11,1,0,legitimate
+session_000384,2026-01-29T22:59:33.945071,user384@yahoo.com,***,36,7.69,0,0,34,4,0,17,10,1,0,legitimate
+session_000385,2026-01-17T22:59:33.945071,user385@outlook.com,***,10,11.45,0,0,35,5,0,19,12,1,0,legitimate
+session_000386,2026-01-11T22:59:33.945071,admin' OR '1'='1,admin,3,0.87,0,0,13,2,0,16,5,1,1,sql_injection
+session_000387,2026-01-13T22:59:33.945071,user387@company.com,***,35,15.79,0,0,38,2,1,19,14,1,0,legitimate
+session_000388,2026-01-25T22:59:33.945071,user388@outlook.com,***,6,15.71,0,0,38,10,1,19,12,1,0,legitimate
+session_000389,2026-01-23T22:59:33.945071,user389@outlook.com,***,23,3.32,0,0,38,4,0,19,9,1,0,legitimate
+session_000390,2026-01-29T22:59:33.945071,test,pass868,1,0.58,0,0,8,0,0,4,7,1,1,brute_force
+session_000391,2026-02-03T22:59:33.945071,user391@gmail.com,***,28,5.16,0,0,31,5,0,17,10,1,0,legitimate
+session_000392,2026-01-13T22:59:33.945071,user392@yahoo.com,***,25,5.0,0,0,37,3,0,17,15,1,0,legitimate
+session_000393,2026-02-01T22:59:33.945071,user393@company.com,***,26,13.12,0,0,28,9,0,19,8,1,0,legitimate
+session_000394,2026-01-23T22:59:33.945071,user394@outlook.com,***,17,10.31,0,0,28,9,0,19,8,1,0,legitimate
+session_000395,2026-02-07T22:59:33.945071,user395@yahoo.com,***,45,10.17,0,0,40,3,0,17,13,1,0,legitimate
+session_000396,2026-01-30T22:59:33.945071,user396@company.com,***,9,9.37,0,0,34,4,0,19,13,1,0,legitimate
+session_000397,2026-01-16T22:59:33.945071,admin,pass369,1,0.5,0,0,7,1,0,5,7,1,1,brute_force
+session_000398,2026-01-24T22:59:33.945071,user398@yahoo.com,***,34,18.09,0,0,34,5,0,17,16,1,0,legitimate
+session_000399,2026-01-22T22:59:33.945071,administrator,pass844,0,0.96,0,0,8,1,0,13,7,1,1,brute_force
+session_000400,2026-02-01T22:59:33.945071,user400@company.com,***,20,5.56,0,0,30,6,0,19,11,1,0,legitimate
+session_000401,2026-01-20T22:59:33.945071,..\..\..\windows\system32,test,1,0.78,0,0,25,0,1,25,4,1,1,path_traversal
+session_000402,2026-01-25T22:59:33.945071,user402@gmail.com,***,25,14.65,0,0,31,8,1,17,8,1,0,legitimate
+session_000403,2026-02-08T22:59:33.945071,user403@yahoo.com,***,16,18.17,0,0,30,9,0,17,8,1,0,legitimate
+session_000404,2026-01-31T22:59:33.945071,user404@company.com,***,50,7.8,0,0,36,3,0,19,14,1,0,legitimate
+session_000405,2026-01-17T22:59:33.945071,user405@yahoo.com,***,21,19.69,0,0,28,10,0,17,8,1,0,legitimate
+session_000406,2026-01-16T22:59:33.945071,admin' OR '1'='1'--,,1,0.83,0,0,13,0,1,19,0,1,1,sql_injection
+session_000407,2026-01-22T22:59:33.945071,....//....//....//etc/passwd,test,0,1.06,0,0,28,0,1,28,4,1,1,path_traversal
+session_000408,2026-01-11T22:59:33.945071,user408@company.com,***,33,2.03,0,0,37,6,0,19,10,1,0,legitimate
+session_000409,2026-01-23T22:59:33.945071,user409@gmail.com,***,19,2.17,0,0,30,10,0,17,8,1,0,legitimate
+session_000410,2026-01-17T22:59:33.945071,user410@company.com,***,38,11.45,0,0,44,5,0,19,16,1,0,legitimate
+session_000411,2026-01-12T22:59:33.945071,user411@outlook.com,***,7,14.76,0,0,34,4,0,19,11,1,0,legitimate
+session_000412,2026-02-02T22:59:33.945071,user412@yahoo.com,***,7,11.96,0,0,40,4,0,17,14,1,0,legitimate
+session_000413,2026-01-23T22:59:33.945071,bot413@automated.com,botpass9218,0,0.23,1,20,0,0,1,20,11,1,1,bot
+session_000414,2026-01-19T22:59:33.945071,user414@company.com,***,31,4.73,0,0,34,5,0,19,15,1,0,legitimate
+session_000415,2026-02-01T22:59:33.945071,user415@company.com,***,43,2.08,0,0,40,10,0,19,15,1,0,legitimate
+session_000416,2026-01-30T22:59:33.945071,user416@company.com,***,8,10.98,0,0,35,2,0,19,9,1,0,legitimate
+session_000417,2026-01-26T22:59:33.945071,bot417@automated.com,botpass6281,0,0.33,1,20,0,0,1,20,11,1,1,bot
+session_000418,2026-01-22T22:59:33.945071,test,pass688,1,0.89,0,0,5,2,0,4,7,1,1,brute_force
+session_000419,2026-02-06T22:59:33.945071,../../../etc/passwd,test,0,0.68,0,0,19,0,1,19,4,1,1,path_traversal
+session_000420,2026-02-02T22:59:33.945071,bot420@automated.com,botpass4671,0,0.12,1,20,0,0,1,20,11,1,1,bot
+session_000421,2026-01-13T22:59:33.945071,user421@outlook.com,***,6,9.86,0,0,34,8,0,19,8,1,0,legitimate
+session_000422,2026-01-23T22:59:33.945071,user422@yahoo.com,***,17,6.03,0,0,29,8,1,17,12,1,0,legitimate
+session_000423,2026-01-26T22:59:33.945071,bot423@automated.com,botpass1027,0,0.49,1,20,0,0,1,20,11,1,1,bot
+session_000424,2026-02-05T22:59:33.945071,user424@gmail.com,***,16,7.45,0,0,34,8,0,17,9,1,0,legitimate
+session_000425,2026-01-22T22:59:33.945071,user425@yahoo.com,***,18,17.44,0,0,30,7,1,17,11,1,0,legitimate
+session_000426,2026-02-04T22:59:33.945071,user426@outlook.com,***,47,3.37,0,0,31,8,1,19,8,1,0,legitimate
+session_000427,2026-02-01T22:59:33.945071,..%2F..%2F..%2Fetc%2Fpasswd,test,1,1.1,0,0,27,0,1,27,4,1,1,path_traversal
+session_000428,2026-01-14T22:59:33.945071,user428@outlook.com,***,5,11.72,0,0,41,6,1,19,13,1,0,legitimate
+session_000429,2026-01-20T22:59:33.945071,user429@company.com,***,28,6.25,0,0,35,6,1,19,13,1,0,legitimate
+session_000430,2026-01-11T22:59:33.945071,test@test.com| cat /etc/passwd,&& whoami,0,0.77,0,0,10,1,1,30,9,1,1,command_injection
+session_000431,2026-01-12T22:59:33.946077,user431@outlook.com,***,29,17.71,0,0,31,5,1,19,11,1,0,legitimate
+session_000432,2026-01-28T22:59:33.946077,user432@company.com,***,27,17.06,0,0,32,3,0,19,12,1,0,legitimate
+session_000433,2026-01-09T22:59:33.946077,user433@gmail.com,***,21,5.31,0,0,33,4,1,17,15,1,0,legitimate
+session_000434,2026-01-29T22:59:33.946077,../../../etc/passwd,test,2,0.64,0,0,19,1,1,19,4,1,1,path_traversal
+session_000435,2026-02-07T22:59:33.946077,root,pass769,0,0.57,0,0,6,0,0,4,7,1,1,brute_force
+session_000436,2026-01-22T22:59:33.946077,user436@yahoo.com,***,18,13.61,0,0,36,5,0,17,12,1,0,legitimate
+session_000437,2026-02-03T22:59:33.946077,user437@yahoo.com,***,18,11.26,0,0,28,4,0,17,11,1,0,legitimate
+session_000438,2026-01-09T22:59:33.946077,....//....//....//etc/passwd,test,2,0.77,0,0,28,0,1,28,4,1,1,path_traversal
+session_000439,2026-02-01T22:59:33.946077,user439@yahoo.com,***,46,13.61,0,0,28,10,0,17,11,1,0,legitimate
+session_000440,2026-02-07T22:59:33.946077,user440@outlook.com,***,14,5.14,0,0,34,7,0,19,12,1,0,legitimate
+session_000441,2026-01-11T22:59:33.946077,user441@gmail.com,***,25,17.06,0,0,33,9,1,17,9,1,0,legitimate
+session_000442,2026-01-18T22:59:33.946077,user442@yahoo.com,***,50,11.56,0,0,29,6,0,17,10,1,0,legitimate
+session_000443,2026-02-07T22:59:33.946077,test@test.com; ls -la,| cat /etc/passwd,2,0.66,0,0,13,0,1,21,17,1,1,command_injection
+session_000444,2026-01-10T22:59:33.946077,user444@company.com,***,18,9.82,0,0,45,6,0,19,16,1,0,legitimate
+session_000445,2026-01-25T22:59:33.946077,user445@gmail.com,***,35,13.24,0,0,36,6,0,17,14,1,0,legitimate
+session_000446,2026-02-08T22:59:33.946077,bot446@automated.com,botpass9397,0,0.5,1,20,0,0,1,20,11,1,1,bot
+session_000447,2026-02-08T22:59:33.946077,<script>alert('XSS')</script>,,0,0.65,0,0,29,1,1,29,0,1,1,xss
+session_000448,2026-02-01T22:59:33.946077,<script>alert('XSS')</script>,,2,0.55,0,0,29,0,1,29,0,1,1,xss
+session_000449,2026-02-02T22:59:33.946077,user449@outlook.com,***,12,7.99,0,0,34,5,1,19,9,1,0,legitimate
+session_000450,2026-01-16T22:59:33.946077,user450@outlook.com,***,45,19.81,0,0,39,4,0,19,11,1,0,legitimate
+session_000451,2026-02-08T22:59:33.946077,....//....//....//etc/passwd,test,1,0.43,0,0,28,1,1,28,4,1,1,path_traversal
+session_000452,2026-01-31T22:59:33.946077,user452@gmail.com,***,21,3.9,0,0,37,4,0,17,11,1,0,legitimate
+session_000453,2026-01-20T22:59:33.946077,user453@gmail.com,***,18,7.15,0,0,36,9,0,17,14,1,0,legitimate
+session_000454,2026-01-14T22:59:33.946077,user454@gmail.com,***,12,7.05,0,0,27,3,0,17,9,1,0,legitimate
+session_000455,2026-01-17T22:59:33.946077,1' AND '1'='1,,1,0.37,0,0,16,0,1,13,0,1,1,sql_injection
+session_000456,2026-02-03T22:59:33.946077,user456@outlook.com,***,50,6.81,0,0,30,3,0,19,9,1,0,legitimate
+session_000457,2026-01-29T22:59:33.946077,root,pass845,1,0.75,0,0,5,1,0,4,7,1,1,brute_force
+session_000458,2026-01-22T22:59:33.946077,test@test.com&& whoami,; rm -rf /,1,0.28,0,0,12,2,1,22,10,1,1,command_injection
+session_000459,2026-01-18T22:59:33.946077,<script>alert('XSS')</script>,,2,0.62,0,0,29,0,1,29,0,1,1,xss
+session_000460,2026-01-16T22:59:33.946077,test,pass953,1,0.69,0,0,6,0,0,4,7,1,1,brute_force
+session_000461,2026-01-30T22:59:33.946077,admin,pass541,1,0.63,0,0,10,0,0,5,7,1,1,brute_force
+session_000462,2026-01-18T22:59:33.946077,<iframe src=javascript:alert(1)>,pass,1,0.35,0,0,32,1,1,32,4,1,1,xss
+session_000463,2026-02-05T22:59:33.946077,user463@yahoo.com,***,5,6.56,0,0,34,9,0,17,10,1,0,legitimate
+session_000464,2026-01-27T22:59:33.946077,user464@gmail.com,***,24,15.9,0,0,35,3,0,17,15,1,0,legitimate
+session_000465,2026-01-23T22:59:33.946077,user465@outlook.com,***,43,13.39,0,0,34,8,1,19,9,1,0,legitimate
+session_000466,2026-01-09T22:59:33.946077,user466@outlook.com,***,36,8.86,0,0,34,10,0,19,12,1,0,legitimate
+session_000467,2026-01-29T22:59:33.946077,user467@gmail.com,***,47,12.85,0,0,36,2,0,17,15,1,0,legitimate
+session_000468,2026-01-18T22:59:33.946077,..%2F..%2F..%2Fetc%2Fpasswd,test,2,0.28,0,0,27,1,1,27,4,1,1,path_traversal
+session_000469,2026-02-03T22:59:33.946077,user469@gmail.com,***,20,15.36,0,0,28,5,1,17,10,1,0,legitimate
+session_000470,2026-01-24T22:59:33.946077,user470@company.com,***,42,12.93,0,0,29,10,1,19,10,1,0,legitimate
+session_000471,2026-01-18T22:59:33.946077,user471@gmail.com,***,20,7.55,0,0,31,4,1,17,12,1,0,legitimate
+session_000472,2026-01-20T22:59:33.946077,user472@outlook.com,***,41,3.71,0,0,31,6,0,19,8,1,0,legitimate
+session_000473,2026-01-11T22:59:33.946077,user473@yahoo.com,***,48,2.07,0,0,39,10,0,17,14,1,0,legitimate
+session_000474,2026-01-17T22:59:33.946077,user474@gmail.com,***,17,12.72,0,0,39,3,0,17,15,1,0,legitimate
+session_000475,2026-01-15T22:59:33.946077,user475@outlook.com,***,45,6.3,0,0,40,4,0,19,13,1,0,legitimate
+session_000476,2026-01-26T22:59:33.946077,user476@gmail.com,***,12,17.55,0,0,38,8,0,17,15,1,0,legitimate
+session_000477,2026-02-02T22:59:33.946077,user477@gmail.com,***,42,15.78,0,0,26,6,0,17,8,1,0,legitimate
+session_000478,2026-01-22T22:59:33.946077,user478@yahoo.com,***,24,8.93,0,0,34,5,0,17,11,1,0,legitimate
+session_000479,2026-01-17T22:59:33.946077,test@test.com| cat /etc/passwd,| nc -e /bin/sh,2,0.75,0,0,25,2,1,30,15,1,1,command_injection
+session_000480,2026-02-01T22:59:33.946077,user480@gmail.com,***,8,16.92,0,0,34,3,1,17,9,1,0,legitimate
+session_000481,2026-02-08T22:59:33.946077,user481@gmail.com,***,15,11.26,0,0,39,6,0,17,16,1,0,legitimate
+session_000482,2026-02-07T22:59:33.946077,user482@yahoo.com,***,17,18.64,0,0,41,6,1,17,15,1,0,legitimate
+session_000483,2026-01-23T22:59:33.946077,....//....//....//etc/passwd,test,0,0.6,0,0,28,1,1,28,4,1,1,path_traversal
+session_000484,2026-01-09T22:59:33.946077,user484@outlook.com,***,17,11.07,0,0,35,4,0,19,15,1,0,legitimate
+session_000485,2026-01-25T22:59:33.946077,..\..\..\windows\system32,test,0,0.42,0,0,25,0,1,25,4,1,1,path_traversal
+session_000486,2026-02-05T22:59:33.946077,user486@company.com,***,39,2.86,0,0,35,5,0,19,8,1,0,legitimate
+session_000487,2026-01-18T22:59:33.946077,..%2F..%2F..%2Fetc%2Fpasswd,test,2,0.91,0,0,27,1,1,27,4,1,1,path_traversal
+session_000488,2026-01-13T22:59:33.946077,bot488@automated.com,botpass5752,0,0.22,1,20,0,0,1,20,11,1,1,bot
+session_000489,2026-02-05T22:59:33.946077,user489@yahoo.com,***,19,2.22,0,0,28,5,0,17,8,1,0,legitimate
+session_000490,2026-01-22T22:59:33.946077,'; DROP TABLE users--,test,3,0.43,0,0,6,1,1,21,4,1,1,sql_injection
+session_000491,2026-01-17T22:59:33.946077,user491@outlook.com,***,45,14.86,0,0,33,2,0,19,10,1,0,legitimate
+session_000492,2026-01-10T22:59:33.946077,user492@company.com,***,6,12.67,0,0,34,8,0,19,11,1,0,legitimate
+session_000493,2026-01-23T22:59:33.946077,....//....//....//etc/passwd,test,2,0.4,0,0,28,0,1,28,4,1,1,path_traversal
+session_000494,2026-01-27T22:59:33.946077,admin,pass135,1,0.35,0,0,5,2,0,5,7,1,1,brute_force
+session_000495,2026-02-02T22:59:33.946077,user495@outlook.com,***,10,7.91,0,0,36,4,0,19,14,1,0,legitimate
+session_000496,2026-01-23T22:59:33.946077,user496@yahoo.com,***,50,16.86,0,0,29,4,1,17,9,1,0,legitimate
+session_000497,2026-01-27T22:59:33.946077,user497@yahoo.com,***,38,15.43,0,0,37,9,1,17,14,1,0,legitimate
+session_000498,2026-01-27T22:59:33.946077,admin'--,admin,2,1.03,1,8,11,1,1,8,5,1,1,sql_injection
+session_000499,2026-02-01T22:59:33.946077,admin' UNION SELECT,admin,1,0.25,1,19,18,1,0,19,5,1,1,sql_injection
+session_000500,2026-01-30T22:59:33.946077,admin'--,admin,3,0.73,1,8,10,2,1,8,5,1,1,sql_injection
+session_000501,2026-02-06T22:59:33.946077,user501@outlook.com,***,20,2.72,0,0,37,9,0,19,9,1,0,legitimate
+session_000502,2026-01-12T22:59:33.946077,user502@company.com,***,28,11.41,0,0,35,2,0,19,9,1,0,legitimate
+session_000503,2026-01-23T22:59:33.946077,user503@gmail.com,***,44,11.21,0,0,37,4,1,17,11,1,0,legitimate
+session_000504,2026-01-18T22:59:33.946077,user504@yahoo.com,***,6,5.4,0,0,35,6,0,17,16,1,0,legitimate
+session_000505,2026-01-30T22:59:33.946077,user505@outlook.com,***,20,14.63,0,0,37,4,0,19,14,1,0,legitimate
+session_000506,2026-01-27T22:59:33.946077,user506@gmail.com,***,14,13.02,0,0,37,2,0,17,15,1,0,legitimate
+session_000507,2026-01-15T22:59:33.946077,<body onload=alert('XSS')>,test,0,0.96,0,0,26,1,1,26,4,1,1,xss
+session_000508,2026-01-31T22:59:33.946077,user508@outlook.com,***,5,13.79,0,0,30,7,0,19,10,1,0,legitimate
+session_000509,2026-01-10T22:59:33.946077,user509@gmail.com,***,6,5.84,0,0,33,5,0,17,9,1,0,legitimate
+session_000510,2026-02-02T22:59:33.946077,user510@outlook.com,***,31,5.05,0,0,41,5,0,19,16,1,0,legitimate
+session_000511,2026-01-17T22:59:33.946077,test@test.com; ls -la,| cat /etc/passwd,2,0.27,0,0,19,0,1,21,17,1,1,command_injection
+session_000512,2026-01-09T22:59:33.946077,user512@gmail.com,***,23,8.32,0,0,32,2,0,17,11,1,0,legitimate
+session_000513,2026-01-16T22:59:33.946077,"'""><script>alert(String.fromCharCode(88,83,83))</script>",,1,0.64,0,0,56,0,1,56,0,1,1,xss
+session_000514,2026-01-15T22:59:33.946077,test@test.com`cat /etc/shadow`,`cat /etc/shadow`,2,0.13,0,0,17,0,1,30,17,1,1,command_injection
+session_000515,2026-01-31T22:59:33.946077,user515@outlook.com,***,24,19.58,0,0,43,9,0,19,15,1,0,legitimate
+session_000516,2026-02-06T22:59:33.946077,user516@outlook.com,***,11,9.6,0,0,33,5,0,19,13,1,0,legitimate
+session_000517,2026-01-25T22:59:33.946077,user517@gmail.com,***,11,4.38,0,0,37,3,0,17,15,1,0,legitimate
+session_000518,2026-01-14T22:59:33.946077,user518@gmail.com,***,7,18.43,0,0,36,6,0,17,16,1,0,legitimate
+session_000519,2026-02-01T22:59:33.946077,user519@yahoo.com,***,50,18.93,0,0,37,9,0,17,13,1,0,legitimate
+session_000520,2026-01-15T22:59:33.946077,user520@outlook.com,***,43,3.3,0,0,40,10,0,19,12,1,0,legitimate
+session_000521,2026-01-27T22:59:33.946077,user521@outlook.com,***,41,10.4,0,0,43,6,0,19,15,1,0,legitimate
+session_000522,2026-01-09T22:59:33.946077,user522@outlook.com,***,44,3.11,0,0,39,4,0,19,15,1,0,legitimate
+session_000523,2026-02-02T22:59:33.946077,user523@yahoo.com,***,21,16.05,0,0,38,10,0,17,13,1,0,legitimate
+session_000524,2026-01-20T22:59:33.946077,admin'/*,admin,1,0.44,1,8,14,0,1,8,5,1,1,sql_injection
+session_000525,2026-01-18T22:59:33.946077,test@test.com&& whoami,&& whoami,0,0.53,0,0,10,2,1,22,9,1,1,command_injection
+session_000526,2026-01-18T22:59:33.946077,user526@company.com,***,17,5.17,0,0,36,7,0,19,11,1,0,legitimate
+session_000527,2026-01-17T22:59:33.946077,user527@gmail.com,***,25,17.06,0,0,29,10,0,17,10,1,0,legitimate
+session_000528,2026-01-27T22:59:33.946077,user528@company.com,***,15,14.19,0,0,35,8,0,19,15,1,0,legitimate
+session_000529,2026-01-17T22:59:33.946077,user529@outlook.com,***,34,15.26,0,0,36,2,0,19,11,1,0,legitimate
+session_000530,2026-01-25T22:59:33.946077,user530@yahoo.com,***,17,4.76,0,0,39,6,0,17,12,1,0,legitimate
+session_000531,2026-02-06T22:59:33.946077,administrator,pass685,0,0.51,0,0,10,1,0,13,7,1,1,brute_force
+session_000532,2026-02-07T22:59:33.946077,administrator,pass890,0,0.82,0,0,5,0,0,13,7,1,1,brute_force
+session_000533,2026-01-12T22:59:33.946077,user533@company.com,***,23,18.44,0,0,40,10,0,19,14,1,0,legitimate
+session_000534,2026-01-25T22:59:33.946077,user534@yahoo.com,***,30,17.95,0,0,34,6,0,17,9,1,0,legitimate
+session_000535,2026-01-30T22:59:33.946077,user535@outlook.com,***,14,13.91,0,0,37,2,1,19,9,1,0,legitimate
+session_000536,2026-01-13T22:59:33.946077,user536@gmail.com,***,28,13.22,0,0,35,3,0,17,10,1,0,legitimate
+session_000537,2026-01-18T22:59:33.946077,user537@outlook.com,***,50,16.52,0,0,34,5,0,19,9,1,0,legitimate
+session_000538,2026-02-06T22:59:33.946077,user538@outlook.com,***,19,5.56,0,0,40,4,0,19,16,1,0,legitimate
+session_000539,2026-01-09T22:59:33.946077,user539@company.com,***,24,13.62,0,0,38,10,1,19,11,1,0,legitimate
+session_000540,2026-01-30T22:59:33.946077,<input onfocus=alert(1) autofocus>,pass,2,0.96,0,0,34,1,1,34,4,1,1,xss
+session_000541,2026-02-01T22:59:33.946077,user541@outlook.com,***,20,19.49,0,0,39,5,0,19,12,1,0,legitimate
+session_000542,2026-01-30T22:59:33.946077,user542@yahoo.com,***,18,14.91,0,0,36,5,0,17,13,1,0,legitimate
+session_000543,2026-02-08T22:59:33.946077,user543@company.com,***,37,15.88,0,0,40,4,0,19,12,1,0,legitimate
+session_000544,2026-01-11T22:59:33.946077,user544@yahoo.com,***,29,8.61,0,0,40,3,0,17,15,1,0,legitimate
+session_000545,2026-01-15T22:59:33.946077,user545@gmail.com,***,43,15.14,0,0,33,2,1,17,11,1,0,legitimate
+session_000546,2026-02-06T22:59:33.946077,user546@outlook.com,***,45,11.95,0,0,32,5,1,19,9,1,0,legitimate
+session_000547,2026-01-25T22:59:33.946077,user547@outlook.com,***,24,17.57,0,0,34,4,0,19,15,1,0,legitimate
+session_000548,2026-01-11T22:59:33.946077,user548@outlook.com,***,32,12.88,0,0,31,5,1,19,8,1,0,legitimate
+session_000549,2026-01-11T22:59:33.946077,user549@yahoo.com,***,37,11.39,0,0,41,9,0,17,15,1,0,legitimate
+session_000550,2026-02-04T22:59:33.947077,bot550@automated.com,botpass1008,0,0.42,1,20,0,0,1,20,11,1,1,bot
+session_000551,2026-02-08T22:59:33.947077,user551@yahoo.com,***,18,16.41,0,0,32,4,0,17,13,1,0,legitimate
+session_000552,2026-01-22T22:59:33.947077,user552@company.com,***,26,2.14,0,0,42,10,0,19,14,1,0,legitimate
+session_000553,2026-01-16T22:59:33.947077,admin'--,123,1,0.88,1,8,14,0,0,8,3,1,1,sql_injection
+session_000554,2026-01-11T22:59:33.947077,user554@yahoo.com,***,40,10.49,0,0,42,8,1,17,16,1,0,legitimate
+session_000555,2026-01-16T22:59:33.947077,user555@outlook.com,***,40,19.45,0,0,34,8,0,19,14,1,0,legitimate
+session_000556,2026-01-16T22:59:33.947077,user556@gmail.com,***,7,9.53,0,0,36,2,0,17,13,1,0,legitimate
+session_000557,2026-01-23T22:59:33.947077,user557@gmail.com,***,37,17.93,0,0,38,2,1,17,11,1,0,legitimate
+session_000558,2026-01-31T22:59:33.947077,user558@gmail.com,***,24,6.4,0,0,37,2,0,17,13,1,0,legitimate
+session_000559,2026-01-30T22:59:33.947077,user559@gmail.com,***,49,12.15,0,0,29,2,0,17,9,1,0,legitimate
+session_000560,2026-01-30T22:59:33.947077,user560@company.com,***,8,12.44,0,0,29,9,0,19,10,1,0,legitimate
+session_000561,2026-01-22T22:59:33.947077,user561@yahoo.com,***,22,3.54,0,0,37,10,0,17,15,1,0,legitimate
+session_000562,2026-01-14T22:59:33.947077,test@test.com| nc -e /bin/sh,; ls -la,0,0.27,0,0,19,2,1,28,8,1,1,command_injection
+session_000563,2026-02-02T22:59:33.947077,user563@company.com,***,8,14.18,0,0,29,7,1,19,10,1,0,legitimate
+session_000564,2026-01-20T22:59:33.947077,user564@yahoo.com,***,50,12.79,0,0,36,6,0,17,16,1,0,legitimate
+session_000565,2026-01-24T22:59:33.947077,user565@outlook.com,***,10,6.43,0,0,33,2,0,19,12,1,0,legitimate
+session_000566,2026-01-10T22:59:33.947077,user566@gmail.com,***,44,10.57,0,0,31,9,0,17,13,1,0,legitimate
+session_000567,2026-01-29T22:59:33.947077,user567@company.com,***,33,16.23,0,0,38,7,1,19,16,1,0,legitimate
+session_000568,2026-01-17T22:59:33.947077,<img src=x onerror=alert(1)>,test,1,0.29,0,0,28,0,1,28,4,1,1,xss
+session_000569,2026-02-04T22:59:33.947077,<img src=x onerror=alert(1)>,,2,0.26,0,0,28,0,1,28,0,1,1,xss
+session_000570,2026-01-23T22:59:33.947077,admin' OR '1'='1'--,123,0,1.42,0,0,10,1,0,19,3,1,1,sql_injection
+session_000571,2026-02-02T22:59:33.947077,' OR 1=1--,123,1,1.24,0,0,14,0,0,10,3,1,1,sql_injection
+session_000572,2026-01-25T22:59:33.947077,bot572@automated.com,botpass6145,0,0.14,1,20,0,0,1,20,11,1,1,bot
+session_000573,2026-01-22T22:59:33.947077,user573@gmail.com,***,23,12.13,0,0,34,7,0,17,16,1,0,legitimate
+session_000574,2026-01-28T22:59:33.947077,user574@outlook.com,***,40,5.02,0,0,37,8,0,19,14,1,0,legitimate
+session_000575,2026-02-02T22:59:33.947077,....//....//....//etc/passwd,test,1,0.24,0,0,28,0,1,28,4,1,1,path_traversal
+session_000576,2026-02-04T22:59:33.947077,user576@outlook.com,***,42,9.7,0,0,35,9,0,19,16,1,0,legitimate
+session_000577,2026-02-01T22:59:33.947077,..%2F..%2F..%2Fetc%2Fpasswd,test,0,0.49,0,0,27,0,1,27,4,1,1,path_traversal
+session_000578,2026-01-21T22:59:33.947077,' UNION SELECT NULL--,,1,1.38,0,0,5,2,1,21,0,1,1,sql_injection
+session_000579,2026-01-30T22:59:33.947077,admin,pass553,0,0.7,0,0,9,0,0,5,7,1,1,brute_force
+session_000580,2026-02-08T22:59:33.947077,user580@company.com,***,11,12.82,0,0,33,4,0,19,8,1,0,legitimate
+session_000581,2026-01-20T22:59:33.947077,user581@outlook.com,***,41,2.32,0,0,34,10,1,19,15,1,0,legitimate
+session_000582,2026-02-01T22:59:33.947077,user582@gmail.com,***,43,10.23,0,0,39,8,0,17,13,1,0,legitimate
+session_000583,2026-01-20T22:59:33.947077,bot583@automated.com,botpass4262,0,0.44,1,20,0,0,1,20,11,1,1,bot
+session_000584,2026-01-10T22:59:33.947077,user584@gmail.com,***,43,9.73,0,0,34,9,1,17,13,1,0,legitimate
+session_000585,2026-01-29T22:59:33.947077,bot585@automated.com,botpass6746,0,0.44,1,20,0,0,1,20,11,1,1,bot
+session_000586,2026-02-08T22:59:33.947077,user586@yahoo.com,***,49,18.26,0,0,35,3,1,17,13,1,0,legitimate
+session_000587,2026-01-19T22:59:33.947077,test@test.com`cat /etc/shadow`,; rm -rf /,1,0.55,0,0,22,0,1,30,10,1,1,command_injection
+session_000588,2026-01-15T22:59:33.947077,<iframe src=javascript:alert(1)>,,0,0.31,0,0,32,1,1,32,0,1,1,xss
+session_000589,2026-01-17T22:59:33.947077,....//....//....//etc/passwd,test,0,0.45,0,0,28,0,1,28,4,1,1,path_traversal
+session_000590,2026-01-24T22:59:33.947077,user590@company.com,***,47,6.57,0,0,33,9,0,19,13,1,0,legitimate
+session_000591,2026-01-18T22:59:33.947077,user591@yahoo.com,***,5,9.45,0,0,34,7,0,17,13,1,0,legitimate
+session_000592,2026-02-01T22:59:33.947077,....//....//....//etc/passwd,test,1,0.65,0,0,28,0,1,28,4,1,1,path_traversal
+session_000593,2026-01-30T22:59:33.947077,user593@yahoo.com,***,8,5.37,0,0,38,8,0,17,13,1,0,legitimate
+session_000594,2026-01-23T22:59:33.947077,user594@company.com,***,28,19.83,0,0,42,8,1,19,16,1,0,legitimate
+session_000595,2026-01-09T22:59:33.947077,user595@outlook.com,***,37,7.61,0,0,36,10,0,19,13,1,0,legitimate
+session_000596,2026-01-10T22:59:33.947077,javascript:alert(1),pass,2,0.76,0,0,19,0,1,19,4,1,1,xss
+session_000597,2026-01-13T22:59:33.947077,user597@company.com,***,39,17.41,0,0,44,8,0,19,15,1,0,legitimate
+session_000598,2026-01-09T22:59:33.947077,test@test.com; rm -rf /,&& whoami,1,0.73,0,0,18,0,1,23,9,1,1,command_injection
+session_000599,2026-01-20T22:59:33.947077,user599@yahoo.com,***,39,4.43,0,0,35,5,0,17,10,1,0,legitimate
+session_000600,2026-01-14T22:59:33.947077,user600@gmail.com,***,34,18.95,0,0,39,8,0,17,13,1,0,legitimate
+session_000601,2026-01-10T22:59:33.947077,user601@yahoo.com,***,43,6.8,0,0,43,7,1,17,16,1,0,legitimate
+session_000602,2026-01-14T22:59:33.947077,user602@gmail.com,***,6,3.6,0,0,29,8,1,17,8,1,0,legitimate
+session_000603,2026-02-01T22:59:33.947077,user603@yahoo.com,***,6,18.26,0,0,29,2,1,17,9,1,0,legitimate
+session_000604,2026-01-22T22:59:33.947077,administrator,pass903,1,0.37,0,0,10,2,0,13,7,1,1,brute_force
+session_000605,2026-01-15T22:59:33.947077,user605@gmail.com,***,49,11.38,0,0,37,3,0,17,16,1,0,legitimate
+session_000606,2026-01-15T22:59:33.947077,user606@gmail.com,***,48,18.71,0,0,37,10,0,17,10,1,0,legitimate
+session_000607,2026-01-17T22:59:33.947077,<iframe src=javascript:alert(1)>,,0,0.73,0,0,32,0,1,32,0,1,1,xss
+session_000608,2026-01-17T22:59:33.947077,admin,pass21,0,0.36,0,0,6,0,0,5,6,1,1,brute_force
+session_000609,2026-01-13T22:59:33.947077,user609@outlook.com,***,37,4.96,0,0,35,10,0,19,16,1,0,legitimate
+session_000610,2026-01-31T22:59:33.947077,user610@outlook.com,***,47,11.6,0,0,28,6,0,19,8,1,0,legitimate
+session_000611,2026-01-21T22:59:33.947077,..\..\..\windows\system32,test,0,1.05,0,0,25,1,1,25,4,1,1,path_traversal
+session_000612,2026-02-07T22:59:33.947077,admin' OR '1'='1,,3,1.19,1,16,16,0,0,16,0,1,1,sql_injection
+session_000613,2026-01-11T22:59:33.947077,user613@gmail.com,***,49,19.47,0,0,33,8,0,17,10,1,0,legitimate
+session_000614,2026-01-31T22:59:33.947077,bot614@automated.com,botpass6788,0,0.12,1,20,0,0,1,20,11,1,1,bot
+session_000615,2026-02-03T22:59:33.947077,<input onfocus=alert(1) autofocus>,test,0,0.74,0,0,34,0,1,34,4,1,1,xss
+session_000616,2026-01-10T22:59:33.947077,user616@outlook.com,***,20,6.89,0,0,36,10,0,19,11,1,0,legitimate
+session_000617,2026-01-10T22:59:33.947077,user617@company.com,***,29,16.38,0,0,31,9,0,19,11,1,0,legitimate
+session_000618,2026-01-26T22:59:33.947077,' UNION SELECT NULL--,test,1,0.4,1,21,15,2,0,21,4,1,1,sql_injection
+session_000619,2026-01-28T22:59:33.947077,user619@company.com,***,16,2.51,0,0,35,7,1,19,12,1,0,legitimate
+session_000620,2026-01-09T22:59:33.947077,user620@yahoo.com,***,28,11.88,0,0,32,4,0,17,14,1,0,legitimate
+session_000621,2026-01-17T22:59:33.947077,user621@company.com,***,47,12.58,0,0,32,5,0,19,9,1,0,legitimate
+session_000622,2026-01-12T22:59:33.947077,user622@company.com,***,48,7.83,0,0,37,8,0,19,11,1,0,legitimate
+session_000623,2026-01-09T22:59:33.947077,user623@company.com,***,7,13.26,0,0,29,9,0,19,9,1,0,legitimate
+session_000624,2026-02-07T22:59:33.947077,user624@company.com,***,6,6.44,0,0,35,10,0,19,11,1,0,legitimate
+session_000625,2026-01-22T22:59:33.947077,user625@company.com,***,30,17.86,0,0,29,9,0,19,9,1,0,legitimate
+session_000626,2026-01-29T22:59:33.947077,user626@outlook.com,***,49,2.97,0,0,29,9,0,19,9,1,0,legitimate
+session_000627,2026-02-06T22:59:33.947077,user627@gmail.com,***,47,10.53,0,0,37,9,1,17,15,1,0,legitimate
+session_000628,2026-01-24T22:59:33.947077,"'""><script>alert(String.fromCharCode(88,83,83))</script>",test,0,0.64,0,0,56,1,1,56,4,1,1,xss
+session_000629,2026-01-29T22:59:33.947077,user629@company.com,***,24,11.84,0,0,29,9,1,19,8,1,0,legitimate
+session_000630,2026-01-31T22:59:33.947077,test,pass160,0,0.39,0,0,10,1,0,4,7,1,1,brute_force
+session_000631,2026-01-22T22:59:33.947077,user631@yahoo.com,***,19,5.35,0,0,30,6,0,17,8,1,0,legitimate
+session_000632,2026-01-11T22:59:33.947077,user632@company.com,***,43,17.29,0,0,37,4,0,19,9,1,0,legitimate
+session_000633,2026-02-07T22:59:33.947077,user633@gmail.com,***,25,8.33,0,0,32,5,1,17,9,1,0,legitimate
+session_000634,2026-01-24T22:59:33.947077,<img src=x onerror=alert(1)>,,1,0.83,0,0,28,1,1,28,0,1,1,xss
+session_000635,2026-01-10T22:59:33.947077,admin,pass278,0,0.35,0,0,6,0,0,5,7,1,1,brute_force
+session_000636,2026-02-06T22:59:33.947077,user636@outlook.com,***,33,6.4,0,0,33,7,0,19,14,1,0,legitimate
+session_000637,2026-01-23T22:59:33.947077,....//....//....//etc/passwd,test,1,0.31,0,0,28,1,1,28,4,1,1,path_traversal
+session_000638,2026-02-07T22:59:33.947077,1' AND '1'='1,admin,1,1.45,1,13,18,0,0,13,5,1,1,sql_injection
+session_000639,2026-01-15T22:59:33.947077,<iframe src=javascript:alert(1)>,pass,2,0.68,0,0,32,0,1,32,4,1,1,xss
+session_000640,2026-01-19T22:59:33.947077,user640@company.com,***,37,18.13,0,0,32,3,0,19,10,1,0,legitimate
+session_000641,2026-02-02T22:59:33.947077,user641@company.com,***,36,17.26,0,0,36,9,0,19,14,1,0,legitimate
+session_000642,2026-01-21T22:59:33.947077,bot642@automated.com,botpass4176,0,0.3,1,20,0,0,1,20,11,1,1,bot
+session_000643,2026-01-10T22:59:33.947077,bot643@automated.com,botpass6052,0,0.27,1,20,0,0,1,20,11,1,1,bot
+session_000644,2026-01-21T22:59:33.947077,user644@gmail.com,***,33,2.17,0,0,36,9,0,17,16,1,0,legitimate
+session_000645,2026-01-30T22:59:33.947077,user645@outlook.com,***,30,11.91,0,0,28,7,0,19,9,1,0,legitimate
+session_000646,2026-01-30T22:59:33.947077,user646@yahoo.com,***,28,5.24,0,0,41,6,0,17,14,1,0,legitimate
+session_000647,2026-01-28T22:59:33.947077,user647@gmail.com,***,22,4.95,0,0,39,10,0,17,14,1,0,legitimate
+session_000648,2026-01-23T22:59:33.947077,<img src=x onerror=alert(1)>,,2,0.68,0,0,28,0,1,28,0,1,1,xss
+session_000649,2026-01-12T22:59:33.947077,user649@gmail.com,***,8,7.03,0,0,35,7,0,17,10,1,0,legitimate
+session_000650,2026-02-03T22:59:33.947077,user650@company.com,***,28,11.54,0,0,38,3,0,19,10,1,0,legitimate
+session_000651,2026-01-16T22:59:33.947077,user651@company.com,***,36,4.1,0,0,31,7,1,19,11,1,0,legitimate
+session_000652,2026-01-21T22:59:33.947077,user652@yahoo.com,***,43,15.79,0,0,39,8,1,17,13,1,0,legitimate
+session_000653,2026-01-18T22:59:33.947077,../../../etc/passwd,test,2,0.36,0,0,19,1,1,19,4,1,1,path_traversal
+session_000654,2026-01-27T22:59:33.947077,user654@outlook.com,***,45,10.07,0,0,32,3,0,19,9,1,0,legitimate
+session_000655,2026-01-31T22:59:33.947077,user655@yahoo.com,***,29,3.96,0,0,34,6,1,17,15,1,0,legitimate
+session_000656,2026-01-31T22:59:33.947077,user656@yahoo.com,***,9,10.91,0,0,41,5,1,17,15,1,0,legitimate
+session_000657,2026-02-07T22:59:33.947077,user657@outlook.com,***,17,12.81,0,0,41,6,1,19,15,1,0,legitimate
+session_000658,2026-01-09T22:59:33.947077,user658@yahoo.com,***,48,5.12,0,0,36,2,0,17,14,1,0,legitimate
+session_000659,2026-01-16T22:59:33.947077,admin' OR '1'='1,admin,1,1.44,0,0,19,1,0,16,5,1,1,sql_injection
+session_000660,2026-02-05T22:59:33.947077,..%2F..%2F..%2Fetc%2Fpasswd,test,2,0.22,0,0,27,0,1,27,4,1,1,path_traversal
+session_000661,2026-02-05T22:59:33.947077,user661@gmail.com,***,17,5.27,0,0,31,5,1,17,13,1,0,legitimate
+session_000662,2026-02-03T22:59:33.948084,user662@yahoo.com,***,29,15.73,0,0,32,9,0,17,15,1,0,legitimate
+session_000663,2026-02-04T22:59:33.948084,user663@gmail.com,***,50,13.65,0,0,29,4,0,17,10,1,0,legitimate
+session_000664,2026-02-08T22:59:33.948084,user664@company.com,***,31,7.83,0,0,30,7,1,19,10,1,0,legitimate
+session_000665,2026-01-20T22:59:33.948084,user665@yahoo.com,***,16,9.06,0,0,37,4,0,17,11,1,0,legitimate
+session_000666,2026-02-08T22:59:33.948084,user666@yahoo.com,***,9,10.59,0,0,29,8,0,17,9,1,0,legitimate
+session_000667,2026-01-11T22:59:33.948084,user667@company.com,***,22,12.84,0,0,34,3,0,19,8,1,0,legitimate
+session_000668,2026-02-05T22:59:33.948084,user668@gmail.com,***,44,9.66,0,0,34,7,0,17,8,1,0,legitimate
+session_000669,2026-02-04T22:59:33.948084,user669@gmail.com,***,9,3.06,0,0,31,3,1,17,12,1,0,legitimate
+session_000670,2026-01-11T22:59:33.948084,bot670@automated.com,botpass2448,0,0.34,1,20,0,0,1,20,11,1,1,bot
+session_000671,2026-01-21T22:59:33.948084,bot671@automated.com,botpass3759,0,0.26,1,20,0,0,1,20,11,1,1,bot
+session_000672,2026-01-22T22:59:33.948084,user672@company.com,***,37,11.48,0,0,31,10,0,19,12,1,0,legitimate
+session_000673,2026-01-26T22:59:33.948084,user673@yahoo.com,***,45,13.97,0,0,37,10,1,17,13,1,0,legitimate
+session_000674,2026-01-29T22:59:33.948084,user674@yahoo.com,***,26,4.19,0,0,40,4,0,17,16,1,0,legitimate
+session_000675,2026-01-30T22:59:33.948084,user675@outlook.com,***,45,4.63,0,0,30,2,0,19,8,1,0,legitimate
+session_000676,2026-02-05T22:59:33.948084,user676@outlook.com,***,45,17.62,0,0,36,7,1,19,13,1,0,legitimate
+session_000677,2026-02-04T22:59:33.948084,user677@gmail.com,***,37,16.17,0,0,38,3,0,17,11,1,0,legitimate
+session_000678,2026-01-16T22:59:33.948084,root,pass647,0,0.96,0,0,9,1,0,4,7,1,1,brute_force
+session_000679,2026-02-01T22:59:33.948084,user679@yahoo.com,***,5,16.43,0,0,27,10,0,17,8,1,0,legitimate
+session_000680,2026-01-23T22:59:33.948084,user680@outlook.com,***,28,9.41,0,0,42,2,0,19,14,1,0,legitimate
+session_000681,2026-01-22T22:59:33.948084,user681@yahoo.com,***,41,4.95,0,0,32,10,0,17,15,1,0,legitimate
+session_000682,2026-01-31T22:59:33.948084,<svg onload=alert(1)>,test,1,0.44,0,0,21,0,1,21,4,1,1,xss
+session_000683,2026-02-01T22:59:33.948084,user683@yahoo.com,***,40,2.25,0,0,31,7,0,17,10,1,0,legitimate
+session_000684,2026-01-30T22:59:33.948084,bot684@automated.com,botpass3824,0,0.43,1,20,0,0,1,20,11,1,1,bot
+session_000685,2026-01-11T22:59:33.948084,user685@gmail.com,***,30,8.03,0,0,39,3,0,17,13,1,0,legitimate
+session_000686,2026-01-10T22:59:33.948084,' OR 1=1--,admin,1,0.13,0,0,7,1,0,10,5,1,1,sql_injection
+session_000687,2026-01-26T22:59:33.948084,user687@gmail.com,***,12,5.13,0,0,32,2,0,17,14,1,0,legitimate
+session_000688,2026-01-28T22:59:33.948084,user688@gmail.com,***,6,2.15,0,0,31,8,0,17,13,1,0,legitimate
+session_000689,2026-01-28T22:59:33.948084,user689@outlook.com,***,37,6.49,0,0,38,3,0,19,14,1,0,legitimate
+session_000690,2026-01-15T22:59:33.948084,user690@outlook.com,***,18,7.85,0,0,43,6,1,19,15,1,0,legitimate
+session_000691,2026-01-28T22:59:33.948084,user691@outlook.com,***,28,14.66,0,0,29,3,0,19,9,1,0,legitimate
+session_000692,2026-02-01T22:59:33.948084,user692@company.com,***,28,11.0,0,0,36,9,0,19,9,1,0,legitimate
+session_000693,2026-01-30T22:59:33.948084,user693@company.com,***,37,13.25,0,0,33,10,0,19,10,1,0,legitimate
+session_000694,2026-01-10T22:59:33.948084,user694@yahoo.com,***,44,16.29,0,0,38,2,0,17,11,1,0,legitimate
+session_000695,2026-01-20T22:59:33.948084,user695@company.com,***,17,9.69,0,0,33,5,0,19,10,1,0,legitimate
+session_000696,2026-01-21T22:59:33.948084,admin,pass492,1,0.63,0,0,3,1,0,5,7,1,1,brute_force
+session_000697,2026-01-14T22:59:33.948084,user697@gmail.com,***,5,2.74,0,0,36,2,0,17,14,1,0,legitimate
+session_000698,2026-01-17T22:59:33.948084,user698@gmail.com,***,15,10.29,0,0,26,7,0,17,9,1,0,legitimate
+session_000699,2026-02-04T22:59:33.948084,user699@company.com,***,6,19.74,0,0,32,9,1,19,9,1,0,legitimate
+session_000700,2026-01-11T22:59:33.948084,user700@outlook.com,***,6,11.09,0,0,37,4,0,19,16,1,0,legitimate
+session_000701,2026-01-17T22:59:33.948084,user701@outlook.com,***,8,12.38,0,0,32,9,0,19,12,1,0,legitimate
+session_000702,2026-02-01T22:59:33.948084,../../../etc/passwd,test,0,1.14,0,0,19,1,1,19,4,1,1,path_traversal
+session_000703,2026-01-17T22:59:33.948084,user703@gmail.com,***,21,7.45,0,0,42,2,1,17,15,1,0,legitimate
+session_000704,2026-01-27T22:59:33.948084,<script>alert('XSS')</script>,,1,0.62,0,0,29,0,1,29,0,1,1,xss
+session_000705,2026-01-26T22:59:33.948084,user705@company.com,***,28,9.32,0,0,35,4,1,19,16,1,0,legitimate
+session_000706,2026-01-13T22:59:33.948084,javascript:alert(1),pass,2,0.31,0,0,19,0,1,19,4,1,1,xss
+session_000707,2026-01-11T22:59:33.948084,test,pass788,1,0.33,0,0,5,2,0,4,7,1,1,brute_force
+session_000708,2026-02-07T22:59:33.948084,user708@company.com,***,13,10.08,0,0,30,2,0,19,8,1,0,legitimate
+session_000709,2026-01-25T22:59:33.948084,user709@gmail.com,***,46,9.02,0,0,33,10,0,17,13,1,0,legitimate
+session_000710,2026-01-27T22:59:33.948084,user710@company.com,***,6,19.3,0,0,35,6,0,19,9,1,0,legitimate
+session_000711,2026-01-12T22:59:33.948084,user711@outlook.com,***,43,8.68,0,0,40,10,0,19,11,1,0,legitimate
+session_000712,2026-01-29T22:59:33.948084,....//....//....//etc/passwd,test,1,0.49,0,0,28,1,1,28,4,1,1,path_traversal
+session_000713,2026-01-12T22:59:33.948084,user713@yahoo.com,***,12,17.27,0,0,31,10,0,17,8,1,0,legitimate
+session_000714,2026-01-22T22:59:33.948084,user714@company.com,***,16,15.41,0,0,37,3,0,19,14,1,0,legitimate
+session_000715,2026-02-02T22:59:33.948084,user715@gmail.com,***,48,2.94,0,0,32,10,0,17,9,1,0,legitimate
+session_000716,2026-01-16T22:59:33.948084,user716@outlook.com,***,28,17.21,0,0,36,7,0,19,14,1,0,legitimate
+session_000717,2026-01-15T22:59:33.948084,user717@company.com,***,15,11.84,0,0,36,7,1,19,9,1,0,legitimate
+session_000718,2026-01-16T22:59:33.948084,user718@yahoo.com,***,31,4.18,0,0,33,10,0,17,9,1,0,legitimate
+session_000719,2026-02-07T22:59:33.948084,user719@outlook.com,***,43,6.09,0,0,32,8,0,19,10,1,0,legitimate
+session_000720,2026-02-08T22:59:33.948084,user720@yahoo.com,***,13,17.74,0,0,37,3,1,17,15,1,0,legitimate
+session_000721,2026-01-19T22:59:33.948084,user721@company.com,***,27,10.17,0,0,39,6,1,19,15,1,0,legitimate
+session_000722,2026-01-16T22:59:33.948084,user722@outlook.com,***,19,12.71,0,0,40,8,0,19,13,1,0,legitimate
+session_000723,2026-01-12T22:59:33.948084,' OR 1=1--,123,3,0.28,1,10,10,2,1,10,3,1,1,sql_injection
+session_000724,2026-02-06T22:59:33.948084,administrator,pass31,0,0.9,0,0,6,0,0,13,6,1,1,brute_force
+session_000725,2026-01-30T22:59:33.948084,user725@outlook.com,***,36,17.23,0,0,35,2,0,19,10,1,0,legitimate
+session_000726,2026-01-18T22:59:33.948084,....//....//....//etc/passwd,test,1,0.4,0,0,28,0,1,28,4,1,1,path_traversal
+session_000727,2026-01-15T22:59:33.948084,user727@outlook.com,***,28,2.22,0,0,37,2,0,19,10,1,0,legitimate
+session_000728,2026-01-22T22:59:33.948084,user728@yahoo.com,***,14,9.42,0,0,35,9,1,17,15,1,0,legitimate
+session_000729,2026-01-24T22:59:33.948084,user729@yahoo.com,***,35,7.58,0,0,33,8,0,17,13,1,0,legitimate
+session_000730,2026-01-29T22:59:33.948084,user730@yahoo.com,***,15,19.1,0,0,30,6,0,17,10,1,0,legitimate
+session_000731,2026-02-08T22:59:33.948084,user731@company.com,***,11,19.33,0,0,38,2,1,19,16,1,0,legitimate
+session_000732,2026-02-06T22:59:33.948084,test@test.com; rm -rf /,&& whoami,0,0.34,0,0,22,1,1,23,9,1,1,command_injection
+session_000733,2026-01-12T22:59:33.948084,user733@yahoo.com,***,22,4.31,0,0,32,7,0,17,14,1,0,legitimate
+session_000734,2026-01-10T22:59:33.948084,user734@yahoo.com,***,6,8.3,0,0,30,4,0,17,8,1,0,legitimate
+session_000735,2026-01-11T22:59:33.948084,user735@gmail.com,***,20,10.62,0,0,35,9,0,17,14,1,0,legitimate
+session_000736,2026-01-20T22:59:33.948084,test@test.com| nc -e /bin/sh,&& whoami,1,0.26,0,0,23,1,1,28,9,1,1,command_injection
+session_000737,2026-01-14T22:59:33.948084,bot737@automated.com,botpass3806,0,0.3,1,20,0,0,1,20,11,1,1,bot
+session_000738,2026-01-30T22:59:33.948084,....//....//....//etc/passwd,test,0,0.6,0,0,28,0,1,28,4,1,1,path_traversal
+session_000739,2026-02-04T22:59:33.948084,user739@company.com,***,17,10.64,0,0,42,8,0,19,15,1,0,legitimate
+session_000740,2026-01-14T22:59:33.948084,bot740@automated.com,botpass8390,0,0.21,1,20,0,0,1,20,11,1,1,bot
+session_000741,2026-01-21T22:59:33.948084,user741@company.com,***,22,6.76,0,0,35,8,0,19,14,1,0,legitimate
+session_000742,2026-01-24T22:59:33.948084,user742@yahoo.com,***,19,7.04,0,0,28,10,0,17,9,1,0,legitimate
+session_000743,2026-01-22T22:59:33.948084,admin'--,admin,3,1.45,1,8,7,2,1,8,5,1,1,sql_injection
+session_000744,2026-01-17T22:59:33.948084,user744@gmail.com,***,5,10.66,0,0,27,10,0,17,9,1,0,legitimate
+session_000745,2026-01-28T22:59:33.948084,<script>alert('XSS')</script>,test,0,0.35,0,0,29,1,1,29,4,1,1,xss
+session_000746,2026-01-29T22:59:33.948084,test,pass531,0,0.48,0,0,10,0,0,4,7,1,1,brute_force
+session_000747,2026-02-06T22:59:33.948084,test@test.com| nc -e /bin/sh,`cat /etc/shadow`,0,0.44,0,0,13,0,1,28,17,1,1,command_injection
+session_000748,2026-01-31T22:59:33.948084,user748@company.com,***,50,3.27,0,0,37,4,0,19,12,1,0,legitimate
+session_000749,2026-01-10T22:59:33.948084,administrator,pass937,1,0.78,0,0,4,0,0,13,7,1,1,brute_force
+session_000750,2026-01-28T22:59:33.948084,user750@company.com,***,20,8.95,0,0,33,4,0,19,9,1,0,legitimate
+session_000751,2026-01-20T22:59:33.948084,user751@outlook.com,***,34,14.59,0,0,34,4,0,19,9,1,0,legitimate
+session_000752,2026-02-04T22:59:33.948084,user752@yahoo.com,***,23,3.34,0,0,38,6,0,17,11,1,0,legitimate
+session_000753,2026-02-01T22:59:33.948084,root,pass248,0,0.67,0,0,6,2,0,4,7,1,1,brute_force
+session_000754,2026-02-04T22:59:33.948084,user754@outlook.com,***,24,3.62,0,0,40,6,0,19,12,1,0,legitimate
+session_000755,2026-02-06T22:59:33.948084,user755@company.com,***,22,5.86,0,0,44,5,0,19,15,1,0,legitimate
+session_000756,2026-01-11T22:59:33.948084,user756@yahoo.com,***,18,7.15,0,0,36,4,0,17,11,1,0,legitimate
+session_000757,2026-01-13T22:59:33.948084,../../../etc/passwd,test,0,0.36,0,0,19,0,1,19,4,1,1,path_traversal
+session_000758,2026-01-25T22:59:33.948084,user758@gmail.com,***,25,5.19,0,0,34,10,1,17,10,1,0,legitimate
+session_000759,2026-01-09T22:59:33.948084,user759@company.com,***,41,12.45,0,0,30,5,0,19,11,1,0,legitimate
+session_000760,2026-01-29T22:59:33.948084,user760@yahoo.com,***,7,12.11,0,0,34,4,0,17,16,1,0,legitimate
+session_000761,2026-02-08T22:59:33.948084,user761@outlook.com,***,11,11.89,0,0,37,6,0,19,16,1,0,legitimate
+session_000762,2026-01-16T22:59:33.948084,user762@outlook.com,***,20,10.46,0,0,36,5,1,19,10,1,0,legitimate
+session_000763,2026-01-18T22:59:33.948084,<svg onload=alert(1)>,pass,0,0.72,0,0,21,0,1,21,4,1,1,xss
+session_000764,2026-01-13T22:59:33.948084,user764@company.com,***,45,5.9,0,0,31,10,0,19,12,1,0,legitimate
+session_000765,2026-02-02T22:59:33.948084,user765@yahoo.com,***,36,5.2,0,0,30,8,0,17,8,1,0,legitimate
+session_000766,2026-01-13T22:59:33.948084,user766@yahoo.com,***,13,5.17,0,0,33,8,0,17,15,1,0,legitimate
+session_000767,2026-01-15T22:59:33.948084,user767@outlook.com,***,38,16.67,0,0,36,7,0,19,8,1,0,legitimate
+session_000768,2026-01-25T22:59:33.948084,user768@gmail.com,***,16,13.1,0,0,34,3,1,17,12,1,0,legitimate
+session_000769,2026-01-09T22:59:33.948084,user769@outlook.com,***,6,14.66,0,0,43,2,0,19,16,1,0,legitimate
+session_000770,2026-01-09T22:59:33.948084,user770@company.com,***,39,6.58,0,0,39,4,0,19,10,1,0,legitimate
+session_000771,2026-01-10T22:59:33.948084,../../../etc/passwd,test,0,0.92,0,0,19,0,1,19,4,1,1,path_traversal
+session_000772,2026-01-14T22:59:33.948084,bot772@automated.com,botpass7684,0,0.33,1,20,0,0,1,20,11,1,1,bot
+session_000773,2026-01-14T22:59:33.948084,user773@company.com,***,36,14.98,0,0,33,2,0,19,10,1,0,legitimate
+session_000774,2026-01-28T22:59:33.948084,user774@company.com,***,11,11.74,0,0,43,6,0,19,14,1,0,legitimate
+session_000775,2026-01-23T22:59:33.948084,user775@outlook.com,***,20,19.9,0,0,44,7,0,19,15,1,0,legitimate
+session_000776,2026-02-01T22:59:33.948084,bot776@automated.com,botpass6549,0,0.2,1,20,0,0,1,20,11,1,1,bot
+session_000777,2026-01-25T22:59:33.948084,bot777@automated.com,botpass1342,0,0.27,1,20,0,0,1,20,11,1,1,bot
+session_000778,2026-01-21T22:59:33.948084,user778@company.com,***,38,2.8,0,0,30,7,0,19,10,1,0,legitimate
+session_000779,2026-01-31T22:59:33.949071,<input onfocus=alert(1) autofocus>,test,2,0.75,0,0,34,1,1,34,4,1,1,xss
+session_000780,2026-01-25T22:59:33.949071,user780@outlook.com,***,38,9.01,0,0,36,7,0,19,12,1,0,legitimate
+session_000781,2026-01-14T22:59:33.949071,user781@company.com,***,33,4.82,0,0,37,7,0,19,11,1,0,legitimate
+session_000782,2026-01-31T22:59:33.949071,user782@yahoo.com,***,42,18.27,0,0,41,3,0,17,15,1,0,legitimate
+session_000783,2026-01-15T22:59:33.949071,test@test.com| cat /etc/passwd,; rm -rf /,0,0.14,0,0,10,2,1,30,10,1,1,command_injection
+session_000784,2026-01-12T22:59:33.949071,user784@gmail.com,***,25,5.59,0,0,28,9,0,17,10,1,0,legitimate
+session_000785,2026-01-17T22:59:33.949071,admin' OR '1'='1,123,1,1.31,0,0,11,0,0,16,3,1,1,sql_injection
+session_000786,2026-02-05T22:59:33.949071,user786@company.com,***,32,18.5,0,0,41,4,0,19,15,1,0,legitimate
+session_000787,2026-01-21T22:59:33.949071,<script>alert('XSS')</script>,pass,0,0.88,0,0,29,0,1,29,4,1,1,xss
+session_000788,2026-01-16T22:59:33.949071,user788@yahoo.com,***,18,15.98,0,0,34,3,1,17,11,1,0,legitimate
+session_000789,2026-01-23T22:59:33.949071,user789@company.com,***,30,3.16,0,0,32,9,0,19,10,1,0,legitimate
+session_000790,2026-02-07T22:59:33.949071,' OR 'a'='a,123,1,1.16,0,0,12,2,0,11,3,1,1,sql_injection
+session_000791,2026-02-01T22:59:33.949071,user791@gmail.com,***,15,16.05,0,0,36,10,0,17,15,1,0,legitimate
+session_000792,2026-01-30T22:59:33.949071,user792@company.com,***,47,2.78,0,0,41,4,0,19,15,1,0,legitimate
+session_000793,2026-01-20T22:59:33.949071,user793@outlook.com,***,9,4.16,0,0,33,8,0,19,12,1,0,legitimate
+session_000794,2026-01-31T22:59:33.949071,user794@yahoo.com,***,40,16.97,0,0,30,8,1,17,12,1,0,legitimate
+session_000795,2026-01-25T22:59:33.949071,bot795@automated.com,botpass7765,0,0.29,1,20,0,0,1,20,11,1,1,bot
+session_000796,2026-02-07T22:59:33.949071,user796@company.com,***,15,4.47,0,0,37,9,0,19,10,1,0,legitimate
+session_000797,2026-01-15T22:59:33.949071,user797@gmail.com,***,14,17.32,0,0,33,9,0,17,10,1,0,legitimate
+session_000798,2026-01-09T22:59:33.949071,user798@company.com,***,42,18.22,0,0,35,4,0,19,9,1,0,legitimate
+session_000799,2026-02-05T22:59:33.949071,user799@gmail.com,***,15,15.06,0,0,34,7,0,17,13,1,0,legitimate
+session_000800,2026-01-09T22:59:33.949071,<img src=x onerror=alert(1)>,test,1,0.42,0,0,28,0,1,28,4,1,1,xss
+session_000801,2026-01-26T22:59:33.949071,root,pass239,1,0.37,0,0,5,0,0,4,7,1,1,brute_force
+session_000802,2026-01-18T22:59:33.949071,admin' UNION SELECT,123,0,0.51,1,19,14,0,0,19,3,1,1,sql_injection
+session_000803,2026-01-31T22:59:33.949071,user803@company.com,***,34,3.03,0,0,38,8,1,19,15,1,0,legitimate
+session_000804,2026-01-21T22:59:33.949071,user804@outlook.com,***,9,11.6,0,0,35,2,1,19,13,1,0,legitimate
+session_000805,2026-01-21T22:59:33.949071,user805@company.com,***,10,15.43,0,0,39,8,1,19,12,1,0,legitimate
+session_000806,2026-01-20T22:59:33.949071,<input onfocus=alert(1) autofocus>,pass,2,0.48,0,0,34,0,1,34,4,1,1,xss
+session_000807,2026-02-07T22:59:33.949071,user807@company.com,***,31,19.39,0,0,41,6,0,19,13,1,0,legitimate
+session_000808,2026-01-21T22:59:33.949071,user808@company.com,***,15,11.84,0,0,39,6,0,19,11,1,0,legitimate
+session_000809,2026-02-02T22:59:33.949071,user809@yahoo.com,***,35,9.86,0,0,27,2,0,17,10,1,0,legitimate
+session_000810,2026-01-13T22:59:33.949071,bot810@automated.com,botpass6340,0,0.11,1,20,0,0,1,20,11,1,1,bot
+session_000811,2026-01-16T22:59:33.949071,user811@gmail.com,***,13,2.91,0,0,34,2,1,17,13,1,0,legitimate
+session_000812,2026-01-29T22:59:33.949071,user812@outlook.com,***,27,9.32,0,0,35,2,0,19,8,1,0,legitimate
+session_000813,2026-01-29T22:59:33.949071,user813@outlook.com,***,44,3.1,0,0,35,6,0,19,16,1,0,legitimate
+session_000814,2026-01-15T22:59:33.949071,user814@gmail.com,***,28,19.12,0,0,36,5,0,17,11,1,0,legitimate
+session_000815,2026-02-06T22:59:33.949071,user815@outlook.com,***,24,10.66,0,0,35,7,0,19,13,1,0,legitimate
+session_000816,2026-02-04T22:59:33.949071,user816@company.com,***,16,16.56,0,0,38,3,0,19,9,1,0,legitimate
+session_000817,2026-02-02T22:59:33.949071,user817@gmail.com,***,25,2.22,0,0,36,6,0,17,15,1,0,legitimate
+session_000818,2026-02-07T22:59:33.949071,user818@gmail.com,***,27,3.88,0,0,29,9,1,17,10,1,0,legitimate
+session_000819,2026-01-15T22:59:33.949071,user819@outlook.com,***,21,18.88,0,0,30,3,1,19,8,1,0,legitimate
+session_000820,2026-02-04T22:59:33.949071,user820@gmail.com,***,40,4.66,0,0,34,5,0,17,11,1,0,legitimate
+session_000821,2026-01-27T22:59:33.949071,user821@yahoo.com,***,28,13.44,0,0,34,4,1,17,12,1,0,legitimate
+session_000822,2026-01-09T22:59:33.949071,user822@company.com,***,46,16.87,0,0,41,8,1,19,13,1,0,legitimate
+session_000823,2026-01-26T22:59:33.949071,user823@company.com,***,22,2.59,0,0,40,4,1,19,15,1,0,legitimate
+session_000824,2026-01-23T22:59:33.949071,test@test.com| nc -e /bin/sh,&& whoami,1,0.11,0,0,13,1,1,28,9,1,1,command_injection
+session_000825,2026-01-11T22:59:33.949071,user825@outlook.com,***,26,9.64,0,0,33,10,0,19,13,1,0,legitimate
+session_000826,2026-01-20T22:59:33.949071,user826@yahoo.com,***,47,2.5,0,0,25,7,0,17,8,1,0,legitimate
+session_000827,2026-01-23T22:59:33.949071,user827@yahoo.com,***,10,7.58,0,0,39,6,1,17,14,1,0,legitimate
+session_000828,2026-01-23T22:59:33.949071,user828@gmail.com,***,10,4.84,0,0,30,9,1,17,10,1,0,legitimate
+session_000829,2026-02-06T22:59:33.949071,user829@company.com,***,30,10.36,0,0,38,10,1,19,11,1,0,legitimate
+session_000830,2026-01-14T22:59:33.949071,user830@yahoo.com,***,22,4.21,0,0,34,3,0,17,11,1,0,legitimate
+session_000831,2026-01-25T22:59:33.949071,bot831@automated.com,botpass2874,0,0.34,1,20,0,0,1,20,11,1,1,bot
+session_000832,2026-01-26T22:59:33.949071,user832@outlook.com,***,48,8.32,0,0,43,5,0,19,16,1,0,legitimate
+session_000833,2026-01-19T22:59:33.949071,user833@yahoo.com,***,34,3.95,0,0,39,9,1,17,16,1,0,legitimate
+session_000834,2026-01-21T22:59:33.949071,user834@yahoo.com,***,21,2.87,0,0,31,8,0,17,12,1,0,legitimate
+session_000835,2026-01-29T22:59:33.949071,user835@outlook.com,***,19,16.61,0,0,40,9,0,19,11,1,0,legitimate
+session_000836,2026-01-15T22:59:33.949071,user836@yahoo.com,***,9,19.48,0,0,30,6,0,17,12,1,0,legitimate
+session_000837,2026-01-23T22:59:33.949071,user837@gmail.com,***,29,13.28,0,0,34,5,0,17,15,1,0,legitimate
+session_000838,2026-01-10T22:59:33.949071,user838@company.com,***,9,5.89,0,0,38,8,0,19,12,1,0,legitimate
+session_000839,2026-01-09T22:59:33.949071,user839@gmail.com,***,23,14.42,0,0,39,8,0,17,16,1,0,legitimate
+session_000840,2026-01-26T22:59:33.949071,user840@company.com,***,33,4.03,0,0,36,3,1,19,14,1,0,legitimate
+session_000841,2026-01-29T22:59:33.949071,test@test.com| nc -e /bin/sh,| cat /etc/passwd,2,0.73,0,0,22,0,1,28,17,1,1,command_injection
+session_000842,2026-01-27T22:59:33.949071,administrator,pass215,1,0.58,0,0,5,0,0,13,7,1,1,brute_force
+session_000843,2026-01-16T22:59:33.949071,user843@yahoo.com,***,39,2.56,0,0,43,4,0,17,16,1,0,legitimate
+session_000844,2026-01-18T22:59:33.949071,user844@gmail.com,***,45,10.78,0,0,34,5,1,17,11,1,0,legitimate
+session_000845,2026-02-06T22:59:33.949071,admin' OR '1'='1,,3,0.71,1,16,13,2,0,16,0,1,1,sql_injection
+session_000846,2026-01-13T22:59:33.949071,test@test.com; rm -rf /,&& whoami,0,0.58,0,0,20,0,1,23,9,1,1,command_injection
+session_000847,2026-01-22T22:59:33.949071,user847@yahoo.com,***,39,16.67,0,0,36,5,0,17,15,1,0,legitimate
+session_000848,2026-01-27T22:59:33.949071,user848@gmail.com,***,40,5.3,0,0,36,9,1,17,12,1,0,legitimate
+session_000849,2026-01-11T22:59:33.949071,user849@yahoo.com,***,12,18.98,0,0,35,6,0,17,13,1,0,legitimate
+session_000850,2026-01-11T22:59:33.949071,user850@company.com,***,48,15.92,0,0,33,8,0,19,10,1,0,legitimate
+session_000851,2026-01-12T22:59:33.949071,user851@yahoo.com,***,32,19.21,0,0,33,7,0,17,11,1,0,legitimate
+session_000852,2026-01-27T22:59:33.949071,bot852@automated.com,botpass8300,0,0.26,1,20,0,0,1,20,11,1,1,bot
+session_000853,2026-01-21T22:59:33.949071,user853@gmail.com,***,31,16.22,0,0,31,6,0,17,9,1,0,legitimate
+session_000854,2026-01-11T22:59:33.949071,bot854@automated.com,botpass6726,0,0.41,1,20,0,0,1,20,11,1,1,bot
+session_000855,2026-02-03T22:59:33.949071,'; DROP TABLE users--,,3,0.58,1,21,9,0,1,21,0,1,1,sql_injection
+session_000856,2026-02-04T22:59:33.949071,' UNION SELECT NULL--,test,1,0.44,0,0,13,0,1,21,4,1,1,sql_injection
+session_000857,2026-02-03T22:59:33.949071,user857@gmail.com,***,27,12.7,0,0,34,6,0,17,14,1,0,legitimate
+session_000858,2026-01-19T22:59:33.949071,user858@company.com,***,6,11.96,0,0,29,7,1,19,10,1,0,legitimate
+session_000859,2026-01-29T22:59:33.949071,user859@outlook.com,***,6,8.32,0,0,31,4,1,19,10,1,0,legitimate
+session_000860,2026-01-24T22:59:33.949071,user860@outlook.com,***,8,3.22,0,0,40,3,1,19,14,1,0,legitimate
+session_000861,2026-01-27T22:59:33.949071,user861@yahoo.com,***,43,11.68,0,0,37,6,0,17,16,1,0,legitimate
+session_000862,2026-01-23T22:59:33.949071,user862@yahoo.com,***,5,18.3,0,0,35,5,0,17,12,1,0,legitimate
+session_000863,2026-02-02T22:59:33.949071,user863@outlook.com,***,13,3.75,0,0,39,3,0,19,13,1,0,legitimate
+session_000864,2026-01-20T22:59:33.949071,user864@yahoo.com,***,7,4.38,0,0,28,9,0,17,10,1,0,legitimate
+session_000865,2026-01-28T22:59:33.949071,test@test.com`cat /etc/shadow`,| nc -e /bin/sh,1,0.34,0,0,11,0,1,30,15,1,1,command_injection
+session_000866,2026-01-10T22:59:33.949071,admin'--,test,2,0.58,0,0,16,0,1,8,4,1,1,sql_injection
+session_000867,2026-01-19T22:59:33.949071,user867@yahoo.com,***,34,9.82,0,0,39,7,1,17,16,1,0,legitimate
+session_000868,2026-01-30T22:59:33.949071,..%2F..%2F..%2Fetc%2Fpasswd,test,1,0.89,0,0,27,1,1,27,4,1,1,path_traversal
+session_000869,2026-02-08T22:59:33.950067,user869@company.com,***,42,12.22,0,0,28,7,0,19,9,1,0,legitimate
+session_000870,2026-02-01T22:59:33.950067,user870@yahoo.com,***,36,19.25,0,0,32,3,1,17,15,1,0,legitimate
+session_000871,2026-01-29T22:59:33.950067,user871@company.com,***,26,16.43,0,0,39,4,0,19,16,1,0,legitimate
+session_000872,2026-01-16T22:59:33.950067,bot872@automated.com,botpass5202,0,0.35,1,20,0,0,1,20,11,1,1,bot
+session_000873,2026-01-18T22:59:33.950067,user873@outlook.com,***,47,11.08,0,0,29,7,1,19,8,1,0,legitimate
+session_000874,2026-01-31T22:59:33.950067,admin' UNION SELECT,test,2,1.21,1,19,19,1,1,19,4,1,1,sql_injection
+session_000875,2026-02-07T22:59:33.950067,user875@company.com,***,24,10.91,0,0,34,3,0,19,12,1,0,legitimate
+session_000876,2026-01-18T22:59:33.950067,user876@gmail.com,***,17,17.98,0,0,38,8,0,17,14,1,0,legitimate
+session_000877,2026-02-05T22:59:33.950067,user877@company.com,***,31,17.39,0,0,37,6,1,19,10,1,0,legitimate
+session_000878,2026-01-13T22:59:33.950067,user878@gmail.com,***,34,12.46,0,0,32,4,0,17,13,1,0,legitimate
+session_000879,2026-01-20T22:59:33.950067,user879@outlook.com,***,6,5.95,0,0,38,4,1,19,12,1,0,legitimate
+session_000880,2026-01-27T22:59:33.950067,user880@outlook.com,***,39,11.41,0,0,41,8,0,19,14,1,0,legitimate
+session_000881,2026-01-11T22:59:33.950067,user881@yahoo.com,***,26,17.11,0,0,31,6,0,17,9,1,0,legitimate
+session_000882,2026-01-27T22:59:33.950067,test@test.com| nc -e /bin/sh,; ls -la,0,0.71,0,0,19,2,1,28,8,1,1,command_injection
+session_000883,2026-01-09T22:59:33.950067,user883@company.com,***,24,12.69,0,0,32,10,0,19,12,1,0,legitimate
+session_000884,2026-02-08T22:59:33.950067,user884@outlook.com,***,31,2.89,0,0,43,2,0,19,15,1,0,legitimate
+session_000885,2026-01-14T22:59:33.950067,user885@yahoo.com,***,15,11.86,0,0,27,2,1,17,9,1,0,legitimate
+session_000886,2026-01-26T22:59:33.950067,user886@yahoo.com,***,33,8.04,0,0,35,8,0,17,16,1,0,legitimate
+session_000887,2026-01-25T22:59:33.950067,test,pass41,1,0.74,0,0,9,0,0,4,6,1,1,brute_force
+session_000888,2026-01-20T22:59:33.950067,user888@gmail.com,***,33,11.09,0,0,38,7,0,17,16,1,0,legitimate
+session_000889,2026-02-07T22:59:33.950067,user889@outlook.com,***,6,4.81,0,0,36,4,0,19,14,1,0,legitimate
+session_000890,2026-02-08T22:59:33.950067,../../../etc/passwd,test,2,0.76,0,0,19,0,1,19,4,1,1,path_traversal
+session_000891,2026-01-14T22:59:33.950067,user891@gmail.com,***,22,14.43,0,0,30,5,0,17,8,1,0,legitimate
+session_000892,2026-02-07T22:59:33.950067,user892@gmail.com,***,31,15.35,0,0,30,6,0,17,9,1,0,legitimate
+session_000893,2026-01-20T22:59:33.950067,<svg onload=alert(1)>,test,1,0.55,0,0,21,1,1,21,4,1,1,xss
+session_000894,2026-02-01T22:59:33.950067,user894@gmail.com,***,13,3.2,0,0,31,8,0,17,9,1,0,legitimate
+session_000895,2026-01-25T22:59:33.950067,user895@gmail.com,***,32,8.82,0,0,29,4,1,17,11,1,0,legitimate
+session_000896,2026-01-16T22:59:33.950067,user896@outlook.com,***,29,16.63,0,0,38,3,0,19,12,1,0,legitimate
+session_000897,2026-01-10T22:59:33.950067,user897@gmail.com,***,41,11.91,0,0,35,3,1,17,13,1,0,legitimate
+session_000898,2026-01-09T22:59:33.950067,user898@outlook.com,***,16,15.57,0,0,35,8,1,19,10,1,0,legitimate
+session_000899,2026-01-14T22:59:33.950067,user899@company.com,***,49,16.41,0,0,40,3,1,19,15,1,0,legitimate
+session_000900,2026-01-24T22:59:33.950067,user900@yahoo.com,***,35,5.27,0,0,33,4,0,17,14,1,0,legitimate
+session_000901,2026-02-04T22:59:33.950067,user901@outlook.com,***,36,6.0,0,0,37,9,1,19,8,1,0,legitimate
+session_000902,2026-02-03T22:59:33.950067,test@test.com`cat /etc/shadow`,| cat /etc/passwd,1,0.43,0,0,11,1,1,30,17,1,1,command_injection
+session_000903,2026-01-13T22:59:33.950067,<script>alert('XSS')</script>,pass,2,0.37,0,0,29,1,1,29,4,1,1,xss
+session_000904,2026-01-16T22:59:33.950067,<body onload=alert('XSS')>,test,0,0.32,0,0,26,0,1,26,4,1,1,xss
+session_000905,2026-02-02T22:59:33.950067,'; DROP TABLE users--,test,0,0.56,0,0,18,1,0,21,4,1,1,sql_injection
+session_000906,2026-01-18T22:59:33.950067,user906@gmail.com,***,17,3.54,0,0,35,5,0,17,12,1,0,legitimate
+session_000907,2026-01-21T22:59:33.950067,bot907@automated.com,botpass1290,0,0.17,1,20,0,0,1,20,11,1,1,bot
+session_000908,2026-01-13T22:59:33.950067,user908@gmail.com,***,46,5.98,0,0,33,4,0,17,14,1,0,legitimate
+session_000909,2026-01-26T22:59:33.950067,bot909@automated.com,botpass2837,0,0.33,1,20,0,0,1,20,11,1,1,bot
+session_000910,2026-01-26T22:59:33.950067,user910@company.com,***,5,9.96,0,0,42,7,1,19,13,1,0,legitimate
+session_000911,2026-02-03T22:59:33.950067,test@test.com; rm -rf /,`cat /etc/shadow`,2,0.1,0,0,14,0,1,23,17,1,1,command_injection
+session_000912,2026-01-23T22:59:33.950067,user912@outlook.com,***,6,16.41,0,0,36,9,0,19,9,1,0,legitimate
+session_000913,2026-01-15T22:59:33.950067,user913@outlook.com,***,33,18.41,0,0,37,6,0,19,11,1,0,legitimate
+session_000914,2026-01-19T22:59:33.950067,bot914@automated.com,botpass5514,0,0.18,1,20,0,0,1,20,11,1,1,bot
+session_000915,2026-01-31T22:59:33.950067,user915@gmail.com,***,35,5.51,0,0,32,8,0,17,8,1,0,legitimate
+session_000916,2026-01-23T22:59:33.950067,user916@company.com,***,24,17.81,0,0,34,8,0,19,9,1,0,legitimate
+session_000917,2026-02-02T22:59:33.950067,<iframe src=javascript:alert(1)>,test,0,0.54,0,0,32,1,1,32,4,1,1,xss
+session_000918,2026-01-19T22:59:33.950067,user918@gmail.com,***,11,7.66,0,0,37,6,0,17,15,1,0,legitimate
+session_000919,2026-01-19T22:59:33.950067,user919@gmail.com,***,16,19.62,0,0,33,4,0,17,8,1,0,legitimate
+session_000920,2026-01-14T22:59:33.950067,user920@yahoo.com,***,10,10.81,0,0,33,8,0,17,14,1,0,legitimate
+session_000921,2026-01-31T22:59:33.950067,user921@gmail.com,***,18,10.96,0,0,37,2,1,17,10,1,0,legitimate
+session_000922,2026-02-08T22:59:33.950067,user922@yahoo.com,***,42,11.22,0,0,36,4,0,17,10,1,0,legitimate
+session_000923,2026-01-24T22:59:33.950067,admin,pass298,1,0.38,0,0,8,1,0,5,7,1,1,brute_force
+session_000924,2026-01-09T22:59:33.950067,test@test.com| cat /etc/passwd,&& whoami,0,0.4,0,0,19,1,1,30,9,1,1,command_injection
+session_000925,2026-01-14T22:59:33.950067,user925@outlook.com,***,41,19.93,0,0,35,9,0,19,15,1,0,legitimate
+session_000926,2026-02-04T22:59:33.950067,user926@gmail.com,***,39,17.27,0,0,26,6,0,17,8,1,0,legitimate
+session_000927,2026-01-25T22:59:33.950067,user927@gmail.com,***,13,13.5,0,0,36,7,1,17,9,1,0,legitimate
+session_000928,2026-01-15T22:59:33.950067,../../../etc/passwd,test,2,0.33,0,0,19,0,1,19,4,1,1,path_traversal
+session_000929,2026-01-22T22:59:33.950067,user929@outlook.com,***,40,9.26,0,0,39,7,0,19,15,1,0,legitimate
+session_000930,2026-01-16T22:59:33.950067,user930@yahoo.com,***,25,3.82,0,0,41,9,0,17,16,1,0,legitimate
+session_000931,2026-01-09T22:59:33.950067,user931@company.com,***,25,19.36,0,0,31,4,0,19,12,1,0,legitimate
+session_000932,2026-02-08T22:59:33.950067,user932@gmail.com,***,20,12.24,0,0,37,6,0,17,12,1,0,legitimate
+session_000933,2026-02-01T22:59:33.950067,user933@company.com,***,28,11.21,0,0,39,2,0,19,15,1,0,legitimate
+session_000934,2026-01-26T22:59:33.950067,<body onload=alert('XSS')>,pass,0,0.59,0,0,26,0,1,26,4,1,1,xss
+session_000935,2026-01-24T22:59:33.950067,user935@yahoo.com,***,31,19.76,0,0,43,6,1,17,16,1,0,legitimate
+session_000936,2026-02-07T22:59:33.950067,test@test.com; ls -la,; ls -la,0,0.17,0,0,18,2,1,21,8,1,1,command_injection
+session_000937,2026-02-01T22:59:33.950067,user937@outlook.com,***,5,19.21,0,0,38,6,0,19,10,1,0,legitimate
+session_000938,2026-01-26T22:59:33.950067,root,pass990,1,0.47,0,0,4,2,0,4,7,1,1,brute_force
+session_000939,2026-01-15T22:59:33.950067,user939@outlook.com,***,19,13.91,0,0,37,10,1,19,11,1,0,legitimate
+session_000940,2026-01-16T22:59:33.950067,bot940@automated.com,botpass3064,0,0.2,1,20,0,0,1,20,11,1,1,bot
+session_000941,2026-01-14T22:59:33.950067,admin'--,123,3,0.7,1,8,14,1,0,8,3,1,1,sql_injection
+session_000942,2026-01-16T22:59:33.950067,user942@yahoo.com,***,16,8.57,0,0,38,2,0,17,11,1,0,legitimate
+session_000943,2026-01-21T22:59:33.950067,user943@yahoo.com,***,32,2.74,0,0,32,5,0,17,11,1,0,legitimate
+session_000944,2026-01-28T22:59:33.950067,<input onfocus=alert(1) autofocus>,,2,0.83,0,0,34,1,1,34,0,1,1,xss
+session_000945,2026-02-07T22:59:33.950067,user945@yahoo.com,***,28,4.87,0,0,35,9,0,17,16,1,0,legitimate
+session_000946,2026-02-01T22:59:33.950067,user946@outlook.com,***,30,11.14,0,0,33,4,0,19,9,1,0,legitimate
+session_000947,2026-01-23T22:59:33.950067,<input onfocus=alert(1) autofocus>,test,1,0.57,0,0,34,1,1,34,4,1,1,xss
+session_000948,2026-01-21T22:59:33.950067,bot948@automated.com,botpass5965,0,0.35,1,20,0,0,1,20,11,1,1,bot
+session_000949,2026-02-01T22:59:33.950067,test@test.com| nc -e /bin/sh,`cat /etc/shadow`,1,0.32,0,0,24,0,1,28,17,1,1,command_injection
+session_000950,2026-01-11T22:59:33.950067,user950@gmail.com,***,15,8.13,0,0,33,7,1,17,10,1,0,legitimate
+session_000951,2026-02-08T22:59:33.950067,user951@gmail.com,***,50,4.56,0,0,33,9,0,17,14,1,0,legitimate
+session_000952,2026-01-24T22:59:33.950067,user952@outlook.com,***,28,12.33,0,0,34,2,0,19,9,1,0,legitimate
+session_000953,2026-01-14T22:59:33.950067,user953@yahoo.com,***,15,4.32,0,0,30,3,0,17,11,1,0,legitimate
+session_000954,2026-01-22T22:59:33.950067,user954@yahoo.com,***,16,12.01,0,0,41,5,0,17,15,1,0,legitimate
+session_000955,2026-02-08T22:59:33.950067,user955@yahoo.com,***,10,18.52,0,0,37,7,0,17,16,1,0,legitimate
+session_000956,2026-01-22T22:59:33.950067,user956@gmail.com,***,8,13.88,0,0,26,8,0,17,8,1,0,legitimate
+session_000957,2026-01-10T22:59:33.950067,user957@outlook.com,***,20,13.49,0,0,33,9,0,19,10,1,0,legitimate
+session_000958,2026-02-01T22:59:33.950067,administrator,pass904,1,0.89,0,0,9,2,0,13,7,1,1,brute_force
+session_000959,2026-01-18T22:59:33.950067,user959@yahoo.com,***,6,8.66,0,0,27,6,0,17,10,1,0,legitimate
+session_000960,2026-01-31T22:59:33.950067,admin,pass567,1,0.65,0,0,10,2,0,5,7,1,1,brute_force
+session_000961,2026-01-22T22:59:33.950067,user961@outlook.com,***,40,6.0,0,0,29,9,1,19,10,1,0,legitimate
+session_000962,2026-01-25T22:59:33.950067,user962@gmail.com,***,17,18.45,0,0,26,5,0,17,8,1,0,legitimate
+session_000963,2026-01-12T22:59:33.950067,user963@yahoo.com,***,20,5.38,0,0,29,8,1,17,12,1,0,legitimate
+session_000964,2026-02-01T22:59:33.950067,user964@yahoo.com,***,19,11.2,0,0,28,8,0,17,10,1,0,legitimate
+session_000965,2026-02-06T22:59:33.950067,' OR 'a'='a,test,2,1.45,1,11,18,1,0,11,4,1,1,sql_injection
+session_000966,2026-01-11T22:59:33.950067,user966@yahoo.com,***,17,12.2,0,0,26,5,0,17,9,1,0,legitimate
+session_000967,2026-01-22T22:59:33.950067,bot967@automated.com,botpass8120,0,0.17,1,20,0,0,1,20,11,1,1,bot
+session_000968,2026-01-09T22:59:33.950067,user968@yahoo.com,***,36,6.53,0,0,29,8,1,17,9,1,0,legitimate
+session_000969,2026-01-12T22:59:33.950067,user969@outlook.com,***,39,2.23,0,0,35,4,0,19,16,1,0,legitimate
+session_000970,2026-01-09T22:59:33.950067,user970@outlook.com,***,50,16.58,0,0,35,8,0,19,16,1,0,legitimate
+session_000971,2026-01-24T22:59:33.950067,user971@gmail.com,***,45,6.42,0,0,30,6,0,17,9,1,0,legitimate
+session_000972,2026-01-27T22:59:33.950067,user972@yahoo.com,***,5,15.34,0,0,31,5,0,17,8,1,0,legitimate
+session_000973,2026-01-15T22:59:33.950067,user973@gmail.com,***,32,16.22,0,0,33,8,0,17,13,1,0,legitimate
+session_000974,2026-01-10T22:59:33.950067,..%2F..%2F..%2Fetc%2Fpasswd,test,2,0.6,0,0,27,1,1,27,4,1,1,path_traversal
+session_000975,2026-01-24T22:59:33.950067,user975@gmail.com,***,10,18.06,0,0,38,5,0,17,15,1,0,legitimate
+session_000976,2026-02-02T22:59:33.950067,user976@yahoo.com,***,45,5.05,0,0,37,10,0,17,16,1,0,legitimate
+session_000977,2026-02-01T22:59:33.950067,user977@gmail.com,***,46,5.64,0,0,43,4,0,17,16,1,0,legitimate
+session_000978,2026-01-23T22:59:33.950067,user978@yahoo.com,***,42,7.59,0,0,39,10,0,17,15,1,0,legitimate
+session_000979,2026-01-24T22:59:33.950067,<svg onload=alert(1)>,test,2,0.85,0,0,21,1,1,21,4,1,1,xss
+session_000980,2026-01-20T22:59:33.950067,user980@yahoo.com,***,6,4.69,0,0,26,4,1,17,9,1,0,legitimate
+session_000981,2026-01-18T22:59:33.951088,user981@yahoo.com,***,39,15.21,0,0,35,6,0,17,16,1,0,legitimate
+session_000982,2026-01-31T22:59:33.951088,user982@company.com,***,12,9.26,0,0,42,7,0,19,15,1,0,legitimate
+session_000983,2026-01-12T22:59:33.951088,test@test.com`cat /etc/shadow`,`cat /etc/shadow`,1,0.44,0,0,16,2,1,30,17,1,1,command_injection
+session_000984,2026-01-28T22:59:33.951088,user984@yahoo.com,***,36,7.39,0,0,25,8,1,17,8,1,0,legitimate
+session_000985,2026-01-18T22:59:33.951088,test@test.com; ls -la,| nc -e /bin/sh,0,0.8,0,0,24,1,1,21,15,1,1,command_injection
+session_000986,2026-01-26T22:59:33.951088,user986@yahoo.com,***,37,3.92,0,0,33,3,0,17,11,1,0,legitimate
+session_000987,2026-01-29T22:59:33.951088,user987@outlook.com,***,26,6.34,0,0,45,7,1,19,16,1,0,legitimate
+session_000988,2026-01-15T22:59:33.951088,user988@outlook.com,***,10,5.32,0,0,36,2,0,19,16,1,0,legitimate
+session_000989,2026-02-05T22:59:33.951088,test@test.com| cat /etc/passwd,; ls -la,2,0.29,0,0,21,0,1,30,8,1,1,command_injection
+session_000990,2026-01-26T22:59:33.951088,user990@yahoo.com,***,43,14.76,0,0,28,7,0,17,10,1,0,legitimate
+session_000991,2026-01-11T22:59:33.951088,user991@outlook.com,***,7,17.26,0,0,40,5,0,19,16,1,0,legitimate
+session_000992,2026-02-04T22:59:33.951088,user992@company.com,***,10,8.04,0,0,38,7,0,19,15,1,0,legitimate
+session_000993,2026-01-19T22:59:33.951088,user993@gmail.com,***,42,2.15,0,0,36,7,0,17,14,1,0,legitimate
+session_000994,2026-01-11T22:59:33.951088,user994@outlook.com,***,36,2.5,0,0,35,10,0,19,8,1,0,legitimate
+session_000995,2026-01-26T22:59:33.951088,<input onfocus=alert(1) autofocus>,test,1,0.47,0,0,34,0,1,34,4,1,1,xss
+session_000996,2026-01-27T22:59:33.951088,user996@gmail.com,***,13,11.05,0,0,27,9,0,17,8,1,0,legitimate
+session_000997,2026-01-23T22:59:33.951088,administrator,pass755,0,0.98,0,0,6,1,0,13,7,1,1,brute_force
+session_000998,2026-02-02T22:59:33.951088,user998@company.com,***,14,16.83,0,0,40,2,1,19,16,1,0,legitimate
+session_000999,2026-01-15T22:59:33.951088,user999@gmail.com,***,33,16.9,0,0,40,10,1,17,15,1,0,legitimate
+session_001000,2026-02-06T22:59:33.951088,user1000@yahoo.com,***,26,8.66,0,0,33,7,1,18,12,1,0,legitimate
+session_001001,2026-02-05T22:59:33.951088,user1001@gmail.com,***,26,19.79,0,0,33,7,0,18,15,1,0,legitimate
+session_001002,2026-02-08T22:59:33.951088,"'""><script>alert(String.fromCharCode(88,83,83))</script>",test,1,0.8,0,0,56,0,1,56,4,1,1,xss
+session_001003,2026-01-25T22:59:33.951088,user1003@yahoo.com,***,5,20.0,0,0,39,6,0,18,12,1,0,legitimate
+session_001004,2026-02-05T22:59:33.951088,user1004@yahoo.com,***,25,9.59,0,0,34,5,0,18,10,1,0,legitimate
+session_001005,2026-01-14T22:59:33.951088,user1005@outlook.com,***,15,9.53,0,0,35,8,0,20,13,1,0,legitimate
+session_001006,2026-02-05T22:59:33.951088,user1006@gmail.com,***,34,8.5,0,0,34,9,0,18,12,1,0,legitimate
+session_001007,2026-01-18T22:59:33.951088,' OR 1=1--,admin,0,0.81,0,0,12,2,0,10,5,1,1,sql_injection
+session_001008,2026-01-17T22:59:33.951088,user1008@outlook.com,***,10,6.56,0,0,32,4,0,20,11,1,0,legitimate
+session_001009,2026-02-02T22:59:33.951088,user1009@yahoo.com,***,35,15.82,0,0,29,7,0,18,10,1,0,legitimate
+session_001010,2026-02-08T22:59:33.951088,user1010@yahoo.com,***,15,4.88,0,0,36,2,0,18,16,1,0,legitimate
+session_001011,2026-02-08T22:59:33.951088,user1011@yahoo.com,***,29,7.47,0,0,34,5,0,18,14,1,0,legitimate
+session_001012,2026-01-23T22:59:33.951088,<img src=x onerror=alert(1)>,test,1,0.74,0,0,28,0,1,28,4,1,1,xss
+session_001013,2026-01-28T22:59:33.951088,user1013@yahoo.com,***,7,19.85,0,0,35,5,1,18,15,1,0,legitimate
+session_001014,2026-01-13T22:59:33.951088,user1014@outlook.com,***,28,15.85,0,0,43,4,1,20,15,1,0,legitimate
+session_001015,2026-01-29T22:59:33.951088,admin' UNION SELECT,123,2,1.08,1,19,9,2,1,19,3,1,1,sql_injection
+session_001016,2026-02-06T22:59:33.951088,user1016@outlook.com,***,25,4.61,0,0,38,4,0,20,11,1,0,legitimate
+session_001017,2026-01-26T22:59:33.951088,user1017@yahoo.com,***,30,19.71,0,0,31,7,0,18,10,1,0,legitimate
+session_001018,2026-02-07T22:59:33.951088,user1018@gmail.com,***,47,3.33,0,0,27,3,0,18,9,1,0,legitimate
+session_001019,2026-01-20T22:59:33.951088,bot1019@automated.com,botpass7354,0,0.39,1,21,0,0,1,21,11,1,1,bot
+session_001020,2026-02-01T22:59:33.951088,user1020@gmail.com,***,11,18.75,0,0,39,3,0,18,12,1,0,legitimate
+session_001021,2026-02-04T22:59:33.951088,user1021@yahoo.com,***,21,14.27,0,0,34,8,0,18,12,1,0,legitimate
+session_001022,2026-01-21T22:59:33.951088,../../../etc/passwd,test,1,0.86,0,0,19,1,1,19,4,1,1,path_traversal
+session_001023,2026-01-18T22:59:33.951088,user1023@gmail.com,***,5,9.49,0,0,38,7,0,18,10,1,0,legitimate
+session_001024,2026-01-10T22:59:33.951088,user1024@outlook.com,***,43,10.33,0,0,36,2,1,20,13,1,0,legitimate
+session_001025,2026-02-07T22:59:33.951088,user1025@yahoo.com,***,37,19.02,0,0,39,7,1,18,16,1,0,legitimate
+session_001026,2026-01-22T22:59:33.951088,bot1026@automated.com,botpass6163,0,0.45,1,21,0,0,1,21,11,1,1,bot
+session_001027,2026-01-09T22:59:33.951088,user1027@gmail.com,***,39,3.88,0,0,41,6,0,18,14,1,0,legitimate
+session_001028,2026-01-22T22:59:33.951088,test@test.com; rm -rf /,| cat /etc/passwd,2,0.41,0,0,21,1,1,23,17,1,1,command_injection
+session_001029,2026-01-31T22:59:33.951088,user1029@gmail.com,***,37,10.05,0,0,37,3,0,18,11,1,0,legitimate
+session_001030,2026-01-23T22:59:33.951088,user1030@gmail.com,***,18,9.74,0,0,34,5,0,18,14,1,0,legitimate
+session_001031,2026-01-20T22:59:33.951088,user1031@outlook.com,***,33,9.22,0,0,38,10,1,20,10,1,0,legitimate
+session_001032,2026-01-20T22:59:33.951088,user1032@company.com,***,8,5.87,0,0,37,4,1,20,9,1,0,legitimate
+session_001033,2026-01-09T22:59:33.951088,admin'--,,3,0.23,0,0,20,0,1,8,0,1,1,sql_injection
+session_001034,2026-01-19T22:59:33.951088,administrator,pass889,0,0.35,0,0,6,2,0,13,7,1,1,brute_force
+session_001035,2026-02-02T22:59:33.951088,user1035@company.com,***,21,4.1,0,0,38,6,0,20,9,1,0,legitimate
+session_001036,2026-02-05T22:59:33.951088,user1036@gmail.com,***,33,16.92,0,0,34,8,0,18,12,1,0,legitimate
+session_001037,2026-01-22T22:59:33.951088,<svg onload=alert(1)>,pass,0,0.53,0,0,21,0,1,21,4,1,1,xss
+session_001038,2026-01-24T22:59:33.951088,user1038@outlook.com,***,40,10.67,0,0,37,3,1,20,11,1,0,legitimate
+session_001039,2026-02-04T22:59:33.951088,test@test.com`cat /etc/shadow`,| nc -e /bin/sh,2,0.77,0,0,24,0,1,30,15,1,1,command_injection
+session_001040,2026-01-11T22:59:33.951088,user1040@yahoo.com,***,27,13.77,0,0,34,7,1,18,10,1,0,legitimate
+session_001041,2026-02-05T22:59:33.951088,<body onload=alert('XSS')>,pass,2,0.94,0,0,26,1,1,26,4,1,1,xss
+session_001042,2026-01-17T22:59:33.951088,user1042@gmail.com,***,42,9.63,0,0,27,2,1,18,8,1,0,legitimate
+session_001043,2026-02-05T22:59:33.951088,user1043@yahoo.com,***,43,11.59,0,0,41,6,0,18,16,1,0,legitimate
+session_001044,2026-01-10T22:59:33.951088,admin' UNION SELECT,admin,3,1.16,0,0,9,2,1,19,5,1,1,sql_injection
+session_001045,2026-01-10T22:59:33.951088,<script>alert('XSS')</script>,,0,0.64,0,0,29,0,1,29,0,1,1,xss
+session_001046,2026-01-10T22:59:33.951088,....//....//....//etc/passwd,test,1,1.03,0,0,28,1,1,28,4,1,1,path_traversal
+session_001047,2026-02-02T22:59:33.951088,test@test.com; ls -la,| cat /etc/passwd,2,0.74,0,0,18,1,1,21,17,1,1,command_injection
+session_001048,2026-01-18T22:59:33.951088,user1048@company.com,***,28,18.92,0,0,38,2,0,20,9,1,0,legitimate
+session_001049,2026-01-16T22:59:33.951088,user1049@gmail.com,***,26,10.91,0,0,38,2,0,18,13,1,0,legitimate
+session_001050,2026-01-20T22:59:33.951088,user1050@outlook.com,***,23,17.38,0,0,34,3,1,20,9,1,0,legitimate
+session_001051,2026-02-07T22:59:33.951088,user1051@gmail.com,***,11,5.38,0,0,33,4,1,18,13,1,0,legitimate
+session_001052,2026-01-27T22:59:33.951088,user1052@company.com,***,30,2.53,0,0,32,4,1,20,8,1,0,legitimate
+session_001053,2026-01-11T22:59:33.951088,user1053@yahoo.com,***,12,14.33,0,0,41,4,0,18,16,1,0,legitimate
+session_001054,2026-01-12T22:59:33.951088,bot1054@automated.com,botpass2129,0,0.48,1,21,0,0,1,21,11,1,1,bot
+session_001055,2026-01-11T22:59:33.951088,user1055@outlook.com,***,25,13.99,0,0,29,2,0,20,8,1,0,legitimate
+session_001056,2026-02-05T22:59:33.951088,bot1056@automated.com,botpass7488,0,0.36,1,21,0,0,1,21,11,1,1,bot
+session_001057,2026-01-15T22:59:33.951088,user1057@outlook.com,***,21,5.2,0,0,36,8,1,20,11,1,0,legitimate
+session_001058,2026-01-26T22:59:33.951088,user1058@gmail.com,***,41,17.16,0,0,38,3,0,18,13,1,0,legitimate
+session_001059,2026-02-06T22:59:33.951088,user1059@outlook.com,***,45,6.69,0,0,39,7,1,20,14,1,0,legitimate
+session_001060,2026-01-25T22:59:33.951088,user1060@outlook.com,***,25,4.34,0,0,37,9,1,20,11,1,0,legitimate
+session_001061,2026-01-13T22:59:33.951088,user1061@yahoo.com,***,20,7.45,0,0,27,5,0,18,8,1,0,legitimate
+session_001062,2026-02-05T22:59:33.951088,user1062@gmail.com,***,30,7.25,0,0,32,7,0,18,10,1,0,legitimate
+session_001063,2026-01-13T22:59:33.951088,user1063@company.com,***,7,10.75,0,0,31,2,0,20,9,1,0,legitimate
+session_001064,2026-01-29T22:59:33.951088,user1064@yahoo.com,***,43,19.69,0,0,35,6,1,18,15,1,0,legitimate
+session_001065,2026-01-15T22:59:33.951088,user1065@company.com,***,23,18.44,0,0,30,4,0,20,10,1,0,legitimate
+session_001066,2026-02-05T22:59:33.951088,user1066@yahoo.com,***,17,11.13,0,0,31,7,1,18,12,1,0,legitimate
+session_001067,2026-01-20T22:59:33.951088,user1067@yahoo.com,***,36,18.42,0,0,31,10,0,18,8,1,0,legitimate
+session_001068,2026-01-24T22:59:33.951088,user1068@outlook.com,***,50,10.74,0,0,38,4,0,20,15,1,0,legitimate
+session_001069,2026-02-07T22:59:33.951088,user1069@gmail.com,***,30,8.0,0,0,37,3,0,18,16,1,0,legitimate
+session_001070,2026-01-09T22:59:33.951088,bot1070@automated.com,botpass9443,0,0.25,1,21,0,0,1,21,11,1,1,bot
+session_001071,2026-02-08T22:59:33.951088,user1071@yahoo.com,***,6,13.9,0,0,37,4,0,18,9,1,0,legitimate
+session_001072,2026-01-26T22:59:33.951088,test@test.com; rm -rf /,| cat /etc/passwd,1,0.34,0,0,25,2,1,23,17,1,1,command_injection
+session_001073,2026-02-06T22:59:33.951088,test@test.com`cat /etc/shadow`,&& whoami,1,0.61,0,0,14,0,1,30,9,1,1,command_injection
+session_001074,2026-01-18T22:59:33.951088,user1074@outlook.com,***,19,9.98,0,0,35,7,1,20,12,1,0,legitimate
+session_001075,2026-01-14T22:59:33.951088,<img src=x onerror=alert(1)>,test,0,0.92,0,0,28,0,1,28,4,1,1,xss
+session_001076,2026-02-02T22:59:33.951088,user1076@company.com,***,46,18.4,0,0,34,4,0,20,10,1,0,legitimate
+session_001077,2026-01-28T22:59:33.951088,user1077@gmail.com,***,42,19.68,0,0,29,8,0,18,11,1,0,legitimate
+session_001078,2026-01-19T22:59:33.951088,' OR 1=1--,admin,3,0.93,0,0,13,0,1,10,5,1,1,sql_injection
+session_001079,2026-02-03T22:59:33.951088,user1079@yahoo.com,***,33,19.53,0,0,27,6,1,18,8,1,0,legitimate
+session_001080,2026-01-22T22:59:33.951088,user1080@gmail.com,***,21,15.79,0,0,37,7,0,18,13,1,0,legitimate
+session_001081,2026-01-11T22:59:33.951088,bot1081@automated.com,botpass1888,0,0.47,1,21,0,0,1,21,11,1,1,bot
+session_001082,2026-01-20T22:59:33.951088,user1082@yahoo.com,***,28,11.76,0,0,28,10,0,18,9,1,0,legitimate
+session_001083,2026-01-19T22:59:33.951088,user1083@yahoo.com,***,33,12.88,0,0,30,2,1,18,12,1,0,legitimate
+session_001084,2026-02-08T22:59:33.951088,<img src=x onerror=alert(1)>,test,2,0.23,0,0,28,0,1,28,4,1,1,xss
+session_001085,2026-01-15T22:59:33.951088,admin,pass291,0,0.4,0,0,4,2,0,5,7,1,1,brute_force
+session_001086,2026-01-20T22:59:33.951088,user1086@outlook.com,***,38,9.59,0,0,39,6,1,20,11,1,0,legitimate
+session_001087,2026-02-03T22:59:33.951088,user1087@outlook.com,***,6,18.21,0,0,37,4,0,20,9,1,0,legitimate
+session_001088,2026-01-14T22:59:33.951088,..%2F..%2F..%2Fetc%2Fpasswd,test,0,0.49,0,0,27,0,1,27,4,1,1,path_traversal
+session_001089,2026-01-22T22:59:33.951088,....//....//....//etc/passwd,test,2,0.67,0,0,28,0,1,28,4,1,1,path_traversal
+session_001090,2026-02-08T22:59:33.951088,user1090@gmail.com,***,33,7.92,0,0,32,9,0,18,10,1,0,legitimate
+session_001091,2026-01-23T22:59:33.951088,user1091@outlook.com,***,38,13.96,0,0,42,8,0,20,14,1,0,legitimate
+session_001092,2026-01-27T22:59:33.951088,user1092@gmail.com,***,18,13.74,0,0,42,2,0,18,14,1,0,legitimate
+session_001093,2026-01-29T22:59:33.951088,user1093@gmail.com,***,47,6.78,0,0,27,5,0,18,9,1,0,legitimate
+session_001094,2026-02-01T22:59:33.951088,user1094@outlook.com,***,9,14.88,0,0,41,8,0,20,13,1,0,legitimate
+session_001095,2026-01-21T22:59:33.951088,user1095@company.com,***,42,15.4,0,0,46,9,1,20,16,1,0,legitimate
+session_001096,2026-02-06T22:59:33.951088,user1096@yahoo.com,***,41,11.98,0,0,33,2,0,18,15,1,0,legitimate
+session_001097,2026-01-29T22:59:33.951088,admin' UNION SELECT,,2,0.74,1,19,18,2,1,19,0,1,1,sql_injection
+session_001098,2026-02-06T22:59:33.951088,<input onfocus=alert(1) autofocus>,pass,1,0.34,0,0,34,1,1,34,4,1,1,xss
+session_001099,2026-01-11T22:59:33.951088,user1099@outlook.com,***,46,11.91,0,0,36,2,0,20,16,1,0,legitimate
+session_001100,2026-01-19T22:59:33.952076,user1100@outlook.com,***,23,17.47,0,0,33,10,0,20,11,1,0,legitimate
+session_001101,2026-01-11T22:59:33.952076,user1101@yahoo.com,***,24,14.54,0,0,35,2,0,18,11,1,0,legitimate
+session_001102,2026-01-29T22:59:33.952076,user1102@outlook.com,***,6,2.2,0,0,41,4,0,20,13,1,0,legitimate
+session_001103,2026-02-01T22:59:33.952076,user1103@yahoo.com,***,16,3.29,0,0,37,2,0,18,16,1,0,legitimate
+session_001104,2026-01-15T22:59:33.952076,1' AND '1'='1,123,3,1.29,0,0,7,0,0,13,3,1,1,sql_injection
+session_001105,2026-01-28T22:59:33.952076,user1105@outlook.com,***,27,17.57,0,0,32,2,0,20,9,1,0,legitimate
+session_001106,2026-01-10T22:59:33.952076,user1106@company.com,***,33,9.48,0,0,38,7,1,20,13,1,0,legitimate
+session_001107,2026-01-30T22:59:33.952076,user1107@yahoo.com,***,25,17.26,0,0,33,8,0,18,14,1,0,legitimate
+session_001108,2026-01-20T22:59:33.952076,<iframe src=javascript:alert(1)>,,1,0.96,0,0,32,1,1,32,0,1,1,xss
+session_001109,2026-02-06T22:59:33.952076,user1109@gmail.com,***,40,13.46,0,0,37,3,0,18,12,1,0,legitimate
+session_001110,2026-02-06T22:59:33.952076,root,pass767,0,0.94,0,0,4,1,0,4,7,1,1,brute_force
+session_001111,2026-02-02T22:59:33.952076,' OR 1=1--,123,1,1.18,0,0,19,2,1,10,3,1,1,sql_injection
+session_001112,2026-02-02T22:59:33.952076,user1112@yahoo.com,***,21,10.83,0,0,28,4,0,18,10,1,0,legitimate
+session_001113,2026-02-05T22:59:33.952076,user1113@gmail.com,***,14,2.94,0,0,29,4,1,18,9,1,0,legitimate
+session_001114,2026-01-16T22:59:33.952076,user1114@yahoo.com,***,44,16.2,0,0,40,6,1,18,12,1,0,legitimate
+session_001115,2026-01-29T22:59:33.952076,user1115@yahoo.com,***,10,4.24,0,0,31,7,0,18,11,1,0,legitimate
+session_001116,2026-01-20T22:59:33.952076,root,pass901,1,0.96,0,0,8,0,0,4,7,1,1,brute_force
+session_001117,2026-02-04T22:59:33.952076,user1117@company.com,***,32,12.79,0,0,41,2,0,20,11,1,0,legitimate
+session_001118,2026-01-11T22:59:33.952076,admin,pass471,1,1.0,0,0,4,2,0,5,7,1,1,brute_force
+session_001119,2026-01-09T22:59:33.952076,user1119@outlook.com,***,46,7.52,0,0,29,7,0,20,9,1,0,legitimate
+session_001120,2026-01-27T22:59:33.952076,administrator,pass12,0,0.56,0,0,3,0,0,13,6,1,1,brute_force
+session_001121,2026-02-02T22:59:33.952076,admin,pass976,1,0.58,0,0,8,1,0,5,7,1,1,brute_force
+session_001122,2026-02-04T22:59:33.952076,user1122@gmail.com,***,45,12.15,0,0,38,8,0,18,11,1,0,legitimate
+session_001123,2026-01-24T22:59:33.952076,user1123@outlook.com,***,38,15.14,0,0,42,2,0,20,14,1,0,legitimate
+session_001124,2026-01-22T22:59:33.952076,user1124@company.com,***,30,10.54,0,0,36,3,0,20,9,1,0,legitimate
+session_001125,2026-02-05T22:59:33.952076,1' AND '1'='1,,1,0.49,1,13,8,2,1,13,0,1,1,sql_injection
+session_001126,2026-01-31T22:59:33.952076,user1126@company.com,***,38,9.44,0,0,30,4,0,20,10,1,0,legitimate
+session_001127,2026-01-14T22:59:33.952076,user1127@company.com,***,36,14.54,0,0,38,2,0,20,9,1,0,legitimate
+session_001128,2026-01-19T22:59:33.952076,user1128@company.com,***,45,11.26,0,0,42,8,0,20,16,1,0,legitimate
+session_001129,2026-01-23T22:59:33.952076,bot1129@automated.com,botpass2010,0,0.36,1,21,0,0,1,21,11,1,1,bot
+session_001130,2026-01-12T22:59:33.952076,user1130@company.com,***,28,18.57,0,0,28,6,0,20,8,1,0,legitimate
+session_001131,2026-02-04T22:59:33.952076,user1131@yahoo.com,***,44,10.42,0,0,34,3,1,18,9,1,0,legitimate
+session_001132,2026-01-31T22:59:33.952076,user1132@outlook.com,***,34,8.93,0,0,44,4,0,20,15,1,0,legitimate
+session_001133,2026-01-26T22:59:33.952076,user1133@outlook.com,***,23,4.09,0,0,41,2,1,20,12,1,0,legitimate
+session_001134,2026-01-23T22:59:33.952076,<input onfocus=alert(1) autofocus>,pass,1,0.35,0,0,34,1,1,34,4,1,1,xss
+session_001135,2026-02-08T22:59:33.952076,user1135@gmail.com,***,14,15.55,0,0,36,9,0,18,15,1,0,legitimate
+session_001136,2026-01-15T22:59:33.952076,user1136@gmail.com,***,33,17.89,0,0,35,10,1,18,9,1,0,legitimate
+session_001137,2026-02-01T22:59:33.952076,<iframe src=javascript:alert(1)>,,1,0.31,0,0,32,1,1,32,0,1,1,xss
+session_001138,2026-01-11T22:59:33.952076,root,pass217,0,0.67,0,0,9,1,0,4,7,1,1,brute_force
+session_001139,2026-01-21T22:59:33.952076,..%2F..%2F..%2Fetc%2Fpasswd,test,2,0.89,0,0,27,1,1,27,4,1,1,path_traversal
+session_001140,2026-01-14T22:59:33.952076,user1140@gmail.com,***,23,12.87,0,0,38,4,1,18,16,1,0,legitimate
+session_001141,2026-01-14T22:59:33.952076,user1141@yahoo.com,***,24,19.52,0,0,32,2,0,18,13,1,0,legitimate
+session_001142,2026-01-17T22:59:33.952076,user1142@outlook.com,***,34,13.34,0,0,38,3,0,20,9,1,0,legitimate
+session_001143,2026-01-22T22:59:33.952076,user1143@company.com,***,19,2.17,0,0,40,5,0,20,12,1,0,legitimate
+session_001144,2026-01-16T22:59:33.952076,user1144@yahoo.com,***,24,19.43,0,0,35,5,0,18,12,1,0,legitimate
+session_001145,2026-02-02T22:59:33.952076,user1145@outlook.com,***,41,3.79,0,0,38,3,0,20,13,1,0,legitimate
+session_001146,2026-02-02T22:59:33.952076,admin,pass563,0,0.85,0,0,5,1,0,5,7,1,1,brute_force
+session_001147,2026-01-16T22:59:33.952076,user1147@outlook.com,***,50,10.32,0,0,34,3,0,20,12,1,0,legitimate
+session_001148,2026-01-14T22:59:33.952076,user1148@yahoo.com,***,30,4.0,0,0,31,6,0,18,13,1,0,legitimate
+session_001149,2026-01-09T22:59:33.952076,user1149@outlook.com,***,34,8.11,0,0,41,4,0,20,16,1,0,legitimate
+session_001150,2026-02-08T22:59:33.952076,user1150@outlook.com,***,42,4.52,0,0,36,4,0,20,10,1,0,legitimate
+session_001151,2026-02-07T22:59:33.952076,user1151@yahoo.com,***,11,13.12,0,0,36,7,0,18,15,1,0,legitimate
+session_001152,2026-01-26T22:59:33.952076,user1152@gmail.com,***,8,15.38,0,0,35,3,1,18,8,1,0,legitimate
+session_001153,2026-02-02T22:59:33.952076,test@test.com| cat /etc/passwd,; rm -rf /,2,0.59,0,0,22,0,1,30,10,1,1,command_injection
+session_001154,2026-01-19T22:59:33.952076,user1154@company.com,***,48,12.95,0,0,32,10,0,20,10,1,0,legitimate
+session_001155,2026-01-24T22:59:33.952076,<input onfocus=alert(1) autofocus>,pass,1,0.9,0,0,34,1,1,34,4,1,1,xss
+session_001156,2026-01-29T22:59:33.952076,user1156@yahoo.com,***,43,6.33,0,0,30,7,0,18,9,1,0,legitimate
+session_001157,2026-02-07T22:59:33.952076,administrator,pass527,1,0.58,0,0,8,1,0,13,7,1,1,brute_force
+session_001158,2026-01-31T22:59:33.952076,user1158@outlook.com,***,12,3.0,0,0,37,9,0,20,9,1,0,legitimate
+session_001159,2026-01-18T22:59:33.952076,user1159@yahoo.com,***,19,10.53,0,0,31,8,1,18,11,1,0,legitimate
+session_001160,2026-01-25T22:59:33.952076,admin' UNION SELECT,test,2,1.1,1,19,14,1,0,19,4,1,1,sql_injection
+session_001161,2026-01-14T22:59:33.952076,../../../etc/passwd,test,1,0.59,0,0,19,0,1,19,4,1,1,path_traversal
+session_001162,2026-01-09T22:59:33.952076,javascript:alert(1),,1,0.39,0,0,19,1,1,19,0,1,1,xss
+session_001163,2026-02-01T22:59:33.952076,user1163@outlook.com,***,39,3.44,0,0,39,2,0,20,15,1,0,legitimate
+session_001164,2026-01-14T22:59:33.952076,<script>alert('XSS')</script>,,0,0.24,0,0,29,1,1,29,0,1,1,xss
+session_001165,2026-01-10T22:59:33.952076,user1165@yahoo.com,***,42,5.72,0,0,41,4,0,18,15,1,0,legitimate
+session_001166,2026-02-08T22:59:33.952076,user1166@yahoo.com,***,29,18.3,0,0,35,2,1,18,9,1,0,legitimate
+session_001167,2026-01-29T22:59:33.952076,test@test.com; ls -la,; ls -la,1,0.55,0,0,24,2,1,21,8,1,1,command_injection
+session_001168,2026-02-01T22:59:33.952076,admin' OR '1'='1'--,123,1,1.19,0,0,20,0,0,19,3,1,1,sql_injection
+session_001169,2026-01-23T22:59:33.952076,user1169@company.com,***,18,7.11,0,0,31,7,1,20,11,1,0,legitimate
+session_001170,2026-02-02T22:59:33.952076,..%2F..%2F..%2Fetc%2Fpasswd,test,0,0.98,0,0,27,0,1,27,4,1,1,path_traversal
+session_001171,2026-01-12T22:59:33.952076,user1171@company.com,***,39,8.05,0,0,41,6,0,20,13,1,0,legitimate
+session_001172,2026-02-03T22:59:33.952076,user1172@outlook.com,***,28,17.33,0,0,38,2,1,20,13,1,0,legitimate
+session_001173,2026-01-30T22:59:33.952076,user1173@gmail.com,***,38,10.08,0,0,39,2,0,18,12,1,0,legitimate
+session_001174,2026-01-27T22:59:33.952076,root,pass432,1,0.64,0,0,8,0,0,4,7,1,1,brute_force
+session_001175,2026-01-26T22:59:33.952076,user1175@company.com,***,45,12.01,0,0,30,8,0,20,8,1,0,legitimate
+session_001176,2026-01-29T22:59:33.952076,'; DROP TABLE users--,,1,0.37,1,21,14,0,1,21,0,1,1,sql_injection
+session_001177,2026-01-15T22:59:33.952076,user1177@yahoo.com,***,32,14.59,0,0,28,6,0,18,8,1,0,legitimate
+session_001178,2026-01-31T22:59:33.952076,user1178@company.com,***,23,13.64,0,0,29,9,0,20,8,1,0,legitimate
+session_001179,2026-01-31T22:59:33.952076,user1179@yahoo.com,***,18,12.81,0,0,39,8,0,18,12,1,0,legitimate
+session_001180,2026-01-15T22:59:33.952076,test@test.com| nc -e /bin/sh,| cat /etc/passwd,2,0.15,0,0,15,2,1,28,17,1,1,command_injection
+session_001181,2026-01-18T22:59:33.952076,user1181@gmail.com,***,46,12.2,0,0,32,7,1,18,14,1,0,legitimate
+session_001182,2026-02-01T22:59:33.952076,user1182@company.com,***,24,7.63,0,0,41,3,0,20,16,1,0,legitimate
+session_001183,2026-01-27T22:59:33.952076,root,pass192,1,0.55,0,0,8,0,0,4,7,1,1,brute_force
+session_001184,2026-01-24T22:59:33.952076,test@test.com`cat /etc/shadow`,`cat /etc/shadow`,1,0.63,0,0,15,2,1,30,17,1,1,command_injection
+session_001185,2026-02-01T22:59:33.952076,'; DROP TABLE users--,,2,1.19,1,21,18,0,0,21,0,1,1,sql_injection
+session_001186,2026-01-26T22:59:33.952076,..%2F..%2F..%2Fetc%2Fpasswd,test,0,0.2,0,0,27,0,1,27,4,1,1,path_traversal
+session_001187,2026-01-14T22:59:33.952076,user1187@gmail.com,***,8,14.77,0,0,39,3,1,18,11,1,0,legitimate
+session_001188,2026-01-19T22:59:33.952076,user1188@yahoo.com,***,32,14.15,0,0,34,10,0,18,8,1,0,legitimate
+session_001189,2026-01-31T22:59:33.952076,user1189@outlook.com,***,30,2.93,0,0,42,9,0,20,12,1,0,legitimate
+session_001190,2026-02-06T22:59:33.952076,user1190@yahoo.com,***,5,15.3,0,0,26,4,0,18,8,1,0,legitimate
+session_001191,2026-01-31T22:59:33.952076,user1191@company.com,***,25,10.93,0,0,32,2,0,20,10,1,0,legitimate
+session_001192,2026-02-08T22:59:33.952076,user1192@company.com,***,44,2.35,0,0,33,3,0,20,8,1,0,legitimate
+session_001193,2026-01-27T22:59:33.952076,user1193@company.com,***,38,2.42,0,0,36,7,0,20,16,1,0,legitimate
+session_001194,2026-02-05T22:59:33.952076,....//....//....//etc/passwd,test,1,0.68,0,0,28,0,1,28,4,1,1,path_traversal
+session_001195,2026-02-02T22:59:33.952076,user1195@outlook.com,***,42,13.47,0,0,39,8,0,20,13,1,0,legitimate
+session_001196,2026-01-15T22:59:33.952076,user1196@outlook.com,***,10,19.66,0,0,35,2,0,20,9,1,0,legitimate
+session_001197,2026-01-28T22:59:33.952076,..%2F..%2F..%2Fetc%2Fpasswd,test,0,0.69,0,0,27,0,1,27,4,1,1,path_traversal
+session_001198,2026-01-19T22:59:33.952076,user1198@company.com,***,33,4.02,0,0,37,10,0,20,13,1,0,legitimate
+session_001199,2026-01-14T22:59:33.952076,<iframe src=javascript:alert(1)>,pass,0,0.59,0,0,32,1,1,32,4,1,1,xss
+session_001200,2026-02-05T22:59:33.952076,user1200@yahoo.com,***,8,16.85,0,0,39,9,0,18,15,1,0,legitimate
+session_001201,2026-01-17T22:59:33.952076,user1201@yahoo.com,***,37,9.82,0,0,39,10,0,18,16,1,0,legitimate
+session_001202,2026-01-10T22:59:33.952076,user1202@company.com,***,27,19.62,0,0,36,5,0,20,8,1,0,legitimate
+session_001203,2026-01-30T22:59:33.952076,user1203@gmail.com,***,12,13.78,0,0,38,8,1,18,12,1,0,legitimate
+session_001204,2026-01-18T22:59:33.952076,<img src=x onerror=alert(1)>,test,1,0.75,0,0,28,1,1,28,4,1,1,xss
+session_001205,2026-01-28T22:59:33.952076,user1205@company.com,***,20,15.49,0,0,34,2,1,20,10,1,0,legitimate
+session_001206,2026-01-18T22:59:33.952076,administrator,pass280,1,0.92,0,0,10,1,0,13,7,1,1,brute_force
+session_001207,2026-01-28T22:59:33.952076,admin,pass426,0,0.77,0,0,8,2,0,5,7,1,1,brute_force
+session_001208,2026-02-06T22:59:33.952076,<svg onload=alert(1)>,,0,0.59,0,0,21,1,1,21,0,1,1,xss
+session_001209,2026-01-31T22:59:33.952076,user1209@yahoo.com,***,20,3.13,0,0,43,9,1,18,16,1,0,legitimate
+session_001210,2026-01-15T22:59:33.952076,user1210@yahoo.com,***,35,17.49,0,0,35,10,0,18,9,1,0,legitimate
+session_001211,2026-01-17T22:59:33.952076,user1211@outlook.com,***,47,5.8,0,0,38,7,0,20,11,1,0,legitimate
+session_001212,2026-01-13T22:59:33.952076,user1212@gmail.com,***,34,3.07,0,0,38,7,1,18,11,1,0,legitimate
+session_001213,2026-01-31T22:59:33.952076,....//....//....//etc/passwd,test,2,0.94,0,0,28,1,1,28,4,1,1,path_traversal
+session_001214,2026-01-30T22:59:33.952076,user1214@company.com,***,38,4.83,0,0,39,7,1,20,14,1,0,legitimate
+session_001215,2026-01-20T22:59:33.952076,user1215@gmail.com,***,11,8.77,0,0,38,8,0,18,11,1,0,legitimate
+session_001216,2026-02-05T22:59:33.952076,user1216@outlook.com,***,10,4.11,0,0,44,5,0,20,14,1,0,legitimate
+session_001217,2026-01-09T22:59:33.952076,user1217@outlook.com,***,41,6.86,0,0,36,5,0,20,14,1,0,legitimate
+session_001218,2026-01-26T22:59:33.952076,user1218@company.com,***,23,9.95,0,0,28,6,1,20,8,1,0,legitimate
+session_001219,2026-01-12T22:59:33.952076,..\..\..\windows\system32,test,1,0.88,0,0,25,1,1,25,4,1,1,path_traversal
+session_001220,2026-02-08T22:59:33.953074,user1220@outlook.com,***,34,6.62,0,0,31,3,0,20,11,1,0,legitimate
+session_001221,2026-01-21T22:59:33.953074,admin' OR '1'='1,123,2,0.68,0,0,7,0,0,16,3,1,1,sql_injection
+session_001222,2026-01-16T22:59:33.953074,user1222@gmail.com,***,33,9.48,0,0,32,2,0,18,10,1,0,legitimate
+session_001223,2026-02-04T22:59:33.953074,user1223@gmail.com,***,11,12.28,0,0,37,6,0,18,14,1,0,legitimate
+session_001224,2026-01-23T22:59:33.953074,user1224@company.com,***,25,6.48,0,0,43,7,0,20,13,1,0,legitimate
+session_001225,2026-01-16T22:59:33.953074,user1225@gmail.com,***,6,18.4,0,0,29,7,0,18,9,1,0,legitimate
+session_001226,2026-01-30T22:59:33.953074,..%2F..%2F..%2Fetc%2Fpasswd,test,0,0.24,0,0,27,0,1,27,4,1,1,path_traversal
+session_001227,2026-01-13T22:59:33.953074,user1227@gmail.com,***,21,18.69,0,0,34,8,0,18,14,1,0,legitimate
+session_001228,2026-01-28T22:59:33.953074,user1228@company.com,***,24,13.15,0,0,37,2,0,20,13,1,0,legitimate
+session_001229,2026-02-03T22:59:33.953074,user1229@yahoo.com,***,45,10.48,0,0,34,10,1,18,10,1,0,legitimate
+session_001230,2026-01-09T22:59:33.953074,user1230@outlook.com,***,19,19.64,0,0,37,2,0,20,9,1,0,legitimate
+session_001231,2026-01-29T22:59:33.953074,user1231@gmail.com,***,40,12.77,0,0,36,8,0,18,13,1,0,legitimate
+session_001232,2026-01-18T22:59:33.953074,user1232@company.com,***,19,4.48,0,0,35,3,0,20,9,1,0,legitimate
+session_001233,2026-01-28T22:59:33.953074,user1233@gmail.com,***,39,3.99,0,0,35,7,0,18,8,1,0,legitimate
+session_001234,2026-01-31T22:59:33.953074,user1234@yahoo.com,***,13,14.59,0,0,37,4,0,18,11,1,0,legitimate
+session_001235,2026-01-10T22:59:33.953074,user1235@yahoo.com,***,38,13.76,0,0,35,10,0,18,14,1,0,legitimate
+session_001236,2026-01-26T22:59:33.953074,user1236@yahoo.com,***,24,5.26,0,0,29,5,0,18,10,1,0,legitimate
+session_001237,2026-02-07T22:59:33.953074,user1237@yahoo.com,***,9,10.91,0,0,36,4,1,18,12,1,0,legitimate
+session_001238,2026-01-14T22:59:33.953074,admin'/*,admin,0,0.5,0,0,18,2,0,8,5,1,1,sql_injection
+session_001239,2026-01-21T22:59:33.953074,test@test.com| cat /etc/passwd,; rm -rf /,0,0.28,0,0,19,2,1,30,10,1,1,command_injection
+session_001240,2026-01-11T22:59:33.953074,user1240@gmail.com,***,32,3.28,0,0,30,7,1,18,9,1,0,legitimate
+session_001241,2026-01-23T22:59:33.953074,user1241@outlook.com,***,12,6.46,0,0,36,5,1,20,11,1,0,legitimate
+session_001242,2026-02-02T22:59:33.953074,user1242@outlook.com,***,10,13.89,0,0,38,4,0,20,10,1,0,legitimate
+session_001243,2026-02-04T22:59:33.953074,user1243@company.com,***,18,17.74,0,0,37,5,0,20,10,1,0,legitimate
+session_001244,2026-01-15T22:59:33.953074,bot1244@automated.com,botpass8100,0,0.2,1,21,0,0,1,21,11,1,1,bot
+session_001245,2026-01-09T22:59:33.953074,user1245@outlook.com,***,10,12.76,0,0,45,4,0,20,15,1,0,legitimate
+session_001246,2026-01-28T22:59:33.953074,..%2F..%2F..%2Fetc%2Fpasswd,test,2,0.66,0,0,27,1,1,27,4,1,1,path_traversal
+session_001247,2026-02-06T22:59:33.953074,user1247@company.com,***,20,19.25,0,0,35,3,0,20,12,1,0,legitimate
+session_001248,2026-01-21T22:59:33.953074,<input onfocus=alert(1) autofocus>,test,1,0.73,0,0,34,1,1,34,4,1,1,xss
+session_001249,2026-01-30T22:59:33.953074,user1249@outlook.com,***,42,6.26,0,0,41,3,0,20,15,1,0,legitimate
+session_001250,2026-01-19T22:59:33.953074,bot1250@automated.com,botpass6096,0,0.28,1,21,0,0,1,21,11,1,1,bot
+session_001251,2026-01-29T22:59:33.953074,user1251@outlook.com,***,40,15.78,0,0,45,7,0,20,16,1,0,legitimate
+session_001252,2026-01-09T22:59:33.953074,admin,pass88,0,0.72,0,0,5,2,0,5,6,1,1,brute_force
+session_001253,2026-01-24T22:59:33.953074,user1253@yahoo.com,***,39,19.21,0,0,35,5,0,18,10,1,0,legitimate
+session_001254,2026-02-01T22:59:33.953074,....//....//....//etc/passwd,test,1,0.31,0,0,28,1,1,28,4,1,1,path_traversal
+session_001255,2026-01-24T22:59:33.953074,test@test.com| cat /etc/passwd,; rm -rf /,2,0.45,0,0,13,2,1,30,10,1,1,command_injection
+session_001256,2026-02-08T22:59:33.953074,user1256@gmail.com,***,22,9.27,0,0,33,8,1,18,15,1,0,legitimate
+session_001257,2026-01-30T22:59:33.953074,user1257@company.com,***,19,6.51,0,0,33,8,0,20,8,1,0,legitimate
+session_001258,2026-01-21T22:59:33.953074,user1258@gmail.com,***,13,9.38,0,0,31,8,0,18,11,1,0,legitimate
+session_001259,2026-01-12T22:59:33.953074,user1259@outlook.com,***,44,18.69,0,0,34,6,0,20,11,1,0,legitimate
+session_001260,2026-01-14T22:59:33.953074,..\..\..\windows\system32,test,1,1.19,0,0,25,1,1,25,4,1,1,path_traversal
+session_001261,2026-02-05T22:59:33.953074,user1261@outlook.com,***,12,16.68,0,0,32,9,0,20,11,1,0,legitimate
+session_001262,2026-01-29T22:59:33.953074,user1262@gmail.com,***,48,2.75,0,0,34,7,0,18,16,1,0,legitimate
+session_001263,2026-02-01T22:59:33.953074,user1263@gmail.com,***,50,6.37,0,0,31,8,1,18,9,1,0,legitimate
+session_001264,2026-02-05T22:59:33.953074,<script>alert('XSS')</script>,pass,2,0.62,0,0,29,1,1,29,4,1,1,xss
+session_001265,2026-01-25T22:59:33.953074,' OR 'a'='a,test,1,0.19,1,11,9,1,0,11,4,1,1,sql_injection
+session_001266,2026-01-29T22:59:33.953074,user1266@gmail.com,***,32,6.76,0,0,44,3,0,18,16,1,0,legitimate
+session_001267,2026-02-04T22:59:33.953074,..\..\..\windows\system32,test,1,0.35,0,0,25,1,1,25,4,1,1,path_traversal
+session_001268,2026-01-17T22:59:33.953074,user1268@company.com,***,21,17.53,0,0,39,3,1,20,15,1,0,legitimate
+session_001269,2026-02-08T22:59:33.953074,admin'--,,3,0.24,1,8,5,1,1,8,0,1,1,sql_injection
+session_001270,2026-01-22T22:59:33.953074,user1270@yahoo.com,***,6,3.15,0,0,34,7,1,18,14,1,0,legitimate
+session_001271,2026-02-01T22:59:33.953074,user1271@yahoo.com,***,24,10.68,0,0,38,6,0,18,14,1,0,legitimate
+session_001272,2026-01-14T22:59:33.953074,<body onload=alert('XSS')>,,0,0.36,0,0,26,1,1,26,0,1,1,xss
+session_001273,2026-01-30T22:59:33.953074,user1273@outlook.com,***,36,5.78,0,0,36,9,0,20,15,1,0,legitimate
+session_001274,2026-01-30T22:59:33.953074,user1274@gmail.com,***,6,3.88,0,0,29,5,0,18,11,1,0,legitimate
+session_001275,2026-01-23T22:59:33.953074,user1275@gmail.com,***,28,12.78,0,0,38,8,1,18,16,1,0,legitimate
+session_001276,2026-02-08T22:59:33.953074,user1276@outlook.com,***,29,6.14,0,0,36,6,0,20,15,1,0,legitimate
+session_001277,2026-01-19T22:59:33.953074,user1277@yahoo.com,***,45,10.68,0,0,35,5,1,18,8,1,0,legitimate
+session_001278,2026-01-24T22:59:33.953074,..%2F..%2F..%2Fetc%2Fpasswd,test,0,0.37,0,0,27,1,1,27,4,1,1,path_traversal
+session_001279,2026-02-03T22:59:33.953074,user1279@yahoo.com,***,43,12.17,0,0,34,10,0,18,16,1,0,legitimate
+session_001280,2026-01-26T22:59:33.953074,user1280@yahoo.com,***,21,8.32,0,0,39,5,1,18,14,1,0,legitimate
+session_001281,2026-01-19T22:59:33.953074,../../../etc/passwd,test,2,0.87,0,0,19,0,1,19,4,1,1,path_traversal
+session_001282,2026-01-14T22:59:33.953074,user1282@gmail.com,***,50,18.78,0,0,28,2,0,18,9,1,0,legitimate
+session_001283,2026-01-15T22:59:33.953074,user1283@gmail.com,***,26,15.91,0,0,40,9,1,18,15,1,0,legitimate
+session_001284,2026-01-20T22:59:33.953074,user1284@company.com,***,40,5.01,0,0,41,10,1,20,13,1,0,legitimate
+session_001285,2026-01-20T22:59:33.953074,user1285@company.com,***,45,3.58,0,0,44,2,0,20,14,1,0,legitimate
+session_001286,2026-01-10T22:59:33.953074,user1286@outlook.com,***,6,14.8,0,0,40,10,0,20,12,1,0,legitimate
+session_001287,2026-02-01T22:59:33.953074,user1287@outlook.com,***,21,7.38,0,0,36,6,1,20,16,1,0,legitimate
+session_001288,2026-02-03T22:59:33.953074,user1288@gmail.com,***,37,5.25,0,0,33,7,1,18,13,1,0,legitimate
+session_001289,2026-01-15T22:59:33.953074,user1289@outlook.com,***,48,8.56,0,0,31,3,0,20,8,1,0,legitimate
+session_001290,2026-01-29T22:59:33.953074,user1290@outlook.com,***,44,11.54,0,0,42,3,0,20,14,1,0,legitimate
+session_001291,2026-01-12T22:59:33.953074,user1291@outlook.com,***,35,6.23,0,0,31,4,0,20,11,1,0,legitimate
+session_001292,2026-01-26T22:59:33.953074,..%2F..%2F..%2Fetc%2Fpasswd,test,0,0.52,0,0,27,0,1,27,4,1,1,path_traversal
+session_001293,2026-02-01T22:59:33.953074,user1293@company.com,***,38,9.19,0,0,31,10,0,20,9,1,0,legitimate
+session_001294,2026-01-13T22:59:33.953074,user1294@gmail.com,***,40,16.78,0,0,32,3,0,18,8,1,0,legitimate
+session_001295,2026-02-03T22:59:33.953074,<iframe src=javascript:alert(1)>,pass,0,0.81,0,0,32,0,1,32,4,1,1,xss
+session_001296,2026-01-15T22:59:33.953074,user1296@company.com,***,47,19.88,0,0,34,4,0,20,11,1,0,legitimate
+session_001297,2026-02-07T22:59:33.953074,user1297@gmail.com,***,50,12.24,0,0,32,6,1,18,8,1,0,legitimate
+session_001298,2026-01-19T22:59:33.953074,user1298@yahoo.com,***,17,8.94,0,0,32,7,1,18,10,1,0,legitimate
+session_001299,2026-01-09T22:59:33.953074,bot1299@automated.com,botpass9131,0,0.24,1,21,0,0,1,21,11,1,1,bot
+session_001300,2026-02-03T22:59:33.953074,user1300@gmail.com,***,49,18.36,0,0,38,10,1,18,10,1,0,legitimate
+session_001301,2026-01-28T22:59:33.953074,user1301@gmail.com,***,31,19.8,0,0,33,2,0,18,8,1,0,legitimate
+session_001302,2026-02-08T22:59:33.953074,user1302@yahoo.com,***,46,16.32,0,0,35,2,0,18,8,1,0,legitimate
+session_001303,2026-01-24T22:59:33.953074,test,pass358,1,0.57,0,0,6,0,0,4,7,1,1,brute_force
+session_001304,2026-01-31T22:59:33.953074,user1304@company.com,***,45,18.99,0,0,37,10,0,20,15,1,0,legitimate
+session_001305,2026-01-12T22:59:33.953074,user1305@outlook.com,***,8,19.57,0,0,35,7,0,20,13,1,0,legitimate
+session_001306,2026-01-12T22:59:33.953074,user1306@company.com,***,10,12.01,0,0,41,6,0,20,13,1,0,legitimate
+session_001307,2026-01-28T22:59:33.953074,user1307@gmail.com,***,25,7.39,0,0,34,6,0,18,13,1,0,legitimate
+session_001308,2026-02-03T22:59:33.953074,user1308@outlook.com,***,42,6.11,0,0,39,2,0,20,16,1,0,legitimate
+session_001309,2026-01-31T22:59:33.953074,bot1309@automated.com,botpass3143,0,0.43,1,21,0,0,1,21,11,1,1,bot
+session_001310,2026-01-15T22:59:33.953074,administrator,pass589,1,0.62,0,0,10,2,0,13,7,1,1,brute_force
+session_001311,2026-01-19T22:59:33.953074,user1311@yahoo.com,***,28,18.26,0,0,31,2,1,18,13,1,0,legitimate
+session_001312,2026-02-06T22:59:33.953074,<input onfocus=alert(1) autofocus>,,1,0.32,0,0,34,1,1,34,0,1,1,xss
+session_001313,2026-01-10T22:59:33.953074,'; DROP TABLE users--,123,3,1.0,0,0,8,0,1,21,3,1,1,sql_injection
+session_001314,2026-01-25T22:59:33.953074,user1314@company.com,***,19,6.36,0,0,37,6,1,20,11,1,0,legitimate
+session_001315,2026-01-17T22:59:33.953074,user1315@outlook.com,***,49,10.45,0,0,36,7,0,20,10,1,0,legitimate
+session_001316,2026-02-05T22:59:33.953074,1' AND '1'='1,test,3,0.27,0,0,6,2,0,13,4,1,1,sql_injection
+session_001317,2026-01-14T22:59:33.953074,'; DROP TABLE users--,123,2,0.95,0,0,20,0,0,21,3,1,1,sql_injection
+session_001318,2026-01-11T22:59:33.953074,user1318@yahoo.com,***,32,8.54,0,0,42,3,1,18,16,1,0,legitimate
+session_001319,2026-02-01T22:59:33.953074,test@test.com; rm -rf /,`cat /etc/shadow`,1,0.12,0,0,18,0,1,23,17,1,1,command_injection
+session_001320,2026-01-15T22:59:33.953074,user1320@company.com,***,24,3.52,0,0,41,2,0,20,11,1,0,legitimate
+session_001321,2026-01-19T22:59:33.953074,test,pass626,1,0.78,0,0,7,1,0,4,7,1,1,brute_force
+session_001322,2026-01-28T22:59:33.953074,user1322@outlook.com,***,34,8.93,0,0,34,9,0,20,13,1,0,legitimate
+session_001323,2026-02-02T22:59:33.953074,administrator,pass216,1,0.89,0,0,7,0,0,13,7,1,1,brute_force
+session_001324,2026-01-19T22:59:33.953074,1' AND '1'='1,123,3,0.89,1,13,18,2,0,13,3,1,1,sql_injection
+session_001325,2026-01-30T22:59:33.953074,user1325@outlook.com,***,30,8.06,0,0,36,2,0,20,11,1,0,legitimate
+session_001326,2026-01-10T22:59:33.953074,..\..\..\windows\system32,test,2,0.76,0,0,25,0,1,25,4,1,1,path_traversal
+session_001327,2026-01-09T22:59:33.953074,admin' OR '1'='1'--,test,2,0.6,0,0,16,1,1,19,4,1,1,sql_injection
+session_001328,2026-02-01T22:59:33.953074,..%2F..%2F..%2Fetc%2Fpasswd,test,1,0.93,0,0,27,0,1,27,4,1,1,path_traversal
+session_001329,2026-01-12T22:59:33.953074,user1329@gmail.com,***,50,13.17,0,0,31,4,0,18,9,1,0,legitimate
+session_001330,2026-02-01T22:59:33.953074,user1330@yahoo.com,***,13,15.51,0,0,36,8,0,18,8,1,0,legitimate
+session_001331,2026-02-06T22:59:33.953074,test@test.com`cat /etc/shadow`,`cat /etc/shadow`,2,0.1,0,0,20,2,1,30,17,1,1,command_injection
+session_001332,2026-01-20T22:59:33.953074,<iframe src=javascript:alert(1)>,,2,0.8,0,0,32,0,1,32,0,1,1,xss
+session_001333,2026-01-19T22:59:33.953074,user1333@gmail.com,***,47,5.82,0,0,35,6,0,18,13,1,0,legitimate
+session_001334,2026-02-07T22:59:33.953074,user1334@outlook.com,***,40,3.21,0,0,40,6,0,20,14,1,0,legitimate
+session_001335,2026-01-15T22:59:33.953074,user1335@outlook.com,***,6,18.59,0,0,33,6,0,20,11,1,0,legitimate
+session_001336,2026-01-18T22:59:33.953074,user1336@gmail.com,***,35,16.17,0,0,39,4,0,18,16,1,0,legitimate
+session_001337,2026-01-14T22:59:33.953074,administrator,pass588,1,0.42,0,0,4,0,0,13,7,1,1,brute_force
+session_001338,2026-01-11T22:59:33.954068,user1338@company.com,***,42,12.18,0,0,28,10,0,20,8,1,0,legitimate
+session_001339,2026-01-09T22:59:33.954068,user1339@gmail.com,***,49,19.6,0,0,42,8,0,18,16,1,0,legitimate
+session_001340,2026-01-15T22:59:33.954068,user1340@outlook.com,***,29,13.71,0,0,36,8,0,20,14,1,0,legitimate
+session_001341,2026-01-28T22:59:33.954068,user1341@outlook.com,***,50,13.57,0,0,30,6,1,20,8,1,0,legitimate
+session_001342,2026-01-13T22:59:33.954068,user1342@gmail.com,***,21,18.67,0,0,34,5,0,18,15,1,0,legitimate
+session_001343,2026-01-25T22:59:33.954068,<input onfocus=alert(1) autofocus>,pass,2,0.51,0,0,34,1,1,34,4,1,1,xss
+session_001344,2026-01-20T22:59:33.954068,user1344@company.com,***,17,15.88,0,0,35,5,0,20,10,1,0,legitimate
+session_001345,2026-01-30T22:59:33.954068,user1345@yahoo.com,***,49,4.88,0,0,36,8,0,18,13,1,0,legitimate
+session_001346,2026-01-30T22:59:33.954068,user1346@gmail.com,***,27,18.32,0,0,38,3,0,18,16,1,0,legitimate
+session_001347,2026-01-30T22:59:33.954068,admin' OR '1'='1'--,,2,0.93,0,0,14,2,0,19,0,1,1,sql_injection
+session_001348,2026-01-24T22:59:33.954068,user1348@company.com,***,19,9.24,0,0,40,3,0,20,14,1,0,legitimate
+session_001349,2026-01-17T22:59:33.954068,admin' OR '1'='1,,0,0.29,1,16,17,1,1,16,0,1,1,sql_injection
+session_001350,2026-01-30T22:59:33.954068,user1350@yahoo.com,***,45,15.89,0,0,34,3,0,18,15,1,0,legitimate
+session_001351,2026-02-03T22:59:33.954068,user1351@gmail.com,***,9,4.74,0,0,33,8,0,18,13,1,0,legitimate
+session_001352,2026-01-21T22:59:33.954068,admin'/*,123,2,1.2,0,0,18,0,0,8,3,1,1,sql_injection
+session_001353,2026-01-22T22:59:33.954068,user1353@company.com,***,29,8.1,0,0,34,4,0,20,11,1,0,legitimate
+session_001354,2026-01-09T22:59:33.954068,user1354@gmail.com,***,12,18.01,0,0,38,5,0,18,16,1,0,legitimate
+session_001355,2026-01-12T22:59:33.954068,user1355@company.com,***,10,3.41,0,0,41,10,0,20,16,1,0,legitimate
+session_001356,2026-02-04T22:59:33.954068,user1356@company.com,***,26,19.65,0,0,36,9,0,20,15,1,0,legitimate
+session_001357,2026-01-13T22:59:33.954068,user1357@company.com,***,26,7.91,0,0,36,5,0,20,15,1,0,legitimate
+session_001358,2026-01-16T22:59:33.954068,user1358@gmail.com,***,24,15.46,0,0,37,4,1,18,12,1,0,legitimate
+session_001359,2026-01-21T22:59:33.954068,bot1359@automated.com,botpass4714,0,0.22,1,21,0,0,1,21,11,1,1,bot
+session_001360,2026-01-19T22:59:33.954068,user1360@outlook.com,***,11,11.18,0,0,34,2,1,20,9,1,0,legitimate
+session_001361,2026-01-21T22:59:33.954068,user1361@company.com,***,43,17.38,0,0,34,8,0,20,10,1,0,legitimate
+session_001362,2026-01-22T22:59:33.954068,user1362@outlook.com,***,15,17.31,0,0,43,6,0,20,16,1,0,legitimate
+session_001363,2026-02-06T22:59:33.954068,user1363@company.com,***,21,2.72,0,0,36,7,0,20,14,1,0,legitimate
+session_001364,2026-02-08T22:59:33.954068,' OR 'a'='a,123,2,1.2,1,11,7,1,1,11,3,1,1,sql_injection
+session_001365,2026-02-02T22:59:33.954068,user1365@gmail.com,***,35,18.12,0,0,31,10,0,18,12,1,0,legitimate
+session_001366,2026-01-30T22:59:33.954068,user1366@outlook.com,***,32,12.26,0,0,32,5,0,20,10,1,0,legitimate
+session_001367,2026-02-02T22:59:33.954068,<iframe src=javascript:alert(1)>,,1,0.49,0,0,32,0,1,32,0,1,1,xss
+session_001368,2026-01-18T22:59:33.954068,user1368@yahoo.com,***,20,7.56,0,0,32,9,1,18,9,1,0,legitimate
+session_001369,2026-02-08T22:59:33.954068,user1369@company.com,***,31,6.51,0,0,36,7,0,20,11,1,0,legitimate
+session_001370,2026-01-24T22:59:33.954068,....//....//....//etc/passwd,test,1,0.97,0,0,28,1,1,28,4,1,1,path_traversal
+session_001371,2026-01-28T22:59:33.954068,user1371@company.com,***,31,8.1,0,0,40,7,0,20,14,1,0,legitimate
+session_001372,2026-01-20T22:59:33.954068,user1372@gmail.com,***,12,11.95,0,0,33,8,0,18,8,1,0,legitimate
+session_001373,2026-01-18T22:59:33.954068,user1373@company.com,***,45,17.59,0,0,43,10,0,20,15,1,0,legitimate
+session_001374,2026-01-19T22:59:33.954068,user1374@company.com,***,35,10.36,0,0,38,3,0,20,14,1,0,legitimate
+session_001375,2026-02-01T22:59:33.954068,user1375@company.com,***,8,19.6,0,0,39,7,0,20,10,1,0,legitimate
+session_001376,2026-01-17T22:59:33.954068,user1376@gmail.com,***,27,19.85,0,0,36,7,1,18,13,1,0,legitimate
+session_001377,2026-01-18T22:59:33.954068,root,pass339,0,0.79,0,0,10,2,0,4,7,1,1,brute_force
+session_001378,2026-02-03T22:59:33.954068,administrator,pass725,1,0.41,0,0,7,0,0,13,7,1,1,brute_force
+session_001379,2026-01-19T22:59:33.954068,user1379@gmail.com,***,45,20.0,0,0,37,7,0,18,14,1,0,legitimate
+session_001380,2026-01-24T22:59:33.954068,..\..\..\windows\system32,test,0,0.29,0,0,25,1,1,25,4,1,1,path_traversal
+session_001381,2026-02-01T22:59:33.954068,admin' UNION SELECT,test,0,0.28,0,0,9,0,1,19,4,1,1,sql_injection
+session_001382,2026-01-23T22:59:33.954068,1' AND '1'='1,123,0,1.2,0,0,11,0,0,13,3,1,1,sql_injection
+session_001383,2026-02-07T22:59:33.954068,user1383@company.com,***,25,19.76,0,0,39,4,0,20,10,1,0,legitimate
+session_001384,2026-02-01T22:59:33.954068,root,pass911,1,0.42,0,0,4,0,0,4,7,1,1,brute_force
+session_001385,2026-01-18T22:59:33.954068,test@test.com&& whoami,; rm -rf /,0,0.52,0,0,14,2,1,22,10,1,1,command_injection
+session_001386,2026-01-23T22:59:33.954068,user1386@yahoo.com,***,5,18.84,0,0,33,5,1,18,12,1,0,legitimate
+session_001387,2026-01-09T22:59:33.954068,user1387@company.com,***,19,15.22,0,0,36,6,1,20,8,1,0,legitimate
+session_001388,2026-01-16T22:59:33.954068,test@test.com| nc -e /bin/sh,&& whoami,1,0.62,0,0,15,2,1,28,9,1,1,command_injection
+session_001389,2026-02-05T22:59:33.954068,' UNION SELECT NULL--,test,3,0.46,1,21,6,1,0,21,4,1,1,sql_injection
+session_001390,2026-01-19T22:59:33.954068,user1390@company.com,***,29,5.19,0,0,36,7,0,20,10,1,0,legitimate
+session_001391,2026-02-04T22:59:33.954068,user1391@yahoo.com,***,28,16.67,0,0,36,5,0,18,9,1,0,legitimate
+session_001392,2026-01-09T22:59:33.954068,..\..\..\windows\system32,test,1,0.43,0,0,25,0,1,25,4,1,1,path_traversal
+session_001393,2026-01-25T22:59:33.954068,user1393@company.com,***,9,15.07,0,0,37,6,0,20,8,1,0,legitimate
+session_001394,2026-01-11T22:59:33.954068,admin'--,admin,2,0.57,1,8,7,1,1,8,5,1,1,sql_injection
+session_001395,2026-01-18T22:59:33.954068,user1395@outlook.com,***,14,15.37,0,0,34,9,0,20,8,1,0,legitimate
+session_001396,2026-01-14T22:59:33.954068,user1396@outlook.com,***,46,9.11,0,0,35,2,1,20,8,1,0,legitimate
+session_001397,2026-01-16T22:59:33.954068,user1397@yahoo.com,***,6,11.87,0,0,38,3,0,18,11,1,0,legitimate
+session_001398,2026-02-04T22:59:33.954068,'; DROP TABLE users--,test,1,0.47,1,21,10,0,1,21,4,1,1,sql_injection
+session_001399,2026-02-04T22:59:33.954068,1' AND '1'='1,,3,0.78,1,13,20,1,0,13,0,1,1,sql_injection
+session_001400,2026-01-11T22:59:33.954068,bot1400@automated.com,botpass3218,0,0.4,1,21,0,0,1,21,11,1,1,bot
+session_001401,2026-02-02T22:59:33.954068,../../../etc/passwd,test,2,1.05,0,0,19,0,1,19,4,1,1,path_traversal
+session_001402,2026-01-09T22:59:33.954068,user1402@yahoo.com,***,18,9.16,0,0,29,2,0,18,10,1,0,legitimate
+session_001403,2026-02-07T22:59:33.954068,user1403@yahoo.com,***,8,14.01,0,0,39,4,0,18,15,1,0,legitimate
+session_001404,2026-02-07T22:59:33.954068,user1404@company.com,***,10,12.63,0,0,39,8,0,20,9,1,0,legitimate
+session_001405,2026-01-31T22:59:33.954068,user1405@gmail.com,***,38,8.95,0,0,32,10,0,18,14,1,0,legitimate
+session_001406,2026-01-24T22:59:33.954068,user1406@company.com,***,44,3.14,0,0,41,2,0,20,15,1,0,legitimate
+session_001407,2026-02-08T22:59:33.954068,....//....//....//etc/passwd,test,0,1.11,0,0,28,0,1,28,4,1,1,path_traversal
+session_001408,2026-01-25T22:59:33.954068,user1408@company.com,***,9,5.39,0,0,37,5,0,20,14,1,0,legitimate
+session_001409,2026-01-16T22:59:33.954068,bot1409@automated.com,botpass2911,0,0.17,1,21,0,0,1,21,11,1,1,bot
+session_001410,2026-01-11T22:59:33.954068,user1410@company.com,***,34,7.71,0,0,40,6,0,20,12,1,0,legitimate
+session_001411,2026-01-14T22:59:33.954068,user1411@yahoo.com,***,9,14.6,0,0,31,6,1,18,10,1,0,legitimate
+session_001412,2026-02-03T22:59:33.954068,admin'/*,admin,2,0.5,0,0,13,1,1,8,5,1,1,sql_injection
+session_001413,2026-02-05T22:59:33.954068,..%2F..%2F..%2Fetc%2Fpasswd,test,0,0.5,0,0,27,0,1,27,4,1,1,path_traversal
+session_001414,2026-01-27T22:59:33.954068,bot1414@automated.com,botpass9971,0,0.14,1,21,0,0,1,21,11,1,1,bot
+session_001415,2026-01-24T22:59:33.954068,user1415@outlook.com,***,24,8.05,0,0,34,4,0,20,14,1,0,legitimate
+session_001416,2026-02-06T22:59:33.954068,user1416@outlook.com,***,6,18.44,0,0,40,7,0,20,13,1,0,legitimate
+session_001417,2026-01-10T22:59:33.954068,user1417@yahoo.com,***,18,6.18,0,0,28,2,0,18,8,1,0,legitimate
+session_001418,2026-01-09T22:59:33.954068,user1418@gmail.com,***,20,5.59,0,0,35,3,0,18,9,1,0,legitimate
+session_001419,2026-01-12T22:59:33.954068,....//....//....//etc/passwd,test,0,1.0,0,0,28,0,1,28,4,1,1,path_traversal
+session_001420,2026-01-29T22:59:33.954068,user1420@yahoo.com,***,25,4.14,0,0,38,2,0,18,10,1,0,legitimate
+session_001421,2026-01-20T22:59:33.954068,administrator,pass614,1,0.35,0,0,6,2,0,13,7,1,1,brute_force
+session_001422,2026-01-13T22:59:33.954068,..%2F..%2F..%2Fetc%2Fpasswd,test,2,0.33,0,0,27,0,1,27,4,1,1,path_traversal
+session_001423,2026-02-06T22:59:33.954068,user1423@outlook.com,***,50,10.14,0,0,40,4,0,20,12,1,0,legitimate
+session_001424,2026-01-13T22:59:33.954068,user1424@company.com,***,28,13.71,0,0,35,6,1,20,12,1,0,legitimate
+session_001425,2026-01-11T22:59:33.954068,bot1425@automated.com,botpass3120,0,0.37,1,21,0,0,1,21,11,1,1,bot
+session_001426,2026-01-16T22:59:33.954068,user1426@yahoo.com,***,26,9.59,0,0,39,2,0,18,12,1,0,legitimate
+session_001427,2026-02-06T22:59:33.954068,user1427@gmail.com,***,25,9.52,0,0,36,7,0,18,15,1,0,legitimate
+session_001428,2026-01-20T22:59:33.954068,bot1428@automated.com,botpass6841,0,0.46,1,21,0,0,1,21,11,1,1,bot
+session_001429,2026-01-27T22:59:33.954068,user1429@gmail.com,***,48,16.8,0,0,32,7,0,18,13,1,0,legitimate
+session_001430,2026-01-11T22:59:33.954068,bot1430@automated.com,botpass9257,0,0.48,1,21,0,0,1,21,11,1,1,bot
+session_001431,2026-01-31T22:59:33.954068,user1431@outlook.com,***,12,15.47,0,0,37,4,0,20,14,1,0,legitimate
+session_001432,2026-01-13T22:59:33.954068,user1432@yahoo.com,***,15,11.54,0,0,40,3,0,18,13,1,0,legitimate
+session_001433,2026-01-18T22:59:33.954068,user1433@gmail.com,***,22,14.71,0,0,41,7,1,18,15,1,0,legitimate
+session_001434,2026-01-24T22:59:33.954068,user1434@company.com,***,11,8.6,0,0,35,8,1,20,15,1,0,legitimate
+session_001435,2026-02-07T22:59:33.954068,user1435@yahoo.com,***,12,14.72,0,0,35,5,1,18,10,1,0,legitimate
+session_001436,2026-01-26T22:59:33.954068,user1436@gmail.com,***,38,16.81,0,0,34,7,0,18,14,1,0,legitimate
+session_001437,2026-01-31T22:59:33.954068,javascript:alert(1),,1,0.8,0,0,19,0,1,19,0,1,1,xss
+session_001438,2026-01-14T22:59:33.954068,<svg onload=alert(1)>,,1,0.62,0,0,21,0,1,21,0,1,1,xss
+session_001439,2026-01-26T22:59:33.955067,user1439@gmail.com,***,32,5.66,0,0,40,7,0,18,12,1,0,legitimate
+session_001440,2026-01-28T22:59:33.955067,<svg onload=alert(1)>,,0,0.85,0,0,21,0,1,21,0,1,1,xss
+session_001441,2026-01-22T22:59:33.955067,user1441@gmail.com,***,44,6.4,0,0,28,9,0,18,8,1,0,legitimate
+session_001442,2026-01-14T22:59:33.955067,user1442@gmail.com,***,39,14.26,0,0,40,10,0,18,12,1,0,legitimate
+session_001443,2026-02-08T22:59:33.955067,user1443@outlook.com,***,50,5.03,0,0,35,8,0,20,12,1,0,legitimate
+session_001444,2026-01-19T22:59:33.955067,user1444@company.com,***,6,7.77,0,0,38,6,0,20,13,1,0,legitimate
+session_001445,2026-01-09T22:59:33.955067,user1445@company.com,***,9,8.85,0,0,34,7,0,20,14,1,0,legitimate
+session_001446,2026-01-14T22:59:33.955067,test@test.com; ls -la,&& whoami,2,0.23,0,0,16,0,1,21,9,1,1,command_injection
+session_001447,2026-01-18T22:59:33.955067,bot1447@automated.com,botpass9188,0,0.12,1,21,0,0,1,21,11,1,1,bot
+session_001448,2026-01-25T22:59:33.955067,user1448@yahoo.com,***,6,5.66,0,0,29,8,0,18,11,1,0,legitimate
+session_001449,2026-01-15T22:59:33.955067,user1449@gmail.com,***,16,15.75,0,0,35,5,0,18,13,1,0,legitimate
+session_001450,2026-02-08T22:59:33.955067,user1450@company.com,***,47,15.47,0,0,40,6,0,20,15,1,0,legitimate
+session_001451,2026-02-05T22:59:33.955067,user1451@gmail.com,***,17,14.41,0,0,33,8,0,18,12,1,0,legitimate
+session_001452,2026-01-29T22:59:33.955067,test@test.com| nc -e /bin/sh,; ls -la,2,0.61,0,0,24,1,1,28,8,1,1,command_injection
+session_001453,2026-01-14T22:59:33.955067,javascript:alert(1),,0,0.9,0,0,19,1,1,19,0,1,1,xss
+session_001454,2026-01-13T22:59:33.955067,user1454@yahoo.com,***,30,11.88,0,0,36,7,0,18,14,1,0,legitimate
+session_001455,2026-02-04T22:59:33.955067,test@test.com; ls -la,; rm -rf /,0,0.53,0,0,23,2,1,21,10,1,1,command_injection
+session_001456,2026-01-23T22:59:33.955067,user1456@gmail.com,***,8,12.7,0,0,40,10,0,18,16,1,0,legitimate
+session_001457,2026-01-30T22:59:33.955067,user1457@yahoo.com,***,48,3.15,0,0,35,6,1,18,10,1,0,legitimate
+session_001458,2026-02-08T22:59:33.955067,user1458@gmail.com,***,42,2.82,0,0,36,6,0,18,12,1,0,legitimate
+session_001459,2026-02-08T22:59:33.955067,user1459@yahoo.com,***,39,17.45,0,0,39,9,0,18,13,1,0,legitimate
+session_001460,2026-01-22T22:59:33.955067,<script>alert('XSS')</script>,,1,0.81,0,0,29,1,1,29,0,1,1,xss
+session_001461,2026-01-21T22:59:33.955067,user1461@outlook.com,***,8,18.37,0,0,35,7,0,20,14,1,0,legitimate
+session_001462,2026-02-02T22:59:33.955067,user1462@yahoo.com,***,23,11.28,0,0,36,2,0,18,8,1,0,legitimate
+session_001463,2026-01-22T22:59:33.955067,test@test.com; ls -la,&& whoami,0,0.35,0,0,14,1,1,21,9,1,1,command_injection
+session_001464,2026-01-22T22:59:33.955067,bot1464@automated.com,botpass2945,0,0.22,1,21,0,0,1,21,11,1,1,bot
+session_001465,2026-01-22T22:59:33.955067,user1465@yahoo.com,***,15,7.7,0,0,41,6,0,18,14,1,0,legitimate
+session_001466,2026-02-01T22:59:33.955067,user1466@yahoo.com,***,36,9.7,0,0,37,3,0,18,10,1,0,legitimate
+session_001467,2026-01-23T22:59:33.955067,user1467@gmail.com,***,21,3.82,0,0,36,2,0,18,15,1,0,legitimate
+session_001468,2026-02-04T22:59:33.955067,user1468@company.com,***,47,17.8,0,0,33,7,0,20,10,1,0,legitimate
+session_001469,2026-01-13T22:59:33.955067,user1469@gmail.com,***,49,11.67,0,0,35,9,0,18,13,1,0,legitimate
+session_001470,2026-01-25T22:59:33.955067,user1470@company.com,***,49,9.98,0,0,34,4,0,20,13,1,0,legitimate
+session_001471,2026-01-19T22:59:33.955067,user1471@yahoo.com,***,48,17.77,0,0,31,6,0,18,12,1,0,legitimate
+session_001472,2026-02-02T22:59:33.955067,user1472@gmail.com,***,18,15.71,0,0,41,2,0,18,16,1,0,legitimate
+session_001473,2026-01-29T22:59:33.955067,user1473@gmail.com,***,30,6.92,0,0,28,9,0,18,10,1,0,legitimate
+session_001474,2026-01-29T22:59:33.955067,user1474@outlook.com,***,42,12.94,0,0,33,5,0,20,12,1,0,legitimate
+session_001475,2026-01-22T22:59:33.955067,<body onload=alert('XSS')>,pass,0,0.75,0,0,26,0,1,26,4,1,1,xss
+session_001476,2026-01-18T22:59:33.955067,user1476@gmail.com,***,11,19.58,0,0,36,4,1,18,16,1,0,legitimate
+session_001477,2026-01-12T22:59:33.955067,user1477@yahoo.com,***,9,12.54,0,0,35,8,0,18,15,1,0,legitimate
+session_001478,2026-02-02T22:59:33.955067,user1478@gmail.com,***,6,6.15,0,0,35,8,0,18,13,1,0,legitimate
+session_001479,2026-02-03T22:59:33.955067,user1479@company.com,***,31,11.68,0,0,40,4,0,20,14,1,0,legitimate
+session_001480,2026-01-27T22:59:33.955067,user1480@yahoo.com,***,38,15.75,0,0,32,6,0,18,10,1,0,legitimate
+session_001481,2026-01-13T22:59:33.955067,user1481@gmail.com,***,45,10.04,0,0,31,6,0,18,10,1,0,legitimate
+session_001482,2026-01-09T22:59:33.955067,root,pass82,0,0.64,0,0,5,0,0,4,6,1,1,brute_force
+session_001483,2026-01-09T22:59:33.955067,admin' OR '1'='1'--,,3,1.32,1,19,11,0,1,19,0,1,1,sql_injection
+session_001484,2026-02-04T22:59:33.955067,user1484@gmail.com,***,9,4.9,0,0,41,2,0,18,13,1,0,legitimate
+session_001485,2026-01-29T22:59:33.955067,user1485@outlook.com,***,10,4.54,0,0,34,8,1,20,9,1,0,legitimate
+session_001486,2026-01-21T22:59:33.955067,user1486@gmail.com,***,28,15.12,0,0,33,3,0,18,12,1,0,legitimate
+session_001487,2026-02-03T22:59:33.955067,user1487@gmail.com,***,19,6.8,0,0,26,4,0,18,8,1,0,legitimate
+session_001488,2026-02-03T22:59:33.955067,1' AND '1'='1,,3,0.93,0,0,5,2,0,13,0,1,1,sql_injection
+session_001489,2026-01-10T22:59:33.955067,user1489@outlook.com,***,50,15.75,0,0,38,4,1,20,13,1,0,legitimate
+session_001490,2026-01-18T22:59:33.955067,user1490@outlook.com,***,15,12.36,0,0,29,9,0,20,9,1,0,legitimate
+session_001491,2026-01-31T22:59:33.955067,user1491@outlook.com,***,19,12.63,0,0,38,10,1,20,10,1,0,legitimate
+session_001492,2026-01-10T22:59:33.955067,user1492@yahoo.com,***,39,11.46,0,0,38,9,0,18,15,1,0,legitimate
+session_001493,2026-01-13T22:59:33.955067,user1493@company.com,***,29,14.77,0,0,36,4,0,20,8,1,0,legitimate
+session_001494,2026-01-27T22:59:33.955067,user1494@outlook.com,***,27,8.67,0,0,37,4,0,20,11,1,0,legitimate
+session_001495,2026-01-17T22:59:33.955067,user1495@company.com,***,38,16.5,0,0,35,7,1,20,10,1,0,legitimate
+session_001496,2026-01-12T22:59:33.955067,user1496@outlook.com,***,40,7.78,0,0,32,3,1,20,11,1,0,legitimate
+session_001497,2026-01-16T22:59:33.955067,user1497@outlook.com,***,39,3.39,0,0,36,6,0,20,9,1,0,legitimate
+session_001498,2026-01-16T22:59:33.955067,user1498@company.com,***,14,17.99,0,0,41,3,0,20,12,1,0,legitimate
+session_001499,2026-01-11T22:59:33.955067,test,pass328,1,0.33,0,0,9,0,0,4,7,1,1,brute_force
+session_001500,2026-01-20T22:59:33.955067,user1500@yahoo.com,***,49,7.55,0,0,34,4,1,18,9,1,0,legitimate
+session_001501,2026-01-11T22:59:33.955067,user1501@company.com,***,9,19.14,0,0,37,5,0,20,8,1,0,legitimate
+session_001502,2026-01-29T22:59:33.955067,../../../etc/passwd,test,0,0.41,0,0,19,1,1,19,4,1,1,path_traversal
+session_001503,2026-01-17T22:59:33.955067,bot1503@automated.com,botpass8712,0,0.31,1,21,0,0,1,21,11,1,1,bot
+session_001504,2026-01-25T22:59:33.955067,user1504@company.com,***,14,6.53,0,0,43,2,0,20,13,1,0,legitimate
+session_001505,2026-01-25T22:59:33.955067,user1505@yahoo.com,***,23,13.65,0,0,38,9,0,18,10,1,0,legitimate
+session_001506,2026-02-03T22:59:33.955067,user1506@outlook.com,***,49,16.73,0,0,38,8,0,20,9,1,0,legitimate
+session_001507,2026-01-27T22:59:33.955067,user1507@outlook.com,***,21,16.59,0,0,34,9,0,20,9,1,0,legitimate
+session_001508,2026-01-10T22:59:33.956067,user1508@company.com,***,6,2.42,0,0,29,9,0,20,8,1,0,legitimate
+session_001509,2026-01-17T22:59:33.956067,<svg onload=alert(1)>,,1,0.84,0,0,21,0,1,21,0,1,1,xss
+session_001510,2026-01-24T22:59:33.956067,user1510@gmail.com,***,31,2.87,0,0,35,4,0,18,12,1,0,legitimate
+session_001511,2026-01-14T22:59:33.956067,user1511@company.com,***,16,10.73,0,0,37,3,0,20,11,1,0,legitimate
+session_001512,2026-01-24T22:59:33.956067,<script>alert('XSS')</script>,,1,0.68,0,0,29,0,1,29,0,1,1,xss
+session_001513,2026-01-19T22:59:33.956067,test@test.com`cat /etc/shadow`,| nc -e /bin/sh,1,0.12,0,0,13,2,1,30,15,1,1,command_injection
+session_001514,2026-01-26T22:59:33.956067,admin' OR '1'='1,,1,1.48,0,0,6,0,1,16,0,1,1,sql_injection
+session_001515,2026-02-02T22:59:33.956067,test@test.com| cat /etc/passwd,; rm -rf /,0,0.71,0,0,12,0,1,30,10,1,1,command_injection
+session_001516,2026-01-29T22:59:33.956067,user1516@outlook.com,***,36,4.87,0,0,40,7,1,20,11,1,0,legitimate
+session_001517,2026-01-20T22:59:33.956067,user1517@company.com,***,47,5.26,0,0,29,8,0,20,9,1,0,legitimate
+session_001518,2026-01-09T22:59:33.956067,test,pass609,0,0.8,0,0,4,2,0,4,7,1,1,brute_force
+session_001519,2026-02-07T22:59:33.956067,test,pass386,1,0.98,0,0,10,1,0,4,7,1,1,brute_force
+session_001520,2026-02-06T22:59:33.956067,user1520@outlook.com,***,39,14.42,0,0,36,6,0,20,9,1,0,legitimate
+session_001521,2026-01-27T22:59:33.956067,user1521@gmail.com,***,48,6.25,0,0,41,3,0,18,14,1,0,legitimate
+session_001522,2026-01-28T22:59:33.956067,bot1522@automated.com,botpass9140,0,0.48,1,21,0,0,1,21,11,1,1,bot
+session_001523,2026-02-02T22:59:33.956067,bot1523@automated.com,botpass1565,0,0.24,1,21,0,0,1,21,11,1,1,bot
+session_001524,2026-01-16T22:59:33.956067,user1524@yahoo.com,***,42,13.64,0,0,33,7,1,18,13,1,0,legitimate
+session_001525,2026-01-23T22:59:33.956067,user1525@company.com,***,17,10.33,0,0,32,4,1,20,9,1,0,legitimate
+session_001526,2026-01-17T22:59:33.956067,user1526@outlook.com,***,37,2.87,0,0,31,2,0,20,11,1,0,legitimate
+session_001527,2026-02-02T22:59:33.956067,user1527@gmail.com,***,44,17.77,0,0,36,6,0,18,10,1,0,legitimate
+session_001528,2026-01-27T22:59:33.956067,<body onload=alert('XSS')>,,2,0.94,0,0,26,0,1,26,0,1,1,xss
+session_001529,2026-01-11T22:59:33.956067,user1529@gmail.com,***,7,11.93,0,0,35,5,0,18,15,1,0,legitimate
+session_001530,2026-01-10T22:59:33.956067,admin,pass79,0,0.94,0,0,7,2,0,5,6,1,1,brute_force
+session_001531,2026-01-25T22:59:33.956067,user1531@yahoo.com,***,27,14.11,0,0,33,6,0,18,10,1,0,legitimate
+session_001532,2026-02-05T22:59:33.956067,' OR 'a'='a,test,2,1.38,1,11,5,2,1,11,4,1,1,sql_injection
+session_001533,2026-01-21T22:59:33.956067,user1533@yahoo.com,***,26,9.5,0,0,34,5,0,18,8,1,0,legitimate
+session_001534,2026-01-13T22:59:33.956067,..\..\..\windows\system32,test,1,0.35,0,0,25,1,1,25,4,1,1,path_traversal
+session_001535,2026-01-18T22:59:33.956067,user1535@company.com,***,8,6.92,0,0,39,9,1,20,14,1,0,legitimate
+session_001536,2026-02-01T22:59:33.956067,"'""><script>alert(String.fromCharCode(88,83,83))</script>",test,2,0.53,0,0,56,1,1,56,4,1,1,xss
+session_001537,2026-02-03T22:59:33.956067,test,pass169,1,0.99,0,0,9,2,0,4,7,1,1,brute_force
+session_001538,2026-01-14T22:59:33.956067,user1538@yahoo.com,***,9,17.52,0,0,44,6,0,18,16,1,0,legitimate
+session_001539,2026-02-04T22:59:33.956067,user1539@yahoo.com,***,5,5.17,0,0,31,7,1,18,10,1,0,legitimate
+session_001540,2026-01-27T22:59:33.956067,user1540@gmail.com,***,30,10.67,0,0,37,2,0,18,14,1,0,legitimate
+session_001541,2026-01-16T22:59:33.956067,' OR 'a'='a,test,2,1.3,1,11,5,1,1,11,4,1,1,sql_injection
+session_001542,2026-01-19T22:59:33.956067,user1542@company.com,***,41,2.93,0,0,33,10,0,20,11,1,0,legitimate
+session_001543,2026-01-25T22:59:33.956067,user1543@yahoo.com,***,26,9.99,0,0,32,9,0,18,10,1,0,legitimate
+session_001544,2026-02-08T22:59:33.956067,user1544@outlook.com,***,41,4.69,0,0,35,8,0,20,12,1,0,legitimate
+session_001545,2026-01-15T22:59:33.956067,user1545@gmail.com,***,13,19.51,0,0,29,7,0,18,8,1,0,legitimate
+session_001546,2026-01-31T22:59:33.956067,user1546@company.com,***,46,11.73,0,0,37,7,0,20,10,1,0,legitimate
+session_001547,2026-01-29T22:59:33.956067,user1547@company.com,***,40,10.37,0,0,38,7,0,20,11,1,0,legitimate
+session_001548,2026-01-14T22:59:33.956067,user1548@gmail.com,***,43,2.85,0,0,27,10,0,18,8,1,0,legitimate
+session_001549,2026-01-22T22:59:33.956067,user1549@company.com,***,40,15.2,0,0,36,8,0,20,11,1,0,legitimate
+session_001550,2026-01-13T22:59:33.956067,user1550@company.com,***,19,5.34,0,0,37,7,0,20,15,1,0,legitimate
+session_001551,2026-01-18T22:59:33.956067,user1551@gmail.com,***,26,14.19,0,0,29,7,0,18,11,1,0,legitimate
+session_001552,2026-01-12T22:59:33.956067,bot1552@automated.com,botpass5313,0,0.35,1,21,0,0,1,21,11,1,1,bot
+session_001553,2026-01-20T22:59:33.956067,user1553@yahoo.com,***,8,15.81,0,0,30,5,0,18,8,1,0,legitimate
+session_001554,2026-01-31T22:59:33.956067,user1554@company.com,***,10,9.3,0,0,32,7,0,20,9,1,0,legitimate
+session_001555,2026-02-03T22:59:33.956067,user1555@gmail.com,***,33,14.12,0,0,34,8,1,18,13,1,0,legitimate
+session_001556,2026-01-23T22:59:33.956067,admin' UNION SELECT,,2,0.24,0,0,16,0,1,19,0,1,1,sql_injection
+session_001557,2026-01-18T22:59:33.956067,user1557@outlook.com,***,18,17.16,0,0,31,7,0,20,8,1,0,legitimate
+session_001558,2026-01-18T22:59:33.956067,user1558@outlook.com,***,26,7.84,0,0,42,6,1,20,13,1,0,legitimate
+session_001559,2026-01-12T22:59:33.956067,user1559@outlook.com,***,23,13.35,0,0,42,8,1,20,14,1,0,legitimate
+session_001560,2026-02-01T22:59:33.956067,user1560@yahoo.com,***,10,3.76,0,0,41,9,0,18,14,1,0,legitimate
+session_001561,2026-01-31T22:59:33.956067,test@test.com| nc -e /bin/sh,; rm -rf /,0,0.44,0,0,25,0,1,28,10,1,1,command_injection
+session_001562,2026-01-18T22:59:33.956067,user1562@gmail.com,***,48,7.71,0,0,32,4,0,18,14,1,0,legitimate
+session_001563,2026-01-27T22:59:33.956067,user1563@company.com,***,7,17.14,0,0,37,2,1,20,10,1,0,legitimate
+session_001564,2026-01-24T22:59:33.956067,user1564@yahoo.com,***,44,5.01,0,0,42,8,0,18,16,1,0,legitimate
+session_001565,2026-01-27T22:59:33.956067,bot1565@automated.com,botpass5893,0,0.19,1,21,0,0,1,21,11,1,1,bot
+session_001566,2026-01-25T22:59:33.956067,test,pass208,0,0.82,0,0,6,2,0,4,7,1,1,brute_force
+session_001567,2026-01-17T22:59:33.956067,user1567@company.com,***,39,11.96,0,0,41,8,0,20,12,1,0,legitimate
+session_001568,2026-01-29T22:59:33.956067,user1568@outlook.com,***,26,5.74,0,0,28,6,0,20,8,1,0,legitimate
+session_001569,2026-02-03T22:59:33.956067,user1569@outlook.com,***,37,15.12,0,0,37,4,0,20,16,1,0,legitimate
+session_001570,2026-01-29T22:59:33.956067,1' AND '1'='1,123,1,1.09,1,13,11,0,1,13,3,1,1,sql_injection
+session_001571,2026-01-30T22:59:33.956067,user1571@yahoo.com,***,44,2.03,0,0,28,4,0,18,10,1,0,legitimate
+session_001572,2026-02-07T22:59:33.956067,test@test.com`cat /etc/shadow`,&& whoami,2,0.63,0,0,19,1,1,30,9,1,1,command_injection
+session_001573,2026-01-23T22:59:33.956067,user1573@yahoo.com,***,29,15.61,0,0,35,6,0,18,9,1,0,legitimate
+session_001574,2026-02-01T22:59:33.956067,user1574@company.com,***,41,3.13,0,0,35,9,0,20,8,1,0,legitimate
+session_001575,2026-01-20T22:59:33.956067,user1575@outlook.com,***,23,2.92,0,0,35,4,0,20,13,1,0,legitimate
+session_001576,2026-01-29T22:59:33.956067,<iframe src=javascript:alert(1)>,test,0,0.32,0,0,32,1,1,32,4,1,1,xss
+session_001577,2026-02-06T22:59:33.956067,bot1577@automated.com,botpass8610,0,0.18,1,21,0,0,1,21,11,1,1,bot
+session_001578,2026-01-27T22:59:33.956067,user1578@gmail.com,***,13,19.1,0,0,31,4,1,18,12,1,0,legitimate
+session_001579,2026-01-17T22:59:33.956067,user1579@company.com,***,46,14.66,0,0,37,2,0,20,10,1,0,legitimate
+session_001580,2026-02-08T22:59:33.956067,user1580@company.com,***,43,3.62,0,0,35,7,0,20,12,1,0,legitimate
+session_001581,2026-02-01T22:59:33.956067,test@test.com; ls -la,`cat /etc/shadow`,0,0.36,0,0,18,2,1,21,17,1,1,command_injection
+session_001582,2026-01-18T22:59:33.956067,user1582@yahoo.com,***,36,17.71,0,0,29,4,1,18,8,1,0,legitimate
+session_001583,2026-01-27T22:59:33.956067,user1583@gmail.com,***,5,7.31,0,0,36,10,0,18,8,1,0,legitimate
+session_001584,2026-01-26T22:59:33.956067,user1584@gmail.com,***,45,10.38,0,0,35,6,1,18,16,1,0,legitimate
+session_001585,2026-01-13T22:59:33.956067,user1585@company.com,***,24,11.73,0,0,35,10,0,20,13,1,0,legitimate
+session_001586,2026-01-15T22:59:33.956067,..\..\..\windows\system32,test,0,0.5,0,0,25,1,1,25,4,1,1,path_traversal
+session_001587,2026-02-08T22:59:33.956067,<input onfocus=alert(1) autofocus>,test,2,0.38,0,0,34,0,1,34,4,1,1,xss
+session_001588,2026-02-06T22:59:33.956067,user1588@company.com,***,43,8.09,0,0,42,8,1,20,16,1,0,legitimate
+session_001589,2026-01-15T22:59:33.956067,user1589@yahoo.com,***,9,10.51,0,0,33,8,0,18,12,1,0,legitimate
+session_001590,2026-02-07T22:59:33.956067,user1590@gmail.com,***,33,16.17,0,0,32,5,1,18,14,1,0,legitimate
+session_001591,2026-02-01T22:59:33.956067,user1591@company.com,***,50,4.8,0,0,34,6,1,20,9,1,0,legitimate
+session_001592,2026-01-18T22:59:33.956067,user1592@outlook.com,***,40,7.13,0,0,45,6,0,20,15,1,0,legitimate
+session_001593,2026-02-05T22:59:33.956067,<script>alert('XSS')</script>,,2,0.33,0,0,29,1,1,29,0,1,1,xss
+session_001594,2026-01-24T22:59:33.956067,user1594@company.com,***,15,13.97,0,0,29,10,0,20,9,1,0,legitimate
+session_001595,2026-02-01T22:59:33.956067,user1595@company.com,***,24,4.69,0,0,43,5,0,20,16,1,0,legitimate
+session_001596,2026-01-18T22:59:33.956067,test@test.com; ls -la,; rm -rf /,2,0.43,0,0,10,1,1,21,10,1,1,command_injection
+session_001597,2026-01-19T22:59:33.956067,test@test.com| nc -e /bin/sh,; rm -rf /,0,0.39,0,0,15,1,1,28,10,1,1,command_injection
+session_001598,2026-01-15T22:59:33.956067,user1598@outlook.com,***,46,17.5,0,0,32,7,0,20,8,1,0,legitimate
+session_001599,2026-02-01T22:59:33.956067,admin'--,admin,1,0.33,0,0,18,2,1,8,5,1,1,sql_injection
+session_001600,2026-02-08T22:59:33.956067,user1600@gmail.com,***,6,13.78,0,0,32,7,0,18,13,1,0,legitimate
+session_001601,2026-01-09T22:59:33.956067,user1601@yahoo.com,***,16,3.3,0,0,40,7,1,18,15,1,0,legitimate
+session_001602,2026-01-14T22:59:33.956067,user1602@yahoo.com,***,19,15.49,0,0,40,4,1,18,15,1,0,legitimate
+session_001603,2026-01-13T22:59:33.956067,user1603@company.com,***,43,8.89,0,0,36,7,0,20,11,1,0,legitimate
+session_001604,2026-01-24T22:59:33.956067,test,pass381,1,0.79,0,0,10,2,0,4,7,1,1,brute_force
+session_001605,2026-02-08T22:59:33.956067,user1605@gmail.com,***,10,15.02,0,0,34,3,1,18,10,1,0,legitimate
+session_001606,2026-01-23T22:59:33.956067,<body onload=alert('XSS')>,,2,0.29,0,0,26,0,1,26,0,1,1,xss
+session_001607,2026-01-17T22:59:33.956067,user1607@yahoo.com,***,38,8.56,0,0,29,2,0,18,10,1,0,legitimate
+session_001608,2026-01-24T22:59:33.956067,user1608@outlook.com,***,20,12.57,0,0,36,7,1,20,14,1,0,legitimate
+session_001609,2026-02-08T22:59:33.956067,user1609@outlook.com,***,9,7.83,0,0,38,8,1,20,11,1,0,legitimate
+session_001610,2026-01-18T22:59:33.956067,javascript:alert(1),test,2,0.75,0,0,19,1,1,19,4,1,1,xss
+session_001611,2026-01-28T22:59:33.956067,user1611@gmail.com,***,49,17.71,0,0,40,9,0,18,12,1,0,legitimate
+session_001612,2026-01-14T22:59:33.956067,user1612@gmail.com,***,33,3.74,0,0,35,6,0,18,16,1,0,legitimate
+session_001613,2026-01-11T22:59:33.956067,user1613@outlook.com,***,31,8.85,0,0,28,10,0,20,8,1,0,legitimate
+session_001614,2026-02-03T22:59:33.956067,user1614@outlook.com,***,45,6.97,0,0,35,2,1,20,12,1,0,legitimate
+session_001615,2026-01-28T22:59:33.956067,user1615@gmail.com,***,28,8.99,0,0,36,4,0,18,9,1,0,legitimate
+session_001616,2026-02-04T22:59:33.956067,user1616@company.com,***,47,17.96,0,0,36,7,0,20,10,1,0,legitimate
+session_001617,2026-01-27T22:59:33.956067,bot1617@automated.com,botpass2688,0,0.38,1,21,0,0,1,21,11,1,1,bot
+session_001618,2026-02-07T22:59:33.956067,bot1618@automated.com,botpass6386,0,0.37,1,21,0,0,1,21,11,1,1,bot
+session_001619,2026-02-07T22:59:33.956067,user1619@outlook.com,***,44,10.03,0,0,34,6,0,20,12,1,0,legitimate
+session_001620,2026-01-21T22:59:33.956067,<body onload=alert('XSS')>,test,1,0.3,0,0,26,0,1,26,4,1,1,xss
+session_001621,2026-01-19T22:59:33.956067,user1621@outlook.com,***,11,12.05,0,0,31,3,0,20,9,1,0,legitimate
+session_001622,2026-01-24T22:59:33.956067,test@test.com; rm -rf /,; ls -la,0,0.15,0,0,17,1,1,23,8,1,1,command_injection
+session_001623,2026-01-24T22:59:33.956067,user1623@outlook.com,***,35,9.58,0,0,37,9,1,20,8,1,0,legitimate
+session_001624,2026-01-31T22:59:33.956067,admin,pass723,1,0.59,0,0,7,2,0,5,7,1,1,brute_force
+session_001625,2026-02-05T22:59:33.956067,..\..\..\windows\system32,test,0,0.6,0,0,25,1,1,25,4,1,1,path_traversal
+session_001626,2026-01-10T22:59:33.956067,root,pass524,0,0.6,0,0,9,1,0,4,7,1,1,brute_force
+session_001627,2026-01-23T22:59:33.956067,administrator,pass250,0,0.32,0,0,8,1,0,13,7,1,1,brute_force
+session_001628,2026-01-11T22:59:33.956067,user1628@gmail.com,***,11,12.9,0,0,29,8,0,18,11,1,0,legitimate
+session_001629,2026-01-31T22:59:33.956067,<script>alert('XSS')</script>,pass,0,0.96,0,0,29,1,1,29,4,1,1,xss
+session_001630,2026-01-17T22:59:33.956067,user1630@outlook.com,***,50,13.88,0,0,40,9,0,20,13,1,0,legitimate
+session_001631,2026-01-26T22:59:33.957067,....//....//....//etc/passwd,test,0,0.72,0,0,28,0,1,28,4,1,1,path_traversal
+session_001632,2026-02-07T22:59:33.957067,test@test.com| nc -e /bin/sh,`cat /etc/shadow`,1,0.25,0,0,12,0,1,28,17,1,1,command_injection
+session_001633,2026-01-25T22:59:33.957067,user1633@outlook.com,***,28,12.24,0,0,39,3,0,20,12,1,0,legitimate
+session_001634,2026-01-30T22:59:33.957067,user1634@outlook.com,***,45,5.27,0,0,33,7,0,20,13,1,0,legitimate
+session_001635,2026-02-05T22:59:33.957067,user1635@yahoo.com,***,19,15.45,0,0,37,2,0,18,13,1,0,legitimate
+session_001636,2026-01-15T22:59:33.957067,user1636@yahoo.com,***,10,3.93,0,0,33,2,0,18,12,1,0,legitimate
+session_001637,2026-01-26T22:59:33.957067,user1637@company.com,***,46,17.29,0,0,32,3,0,20,10,1,0,legitimate
+session_001638,2026-01-24T22:59:33.957067,user1638@outlook.com,***,37,6.07,0,0,39,3,1,20,10,1,0,legitimate
+session_001639,2026-02-02T22:59:33.957067,user1639@outlook.com,***,49,8.15,0,0,35,5,0,20,15,1,0,legitimate
+session_001640,2026-01-19T22:59:33.957067,root,pass885,1,0.87,0,0,10,2,0,4,7,1,1,brute_force
+session_001641,2026-01-27T22:59:33.957067,user1641@company.com,***,43,19.23,0,0,40,8,1,20,16,1,0,legitimate
+session_001642,2026-01-15T22:59:33.957067,user1642@company.com,***,25,2.28,0,0,37,3,0,20,16,1,0,legitimate
+session_001643,2026-01-17T22:59:33.957067,user1643@outlook.com,***,36,2.6,0,0,36,10,0,20,9,1,0,legitimate
+session_001644,2026-01-19T22:59:33.957067,user1644@yahoo.com,***,44,13.02,0,0,29,2,0,18,8,1,0,legitimate
+session_001645,2026-01-25T22:59:33.957067,user1645@gmail.com,***,33,16.85,0,0,38,6,0,18,16,1,0,legitimate
+session_001646,2026-01-29T22:59:33.957067,user1646@company.com,***,28,9.1,0,0,38,10,0,20,8,1,0,legitimate
+session_001647,2026-01-28T22:59:33.957067,user1647@gmail.com,***,47,8.99,0,0,39,3,1,18,16,1,0,legitimate
+session_001648,2026-02-07T22:59:33.957067,user1648@gmail.com,***,43,5.92,0,0,34,5,1,18,8,1,0,legitimate
+session_001649,2026-01-11T22:59:33.957067,test@test.com| cat /etc/passwd,; ls -la,1,0.29,0,0,17,0,1,30,8,1,1,command_injection
+session_001650,2026-01-19T22:59:33.957067,user1650@yahoo.com,***,14,3.57,0,0,36,8,1,18,14,1,0,legitimate
+session_001651,2026-01-13T22:59:33.957067,admin' OR '1'='1'--,,1,0.16,1,19,14,1,0,19,0,1,1,sql_injection
+session_001652,2026-01-21T22:59:33.957067,user1652@yahoo.com,***,17,16.73,0,0,34,7,0,18,16,1,0,legitimate
+session_001653,2026-01-15T22:59:33.957067,user1653@yahoo.com,***,31,3.62,0,0,31,4,1,18,11,1,0,legitimate
+session_001654,2026-01-15T22:59:33.957067,user1654@company.com,***,16,10.61,0,0,37,2,1,20,15,1,0,legitimate
+session_001655,2026-01-22T22:59:33.957067,' UNION SELECT NULL--,123,0,0.74,0,0,19,2,0,21,3,1,1,sql_injection
+session_001656,2026-02-02T22:59:33.957067,user1656@outlook.com,***,6,11.46,0,0,38,6,0,20,11,1,0,legitimate
+session_001657,2026-01-26T22:59:33.957067,user1657@gmail.com,***,26,17.51,0,0,30,4,0,18,10,1,0,legitimate
+session_001658,2026-02-01T22:59:33.957067,1' AND '1'='1,admin,3,0.78,1,13,7,1,0,13,5,1,1,sql_injection
+session_001659,2026-01-19T22:59:33.957067,user1659@yahoo.com,***,12,18.56,0,0,34,4,0,18,15,1,0,legitimate
+session_001660,2026-01-30T22:59:33.957067,user1660@company.com,***,24,17.87,0,0,40,6,0,20,14,1,0,legitimate
+session_001661,2026-01-18T22:59:33.957067,user1661@gmail.com,***,50,6.6,0,0,30,4,0,18,12,1,0,legitimate
+session_001662,2026-01-15T22:59:33.957067,user1662@gmail.com,***,14,16.74,0,0,40,6,0,18,14,1,0,legitimate
+session_001663,2026-02-02T22:59:33.957067,user1663@outlook.com,***,12,2.62,0,0,31,9,0,20,11,1,0,legitimate
+session_001664,2026-01-30T22:59:33.957067,test@test.com; rm -rf /,&& whoami,2,0.19,0,0,24,2,1,23,9,1,1,command_injection
+session_001665,2026-02-04T22:59:33.957067,user1665@company.com,***,36,15.62,0,0,41,2,0,20,14,1,0,legitimate
+session_001666,2026-01-11T22:59:33.957067,user1666@gmail.com,***,19,14.69,0,0,43,7,0,18,16,1,0,legitimate
+session_001667,2026-01-16T22:59:33.957067,user1667@company.com,***,45,11.21,0,0,38,4,0,20,13,1,0,legitimate
+session_001668,2026-01-29T22:59:33.957067,user1668@company.com,***,28,7.58,0,0,40,8,0,20,13,1,0,legitimate
+session_001669,2026-02-03T22:59:33.957067,../../../etc/passwd,test,1,1.1,0,0,19,0,1,19,4,1,1,path_traversal
+session_001670,2026-02-03T22:59:33.957067,user1670@outlook.com,***,29,8.65,0,0,33,8,0,20,11,1,0,legitimate
+session_001671,2026-02-04T22:59:33.957067,user1671@company.com,***,24,11.12,0,0,38,5,0,20,15,1,0,legitimate
+session_001672,2026-01-19T22:59:33.957067,' OR 'a'='a,admin,0,1.28,0,0,15,1,1,11,5,1,1,sql_injection
+session_001673,2026-01-10T22:59:33.957067,user1673@company.com,***,43,7.99,0,0,33,3,0,20,8,1,0,legitimate
+session_001674,2026-01-23T22:59:33.957067,user1674@gmail.com,***,22,11.36,0,0,31,2,0,18,10,1,0,legitimate
+session_001675,2026-01-30T22:59:33.957067,'; DROP TABLE users--,test,0,0.39,1,21,17,0,1,21,4,1,1,sql_injection
+session_001676,2026-01-12T22:59:33.957067,user1676@outlook.com,***,6,5.34,0,0,43,2,0,20,13,1,0,legitimate
+session_001677,2026-01-13T22:59:33.957067,'; DROP TABLE users--,,2,0.12,0,0,15,2,0,21,0,1,1,sql_injection
+session_001678,2026-01-30T22:59:33.957067,user1678@yahoo.com,***,25,5.16,0,0,34,3,0,18,10,1,0,legitimate
+session_001679,2026-01-20T22:59:33.957067,user1679@outlook.com,***,14,13.39,0,0,37,5,0,20,14,1,0,legitimate
+session_001680,2026-01-11T22:59:33.957067,' UNION SELECT NULL--,test,3,1.16,0,0,15,0,0,21,4,1,1,sql_injection
+session_001681,2026-01-14T22:59:33.957067,user1681@gmail.com,***,44,4.87,0,0,31,6,0,18,12,1,0,legitimate
+session_001682,2026-01-21T22:59:33.957067,user1682@gmail.com,***,44,9.38,0,0,36,4,0,18,15,1,0,legitimate
+session_001683,2026-01-21T22:59:33.957067,user1683@outlook.com,***,34,9.34,0,0,38,6,1,20,16,1,0,legitimate
+session_001684,2026-01-14T22:59:33.957067,user1684@outlook.com,***,46,5.12,0,0,31,5,0,20,10,1,0,legitimate
+session_001685,2026-01-10T22:59:33.957067,user1685@gmail.com,***,32,2.2,0,0,37,8,0,18,13,1,0,legitimate
+session_001686,2026-01-26T22:59:33.957067,user1686@yahoo.com,***,23,5.91,0,0,42,3,1,18,16,1,0,legitimate
+session_001687,2026-02-04T22:59:33.957067,user1687@gmail.com,***,47,10.17,0,0,37,7,0,18,15,1,0,legitimate
+session_001688,2026-01-12T22:59:33.957067,user1688@yahoo.com,***,45,3.59,0,0,33,4,0,18,11,1,0,legitimate
+session_001689,2026-01-27T22:59:33.957067,bot1689@automated.com,botpass3317,0,0.46,1,21,0,0,1,21,11,1,1,bot
+session_001690,2026-01-25T22:59:33.957067,user1690@outlook.com,***,47,15.47,0,0,41,10,1,20,13,1,0,legitimate
+session_001691,2026-01-11T22:59:33.957067,user1691@yahoo.com,***,20,7.06,0,0,33,6,0,18,9,1,0,legitimate
+session_001692,2026-01-11T22:59:33.957067,user1692@gmail.com,***,46,8.01,0,0,37,8,0,18,13,1,0,legitimate
+session_001693,2026-02-07T22:59:33.957067,user1693@outlook.com,***,30,9.68,0,0,35,5,0,20,14,1,0,legitimate
+session_001694,2026-01-11T22:59:33.957067,user1694@company.com,***,18,12.68,0,0,37,5,1,20,12,1,0,legitimate
+session_001695,2026-01-26T22:59:33.957067,user1695@gmail.com,***,16,4.84,0,0,29,9,1,18,10,1,0,legitimate
+session_001696,2026-01-20T22:59:33.957067,user1696@yahoo.com,***,49,15.28,0,0,33,3,0,18,8,1,0,legitimate
+session_001697,2026-01-11T22:59:33.957067,user1697@yahoo.com,***,18,3.75,0,0,33,10,1,18,9,1,0,legitimate
+session_001698,2026-02-07T22:59:33.957067,user1698@outlook.com,***,12,2.07,0,0,39,7,0,20,10,1,0,legitimate
+session_001699,2026-02-08T22:59:33.957067,user1699@outlook.com,***,13,2.29,0,0,34,10,1,20,9,1,0,legitimate
+session_001700,2026-01-20T22:59:33.957067,user1700@outlook.com,***,21,4.74,0,0,32,9,0,20,8,1,0,legitimate
+session_001701,2026-01-10T22:59:33.957067,user1701@company.com,***,46,19.24,0,0,33,9,1,20,8,1,0,legitimate
+session_001702,2026-01-16T22:59:33.957067,user1702@company.com,***,24,12.69,0,0,38,2,0,20,8,1,0,legitimate
+session_001703,2026-01-09T22:59:33.957067,user1703@company.com,***,39,5.13,0,0,32,2,0,20,8,1,0,legitimate
+session_001704,2026-01-31T22:59:33.957067,user1704@company.com,***,28,13.07,0,0,35,6,0,20,11,1,0,legitimate
+session_001705,2026-01-29T22:59:33.957067,user1705@company.com,***,21,15.66,0,0,30,5,0,20,10,1,0,legitimate
+session_001706,2026-01-20T22:59:33.957067,user1706@yahoo.com,***,32,19.09,0,0,38,9,1,18,11,1,0,legitimate
+session_001707,2026-02-04T22:59:33.957067,admin'--,admin,3,1.2,0,0,12,0,0,8,5,1,1,sql_injection
+session_001708,2026-01-22T22:59:33.957067,user1708@outlook.com,***,49,19.85,0,0,39,2,0,20,11,1,0,legitimate
+session_001709,2026-01-09T22:59:33.957067,bot1709@automated.com,botpass9981,0,0.43,1,21,0,0,1,21,11,1,1,bot
+session_001710,2026-01-27T22:59:33.957067,user1710@yahoo.com,***,48,11.52,0,0,27,8,0,18,9,1,0,legitimate
+session_001711,2026-02-02T22:59:33.957067,user1711@yahoo.com,***,5,6.32,0,0,40,3,1,18,16,1,0,legitimate
+session_001712,2026-02-05T22:59:33.957067,user1712@gmail.com,***,46,3.41,0,0,36,6,1,18,8,1,0,legitimate
+session_001713,2026-01-25T22:59:33.957067,test@test.com; ls -la,| cat /etc/passwd,2,0.5,0,0,17,2,1,21,17,1,1,command_injection
+session_001714,2026-02-06T22:59:33.957067,user1714@outlook.com,***,45,4.96,0,0,37,3,1,20,9,1,0,legitimate
+session_001715,2026-01-29T22:59:33.957067,"'""><script>alert(String.fromCharCode(88,83,83))</script>",pass,0,0.99,0,0,56,1,1,56,4,1,1,xss
+session_001716,2026-01-24T22:59:33.957067,user1716@gmail.com,***,18,10.09,0,0,33,2,0,18,12,1,0,legitimate
+session_001717,2026-01-17T22:59:33.957067,bot1717@automated.com,botpass5338,0,0.47,1,21,0,0,1,21,11,1,1,bot
+session_001718,2026-01-11T22:59:33.957067,user1718@yahoo.com,***,37,12.22,0,0,38,7,0,18,12,1,0,legitimate
+session_001719,2026-02-04T22:59:33.957067,test@test.com; ls -la,| nc -e /bin/sh,2,0.2,0,0,23,2,1,21,15,1,1,command_injection
+session_001720,2026-02-08T22:59:33.957067,user1720@yahoo.com,***,12,9.76,0,0,38,10,1,18,11,1,0,legitimate
+session_001721,2026-01-28T22:59:33.957067,bot1721@automated.com,botpass3426,0,0.19,1,21,0,0,1,21,11,1,1,bot
+session_001722,2026-01-22T22:59:33.957067,"'""><script>alert(String.fromCharCode(88,83,83))</script>",,2,0.86,0,0,56,1,1,56,0,1,1,xss
+session_001723,2026-01-16T22:59:33.957067,user1723@company.com,***,46,3.59,0,0,42,7,1,20,14,1,0,legitimate
+session_001724,2026-01-17T22:59:33.957067,' OR 1=1--,test,1,1.37,0,0,17,2,0,10,4,1,1,sql_injection
+session_001725,2026-01-31T22:59:33.957067,user1725@yahoo.com,***,29,8.82,0,0,26,4,0,18,8,1,0,legitimate
+session_001726,2026-01-25T22:59:33.957067,....//....//....//etc/passwd,test,1,0.49,0,0,28,1,1,28,4,1,1,path_traversal
+session_001727,2026-01-11T22:59:33.957067,user1727@yahoo.com,***,41,5.75,0,0,35,6,1,18,11,1,0,legitimate
+session_001728,2026-01-25T22:59:33.957067,user1728@outlook.com,***,9,13.08,0,0,40,10,0,20,15,1,0,legitimate
+session_001729,2026-01-17T22:59:33.957067,user1729@yahoo.com,***,38,2.08,0,0,38,3,0,18,13,1,0,legitimate
+session_001730,2026-02-05T22:59:33.957067,user1730@yahoo.com,***,29,12.72,0,0,31,4,0,18,9,1,0,legitimate
+session_001731,2026-01-15T22:59:33.957067,test@test.com| nc -e /bin/sh,&& whoami,2,0.77,0,0,12,0,1,28,9,1,1,command_injection
+session_001732,2026-01-17T22:59:33.957067,user1732@gmail.com,***,40,9.28,0,0,32,2,0,18,10,1,0,legitimate
+session_001733,2026-01-26T22:59:33.957067,user1733@outlook.com,***,49,8.9,0,0,36,7,0,20,10,1,0,legitimate
+session_001734,2026-01-12T22:59:33.957067,user1734@yahoo.com,***,49,15.49,0,0,39,9,1,18,16,1,0,legitimate
+session_001735,2026-02-06T22:59:33.957067,user1735@gmail.com,***,23,11.65,0,0,37,3,0,18,12,1,0,legitimate
+session_001736,2026-01-24T22:59:33.957067,user1736@gmail.com,***,32,10.4,0,0,30,4,0,18,9,1,0,legitimate
+session_001737,2026-01-19T22:59:33.957067,user1737@company.com,***,42,10.43,0,0,31,10,1,20,8,1,0,legitimate
+session_001738,2026-01-14T22:59:33.957067,user1738@outlook.com,***,32,17.2,0,0,34,2,1,20,10,1,0,legitimate
+session_001739,2026-01-25T22:59:33.957067,user1739@company.com,***,40,15.01,0,0,36,5,0,20,10,1,0,legitimate
+session_001740,2026-01-31T22:59:33.957067,user1740@yahoo.com,***,49,11.26,0,0,33,3,0,18,9,1,0,legitimate
+session_001741,2026-01-11T22:59:33.957067,....//....//....//etc/passwd,test,0,0.43,0,0,28,0,1,28,4,1,1,path_traversal
+session_001742,2026-01-11T22:59:33.957067,user1742@gmail.com,***,35,4.59,0,0,37,5,0,18,11,1,0,legitimate
+session_001743,2026-01-28T22:59:33.957067,user1743@gmail.com,***,12,14.78,0,0,33,2,0,18,10,1,0,legitimate
+session_001744,2026-01-26T22:59:33.957067,1' AND '1'='1,test,3,0.75,1,13,7,1,1,13,4,1,1,sql_injection
+session_001745,2026-01-20T22:59:33.957067,user1745@company.com,***,11,10.2,0,0,39,6,0,20,14,1,0,legitimate
+session_001746,2026-01-29T22:59:33.957067,user1746@yahoo.com,***,16,16.87,0,0,39,5,0,18,14,1,0,legitimate
+session_001747,2026-02-04T22:59:33.958068,user1747@gmail.com,***,5,9.74,0,0,39,7,1,18,11,1,0,legitimate
+session_001748,2026-01-22T22:59:33.958068,user1748@yahoo.com,***,49,9.86,0,0,30,6,1,18,8,1,0,legitimate
+session_001749,2026-02-06T22:59:33.958068,user1749@yahoo.com,***,45,16.57,0,0,39,4,0,18,16,1,0,legitimate
+session_001750,2026-01-20T22:59:33.958068,javascript:alert(1),,2,0.36,0,0,19,0,1,19,0,1,1,xss
+session_001751,2026-01-21T22:59:33.958068,user1751@yahoo.com,***,20,7.34,0,0,35,5,1,18,12,1,0,legitimate
+session_001752,2026-01-14T22:59:33.958068,user1752@gmail.com,***,6,15.43,0,0,36,2,0,18,12,1,0,legitimate
+session_001753,2026-01-20T22:59:33.958068,....//....//....//etc/passwd,test,1,0.25,0,0,28,0,1,28,4,1,1,path_traversal
+session_001754,2026-01-29T22:59:33.958068,user1754@gmail.com,***,33,9.46,0,0,34,5,0,18,9,1,0,legitimate
+session_001755,2026-01-17T22:59:33.958068,root,pass280,0,0.79,0,0,3,2,0,4,7,1,1,brute_force
+session_001756,2026-02-07T22:59:33.958068,user1756@outlook.com,***,32,10.91,0,0,33,7,0,20,10,1,0,legitimate
+session_001757,2026-01-16T22:59:33.958068,user1757@company.com,***,33,11.3,0,0,36,7,1,20,11,1,0,legitimate
+session_001758,2026-01-23T22:59:33.958068,user1758@yahoo.com,***,7,7.44,0,0,36,8,1,18,14,1,0,legitimate
+session_001759,2026-02-03T22:59:33.958068,user1759@company.com,***,27,16.16,0,0,38,2,0,20,9,1,0,legitimate
+session_001760,2026-01-16T22:59:33.958068,user1760@yahoo.com,***,8,7.95,0,0,31,5,1,18,13,1,0,legitimate
+session_001761,2026-02-06T22:59:33.958068,user1761@outlook.com,***,31,15.8,0,0,37,9,1,20,15,1,0,legitimate
+session_001762,2026-01-29T22:59:33.958068,user1762@company.com,***,17,13.28,0,0,46,5,0,20,16,1,0,legitimate
+session_001763,2026-02-04T22:59:33.958068,....//....//....//etc/passwd,test,1,0.71,0,0,28,1,1,28,4,1,1,path_traversal
+session_001764,2026-01-12T22:59:33.958068,user1764@company.com,***,29,11.33,0,0,31,10,1,20,8,1,0,legitimate
+session_001765,2026-01-31T22:59:33.958068,user1765@outlook.com,***,21,13.8,0,0,38,5,0,20,15,1,0,legitimate
+session_001766,2026-01-14T22:59:33.958068,user1766@company.com,***,28,8.27,0,0,41,6,0,20,11,1,0,legitimate
+session_001767,2026-01-21T22:59:33.958068,user1767@company.com,***,24,10.62,0,0,36,5,0,20,10,1,0,legitimate
+session_001768,2026-01-28T22:59:33.958068,....//....//....//etc/passwd,test,2,0.33,0,0,28,0,1,28,4,1,1,path_traversal
+session_001769,2026-01-12T22:59:33.958068,user1769@company.com,***,50,7.46,0,0,41,6,0,20,13,1,0,legitimate
+session_001770,2026-01-19T22:59:33.958068,user1770@yahoo.com,***,19,10.67,0,0,39,4,1,18,15,1,0,legitimate
+session_001771,2026-01-24T22:59:33.958068,user1771@gmail.com,***,23,9.13,0,0,27,8,0,18,9,1,0,legitimate
+session_001772,2026-02-03T22:59:33.958068,user1772@company.com,***,9,14.54,0,0,37,7,0,20,11,1,0,legitimate
+session_001773,2026-01-10T22:59:33.958068,user1773@company.com,***,37,19.16,0,0,40,6,1,20,13,1,0,legitimate
+session_001774,2026-02-02T22:59:33.958068,admin' UNION SELECT,admin,0,1.24,0,0,17,1,0,19,5,1,1,sql_injection
+session_001775,2026-01-31T22:59:33.958068,../../../etc/passwd,test,2,1.1,0,0,19,0,1,19,4,1,1,path_traversal
+session_001776,2026-01-23T22:59:33.958068,user1776@gmail.com,***,9,16.35,0,0,34,9,0,18,8,1,0,legitimate
+session_001777,2026-02-02T22:59:33.958068,user1777@yahoo.com,***,13,5.87,0,0,31,6,0,18,10,1,0,legitimate
+session_001778,2026-01-13T22:59:33.958068,<svg onload=alert(1)>,pass,0,0.51,0,0,21,1,1,21,4,1,1,xss
+session_001779,2026-01-17T22:59:33.958068,bot1779@automated.com,botpass5235,0,0.4,1,21,0,0,1,21,11,1,1,bot
+session_001780,2026-01-09T22:59:33.958068,..\..\..\windows\system32,test,2,0.52,0,0,25,0,1,25,4,1,1,path_traversal
+session_001781,2026-02-08T22:59:33.958068,user1781@yahoo.com,***,12,8.22,0,0,29,10,0,18,10,1,0,legitimate
+session_001782,2026-01-10T22:59:33.958068,user1782@gmail.com,***,44,16.88,0,0,40,7,0,18,14,1,0,legitimate
+session_001783,2026-01-21T22:59:33.958068,javascript:alert(1),,0,0.85,0,0,19,0,1,19,0,1,1,xss
+session_001784,2026-01-17T22:59:33.958068,user1784@company.com,***,18,12.81,0,0,32,4,0,20,9,1,0,legitimate
+session_001785,2026-01-29T22:59:33.958068,user1785@gmail.com,***,15,3.88,0,0,38,7,1,18,11,1,0,legitimate
+session_001786,2026-01-24T22:59:33.958068,<script>alert('XSS')</script>,,1,0.67,0,0,29,1,1,29,0,1,1,xss
+session_001787,2026-01-13T22:59:33.958068,user1787@gmail.com,***,48,17.94,0,0,36,2,1,18,15,1,0,legitimate
+session_001788,2026-01-16T22:59:33.958068,user1788@gmail.com,***,9,2.17,0,0,34,2,1,18,8,1,0,legitimate
+session_001789,2026-01-18T22:59:33.958068,user1789@gmail.com,***,27,2.81,0,0,35,8,0,18,10,1,0,legitimate
+session_001790,2026-01-20T22:59:33.958068,user1790@yahoo.com,***,26,10.23,0,0,37,3,0,18,10,1,0,legitimate
+session_001791,2026-02-01T22:59:33.958068,user1791@yahoo.com,***,43,19.76,0,0,36,2,0,18,16,1,0,legitimate
+session_001792,2026-02-02T22:59:33.958068,admin'/*,admin,3,0.11,0,0,19,0,1,8,5,1,1,sql_injection
+session_001793,2026-01-21T22:59:33.958068,user1793@outlook.com,***,11,9.85,0,0,40,5,0,20,11,1,0,legitimate
+session_001794,2026-01-10T22:59:33.958068,administrator,pass840,0,0.49,0,0,10,2,0,13,7,1,1,brute_force
+session_001795,2026-02-01T22:59:33.958068,user1795@yahoo.com,***,25,2.78,0,0,33,4,0,18,12,1,0,legitimate
+session_001796,2026-01-19T22:59:33.958068,user1796@outlook.com,***,46,10.2,0,0,40,2,0,20,13,1,0,legitimate
+session_001797,2026-01-16T22:59:33.958068,<svg onload=alert(1)>,,1,0.65,0,0,21,1,1,21,0,1,1,xss
+session_001798,2026-02-03T22:59:33.958068,user1798@gmail.com,***,50,7.96,0,0,38,7,1,18,15,1,0,legitimate
+session_001799,2026-01-22T22:59:33.958068,user1799@outlook.com,***,40,9.96,0,0,38,5,0,20,16,1,0,legitimate
+session_001800,2026-01-30T22:59:33.958068,user1800@yahoo.com,***,14,11.77,0,0,34,3,0,18,10,1,0,legitimate
+session_001801,2026-01-28T22:59:33.958068,user1801@outlook.com,***,18,3.37,0,0,41,3,0,20,14,1,0,legitimate
+session_001802,2026-02-08T22:59:33.958068,test,pass755,1,0.66,0,0,5,2,0,4,7,1,1,brute_force
+session_001803,2026-01-14T22:59:33.958068,user1803@yahoo.com,***,44,3.38,0,0,35,5,1,18,8,1,0,legitimate
+session_001804,2026-02-01T22:59:33.958068,<iframe src=javascript:alert(1)>,,1,0.66,0,0,32,0,1,32,0,1,1,xss
+session_001805,2026-01-09T22:59:33.958068,user1805@yahoo.com,***,14,7.2,0,0,32,9,0,18,9,1,0,legitimate
+session_001806,2026-02-05T22:59:33.958068,user1806@company.com,***,30,3.9,0,0,36,5,0,20,9,1,0,legitimate
+session_001807,2026-01-22T22:59:33.958068,user1807@company.com,***,28,3.34,0,0,38,4,0,20,9,1,0,legitimate
+session_001808,2026-01-29T22:59:33.958068,test@test.com| cat /etc/passwd,; rm -rf /,2,0.52,0,0,12,2,1,30,10,1,1,command_injection
+session_001809,2026-01-20T22:59:33.958068,user1809@company.com,***,36,3.37,0,0,30,3,1,20,8,1,0,legitimate
+session_001810,2026-02-05T22:59:33.958068,user1810@gmail.com,***,44,18.73,0,0,33,6,0,18,8,1,0,legitimate
+session_001811,2026-02-03T22:59:33.958068,bot1811@automated.com,botpass6726,0,0.37,1,21,0,0,1,21,11,1,1,bot
+session_001812,2026-01-09T22:59:33.958068,bot1812@automated.com,botpass5287,0,0.42,1,21,0,0,1,21,11,1,1,bot
+session_001813,2026-01-31T22:59:33.958068,user1813@company.com,***,15,12.44,0,0,33,5,0,20,9,1,0,legitimate
+session_001814,2026-01-11T22:59:33.958068,<body onload=alert('XSS')>,test,0,0.46,0,0,26,0,1,26,4,1,1,xss
+session_001815,2026-02-04T22:59:33.958068,test@test.com&& whoami,| cat /etc/passwd,2,0.69,0,0,24,0,1,22,17,1,1,command_injection
+session_001816,2026-01-10T22:59:33.958068,user1816@outlook.com,***,35,18.96,0,0,36,7,0,20,14,1,0,legitimate
+session_001817,2026-01-30T22:59:33.958068,user1817@gmail.com,***,39,9.96,0,0,39,6,0,18,14,1,0,legitimate
+session_001818,2026-01-14T22:59:33.958068,user1818@gmail.com,***,49,3.29,0,0,36,8,0,18,13,1,0,legitimate
+session_001819,2026-01-20T22:59:33.958068,<svg onload=alert(1)>,test,0,0.25,0,0,21,0,1,21,4,1,1,xss
+session_001820,2026-01-09T22:59:33.958068,user1820@gmail.com,***,34,18.96,0,0,31,4,0,18,12,1,0,legitimate
+session_001821,2026-01-25T22:59:33.958068,user1821@yahoo.com,***,9,5.34,0,0,34,9,0,18,8,1,0,legitimate
+session_001822,2026-01-13T22:59:33.958068,user1822@gmail.com,***,41,14.09,0,0,37,5,1,18,14,1,0,legitimate
+session_001823,2026-01-25T22:59:33.958068,user1823@outlook.com,***,50,9.2,0,0,39,6,0,20,16,1,0,legitimate
+session_001824,2026-01-19T22:59:33.958068,user1824@outlook.com,***,47,11.1,0,0,37,5,0,20,16,1,0,legitimate
+session_001825,2026-01-24T22:59:33.958068,user1825@gmail.com,***,21,14.35,0,0,32,3,0,18,13,1,0,legitimate
+session_001826,2026-01-31T22:59:33.958068,user1826@company.com,***,45,5.7,0,0,43,6,0,20,14,1,0,legitimate
+session_001827,2026-01-17T22:59:33.958068,user1827@company.com,***,23,16.88,0,0,39,3,0,20,12,1,0,legitimate
+session_001828,2026-01-11T22:59:33.958068,user1828@outlook.com,***,42,8.64,0,0,32,6,0,20,10,1,0,legitimate
+session_001829,2026-01-18T22:59:33.958068,user1829@yahoo.com,***,43,7.28,0,0,36,9,1,18,14,1,0,legitimate
+session_001830,2026-01-13T22:59:33.958068,test@test.com; rm -rf /,; ls -la,0,0.27,0,0,15,0,1,23,8,1,1,command_injection
+session_001831,2026-01-20T22:59:33.958068,user1831@company.com,***,25,9.01,0,0,39,2,0,20,15,1,0,legitimate
+session_001832,2026-01-28T22:59:33.958068,user1832@yahoo.com,***,20,18.71,0,0,31,3,0,18,12,1,0,legitimate
+session_001833,2026-02-02T22:59:33.958068,user1833@yahoo.com,***,6,5.62,0,0,37,3,0,18,14,1,0,legitimate
+session_001834,2026-01-20T22:59:33.958068,user1834@company.com,***,25,6.16,0,0,35,3,0,20,8,1,0,legitimate
+session_001835,2026-02-01T22:59:33.958068,user1835@outlook.com,***,44,17.01,0,0,41,3,1,20,14,1,0,legitimate
+session_001836,2026-01-16T22:59:33.958068,user1836@company.com,***,18,18.81,0,0,35,2,0,20,15,1,0,legitimate
+session_001837,2026-01-22T22:59:33.958068,admin' OR '1'='1,123,2,1.17,1,16,14,1,1,16,3,1,1,sql_injection
+session_001838,2026-01-24T22:59:33.958068,user1838@yahoo.com,***,33,2.77,0,0,31,8,0,18,8,1,0,legitimate
+session_001839,2026-01-26T22:59:33.958068,user1839@gmail.com,***,29,4.72,0,0,33,5,1,18,9,1,0,legitimate
+session_001840,2026-01-28T22:59:33.958068,user1840@gmail.com,***,39,12.79,0,0,29,2,0,18,9,1,0,legitimate
+session_001841,2026-01-21T22:59:33.958068,user1841@outlook.com,***,16,2.15,0,0,39,10,1,20,9,1,0,legitimate
+session_001842,2026-01-29T22:59:33.958068,user1842@yahoo.com,***,45,11.0,0,0,30,6,0,18,8,1,0,legitimate
+session_001843,2026-01-12T22:59:33.958068,bot1843@automated.com,botpass2819,0,0.49,1,21,0,0,1,21,11,1,1,bot
+session_001844,2026-01-19T22:59:33.958068,<script>alert('XSS')</script>,,2,0.59,0,0,29,0,1,29,0,1,1,xss
+session_001845,2026-01-13T22:59:33.958068,../../../etc/passwd,test,1,0.77,0,0,19,1,1,19,4,1,1,path_traversal
+session_001846,2026-01-10T22:59:33.958068,admin,pass477,0,0.71,0,0,8,0,0,5,7,1,1,brute_force
+session_001847,2026-02-06T22:59:33.958068,user1847@yahoo.com,***,15,8.67,0,0,35,3,1,18,15,1,0,legitimate
+session_001848,2026-01-24T22:59:33.958068,user1848@outlook.com,***,30,14.69,0,0,38,3,0,20,16,1,0,legitimate
+session_001849,2026-01-28T22:59:33.958068,user1849@outlook.com,***,32,19.45,0,0,35,5,0,20,9,1,0,legitimate
+session_001850,2026-01-11T22:59:33.958068,user1850@yahoo.com,***,36,3.93,0,0,36,5,0,18,16,1,0,legitimate
+session_001851,2026-01-26T22:59:33.958068,administrator,pass626,1,0.39,0,0,7,1,0,13,7,1,1,brute_force
+session_001852,2026-02-03T22:59:33.958068,user1852@yahoo.com,***,13,17.84,0,0,34,7,0,18,11,1,0,legitimate
+session_001853,2026-01-18T22:59:33.958068,user1853@outlook.com,***,8,15.93,0,0,42,5,0,20,12,1,0,legitimate
+session_001854,2026-01-27T22:59:33.958068,user1854@gmail.com,***,10,6.31,0,0,32,10,0,18,11,1,0,legitimate
+session_001855,2026-01-18T22:59:33.958068,..\..\..\windows\system32,test,0,1.18,0,0,25,1,1,25,4,1,1,path_traversal
+session_001856,2026-01-19T22:59:33.958068,bot1856@automated.com,botpass1320,0,0.31,1,21,0,0,1,21,11,1,1,bot
+session_001857,2026-01-16T22:59:33.958068,user1857@outlook.com,***,15,8.71,0,0,34,4,0,20,13,1,0,legitimate
+session_001858,2026-01-18T22:59:33.958068,user1858@company.com,***,29,5.97,0,0,38,9,1,20,11,1,0,legitimate
+session_001859,2026-01-16T22:59:33.958068,user1859@outlook.com,***,20,5.01,0,0,32,10,0,20,12,1,0,legitimate
+session_001860,2026-01-13T22:59:33.958068,user1860@yahoo.com,***,7,5.67,0,0,39,10,0,18,12,1,0,legitimate
+session_001861,2026-01-12T22:59:33.958068,<svg onload=alert(1)>,pass,2,0.66,0,0,21,1,1,21,4,1,1,xss
+session_001862,2026-01-29T22:59:33.958068,user1862@gmail.com,***,42,4.15,0,0,43,6,0,18,15,1,0,legitimate
+session_001863,2026-01-30T22:59:33.958068,<body onload=alert('XSS')>,test,1,0.79,0,0,26,1,1,26,4,1,1,xss
+session_001864,2026-01-20T22:59:33.958068,user1864@outlook.com,***,26,6.27,0,0,34,8,0,20,11,1,0,legitimate
+session_001865,2026-02-01T22:59:33.958068,user1865@outlook.com,***,22,8.19,0,0,37,2,1,20,15,1,0,legitimate
+session_001866,2026-01-11T22:59:33.958068,bot1866@automated.com,botpass5913,0,0.22,1,21,0,0,1,21,11,1,1,bot
+session_001867,2026-01-21T22:59:33.958068,user1867@outlook.com,***,34,14.16,0,0,36,2,1,20,13,1,0,legitimate
+session_001868,2026-01-26T22:59:33.959067,user1868@company.com,***,21,19.51,0,0,38,7,0,20,13,1,0,legitimate
+session_001869,2026-01-16T22:59:33.959067,' UNION SELECT NULL--,test,2,0.4,0,0,8,2,0,21,4,1,1,sql_injection
+session_001870,2026-02-07T22:59:33.959067,' OR 'a'='a,,0,0.68,1,11,9,1,1,11,0,1,1,sql_injection
+session_001871,2026-01-10T22:59:33.959067,user1871@company.com,***,41,18.14,0,0,33,2,0,20,9,1,0,legitimate
+session_001872,2026-01-17T22:59:33.959067,user1872@yahoo.com,***,50,16.31,0,0,29,9,0,18,11,1,0,legitimate
+session_001873,2026-01-31T22:59:33.959067,user1873@gmail.com,***,42,11.37,0,0,33,10,1,18,11,1,0,legitimate
+session_001874,2026-02-03T22:59:33.959067,user1874@gmail.com,***,33,6.26,0,0,31,7,1,18,8,1,0,legitimate
+session_001875,2026-02-01T22:59:33.959067,user1875@gmail.com,***,31,4.19,0,0,35,7,0,18,10,1,0,legitimate
+session_001876,2026-02-02T22:59:33.959067,user1876@gmail.com,***,48,5.75,0,0,37,9,0,18,13,1,0,legitimate
+session_001877,2026-01-19T22:59:33.959067,admin,pass475,0,0.53,0,0,7,0,0,5,7,1,1,brute_force
+session_001878,2026-01-21T22:59:33.959067,user1878@gmail.com,***,50,19.89,0,0,42,10,1,18,14,1,0,legitimate
+session_001879,2026-02-01T22:59:33.959067,user1879@gmail.com,***,46,7.33,0,0,32,6,0,18,9,1,0,legitimate
+session_001880,2026-01-15T22:59:33.959067,bot1880@automated.com,botpass2377,0,0.15,1,21,0,0,1,21,11,1,1,bot
+session_001881,2026-01-17T22:59:33.959067,user1881@outlook.com,***,42,2.08,0,0,39,6,0,20,14,1,0,legitimate
+session_001882,2026-01-23T22:59:33.959067,user1882@yahoo.com,***,30,13.65,0,0,32,7,0,18,9,1,0,legitimate
+session_001883,2026-01-24T22:59:33.959067,user1883@outlook.com,***,35,9.33,0,0,31,5,0,20,11,1,0,legitimate
+session_001884,2026-02-05T22:59:33.959067,bot1884@automated.com,botpass8256,0,0.26,1,21,0,0,1,21,11,1,1,bot
+session_001885,2026-01-21T22:59:33.959067,test@test.com| nc -e /bin/sh,`cat /etc/shadow`,0,0.33,0,0,20,1,1,28,17,1,1,command_injection
+session_001886,2026-01-20T22:59:33.959067,user1886@outlook.com,***,28,3.42,0,0,31,9,1,20,9,1,0,legitimate
+session_001887,2026-01-22T22:59:33.959067,test@test.com| nc -e /bin/sh,| cat /etc/passwd,2,0.18,0,0,10,0,1,28,17,1,1,command_injection
+session_001888,2026-02-03T22:59:33.959067,user1888@gmail.com,***,35,19.34,0,0,32,10,1,18,11,1,0,legitimate
+session_001889,2026-02-04T22:59:33.959067,user1889@gmail.com,***,8,6.49,0,0,35,8,0,18,13,1,0,legitimate
+session_001890,2026-01-24T22:59:33.959067,user1890@gmail.com,***,36,5.94,0,0,34,2,0,18,14,1,0,legitimate
+session_001891,2026-01-22T22:59:33.959067,....//....//....//etc/passwd,test,0,1.01,0,0,28,1,1,28,4,1,1,path_traversal
+session_001892,2026-02-03T22:59:33.959067,user1892@yahoo.com,***,17,12.89,0,0,35,4,0,18,10,1,0,legitimate
+session_001893,2026-01-19T22:59:33.959067,user1893@yahoo.com,***,10,10.74,0,0,34,3,0,18,14,1,0,legitimate
+session_001894,2026-01-09T22:59:33.959067,bot1894@automated.com,botpass6515,0,0.4,1,21,0,0,1,21,11,1,1,bot
+session_001895,2026-01-17T22:59:33.959067,user1895@yahoo.com,***,45,14.23,0,0,36,7,0,18,14,1,0,legitimate
+session_001896,2026-02-05T22:59:33.959067,user1896@outlook.com,***,16,5.85,0,0,33,3,0,20,11,1,0,legitimate
+session_001897,2026-01-19T22:59:33.959067,user1897@outlook.com,***,21,19.73,0,0,31,7,0,20,8,1,0,legitimate
+session_001898,2026-01-16T22:59:33.959067,user1898@gmail.com,***,47,7.1,0,0,35,10,0,18,10,1,0,legitimate
+session_001899,2026-01-16T22:59:33.959067,user1899@gmail.com,***,15,17.2,0,0,35,7,0,18,11,1,0,legitimate
+session_001900,2026-01-11T22:59:33.959067,user1900@yahoo.com,***,47,10.56,0,0,29,10,0,18,8,1,0,legitimate
+session_001901,2026-01-13T22:59:33.959067,<script>alert('XSS')</script>,pass,1,0.68,0,0,29,0,1,29,4,1,1,xss
+session_001902,2026-01-26T22:59:33.959067,user1902@company.com,***,16,19.39,0,0,42,7,0,20,13,1,0,legitimate
+session_001903,2026-01-11T22:59:33.959067,user1903@company.com,***,16,6.05,0,0,41,3,0,20,15,1,0,legitimate
+session_001904,2026-01-11T22:59:33.959067,<svg onload=alert(1)>,pass,1,0.69,0,0,21,0,1,21,4,1,1,xss
+session_001905,2026-01-21T22:59:33.959067,user1905@company.com,***,26,11.85,0,0,31,3,0,20,8,1,0,legitimate
+session_001906,2026-01-23T22:59:33.959067,user1906@outlook.com,***,33,7.15,0,0,32,6,0,20,10,1,0,legitimate
+session_001907,2026-02-07T22:59:33.959067,user1907@yahoo.com,***,22,8.02,0,0,32,8,1,18,13,1,0,legitimate
+session_001908,2026-01-17T22:59:33.959067,user1908@yahoo.com,***,30,16.84,0,0,30,10,0,18,12,1,0,legitimate
+session_001909,2026-01-18T22:59:33.959067,user1909@gmail.com,***,14,17.77,0,0,33,9,0,18,12,1,0,legitimate
+session_001910,2026-02-04T22:59:33.959067,user1910@yahoo.com,***,13,13.1,0,0,33,7,0,18,15,1,0,legitimate
+session_001911,2026-01-30T22:59:33.959067,user1911@company.com,***,49,18.88,0,0,35,9,0,20,13,1,0,legitimate
+session_001912,2026-01-22T22:59:33.959067,user1912@yahoo.com,***,46,12.59,0,0,36,4,0,18,11,1,0,legitimate
+session_001913,2026-02-01T22:59:33.959067,user1913@yahoo.com,***,36,3.52,0,0,36,2,0,18,12,1,0,legitimate
+session_001914,2026-01-10T22:59:33.959067,user1914@company.com,***,32,19.66,0,0,43,5,1,20,13,1,0,legitimate
+session_001915,2026-01-31T22:59:33.959067,user1915@outlook.com,***,25,4.99,0,0,32,6,0,20,12,1,0,legitimate
+session_001916,2026-02-07T22:59:33.959067,admin,pass692,1,0.51,0,0,5,2,0,5,7,1,1,brute_force
+session_001917,2026-01-30T22:59:33.959067,user1917@yahoo.com,***,6,12.7,0,0,30,5,0,18,10,1,0,legitimate
+session_001918,2026-01-11T22:59:33.959067,user1918@yahoo.com,***,11,10.16,0,0,27,3,0,18,8,1,0,legitimate
+session_001919,2026-01-19T22:59:33.959067,user1919@company.com,***,37,4.95,0,0,36,2,0,20,15,1,0,legitimate
+session_001920,2026-02-05T22:59:33.959067,user1920@gmail.com,***,20,2.39,0,0,34,2,0,18,13,1,0,legitimate
+session_001921,2026-01-11T22:59:33.959067,user1921@outlook.com,***,37,5.94,0,0,33,8,1,20,10,1,0,legitimate
+session_001922,2026-01-22T22:59:33.959067,user1922@gmail.com,***,31,17.39,0,0,42,2,1,18,14,1,0,legitimate
+session_001923,2026-01-17T22:59:33.959067,user1923@company.com,***,36,17.08,0,0,36,5,0,20,16,1,0,legitimate
+session_001924,2026-01-20T22:59:33.959067,admin'--,123,3,0.17,0,0,20,0,0,8,3,1,1,sql_injection
+session_001925,2026-01-24T22:59:33.959067,....//....//....//etc/passwd,test,2,0.32,0,0,28,0,1,28,4,1,1,path_traversal
+session_001926,2026-01-27T22:59:33.959067,user1926@gmail.com,***,23,18.31,0,0,31,5,0,18,10,1,0,legitimate
+session_001927,2026-02-07T22:59:33.959067,user1927@company.com,***,30,3.41,0,0,42,3,1,20,13,1,0,legitimate
+session_001928,2026-01-16T22:59:33.959067,user1928@yahoo.com,***,39,18.89,0,0,42,7,0,18,15,1,0,legitimate
+session_001929,2026-01-10T22:59:33.959067,user1929@outlook.com,***,5,2.2,0,0,35,9,0,20,9,1,0,legitimate
+session_001930,2026-01-17T22:59:33.959067,user1930@gmail.com,***,44,16.3,0,0,34,8,0,18,11,1,0,legitimate
+session_001931,2026-02-08T22:59:33.959067,user1931@yahoo.com,***,13,3.81,0,0,37,3,0,18,12,1,0,legitimate
+session_001932,2026-01-26T22:59:33.959067,user1932@gmail.com,***,27,11.9,0,0,29,10,0,18,11,1,0,legitimate
+session_001933,2026-01-24T22:59:33.959067,user1933@company.com,***,11,6.24,0,0,37,6,0,20,15,1,0,legitimate
+session_001934,2026-01-17T22:59:33.959067,user1934@outlook.com,***,44,11.7,0,0,44,7,1,20,15,1,0,legitimate
+session_001935,2026-01-19T22:59:33.959067,user1935@yahoo.com,***,10,19.94,0,0,32,2,0,18,10,1,0,legitimate
+session_001936,2026-02-05T22:59:33.959067,user1936@yahoo.com,***,32,5.45,0,0,31,6,0,18,11,1,0,legitimate
+session_001937,2026-01-18T22:59:33.959067,user1937@gmail.com,***,21,15.76,0,0,35,5,0,18,8,1,0,legitimate
+session_001938,2026-02-01T22:59:33.959067,<script>alert('XSS')</script>,test,1,0.49,0,0,29,1,1,29,4,1,1,xss
+session_001939,2026-02-04T22:59:33.959067,<svg onload=alert(1)>,test,0,0.44,0,0,21,0,1,21,4,1,1,xss
+session_001940,2026-01-20T22:59:33.959067,test@test.com&& whoami,| cat /etc/passwd,1,0.76,0,0,20,0,1,22,17,1,1,command_injection
+session_001941,2026-01-13T22:59:33.959067,user1941@gmail.com,***,11,5.19,0,0,39,4,0,18,16,1,0,legitimate
+session_001942,2026-02-04T22:59:33.959067,user1942@yahoo.com,***,45,16.53,0,0,31,5,0,18,12,1,0,legitimate
+session_001943,2026-01-20T22:59:33.959067,user1943@yahoo.com,***,15,18.61,0,0,37,4,0,18,16,1,0,legitimate
+session_001944,2026-01-25T22:59:33.959067,user1944@company.com,***,17,3.92,0,0,39,2,0,20,10,1,0,legitimate
+session_001945,2026-01-31T22:59:33.959067,user1945@yahoo.com,***,25,9.74,0,0,41,6,0,18,14,1,0,legitimate
+session_001946,2026-02-04T22:59:33.959067,user1946@outlook.com,***,39,18.53,0,0,37,9,0,20,13,1,0,legitimate
+session_001947,2026-01-27T22:59:33.959067,user1947@yahoo.com,***,39,15.57,0,0,30,5,0,18,10,1,0,legitimate
+session_001948,2026-01-10T22:59:33.959067,user1948@outlook.com,***,36,8.21,0,0,32,7,0,20,11,1,0,legitimate
+session_001949,2026-01-23T22:59:33.959067,<iframe src=javascript:alert(1)>,pass,0,0.49,0,0,32,0,1,32,4,1,1,xss
+session_001950,2026-01-10T22:59:33.959067,user1950@yahoo.com,***,24,12.55,0,0,35,8,1,18,9,1,0,legitimate
+session_001951,2026-01-19T22:59:33.959067,user1951@yahoo.com,***,26,2.36,0,0,41,6,0,18,16,1,0,legitimate
+session_001952,2026-02-08T22:59:33.959067,user1952@gmail.com,***,22,4.0,0,0,39,3,0,18,11,1,0,legitimate
+session_001953,2026-01-14T22:59:33.959067,user1953@gmail.com,***,14,2.15,0,0,40,6,0,18,13,1,0,legitimate
+session_001954,2026-01-25T22:59:33.959067,test@test.com`cat /etc/shadow`,| nc -e /bin/sh,0,0.68,0,0,18,1,1,30,15,1,1,command_injection
+session_001955,2026-01-12T22:59:33.959067,user1955@gmail.com,***,7,17.81,0,0,44,8,0,18,16,1,0,legitimate
+session_001956,2026-01-15T22:59:33.959067,user1956@outlook.com,***,13,14.76,0,0,37,6,0,20,10,1,0,legitimate
+session_001957,2026-02-01T22:59:33.959067,admin' UNION SELECT,admin,2,1.19,0,0,15,0,1,19,5,1,1,sql_injection
+session_001958,2026-01-14T22:59:33.959067,user1958@company.com,***,22,2.17,0,0,29,9,1,20,8,1,0,legitimate
+session_001959,2026-01-26T22:59:33.959067,user1959@yahoo.com,***,20,16.97,0,0,40,3,0,18,13,1,0,legitimate
+session_001960,2026-01-09T22:59:33.959067,administrator,pass630,0,0.51,0,0,9,1,0,13,7,1,1,brute_force
+session_001961,2026-01-26T22:59:33.959067,' OR 'a'='a,123,1,1.34,1,11,12,2,0,11,3,1,1,sql_injection
+session_001962,2026-02-03T22:59:33.959067,user1962@outlook.com,***,47,7.84,0,0,38,3,0,20,10,1,0,legitimate
+session_001963,2026-01-19T22:59:33.959067,../../../etc/passwd,test,2,0.8,0,0,19,0,1,19,4,1,1,path_traversal
+session_001964,2026-01-13T22:59:33.959067,<svg onload=alert(1)>,,0,0.7,0,0,21,0,1,21,0,1,1,xss
+session_001965,2026-02-08T22:59:33.959067,user1965@outlook.com,***,14,4.85,0,0,37,3,0,20,14,1,0,legitimate
+session_001966,2026-01-18T22:59:33.959067,user1966@company.com,***,50,13.68,0,0,32,2,0,20,9,1,0,legitimate
+session_001967,2026-02-07T22:59:33.959067,user1967@outlook.com,***,19,5.89,0,0,42,4,0,20,15,1,0,legitimate
+session_001968,2026-01-12T22:59:33.959067,user1968@gmail.com,***,11,14.07,0,0,31,9,0,18,13,1,0,legitimate
+session_001969,2026-01-18T22:59:33.959067,user1969@company.com,***,7,18.17,0,0,40,2,0,20,14,1,0,legitimate
+session_001970,2026-02-07T22:59:33.959067,user1970@yahoo.com,***,31,18.63,0,0,40,9,0,18,14,1,0,legitimate
+session_001971,2026-02-04T22:59:33.959067,<input onfocus=alert(1) autofocus>,pass,1,0.28,0,0,34,0,1,34,4,1,1,xss
+session_001972,2026-02-07T22:59:33.959067,' UNION SELECT NULL--,admin,2,0.76,0,0,12,1,1,21,5,1,1,sql_injection
+session_001973,2026-02-06T22:59:33.959067,administrator,pass688,0,0.72,0,0,3,1,0,13,7,1,1,brute_force
+session_001974,2026-01-09T22:59:33.959067,administrator,pass550,0,0.94,0,0,5,1,0,13,7,1,1,brute_force
+session_001975,2026-02-03T22:59:33.959067,root,pass697,0,0.95,0,0,5,2,0,4,7,1,1,brute_force
+session_001976,2026-02-05T22:59:33.959067,bot1976@automated.com,botpass2750,0,0.13,1,21,0,0,1,21,11,1,1,bot
+session_001977,2026-01-12T22:59:33.959067,user1977@company.com,***,31,10.71,0,0,32,8,1,20,9,1,0,legitimate
+session_001978,2026-01-12T22:59:33.959067,test@test.com; rm -rf /,| cat /etc/passwd,1,0.51,0,0,19,2,1,23,17,1,1,command_injection
+session_001979,2026-01-26T22:59:33.959067,bot1979@automated.com,botpass9148,0,0.14,1,21,0,0,1,21,11,1,1,bot
+session_001980,2026-02-04T22:59:33.959067,user1980@yahoo.com,***,42,19.49,0,0,38,7,0,18,12,1,0,legitimate
+session_001981,2026-01-18T22:59:33.959067,user1981@outlook.com,***,33,18.72,0,0,35,5,0,20,11,1,0,legitimate
+session_001982,2026-01-12T22:59:33.959067,user1982@outlook.com,***,29,7.79,0,0,34,4,0,20,12,1,0,legitimate
+session_001983,2026-01-13T22:59:33.959067,user1983@outlook.com,***,17,15.59,0,0,36,8,0,20,12,1,0,legitimate
+session_001984,2026-01-26T22:59:33.959067,....//....//....//etc/passwd,test,1,0.68,0,0,28,0,1,28,4,1,1,path_traversal
+session_001985,2026-01-09T22:59:33.959067,....//....//....//etc/passwd,test,0,0.68,0,0,28,0,1,28,4,1,1,path_traversal
+session_001986,2026-01-14T22:59:33.959067,....//....//....//etc/passwd,test,0,0.62,0,0,28,0,1,28,4,1,1,path_traversal
+session_001987,2026-01-23T22:59:33.960067,....//....//....//etc/passwd,test,2,1.09,0,0,28,0,1,28,4,1,1,path_traversal
+session_001988,2026-01-31T22:59:33.960067,user1988@gmail.com,***,11,9.69,0,0,39,5,1,18,13,1,0,legitimate
+session_001989,2026-01-19T22:59:33.960067,user1989@gmail.com,***,14,17.86,0,0,33,7,0,18,10,1,0,legitimate
+session_001990,2026-01-17T22:59:33.960067,user1990@gmail.com,***,17,4.15,0,0,28,2,0,18,10,1,0,legitimate
+session_001991,2026-02-04T22:59:33.960067,user1991@gmail.com,***,36,4.24,0,0,36,8,0,18,13,1,0,legitimate
+session_001992,2026-01-31T22:59:33.960067,user1992@outlook.com,***,38,17.83,0,0,43,10,1,20,16,1,0,legitimate
+session_001993,2026-01-12T22:59:33.960067,../../../etc/passwd,test,0,0.86,0,0,19,1,1,19,4,1,1,path_traversal
+session_001994,2026-01-30T22:59:33.960067,user1994@yahoo.com,***,44,15.31,0,0,36,8,0,18,12,1,0,legitimate
+session_001995,2026-01-11T22:59:33.960067,user1995@outlook.com,***,7,9.73,0,0,38,5,0,20,10,1,0,legitimate
+session_001996,2026-02-08T22:59:33.960067,user1996@gmail.com,***,26,13.74,0,0,37,5,1,18,14,1,0,legitimate
+session_001997,2026-02-04T22:59:33.960067,user1997@company.com,***,50,19.82,0,0,41,8,0,20,16,1,0,legitimate
+session_001998,2026-01-20T22:59:33.960067,user1998@outlook.com,***,30,2.41,0,0,36,4,1,20,14,1,0,legitimate
+session_001999,2026-01-14T22:59:33.960067,user1999@company.com,***,12,6.25,0,0,33,10,0,20,9,1,0,legitimate
+session_002000,2026-01-17T22:59:33.960067,user2000@outlook.com,***,8,10.65,0,0,35,7,0,20,10,1,0,legitimate
+session_002001,2026-01-22T22:59:33.960067,test@test.com&& whoami,&& whoami,2,0.59,0,0,11,1,1,22,9,1,1,command_injection
+session_002002,2026-01-26T22:59:33.960067,..%2F..%2F..%2Fetc%2Fpasswd,test,2,0.9,0,0,27,1,1,27,4,1,1,path_traversal
+session_002003,2026-01-21T22:59:33.960067,user2003@company.com,***,10,13.89,0,0,44,6,0,20,14,1,0,legitimate
+session_002004,2026-02-04T22:59:33.960067,bot2004@automated.com,botpass5482,0,0.48,1,21,0,0,1,21,11,1,1,bot
+session_002005,2026-01-15T22:59:33.960067,user2005@outlook.com,***,19,4.99,0,0,32,5,0,20,11,1,0,legitimate
+session_002006,2026-01-14T22:59:33.960067,user2006@company.com,***,36,19.16,0,0,38,5,1,20,16,1,0,legitimate
+session_002007,2026-01-23T22:59:33.960067,user2007@yahoo.com,***,36,4.46,0,0,35,7,1,18,10,1,0,legitimate
+session_002008,2026-02-06T22:59:33.960067,user2008@gmail.com,***,31,7.67,0,0,38,2,0,18,12,1,0,legitimate
+session_002009,2026-02-08T22:59:33.960067,root,pass70,0,0.87,0,0,10,2,0,4,6,1,1,brute_force
+session_002010,2026-01-09T22:59:33.960067,user2010@gmail.com,***,17,5.67,0,0,34,5,1,18,11,1,0,legitimate
+session_002011,2026-02-08T22:59:33.960067,user2011@yahoo.com,***,22,17.24,0,0,41,5,0,18,15,1,0,legitimate
+session_002012,2026-01-26T22:59:33.960067,user2012@gmail.com,***,31,15.01,0,0,34,7,1,18,14,1,0,legitimate
+session_002013,2026-01-20T22:59:33.960067,user2013@company.com,***,32,16.46,0,0,36,8,0,20,11,1,0,legitimate
+session_002014,2026-01-11T22:59:33.960067,user2014@outlook.com,***,17,17.99,0,0,38,7,0,20,13,1,0,legitimate
+session_002015,2026-02-03T22:59:33.960067,user2015@outlook.com,***,23,13.8,0,0,37,5,0,20,11,1,0,legitimate
+session_002016,2026-02-08T22:59:33.960067,user2016@outlook.com,***,13,5.55,0,0,37,8,0,20,8,1,0,legitimate
+session_002017,2026-01-16T22:59:33.960067,user2017@company.com,***,33,12.96,0,0,33,7,0,20,13,1,0,legitimate
+session_002018,2026-01-23T22:59:33.960067,root,pass560,0,0.76,0,0,10,0,0,4,7,1,1,brute_force
+session_002019,2026-01-26T22:59:33.960067,test,pass257,1,0.54,0,0,5,1,0,4,7,1,1,brute_force
+session_002020,2026-02-07T22:59:33.960067,bot2020@automated.com,botpass9000,0,0.4,1,21,0,0,1,21,11,1,1,bot
+session_002021,2026-01-09T22:59:33.960067,user2021@gmail.com,***,24,2.7,0,0,41,9,0,18,15,1,0,legitimate
+session_002022,2026-01-27T22:59:33.960067,user2022@company.com,***,45,10.76,0,0,35,7,0,20,10,1,0,legitimate
+session_002023,2026-01-24T22:59:33.960067,1' AND '1'='1,123,2,1.02,0,0,6,1,1,13,3,1,1,sql_injection
+session_002024,2026-01-10T22:59:33.960067,admin,pass57,0,0.38,0,0,3,1,0,5,6,1,1,brute_force
+session_002025,2026-01-09T22:59:33.960067,bot2025@automated.com,botpass9812,0,0.17,1,21,0,0,1,21,11,1,1,bot
+session_002026,2026-01-29T22:59:33.960067,administrator,pass705,1,0.82,0,0,3,2,0,13,7,1,1,brute_force
+session_002027,2026-01-10T22:59:33.960067,user2027@yahoo.com,***,41,3.91,0,0,34,4,0,18,15,1,0,legitimate
+session_002028,2026-01-14T22:59:33.960067,user2028@yahoo.com,***,24,15.04,0,0,35,10,1,18,11,1,0,legitimate
+session_002029,2026-01-16T22:59:33.960067,user2029@company.com,***,48,8.38,0,0,37,8,0,20,13,1,0,legitimate
+session_002030,2026-01-29T22:59:33.960067,user2030@gmail.com,***,9,17.01,0,0,28,9,0,18,8,1,0,legitimate
+session_002031,2026-01-16T22:59:33.960067,..%2F..%2F..%2Fetc%2Fpasswd,test,2,0.28,0,0,27,1,1,27,4,1,1,path_traversal
+session_002032,2026-02-04T22:59:33.960067,user2032@yahoo.com,***,28,12.64,0,0,36,5,0,18,13,1,0,legitimate
+session_002033,2026-01-11T22:59:33.960067,test@test.com`cat /etc/shadow`,; ls -la,1,0.5,0,0,20,0,1,30,8,1,1,command_injection
+session_002034,2026-02-04T22:59:33.960067,' OR 1=1--,123,3,0.6,0,0,7,1,0,10,3,1,1,sql_injection
+session_002035,2026-01-30T22:59:33.960067,....//....//....//etc/passwd,test,1,1.0,0,0,28,0,1,28,4,1,1,path_traversal
+session_002036,2026-01-30T22:59:33.960067,user2036@yahoo.com,***,9,16.5,0,0,32,6,0,18,9,1,0,legitimate
+session_002037,2026-02-01T22:59:33.960067,user2037@company.com,***,12,12.03,0,0,33,3,0,20,8,1,0,legitimate
+session_002038,2026-01-09T22:59:33.960067,user2038@outlook.com,***,35,8.16,0,0,35,4,0,20,10,1,0,legitimate
+session_002039,2026-01-23T22:59:33.960067,user2039@yahoo.com,***,29,11.21,0,0,31,6,0,18,10,1,0,legitimate
+session_002040,2026-02-07T22:59:33.960067,user2040@yahoo.com,***,39,18.03,0,0,32,8,0,18,10,1,0,legitimate
+session_002041,2026-01-26T22:59:33.960067,test@test.com&& whoami,&& whoami,0,0.19,0,0,11,2,1,22,9,1,1,command_injection
+session_002042,2026-01-22T22:59:33.960067,bot2042@automated.com,botpass7097,0,0.23,1,21,0,0,1,21,11,1,1,bot
+session_002043,2026-01-30T22:59:33.960067,user2043@gmail.com,***,41,10.67,0,0,39,4,0,18,14,1,0,legitimate
+session_002044,2026-01-09T22:59:33.960067,user2044@gmail.com,***,48,5.57,0,0,39,5,1,18,14,1,0,legitimate
+session_002045,2026-01-15T22:59:33.960067,user2045@company.com,***,8,15.1,0,0,31,10,1,20,8,1,0,legitimate
+session_002046,2026-01-18T22:59:33.960067,test@test.com&& whoami,| nc -e /bin/sh,0,0.51,0,0,25,2,1,22,15,1,1,command_injection
+session_002047,2026-01-15T22:59:33.960067,bot2047@automated.com,botpass4333,0,0.32,1,21,0,0,1,21,11,1,1,bot
+session_002048,2026-01-29T22:59:33.960067,user2048@outlook.com,***,22,12.65,0,0,35,7,0,20,14,1,0,legitimate
+session_002049,2026-01-17T22:59:33.960067,user2049@yahoo.com,***,36,9.72,0,0,33,4,0,18,11,1,0,legitimate
+session_002050,2026-02-03T22:59:33.960067,<script>alert('XSS')</script>,pass,0,0.89,0,0,29,0,1,29,4,1,1,xss
+session_002051,2026-01-12T22:59:33.960067,user2051@outlook.com,***,32,4.43,0,0,29,3,1,20,8,1,0,legitimate
+session_002052,2026-01-10T22:59:33.960067,user2052@company.com,***,41,17.68,0,0,37,9,1,20,9,1,0,legitimate
+session_002053,2026-01-24T22:59:33.960067,admin'--,,1,0.38,1,8,5,1,1,8,0,1,1,sql_injection
+session_002054,2026-01-29T22:59:33.960067,user2054@yahoo.com,***,27,19.74,0,0,36,7,0,18,9,1,0,legitimate
+session_002055,2026-01-12T22:59:33.960067,..%2F..%2F..%2Fetc%2Fpasswd,test,2,1.06,0,0,27,1,1,27,4,1,1,path_traversal
+session_002056,2026-01-21T22:59:33.960067,user2056@company.com,***,40,17.66,0,0,34,10,1,20,10,1,0,legitimate
+session_002057,2026-01-27T22:59:33.960067,user2057@outlook.com,***,33,8.86,0,0,35,8,0,20,15,1,0,legitimate
+session_002058,2026-01-31T22:59:33.960067,user2058@yahoo.com,***,39,14.42,0,0,35,4,0,18,13,1,0,legitimate
+session_002059,2026-01-16T22:59:33.960067,user2059@company.com,***,30,6.04,0,0,37,4,0,20,12,1,0,legitimate
+session_002060,2026-01-11T22:59:33.960067,' OR 1=1--,test,1,1.35,1,10,11,1,1,10,4,1,1,sql_injection
+session_002061,2026-01-25T22:59:33.960067,user2061@company.com,***,31,3.58,0,0,39,10,0,20,13,1,0,legitimate
+session_002062,2026-02-01T22:59:33.960067,user2062@company.com,***,48,11.01,0,0,37,2,0,20,8,1,0,legitimate
+session_002063,2026-01-17T22:59:33.960067,user2063@yahoo.com,***,17,16.36,0,0,43,7,1,18,15,1,0,legitimate
+session_002064,2026-01-24T22:59:33.960067,user2064@yahoo.com,***,5,9.18,0,0,34,5,0,18,16,1,0,legitimate
+session_002065,2026-01-13T22:59:33.960067,admin'--,test,2,0.88,0,0,12,2,1,8,4,1,1,sql_injection
+session_002066,2026-01-23T22:59:33.960067,user2066@outlook.com,***,37,10.95,0,0,36,10,0,20,12,1,0,legitimate
+session_002067,2026-01-20T22:59:33.960067,user2067@outlook.com,***,23,6.99,0,0,39,9,0,20,10,1,0,legitimate
+session_002068,2026-01-10T22:59:33.960067,user2068@gmail.com,***,34,4.54,0,0,38,2,0,18,12,1,0,legitimate
+session_002069,2026-02-05T22:59:33.960067,user2069@company.com,***,49,4.0,0,0,37,8,0,20,11,1,0,legitimate
+session_002070,2026-01-22T22:59:33.960067,user2070@gmail.com,***,9,14.93,0,0,31,6,0,18,11,1,0,legitimate
+session_002071,2026-01-17T22:59:33.960067,test@test.com; ls -la,| cat /etc/passwd,2,0.52,0,0,12,0,1,21,17,1,1,command_injection
+session_002072,2026-01-19T22:59:33.960067,test@test.com| nc -e /bin/sh,`cat /etc/shadow`,0,0.21,0,0,23,2,1,28,17,1,1,command_injection
+session_002073,2026-01-25T22:59:33.960067,user2073@gmail.com,***,40,17.69,0,0,28,5,1,18,9,1,0,legitimate
+session_002074,2026-02-04T22:59:33.960067,user2074@yahoo.com,***,30,19.53,0,0,34,4,1,18,13,1,0,legitimate
+session_002075,2026-01-14T22:59:33.960067,user2075@outlook.com,***,11,8.17,0,0,40,5,0,20,15,1,0,legitimate
+session_002076,2026-01-31T22:59:33.960067,user2076@outlook.com,***,6,16.43,0,0,38,3,1,20,12,1,0,legitimate
+session_002077,2026-01-31T22:59:33.960067,user2077@outlook.com,***,41,8.17,0,0,37,9,0,20,15,1,0,legitimate
+session_002078,2026-02-06T22:59:33.960067,test,pass939,1,0.51,0,0,3,2,0,4,7,1,1,brute_force
+session_002079,2026-01-23T22:59:33.960067,1' AND '1'='1,admin,0,0.85,1,13,16,2,1,13,5,1,1,sql_injection
+session_002080,2026-01-23T22:59:33.960067,../../../etc/passwd,test,2,0.51,0,0,19,0,1,19,4,1,1,path_traversal
+session_002081,2026-02-04T22:59:33.960067,....//....//....//etc/passwd,test,1,1.14,0,0,28,0,1,28,4,1,1,path_traversal
+session_002082,2026-01-16T22:59:33.960067,test@test.com; ls -la,; rm -rf /,2,0.76,0,0,19,2,1,21,10,1,1,command_injection
+session_002083,2026-01-16T22:59:33.960067,user2083@outlook.com,***,10,18.3,0,0,31,5,0,20,9,1,0,legitimate
+session_002084,2026-02-04T22:59:33.960067,user2084@yahoo.com,***,36,13.49,0,0,34,7,0,18,14,1,0,legitimate
+session_002085,2026-01-27T22:59:33.960067,user2085@outlook.com,***,16,11.17,0,0,36,3,0,20,14,1,0,legitimate
+session_002086,2026-01-17T22:59:33.960067,user2086@outlook.com,***,43,7.36,0,0,41,9,0,20,13,1,0,legitimate
+session_002087,2026-02-08T22:59:33.960067,user2087@outlook.com,***,19,10.44,0,0,35,4,0,20,12,1,0,legitimate
+session_002088,2026-02-01T22:59:33.960067,user2088@yahoo.com,***,26,17.17,0,0,37,6,1,18,12,1,0,legitimate
+session_002089,2026-01-28T22:59:33.960067,bot2089@automated.com,botpass8865,0,0.49,1,21,0,0,1,21,11,1,1,bot
+session_002090,2026-01-14T22:59:33.960067,user2090@gmail.com,***,46,2.42,0,0,34,2,0,18,13,1,0,legitimate
+session_002091,2026-01-24T22:59:33.960067,user2091@gmail.com,***,13,19.46,0,0,35,3,0,18,15,1,0,legitimate
+session_002092,2026-01-12T22:59:33.960067,user2092@gmail.com,***,41,15.17,0,0,27,5,0,18,9,1,0,legitimate
+session_002093,2026-01-29T22:59:33.960067,test@test.com| nc -e /bin/sh,&& whoami,1,0.78,0,0,13,1,1,28,9,1,1,command_injection
+session_002094,2026-01-10T22:59:33.960067,user2094@yahoo.com,***,46,7.59,0,0,35,8,0,18,10,1,0,legitimate
+session_002095,2026-01-21T22:59:33.960067,root,pass985,1,0.37,0,0,8,0,0,4,7,1,1,brute_force
+session_002096,2026-02-03T22:59:33.960067,user2096@yahoo.com,***,39,5.08,0,0,39,8,0,18,11,1,0,legitimate
+session_002097,2026-01-29T22:59:33.960067,user2097@gmail.com,***,31,3.17,0,0,39,9,0,18,15,1,0,legitimate
+session_002098,2026-01-17T22:59:33.960067,test@test.com| cat /etc/passwd,; ls -la,1,0.69,0,0,15,0,1,30,8,1,1,command_injection
+session_002099,2026-01-13T22:59:33.960067,user2099@outlook.com,***,48,11.74,0,0,35,10,0,20,15,1,0,legitimate
+session_002100,2026-01-24T22:59:33.960067,user2100@yahoo.com,***,36,7.23,0,0,34,4,0,18,12,1,0,legitimate
+session_002101,2026-02-06T22:59:33.960067,user2101@company.com,***,31,8.39,0,0,38,4,0,20,15,1,0,legitimate
+session_002102,2026-02-01T22:59:33.960067,test@test.com; ls -la,`cat /etc/shadow`,1,0.3,0,0,16,0,1,21,17,1,1,command_injection
+session_002103,2026-02-07T22:59:33.960067,user2103@outlook.com,***,41,19.8,0,0,45,2,0,20,15,1,0,legitimate
+session_002104,2026-01-20T22:59:33.960067,<script>alert('XSS')</script>,,1,0.66,0,0,29,0,1,29,0,1,1,xss
+session_002105,2026-01-10T22:59:33.960067,user2105@gmail.com,***,43,6.21,0,0,32,6,1,18,8,1,0,legitimate
+session_002106,2026-01-28T22:59:33.960067,user2106@company.com,***,27,19.42,0,0,39,10,0,20,11,1,0,legitimate
+session_002107,2026-01-09T22:59:33.960067,1' AND '1'='1,123,2,1.15,0,0,7,1,0,13,3,1,1,sql_injection
+session_002108,2026-01-17T22:59:33.961069,user2108@yahoo.com,***,22,6.67,0,0,32,6,1,18,11,1,0,legitimate
+session_002109,2026-01-22T22:59:33.961069,user2109@company.com,***,18,8.67,0,0,33,6,0,20,8,1,0,legitimate
+session_002110,2026-02-08T22:59:33.961069,user2110@company.com,***,46,5.97,0,0,35,5,0,20,12,1,0,legitimate
+session_002111,2026-01-20T22:59:33.961069,user2111@gmail.com,***,32,4.91,0,0,35,5,0,18,13,1,0,legitimate
+session_002112,2026-01-13T22:59:33.961069,user2112@yahoo.com,***,32,7.34,0,0,29,5,0,18,8,1,0,legitimate
+session_002113,2026-02-06T22:59:33.961069,user2113@outlook.com,***,46,4.77,0,0,33,9,0,20,13,1,0,legitimate
+session_002114,2026-02-04T22:59:33.961069,user2114@outlook.com,***,45,10.15,0,0,39,5,0,20,13,1,0,legitimate
+session_002115,2026-01-16T22:59:33.961069,user2115@gmail.com,***,13,7.97,0,0,38,10,0,18,14,1,0,legitimate
+session_002116,2026-01-20T22:59:33.961069,<img src=x onerror=alert(1)>,,0,0.54,0,0,28,1,1,28,0,1,1,xss
+session_002117,2026-01-25T22:59:33.961069,user2117@yahoo.com,***,29,18.84,0,0,37,4,0,18,11,1,0,legitimate
+session_002118,2026-01-09T22:59:33.961069,user2118@gmail.com,***,21,18.31,0,0,37,9,0,18,13,1,0,legitimate
+session_002119,2026-01-23T22:59:33.961069,user2119@outlook.com,***,34,7.45,0,0,30,6,1,20,8,1,0,legitimate
+session_002120,2026-01-31T22:59:33.961069,test@test.com`cat /etc/shadow`,| cat /etc/passwd,0,0.48,0,0,21,0,1,30,17,1,1,command_injection
+session_002121,2026-01-19T22:59:33.961069,user2121@yahoo.com,***,42,9.71,0,0,43,4,0,18,15,1,0,legitimate
+session_002122,2026-01-25T22:59:33.961069,bot2122@automated.com,botpass8772,0,0.39,1,21,0,0,1,21,11,1,1,bot
+session_002123,2026-02-08T22:59:33.961069,user2123@yahoo.com,***,25,3.25,0,0,26,7,1,18,8,1,0,legitimate
+session_002124,2026-01-10T22:59:33.961069,' OR 1=1--,admin,3,0.72,1,10,11,0,1,10,5,1,1,sql_injection
+session_002125,2026-01-14T22:59:33.961069,user2125@yahoo.com,***,16,10.53,0,0,36,3,0,18,9,1,0,legitimate
+session_002126,2026-01-30T22:59:33.961069,bot2126@automated.com,botpass6094,0,0.39,1,21,0,0,1,21,11,1,1,bot
+session_002127,2026-01-21T22:59:33.961069,user2127@outlook.com,***,30,9.02,0,0,36,3,0,20,13,1,0,legitimate
+session_002128,2026-01-14T22:59:33.961069,user2128@outlook.com,***,49,7.45,0,0,45,4,0,20,15,1,0,legitimate
+session_002129,2026-01-23T22:59:33.961069,....//....//....//etc/passwd,test,0,1.05,0,0,28,1,1,28,4,1,1,path_traversal
+session_002130,2026-02-04T22:59:33.961069,user2130@company.com,***,7,6.07,0,0,32,8,1,20,9,1,0,legitimate
+session_002131,2026-01-22T22:59:33.961069,user2131@company.com,***,33,18.44,0,0,40,6,0,20,11,1,0,legitimate
+session_002132,2026-01-23T22:59:33.961069,"'""><script>alert(String.fromCharCode(88,83,83))</script>",pass,1,0.47,0,0,56,0,1,56,4,1,1,xss
+session_002133,2026-02-02T22:59:33.961069,user2133@company.com,***,17,19.02,0,0,30,4,0,20,10,1,0,legitimate
+session_002134,2026-01-27T22:59:33.961069,admin'/*,test,3,0.66,1,8,15,0,0,8,4,1,1,sql_injection
+session_002135,2026-01-19T22:59:33.961069,user2135@yahoo.com,***,47,10.07,0,0,35,4,0,18,9,1,0,legitimate
+session_002136,2026-01-22T22:59:33.961069,user2136@company.com,***,50,10.42,0,0,42,5,0,20,14,1,0,legitimate
+session_002137,2026-01-21T22:59:33.961069,user2137@yahoo.com,***,46,6.9,0,0,41,10,0,18,15,1,0,legitimate
+session_002138,2026-01-28T22:59:33.961069,user2138@yahoo.com,***,38,8.17,0,0,35,6,0,18,9,1,0,legitimate
+session_002139,2026-01-13T22:59:33.961069,user2139@yahoo.com,***,23,5.58,0,0,34,6,0,18,13,1,0,legitimate
+session_002140,2026-01-22T22:59:33.961069,user2140@outlook.com,***,23,14.5,0,0,35,3,0,20,8,1,0,legitimate
+session_002141,2026-01-14T22:59:33.961069,user2141@outlook.com,***,42,18.29,0,0,36,3,0,20,16,1,0,legitimate
+session_002142,2026-01-23T22:59:33.961069,user2142@outlook.com,***,42,6.02,0,0,43,8,0,20,14,1,0,legitimate
+session_002143,2026-01-10T22:59:33.961069,test@test.com; rm -rf /,| nc -e /bin/sh,1,0.56,0,0,12,2,1,23,15,1,1,command_injection
+session_002144,2026-01-31T22:59:33.961069,user2144@gmail.com,***,28,8.07,0,0,34,3,1,18,13,1,0,legitimate
+session_002145,2026-01-11T22:59:33.961069,user2145@outlook.com,***,17,9.54,0,0,32,4,0,20,11,1,0,legitimate
+session_002146,2026-01-26T22:59:33.961069,user2146@yahoo.com,***,42,5.5,0,0,39,2,0,18,13,1,0,legitimate
+session_002147,2026-01-12T22:59:33.961069,admin,pass685,0,0.93,0,0,8,2,0,5,7,1,1,brute_force
+session_002148,2026-01-27T22:59:33.961069,user2148@outlook.com,***,15,7.15,0,0,33,3,0,20,12,1,0,legitimate
+session_002149,2026-01-11T22:59:33.961069,user2149@gmail.com,***,20,11.9,0,0,33,9,0,18,10,1,0,legitimate
+session_002150,2026-01-17T22:59:33.961069,user2150@yahoo.com,***,14,13.81,0,0,38,7,0,18,10,1,0,legitimate
+session_002151,2026-01-10T22:59:33.961069,user2151@company.com,***,24,15.42,0,0,33,3,0,20,12,1,0,legitimate
+session_002152,2026-01-31T22:59:33.961069,user2152@outlook.com,***,27,16.03,0,0,42,3,0,20,12,1,0,legitimate
+session_002153,2026-01-26T22:59:33.961069,test@test.com`cat /etc/shadow`,; ls -la,0,0.47,0,0,15,2,1,30,8,1,1,command_injection
+session_002154,2026-01-14T22:59:33.961069,user2154@company.com,***,5,11.13,0,0,42,2,0,20,16,1,0,legitimate
+session_002155,2026-02-01T22:59:33.961069,<img src=x onerror=alert(1)>,pass,2,0.96,0,0,28,0,1,28,4,1,1,xss
+session_002156,2026-01-31T22:59:33.961069,bot2156@automated.com,botpass5433,0,0.27,1,21,0,0,1,21,11,1,1,bot
+session_002157,2026-01-18T22:59:33.961069,user2157@outlook.com,***,43,9.29,0,0,29,9,0,20,9,1,0,legitimate
+session_002158,2026-01-19T22:59:33.961069,user2158@outlook.com,***,9,12.97,0,0,40,10,0,20,14,1,0,legitimate
+session_002159,2026-01-31T22:59:33.961069,user2159@outlook.com,***,41,10.19,0,0,45,5,0,20,15,1,0,legitimate
+session_002160,2026-02-01T22:59:33.961069,....//....//....//etc/passwd,test,0,1.14,0,0,28,1,1,28,4,1,1,path_traversal
+session_002161,2026-02-01T22:59:33.961069,user2161@yahoo.com,***,41,16.88,0,0,38,3,0,18,15,1,0,legitimate
+session_002162,2026-01-24T22:59:33.961069,test@test.com| cat /etc/passwd,`cat /etc/shadow`,0,0.39,0,0,12,0,1,30,17,1,1,command_injection
+session_002163,2026-01-28T22:59:33.961069,user2163@company.com,***,12,17.68,0,0,41,6,1,20,13,1,0,legitimate
+session_002164,2026-02-06T22:59:33.961069,test@test.com; rm -rf /,`cat /etc/shadow`,2,0.61,0,0,11,1,1,23,17,1,1,command_injection
+session_002165,2026-01-11T22:59:33.961069,test@test.com`cat /etc/shadow`,; rm -rf /,1,0.15,0,0,11,1,1,30,10,1,1,command_injection
+session_002166,2026-01-17T22:59:33.961069,bot2166@automated.com,botpass6742,0,0.46,1,21,0,0,1,21,11,1,1,bot
+session_002167,2026-01-22T22:59:33.961069,user2167@yahoo.com,***,6,7.9,0,0,37,9,1,18,13,1,0,legitimate
+session_002168,2026-01-16T22:59:33.961069,<body onload=alert('XSS')>,test,2,0.23,0,0,26,0,1,26,4,1,1,xss
+session_002169,2026-02-07T22:59:33.961069,user2169@gmail.com,***,35,4.92,0,0,37,8,0,18,12,1,0,legitimate
+session_002170,2026-01-23T22:59:33.961069,bot2170@automated.com,botpass8594,0,0.37,1,21,0,0,1,21,11,1,1,bot
+session_002171,2026-01-17T22:59:33.961069,user2171@company.com,***,50,14.24,0,0,38,3,0,20,11,1,0,legitimate
+session_002172,2026-01-16T22:59:33.961069,<img src=x onerror=alert(1)>,test,0,0.27,0,0,28,1,1,28,4,1,1,xss
+session_002173,2026-01-20T22:59:33.961069,"'""><script>alert(String.fromCharCode(88,83,83))</script>",test,2,0.61,0,0,56,1,1,56,4,1,1,xss
+session_002174,2026-01-31T22:59:33.961069,test,pass834,0,0.91,0,0,3,2,0,4,7,1,1,brute_force
+session_002175,2026-02-04T22:59:33.961069,user2175@gmail.com,***,38,3.95,0,0,36,5,1,18,8,1,0,legitimate
+session_002176,2026-01-15T22:59:33.961069,user2176@company.com,***,7,16.31,0,0,35,9,0,20,14,1,0,legitimate
+session_002177,2026-02-06T22:59:33.961069,admin' UNION SELECT,,3,1.4,0,0,6,0,0,19,0,1,1,sql_injection
+session_002178,2026-01-28T22:59:33.961069,user2178@gmail.com,***,38,17.94,0,0,34,8,1,18,11,1,0,legitimate
+session_002179,2026-01-09T22:59:33.961069,user2179@company.com,***,37,16.8,0,0,41,3,0,20,13,1,0,legitimate
+session_002180,2026-01-09T22:59:33.961069,..\..\..\windows\system32,test,1,0.85,0,0,25,0,1,25,4,1,1,path_traversal
+session_002181,2026-01-14T22:59:33.961069,user2181@yahoo.com,***,26,13.47,0,0,35,3,0,18,12,1,0,legitimate
+session_002182,2026-02-05T22:59:33.961069,user2182@outlook.com,***,34,3.27,0,0,40,10,0,20,10,1,0,legitimate
+session_002183,2026-02-04T22:59:33.961069,../../../etc/passwd,test,0,1.01,0,0,19,1,1,19,4,1,1,path_traversal
+session_002184,2026-02-08T22:59:33.961069,user2184@yahoo.com,***,13,6.67,0,0,38,9,0,18,15,1,0,legitimate
+session_002185,2026-01-31T22:59:33.961069,../../../etc/passwd,test,0,0.25,0,0,19,1,1,19,4,1,1,path_traversal
+session_002186,2026-01-29T22:59:33.961069,admin,pass991,1,0.33,0,0,4,0,0,5,7,1,1,brute_force
+session_002187,2026-01-18T22:59:33.961069,admin' UNION SELECT,test,3,0.37,1,19,18,1,0,19,4,1,1,sql_injection
+session_002188,2026-01-28T22:59:33.961069,user2188@outlook.com,***,6,5.36,0,0,40,5,1,20,13,1,0,legitimate
+session_002189,2026-02-06T22:59:33.961069,user2189@company.com,***,13,8.42,0,0,35,3,0,20,11,1,0,legitimate
+session_002190,2026-01-09T22:59:33.961069,user2190@outlook.com,***,13,4.55,0,0,32,4,0,20,9,1,0,legitimate
+session_002191,2026-01-26T22:59:33.961069,user2191@yahoo.com,***,27,16.98,0,0,40,9,1,18,16,1,0,legitimate
+session_002192,2026-01-26T22:59:33.961069,bot2192@automated.com,botpass5468,0,0.41,1,21,0,0,1,21,11,1,1,bot
+session_002193,2026-02-04T22:59:33.961069,user2193@gmail.com,***,12,7.43,0,0,39,3,0,18,12,1,0,legitimate
+session_002194,2026-02-04T22:59:33.961069,user2194@company.com,***,46,14.39,0,0,28,7,0,20,8,1,0,legitimate
+session_002195,2026-02-04T22:59:33.961069,bot2195@automated.com,botpass9383,0,0.38,1,21,0,0,1,21,11,1,1,bot
+session_002196,2026-02-04T22:59:33.961069,user2196@yahoo.com,***,43,16.72,0,0,31,2,0,18,9,1,0,legitimate
+session_002197,2026-01-14T22:59:33.961069,user2197@outlook.com,***,50,9.02,0,0,41,7,0,20,16,1,0,legitimate
+session_002198,2026-01-19T22:59:33.961069,test@test.com| nc -e /bin/sh,; rm -rf /,0,0.24,0,0,20,0,1,28,10,1,1,command_injection
+session_002199,2026-02-08T22:59:33.961069,user2199@yahoo.com,***,37,19.55,0,0,26,3,0,18,8,1,0,legitimate
+session_002200,2026-02-02T22:59:33.961069,user2200@company.com,***,21,14.73,0,0,33,6,0,20,12,1,0,legitimate
+session_002201,2026-01-12T22:59:33.961069,user2201@gmail.com,***,31,19.55,0,0,33,2,1,18,12,1,0,legitimate
+session_002202,2026-02-03T22:59:33.961069,test@test.com&& whoami,; rm -rf /,2,0.29,0,0,25,0,1,22,10,1,1,command_injection
+session_002203,2026-02-04T22:59:33.961069,user2203@gmail.com,***,33,16.46,0,0,33,5,0,18,9,1,0,legitimate
+session_002204,2026-01-29T22:59:33.961069,user2204@outlook.com,***,16,15.95,0,0,36,3,0,20,16,1,0,legitimate
+session_002205,2026-01-29T22:59:33.961069,user2205@company.com,***,45,7.86,0,0,43,8,0,20,15,1,0,legitimate
+session_002206,2026-01-10T22:59:33.961069,user2206@outlook.com,***,23,14.68,0,0,36,2,0,20,13,1,0,legitimate
+session_002207,2026-01-13T22:59:33.961069,user2207@yahoo.com,***,49,11.6,0,0,39,8,0,18,11,1,0,legitimate
+session_002208,2026-01-30T22:59:33.961069,user2208@outlook.com,***,26,6.73,0,0,30,10,0,20,8,1,0,legitimate
+session_002209,2026-01-15T22:59:33.961069,user2209@gmail.com,***,14,7.06,0,0,33,10,0,18,10,1,0,legitimate
+session_002210,2026-01-12T22:59:33.961069,user2210@company.com,***,25,10.31,0,0,45,4,1,20,15,1,0,legitimate
+session_002211,2026-01-22T22:59:33.961069,test@test.com; ls -la,; ls -la,0,0.59,0,0,11,0,1,21,8,1,1,command_injection
+session_002212,2026-01-12T22:59:33.961069,user2212@outlook.com,***,17,6.39,0,0,30,4,1,20,9,1,0,legitimate
+session_002213,2026-02-03T22:59:33.961069,admin' UNION SELECT,admin,2,1.25,0,0,5,2,1,19,5,1,1,sql_injection
+session_002214,2026-01-29T22:59:33.961069,user2214@gmail.com,***,50,8.25,0,0,30,7,0,18,10,1,0,legitimate
+session_002215,2026-01-29T22:59:33.961069,admin' OR '1'='1'--,test,1,0.95,0,0,12,1,1,19,4,1,1,sql_injection
+session_002216,2026-01-25T22:59:33.961069,user2216@outlook.com,***,17,16.94,0,0,36,6,0,20,13,1,0,legitimate
+session_002217,2026-01-21T22:59:33.961069,<script>alert('XSS')</script>,pass,2,0.46,0,0,29,1,1,29,4,1,1,xss
+session_002218,2026-01-13T22:59:33.961069,user2218@outlook.com,***,9,14.58,0,0,35,7,0,20,10,1,0,legitimate
+session_002219,2026-02-05T22:59:33.961069,user2219@yahoo.com,***,25,13.27,0,0,38,3,0,18,15,1,0,legitimate
+session_002220,2026-02-02T22:59:33.961069,user2220@outlook.com,***,21,18.27,0,0,44,5,1,20,16,1,0,legitimate
+session_002221,2026-01-29T22:59:33.961069,user2221@yahoo.com,***,23,17.25,0,0,29,3,0,18,9,1,0,legitimate
+session_002222,2026-02-01T22:59:33.961069,user2222@gmail.com,***,17,13.74,0,0,28,4,1,18,9,1,0,legitimate
+session_002223,2026-01-17T22:59:33.961069,user2223@company.com,***,48,5.57,0,0,36,8,0,20,11,1,0,legitimate
+session_002224,2026-02-03T22:59:33.961069,user2224@outlook.com,***,37,13.13,0,0,35,9,0,20,12,1,0,legitimate
+session_002225,2026-02-06T22:59:33.961069,user2225@yahoo.com,***,50,5.84,0,0,40,10,1,18,13,1,0,legitimate
+session_002226,2026-01-13T22:59:33.961069,user2226@gmail.com,***,43,8.45,0,0,32,4,0,18,8,1,0,legitimate
+session_002227,2026-01-26T22:59:33.961069,user2227@outlook.com,***,8,14.16,0,0,43,10,0,20,16,1,0,legitimate
+session_002228,2026-01-30T22:59:33.962071,user2228@yahoo.com,***,26,16.74,0,0,35,7,0,18,9,1,0,legitimate
+session_002229,2026-01-19T22:59:33.962071,user2229@yahoo.com,***,44,14.24,0,0,41,6,0,18,16,1,0,legitimate
+session_002230,2026-01-19T22:59:33.962071,user2230@yahoo.com,***,44,7.45,0,0,35,3,0,18,14,1,0,legitimate
+session_002231,2026-01-22T22:59:33.962071,admin' OR '1'='1'--,,1,1.15,1,19,11,2,0,19,0,1,1,sql_injection
+session_002232,2026-01-27T22:59:33.962071,user2232@gmail.com,***,19,7.15,0,0,27,2,0,18,9,1,0,legitimate
+session_002233,2026-01-31T22:59:33.962071,user2233@company.com,***,33,8.95,0,0,39,4,0,20,12,1,0,legitimate
+session_002234,2026-01-18T22:59:33.962071,user2234@company.com,***,18,19.62,0,0,38,2,0,20,14,1,0,legitimate
+session_002235,2026-01-09T22:59:33.962071,user2235@gmail.com,***,6,3.05,0,0,35,3,0,18,14,1,0,legitimate
+session_002236,2026-01-12T22:59:33.962071,user2236@gmail.com,***,23,16.18,0,0,27,2,0,18,9,1,0,legitimate
+session_002237,2026-01-22T22:59:33.962071,user2237@yahoo.com,***,48,8.68,0,0,33,5,0,18,15,1,0,legitimate
+session_002238,2026-01-30T22:59:33.962071,bot2238@automated.com,botpass5783,0,0.15,1,21,0,0,1,21,11,1,1,bot
+session_002239,2026-02-02T22:59:33.962071,user2239@yahoo.com,***,48,16.38,0,0,29,5,0,18,10,1,0,legitimate
+session_002240,2026-01-28T22:59:33.962071,user2240@outlook.com,***,50,9.87,0,0,34,3,1,20,11,1,0,legitimate
+session_002241,2026-02-03T22:59:33.962071,test,pass118,1,0.92,0,0,5,0,0,4,7,1,1,brute_force
+session_002242,2026-01-23T22:59:33.962071,user2242@outlook.com,***,46,11.58,0,0,39,8,1,20,10,1,0,legitimate
+session_002243,2026-01-18T22:59:33.962071,user2243@yahoo.com,***,30,7.11,0,0,35,3,0,18,9,1,0,legitimate
+session_002244,2026-01-18T22:59:33.962071,user2244@company.com,***,35,18.0,0,0,33,2,1,20,9,1,0,legitimate
+session_002245,2026-02-01T22:59:33.962071,' UNION SELECT NULL--,admin,3,1.46,0,0,12,1,0,21,5,1,1,sql_injection
+session_002246,2026-01-14T22:59:33.962071,user2246@outlook.com,***,48,12.81,0,0,38,10,0,20,12,1,0,legitimate
+session_002247,2026-01-18T22:59:33.962071,user2247@company.com,***,10,10.4,0,0,37,5,0,20,13,1,0,legitimate
+session_002248,2026-01-21T22:59:33.962071,user2248@outlook.com,***,25,6.52,0,0,45,6,0,20,16,1,0,legitimate
+session_002249,2026-01-24T22:59:33.962071,..\..\..\windows\system32,test,2,0.5,0,0,25,1,1,25,4,1,1,path_traversal
+session_002250,2026-01-10T22:59:33.962071,user2250@outlook.com,***,23,18.4,0,0,43,8,0,20,15,1,0,legitimate
+session_002251,2026-02-04T22:59:33.962071,user2251@outlook.com,***,36,4.28,0,0,39,9,0,20,11,1,0,legitimate
+session_002252,2026-01-18T22:59:33.962071,root,pass849,0,0.92,0,0,9,1,0,4,7,1,1,brute_force
+session_002253,2026-01-17T22:59:33.962071,user2253@outlook.com,***,8,19.99,0,0,41,5,0,20,11,1,0,legitimate
+session_002254,2026-01-16T22:59:33.962071,bot2254@automated.com,botpass5604,0,0.45,1,21,0,0,1,21,11,1,1,bot
+session_002255,2026-01-10T22:59:33.962071,' OR 1=1--,,2,0.91,0,0,10,2,0,10,0,1,1,sql_injection
+session_002256,2026-01-13T22:59:33.962071,bot2256@automated.com,botpass4420,0,0.14,1,21,0,0,1,21,11,1,1,bot
+session_002257,2026-01-21T22:59:33.962071,user2257@outlook.com,***,43,6.02,0,0,35,7,1,20,9,1,0,legitimate
+session_002258,2026-02-03T22:59:33.962071,user2258@yahoo.com,***,47,11.56,0,0,39,2,0,18,15,1,0,legitimate
+session_002259,2026-01-24T22:59:33.962071,..\..\..\windows\system32,test,1,0.6,0,0,25,0,1,25,4,1,1,path_traversal
+session_002260,2026-02-03T22:59:33.962071,administrator,pass464,1,0.55,0,0,4,1,0,13,7,1,1,brute_force
+session_002261,2026-01-10T22:59:33.962071,admin'--,123,2,0.23,1,8,20,1,1,8,3,1,1,sql_injection
+session_002262,2026-01-27T22:59:33.962071,admin'/*,,3,1.44,1,8,5,0,0,8,0,1,1,sql_injection
+session_002263,2026-01-17T22:59:33.962071,<script>alert('XSS')</script>,test,0,0.69,0,0,29,1,1,29,4,1,1,xss
+session_002264,2026-01-27T22:59:33.962071,user2264@outlook.com,***,9,19.71,0,0,37,3,0,20,10,1,0,legitimate
+session_002265,2026-02-08T22:59:33.962071,bot2265@automated.com,botpass6912,0,0.47,1,21,0,0,1,21,11,1,1,bot
+session_002266,2026-01-27T22:59:33.962071,user2266@company.com,***,41,15.11,0,0,42,7,0,20,12,1,0,legitimate
+session_002267,2026-01-16T22:59:33.962071,user2267@gmail.com,***,40,18.29,0,0,31,3,1,18,12,1,0,legitimate
+session_002268,2026-01-15T22:59:33.962071,user2268@company.com,***,11,8.95,0,0,32,4,0,20,12,1,0,legitimate
+session_002269,2026-01-18T22:59:33.962071,user2269@outlook.com,***,18,16.18,0,0,38,7,0,20,16,1,0,legitimate
+session_002270,2026-01-18T22:59:33.962071,user2270@company.com,***,48,17.27,0,0,42,6,0,20,14,1,0,legitimate
+session_002271,2026-01-25T22:59:33.962071,user2271@company.com,***,50,8.99,0,0,42,4,0,20,16,1,0,legitimate
+session_002272,2026-01-17T22:59:33.962071,user2272@yahoo.com,***,28,17.48,0,0,35,6,0,18,12,1,0,legitimate
+session_002273,2026-02-02T22:59:33.962071,user2273@gmail.com,***,24,3.76,0,0,33,7,0,18,11,1,0,legitimate
+session_002274,2026-01-19T22:59:33.962071,user2274@outlook.com,***,47,7.83,0,0,41,8,0,20,14,1,0,legitimate
+session_002275,2026-01-19T22:59:33.962071,administrator,pass227,0,0.68,0,0,7,1,0,13,7,1,1,brute_force
+session_002276,2026-01-25T22:59:33.962071,user2276@outlook.com,***,6,13.96,0,0,31,4,1,20,10,1,0,legitimate
+session_002277,2026-01-24T22:59:33.962071,user2277@gmail.com,***,27,18.85,0,0,34,4,0,18,11,1,0,legitimate
+session_002278,2026-01-16T22:59:33.962071,<input onfocus=alert(1) autofocus>,,2,0.74,0,0,34,1,1,34,0,1,1,xss
+session_002279,2026-01-18T22:59:33.962071,test@test.com; ls -la,&& whoami,1,0.39,0,0,21,1,1,21,9,1,1,command_injection
+session_002280,2026-01-30T22:59:33.962071,user2280@company.com,***,27,5.46,0,0,36,5,1,20,10,1,0,legitimate
+session_002281,2026-01-16T22:59:33.962071,user2281@gmail.com,***,20,3.32,0,0,32,5,1,18,11,1,0,legitimate
+session_002282,2026-01-22T22:59:33.962071,user2282@company.com,***,42,13.09,0,0,36,8,0,20,13,1,0,legitimate
+session_002283,2026-01-14T22:59:33.962071,user2283@outlook.com,***,31,17.94,0,0,32,6,0,20,8,1,0,legitimate
+session_002284,2026-01-18T22:59:33.962071,user2284@gmail.com,***,24,19.17,0,0,40,9,0,18,15,1,0,legitimate
+session_002285,2026-01-11T22:59:33.962071,user2285@outlook.com,***,16,6.83,0,0,38,5,1,20,14,1,0,legitimate
+session_002286,2026-01-29T22:59:33.962071,user2286@yahoo.com,***,25,11.71,0,0,38,4,1,18,10,1,0,legitimate
+session_002287,2026-01-25T22:59:33.962071,user2287@yahoo.com,***,23,3.85,0,0,43,9,0,18,16,1,0,legitimate
+session_002288,2026-02-02T22:59:33.962071,bot2288@automated.com,botpass6334,0,0.38,1,21,0,0,1,21,11,1,1,bot
+session_002289,2026-01-12T22:59:33.962071,user2289@yahoo.com,***,12,9.99,0,0,34,3,1,18,16,1,0,legitimate
+session_002290,2026-01-28T22:59:33.962071,user2290@yahoo.com,***,23,8.34,0,0,43,5,0,18,16,1,0,legitimate
+session_002291,2026-02-01T22:59:33.962071,user2291@gmail.com,***,22,19.59,0,0,34,5,1,18,11,1,0,legitimate
+session_002292,2026-02-04T22:59:33.962071,user2292@outlook.com,***,18,16.14,0,0,34,7,1,20,13,1,0,legitimate
+session_002293,2026-01-10T22:59:33.962071,user2293@yahoo.com,***,34,13.73,0,0,31,9,0,18,13,1,0,legitimate
+session_002294,2026-01-12T22:59:33.962071,user2294@company.com,***,33,18.18,0,0,36,6,0,20,16,1,0,legitimate
+session_002295,2026-01-10T22:59:33.962071,user2295@company.com,***,36,9.27,0,0,36,6,0,20,15,1,0,legitimate
+session_002296,2026-01-28T22:59:33.962071,' UNION SELECT NULL--,admin,3,1.11,0,0,9,1,1,21,5,1,1,sql_injection
+session_002297,2026-01-11T22:59:33.962071,"'""><script>alert(String.fromCharCode(88,83,83))</script>",,1,0.99,0,0,56,0,1,56,0,1,1,xss
+session_002298,2026-01-21T22:59:33.962071,user2298@outlook.com,***,15,5.03,0,0,40,2,1,20,15,1,0,legitimate
+session_002299,2026-01-10T22:59:33.962071,test@test.com; rm -rf /,`cat /etc/shadow`,0,0.27,0,0,13,1,1,23,17,1,1,command_injection
+session_002300,2026-01-22T22:59:33.962071,user2300@yahoo.com,***,12,14.2,0,0,40,7,0,18,14,1,0,legitimate
+session_002301,2026-01-19T22:59:33.962071,test@test.com| cat /etc/passwd,`cat /etc/shadow`,0,0.48,0,0,23,1,1,30,17,1,1,command_injection
+session_002302,2026-02-04T22:59:33.962071,user2302@gmail.com,***,26,16.15,0,0,31,7,0,18,8,1,0,legitimate
+session_002303,2026-01-18T22:59:33.962071,user2303@yahoo.com,***,9,15.93,0,0,33,8,0,18,11,1,0,legitimate
+session_002304,2026-02-03T22:59:33.962071,user2304@gmail.com,***,21,11.48,0,0,43,7,0,18,15,1,0,legitimate
+session_002305,2026-01-13T22:59:33.962071,user2305@company.com,***,47,5.27,0,0,34,3,0,20,9,1,0,legitimate
+session_002306,2026-01-14T22:59:33.962071,user2306@gmail.com,***,24,13.57,0,0,32,7,1,18,11,1,0,legitimate
+session_002307,2026-02-03T22:59:33.962071,user2307@yahoo.com,***,31,9.87,0,0,43,9,0,18,16,1,0,legitimate
+session_002308,2026-02-08T22:59:33.962071,user2308@gmail.com,***,6,12.41,0,0,35,6,0,18,15,1,0,legitimate
+session_002309,2026-01-18T22:59:33.962071,user2309@outlook.com,***,5,12.62,0,0,38,10,0,20,15,1,0,legitimate
+session_002310,2026-01-17T22:59:33.962071,test@test.com&& whoami,; rm -rf /,1,0.48,0,0,11,1,1,22,10,1,1,command_injection
+session_002311,2026-01-31T22:59:33.962071,<img src=x onerror=alert(1)>,pass,0,0.48,0,0,28,1,1,28,4,1,1,xss
+session_002312,2026-01-31T22:59:33.962071,user2312@yahoo.com,***,23,13.67,0,0,43,8,0,18,15,1,0,legitimate
+session_002313,2026-01-11T22:59:33.962071,user2313@gmail.com,***,30,8.39,0,0,38,5,0,18,13,1,0,legitimate
+session_002314,2026-02-02T22:59:33.962071,user2314@yahoo.com,***,40,8.81,0,0,41,5,1,18,14,1,0,legitimate
+session_002315,2026-01-28T22:59:33.962071,user2315@company.com,***,43,10.93,0,0,41,2,1,20,11,1,0,legitimate
+session_002316,2026-01-12T22:59:33.962071,user2316@outlook.com,***,7,13.11,0,0,45,5,0,20,15,1,0,legitimate
+session_002317,2026-02-01T22:59:33.962071,user2317@company.com,***,24,17.37,0,0,33,7,0,20,12,1,0,legitimate
+session_002318,2026-02-07T22:59:33.962071,user2318@company.com,***,7,3.24,0,0,40,5,1,20,10,1,0,legitimate
+session_002319,2026-01-13T22:59:33.962071,user2319@company.com,***,47,12.61,0,0,34,6,0,20,8,1,0,legitimate
+session_002320,2026-01-17T22:59:33.962071,user2320@gmail.com,***,37,6.26,0,0,37,3,0,18,9,1,0,legitimate
+session_002321,2026-01-25T22:59:33.962071,bot2321@automated.com,botpass4060,0,0.25,1,21,0,0,1,21,11,1,1,bot
+session_002322,2026-02-04T22:59:33.962071,user2322@gmail.com,***,29,3.84,0,0,40,2,0,18,12,1,0,legitimate
+session_002323,2026-01-26T22:59:33.962071,user2323@gmail.com,***,26,2.43,0,0,36,5,0,18,13,1,0,legitimate
+session_002324,2026-01-14T22:59:33.962071,user2324@gmail.com,***,7,6.7,0,0,35,8,0,18,8,1,0,legitimate
+session_002325,2026-01-11T22:59:33.962071,..%2F..%2F..%2Fetc%2Fpasswd,test,1,0.5,0,0,27,0,1,27,4,1,1,path_traversal
+session_002326,2026-01-29T22:59:33.962071,user2326@yahoo.com,***,26,19.06,0,0,42,4,0,18,14,1,0,legitimate
+session_002327,2026-01-23T22:59:33.962071,user2327@yahoo.com,***,23,3.98,0,0,42,2,1,18,14,1,0,legitimate
+session_002328,2026-02-05T22:59:33.962071,user2328@company.com,***,19,18.43,0,0,38,2,0,20,13,1,0,legitimate
+session_002329,2026-01-26T22:59:33.962071,user2329@outlook.com,***,42,12.51,0,0,38,10,1,20,12,1,0,legitimate
+session_002330,2026-01-20T22:59:33.962071,user2330@gmail.com,***,23,19.31,0,0,35,2,1,18,15,1,0,legitimate
+session_002331,2026-01-09T22:59:33.962071,test@test.com; ls -la,&& whoami,0,0.32,0,0,21,1,1,21,9,1,1,command_injection
+session_002332,2026-01-11T22:59:33.962071,user2332@gmail.com,***,9,8.78,0,0,29,2,0,18,8,1,0,legitimate
+session_002333,2026-02-04T22:59:33.962071,user2333@gmail.com,***,25,19.98,0,0,33,9,0,18,11,1,0,legitimate
+session_002334,2026-01-18T22:59:33.962071,bot2334@automated.com,botpass1743,0,0.32,1,21,0,0,1,21,11,1,1,bot
+session_002335,2026-01-23T22:59:33.962071,user2335@outlook.com,***,27,2.46,0,0,35,2,1,20,11,1,0,legitimate
+session_002336,2026-01-11T22:59:33.962071,user2336@gmail.com,***,41,7.46,0,0,28,4,0,18,8,1,0,legitimate
+session_002337,2026-01-22T22:59:33.962071,root,pass6,0,0.49,0,0,6,0,0,4,5,1,1,brute_force
+session_002338,2026-02-03T22:59:33.962071,admin,pass242,1,0.96,0,0,3,0,0,5,7,1,1,brute_force
+session_002339,2026-01-20T22:59:33.962071,../../../etc/passwd,test,0,0.81,0,0,19,0,1,19,4,1,1,path_traversal
+session_002340,2026-02-08T22:59:33.962071,user2340@outlook.com,***,24,7.94,0,0,38,7,0,20,10,1,0,legitimate
+session_002341,2026-01-27T22:59:33.962071,javascript:alert(1),,2,0.51,0,0,19,0,1,19,0,1,1,xss
+session_002342,2026-01-14T22:59:33.962071,user2342@outlook.com,***,7,8.58,0,0,30,2,1,20,10,1,0,legitimate
+session_002343,2026-02-03T22:59:33.962071,user2343@outlook.com,***,50,12.67,0,0,33,9,0,20,9,1,0,legitimate
+session_002344,2026-01-29T22:59:33.962071,user2344@company.com,***,29,16.92,0,0,33,6,0,20,11,1,0,legitimate
+session_002345,2026-01-10T22:59:33.962071,user2345@company.com,***,37,10.65,0,0,37,9,0,20,14,1,0,legitimate
+session_002346,2026-01-17T22:59:33.962071,user2346@gmail.com,***,21,13.47,0,0,33,9,0,18,15,1,0,legitimate
+session_002347,2026-01-18T22:59:33.962071,user2347@company.com,***,21,5.59,0,0,34,9,0,20,10,1,0,legitimate
+session_002348,2026-01-26T22:59:33.962071,user2348@company.com,***,8,4.8,0,0,32,4,0,20,11,1,0,legitimate
+session_002349,2026-02-04T22:59:33.963077,user2349@gmail.com,***,16,18.84,0,0,38,9,1,18,16,1,0,legitimate
+session_002350,2026-01-29T22:59:33.963077,user2350@company.com,***,36,11.14,0,0,41,10,1,20,14,1,0,legitimate
+session_002351,2026-01-13T22:59:33.963077,user2351@outlook.com,***,10,15.33,0,0,29,2,0,20,9,1,0,legitimate
+session_002352,2026-01-27T22:59:33.963077,user2352@outlook.com,***,49,9.25,0,0,38,9,1,20,9,1,0,legitimate
+session_002353,2026-02-07T22:59:33.963077,user2353@gmail.com,***,27,18.34,0,0,36,3,0,18,14,1,0,legitimate
+session_002354,2026-01-11T22:59:33.963077,..%2F..%2F..%2Fetc%2Fpasswd,test,0,1.01,0,0,27,0,1,27,4,1,1,path_traversal
+session_002355,2026-01-12T22:59:33.963077,user2355@yahoo.com,***,38,8.02,0,0,33,8,0,18,13,1,0,legitimate
+session_002356,2026-01-13T22:59:33.963077,user2356@company.com,***,6,18.66,0,0,39,7,0,20,10,1,0,legitimate
+session_002357,2026-01-31T22:59:33.963077,user2357@gmail.com,***,7,5.65,0,0,33,6,0,18,9,1,0,legitimate
+session_002358,2026-01-31T22:59:33.963077,user2358@gmail.com,***,17,17.38,0,0,33,5,0,18,12,1,0,legitimate
+session_002359,2026-02-06T22:59:33.963077,user2359@gmail.com,***,15,9.95,0,0,30,7,1,18,12,1,0,legitimate
+session_002360,2026-01-15T22:59:33.963077,user2360@gmail.com,***,28,10.27,0,0,32,3,0,18,9,1,0,legitimate
+session_002361,2026-01-15T22:59:33.963077,test,pass312,1,0.95,0,0,10,0,0,4,7,1,1,brute_force
+session_002362,2026-02-04T22:59:33.963077,user2362@outlook.com,***,17,2.62,0,0,42,9,0,20,16,1,0,legitimate
+session_002363,2026-02-03T22:59:33.963077,user2363@company.com,***,36,10.02,0,0,29,8,1,20,8,1,0,legitimate
+session_002364,2026-01-10T22:59:33.963077,user2364@company.com,***,13,14.58,0,0,34,6,0,20,9,1,0,legitimate
+session_002365,2026-01-13T22:59:33.963077,user2365@company.com,***,48,4.87,0,0,29,2,0,20,9,1,0,legitimate
+session_002366,2026-01-24T22:59:33.963077,test,pass873,0,0.86,0,0,9,0,0,4,7,1,1,brute_force
+session_002367,2026-01-27T22:59:33.963077,user2367@gmail.com,***,21,4.66,0,0,32,7,0,18,11,1,0,legitimate
+session_002368,2026-01-13T22:59:33.963077,user2368@outlook.com,***,31,5.64,0,0,43,7,0,20,16,1,0,legitimate
+session_002369,2026-02-06T22:59:33.963077,user2369@company.com,***,43,9.3,0,0,42,8,0,20,12,1,0,legitimate
+session_002370,2026-01-10T22:59:33.963077,user2370@yahoo.com,***,5,18.47,0,0,33,6,0,18,10,1,0,legitimate
+session_002371,2026-01-11T22:59:33.963077,user2371@gmail.com,***,45,19.43,0,0,35,2,0,18,8,1,0,legitimate
+session_002372,2026-02-04T22:59:33.963077,user2372@gmail.com,***,32,7.8,0,0,35,3,0,18,11,1,0,legitimate
+session_002373,2026-01-15T22:59:33.963077,1' AND '1'='1,admin,3,1.22,0,0,18,1,0,13,5,1,1,sql_injection
+session_002374,2026-01-18T22:59:33.963077,user2374@yahoo.com,***,9,4.79,0,0,37,6,0,18,9,1,0,legitimate
+session_002375,2026-01-09T22:59:33.963077,test@test.com; ls -la,; ls -la,0,0.79,0,0,19,2,1,21,8,1,1,command_injection
+session_002376,2026-02-08T22:59:33.963077,user2376@yahoo.com,***,50,19.52,0,0,30,10,1,18,12,1,0,legitimate
+session_002377,2026-02-06T22:59:33.963077,user2377@outlook.com,***,42,10.39,0,0,35,8,0,20,11,1,0,legitimate
+session_002378,2026-02-07T22:59:33.963077,test,pass786,1,0.9,0,0,6,1,0,4,7,1,1,brute_force
+session_002379,2026-01-13T22:59:33.963077,user2379@outlook.com,***,29,4.21,0,0,34,8,0,20,12,1,0,legitimate
+session_002380,2026-01-30T22:59:33.963077,user2380@outlook.com,***,30,12.56,0,0,36,8,0,20,14,1,0,legitimate
+session_002381,2026-02-05T22:59:33.963077,user2381@gmail.com,***,32,7.64,0,0,40,2,0,18,13,1,0,legitimate
+session_002382,2026-01-11T22:59:33.963077,user2382@yahoo.com,***,14,3.22,0,0,36,5,0,18,11,1,0,legitimate
+session_002383,2026-01-24T22:59:33.963077,"'""><script>alert(String.fromCharCode(88,83,83))</script>",test,1,0.69,0,0,56,1,1,56,4,1,1,xss
+session_002384,2026-01-16T22:59:33.963077,user2384@gmail.com,***,48,8.76,0,0,36,7,0,18,12,1,0,legitimate
+session_002385,2026-01-30T22:59:33.963077,javascript:alert(1),test,0,0.25,0,0,19,0,1,19,4,1,1,xss
+session_002386,2026-01-28T22:59:33.963077,user2386@company.com,***,15,7.84,0,0,34,6,0,20,8,1,0,legitimate
+session_002387,2026-01-28T22:59:33.963077,admin,pass756,1,0.73,0,0,6,1,0,5,7,1,1,brute_force
+session_002388,2026-01-28T22:59:33.963077,test@test.com; rm -rf /,`cat /etc/shadow`,1,0.14,0,0,19,1,1,23,17,1,1,command_injection
+session_002389,2026-01-31T22:59:33.963077,user2389@gmail.com,***,32,7.07,0,0,42,10,0,18,15,1,0,legitimate
+session_002390,2026-01-29T22:59:33.963077,user2390@yahoo.com,***,41,18.23,0,0,39,5,0,18,11,1,0,legitimate
+session_002391,2026-02-04T22:59:33.963077,user2391@yahoo.com,***,21,14.27,0,0,32,4,1,18,11,1,0,legitimate
+session_002392,2026-01-26T22:59:33.963077,user2392@gmail.com,***,23,8.27,0,0,34,6,0,18,9,1,0,legitimate
+session_002393,2026-01-22T22:59:33.963077,user2393@gmail.com,***,24,3.36,0,0,41,5,0,18,13,1,0,legitimate
+session_002394,2026-01-20T22:59:33.963077,..%2F..%2F..%2Fetc%2Fpasswd,test,2,0.22,0,0,27,0,1,27,4,1,1,path_traversal
+session_002395,2026-02-05T22:59:33.963077,user2395@yahoo.com,***,22,19.22,0,0,33,6,0,18,13,1,0,legitimate
+session_002396,2026-01-20T22:59:33.963077,user2396@yahoo.com,***,10,10.02,0,0,28,6,0,18,9,1,0,legitimate
+session_002397,2026-01-25T22:59:33.963077,user2397@gmail.com,***,24,19.69,0,0,34,8,0,18,11,1,0,legitimate
+session_002398,2026-02-01T22:59:33.963077,user2398@company.com,***,26,9.56,0,0,37,5,0,20,15,1,0,legitimate
+session_002399,2026-01-10T22:59:33.963077,user2399@company.com,***,36,13.6,0,0,30,7,1,20,10,1,0,legitimate
+session_002400,2026-02-02T22:59:33.963077,user2400@outlook.com,***,15,4.17,0,0,41,3,1,20,12,1,0,legitimate
+session_002401,2026-01-13T22:59:33.963077,test@test.com&& whoami,| nc -e /bin/sh,2,0.57,0,0,25,2,1,22,15,1,1,command_injection
+session_002402,2026-01-27T22:59:33.963077,user2402@company.com,***,36,4.81,0,0,43,4,0,20,15,1,0,legitimate
+session_002403,2026-01-11T22:59:33.963077,user2403@yahoo.com,***,6,11.47,0,0,35,6,0,18,15,1,0,legitimate
+session_002404,2026-01-25T22:59:33.963077,test,pass159,1,0.78,0,0,7,1,0,4,7,1,1,brute_force
+session_002405,2026-02-03T22:59:33.963077,user2405@yahoo.com,***,15,11.62,0,0,32,2,1,18,10,1,0,legitimate
+session_002406,2026-02-06T22:59:33.963077,test@test.com&& whoami,`cat /etc/shadow`,1,0.46,0,0,20,0,1,22,17,1,1,command_injection
+session_002407,2026-01-13T22:59:33.963077,<iframe src=javascript:alert(1)>,,0,0.66,0,0,32,0,1,32,0,1,1,xss
+session_002408,2026-01-24T22:59:33.963077,user2408@gmail.com,***,31,18.94,0,0,34,7,0,18,15,1,0,legitimate
+session_002409,2026-01-11T22:59:33.963077,user2409@company.com,***,24,19.98,0,0,43,5,1,20,16,1,0,legitimate
+session_002410,2026-01-16T22:59:33.963077,administrator,pass132,1,0.54,0,0,9,1,0,13,7,1,1,brute_force
+session_002411,2026-02-01T22:59:33.963077,user2411@outlook.com,***,11,7.06,0,0,37,7,0,20,16,1,0,legitimate
+session_002412,2026-01-24T22:59:33.963077,user2412@yahoo.com,***,8,5.56,0,0,35,7,1,18,8,1,0,legitimate
+session_002413,2026-01-11T22:59:33.963077,user2413@outlook.com,***,12,18.29,0,0,31,9,0,20,11,1,0,legitimate
+session_002414,2026-01-10T22:59:33.963077,user2414@outlook.com,***,30,11.26,0,0,39,5,0,20,12,1,0,legitimate
+session_002415,2026-01-15T22:59:33.963077,user2415@gmail.com,***,40,11.03,0,0,38,3,1,18,13,1,0,legitimate
+session_002416,2026-01-29T22:59:33.963077,user2416@gmail.com,***,9,7.99,0,0,33,6,0,18,10,1,0,legitimate
+session_002417,2026-01-24T22:59:33.963077,bot2417@automated.com,botpass8650,0,0.5,1,21,0,0,1,21,11,1,1,bot
+session_002418,2026-02-06T22:59:33.963077,user2418@outlook.com,***,19,8.47,0,0,30,9,1,20,9,1,0,legitimate
+session_002419,2026-02-07T22:59:33.963077,<script>alert('XSS')</script>,,0,0.79,0,0,29,0,1,29,0,1,1,xss
+session_002420,2026-02-07T22:59:33.963077,user2420@company.com,***,20,10.56,0,0,38,9,1,20,15,1,0,legitimate
+session_002421,2026-02-03T22:59:33.963077,user2421@gmail.com,***,42,7.65,0,0,31,9,0,18,13,1,0,legitimate
+session_002422,2026-02-04T22:59:33.963077,user2422@yahoo.com,***,27,13.75,0,0,29,10,1,18,11,1,0,legitimate
+session_002423,2026-01-24T22:59:33.963077,user2423@company.com,***,45,19.0,0,0,35,8,1,20,10,1,0,legitimate
+session_002424,2026-01-29T22:59:33.963077,user2424@yahoo.com,***,34,2.93,0,0,33,3,1,18,8,1,0,legitimate
+session_002425,2026-02-07T22:59:33.963077,' UNION SELECT NULL--,test,0,1.24,0,0,13,0,1,21,4,1,1,sql_injection
+session_002426,2026-01-23T22:59:33.963077,user2426@company.com,***,11,13.9,0,0,34,5,0,20,13,1,0,legitimate
+session_002427,2026-01-22T22:59:33.963077,../../../etc/passwd,test,2,0.86,0,0,19,0,1,19,4,1,1,path_traversal
+session_002428,2026-02-07T22:59:33.963077,user2428@outlook.com,***,34,7.7,0,0,38,6,0,20,12,1,0,legitimate
+session_002429,2026-01-15T22:59:33.963077,user2429@yahoo.com,***,20,2.82,0,0,30,4,1,18,12,1,0,legitimate
+session_002430,2026-02-07T22:59:33.963077,user2430@outlook.com,***,15,12.88,0,0,34,7,0,20,14,1,0,legitimate
+session_002431,2026-02-03T22:59:33.963077,user2431@gmail.com,***,15,10.65,0,0,35,10,0,18,16,1,0,legitimate
+session_002432,2026-01-25T22:59:33.963077,user2432@outlook.com,***,6,4.63,0,0,39,4,0,20,11,1,0,legitimate
+session_002433,2026-01-20T22:59:33.963077,user2433@gmail.com,***,45,19.66,0,0,30,10,0,18,12,1,0,legitimate
+session_002434,2026-01-10T22:59:33.963077,user2434@yahoo.com,***,46,11.84,0,0,35,8,0,18,8,1,0,legitimate
+session_002435,2026-01-12T22:59:33.963077,<body onload=alert('XSS')>,,1,0.76,0,0,26,0,1,26,0,1,1,xss
+session_002436,2026-01-24T22:59:33.963077,user2436@outlook.com,***,21,2.62,0,0,39,8,0,20,16,1,0,legitimate
+session_002437,2026-01-27T22:59:33.963077,user2437@gmail.com,***,19,16.84,0,0,44,2,0,18,16,1,0,legitimate
+session_002438,2026-01-22T22:59:33.963077,bot2438@automated.com,botpass8567,0,0.29,1,21,0,0,1,21,11,1,1,bot
+session_002439,2026-01-17T22:59:33.963077,administrator,pass342,1,0.49,0,0,10,1,0,13,7,1,1,brute_force
+session_002440,2026-01-16T22:59:33.963077,user2440@company.com,***,13,8.82,0,0,39,9,0,20,15,1,0,legitimate
+session_002441,2026-01-18T22:59:33.963077,....//....//....//etc/passwd,test,1,0.88,0,0,28,0,1,28,4,1,1,path_traversal
+session_002442,2026-02-07T22:59:33.963077,user2442@outlook.com,***,17,8.24,0,0,41,4,1,20,13,1,0,legitimate
+session_002443,2026-02-06T22:59:33.963077,bot2443@automated.com,botpass9858,0,0.34,1,21,0,0,1,21,11,1,1,bot
+session_002444,2026-01-09T22:59:33.963077,user2444@company.com,***,43,7.24,0,0,30,10,0,20,10,1,0,legitimate
+session_002445,2026-01-11T22:59:33.963077,user2445@outlook.com,***,29,13.7,0,0,40,7,1,20,15,1,0,legitimate
+session_002446,2026-02-08T22:59:33.963077,test@test.com`cat /etc/shadow`,| nc -e /bin/sh,1,0.75,0,0,12,2,1,30,15,1,1,command_injection
+session_002447,2026-01-11T22:59:33.963077,user2447@gmail.com,***,15,9.26,0,0,30,4,0,18,11,1,0,legitimate
+session_002448,2026-01-19T22:59:33.963077,user2448@outlook.com,***,47,3.28,0,0,40,7,0,20,12,1,0,legitimate
+session_002449,2026-02-06T22:59:33.963077,user2449@yahoo.com,***,26,18.57,0,0,37,8,1,18,13,1,0,legitimate
+session_002450,2026-01-25T22:59:33.963077,bot2450@automated.com,botpass9773,0,0.17,1,21,0,0,1,21,11,1,1,bot
+session_002451,2026-02-06T22:59:33.963077,root,pass964,1,0.68,0,0,6,0,0,4,7,1,1,brute_force
+session_002452,2026-01-31T22:59:33.963077,user2452@outlook.com,***,25,17.46,0,0,29,10,1,20,9,1,0,legitimate
+session_002453,2026-01-21T22:59:33.963077,user2453@company.com,***,27,9.15,0,0,34,5,0,20,14,1,0,legitimate
+session_002454,2026-01-16T22:59:33.963077,user2454@yahoo.com,***,11,3.77,0,0,35,8,0,18,8,1,0,legitimate
+session_002455,2026-01-24T22:59:33.964081,root,pass202,0,0.86,0,0,10,0,0,4,7,1,1,brute_force
+session_002456,2026-02-04T22:59:33.964081,user2456@gmail.com,***,31,7.29,0,0,31,8,0,18,13,1,0,legitimate
+session_002457,2026-01-15T22:59:33.964081,"'""><script>alert(String.fromCharCode(88,83,83))</script>",pass,2,0.89,0,0,56,1,1,56,4,1,1,xss
+session_002458,2026-02-01T22:59:33.964081,test@test.com; ls -la,| cat /etc/passwd,0,0.37,0,0,16,2,1,21,17,1,1,command_injection
+session_002459,2026-01-16T22:59:33.964081,user2459@yahoo.com,***,18,9.17,0,0,41,4,0,18,14,1,0,legitimate
+session_002460,2026-01-10T22:59:33.964081,administrator,pass939,1,0.98,0,0,7,2,0,13,7,1,1,brute_force
+session_002461,2026-01-15T22:59:33.964081,user2461@outlook.com,***,35,8.01,0,0,39,7,0,20,14,1,0,legitimate
+session_002462,2026-01-18T22:59:33.964081,user2462@outlook.com,***,40,10.53,0,0,36,4,1,20,11,1,0,legitimate
+session_002463,2026-01-21T22:59:33.964081,test@test.com; rm -rf /,&& whoami,1,0.39,0,0,17,1,1,23,9,1,1,command_injection
+session_002464,2026-01-22T22:59:33.964081,user2464@yahoo.com,***,5,6.47,0,0,31,9,1,18,10,1,0,legitimate
+session_002465,2026-01-20T22:59:33.964081,user2465@outlook.com,***,19,5.14,0,0,41,2,1,20,11,1,0,legitimate
+session_002466,2026-01-15T22:59:33.964081,test,pass388,0,0.6,0,0,4,2,0,4,7,1,1,brute_force
+session_002467,2026-01-26T22:59:33.964081,user2467@yahoo.com,***,33,18.85,0,0,35,8,0,18,16,1,0,legitimate
+session_002468,2026-01-10T22:59:33.964081,user2468@outlook.com,***,8,14.4,0,0,37,7,1,20,14,1,0,legitimate
+session_002469,2026-02-04T22:59:33.964081,user2469@gmail.com,***,26,18.94,0,0,35,8,1,18,9,1,0,legitimate
+session_002470,2026-02-08T22:59:33.964081,user2470@company.com,***,48,11.54,0,0,41,8,0,20,13,1,0,legitimate
+session_002471,2026-01-21T22:59:33.964081,1' AND '1'='1,test,2,1.17,1,13,8,0,1,13,4,1,1,sql_injection
+session_002472,2026-02-01T22:59:33.964081,user2472@company.com,***,8,14.05,0,0,44,6,1,20,16,1,0,legitimate
+session_002473,2026-01-14T22:59:33.964081,user2473@yahoo.com,***,30,11.96,0,0,34,6,1,18,11,1,0,legitimate
+session_002474,2026-02-02T22:59:33.964081,user2474@outlook.com,***,13,2.23,0,0,30,9,1,20,8,1,0,legitimate
+session_002475,2026-01-13T22:59:33.964081,user2475@outlook.com,***,40,14.81,0,0,39,9,0,20,10,1,0,legitimate
+session_002476,2026-01-24T22:59:33.964081,user2476@outlook.com,***,25,7.92,0,0,37,7,0,20,16,1,0,legitimate
+session_002477,2026-01-14T22:59:33.964081,user2477@company.com,***,45,17.16,0,0,39,5,1,20,11,1,0,legitimate
+session_002478,2026-01-22T22:59:33.964081,test@test.com| cat /etc/passwd,; rm -rf /,0,0.41,0,0,23,2,1,30,10,1,1,command_injection
+session_002479,2026-01-18T22:59:33.964081,user2479@company.com,***,8,19.37,0,0,33,2,0,20,9,1,0,legitimate
+session_002480,2026-02-03T22:59:33.964081,user2480@outlook.com,***,50,18.26,0,0,34,5,0,20,12,1,0,legitimate
+session_002481,2026-02-08T22:59:33.964081,bot2481@automated.com,botpass2990,0,0.49,1,21,0,0,1,21,11,1,1,bot
+session_002482,2026-01-21T22:59:33.964081,user2482@gmail.com,***,46,17.71,0,0,33,5,0,18,12,1,0,legitimate
+session_002483,2026-01-29T22:59:33.964081,admin' OR '1'='1'--,123,3,1.25,0,0,16,0,1,19,3,1,1,sql_injection
+session_002484,2026-01-24T22:59:33.964081,user2484@company.com,***,26,11.82,0,0,37,10,1,20,12,1,0,legitimate
+session_002485,2026-01-30T22:59:33.964081,user2485@yahoo.com,***,7,19.61,0,0,37,3,0,18,11,1,0,legitimate
+session_002486,2026-01-19T22:59:33.964081,user2486@company.com,***,38,4.29,0,0,32,9,1,20,12,1,0,legitimate
+session_002487,2026-01-19T22:59:33.964081,user2487@company.com,***,31,15.4,0,0,31,10,0,20,8,1,0,legitimate
+session_002488,2026-02-08T22:59:33.964081,user2488@outlook.com,***,33,11.01,0,0,39,4,0,20,14,1,0,legitimate
+session_002489,2026-01-16T22:59:33.964081,user2489@gmail.com,***,7,11.62,0,0,38,2,0,18,11,1,0,legitimate
+session_002490,2026-01-26T22:59:33.964081,bot2490@automated.com,botpass4877,0,0.48,1,21,0,0,1,21,11,1,1,bot
+session_002491,2026-02-07T22:59:33.964081,user2491@yahoo.com,***,9,2.75,0,0,38,5,1,18,16,1,0,legitimate
+session_002492,2026-01-21T22:59:33.964081,user2492@gmail.com,***,18,2.92,0,0,31,7,0,18,10,1,0,legitimate
+session_002493,2026-01-30T22:59:33.964081,user2493@outlook.com,***,14,6.25,0,0,36,4,0,20,12,1,0,legitimate
+session_002494,2026-01-14T22:59:33.964081,user2494@gmail.com,***,44,18.53,0,0,36,2,0,18,12,1,0,legitimate
+session_002495,2026-01-31T22:59:33.964081,user2495@gmail.com,***,48,5.29,0,0,38,4,0,18,11,1,0,legitimate
+session_002496,2026-01-27T22:59:33.964081,user2496@company.com,***,33,13.42,0,0,45,5,0,20,15,1,0,legitimate
+session_002497,2026-01-28T22:59:33.964081,user2497@yahoo.com,***,44,9.61,0,0,34,9,0,18,11,1,0,legitimate
+session_002498,2026-01-24T22:59:33.964081,user2498@outlook.com,***,10,2.59,0,0,33,10,0,20,12,1,0,legitimate
+session_002499,2026-01-11T22:59:33.964081,user2499@gmail.com,***,16,2.29,0,0,34,7,0,18,15,1,0,legitimate
+session_002500,2026-02-02T22:59:33.964081,user2500@company.com,***,30,15.07,0,0,41,6,0,20,14,1,0,legitimate
+session_002501,2026-01-16T22:59:33.964081,user2501@company.com,***,37,18.56,0,0,32,10,0,20,10,1,0,legitimate
+session_002502,2026-01-28T22:59:33.964081,bot2502@automated.com,botpass9374,0,0.38,1,21,0,0,1,21,11,1,1,bot
+session_002503,2026-01-29T22:59:33.964081,test@test.com; ls -la,`cat /etc/shadow`,2,0.41,0,0,14,1,1,21,17,1,1,command_injection
+session_002504,2026-01-09T22:59:33.964081,test@test.com| cat /etc/passwd,| nc -e /bin/sh,0,0.3,0,0,13,2,1,30,15,1,1,command_injection
+session_002505,2026-01-23T22:59:33.964081,user2505@yahoo.com,***,37,19.35,0,0,38,6,0,18,10,1,0,legitimate
+session_002506,2026-01-22T22:59:33.964081,user2506@yahoo.com,***,23,13.88,0,0,39,5,0,18,15,1,0,legitimate
+session_002507,2026-01-15T22:59:33.964081,....//....//....//etc/passwd,test,0,0.56,0,0,28,1,1,28,4,1,1,path_traversal
+session_002508,2026-01-26T22:59:33.964081,user2508@outlook.com,***,23,17.69,0,0,34,10,0,20,9,1,0,legitimate
+session_002509,2026-01-17T22:59:33.964081,user2509@company.com,***,5,10.78,0,0,38,9,0,20,16,1,0,legitimate
+session_002510,2026-01-30T22:59:33.964081,../../../etc/passwd,test,2,0.92,0,0,19,0,1,19,4,1,1,path_traversal
+session_002511,2026-01-18T22:59:33.964081,user2511@gmail.com,***,12,13.68,0,0,36,4,0,18,12,1,0,legitimate
+session_002512,2026-01-23T22:59:33.964081,user2512@company.com,***,32,17.03,0,0,45,9,0,20,16,1,0,legitimate
+session_002513,2026-01-14T22:59:33.964081,test@test.com| nc -e /bin/sh,`cat /etc/shadow`,2,0.51,0,0,16,2,1,28,17,1,1,command_injection
+session_002514,2026-02-01T22:59:33.964081,user2514@company.com,***,47,3.98,0,0,36,3,1,20,14,1,0,legitimate
+session_002515,2026-01-28T22:59:33.964081,test@test.com`cat /etc/shadow`,| nc -e /bin/sh,1,0.55,0,0,25,1,1,30,15,1,1,command_injection
+session_002516,2026-01-15T22:59:33.964081,user2516@yahoo.com,***,50,10.77,0,0,29,10,0,18,9,1,0,legitimate
+session_002517,2026-01-22T22:59:33.964081,user2517@yahoo.com,***,27,8.03,0,0,42,9,0,18,14,1,0,legitimate
+session_002518,2026-02-01T22:59:33.964081,bot2518@automated.com,botpass4528,0,0.45,1,21,0,0,1,21,11,1,1,bot
+session_002519,2026-01-10T22:59:33.964081,user2519@yahoo.com,***,27,14.49,0,0,38,2,1,18,15,1,0,legitimate
+session_002520,2026-01-16T22:59:33.964081,user2520@outlook.com,***,28,13.01,0,0,41,8,0,20,14,1,0,legitimate
+session_002521,2026-01-23T22:59:33.964081,user2521@company.com,***,11,3.56,0,0,41,7,1,20,16,1,0,legitimate
+session_002522,2026-01-29T22:59:33.964081,user2522@gmail.com,***,9,4.32,0,0,37,2,0,18,11,1,0,legitimate
+session_002523,2026-02-03T22:59:33.964081,root,pass729,0,0.89,0,0,7,0,0,4,7,1,1,brute_force
+session_002524,2026-01-18T22:59:33.964081,user2524@outlook.com,***,28,5.7,0,0,35,5,0,20,13,1,0,legitimate
+session_002525,2026-01-19T22:59:33.964081,user2525@company.com,***,50,14.17,0,0,31,7,0,20,8,1,0,legitimate
+session_002526,2026-01-23T22:59:33.964081,user2526@outlook.com,***,31,8.72,0,0,42,4,0,20,14,1,0,legitimate
+session_002527,2026-02-02T22:59:33.964081,test,pass761,1,0.66,0,0,9,1,0,4,7,1,1,brute_force
+session_002528,2026-01-23T22:59:33.964081,user2528@outlook.com,***,11,3.93,0,0,39,9,1,20,14,1,0,legitimate
+session_002529,2026-01-13T22:59:33.964081,user2529@outlook.com,***,35,7.89,0,0,35,3,1,20,15,1,0,legitimate
+session_002530,2026-01-18T22:59:33.964081,user2530@gmail.com,***,13,3.37,0,0,34,5,0,18,12,1,0,legitimate
+session_002531,2026-01-21T22:59:33.964081,test@test.com&& whoami,; rm -rf /,1,0.5,0,0,16,0,1,22,10,1,1,command_injection
+session_002532,2026-01-25T22:59:33.964081,user2532@company.com,***,21,7.02,0,0,35,2,0,20,12,1,0,legitimate
+session_002533,2026-02-03T22:59:33.964081,..%2F..%2F..%2Fetc%2Fpasswd,test,1,0.59,0,0,27,1,1,27,4,1,1,path_traversal
+session_002534,2026-01-11T22:59:33.964081,user2534@yahoo.com,***,47,2.56,0,0,37,4,0,18,16,1,0,legitimate
+session_002535,2026-02-04T22:59:33.964081,user2535@outlook.com,***,38,13.34,0,0,35,6,0,20,13,1,0,legitimate
+session_002536,2026-02-07T22:59:33.964081,user2536@yahoo.com,***,18,3.04,0,0,37,7,0,18,15,1,0,legitimate
+session_002537,2026-01-11T22:59:33.964081,user2537@gmail.com,***,49,15.07,0,0,37,4,0,18,10,1,0,legitimate
+session_002538,2026-01-15T22:59:33.964081,bot2538@automated.com,botpass4113,0,0.35,1,21,0,0,1,21,11,1,1,bot
+session_002539,2026-01-14T22:59:33.964081,admin' OR '1'='1,admin,3,0.59,1,16,17,1,1,16,5,1,1,sql_injection
+session_002540,2026-01-16T22:59:33.964081,user2540@gmail.com,***,27,7.46,0,0,31,9,0,18,8,1,0,legitimate
+session_002541,2026-01-25T22:59:33.964081,bot2541@automated.com,botpass7549,0,0.33,1,21,0,0,1,21,11,1,1,bot
+session_002542,2026-01-19T22:59:33.964081,user2542@gmail.com,***,11,3.37,0,0,35,10,0,18,15,1,0,legitimate
+session_002543,2026-02-07T22:59:33.964081,user2543@company.com,***,20,5.35,0,0,42,10,0,20,14,1,0,legitimate
+session_002544,2026-01-17T22:59:33.964081,user2544@gmail.com,***,26,11.73,0,0,36,10,0,18,11,1,0,legitimate
+session_002545,2026-01-19T22:59:33.964081,root,pass688,1,0.68,0,0,5,2,0,4,7,1,1,brute_force
+session_002546,2026-01-28T22:59:33.964081,../../../etc/passwd,test,1,0.37,0,0,19,0,1,19,4,1,1,path_traversal
+session_002547,2026-01-22T22:59:33.964081,user2547@yahoo.com,***,13,5.72,0,0,36,5,0,18,11,1,0,legitimate
+session_002548,2026-01-30T22:59:33.964081,user2548@gmail.com,***,35,17.63,0,0,38,6,0,18,11,1,0,legitimate
+session_002549,2026-01-10T22:59:33.964081,user2549@gmail.com,***,8,11.48,0,0,33,3,0,18,12,1,0,legitimate
+session_002550,2026-01-14T22:59:33.964081,....//....//....//etc/passwd,test,0,0.8,0,0,28,0,1,28,4,1,1,path_traversal
+session_002551,2026-01-19T22:59:33.964081,admin,pass149,1,0.57,0,0,3,1,0,5,7,1,1,brute_force
+session_002552,2026-01-09T22:59:33.964081,user2552@outlook.com,***,9,16.36,0,0,31,7,0,20,11,1,0,legitimate
+session_002553,2026-02-06T22:59:33.964081,user2553@yahoo.com,***,16,15.96,0,0,30,9,0,18,8,1,0,legitimate
+session_002554,2026-01-29T22:59:33.964081,user2554@company.com,***,17,10.58,0,0,33,2,0,20,10,1,0,legitimate
+session_002555,2026-01-27T22:59:33.964081,user2555@gmail.com,***,15,8.72,0,0,29,4,0,18,11,1,0,legitimate
+session_002556,2026-01-31T22:59:33.964081,user2556@company.com,***,14,16.56,0,0,33,8,0,20,12,1,0,legitimate
+session_002557,2026-02-08T22:59:33.964081,user2557@outlook.com,***,11,18.76,0,0,42,6,0,20,12,1,0,legitimate
+session_002558,2026-01-31T22:59:33.964081,bot2558@automated.com,botpass6414,0,0.4,1,21,0,0,1,21,11,1,1,bot
+session_002559,2026-01-13T22:59:33.964081,test@test.com&& whoami,| cat /etc/passwd,1,0.57,0,0,10,0,1,22,17,1,1,command_injection
+session_002560,2026-01-16T22:59:33.964081,test@test.com; ls -la,&& whoami,2,0.33,0,0,15,2,1,21,9,1,1,command_injection
+session_002561,2026-02-06T22:59:33.964081,user2561@outlook.com,***,8,8.68,0,0,35,10,0,20,15,1,0,legitimate
+session_002562,2026-01-14T22:59:33.964081,admin,pass932,1,0.43,0,0,3,2,0,5,7,1,1,brute_force
+session_002563,2026-01-15T22:59:33.964081,user2563@yahoo.com,***,49,13.39,0,0,34,2,0,18,15,1,0,legitimate
+session_002564,2026-01-09T22:59:33.964081,admin,pass438,1,0.38,0,0,9,2,0,5,7,1,1,brute_force
+session_002565,2026-01-18T22:59:33.964081,user2565@company.com,***,30,8.84,0,0,37,10,0,20,11,1,0,legitimate
+session_002566,2026-02-01T22:59:33.964081,<img src=x onerror=alert(1)>,pass,2,0.43,0,0,28,0,1,28,4,1,1,xss
+session_002567,2026-01-21T22:59:33.964081,user2567@outlook.com,***,15,10.06,0,0,38,6,0,20,16,1,0,legitimate
+session_002568,2026-01-18T22:59:33.964081,user2568@yahoo.com,***,46,11.93,0,0,34,3,0,18,12,1,0,legitimate
+session_002569,2026-02-07T22:59:33.964081,user2569@outlook.com,***,9,6.59,0,0,36,10,0,20,13,1,0,legitimate
+session_002570,2026-01-27T22:59:33.964081,....//....//....//etc/passwd,test,1,0.67,0,0,28,1,1,28,4,1,1,path_traversal
+session_002571,2026-01-19T22:59:33.964081,../../../etc/passwd,test,2,0.61,0,0,19,1,1,19,4,1,1,path_traversal
+session_002572,2026-02-01T22:59:33.964081,user2572@outlook.com,***,21,2.14,0,0,38,8,0,20,16,1,0,legitimate
+session_002573,2026-01-13T22:59:33.965063,<body onload=alert('XSS')>,pass,1,0.34,0,0,26,0,1,26,4,1,1,xss
+session_002574,2026-01-24T22:59:33.965063,user2574@yahoo.com,***,25,12.09,0,0,31,3,0,18,12,1,0,legitimate
+session_002575,2026-02-04T22:59:33.965063,user2575@company.com,***,13,18.28,0,0,41,8,0,20,14,1,0,legitimate
+session_002576,2026-02-05T22:59:33.965063,user2576@company.com,***,43,7.01,0,0,31,5,0,20,8,1,0,legitimate
+session_002577,2026-01-24T22:59:33.965063,test@test.com| nc -e /bin/sh,; rm -rf /,1,0.78,0,0,25,0,1,28,10,1,1,command_injection
+session_002578,2026-02-01T22:59:33.965063,bot2578@automated.com,botpass6755,0,0.49,1,21,0,0,1,21,11,1,1,bot
+session_002579,2026-02-06T22:59:33.965063,user2579@gmail.com,***,12,3.13,0,0,28,6,0,18,8,1,0,legitimate
+session_002580,2026-01-13T22:59:33.965063,user2580@company.com,***,17,6.51,0,0,38,8,0,20,10,1,0,legitimate
+session_002581,2026-01-14T22:59:33.965063,user2581@outlook.com,***,13,13.45,0,0,39,2,0,20,15,1,0,legitimate
+session_002582,2026-02-01T22:59:33.965063,../../../etc/passwd,test,0,0.9,0,0,19,1,1,19,4,1,1,path_traversal
+session_002583,2026-01-30T22:59:33.965063,user2583@gmail.com,***,9,18.14,0,0,31,8,1,18,11,1,0,legitimate
+session_002584,2026-01-17T22:59:33.965063,test,pass347,0,0.97,0,0,8,0,0,4,7,1,1,brute_force
+session_002585,2026-01-12T22:59:33.965063,user2585@yahoo.com,***,30,15.73,0,0,40,5,1,18,12,1,0,legitimate
+session_002586,2026-02-05T22:59:33.965063,bot2586@automated.com,botpass6311,0,0.42,1,21,0,0,1,21,11,1,1,bot
+session_002587,2026-01-19T22:59:33.965063,user2587@company.com,***,41,9.59,0,0,42,6,0,20,16,1,0,legitimate
+session_002588,2026-02-08T22:59:33.965063,user2588@yahoo.com,***,41,18.92,0,0,34,2,0,18,11,1,0,legitimate
+session_002589,2026-01-19T22:59:33.965063,user2589@company.com,***,9,2.51,0,0,31,7,0,20,11,1,0,legitimate
+session_002590,2026-01-31T22:59:33.965063,user2590@gmail.com,***,21,15.84,0,0,40,7,0,18,15,1,0,legitimate
+session_002591,2026-01-21T22:59:33.965063,user2591@yahoo.com,***,5,10.09,0,0,39,9,1,18,16,1,0,legitimate
+session_002592,2026-01-14T22:59:33.965063,..\..\..\windows\system32,test,2,0.53,0,0,25,0,1,25,4,1,1,path_traversal
+session_002593,2026-01-26T22:59:33.965063,administrator,pass384,1,0.82,0,0,10,0,0,13,7,1,1,brute_force
+session_002594,2026-01-13T22:59:33.965063,user2594@outlook.com,***,27,2.34,0,0,42,7,0,20,15,1,0,legitimate
+session_002595,2026-02-01T22:59:33.965063,user2595@gmail.com,***,15,5.08,0,0,37,9,0,18,12,1,0,legitimate
+session_002596,2026-01-20T22:59:33.965063,user2596@outlook.com,***,34,14.26,0,0,39,10,0,20,10,1,0,legitimate
+session_002597,2026-01-28T22:59:33.965063,user2597@company.com,***,40,14.32,0,0,38,7,0,20,11,1,0,legitimate
+session_002598,2026-01-15T22:59:33.965063,user2598@yahoo.com,***,43,16.34,0,0,34,10,0,18,11,1,0,legitimate
+session_002599,2026-02-02T22:59:33.965063,user2599@gmail.com,***,25,12.84,0,0,37,5,0,18,14,1,0,legitimate
+session_002600,2026-01-24T22:59:33.965063,user2600@outlook.com,***,42,12.88,0,0,37,2,0,20,8,1,0,legitimate
+session_002601,2026-01-12T22:59:33.965063,user2601@yahoo.com,***,45,19.31,0,0,33,9,0,18,14,1,0,legitimate
+session_002602,2026-01-09T22:59:33.965063,user2602@outlook.com,***,10,15.23,0,0,37,5,1,20,16,1,0,legitimate
+session_002603,2026-02-01T22:59:33.965063,user2603@yahoo.com,***,19,9.44,0,0,37,7,0,18,11,1,0,legitimate
+session_002604,2026-01-17T22:59:33.965063,user2604@company.com,***,50,12.68,0,0,34,8,1,20,9,1,0,legitimate
+session_002605,2026-01-18T22:59:33.965063,<body onload=alert('XSS')>,test,0,0.45,0,0,26,1,1,26,4,1,1,xss
+session_002606,2026-02-02T22:59:33.965063,user2606@outlook.com,***,44,18.32,0,0,33,10,1,20,12,1,0,legitimate
+session_002607,2026-01-26T22:59:33.965063,user2607@company.com,***,26,16.94,0,0,36,5,0,20,12,1,0,legitimate
+session_002608,2026-01-23T22:59:33.965063,user2608@yahoo.com,***,8,17.97,0,0,36,3,1,18,16,1,0,legitimate
+session_002609,2026-02-07T22:59:33.965063,user2609@gmail.com,***,8,10.18,0,0,33,10,0,18,12,1,0,legitimate
+session_002610,2026-02-07T22:59:33.965063,' OR 1=1--,,0,0.33,1,10,6,0,0,10,0,1,1,sql_injection
+session_002611,2026-02-05T22:59:33.965063,user2611@gmail.com,***,22,11.11,0,0,40,9,1,18,15,1,0,legitimate
+session_002612,2026-01-11T22:59:33.965063,test@test.com| nc -e /bin/sh,; ls -la,0,0.22,0,0,21,2,1,28,8,1,1,command_injection
+session_002613,2026-01-11T22:59:33.965063,....//....//....//etc/passwd,test,2,0.26,0,0,28,1,1,28,4,1,1,path_traversal
+session_002614,2026-01-19T22:59:33.965063,bot2614@automated.com,botpass5380,0,0.1,1,21,0,0,1,21,11,1,1,bot
+session_002615,2026-01-28T22:59:33.965063,user2615@company.com,***,23,15.83,0,0,36,9,0,20,15,1,0,legitimate
+session_002616,2026-01-29T22:59:33.965063,user2616@gmail.com,***,9,5.92,0,0,36,3,0,18,12,1,0,legitimate
+session_002617,2026-01-11T22:59:33.965063,user2617@outlook.com,***,24,13.51,0,0,35,7,1,20,14,1,0,legitimate
+session_002618,2026-02-01T22:59:33.965063,user2618@yahoo.com,***,45,13.33,0,0,32,3,1,18,9,1,0,legitimate
+session_002619,2026-01-14T22:59:33.965063,user2619@gmail.com,***,40,15.6,0,0,35,5,0,18,12,1,0,legitimate
+session_002620,2026-01-18T22:59:33.965063,user2620@gmail.com,***,8,18.75,0,0,28,5,0,18,8,1,0,legitimate
+session_002621,2026-01-10T22:59:33.965063,user2621@outlook.com,***,5,5.68,0,0,39,5,1,20,15,1,0,legitimate
+session_002622,2026-01-23T22:59:33.965063,../../../etc/passwd,test,0,0.92,0,0,19,1,1,19,4,1,1,path_traversal
+session_002623,2026-02-06T22:59:33.965063,user2623@company.com,***,23,9.07,0,0,41,8,0,20,13,1,0,legitimate
+session_002624,2026-01-13T22:59:33.965063,admin' OR '1'='1'--,test,0,1.48,0,0,19,1,0,19,4,1,1,sql_injection
+session_002625,2026-01-14T22:59:33.965063,user2625@yahoo.com,***,15,4.74,0,0,37,7,0,18,14,1,0,legitimate
+session_002626,2026-01-25T22:59:33.965063,user2626@outlook.com,***,9,16.91,0,0,32,2,1,20,9,1,0,legitimate
+session_002627,2026-01-29T22:59:33.965063,user2627@company.com,***,37,7.99,0,0,37,5,1,20,14,1,0,legitimate
+session_002628,2026-01-11T22:59:33.965063,test@test.com| cat /etc/passwd,| nc -e /bin/sh,0,0.16,0,0,12,2,1,30,15,1,1,command_injection
+session_002629,2026-01-11T22:59:33.965063,user2629@outlook.com,***,30,15.63,0,0,37,5,0,20,16,1,0,legitimate
+session_002630,2026-02-02T22:59:33.965063,user2630@gmail.com,***,25,13.57,0,0,32,5,0,18,13,1,0,legitimate
+session_002631,2026-01-24T22:59:33.965063,user2631@outlook.com,***,49,11.07,0,0,41,4,0,20,16,1,0,legitimate
+session_002632,2026-01-29T22:59:33.965063,user2632@outlook.com,***,14,9.7,0,0,34,10,0,20,8,1,0,legitimate
+session_002633,2026-01-17T22:59:33.965063,user2633@outlook.com,***,21,6.1,0,0,40,9,1,20,10,1,0,legitimate
+session_002634,2026-01-27T22:59:33.965063,user2634@outlook.com,***,38,16.52,0,0,34,5,0,20,12,1,0,legitimate
+session_002635,2026-01-30T22:59:33.965063,user2635@yahoo.com,***,6,16.99,0,0,37,5,0,18,16,1,0,legitimate
+session_002636,2026-02-02T22:59:33.965063,user2636@yahoo.com,***,40,5.72,0,0,36,8,1,18,9,1,0,legitimate
+session_002637,2026-02-05T22:59:33.965063,user2637@outlook.com,***,13,2.25,0,0,34,5,0,20,13,1,0,legitimate
+session_002638,2026-01-16T22:59:33.965063,user2638@outlook.com,***,30,7.41,0,0,36,9,0,20,11,1,0,legitimate
+session_002639,2026-01-25T22:59:33.965063,user2639@yahoo.com,***,12,8.88,0,0,36,2,0,18,13,1,0,legitimate
+session_002640,2026-02-07T22:59:33.965063,user2640@outlook.com,***,17,12.18,0,0,32,9,1,20,8,1,0,legitimate
+session_002641,2026-01-17T22:59:33.965063,user2641@gmail.com,***,16,16.09,0,0,29,4,1,18,8,1,0,legitimate
+session_002642,2026-01-19T22:59:33.965063,test@test.com&& whoami,| cat /etc/passwd,1,0.35,0,0,18,0,1,22,17,1,1,command_injection
+session_002643,2026-01-23T22:59:33.965063,user2643@company.com,***,12,15.68,0,0,32,10,0,20,8,1,0,legitimate
+session_002644,2026-01-16T22:59:33.965063,user2644@company.com,***,10,17.07,0,0,38,4,1,20,9,1,0,legitimate
+session_002645,2026-02-02T22:59:33.965063,user2645@outlook.com,***,11,4.31,0,0,40,6,1,20,13,1,0,legitimate
+session_002646,2026-01-15T22:59:33.965063,user2646@yahoo.com,***,21,5.78,0,0,42,6,1,18,15,1,0,legitimate
+session_002647,2026-02-08T22:59:33.965063,....//....//....//etc/passwd,test,0,0.83,0,0,28,1,1,28,4,1,1,path_traversal
+session_002648,2026-01-24T22:59:33.965063,user2648@company.com,***,40,15.85,0,0,28,4,0,20,8,1,0,legitimate
+session_002649,2026-01-27T22:59:33.965063,"'""><script>alert(String.fromCharCode(88,83,83))</script>",test,2,0.48,0,0,56,0,1,56,4,1,1,xss
+session_002650,2026-01-14T22:59:33.965063,user2650@outlook.com,***,15,6.36,0,0,33,7,0,20,10,1,0,legitimate
+session_002651,2026-01-13T22:59:33.965063,test@test.com&& whoami,&& whoami,0,0.46,0,0,11,2,1,22,9,1,1,command_injection
+session_002652,2026-02-08T22:59:33.965063,user2652@gmail.com,***,20,17.44,0,0,34,7,0,18,11,1,0,legitimate
+session_002653,2026-01-20T22:59:33.965063,user2653@outlook.com,***,17,3.23,0,0,38,6,0,20,10,1,0,legitimate
+session_002654,2026-02-04T22:59:33.965063,....//....//....//etc/passwd,test,1,0.87,0,0,28,1,1,28,4,1,1,path_traversal
+session_002655,2026-01-24T22:59:33.965063,user2655@yahoo.com,***,42,11.09,0,0,42,8,0,18,16,1,0,legitimate
+session_002656,2026-01-31T22:59:33.965063,user2656@outlook.com,***,17,19.69,0,0,31,3,0,20,8,1,0,legitimate
+session_002657,2026-02-06T22:59:33.965063,user2657@gmail.com,***,34,16.84,0,0,37,10,0,18,10,1,0,legitimate
+session_002658,2026-01-30T22:59:33.965063,user2658@yahoo.com,***,38,8.16,0,0,38,10,1,18,15,1,0,legitimate
+session_002659,2026-02-08T22:59:33.965063,user2659@company.com,***,14,14.03,0,0,42,3,0,20,12,1,0,legitimate
+session_002660,2026-01-20T22:59:33.965063,user2660@outlook.com,***,19,9.98,0,0,46,10,0,20,16,1,0,legitimate
+session_002661,2026-01-14T22:59:33.965063,user2661@outlook.com,***,24,11.51,0,0,34,8,0,20,10,1,0,legitimate
+session_002662,2026-01-11T22:59:33.965063,user2662@outlook.com,***,28,12.96,0,0,36,4,0,20,14,1,0,legitimate
+session_002663,2026-01-09T22:59:33.965063,user2663@yahoo.com,***,13,19.45,0,0,36,6,0,18,12,1,0,legitimate
+session_002664,2026-01-09T22:59:33.965063,user2664@company.com,***,45,9.24,0,0,41,9,1,20,16,1,0,legitimate
+session_002665,2026-02-02T22:59:33.965063,user2665@gmail.com,***,16,7.03,0,0,29,2,0,18,9,1,0,legitimate
+session_002666,2026-02-07T22:59:33.965063,user2666@gmail.com,***,48,7.58,0,0,35,2,0,18,12,1,0,legitimate
+session_002667,2026-01-17T22:59:33.965063,test@test.com`cat /etc/shadow`,; rm -rf /,1,0.42,0,0,13,2,1,30,10,1,1,command_injection
+session_002668,2026-01-18T22:59:33.965063,user2668@company.com,***,27,19.07,0,0,41,7,0,20,13,1,0,legitimate
+session_002669,2026-01-24T22:59:33.965063,user2669@gmail.com,***,9,12.1,0,0,39,6,0,18,14,1,0,legitimate
+session_002670,2026-01-29T22:59:33.965063,user2670@yahoo.com,***,48,16.24,0,0,28,2,0,18,10,1,0,legitimate
+session_002671,2026-02-04T22:59:33.965063,test@test.com| cat /etc/passwd,; rm -rf /,2,0.11,0,0,19,2,1,30,10,1,1,command_injection
+session_002672,2026-01-12T22:59:33.965063,user2672@company.com,***,18,19.93,0,0,35,5,0,20,8,1,0,legitimate
+session_002673,2026-02-05T22:59:33.965063,' OR 1=1--,test,1,0.19,1,10,20,2,0,10,4,1,1,sql_injection
+session_002674,2026-02-01T22:59:33.965063,user2674@yahoo.com,***,36,19.84,0,0,29,2,0,18,11,1,0,legitimate
+session_002675,2026-02-04T22:59:33.965063,<script>alert('XSS')</script>,pass,1,0.37,0,0,29,0,1,29,4,1,1,xss
+session_002676,2026-02-01T22:59:33.965063,user2676@yahoo.com,***,29,2.52,0,0,38,10,0,18,13,1,0,legitimate
+session_002677,2026-01-14T22:59:33.965063,user2677@company.com,***,28,9.24,0,0,38,7,0,20,8,1,0,legitimate
+session_002678,2026-01-25T22:59:33.965063,user2678@gmail.com,***,40,3.4,0,0,41,3,0,18,13,1,0,legitimate
+session_002679,2026-01-20T22:59:33.965063,../../../etc/passwd,test,1,1.17,0,0,19,1,1,19,4,1,1,path_traversal
+session_002680,2026-02-08T22:59:33.965063,user2680@company.com,***,18,4.6,0,0,34,2,0,20,10,1,0,legitimate
+session_002681,2026-01-17T22:59:33.965063,<body onload=alert('XSS')>,,1,0.82,0,0,26,0,1,26,0,1,1,xss
+session_002682,2026-01-19T22:59:33.965063,test@test.com| nc -e /bin/sh,`cat /etc/shadow`,0,0.59,0,0,15,2,1,28,17,1,1,command_injection
+session_002683,2026-01-09T22:59:33.965063,user2683@outlook.com,***,27,3.58,0,0,35,10,0,20,11,1,0,legitimate
+session_002684,2026-02-05T22:59:33.965063,user2684@gmail.com,***,18,15.65,0,0,31,6,0,18,13,1,0,legitimate
+session_002685,2026-02-05T22:59:33.965063,user2685@gmail.com,***,20,3.27,0,0,36,5,1,18,13,1,0,legitimate
+session_002686,2026-01-13T22:59:33.965063,user2686@yahoo.com,***,43,14.45,0,0,39,2,1,18,16,1,0,legitimate
+session_002687,2026-01-26T22:59:33.965063,user2687@outlook.com,***,9,11.97,0,0,42,2,0,20,15,1,0,legitimate
+session_002688,2026-02-02T22:59:33.965063,user2688@company.com,***,25,19.18,0,0,45,2,0,20,16,1,0,legitimate
+session_002689,2026-01-11T22:59:33.965063,user2689@yahoo.com,***,20,18.32,0,0,41,10,0,18,16,1,0,legitimate
+session_002690,2026-02-03T22:59:33.965063,user2690@outlook.com,***,20,11.93,0,0,38,2,1,20,8,1,0,legitimate
+session_002691,2026-01-17T22:59:33.965063,user2691@gmail.com,***,17,14.23,0,0,36,3,1,18,12,1,0,legitimate
+session_002692,2026-01-26T22:59:33.965063,user2692@outlook.com,***,37,16.82,0,0,44,6,0,20,14,1,0,legitimate
+session_002693,2026-01-10T22:59:33.966079,administrator,pass946,0,0.61,0,0,9,0,0,13,7,1,1,brute_force
+session_002694,2026-01-28T22:59:33.966079,admin' OR '1'='1,123,2,0.69,1,16,11,1,0,16,3,1,1,sql_injection
+session_002695,2026-01-17T22:59:33.966079,user2695@outlook.com,***,23,15.98,0,0,36,6,0,20,16,1,0,legitimate
+session_002696,2026-01-24T22:59:33.966079,user2696@gmail.com,***,23,4.69,0,0,33,2,0,18,8,1,0,legitimate
+session_002697,2026-02-01T22:59:33.966079,user2697@company.com,***,39,17.93,0,0,43,10,0,20,15,1,0,legitimate
+session_002698,2026-01-24T22:59:33.966079,user2698@company.com,***,28,9.46,0,0,35,9,0,20,8,1,0,legitimate
+session_002699,2026-02-08T22:59:33.966079,user2699@yahoo.com,***,19,17.04,0,0,35,6,0,18,14,1,0,legitimate
+session_002700,2026-01-19T22:59:33.966079,user2700@yahoo.com,***,32,5.23,0,0,39,8,0,18,13,1,0,legitimate
+session_002701,2026-01-24T22:59:33.966079,user2701@outlook.com,***,5,3.83,0,0,28,7,0,20,8,1,0,legitimate
+session_002702,2026-01-25T22:59:33.966079,user2702@company.com,***,45,15.97,0,0,45,4,1,20,15,1,0,legitimate
+session_002703,2026-01-25T22:59:33.966079,test@test.com&& whoami,| nc -e /bin/sh,2,0.11,0,0,25,2,1,22,15,1,1,command_injection
+session_002704,2026-01-18T22:59:33.966079,user2704@company.com,***,27,16.2,0,0,33,4,0,20,9,1,0,legitimate
+session_002705,2026-01-13T22:59:33.966079,user2705@yahoo.com,***,20,13.7,0,0,33,7,0,18,12,1,0,legitimate
+session_002706,2026-02-04T22:59:33.966079,user2706@outlook.com,***,48,8.13,0,0,41,5,0,20,15,1,0,legitimate
+session_002707,2026-02-08T22:59:33.966079,user2707@yahoo.com,***,45,15.86,0,0,40,9,0,18,12,1,0,legitimate
+session_002708,2026-01-10T22:59:33.966079,user2708@outlook.com,***,16,16.91,0,0,29,5,0,20,8,1,0,legitimate
+session_002709,2026-01-23T22:59:33.966079,user2709@yahoo.com,***,10,10.02,0,0,38,4,0,18,14,1,0,legitimate
+session_002710,2026-01-21T22:59:33.966079,administrator,pass373,0,0.51,0,0,10,2,0,13,7,1,1,brute_force
+session_002711,2026-02-04T22:59:33.966079,admin' UNION SELECT,test,0,0.82,0,0,9,0,0,19,4,1,1,sql_injection
+session_002712,2026-02-07T22:59:33.966079,user2712@yahoo.com,***,22,9.01,0,0,41,8,0,18,16,1,0,legitimate
+session_002713,2026-01-12T22:59:33.966079,user2713@gmail.com,***,45,15.8,0,0,30,8,0,18,10,1,0,legitimate
+session_002714,2026-02-07T22:59:33.966079,user2714@gmail.com,***,11,9.17,0,0,38,6,0,18,15,1,0,legitimate
+session_002715,2026-01-17T22:59:33.966079,..%2F..%2F..%2Fetc%2Fpasswd,test,2,0.82,0,0,27,1,1,27,4,1,1,path_traversal
+session_002716,2026-02-04T22:59:33.966079,user2716@gmail.com,***,29,13.3,0,0,37,3,0,18,11,1,0,legitimate
+session_002717,2026-01-16T22:59:33.966079,user2717@gmail.com,***,41,8.48,0,0,36,5,0,18,12,1,0,legitimate
+session_002718,2026-01-25T22:59:33.966079,user2718@company.com,***,45,17.05,0,0,38,7,0,20,8,1,0,legitimate
+session_002719,2026-02-02T22:59:33.966079,user2719@outlook.com,***,17,9.05,0,0,38,9,0,20,16,1,0,legitimate
+session_002720,2026-01-15T22:59:33.966079,user2720@outlook.com,***,11,15.48,0,0,40,3,0,20,16,1,0,legitimate
+session_002721,2026-01-20T22:59:33.966079,user2721@outlook.com,***,15,16.52,0,0,43,10,0,20,13,1,0,legitimate
+session_002722,2026-01-20T22:59:33.966079,admin' UNION SELECT,admin,1,0.24,1,19,20,1,0,19,5,1,1,sql_injection
+session_002723,2026-01-30T22:59:33.966079,user2723@yahoo.com,***,17,14.51,0,0,31,2,0,18,12,1,0,legitimate
+session_002724,2026-02-05T22:59:33.966079,user2724@outlook.com,***,28,17.63,0,0,35,5,0,20,10,1,0,legitimate
+session_002725,2026-01-15T22:59:33.966079,user2725@company.com,***,25,14.75,0,0,45,10,0,20,16,1,0,legitimate
+session_002726,2026-02-07T22:59:33.966079,user2726@yahoo.com,***,41,6.89,0,0,34,4,0,18,10,1,0,legitimate
+session_002727,2026-01-17T22:59:33.966079,user2727@company.com,***,17,16.1,0,0,35,6,0,20,10,1,0,legitimate
+session_002728,2026-01-12T22:59:33.966079,user2728@gmail.com,***,39,2.27,0,0,38,7,0,18,11,1,0,legitimate
+session_002729,2026-01-11T22:59:33.966079,user2729@gmail.com,***,27,19.29,0,0,35,2,0,18,16,1,0,legitimate
+session_002730,2026-01-27T22:59:33.966079,user2730@gmail.com,***,9,3.66,0,0,28,7,0,18,9,1,0,legitimate
+session_002731,2026-01-10T22:59:33.966079,../../../etc/passwd,test,2,0.48,0,0,19,1,1,19,4,1,1,path_traversal
+session_002732,2026-01-17T22:59:33.966079,user2732@outlook.com,***,20,19.69,0,0,40,6,0,20,10,1,0,legitimate
+session_002733,2026-01-26T22:59:33.966079,user2733@yahoo.com,***,43,3.17,0,0,31,10,0,18,13,1,0,legitimate
+session_002734,2026-01-10T22:59:33.966079,<img src=x onerror=alert(1)>,test,1,0.74,0,0,28,1,1,28,4,1,1,xss
+session_002735,2026-01-31T22:59:33.966079,user2735@company.com,***,23,10.24,0,0,41,2,0,20,15,1,0,legitimate
+session_002736,2026-02-02T22:59:33.966079,' OR 1=1--,123,1,0.21,1,10,17,1,0,10,3,1,1,sql_injection
+session_002737,2026-01-26T22:59:33.966079,user2737@yahoo.com,***,26,3.02,0,0,41,9,0,18,16,1,0,legitimate
+session_002738,2026-01-29T22:59:33.966079,user2738@gmail.com,***,5,18.08,0,0,36,8,0,18,15,1,0,legitimate
+session_002739,2026-01-30T22:59:33.966079,user2739@gmail.com,***,34,12.22,0,0,35,10,1,18,10,1,0,legitimate
+session_002740,2026-01-30T22:59:33.966079,....//....//....//etc/passwd,test,0,0.49,0,0,28,1,1,28,4,1,1,path_traversal
+session_002741,2026-01-18T22:59:33.966079,user2741@company.com,***,19,2.32,0,0,29,5,0,20,8,1,0,legitimate
+session_002742,2026-01-15T22:59:33.966079,user2742@company.com,***,39,9.52,0,0,38,5,0,20,9,1,0,legitimate
+session_002743,2026-01-10T22:59:33.966079,....//....//....//etc/passwd,test,0,0.8,0,0,28,0,1,28,4,1,1,path_traversal
+session_002744,2026-02-02T22:59:33.966079,user2744@yahoo.com,***,23,18.0,0,0,33,8,1,18,9,1,0,legitimate
+session_002745,2026-01-22T22:59:33.966079,user2745@gmail.com,***,43,6.09,0,0,37,8,0,18,16,1,0,legitimate
+session_002746,2026-02-02T22:59:33.966079,user2746@company.com,***,28,8.91,0,0,39,8,0,20,13,1,0,legitimate
+session_002747,2026-02-05T22:59:33.966079,bot2747@automated.com,botpass6867,0,0.36,1,21,0,0,1,21,11,1,1,bot
+session_002748,2026-02-03T22:59:33.966079,bot2748@automated.com,botpass9175,0,0.38,1,21,0,0,1,21,11,1,1,bot
+session_002749,2026-01-27T22:59:33.966079,user2749@yahoo.com,***,6,8.71,0,0,35,6,0,18,15,1,0,legitimate
+session_002750,2026-01-31T22:59:33.966079,user2750@outlook.com,***,24,7.55,0,0,42,5,0,20,14,1,0,legitimate
+session_002751,2026-01-29T22:59:33.966079,user2751@company.com,***,8,13.95,0,0,36,10,0,20,8,1,0,legitimate
+session_002752,2026-01-23T22:59:33.966079,user2752@company.com,***,21,19.96,0,0,35,9,0,20,12,1,0,legitimate
+session_002753,2026-01-22T22:59:33.966079,user2753@gmail.com,***,31,15.65,0,0,40,5,0,18,15,1,0,legitimate
+session_002754,2026-01-20T22:59:33.966079,user2754@outlook.com,***,29,14.76,0,0,45,7,0,20,16,1,0,legitimate
+session_002755,2026-01-10T22:59:33.966079,user2755@gmail.com,***,8,11.63,0,0,34,5,0,18,8,1,0,legitimate
+session_002756,2026-01-17T22:59:33.966079,test,pass749,0,0.73,0,0,4,0,0,4,7,1,1,brute_force
+session_002757,2026-01-26T22:59:33.966079,user2757@yahoo.com,***,48,6.18,0,0,31,9,0,18,12,1,0,legitimate
+session_002758,2026-01-12T22:59:33.966079,user2758@company.com,***,23,4.64,0,0,32,10,0,20,11,1,0,legitimate
+session_002759,2026-01-26T22:59:33.966079,user2759@yahoo.com,***,46,10.79,0,0,40,8,0,18,12,1,0,legitimate
+session_002760,2026-01-27T22:59:33.966079,user2760@yahoo.com,***,50,9.34,0,0,36,2,0,18,16,1,0,legitimate
+session_002761,2026-01-11T22:59:33.966079,user2761@outlook.com,***,25,11.26,0,0,38,2,0,20,11,1,0,legitimate
+session_002762,2026-01-10T22:59:33.966079,user2762@company.com,***,13,2.93,0,0,39,3,1,20,9,1,0,legitimate
+session_002763,2026-01-27T22:59:33.966079,<body onload=alert('XSS')>,pass,0,0.65,0,0,26,0,1,26,4,1,1,xss
+session_002764,2026-01-15T22:59:33.966079,user2764@yahoo.com,***,16,13.17,0,0,30,2,0,18,8,1,0,legitimate
+session_002765,2026-01-13T22:59:33.966079,user2765@outlook.com,***,46,15.3,0,0,37,10,0,20,10,1,0,legitimate
+session_002766,2026-01-13T22:59:33.966079,user2766@outlook.com,***,42,11.56,0,0,34,8,0,20,8,1,0,legitimate
+session_002767,2026-01-29T22:59:33.966079,user2767@yahoo.com,***,10,19.89,0,0,37,10,0,18,14,1,0,legitimate
+session_002768,2026-01-30T22:59:33.966079,user2768@gmail.com,***,8,18.57,0,0,31,8,0,18,8,1,0,legitimate
+session_002769,2026-01-20T22:59:33.966079,user2769@gmail.com,***,46,9.26,0,0,28,4,1,18,10,1,0,legitimate
+session_002770,2026-01-24T22:59:33.966079,user2770@outlook.com,***,38,5.59,0,0,39,2,0,20,15,1,0,legitimate
+session_002771,2026-01-24T22:59:33.966079,admin,pass22,0,0.73,0,0,9,2,0,5,6,1,1,brute_force
+session_002772,2026-01-09T22:59:33.966079,user2772@outlook.com,***,27,16.22,0,0,40,3,0,20,13,1,0,legitimate
+session_002773,2026-01-25T22:59:33.966079,test@test.com; rm -rf /,; ls -la,1,0.45,0,0,23,2,1,23,8,1,1,command_injection
+session_002774,2026-02-07T22:59:33.966079,test@test.com; rm -rf /,| cat /etc/passwd,0,0.16,0,0,24,2,1,23,17,1,1,command_injection
+session_002775,2026-02-08T22:59:33.966079,user2775@company.com,***,21,4.12,0,0,39,5,0,20,13,1,0,legitimate
+session_002776,2026-02-08T22:59:33.966079,user2776@yahoo.com,***,26,5.47,0,0,32,6,0,18,8,1,0,legitimate
+session_002777,2026-01-17T22:59:33.966079,user2777@outlook.com,***,11,14.88,0,0,42,8,0,20,16,1,0,legitimate
+session_002778,2026-01-29T22:59:33.966079,user2778@yahoo.com,***,9,4.06,0,0,37,7,0,18,14,1,0,legitimate
+session_002779,2026-01-23T22:59:33.966079,user2779@company.com,***,46,13.9,0,0,34,7,0,20,10,1,0,legitimate
+session_002780,2026-01-10T22:59:33.966079,user2780@company.com,***,27,17.37,0,0,32,8,1,20,9,1,0,legitimate
+session_002781,2026-02-06T22:59:33.966079,test@test.com| nc -e /bin/sh,&& whoami,2,0.16,0,0,25,0,1,28,9,1,1,command_injection
+session_002782,2026-01-31T22:59:33.967071,user2782@company.com,***,48,2.3,0,0,37,3,0,20,13,1,0,legitimate
+session_002783,2026-01-11T22:59:33.967071,1' AND '1'='1,,0,0.79,1,13,16,1,0,13,0,1,1,sql_injection
+session_002784,2026-01-24T22:59:33.967071,user2784@gmail.com,***,9,18.15,0,0,32,6,0,18,13,1,0,legitimate
+session_002785,2026-01-13T22:59:33.967071,user2785@yahoo.com,***,5,14.45,0,0,29,4,0,18,9,1,0,legitimate
+session_002786,2026-02-07T22:59:33.967071,user2786@yahoo.com,***,15,4.15,0,0,38,6,0,18,15,1,0,legitimate
+session_002787,2026-02-03T22:59:33.967071,user2787@company.com,***,19,10.58,0,0,35,2,0,20,12,1,0,legitimate
+session_002788,2026-01-25T22:59:33.967071,user2788@outlook.com,***,36,2.5,0,0,41,8,0,20,14,1,0,legitimate
+session_002789,2026-02-06T22:59:33.967071,' OR 1=1--,admin,0,1.36,1,10,19,1,1,10,5,1,1,sql_injection
+session_002790,2026-01-19T22:59:33.967071,user2790@gmail.com,***,30,13.86,0,0,29,2,0,18,8,1,0,legitimate
+session_002791,2026-01-25T22:59:33.967071,user2791@outlook.com,***,46,5.85,0,0,40,6,0,20,14,1,0,legitimate
+session_002792,2026-01-16T22:59:33.967071,user2792@gmail.com,***,32,12.28,0,0,27,2,0,18,8,1,0,legitimate
+session_002793,2026-01-20T22:59:33.967071,user2793@yahoo.com,***,7,15.43,0,0,27,4,0,18,8,1,0,legitimate
+session_002794,2026-02-03T22:59:33.967071,user2794@company.com,***,29,18.78,0,0,38,3,0,20,16,1,0,legitimate
+session_002795,2026-01-19T22:59:33.967071,user2795@yahoo.com,***,7,12.92,0,0,31,2,0,18,11,1,0,legitimate
+session_002796,2026-01-31T22:59:33.967071,user2796@yahoo.com,***,28,8.22,0,0,41,6,0,18,16,1,0,legitimate
+session_002797,2026-01-17T22:59:33.967071,user2797@company.com,***,50,15.59,0,0,41,8,0,20,14,1,0,legitimate
+session_002798,2026-02-08T22:59:33.967071,<img src=x onerror=alert(1)>,,2,0.53,0,0,28,0,1,28,0,1,1,xss
+session_002799,2026-01-15T22:59:33.967071,test@test.com; rm -rf /,| cat /etc/passwd,0,0.47,0,0,12,0,1,23,17,1,1,command_injection
+session_002800,2026-01-21T22:59:33.967071,..\..\..\windows\system32,test,1,0.72,0,0,25,1,1,25,4,1,1,path_traversal
+session_002801,2026-01-27T22:59:33.967071,....//....//....//etc/passwd,test,0,1.12,0,0,28,1,1,28,4,1,1,path_traversal
+session_002802,2026-02-04T22:59:33.967071,user2802@yahoo.com,***,43,16.03,0,0,38,8,0,18,10,1,0,legitimate
+session_002803,2026-01-28T22:59:33.967071,bot2803@automated.com,botpass7413,0,0.35,1,21,0,0,1,21,11,1,1,bot
+session_002804,2026-01-19T22:59:33.967071,user2804@outlook.com,***,27,18.08,0,0,35,5,0,20,12,1,0,legitimate
+session_002805,2026-01-20T22:59:33.967071,user2805@gmail.com,***,29,2.32,0,0,36,2,0,18,9,1,0,legitimate
+session_002806,2026-02-01T22:59:33.967071,user2806@gmail.com,***,11,15.48,0,0,38,7,0,18,15,1,0,legitimate
+session_002807,2026-02-05T22:59:33.967071,test@test.com; ls -la,&& whoami,1,0.54,0,0,17,0,1,21,9,1,1,command_injection
+session_002808,2026-01-17T22:59:33.967071,user2808@yahoo.com,***,12,18.22,0,0,41,10,1,18,15,1,0,legitimate
+session_002809,2026-01-30T22:59:33.967071,user2809@yahoo.com,***,13,3.4,0,0,36,8,0,18,10,1,0,legitimate
+session_002810,2026-01-18T22:59:33.967071,user2810@outlook.com,***,34,15.75,0,0,42,5,0,20,14,1,0,legitimate
+session_002811,2026-01-09T22:59:33.967071,bot2811@automated.com,botpass1315,0,0.3,1,21,0,0,1,21,11,1,1,bot
+session_002812,2026-01-26T22:59:33.967071,user2812@company.com,***,49,18.58,0,0,36,2,0,20,16,1,0,legitimate
+session_002813,2026-01-27T22:59:33.967071,user2813@outlook.com,***,13,6.61,0,0,38,5,0,20,14,1,0,legitimate
+session_002814,2026-01-16T22:59:33.967071,<img src=x onerror=alert(1)>,,0,0.54,0,0,28,0,1,28,0,1,1,xss
+session_002815,2026-02-06T22:59:33.967071,user2815@outlook.com,***,22,15.95,0,0,36,5,1,20,8,1,0,legitimate
+session_002816,2026-01-18T22:59:33.967071,bot2816@automated.com,botpass6688,0,0.26,1,21,0,0,1,21,11,1,1,bot
+session_002817,2026-01-22T22:59:33.967071,administrator,pass414,1,0.46,0,0,9,2,0,13,7,1,1,brute_force
+session_002818,2026-01-16T22:59:33.967071,user2818@yahoo.com,***,44,2.33,0,0,33,2,1,18,10,1,0,legitimate
+session_002819,2026-01-18T22:59:33.967071,user2819@company.com,***,18,12.76,0,0,40,8,0,20,15,1,0,legitimate
+session_002820,2026-01-10T22:59:33.967071,admin'/*,admin,1,0.97,0,0,20,0,0,8,5,1,1,sql_injection
+session_002821,2026-02-01T22:59:33.967071,user2821@outlook.com,***,7,12.54,0,0,40,10,1,20,16,1,0,legitimate
+session_002822,2026-01-17T22:59:33.967071,user2822@yahoo.com,***,27,12.46,0,0,38,4,0,18,14,1,0,legitimate
+session_002823,2026-02-04T22:59:33.967071,bot2823@automated.com,botpass2648,0,0.46,1,21,0,0,1,21,11,1,1,bot
+session_002824,2026-01-10T22:59:33.967071,user2824@yahoo.com,***,37,14.37,0,0,33,7,0,18,15,1,0,legitimate
+session_002825,2026-01-09T22:59:33.967071,"'""><script>alert(String.fromCharCode(88,83,83))</script>",test,0,0.95,0,0,56,1,1,56,4,1,1,xss
+session_002826,2026-01-10T22:59:33.967071,admin' OR '1'='1,admin,0,0.12,1,16,7,0,1,16,5,1,1,sql_injection
+session_002827,2026-01-26T22:59:33.967071,user2827@yahoo.com,***,7,19.26,0,0,28,4,0,18,8,1,0,legitimate
+session_002828,2026-01-24T22:59:33.967071,user2828@yahoo.com,***,5,11.14,0,0,34,4,0,18,16,1,0,legitimate
+session_002829,2026-01-19T22:59:33.967071,user2829@outlook.com,***,40,15.69,0,0,36,9,0,20,11,1,0,legitimate
+session_002830,2026-01-17T22:59:33.967071,<svg onload=alert(1)>,test,0,0.37,0,0,21,1,1,21,4,1,1,xss
+session_002831,2026-02-02T22:59:33.967071,test@test.com; ls -la,| nc -e /bin/sh,0,0.19,0,0,19,1,1,21,15,1,1,command_injection
+session_002832,2026-02-08T22:59:33.967071,user2832@outlook.com,***,46,15.07,0,0,42,4,0,20,15,1,0,legitimate
+session_002833,2026-01-13T22:59:33.967071,user2833@company.com,***,41,6.31,0,0,34,2,1,20,8,1,0,legitimate
+session_002834,2026-02-06T22:59:33.967071,user2834@outlook.com,***,18,3.31,0,0,39,10,0,20,15,1,0,legitimate
+session_002835,2026-02-06T22:59:33.967071,user2835@gmail.com,***,42,8.73,0,0,33,8,0,18,10,1,0,legitimate
+session_002836,2026-01-21T22:59:33.967071,<iframe src=javascript:alert(1)>,pass,0,0.4,0,0,32,0,1,32,4,1,1,xss
+session_002837,2026-01-25T22:59:33.967071,test@test.com; ls -la,`cat /etc/shadow`,1,0.6,0,0,19,0,1,21,17,1,1,command_injection
+session_002838,2026-01-21T22:59:33.967071,user2838@gmail.com,***,5,18.97,0,0,34,5,1,18,14,1,0,legitimate
+session_002839,2026-02-04T22:59:33.967071,admin,pass751,1,0.36,0,0,10,0,0,5,7,1,1,brute_force
+session_002840,2026-01-23T22:59:33.967071,root,pass745,0,0.35,0,0,9,0,0,4,7,1,1,brute_force
+session_002841,2026-01-13T22:59:33.967071,user2841@yahoo.com,***,12,5.48,0,0,29,2,0,18,8,1,0,legitimate
+session_002842,2026-01-18T22:59:33.967071,user2842@outlook.com,***,41,6.45,0,0,31,2,0,20,8,1,0,legitimate
+session_002843,2026-01-13T22:59:33.967071,bot2843@automated.com,botpass4637,0,0.22,1,21,0,0,1,21,11,1,1,bot
+session_002844,2026-02-03T22:59:33.967071,user2844@yahoo.com,***,22,17.41,0,0,36,8,0,18,10,1,0,legitimate
+session_002845,2026-01-09T22:59:33.967071,user2845@yahoo.com,***,30,11.63,0,0,33,10,0,18,14,1,0,legitimate
+session_002846,2026-01-31T22:59:33.967071,user2846@yahoo.com,***,37,4.3,0,0,43,10,0,18,15,1,0,legitimate
+session_002847,2026-02-06T22:59:33.967071,user2847@yahoo.com,***,40,19.14,0,0,31,10,0,18,12,1,0,legitimate
+session_002848,2026-01-09T22:59:33.967071,user2848@outlook.com,***,16,13.84,0,0,35,8,0,20,8,1,0,legitimate
+session_002849,2026-02-04T22:59:33.967071,user2849@outlook.com,***,27,5.52,0,0,42,9,0,20,15,1,0,legitimate
+session_002850,2026-01-30T22:59:33.967071,user2850@gmail.com,***,27,6.3,0,0,38,4,1,18,11,1,0,legitimate
+session_002851,2026-01-21T22:59:33.967071,....//....//....//etc/passwd,test,2,0.85,0,0,28,1,1,28,4,1,1,path_traversal
+session_002852,2026-01-10T22:59:33.967071,user2852@company.com,***,44,8.3,0,0,40,5,0,20,13,1,0,legitimate
+session_002853,2026-02-01T22:59:33.967071,user2853@outlook.com,***,6,6.56,0,0,38,3,0,20,16,1,0,legitimate
+session_002854,2026-01-23T22:59:33.967071,user2854@yahoo.com,***,32,16.26,0,0,33,6,0,18,15,1,0,legitimate
+session_002855,2026-01-25T22:59:33.967071,user2855@outlook.com,***,30,3.02,0,0,42,10,1,20,15,1,0,legitimate
+session_002856,2026-02-07T22:59:33.967071,user2856@company.com,***,6,11.54,0,0,33,5,1,20,11,1,0,legitimate
+session_002857,2026-01-27T22:59:33.967071,user2857@gmail.com,***,12,10.01,0,0,30,3,0,18,12,1,0,legitimate
+session_002858,2026-01-22T22:59:33.967071,user2858@outlook.com,***,37,6.34,0,0,36,9,1,20,11,1,0,legitimate
+session_002859,2026-02-01T22:59:33.967071,user2859@yahoo.com,***,25,2.72,0,0,36,5,0,18,16,1,0,legitimate
+session_002860,2026-01-24T22:59:33.967071,user2860@company.com,***,49,5.02,0,0,39,7,0,20,9,1,0,legitimate
+session_002861,2026-01-31T22:59:33.967071,user2861@yahoo.com,***,7,5.17,0,0,30,6,0,18,8,1,0,legitimate
+session_002862,2026-01-16T22:59:33.967071,admin' OR '1'='1'--,123,1,0.79,1,19,17,0,1,19,3,1,1,sql_injection
+session_002863,2026-01-26T22:59:33.967071,user2863@company.com,***,14,9.9,0,0,36,5,0,20,12,1,0,legitimate
+session_002864,2026-01-25T22:59:33.967071,<svg onload=alert(1)>,pass,0,0.58,0,0,21,1,1,21,4,1,1,xss
+session_002865,2026-01-09T22:59:33.967071,user2865@gmail.com,***,14,19.24,0,0,35,7,0,18,11,1,0,legitimate
+session_002866,2026-01-09T22:59:33.967071,user2866@outlook.com,***,25,8.91,0,0,32,10,0,20,8,1,0,legitimate
+session_002867,2026-01-30T22:59:33.967071,user2867@yahoo.com,***,15,2.99,0,0,39,2,0,18,12,1,0,legitimate
+session_002868,2026-01-26T22:59:33.967071,user2868@gmail.com,***,25,2.79,0,0,36,4,0,18,12,1,0,legitimate
+session_002869,2026-02-02T22:59:33.967071,....//....//....//etc/passwd,test,1,1.17,0,0,28,0,1,28,4,1,1,path_traversal
+session_002870,2026-01-23T22:59:33.967071,user2870@company.com,***,19,19.24,0,0,38,7,0,20,14,1,0,legitimate
+session_002871,2026-01-17T22:59:33.967071,user2871@outlook.com,***,39,15.27,0,0,37,10,0,20,14,1,0,legitimate
+session_002872,2026-02-04T22:59:33.967071,user2872@company.com,***,38,15.42,0,0,41,7,0,20,11,1,0,legitimate
+session_002873,2026-01-13T22:59:33.967071,user2873@company.com,***,48,11.66,0,0,35,2,1,20,13,1,0,legitimate
+session_002874,2026-01-15T22:59:33.967071,user2874@yahoo.com,***,12,4.28,0,0,40,8,1,18,15,1,0,legitimate
+session_002875,2026-01-30T22:59:33.967071,user2875@gmail.com,***,27,7.52,0,0,34,9,1,18,9,1,0,legitimate
+session_002876,2026-01-18T22:59:33.967071,<iframe src=javascript:alert(1)>,test,0,0.3,0,0,32,1,1,32,4,1,1,xss
+session_002877,2026-02-02T22:59:33.967071,user2877@company.com,***,34,5.47,0,0,42,2,0,20,16,1,0,legitimate
+session_002878,2026-02-07T22:59:33.967071,user2878@gmail.com,***,7,5.76,0,0,32,6,0,18,11,1,0,legitimate
+session_002879,2026-02-07T22:59:33.967071,user2879@yahoo.com,***,26,3.54,0,0,29,8,0,18,10,1,0,legitimate
+session_002880,2026-02-05T22:59:33.967071,user2880@company.com,***,49,12.63,0,0,36,10,1,20,11,1,0,legitimate
+session_002881,2026-02-01T22:59:33.967071,1' AND '1'='1,test,0,1.29,1,13,15,2,0,13,4,1,1,sql_injection
+session_002882,2026-01-20T22:59:33.967071,user2882@gmail.com,***,17,8.7,0,0,42,7,0,18,15,1,0,legitimate
+session_002883,2026-02-05T22:59:33.967071,user2883@gmail.com,***,24,14.65,0,0,29,4,0,18,11,1,0,legitimate
+session_002884,2026-01-16T22:59:33.967071,user2884@outlook.com,***,19,14.79,0,0,37,3,0,20,8,1,0,legitimate
+session_002885,2026-01-28T22:59:33.967071,<input onfocus=alert(1) autofocus>,,0,0.76,0,0,34,1,1,34,0,1,1,xss
+session_002886,2026-01-24T22:59:33.967071,user2886@outlook.com,***,36,15.79,0,0,38,3,0,20,8,1,0,legitimate
+session_002887,2026-01-28T22:59:33.967071,user2887@gmail.com,***,37,19.0,0,0,37,3,1,18,11,1,0,legitimate
+session_002888,2026-01-15T22:59:33.967071,user2888@outlook.com,***,19,3.56,0,0,41,4,0,20,12,1,0,legitimate
+session_002889,2026-01-15T22:59:33.967071,user2889@outlook.com,***,49,2.08,0,0,40,6,0,20,13,1,0,legitimate
+session_002890,2026-01-24T22:59:33.967071,user2890@outlook.com,***,31,6.37,0,0,43,9,0,20,14,1,0,legitimate
+session_002891,2026-02-08T22:59:33.967071,user2891@gmail.com,***,44,17.66,0,0,39,5,0,18,13,1,0,legitimate
+session_002892,2026-01-22T22:59:33.967071,user2892@yahoo.com,***,9,16.58,0,0,29,5,1,18,9,1,0,legitimate
+session_002893,2026-01-15T22:59:33.967071,user2893@outlook.com,***,18,9.52,0,0,37,9,0,20,8,1,0,legitimate
+session_002894,2026-02-08T22:59:33.967071,test@test.com; ls -la,| cat /etc/passwd,2,0.67,0,0,10,1,1,21,17,1,1,command_injection
+session_002895,2026-01-29T22:59:33.967071,user2895@company.com,***,32,2.34,0,0,32,2,0,20,10,1,0,legitimate
+session_002896,2026-01-25T22:59:33.967071,user2896@company.com,***,48,2.3,0,0,36,6,0,20,9,1,0,legitimate
+session_002897,2026-01-12T22:59:33.967071,user2897@gmail.com,***,15,3.12,0,0,29,8,1,18,11,1,0,legitimate
+session_002898,2026-01-19T22:59:33.968068,user2898@yahoo.com,***,9,19.21,0,0,34,9,0,18,13,1,0,legitimate
+session_002899,2026-02-04T22:59:33.968068,user2899@yahoo.com,***,20,14.35,0,0,39,2,0,18,16,1,0,legitimate
+session_002900,2026-01-20T22:59:33.968068,user2900@yahoo.com,***,28,12.9,0,0,28,10,1,18,8,1,0,legitimate
+session_002901,2026-01-19T22:59:33.968068,user2901@gmail.com,***,30,5.32,0,0,35,8,0,18,14,1,0,legitimate
+session_002902,2026-01-10T22:59:33.968068,user2902@company.com,***,28,15.66,0,0,42,9,0,20,16,1,0,legitimate
+session_002903,2026-01-11T22:59:33.968068,'; DROP TABLE users--,admin,0,1.45,0,0,14,2,0,21,5,1,1,sql_injection
+session_002904,2026-01-19T22:59:33.968068,user2904@outlook.com,***,13,9.04,0,0,39,8,0,20,13,1,0,legitimate
+session_002905,2026-01-24T22:59:33.968068,user2905@gmail.com,***,44,3.34,0,0,31,4,0,18,10,1,0,legitimate
+session_002906,2026-01-25T22:59:33.968068,user2906@outlook.com,***,47,9.24,0,0,38,8,0,20,11,1,0,legitimate
+session_002907,2026-01-22T22:59:33.968068,user2907@company.com,***,26,8.02,0,0,34,5,1,20,8,1,0,legitimate
+session_002908,2026-01-15T22:59:33.968068,test@test.com`cat /etc/shadow`,; ls -la,2,0.71,0,0,15,1,1,30,8,1,1,command_injection
+session_002909,2026-01-29T22:59:33.968068,user2909@yahoo.com,***,50,10.9,0,0,37,5,0,18,10,1,0,legitimate
+session_002910,2026-01-30T22:59:33.968068,admin'--,test,0,0.41,0,0,10,2,1,8,4,1,1,sql_injection
+session_002911,2026-02-02T22:59:33.968068,user2911@gmail.com,***,29,3.63,0,0,39,3,0,18,15,1,0,legitimate
+session_002912,2026-01-10T22:59:33.968068,user2912@yahoo.com,***,26,9.59,0,0,28,10,0,18,10,1,0,legitimate
+session_002913,2026-01-30T22:59:33.968068,user2913@gmail.com,***,41,15.04,0,0,37,6,0,18,10,1,0,legitimate
+session_002914,2026-01-23T22:59:33.968068,user2914@gmail.com,***,20,15.37,0,0,30,8,0,18,11,1,0,legitimate
+session_002915,2026-01-21T22:59:33.968068,user2915@gmail.com,***,46,8.05,0,0,37,6,0,18,13,1,0,legitimate
+session_002916,2026-01-22T22:59:33.968068,user2916@yahoo.com,***,14,18.71,0,0,37,9,0,18,16,1,0,legitimate
+session_002917,2026-01-28T22:59:33.968068,user2917@yahoo.com,***,14,2.37,0,0,33,9,1,18,9,1,0,legitimate
+session_002918,2026-01-11T22:59:33.968068,user2918@company.com,***,5,18.37,0,0,41,5,1,20,13,1,0,legitimate
+session_002919,2026-02-02T22:59:33.968068,user2919@outlook.com,***,15,14.6,0,0,40,10,0,20,15,1,0,legitimate
+session_002920,2026-02-05T22:59:33.968068,test,pass412,0,0.92,0,0,3,1,0,4,7,1,1,brute_force
+session_002921,2026-02-02T22:59:33.968068,user2921@company.com,***,46,5.15,0,0,38,8,0,20,8,1,0,legitimate
+session_002922,2026-01-16T22:59:33.968068,user2922@outlook.com,***,18,12.62,0,0,45,5,0,20,16,1,0,legitimate
+session_002923,2026-01-19T22:59:33.968068,user2923@yahoo.com,***,18,15.65,0,0,29,5,0,18,9,1,0,legitimate
+session_002924,2026-01-14T22:59:33.968068,user2924@gmail.com,***,40,13.86,0,0,35,2,0,18,16,1,0,legitimate
+session_002925,2026-01-21T22:59:33.968068,user2925@company.com,***,28,3.01,0,0,33,9,1,20,8,1,0,legitimate
+session_002926,2026-02-03T22:59:33.968068,user2926@yahoo.com,***,32,19.38,0,0,31,9,1,18,9,1,0,legitimate
+session_002927,2026-01-23T22:59:33.968068,bot2927@automated.com,botpass3268,0,0.21,1,21,0,0,1,21,11,1,1,bot
+session_002928,2026-01-22T22:59:33.968068,admin' UNION SELECT,,2,0.75,1,19,8,1,0,19,0,1,1,sql_injection
+session_002929,2026-01-15T22:59:33.968068,admin' OR '1'='1,test,3,0.69,0,0,6,2,0,16,4,1,1,sql_injection
+session_002930,2026-01-25T22:59:33.968068,'; DROP TABLE users--,admin,3,1.26,1,21,13,2,1,21,5,1,1,sql_injection
+session_002931,2026-01-24T22:59:33.968068,user2931@gmail.com,***,17,5.55,0,0,35,4,0,18,12,1,0,legitimate
+session_002932,2026-01-16T22:59:33.968068,user2932@outlook.com,***,27,7.24,0,0,32,10,0,20,10,1,0,legitimate
+session_002933,2026-01-28T22:59:33.968068,test@test.com| cat /etc/passwd,; rm -rf /,2,0.63,0,0,14,0,1,30,10,1,1,command_injection
+session_002934,2026-02-03T22:59:33.968068,user2934@yahoo.com,***,30,16.48,0,0,33,7,0,18,14,1,0,legitimate
+session_002935,2026-01-27T22:59:33.968068,user2935@gmail.com,***,37,4.58,0,0,29,8,0,18,11,1,0,legitimate
+session_002936,2026-01-09T22:59:33.968068,bot2936@automated.com,botpass8632,0,0.44,1,21,0,0,1,21,11,1,1,bot
+session_002937,2026-01-14T22:59:33.968068,user2937@yahoo.com,***,39,12.22,0,0,34,2,1,18,11,1,0,legitimate
+session_002938,2026-02-05T22:59:33.968068,user2938@company.com,***,39,19.57,0,0,29,4,0,20,8,1,0,legitimate
+session_002939,2026-01-18T22:59:33.968068,test@test.com&& whoami,&& whoami,1,0.43,0,0,15,2,1,22,9,1,1,command_injection
+session_002940,2026-01-22T22:59:33.968068,administrator,pass222,1,0.43,0,0,7,2,0,13,7,1,1,brute_force
+session_002941,2026-01-20T22:59:33.968068,user2941@company.com,***,37,2.99,0,0,42,4,0,20,13,1,0,legitimate
+session_002942,2026-01-11T22:59:33.968068,user2942@outlook.com,***,16,17.56,0,0,42,2,1,20,16,1,0,legitimate
+session_002943,2026-01-11T22:59:33.968068,test@test.com; rm -rf /,`cat /etc/shadow`,2,0.72,0,0,18,0,1,23,17,1,1,command_injection
+session_002944,2026-02-05T22:59:33.968068,../../../etc/passwd,test,0,0.91,0,0,19,1,1,19,4,1,1,path_traversal
+session_002945,2026-01-28T22:59:33.968068,../../../etc/passwd,test,0,0.6,0,0,19,0,1,19,4,1,1,path_traversal
+session_002946,2026-01-22T22:59:33.968068,"'""><script>alert(String.fromCharCode(88,83,83))</script>",,2,0.46,0,0,56,0,1,56,0,1,1,xss
+session_002947,2026-01-26T22:59:33.968068,user2947@gmail.com,***,17,14.94,0,0,38,4,1,18,10,1,0,legitimate
+session_002948,2026-02-06T22:59:33.968068,user2948@outlook.com,***,48,8.94,0,0,36,7,0,20,12,1,0,legitimate
+session_002949,2026-02-01T22:59:33.968068,user2949@outlook.com,***,43,13.51,0,0,37,7,1,20,11,1,0,legitimate
+session_002950,2026-01-10T22:59:33.968068,user2950@company.com,***,25,19.03,0,0,32,3,0,20,10,1,0,legitimate
+session_002951,2026-01-14T22:59:33.968068,../../../etc/passwd,test,0,0.75,0,0,19,1,1,19,4,1,1,path_traversal
+session_002952,2026-02-01T22:59:33.968068,user2952@yahoo.com,***,34,9.82,0,0,35,2,1,18,16,1,0,legitimate
+session_002953,2026-01-20T22:59:33.968068,user2953@outlook.com,***,32,9.22,0,0,35,6,0,20,10,1,0,legitimate
+session_002954,2026-02-02T22:59:33.968068,user2954@yahoo.com,***,39,9.38,0,0,33,9,0,18,8,1,0,legitimate
+session_002955,2026-01-29T22:59:33.968068,user2955@yahoo.com,***,41,9.71,0,0,32,2,1,18,13,1,0,legitimate
+session_002956,2026-01-09T22:59:33.968068,<input onfocus=alert(1) autofocus>,pass,2,0.61,0,0,34,0,1,34,4,1,1,xss
+session_002957,2026-01-10T22:59:33.968068,admin'--,test,1,0.49,0,0,5,1,1,8,4,1,1,sql_injection
+session_002958,2026-01-09T22:59:33.968068,user2958@gmail.com,***,16,19.22,0,0,38,5,1,18,10,1,0,legitimate
+session_002959,2026-01-21T22:59:33.968068,user2959@yahoo.com,***,35,17.07,0,0,43,7,1,18,15,1,0,legitimate
+session_002960,2026-02-05T22:59:33.968068,"'""><script>alert(String.fromCharCode(88,83,83))</script>",pass,1,0.8,0,0,56,1,1,56,4,1,1,xss
+session_002961,2026-02-02T22:59:33.968068,user2961@gmail.com,***,48,16.77,0,0,33,7,1,18,12,1,0,legitimate
+session_002962,2026-02-01T22:59:33.968068,user2962@company.com,***,13,11.55,0,0,41,8,1,20,14,1,0,legitimate
+session_002963,2026-01-23T22:59:33.968068,user2963@company.com,***,18,2.6,0,0,34,10,0,20,9,1,0,legitimate
+session_002964,2026-02-03T22:59:33.968068,user2964@outlook.com,***,39,15.53,0,0,39,4,0,20,16,1,0,legitimate
+session_002965,2026-01-11T22:59:33.968068,root,pass98,1,0.93,0,0,4,2,0,4,6,1,1,brute_force
+session_002966,2026-02-08T22:59:33.968068,user2966@outlook.com,***,50,16.26,0,0,39,3,0,20,12,1,0,legitimate
+session_002967,2026-01-23T22:59:33.968068,user2967@gmail.com,***,24,17.77,0,0,31,2,0,18,12,1,0,legitimate
+session_002968,2026-02-03T22:59:33.968068,user2968@company.com,***,29,4.3,0,0,46,5,1,20,16,1,0,legitimate
+session_002969,2026-02-04T22:59:33.968068,user2969@gmail.com,***,11,17.22,0,0,32,8,0,18,12,1,0,legitimate
+session_002970,2026-01-31T22:59:33.968068,admin'--,123,0,0.76,0,0,6,0,0,8,3,1,1,sql_injection
+session_002971,2026-01-29T22:59:33.968068,user2971@outlook.com,***,12,19.5,0,0,36,9,1,20,15,1,0,legitimate
+session_002972,2026-01-10T22:59:33.968068,user2972@company.com,***,48,6.22,0,0,29,8,1,20,9,1,0,legitimate
+session_002973,2026-01-21T22:59:33.968068,user2973@outlook.com,***,35,14.43,0,0,39,4,1,20,11,1,0,legitimate
+session_002974,2026-01-23T22:59:33.968068,user2974@yahoo.com,***,15,6.82,0,0,36,10,0,18,11,1,0,legitimate
+session_002975,2026-01-13T22:59:33.968068,root,pass82,1,0.45,0,0,10,2,0,4,6,1,1,brute_force
+session_002976,2026-01-30T22:59:33.968068,user2976@yahoo.com,***,20,19.92,0,0,35,10,0,18,11,1,0,legitimate
+session_002977,2026-02-04T22:59:33.968068,user2977@outlook.com,***,44,5.08,0,0,41,7,0,20,14,1,0,legitimate
+session_002978,2026-01-13T22:59:33.968068,user2978@outlook.com,***,22,2.14,0,0,38,5,1,20,10,1,0,legitimate
+session_002979,2026-01-20T22:59:33.968068,user2979@gmail.com,***,6,14.72,0,0,40,8,0,18,15,1,0,legitimate
+session_002980,2026-02-04T22:59:33.968068,user2980@gmail.com,***,40,9.71,0,0,37,10,1,18,16,1,0,legitimate
+session_002981,2026-01-20T22:59:33.968068,user2981@company.com,***,10,7.07,0,0,32,4,1,20,8,1,0,legitimate
+session_002982,2026-02-01T22:59:33.968068,bot2982@automated.com,botpass6486,0,0.25,1,21,0,0,1,21,11,1,1,bot
+session_002983,2026-02-06T22:59:33.968068,user2983@outlook.com,***,34,16.44,0,0,39,8,0,20,15,1,0,legitimate
+session_002984,2026-01-17T22:59:33.968068,user2984@gmail.com,***,22,8.76,0,0,43,4,0,18,15,1,0,legitimate
+session_002985,2026-01-19T22:59:33.968068,bot2985@automated.com,botpass4447,0,0.36,1,21,0,0,1,21,11,1,1,bot
+session_002986,2026-01-12T22:59:33.968068,user2986@yahoo.com,***,32,9.91,0,0,37,8,0,18,11,1,0,legitimate
+session_002987,2026-01-20T22:59:33.968068,user2987@gmail.com,***,49,4.7,0,0,40,4,0,18,15,1,0,legitimate
+session_002988,2026-01-25T22:59:33.968068,user2988@outlook.com,***,47,7.98,0,0,38,8,0,20,11,1,0,legitimate
+session_002989,2026-01-13T22:59:33.968068,admin'--,123,0,1.17,0,0,17,2,1,8,3,1,1,sql_injection
+session_002990,2026-01-31T22:59:33.968068,user2990@gmail.com,***,28,19.52,0,0,36,4,0,18,12,1,0,legitimate
+session_002991,2026-01-12T22:59:33.968068,user2991@outlook.com,***,40,4.36,0,0,34,3,0,20,13,1,0,legitimate
+session_002992,2026-01-15T22:59:33.968068,user2992@outlook.com,***,48,7.1,0,0,42,6,0,20,16,1,0,legitimate
+session_002993,2026-01-09T22:59:33.968068,user2993@gmail.com,***,13,15.05,0,0,34,10,0,18,15,1,0,legitimate
+session_002994,2026-01-21T22:59:33.968068,user2994@company.com,***,7,18.55,0,0,35,9,0,20,15,1,0,legitimate
+session_002995,2026-01-25T22:59:33.968068,user2995@company.com,***,40,16.94,0,0,42,9,0,20,16,1,0,legitimate
+session_002996,2026-01-19T22:59:33.968068,user2996@yahoo.com,***,32,12.75,0,0,33,2,1,18,11,1,0,legitimate
+session_002997,2026-01-23T22:59:33.968068,user2997@outlook.com,***,6,7.12,0,0,39,3,1,20,15,1,0,legitimate
+session_002998,2026-01-23T22:59:33.968068,user2998@company.com,***,21,11.08,0,0,34,4,0,20,9,1,0,legitimate
+session_002999,2026-02-04T22:59:33.968068,user2999@outlook.com,***,33,4.14,0,0,36,7,1,20,14,1,0,legitimate
+session_003000,2026-01-13T22:59:33.968068,..\..\..\windows\system32,test,2,0.77,0,0,25,1,1,25,4,1,1,path_traversal
+session_003001,2026-01-27T22:59:33.968068,user3001@outlook.com,***,33,14.3,0,0,38,10,1,20,14,1,0,legitimate
+session_003002,2026-01-30T22:59:33.968068,user3002@company.com,***,30,8.33,0,0,38,2,0,20,14,1,0,legitimate
+session_003003,2026-01-19T22:59:33.968068,test@test.com| cat /etc/passwd,&& whoami,2,0.26,0,0,24,1,1,30,9,1,1,command_injection
+session_003004,2026-02-03T22:59:33.968068,admin,pass159,1,0.86,0,0,4,1,0,5,7,1,1,brute_force
+session_003005,2026-01-13T22:59:33.968068,user3005@company.com,***,36,4.43,0,0,37,2,1,20,11,1,0,legitimate
+session_003006,2026-01-13T22:59:33.968068,user3006@company.com,***,23,2.31,0,0,38,10,1,20,9,1,0,legitimate
+session_003007,2026-02-07T22:59:33.968068,user3007@outlook.com,***,12,7.53,0,0,39,2,1,20,13,1,0,legitimate
+session_003008,2026-01-13T22:59:33.968068,user3008@outlook.com,***,41,10.66,0,0,37,9,0,20,15,1,0,legitimate
+session_003009,2026-01-27T22:59:33.968068,user3009@gmail.com,***,28,13.33,0,0,40,10,1,18,14,1,0,legitimate
+session_003010,2026-01-21T22:59:33.968068,user3010@company.com,***,15,7.15,0,0,30,9,0,20,9,1,0,legitimate
+session_003011,2026-02-01T22:59:33.968068,user3011@outlook.com,***,35,12.98,0,0,41,6,1,20,14,1,0,legitimate
+session_003012,2026-01-27T22:59:33.968068,user3012@outlook.com,***,29,5.33,0,0,40,6,1,20,16,1,0,legitimate
+session_003013,2026-02-08T22:59:33.968068,user3013@outlook.com,***,40,16.86,0,0,36,5,0,20,14,1,0,legitimate
+session_003014,2026-01-09T22:59:33.968068,user3014@company.com,***,8,15.28,0,0,39,10,0,20,13,1,0,legitimate
+session_003015,2026-01-19T22:59:33.969067,user3015@company.com,***,11,14.99,0,0,32,5,0,20,12,1,0,legitimate
+session_003016,2026-01-10T22:59:33.969067,user3016@outlook.com,***,14,13.16,0,0,38,5,0,20,16,1,0,legitimate
+session_003017,2026-01-19T22:59:33.969067,user3017@yahoo.com,***,20,8.36,0,0,39,6,0,18,11,1,0,legitimate
+session_003018,2026-01-21T22:59:33.969067,user3018@gmail.com,***,26,5.29,0,0,36,10,0,18,8,1,0,legitimate
+session_003019,2026-01-13T22:59:33.969067,user3019@gmail.com,***,9,14.58,0,0,37,6,0,18,9,1,0,legitimate
+session_003020,2026-01-14T22:59:33.969067,test@test.com; rm -rf /,`cat /etc/shadow`,1,0.13,0,0,24,0,1,23,17,1,1,command_injection
+session_003021,2026-01-22T22:59:33.969067,test,pass587,0,0.76,0,0,3,1,0,4,7,1,1,brute_force
+session_003022,2026-01-26T22:59:33.969067,bot3022@automated.com,botpass6254,0,0.37,1,21,0,0,1,21,11,1,1,bot
+session_003023,2026-01-21T22:59:33.969067,user3023@outlook.com,***,32,10.5,0,0,31,10,1,20,10,1,0,legitimate
+session_003024,2026-01-11T22:59:33.969067,user3024@gmail.com,***,29,3.33,0,0,29,10,1,18,8,1,0,legitimate
+session_003025,2026-02-03T22:59:33.969067,user3025@gmail.com,***,50,9.47,0,0,32,2,0,18,9,1,0,legitimate
+session_003026,2026-01-21T22:59:33.969067,bot3026@automated.com,botpass1945,0,0.35,1,21,0,0,1,21,11,1,1,bot
+session_003027,2026-01-15T22:59:33.969067,user3027@company.com,***,41,18.71,0,0,40,9,0,20,16,1,0,legitimate
+session_003028,2026-01-09T22:59:33.969067,user3028@yahoo.com,***,35,13.17,0,0,33,6,1,18,11,1,0,legitimate
+session_003029,2026-01-22T22:59:33.969067,user3029@gmail.com,***,29,7.1,0,0,31,9,1,18,9,1,0,legitimate
+session_003030,2026-01-14T22:59:33.969067,user3030@gmail.com,***,38,16.79,0,0,26,4,0,18,8,1,0,legitimate
+session_003031,2026-01-25T22:59:33.969067,user3031@company.com,***,40,10.16,0,0,41,10,1,20,11,1,0,legitimate
+session_003032,2026-01-31T22:59:33.969067,root,pass36,1,0.44,0,0,8,0,0,4,6,1,1,brute_force
+session_003033,2026-01-25T22:59:33.969067,user3033@gmail.com,***,44,18.69,0,0,35,4,0,18,9,1,0,legitimate
+session_003034,2026-01-27T22:59:33.969067,user3034@yahoo.com,***,5,3.93,0,0,36,5,0,18,9,1,0,legitimate
+session_003035,2026-02-01T22:59:33.969067,user3035@yahoo.com,***,49,2.86,0,0,32,3,0,18,10,1,0,legitimate
+session_003036,2026-01-25T22:59:33.969067,admin,pass338,0,0.84,0,0,10,1,0,5,7,1,1,brute_force
+session_003037,2026-01-11T22:59:33.969067,user3037@company.com,***,19,8.14,0,0,31,10,0,20,8,1,0,legitimate
+session_003038,2026-01-12T22:59:33.969067,user3038@outlook.com,***,26,4.7,0,0,28,5,1,20,8,1,0,legitimate
+session_003039,2026-01-17T22:59:33.969067,user3039@gmail.com,***,46,3.33,0,0,34,5,1,18,13,1,0,legitimate
+session_003040,2026-01-15T22:59:33.969067,user3040@company.com,***,49,10.54,0,0,31,6,0,20,10,1,0,legitimate
+session_003041,2026-02-07T22:59:33.969067,user3041@gmail.com,***,31,2.61,0,0,37,8,0,18,14,1,0,legitimate
+session_003042,2026-01-18T22:59:33.969067,user3042@outlook.com,***,38,10.81,0,0,39,2,0,20,13,1,0,legitimate
+session_003043,2026-02-02T22:59:33.969067,user3043@outlook.com,***,28,4.5,0,0,42,7,0,20,15,1,0,legitimate
+session_003044,2026-02-03T22:59:33.969067,test,pass729,1,0.67,0,0,8,2,0,4,7,1,1,brute_force
+session_003045,2026-01-27T22:59:33.969067,user3045@gmail.com,***,30,12.04,0,0,31,6,1,18,8,1,0,legitimate
+session_003046,2026-01-23T22:59:33.969067,test@test.com; rm -rf /,; ls -la,1,0.39,0,0,19,1,1,23,8,1,1,command_injection
+session_003047,2026-01-26T22:59:33.969067,user3047@yahoo.com,***,39,8.7,0,0,41,4,0,18,13,1,0,legitimate
+session_003048,2026-02-02T22:59:33.969067,test@test.com; rm -rf /,`cat /etc/shadow`,2,0.36,0,0,25,2,1,23,17,1,1,command_injection
+session_003049,2026-02-04T22:59:33.969067,user3049@company.com,***,31,11.02,0,0,38,8,0,20,16,1,0,legitimate
+session_003050,2026-01-24T22:59:33.969067,admin,pass845,0,0.49,0,0,6,2,0,5,7,1,1,brute_force
+session_003051,2026-01-26T22:59:33.969067,' OR 1=1--,123,0,0.1,0,0,18,1,0,10,3,1,1,sql_injection
+session_003052,2026-01-28T22:59:33.969067,user3052@company.com,***,19,11.24,0,0,36,2,0,20,12,1,0,legitimate
+session_003053,2026-01-29T22:59:33.969067,user3053@company.com,***,40,3.52,0,0,38,7,0,20,9,1,0,legitimate
+session_003054,2026-01-13T22:59:33.969067,user3054@company.com,***,22,14.07,0,0,30,6,0,20,9,1,0,legitimate
+session_003055,2026-02-08T22:59:33.969067,user3055@company.com,***,29,15.14,0,0,33,3,0,20,10,1,0,legitimate
+session_003056,2026-01-13T22:59:33.969067,user3056@outlook.com,***,23,5.84,0,0,38,5,0,20,8,1,0,legitimate
+session_003057,2026-01-16T22:59:33.969067,' OR 1=1--,admin,0,0.58,0,0,12,1,0,10,5,1,1,sql_injection
+session_003058,2026-01-19T22:59:33.969067,user3058@yahoo.com,***,16,17.87,0,0,42,10,0,18,14,1,0,legitimate
+session_003059,2026-01-09T22:59:33.969067,user3059@gmail.com,***,5,18.33,0,0,33,6,0,18,12,1,0,legitimate
+session_003060,2026-01-14T22:59:33.969067,user3060@company.com,***,34,16.0,0,0,35,9,0,20,12,1,0,legitimate
+session_003061,2026-02-02T22:59:33.969067,user3061@outlook.com,***,15,3.38,0,0,36,4,0,20,13,1,0,legitimate
+session_003062,2026-02-05T22:59:33.969067,root,pass110,0,0.71,0,0,4,2,0,4,7,1,1,brute_force
+session_003063,2026-02-02T22:59:33.969067,user3063@outlook.com,***,35,7.25,0,0,38,2,0,20,8,1,0,legitimate
+session_003064,2026-01-15T22:59:33.969067,' OR 1=1--,admin,0,1.44,0,0,5,1,0,10,5,1,1,sql_injection
+session_003065,2026-02-06T22:59:33.969067,user3065@yahoo.com,***,39,4.51,0,0,34,8,0,18,15,1,0,legitimate
+session_003066,2026-02-01T22:59:33.969067,user3066@gmail.com,***,5,18.56,0,0,38,3,0,18,16,1,0,legitimate
+session_003067,2026-02-06T22:59:33.969067,user3067@yahoo.com,***,27,11.1,0,0,36,5,0,18,15,1,0,legitimate
+session_003068,2026-01-13T22:59:33.969067,user3068@yahoo.com,***,32,5.47,0,0,27,2,0,18,9,1,0,legitimate
+session_003069,2026-01-16T22:59:33.969067,..%2F..%2F..%2Fetc%2Fpasswd,test,1,0.88,0,0,27,0,1,27,4,1,1,path_traversal
+session_003070,2026-02-04T22:59:33.969067,'; DROP TABLE users--,test,3,0.21,0,0,16,2,0,21,4,1,1,sql_injection
+session_003071,2026-01-21T22:59:33.969067,<input onfocus=alert(1) autofocus>,test,0,0.55,0,0,34,0,1,34,4,1,1,xss
+session_003072,2026-01-31T22:59:33.969067,bot3072@automated.com,botpass9920,0,0.33,1,21,0,0,1,21,11,1,1,bot
+session_003073,2026-02-02T22:59:33.969067,user3073@company.com,***,45,2.05,0,0,36,6,0,20,10,1,0,legitimate
+session_003074,2026-01-26T22:59:33.969067,test@test.com`cat /etc/shadow`,| cat /etc/passwd,0,0.67,0,0,16,1,1,30,17,1,1,command_injection
+session_003075,2026-01-30T22:59:33.969067,user3075@company.com,***,22,6.83,0,0,37,7,0,20,9,1,0,legitimate
+session_003076,2026-01-29T22:59:33.969067,' OR 1=1--,,0,0.95,1,10,16,0,0,10,0,1,1,sql_injection
+session_003077,2026-01-19T22:59:33.969067,user3077@outlook.com,***,15,15.85,0,0,33,5,0,20,9,1,0,legitimate
+session_003078,2026-01-16T22:59:33.969067,user3078@company.com,***,44,13.01,0,0,39,7,1,20,11,1,0,legitimate
+session_003079,2026-01-27T22:59:33.969067,user3079@company.com,***,27,14.68,0,0,41,7,0,20,11,1,0,legitimate
+session_003080,2026-02-08T22:59:33.969067,user3080@gmail.com,***,39,13.1,0,0,29,4,0,18,8,1,0,legitimate
+session_003081,2026-01-15T22:59:33.969067,' OR 1=1--,,1,1.47,1,10,20,1,1,10,0,1,1,sql_injection
+session_003082,2026-01-11T22:59:33.969067,user3082@yahoo.com,***,22,4.66,0,0,33,10,0,18,12,1,0,legitimate
+session_003083,2026-01-14T22:59:33.969067,user3083@outlook.com,***,33,19.59,0,0,41,5,0,20,16,1,0,legitimate
+session_003084,2026-01-21T22:59:33.969067,user3084@yahoo.com,***,12,8.58,0,0,32,4,0,18,10,1,0,legitimate
+session_003085,2026-01-13T22:59:33.969067,user3085@outlook.com,***,31,13.73,0,0,35,7,0,20,12,1,0,legitimate
+session_003086,2026-01-22T22:59:33.969067,test@test.com| nc -e /bin/sh,; rm -rf /,0,0.17,0,0,19,0,1,28,10,1,1,command_injection
+session_003087,2026-02-04T22:59:33.969067,user3087@company.com,***,20,7.62,0,0,36,10,1,20,8,1,0,legitimate
+session_003088,2026-01-29T22:59:33.969067,....//....//....//etc/passwd,test,2,0.69,0,0,28,0,1,28,4,1,1,path_traversal
+session_003089,2026-01-31T22:59:33.969067,user3089@yahoo.com,***,9,19.41,0,0,41,5,1,18,14,1,0,legitimate
+session_003090,2026-01-17T22:59:33.969067,admin' OR '1'='1'--,admin,1,1.03,0,0,8,2,1,19,5,1,1,sql_injection
+session_003091,2026-01-14T22:59:33.969067,user3091@company.com,***,18,7.5,0,0,32,9,1,20,8,1,0,legitimate
+session_003092,2026-02-08T22:59:33.969067,bot3092@automated.com,botpass6391,0,0.2,1,21,0,0,1,21,11,1,1,bot
+session_003093,2026-01-24T22:59:33.969067,user3093@yahoo.com,***,14,3.29,0,0,32,9,0,18,9,1,0,legitimate
+session_003094,2026-01-22T22:59:33.969067,user3094@yahoo.com,***,26,13.48,0,0,34,8,1,18,14,1,0,legitimate
+session_003095,2026-02-02T22:59:33.969067,user3095@gmail.com,***,42,15.78,0,0,36,9,0,18,16,1,0,legitimate
+session_003096,2026-02-04T22:59:33.969067,user3096@yahoo.com,***,50,3.25,0,0,36,9,1,18,15,1,0,legitimate
+session_003097,2026-01-26T22:59:33.969067,..%2F..%2F..%2Fetc%2Fpasswd,test,0,0.3,0,0,27,1,1,27,4,1,1,path_traversal
+session_003098,2026-01-09T22:59:33.969067,test,pass159,0,0.64,0,0,4,2,0,4,7,1,1,brute_force
+session_003099,2026-01-12T22:59:33.969067,user3099@outlook.com,***,45,7.38,0,0,39,6,0,20,15,1,0,legitimate
+session_003100,2026-01-21T22:59:33.969067,user3100@outlook.com,***,25,6.91,0,0,39,8,0,20,15,1,0,legitimate
+session_003101,2026-02-01T22:59:33.969067,....//....//....//etc/passwd,test,2,0.34,0,0,28,0,1,28,4,1,1,path_traversal
+session_003102,2026-01-26T22:59:33.969067,user3102@yahoo.com,***,5,7.97,0,0,36,7,0,18,14,1,0,legitimate
+session_003103,2026-01-23T22:59:33.969067,user3103@yahoo.com,***,20,11.49,0,0,28,4,0,18,8,1,0,legitimate
+session_003104,2026-02-02T22:59:33.969067,user3104@yahoo.com,***,23,10.38,0,0,32,9,0,18,13,1,0,legitimate
+session_003105,2026-02-05T22:59:33.969067,user3105@company.com,***,48,12.9,0,0,38,8,0,20,12,1,0,legitimate
+session_003106,2026-01-26T22:59:33.969067,user3106@outlook.com,***,5,7.47,0,0,35,5,0,20,11,1,0,legitimate
+session_003107,2026-02-04T22:59:33.969067,....//....//....//etc/passwd,test,2,1.08,0,0,28,1,1,28,4,1,1,path_traversal
+session_003108,2026-01-21T22:59:33.969067,bot3108@automated.com,botpass9459,0,0.49,1,21,0,0,1,21,11,1,1,bot
+session_003109,2026-01-29T22:59:33.969067,<body onload=alert('XSS')>,test,1,0.8,0,0,26,0,1,26,4,1,1,xss
+session_003110,2026-01-30T22:59:33.969067,test@test.com; rm -rf /,; ls -la,1,0.61,0,0,24,2,1,23,8,1,1,command_injection
+session_003111,2026-02-04T22:59:33.969067,user3111@gmail.com,***,26,15.9,0,0,38,9,0,18,12,1,0,legitimate
+session_003112,2026-01-11T22:59:33.969067,user3112@yahoo.com,***,47,12.46,0,0,31,2,0,18,10,1,0,legitimate
+session_003113,2026-02-02T22:59:33.969067,user3113@outlook.com,***,32,15.84,0,0,44,7,0,20,14,1,0,legitimate
+session_003114,2026-01-14T22:59:33.969067,user3114@gmail.com,***,14,11.82,0,0,42,8,0,18,15,1,0,legitimate
+session_003115,2026-02-07T22:59:33.969067,user3115@gmail.com,***,39,7.84,0,0,35,7,0,18,14,1,0,legitimate
+session_003116,2026-02-06T22:59:33.969067,..%2F..%2F..%2Fetc%2Fpasswd,test,1,0.96,0,0,27,0,1,27,4,1,1,path_traversal
+session_003117,2026-01-24T22:59:33.969067,user3117@company.com,***,46,8.49,0,0,39,8,0,20,12,1,0,legitimate
+session_003118,2026-01-17T22:59:33.969067,user3118@company.com,***,9,11.86,0,0,36,9,1,20,9,1,0,legitimate
+session_003119,2026-01-12T22:59:33.969067,user3119@yahoo.com,***,19,12.72,0,0,42,4,1,18,14,1,0,legitimate
+session_003120,2026-02-08T22:59:33.969067,user3120@outlook.com,***,14,6.44,0,0,29,8,0,20,8,1,0,legitimate
+session_003121,2026-02-07T22:59:33.969067,user3121@yahoo.com,***,25,19.57,0,0,26,2,0,18,8,1,0,legitimate
+session_003122,2026-01-10T22:59:33.969067,user3122@gmail.com,***,39,5.25,0,0,42,5,0,18,15,1,0,legitimate
+session_003123,2026-01-22T22:59:33.969067,user3123@yahoo.com,***,46,5.61,0,0,36,7,1,18,15,1,0,legitimate
+session_003124,2026-01-21T22:59:33.969067,user3124@outlook.com,***,36,3.91,0,0,37,4,0,20,14,1,0,legitimate
+session_003125,2026-02-02T22:59:33.969067,user3125@outlook.com,***,25,17.52,0,0,41,4,0,20,11,1,0,legitimate
+session_003126,2026-01-14T22:59:33.969067,<svg onload=alert(1)>,pass,0,0.59,0,0,21,1,1,21,4,1,1,xss
+session_003127,2026-02-03T22:59:33.969067,user3127@outlook.com,***,32,16.72,0,0,41,10,0,20,12,1,0,legitimate
+session_003128,2026-02-05T22:59:33.969067,user3128@yahoo.com,***,29,15.41,0,0,31,4,0,18,9,1,0,legitimate
+session_003129,2026-01-26T22:59:33.969067,user3129@gmail.com,***,29,9.39,0,0,30,10,0,18,12,1,0,legitimate
+session_003130,2026-01-19T22:59:33.969067,user3130@company.com,***,13,13.17,0,0,39,3,1,20,15,1,0,legitimate
+session_003131,2026-01-19T22:59:33.970079,user3131@gmail.com,***,10,3.43,0,0,42,2,1,18,16,1,0,legitimate
+session_003132,2026-01-18T22:59:33.970079,user3132@gmail.com,***,43,12.21,0,0,40,5,0,18,12,1,0,legitimate
+session_003133,2026-01-19T22:59:33.970079,user3133@gmail.com,***,12,4.86,0,0,41,5,1,18,16,1,0,legitimate
+session_003134,2026-02-04T22:59:33.970079,user3134@yahoo.com,***,48,16.46,0,0,35,8,0,18,8,1,0,legitimate
+session_003135,2026-01-27T22:59:33.970079,user3135@company.com,***,10,9.64,0,0,29,5,1,20,8,1,0,legitimate
+session_003136,2026-01-12T22:59:33.970079,<img src=x onerror=alert(1)>,pass,0,0.44,0,0,28,1,1,28,4,1,1,xss
+session_003137,2026-01-26T22:59:33.970079,user3137@company.com,***,20,18.84,0,0,35,6,1,20,11,1,0,legitimate
+session_003138,2026-01-16T22:59:33.970079,user3138@company.com,***,28,6.12,0,0,36,10,0,20,8,1,0,legitimate
+session_003139,2026-01-16T22:59:33.970079,user3139@outlook.com,***,5,2.08,0,0,34,10,0,20,14,1,0,legitimate
+session_003140,2026-01-14T22:59:33.970079,..\..\..\windows\system32,test,2,0.52,0,0,25,1,1,25,4,1,1,path_traversal
+session_003141,2026-01-25T22:59:33.970079,root,pass359,0,0.98,0,0,5,2,0,4,7,1,1,brute_force
+session_003142,2026-01-11T22:59:33.970079,user3142@company.com,***,5,4.18,0,0,29,6,0,20,9,1,0,legitimate
+session_003143,2026-01-18T22:59:33.970079,root,pass922,1,0.54,0,0,4,0,0,4,7,1,1,brute_force
+session_003144,2026-01-27T22:59:33.970079,user3144@yahoo.com,***,39,11.1,0,0,33,3,1,18,10,1,0,legitimate
+session_003145,2026-02-03T22:59:33.970079,user3145@outlook.com,***,38,16.51,0,0,39,8,1,20,15,1,0,legitimate
+session_003146,2026-01-17T22:59:33.970079,....//....//....//etc/passwd,test,1,0.64,0,0,28,1,1,28,4,1,1,path_traversal
+session_003147,2026-01-25T22:59:33.970079,user3147@gmail.com,***,14,7.45,0,0,30,9,0,18,12,1,0,legitimate
+session_003148,2026-01-21T22:59:33.970079,user3148@yahoo.com,***,14,13.64,0,0,31,9,0,18,13,1,0,legitimate
+session_003149,2026-01-26T22:59:33.970079,test@test.com| cat /etc/passwd,; ls -la,0,0.27,0,0,17,1,1,30,8,1,1,command_injection
+session_003150,2026-01-10T22:59:33.970079,user3150@company.com,***,28,14.32,0,0,32,4,0,20,12,1,0,legitimate
+session_003151,2026-01-22T22:59:33.970079,user3151@company.com,***,41,13.71,0,0,35,2,0,20,8,1,0,legitimate
+session_003152,2026-02-05T22:59:33.970079,user3152@outlook.com,***,15,2.49,0,0,34,3,0,20,13,1,0,legitimate
+session_003153,2026-01-30T22:59:33.970079,bot3153@automated.com,botpass1538,0,0.34,1,21,0,0,1,21,11,1,1,bot
+session_003154,2026-01-29T22:59:33.970079,user3154@gmail.com,***,39,18.03,0,0,34,2,0,18,16,1,0,legitimate
+session_003155,2026-01-11T22:59:33.970079,' OR 1=1--,123,0,1.27,1,10,17,0,0,10,3,1,1,sql_injection
+session_003156,2026-01-30T22:59:33.970079,user3156@outlook.com,***,19,16.31,0,0,39,8,0,20,12,1,0,legitimate
+session_003157,2026-02-03T22:59:33.970079,user3157@company.com,***,47,9.29,0,0,35,2,1,20,13,1,0,legitimate
+session_003158,2026-01-27T22:59:33.970079,user3158@gmail.com,***,23,4.25,0,0,29,7,0,18,8,1,0,legitimate
+session_003159,2026-01-12T22:59:33.970079,user3159@yahoo.com,***,39,6.71,0,0,33,5,1,18,14,1,0,legitimate
+session_003160,2026-01-24T22:59:33.970079,user3160@yahoo.com,***,31,10.73,0,0,31,5,0,18,8,1,0,legitimate
+session_003161,2026-01-20T22:59:33.970079,user3161@outlook.com,***,29,12.97,0,0,37,8,0,20,11,1,0,legitimate
+session_003162,2026-01-21T22:59:33.970079,user3162@gmail.com,***,40,18.81,0,0,36,7,1,18,14,1,0,legitimate
+session_003163,2026-01-10T22:59:33.970079,user3163@yahoo.com,***,33,10.98,0,0,33,10,0,18,10,1,0,legitimate
+session_003164,2026-02-05T22:59:33.970079,user3164@company.com,***,8,6.06,0,0,29,8,1,20,8,1,0,legitimate
+session_003165,2026-01-24T22:59:33.970079,user3165@gmail.com,***,41,9.44,0,0,35,4,0,18,15,1,0,legitimate
+session_003166,2026-02-03T22:59:33.970079,root,pass761,0,0.46,0,0,5,1,0,4,7,1,1,brute_force
+session_003167,2026-02-05T22:59:33.970079,user3167@outlook.com,***,34,16.02,0,0,40,3,0,20,11,1,0,legitimate
+session_003168,2026-01-11T22:59:33.970079,user3168@yahoo.com,***,43,12.29,0,0,32,4,0,18,11,1,0,legitimate
+session_003169,2026-01-12T22:59:33.970079,<input onfocus=alert(1) autofocus>,,0,0.27,0,0,34,0,1,34,0,1,1,xss
+session_003170,2026-01-12T22:59:33.970079,user3170@outlook.com,***,30,9.58,0,0,32,10,0,20,12,1,0,legitimate
+session_003171,2026-01-21T22:59:33.970079,user3171@company.com,***,10,15.0,0,0,36,2,0,20,9,1,0,legitimate
+session_003172,2026-02-05T22:59:33.970079,bot3172@automated.com,botpass8256,0,0.34,1,21,0,0,1,21,11,1,1,bot
+session_003173,2026-01-14T22:59:33.970079,user3173@company.com,***,28,9.46,0,0,39,9,0,20,10,1,0,legitimate
+session_003174,2026-01-14T22:59:33.970079,bot3174@automated.com,botpass6871,0,0.21,1,21,0,0,1,21,11,1,1,bot
+session_003175,2026-01-21T22:59:33.970079,user3175@yahoo.com,***,10,2.44,0,0,37,4,0,18,11,1,0,legitimate
+session_003176,2026-01-09T22:59:33.970079,user3176@gmail.com,***,34,11.78,0,0,38,4,0,18,14,1,0,legitimate
+session_003177,2026-01-29T22:59:33.970079,bot3177@automated.com,botpass5161,0,0.31,1,21,0,0,1,21,11,1,1,bot
+session_003178,2026-01-31T22:59:33.970079,user3178@yahoo.com,***,27,4.74,0,0,41,4,0,18,16,1,0,legitimate
+session_003179,2026-01-20T22:59:33.970079,admin'/*,123,0,0.7,0,0,16,1,0,8,3,1,1,sql_injection
+session_003180,2026-01-11T22:59:33.970079,user3180@yahoo.com,***,34,16.9,0,0,38,9,0,18,11,1,0,legitimate
+session_003181,2026-01-10T22:59:33.970079,user3181@company.com,***,39,16.57,0,0,31,5,0,20,8,1,0,legitimate
+session_003182,2026-02-04T22:59:33.970079,user3182@gmail.com,***,18,19.45,0,0,39,3,0,18,15,1,0,legitimate
+session_003183,2026-01-25T22:59:33.970079,user3183@yahoo.com,***,38,17.76,0,0,31,10,0,18,12,1,0,legitimate
+session_003184,2026-01-29T22:59:33.970079,user3184@company.com,***,50,3.23,0,0,36,6,0,20,14,1,0,legitimate
+session_003185,2026-02-01T22:59:33.970079,user3185@gmail.com,***,16,16.14,0,0,35,8,0,18,16,1,0,legitimate
+session_003186,2026-01-20T22:59:33.970079,"'""><script>alert(String.fromCharCode(88,83,83))</script>",,1,0.56,0,0,56,1,1,56,0,1,1,xss
+session_003187,2026-02-04T22:59:33.970079,admin,pass889,1,0.63,0,0,5,1,0,5,7,1,1,brute_force
+session_003188,2026-01-28T22:59:33.970079,user3188@outlook.com,***,48,9.21,0,0,44,4,0,20,14,1,0,legitimate
+session_003189,2026-01-26T22:59:33.970079,user3189@yahoo.com,***,7,11.49,0,0,34,5,0,18,14,1,0,legitimate
+session_003190,2026-01-21T22:59:33.970079,user3190@yahoo.com,***,45,12.21,0,0,33,5,0,18,14,1,0,legitimate
+session_003191,2026-01-20T22:59:33.970079,bot3191@automated.com,botpass1086,0,0.48,1,21,0,0,1,21,11,1,1,bot
+session_003192,2026-01-18T22:59:33.970079,user3192@gmail.com,***,43,8.59,0,0,27,3,0,18,8,1,0,legitimate
+session_003193,2026-01-10T22:59:33.970079,..\..\..\windows\system32,test,2,0.72,0,0,25,1,1,25,4,1,1,path_traversal
+session_003194,2026-01-25T22:59:33.970079,user3194@company.com,***,46,14.46,0,0,33,8,0,20,10,1,0,legitimate
+session_003195,2026-01-16T22:59:33.970079,user3195@company.com,***,20,9.77,0,0,39,6,1,20,13,1,0,legitimate
+session_003196,2026-01-15T22:59:33.970079,user3196@gmail.com,***,41,19.38,0,0,31,10,0,18,12,1,0,legitimate
+session_003197,2026-01-24T22:59:33.970079,user3197@yahoo.com,***,36,8.09,0,0,35,6,1,18,14,1,0,legitimate
+session_003198,2026-01-24T22:59:33.970079,user3198@company.com,***,27,5.24,0,0,31,8,1,20,9,1,0,legitimate
+session_003199,2026-01-21T22:59:33.970079,test@test.com&& whoami,; rm -rf /,2,0.23,0,0,21,2,1,22,10,1,1,command_injection
+session_003200,2026-01-13T22:59:33.970079,user3200@company.com,***,16,3.93,0,0,39,4,0,20,13,1,0,legitimate
+session_003201,2026-01-10T22:59:33.970079,administrator,pass943,0,0.8,0,0,3,2,0,13,7,1,1,brute_force
+session_003202,2026-01-10T22:59:33.970079,user3202@yahoo.com,***,47,6.09,0,0,37,2,1,18,10,1,0,legitimate
+session_003203,2026-01-16T22:59:33.970079,user3203@outlook.com,***,34,6.99,0,0,31,8,1,20,11,1,0,legitimate
+session_003204,2026-02-08T22:59:33.970079,..\..\..\windows\system32,test,2,1.16,0,0,25,1,1,25,4,1,1,path_traversal
+session_003205,2026-01-26T22:59:33.970079,user3205@company.com,***,48,8.43,0,0,29,2,1,20,9,1,0,legitimate
+session_003206,2026-01-25T22:59:33.970079,user3206@outlook.com,***,26,18.13,0,0,34,7,0,20,8,1,0,legitimate
+session_003207,2026-01-11T22:59:33.970079,user3207@outlook.com,***,15,14.68,0,0,36,7,0,20,10,1,0,legitimate
+session_003208,2026-02-02T22:59:33.970079,user3208@gmail.com,***,48,8.99,0,0,41,9,1,18,13,1,0,legitimate
+session_003209,2026-01-13T22:59:33.970079,root,pass474,0,0.44,0,0,8,2,0,4,7,1,1,brute_force
+session_003210,2026-02-07T22:59:33.970079,user3210@yahoo.com,***,8,10.25,0,0,36,8,0,18,11,1,0,legitimate
+session_003211,2026-01-30T22:59:33.970079,user3211@yahoo.com,***,28,8.9,0,0,41,5,1,18,15,1,0,legitimate
+session_003212,2026-01-16T22:59:33.970079,user3212@outlook.com,***,7,17.25,0,0,30,8,0,20,10,1,0,legitimate
+session_003213,2026-01-10T22:59:33.970079,test@test.com`cat /etc/shadow`,| cat /etc/passwd,0,0.77,0,0,10,2,1,30,17,1,1,command_injection
+session_003214,2026-02-05T22:59:33.970079,administrator,pass765,1,0.78,0,0,7,0,0,13,7,1,1,brute_force
+session_003215,2026-01-24T22:59:33.970079,test@test.com`cat /etc/shadow`,| cat /etc/passwd,0,0.41,0,0,16,0,1,30,17,1,1,command_injection
+session_003216,2026-01-20T22:59:33.970079,user3216@gmail.com,***,10,7.64,0,0,39,3,0,18,12,1,0,legitimate
+session_003217,2026-01-09T22:59:33.970079,' OR 'a'='a,123,1,1.23,0,0,11,0,1,11,3,1,1,sql_injection
+session_003218,2026-02-04T22:59:33.970079,user3218@gmail.com,***,5,4.77,0,0,28,2,0,18,8,1,0,legitimate
+session_003219,2026-01-31T22:59:33.970079,test@test.com; ls -la,; ls -la,2,0.7,0,0,10,0,1,21,8,1,1,command_injection
+session_003220,2026-01-22T22:59:33.970079,user3220@company.com,***,5,17.22,0,0,34,4,0,20,13,1,0,legitimate
+session_003221,2026-01-30T22:59:33.970079,....//....//....//etc/passwd,test,1,0.21,0,0,28,0,1,28,4,1,1,path_traversal
+session_003222,2026-01-12T22:59:33.970079,<input onfocus=alert(1) autofocus>,,2,0.48,0,0,34,0,1,34,0,1,1,xss
+session_003223,2026-01-10T22:59:33.970079,<body onload=alert('XSS')>,pass,0,0.39,0,0,26,1,1,26,4,1,1,xss
+session_003224,2026-01-28T22:59:33.970079,user3224@company.com,***,44,3.37,0,0,38,3,0,20,11,1,0,legitimate
+session_003225,2026-01-31T22:59:33.970079,user3225@yahoo.com,***,31,19.1,0,0,42,5,0,18,15,1,0,legitimate
+session_003226,2026-01-29T22:59:33.970079,user3226@yahoo.com,***,7,7.77,0,0,39,6,0,18,13,1,0,legitimate
+session_003227,2026-02-04T22:59:33.970079,..\..\..\windows\system32,test,1,1.18,0,0,25,1,1,25,4,1,1,path_traversal
+session_003228,2026-01-31T22:59:33.970079,user3228@outlook.com,***,16,16.58,0,0,37,3,1,20,11,1,0,legitimate
+session_003229,2026-01-10T22:59:33.970079,../../../etc/passwd,test,0,0.44,0,0,19,1,1,19,4,1,1,path_traversal
+session_003230,2026-01-20T22:59:33.970079,test,pass623,1,0.53,0,0,10,1,0,4,7,1,1,brute_force
+session_003231,2026-01-16T22:59:33.970079,user3231@company.com,***,10,15.82,0,0,34,9,0,20,10,1,0,legitimate
+session_003232,2026-02-03T22:59:33.970079,' OR 'a'='a,test,1,0.78,1,11,20,0,0,11,4,1,1,sql_injection
+session_003233,2026-01-20T22:59:33.970079,user3233@company.com,***,30,17.98,0,0,33,4,1,20,11,1,0,legitimate
+session_003234,2026-01-20T22:59:33.970079,user3234@outlook.com,***,23,15.96,0,0,36,9,0,20,14,1,0,legitimate
+session_003235,2026-02-06T22:59:33.970079,..\..\..\windows\system32,test,0,0.99,0,0,25,0,1,25,4,1,1,path_traversal
+session_003236,2026-01-29T22:59:33.970079,user3236@outlook.com,***,17,3.38,0,0,34,7,0,20,14,1,0,legitimate
+session_003237,2026-02-05T22:59:33.970079,user3237@company.com,***,43,8.03,0,0,34,5,0,20,9,1,0,legitimate
+session_003238,2026-02-07T22:59:33.970079,user3238@gmail.com,***,19,13.51,0,0,37,10,0,18,10,1,0,legitimate
+session_003239,2026-01-13T22:59:33.970079,user3239@company.com,***,38,10.27,0,0,42,4,1,20,12,1,0,legitimate
+session_003240,2026-01-19T22:59:33.970079,user3240@outlook.com,***,25,19.74,0,0,41,3,0,20,16,1,0,legitimate
+session_003241,2026-01-29T22:59:33.970079,user3241@gmail.com,***,28,11.98,0,0,37,10,1,18,10,1,0,legitimate
+session_003242,2026-01-15T22:59:33.970079,user3242@company.com,***,32,8.17,0,0,34,6,0,20,9,1,0,legitimate
+session_003243,2026-01-22T22:59:33.970079,test@test.com| nc -e /bin/sh,`cat /etc/shadow`,0,0.19,0,0,18,2,1,28,17,1,1,command_injection
+session_003244,2026-02-08T22:59:33.970079,admin' UNION SELECT,123,3,0.49,0,0,16,1,1,19,3,1,1,sql_injection
+session_003245,2026-02-07T22:59:33.970079,..\..\..\windows\system32,test,1,0.25,0,0,25,0,1,25,4,1,1,path_traversal
+session_003246,2026-01-13T22:59:33.970079,"'""><script>alert(String.fromCharCode(88,83,83))</script>",test,0,0.68,0,0,56,1,1,56,4,1,1,xss
+session_003247,2026-02-07T22:59:33.970079,user3247@company.com,***,24,17.57,0,0,32,6,0,20,8,1,0,legitimate
+session_003248,2026-01-18T22:59:33.970079,user3248@outlook.com,***,29,7.67,0,0,34,7,0,20,14,1,0,legitimate
+session_003249,2026-01-23T22:59:33.970079,user3249@company.com,***,20,4.28,0,0,40,5,0,20,14,1,0,legitimate
+session_003250,2026-02-08T22:59:33.970079,user3250@outlook.com,***,49,11.38,0,0,43,7,0,20,16,1,0,legitimate
+session_003251,2026-01-29T22:59:33.970079,user3251@yahoo.com,***,14,2.43,0,0,38,5,0,18,16,1,0,legitimate
+session_003252,2026-01-12T22:59:33.970079,user3252@outlook.com,***,49,17.1,0,0,39,4,0,20,15,1,0,legitimate
+session_003253,2026-01-09T22:59:33.971077,<iframe src=javascript:alert(1)>,,2,0.94,0,0,32,1,1,32,0,1,1,xss
+session_003254,2026-02-02T22:59:33.971077,user3254@gmail.com,***,39,15.72,0,0,34,8,0,18,12,1,0,legitimate
+session_003255,2026-01-31T22:59:33.971077,user3255@company.com,***,24,10.23,0,0,40,10,0,20,10,1,0,legitimate
+session_003256,2026-01-25T22:59:33.971077,user3256@yahoo.com,***,18,18.29,0,0,33,2,0,18,9,1,0,legitimate
+session_003257,2026-01-28T22:59:33.971077,user3257@gmail.com,***,38,15.39,0,0,32,9,0,18,9,1,0,legitimate
+session_003258,2026-01-09T22:59:33.971077,test@test.com&& whoami,| cat /etc/passwd,0,0.54,0,0,22,0,1,22,17,1,1,command_injection
+session_003259,2026-02-05T22:59:33.971077,user3259@yahoo.com,***,10,7.01,0,0,34,8,0,18,13,1,0,legitimate
+session_003260,2026-01-25T22:59:33.971077,user3260@yahoo.com,***,39,8.4,0,0,35,2,0,18,13,1,0,legitimate
+session_003261,2026-02-07T22:59:33.971077,user3261@gmail.com,***,40,8.97,0,0,42,7,1,18,14,1,0,legitimate
+session_003262,2026-01-24T22:59:33.971077,user3262@outlook.com,***,33,17.73,0,0,31,4,0,20,9,1,0,legitimate
+session_003263,2026-01-12T22:59:33.971077,user3263@yahoo.com,***,36,10.99,0,0,34,5,0,18,8,1,0,legitimate
+session_003264,2026-01-28T22:59:33.971077,user3264@yahoo.com,***,31,14.86,0,0,32,7,0,18,11,1,0,legitimate
+session_003265,2026-01-25T22:59:33.971077,user3265@gmail.com,***,37,5.65,0,0,35,9,1,18,12,1,0,legitimate
+session_003266,2026-01-20T22:59:33.971077,user3266@gmail.com,***,33,2.75,0,0,27,4,0,18,8,1,0,legitimate
+session_003267,2026-01-28T22:59:33.971077,1' AND '1'='1,test,1,0.9,0,0,10,1,1,13,4,1,1,sql_injection
+session_003268,2026-01-27T22:59:33.971077,user3268@yahoo.com,***,32,14.77,0,0,35,5,0,18,12,1,0,legitimate
+session_003269,2026-01-09T22:59:33.971077,user3269@outlook.com,***,25,11.66,0,0,43,6,0,20,16,1,0,legitimate
+session_003270,2026-01-15T22:59:33.971077,user3270@gmail.com,***,21,14.05,0,0,36,9,0,18,8,1,0,legitimate
+session_003271,2026-01-17T22:59:33.971077,user3271@outlook.com,***,23,13.81,0,0,44,3,1,20,14,1,0,legitimate
+session_003272,2026-02-08T22:59:33.971077,user3272@outlook.com,***,13,12.02,0,0,33,6,1,20,8,1,0,legitimate
+session_003273,2026-01-16T22:59:33.971077,user3273@gmail.com,***,37,14.81,0,0,34,6,1,18,11,1,0,legitimate
+session_003274,2026-02-07T22:59:33.971077,user3274@yahoo.com,***,42,5.03,0,0,36,4,0,18,14,1,0,legitimate
+session_003275,2026-01-10T22:59:33.971077,user3275@company.com,***,10,14.76,0,0,41,3,0,20,16,1,0,legitimate
+session_003276,2026-02-07T22:59:33.971077,user3276@gmail.com,***,24,5.94,0,0,37,9,0,18,11,1,0,legitimate
+session_003277,2026-01-19T22:59:33.971077,bot3277@automated.com,botpass4886,0,0.2,1,21,0,0,1,21,11,1,1,bot
+session_003278,2026-01-12T22:59:33.971077,user3278@yahoo.com,***,25,11.38,0,0,28,5,1,18,8,1,0,legitimate
+session_003279,2026-01-20T22:59:33.971077,....//....//....//etc/passwd,test,0,0.33,0,0,28,0,1,28,4,1,1,path_traversal
+session_003280,2026-01-23T22:59:33.971077,user3280@yahoo.com,***,8,18.79,0,0,30,4,1,18,11,1,0,legitimate
+session_003281,2026-02-03T22:59:33.971077,user3281@gmail.com,***,16,4.9,0,0,43,10,0,18,16,1,0,legitimate
+session_003282,2026-02-06T22:59:33.971077,user3282@outlook.com,***,31,15.39,0,0,39,4,0,20,12,1,0,legitimate
+session_003283,2026-01-22T22:59:33.971077,user3283@company.com,***,48,19.89,0,0,39,10,1,20,11,1,0,legitimate
+session_003284,2026-01-25T22:59:33.971077,user3284@yahoo.com,***,49,8.98,0,0,35,3,0,18,15,1,0,legitimate
+session_003285,2026-02-02T22:59:33.971077,user3285@company.com,***,47,7.25,0,0,39,9,0,20,15,1,0,legitimate
+session_003286,2026-02-06T22:59:33.971077,user3286@gmail.com,***,31,6.57,0,0,36,4,0,18,16,1,0,legitimate
+session_003287,2026-01-11T22:59:33.971077,test@test.com`cat /etc/shadow`,| cat /etc/passwd,0,0.11,0,0,14,1,1,30,17,1,1,command_injection
+session_003288,2026-02-05T22:59:33.971077,user3288@outlook.com,***,31,19.37,0,0,40,8,0,20,12,1,0,legitimate
+session_003289,2026-02-08T22:59:33.971077,user3289@company.com,***,23,12.37,0,0,42,2,0,20,12,1,0,legitimate
+session_003290,2026-01-19T22:59:33.971077,test@test.com| cat /etc/passwd,| nc -e /bin/sh,1,0.43,0,0,20,2,1,30,15,1,1,command_injection
+session_003291,2026-01-15T22:59:33.971077,user3291@yahoo.com,***,32,16.93,0,0,28,3,0,18,8,1,0,legitimate
+session_003292,2026-01-10T22:59:33.971077,....//....//....//etc/passwd,test,1,0.24,0,0,28,0,1,28,4,1,1,path_traversal
+session_003293,2026-02-07T22:59:33.971077,user3293@outlook.com,***,31,7.01,0,0,34,9,1,20,14,1,0,legitimate
+session_003294,2026-01-22T22:59:33.971077,user3294@company.com,***,42,10.89,0,0,35,8,1,20,8,1,0,legitimate
+session_003295,2026-01-20T22:59:33.971077,user3295@yahoo.com,***,22,5.01,0,0,34,3,0,18,10,1,0,legitimate
+session_003296,2026-01-26T22:59:33.971077,user3296@company.com,***,17,15.36,0,0,28,2,1,20,8,1,0,legitimate
+session_003297,2026-01-09T22:59:33.971077,user3297@gmail.com,***,5,13.73,0,0,42,5,0,18,15,1,0,legitimate
+session_003298,2026-01-20T22:59:33.971077,bot3298@automated.com,botpass4697,0,0.47,1,21,0,0,1,21,11,1,1,bot
+session_003299,2026-01-09T22:59:33.971077,user3299@yahoo.com,***,37,15.7,0,0,26,10,0,18,8,1,0,legitimate
+session_003300,2026-01-19T22:59:33.971077,user3300@gmail.com,***,33,9.04,0,0,36,2,0,18,14,1,0,legitimate
+session_003301,2026-02-01T22:59:33.971077,admin,pass99,1,0.99,0,0,6,2,0,5,6,1,1,brute_force
+session_003302,2026-02-02T22:59:33.971077,user3302@company.com,***,29,17.66,0,0,35,4,1,20,11,1,0,legitimate
+session_003303,2026-01-30T22:59:33.971077,user3303@gmail.com,***,16,15.55,0,0,28,4,0,18,8,1,0,legitimate
+session_003304,2026-01-13T22:59:33.971077,user3304@yahoo.com,***,7,9.67,0,0,36,9,1,18,9,1,0,legitimate
+session_003305,2026-01-29T22:59:33.971077,user3305@gmail.com,***,48,18.89,0,0,42,8,0,18,16,1,0,legitimate
+session_003306,2026-01-11T22:59:33.971077,user3306@yahoo.com,***,41,7.29,0,0,42,8,0,18,14,1,0,legitimate
+session_003307,2026-02-02T22:59:33.971077,test,pass455,0,0.85,0,0,3,2,0,4,7,1,1,brute_force
+session_003308,2026-01-22T22:59:33.971077,user3308@yahoo.com,***,19,16.63,0,0,33,3,1,18,9,1,0,legitimate
+session_003309,2026-02-03T22:59:33.971077,user3309@yahoo.com,***,49,14.63,0,0,37,8,0,18,11,1,0,legitimate
+session_003310,2026-02-02T22:59:33.971077,user3310@outlook.com,***,6,19.99,0,0,29,8,0,20,9,1,0,legitimate
+session_003311,2026-01-18T22:59:33.971077,..\..\..\windows\system32,test,2,0.43,0,0,25,0,1,25,4,1,1,path_traversal
+session_003312,2026-01-18T22:59:33.971077,user3312@gmail.com,***,7,19.52,0,0,42,4,0,18,15,1,0,legitimate
+session_003313,2026-01-15T22:59:33.971077,user3313@company.com,***,19,17.81,0,0,42,3,1,20,12,1,0,legitimate
+session_003314,2026-01-13T22:59:33.971077,..%2F..%2F..%2Fetc%2Fpasswd,test,0,0.99,0,0,27,1,1,27,4,1,1,path_traversal
+session_003315,2026-01-11T22:59:33.971077,user3315@outlook.com,***,43,17.01,0,0,40,5,1,20,13,1,0,legitimate
+session_003316,2026-01-14T22:59:33.971077,<svg onload=alert(1)>,test,2,0.93,0,0,21,1,1,21,4,1,1,xss
+session_003317,2026-01-13T22:59:33.971077,user3317@yahoo.com,***,32,15.23,0,0,32,5,0,18,9,1,0,legitimate
+session_003318,2026-02-05T22:59:33.971077,user3318@gmail.com,***,7,14.72,0,0,41,10,0,18,15,1,0,legitimate
+session_003319,2026-01-27T22:59:33.971077,user3319@yahoo.com,***,14,19.21,0,0,33,5,0,18,13,1,0,legitimate
+session_003320,2026-01-20T22:59:33.971077,user3320@company.com,***,35,10.31,0,0,40,10,1,20,15,1,0,legitimate
+session_003321,2026-02-04T22:59:33.971077,test@test.com; ls -la,| nc -e /bin/sh,1,0.22,0,0,25,2,1,21,15,1,1,command_injection
+session_003322,2026-01-17T22:59:33.971077,user3322@company.com,***,27,15.85,0,0,38,5,1,20,11,1,0,legitimate
+session_003323,2026-01-21T22:59:33.971077,user3323@outlook.com,***,16,19.51,0,0,36,10,1,20,15,1,0,legitimate
+session_003324,2026-01-25T22:59:33.971077,user3324@yahoo.com,***,6,5.0,0,0,30,4,0,18,8,1,0,legitimate
+session_003325,2026-01-30T22:59:33.971077,user3325@company.com,***,8,14.97,0,0,35,5,0,20,10,1,0,legitimate
+session_003326,2026-02-04T22:59:33.971077,user3326@outlook.com,***,18,17.87,0,0,36,9,0,20,11,1,0,legitimate
+session_003327,2026-01-12T22:59:33.971077,user3327@company.com,***,40,11.06,0,0,40,4,0,20,12,1,0,legitimate
+session_003328,2026-01-20T22:59:33.971077,bot3328@automated.com,botpass9736,0,0.45,1,21,0,0,1,21,11,1,1,bot
+session_003329,2026-02-07T22:59:33.971077,user3329@yahoo.com,***,20,18.21,0,0,44,9,0,18,16,1,0,legitimate
+session_003330,2026-01-31T22:59:33.971077,..\..\..\windows\system32,test,1,0.28,0,0,25,1,1,25,4,1,1,path_traversal
+session_003331,2026-01-24T22:59:33.971077,user3331@outlook.com,***,47,13.18,0,0,40,8,0,20,16,1,0,legitimate
+session_003332,2026-01-11T22:59:33.971077,user3332@yahoo.com,***,46,13.79,0,0,32,4,1,18,13,1,0,legitimate
+session_003333,2026-01-27T22:59:33.971077,test@test.com; rm -rf /,; rm -rf /,1,0.47,0,0,14,2,1,23,10,1,1,command_injection
+session_003334,2026-01-21T22:59:33.971077,user3334@company.com,***,11,8.52,0,0,30,2,1,20,9,1,0,legitimate
+session_003335,2026-01-13T22:59:33.971077,user3335@yahoo.com,***,45,2.1,0,0,31,2,0,18,12,1,0,legitimate
+session_003336,2026-02-04T22:59:33.971077,....//....//....//etc/passwd,test,0,0.38,0,0,28,0,1,28,4,1,1,path_traversal
+session_003337,2026-01-26T22:59:33.971077,..\..\..\windows\system32,test,0,0.29,0,0,25,1,1,25,4,1,1,path_traversal
+session_003338,2026-02-02T22:59:33.971077,user3338@outlook.com,***,40,15.33,0,0,35,10,0,20,15,1,0,legitimate
+session_003339,2026-02-04T22:59:33.971077,user3339@gmail.com,***,17,3.99,0,0,34,5,0,18,11,1,0,legitimate
+session_003340,2026-01-19T22:59:33.971077,administrator,pass567,0,0.32,0,0,6,2,0,13,7,1,1,brute_force
+session_003341,2026-02-04T22:59:33.971077,..%2F..%2F..%2Fetc%2Fpasswd,test,0,0.32,0,0,27,0,1,27,4,1,1,path_traversal
+session_003342,2026-01-09T22:59:33.971077,user3342@yahoo.com,***,32,10.65,0,0,37,8,0,18,12,1,0,legitimate
+session_003343,2026-02-05T22:59:33.971077,bot3343@automated.com,botpass1703,0,0.29,1,21,0,0,1,21,11,1,1,bot
+session_003344,2026-01-14T22:59:33.971077,user3344@gmail.com,***,30,15.87,0,0,37,2,0,18,15,1,0,legitimate
+session_003345,2026-01-17T22:59:33.971077,user3345@company.com,***,47,13.02,0,0,40,7,0,20,11,1,0,legitimate
+session_003346,2026-01-31T22:59:33.971077,root,pass11,0,0.75,0,0,8,0,0,4,6,1,1,brute_force
+session_003347,2026-02-01T22:59:33.971077,admin,pass896,0,0.73,0,0,5,1,0,5,7,1,1,brute_force
+session_003348,2026-02-01T22:59:33.971077,user3348@yahoo.com,***,16,16.89,0,0,30,3,0,18,12,1,0,legitimate
+session_003349,2026-01-22T22:59:33.971077,user3349@outlook.com,***,42,5.14,0,0,36,2,0,20,13,1,0,legitimate
+session_003350,2026-01-25T22:59:33.971077,user3350@outlook.com,***,47,18.84,0,0,37,9,0,20,11,1,0,legitimate
+session_003351,2026-01-30T22:59:33.971077,user3351@gmail.com,***,23,18.21,0,0,41,2,0,18,16,1,0,legitimate
+session_003352,2026-01-24T22:59:33.971077,user3352@outlook.com,***,18,3.9,0,0,39,8,0,20,9,1,0,legitimate
+session_003353,2026-01-09T22:59:33.971077,user3353@gmail.com,***,25,12.18,0,0,27,2,0,18,8,1,0,legitimate
+session_003354,2026-01-25T22:59:33.971077,'; DROP TABLE users--,test,3,0.55,0,0,11,2,0,21,4,1,1,sql_injection
+session_003355,2026-02-08T22:59:33.971077,user3355@gmail.com,***,36,16.63,0,0,33,6,1,18,8,1,0,legitimate
+session_003356,2026-01-26T22:59:33.971077,1' AND '1'='1,admin,1,1.02,1,13,19,2,0,13,5,1,1,sql_injection
+session_003357,2026-01-23T22:59:33.971077,user3357@company.com,***,10,16.97,0,0,42,9,1,20,14,1,0,legitimate
+session_003358,2026-02-04T22:59:33.971077,admin,pass542,0,0.74,0,0,8,2,0,5,7,1,1,brute_force
+session_003359,2026-01-22T22:59:33.971077,user3359@gmail.com,***,34,14.77,0,0,30,9,1,18,9,1,0,legitimate
+session_003360,2026-01-31T22:59:33.971077,user3360@outlook.com,***,50,12.63,0,0,45,7,0,20,15,1,0,legitimate
+session_003361,2026-01-25T22:59:33.971077,user3361@outlook.com,***,50,3.71,0,0,44,9,0,20,16,1,0,legitimate
+session_003362,2026-01-13T22:59:33.971077,..%2F..%2F..%2Fetc%2Fpasswd,test,2,0.83,0,0,27,1,1,27,4,1,1,path_traversal
+session_003363,2026-01-16T22:59:33.971077,bot3363@automated.com,botpass6839,0,0.42,1,21,0,0,1,21,11,1,1,bot
+session_003364,2026-01-28T22:59:33.971077,user3364@gmail.com,***,24,6.11,0,0,35,8,0,18,15,1,0,legitimate
+session_003365,2026-02-05T22:59:33.971077,test@test.com`cat /etc/shadow`,| cat /etc/passwd,2,0.67,0,0,19,0,1,30,17,1,1,command_injection
+session_003366,2026-01-11T22:59:33.971077,user3366@yahoo.com,***,41,7.99,0,0,40,6,0,18,12,1,0,legitimate
+session_003367,2026-02-06T22:59:33.971077,user3367@yahoo.com,***,46,17.41,0,0,43,3,0,18,15,1,0,legitimate
+session_003368,2026-02-06T22:59:33.971077,user3368@yahoo.com,***,11,14.96,0,0,42,4,0,18,16,1,0,legitimate
+session_003369,2026-01-13T22:59:33.971077,../../../etc/passwd,test,1,0.91,0,0,19,0,1,19,4,1,1,path_traversal
+session_003370,2026-01-27T22:59:33.971077,bot3370@automated.com,botpass4588,0,0.23,1,21,0,0,1,21,11,1,1,bot
+session_003371,2026-01-15T22:59:33.971077,<input onfocus=alert(1) autofocus>,,0,0.67,0,0,34,0,1,34,0,1,1,xss
+session_003372,2026-02-04T22:59:33.971077,user3372@outlook.com,***,23,6.99,0,0,34,4,1,20,14,1,0,legitimate
+session_003373,2026-02-04T22:59:33.972077,user3373@gmail.com,***,37,6.86,0,0,37,8,1,18,9,1,0,legitimate
+session_003374,2026-01-27T22:59:33.972077,user3374@outlook.com,***,47,6.45,0,0,40,2,0,20,10,1,0,legitimate
+session_003375,2026-01-27T22:59:33.972077,' UNION SELECT NULL--,,3,0.12,1,21,16,0,0,21,0,1,1,sql_injection
+session_003376,2026-01-27T22:59:33.972077,user3376@yahoo.com,***,42,8.43,0,0,38,7,1,18,12,1,0,legitimate
+session_003377,2026-02-07T22:59:33.972077,admin'/*,admin,3,1.34,1,8,14,2,0,8,5,1,1,sql_injection
+session_003378,2026-01-10T22:59:33.972077,user3378@company.com,***,39,3.65,0,0,44,2,1,20,16,1,0,legitimate
+session_003379,2026-01-14T22:59:33.972077,admin,pass829,0,0.51,0,0,4,1,0,5,7,1,1,brute_force
+session_003380,2026-01-28T22:59:33.972077,user3380@yahoo.com,***,26,12.96,0,0,38,8,0,18,11,1,0,legitimate
+session_003381,2026-01-10T22:59:33.972077,user3381@yahoo.com,***,40,17.96,0,0,34,5,0,18,11,1,0,legitimate
+session_003382,2026-01-22T22:59:33.972077,user3382@yahoo.com,***,44,3.58,0,0,37,5,0,18,15,1,0,legitimate
+session_003383,2026-02-05T22:59:33.972077,user3383@yahoo.com,***,40,4.18,0,0,29,4,0,18,8,1,0,legitimate
+session_003384,2026-01-27T22:59:33.972077,user3384@yahoo.com,***,8,14.17,0,0,41,6,0,18,14,1,0,legitimate
+session_003385,2026-01-12T22:59:33.972077,user3385@company.com,***,45,2.48,0,0,33,9,0,20,12,1,0,legitimate
+session_003386,2026-01-09T22:59:33.972077,bot3386@automated.com,botpass7150,0,0.13,1,21,0,0,1,21,11,1,1,bot
+session_003387,2026-02-05T22:59:33.972077,test@test.com&& whoami,| nc -e /bin/sh,1,0.25,0,0,25,2,1,22,15,1,1,command_injection
+session_003388,2026-01-19T22:59:33.972077,../../../etc/passwd,test,2,0.34,0,0,19,0,1,19,4,1,1,path_traversal
+session_003389,2026-01-27T22:59:33.972077,user3389@gmail.com,***,46,18.72,0,0,31,4,1,18,13,1,0,legitimate
+session_003390,2026-01-09T22:59:33.972077,user3390@gmail.com,***,13,5.32,0,0,35,2,0,18,12,1,0,legitimate
+session_003391,2026-02-07T22:59:33.972077,user3391@outlook.com,***,9,18.87,0,0,30,9,0,20,8,1,0,legitimate
+session_003392,2026-02-06T22:59:33.972077,test@test.com| nc -e /bin/sh,&& whoami,0,0.11,0,0,11,2,1,28,9,1,1,command_injection
+session_003393,2026-01-27T22:59:33.972077,user3393@outlook.com,***,20,14.6,0,0,34,2,0,20,13,1,0,legitimate
+session_003394,2026-01-14T22:59:33.972077,user3394@gmail.com,***,21,16.81,0,0,36,10,0,18,11,1,0,legitimate
+session_003395,2026-02-02T22:59:33.972077,user3395@outlook.com,***,21,3.4,0,0,43,6,1,20,14,1,0,legitimate
+session_003396,2026-02-08T22:59:33.972077,..%2F..%2F..%2Fetc%2Fpasswd,test,1,0.28,0,0,27,1,1,27,4,1,1,path_traversal
+session_003397,2026-01-20T22:59:33.972077,user3397@company.com,***,42,6.57,0,0,33,3,1,20,8,1,0,legitimate
+session_003398,2026-01-13T22:59:33.972077,user3398@outlook.com,***,36,12.37,0,0,33,9,1,20,10,1,0,legitimate
+session_003399,2026-01-13T22:59:33.972077,test@test.com`cat /etc/shadow`,| cat /etc/passwd,1,0.74,0,0,15,0,1,30,17,1,1,command_injection
+session_003400,2026-01-13T22:59:33.972077,user3400@yahoo.com,***,50,13.08,0,0,34,9,0,18,9,1,0,legitimate
+session_003401,2026-02-06T22:59:33.972077,admin'/*,test,1,1.26,1,8,14,1,1,8,4,1,1,sql_injection
+session_003402,2026-01-12T22:59:33.972077,test@test.com; ls -la,`cat /etc/shadow`,1,0.23,0,0,23,0,1,21,17,1,1,command_injection
+session_003403,2026-01-10T22:59:33.972077,<input onfocus=alert(1) autofocus>,test,2,0.56,0,0,34,0,1,34,4,1,1,xss
+session_003404,2026-02-05T22:59:33.972077,administrator,pass514,1,0.31,0,0,6,1,0,13,7,1,1,brute_force
+session_003405,2026-01-27T22:59:33.972077,bot3405@automated.com,botpass5309,0,0.36,1,21,0,0,1,21,11,1,1,bot
+session_003406,2026-01-11T22:59:33.972077,user3406@outlook.com,***,44,12.89,0,0,38,10,0,20,9,1,0,legitimate
+session_003407,2026-01-30T22:59:33.972077,user3407@yahoo.com,***,47,7.73,0,0,38,5,1,18,11,1,0,legitimate
+session_003408,2026-02-05T22:59:33.972077,user3408@outlook.com,***,12,15.85,0,0,31,10,0,20,11,1,0,legitimate
+session_003409,2026-01-29T22:59:33.972077,user3409@gmail.com,***,28,9.98,0,0,29,5,1,18,8,1,0,legitimate
+session_003410,2026-02-05T22:59:33.972077,user3410@gmail.com,***,32,17.19,0,0,28,6,0,18,9,1,0,legitimate
+session_003411,2026-02-03T22:59:33.972077,user3411@gmail.com,***,44,13.62,0,0,28,10,1,18,10,1,0,legitimate
+session_003412,2026-01-18T22:59:33.972077,user3412@yahoo.com,***,6,5.98,0,0,38,3,1,18,11,1,0,legitimate
+session_003413,2026-02-05T22:59:33.972077,' UNION SELECT NULL--,,0,0.76,1,21,7,2,0,21,0,1,1,sql_injection
+session_003414,2026-01-26T22:59:33.972077,test@test.com| cat /etc/passwd,; ls -la,2,0.4,0,0,10,1,1,30,8,1,1,command_injection
+session_003415,2026-02-08T22:59:33.972077,user3415@company.com,***,23,17.97,0,0,37,8,0,20,16,1,0,legitimate
+session_003416,2026-01-22T22:59:33.972077,user3416@gmail.com,***,16,12.52,0,0,34,5,0,18,8,1,0,legitimate
+session_003417,2026-02-06T22:59:33.972077,user3417@outlook.com,***,27,12.75,0,0,42,9,0,20,12,1,0,legitimate
+session_003418,2026-01-20T22:59:33.972077,user3418@yahoo.com,***,46,7.29,0,0,34,3,1,18,13,1,0,legitimate
+session_003419,2026-01-26T22:59:33.972077,user3419@outlook.com,***,12,15.07,0,0,36,2,0,20,11,1,0,legitimate
+session_003420,2026-01-12T22:59:33.972077,bot3420@automated.com,botpass5963,0,0.33,1,21,0,0,1,21,11,1,1,bot
+session_003421,2026-01-09T22:59:33.972077,user3421@outlook.com,***,20,8.05,0,0,39,5,0,20,16,1,0,legitimate
+session_003422,2026-02-05T22:59:33.972077,bot3422@automated.com,botpass7217,0,0.42,1,21,0,0,1,21,11,1,1,bot
+session_003423,2026-01-10T22:59:33.972077,user3423@outlook.com,***,27,18.86,0,0,33,7,0,20,9,1,0,legitimate
+session_003424,2026-01-19T22:59:33.972077,user3424@company.com,***,25,13.32,0,0,34,3,0,20,9,1,0,legitimate
+session_003425,2026-01-26T22:59:33.972077,user3425@yahoo.com,***,46,11.34,0,0,41,3,0,18,15,1,0,legitimate
+session_003426,2026-01-28T22:59:33.972077,user3426@gmail.com,***,35,11.8,0,0,32,5,0,18,10,1,0,legitimate
+session_003427,2026-02-03T22:59:33.972077,user3427@gmail.com,***,26,6.68,0,0,38,4,1,18,13,1,0,legitimate
+session_003428,2026-02-01T22:59:33.972077,user3428@yahoo.com,***,40,9.31,0,0,36,9,0,18,13,1,0,legitimate
+session_003429,2026-01-14T22:59:33.972077,user3429@company.com,***,39,11.82,0,0,40,4,0,20,10,1,0,legitimate
+session_003430,2026-01-24T22:59:33.972077,user3430@outlook.com,***,44,11.18,0,0,37,4,1,20,14,1,0,legitimate
+session_003431,2026-01-09T22:59:33.972077,user3431@yahoo.com,***,20,13.2,0,0,28,9,0,18,8,1,0,legitimate
+session_003432,2026-01-22T22:59:33.972077,user3432@gmail.com,***,11,11.46,0,0,26,10,0,18,8,1,0,legitimate
+session_003433,2026-01-10T22:59:33.972077,user3433@company.com,***,35,19.65,0,0,45,4,0,20,16,1,0,legitimate
+session_003434,2026-01-15T22:59:33.972077,bot3434@automated.com,botpass6508,0,0.4,1,21,0,0,1,21,11,1,1,bot
+session_003435,2026-01-29T22:59:33.972077,user3435@company.com,***,14,12.98,0,0,40,9,1,20,15,1,0,legitimate
+session_003436,2026-01-24T22:59:33.972077,user3436@yahoo.com,***,44,19.51,0,0,34,4,0,18,14,1,0,legitimate
+session_003437,2026-01-14T22:59:33.972077,user3437@outlook.com,***,19,19.9,0,0,35,4,1,20,10,1,0,legitimate
+session_003438,2026-01-14T22:59:33.972077,user3438@gmail.com,***,17,10.16,0,0,37,3,0,18,12,1,0,legitimate
+session_003439,2026-01-28T22:59:33.972077,..%2F..%2F..%2Fetc%2Fpasswd,test,1,0.21,0,0,27,0,1,27,4,1,1,path_traversal
+session_003440,2026-01-18T22:59:33.972077,user3440@gmail.com,***,36,9.78,0,0,37,3,0,18,14,1,0,legitimate
+session_003441,2026-02-08T22:59:33.972077,user3441@company.com,***,10,9.94,0,0,37,6,0,20,14,1,0,legitimate
+session_003442,2026-02-04T22:59:33.972077,user3442@gmail.com,***,42,9.57,0,0,40,9,0,18,13,1,0,legitimate
+session_003443,2026-01-15T22:59:33.972077,user3443@outlook.com,***,37,4.18,0,0,44,9,1,20,15,1,0,legitimate
+session_003444,2026-02-05T22:59:33.972077,user3444@company.com,***,22,11.86,0,0,33,7,0,20,10,1,0,legitimate
+session_003445,2026-01-15T22:59:33.972077,bot3445@automated.com,botpass6322,0,0.36,1,21,0,0,1,21,11,1,1,bot
+session_003446,2026-02-08T22:59:33.972077,user3446@outlook.com,***,35,11.16,0,0,36,8,0,20,13,1,0,legitimate
+session_003447,2026-02-05T22:59:33.972077,user3447@gmail.com,***,24,14.32,0,0,36,2,1,18,8,1,0,legitimate
+session_003448,2026-02-04T22:59:33.972077,user3448@company.com,***,28,5.59,0,0,39,4,0,20,10,1,0,legitimate
+session_003449,2026-02-08T22:59:33.972077,user3449@outlook.com,***,22,2.35,0,0,41,2,0,20,15,1,0,legitimate
+session_003450,2026-02-05T22:59:33.972077,user3450@yahoo.com,***,36,14.98,0,0,36,6,0,18,9,1,0,legitimate
+session_003451,2026-01-28T22:59:33.972077,user3451@gmail.com,***,28,5.73,0,0,34,7,0,18,12,1,0,legitimate
+session_003452,2026-01-29T22:59:33.972077,admin'/*,,3,0.27,0,0,17,2,1,8,0,1,1,sql_injection
+session_003453,2026-01-23T22:59:33.972077,user3453@outlook.com,***,44,10.2,0,0,36,9,0,20,9,1,0,legitimate
+session_003454,2026-01-13T22:59:33.972077,user3454@outlook.com,***,44,15.62,0,0,39,10,0,20,9,1,0,legitimate
+session_003455,2026-01-09T22:59:33.972077,user3455@yahoo.com,***,7,14.17,0,0,27,3,0,18,9,1,0,legitimate
+session_003456,2026-01-16T22:59:33.972077,user3456@gmail.com,***,21,13.09,0,0,35,9,0,18,12,1,0,legitimate
+session_003457,2026-01-12T22:59:33.972077,user3457@company.com,***,11,16.75,0,0,43,4,0,20,15,1,0,legitimate
+session_003458,2026-01-26T22:59:33.972077,..\..\..\windows\system32,test,2,0.57,0,0,25,0,1,25,4,1,1,path_traversal
+session_003459,2026-01-11T22:59:33.972077,user3459@company.com,***,10,19.55,0,0,35,10,0,20,15,1,0,legitimate
+session_003460,2026-01-11T22:59:33.972077,user3460@gmail.com,***,15,10.29,0,0,40,3,0,18,14,1,0,legitimate
+session_003461,2026-01-16T22:59:33.972077,user3461@yahoo.com,***,22,14.22,0,0,41,6,1,18,13,1,0,legitimate
+session_003462,2026-01-11T22:59:33.972077,user3462@outlook.com,***,38,14.33,0,0,29,9,0,20,8,1,0,legitimate
+session_003463,2026-01-24T22:59:33.972077,user3463@company.com,***,48,18.81,0,0,35,3,0,20,12,1,0,legitimate
+session_003464,2026-01-20T22:59:33.972077,user3464@gmail.com,***,32,19.06,0,0,36,8,1,18,11,1,0,legitimate
+session_003465,2026-02-08T22:59:33.972077,user3465@company.com,***,30,19.39,0,0,40,3,0,20,13,1,0,legitimate
+session_003466,2026-02-04T22:59:33.972077,user3466@gmail.com,***,18,12.1,0,0,37,9,0,18,13,1,0,legitimate
+session_003467,2026-02-03T22:59:33.972077,user3467@outlook.com,***,35,7.51,0,0,35,4,0,20,10,1,0,legitimate
+session_003468,2026-01-19T22:59:33.972077,user3468@yahoo.com,***,9,11.77,0,0,34,4,1,18,15,1,0,legitimate
+session_003469,2026-02-01T22:59:33.972077,user3469@company.com,***,13,9.71,0,0,34,9,0,20,8,1,0,legitimate
+session_003470,2026-01-09T22:59:33.972077,user3470@company.com,***,7,15.78,0,0,44,6,0,20,16,1,0,legitimate
+session_003471,2026-01-26T22:59:33.972077,user3471@outlook.com,***,11,4.07,0,0,37,6,1,20,12,1,0,legitimate
+session_003472,2026-01-30T22:59:33.972077,user3472@gmail.com,***,16,14.3,0,0,38,2,1,18,14,1,0,legitimate
+session_003473,2026-02-07T22:59:33.972077,user3473@yahoo.com,***,45,11.48,0,0,30,3,0,18,9,1,0,legitimate
+session_003474,2026-01-18T22:59:33.972077,user3474@gmail.com,***,25,18.1,0,0,34,4,0,18,9,1,0,legitimate
+session_003475,2026-01-24T22:59:33.972077,'; DROP TABLE users--,admin,3,1.41,0,0,10,1,1,21,5,1,1,sql_injection
+session_003476,2026-01-09T22:59:33.972077,user3476@company.com,***,10,4.51,0,0,42,7,0,20,13,1,0,legitimate
+session_003477,2026-02-01T22:59:33.972077,user3477@outlook.com,***,18,10.74,0,0,43,3,0,20,16,1,0,legitimate
+session_003478,2026-01-15T22:59:33.972077,user3478@yahoo.com,***,12,16.45,0,0,33,10,0,18,12,1,0,legitimate
+session_003479,2026-01-13T22:59:33.972077,' UNION SELECT NULL--,,1,0.62,0,0,11,2,1,21,0,1,1,sql_injection
+session_003480,2026-01-14T22:59:33.972077,user3480@gmail.com,***,23,5.2,0,0,30,6,1,18,10,1,0,legitimate
+session_003481,2026-01-10T22:59:33.972077,user3481@outlook.com,***,36,13.48,0,0,38,9,0,20,10,1,0,legitimate
+session_003482,2026-01-09T22:59:33.972077,user3482@yahoo.com,***,21,18.59,0,0,35,5,0,18,16,1,0,legitimate
+session_003483,2026-01-31T22:59:33.972077,user3483@outlook.com,***,33,7.03,0,0,43,2,0,20,16,1,0,legitimate
+session_003484,2026-01-18T22:59:33.972077,user3484@gmail.com,***,34,18.18,0,0,33,2,0,18,11,1,0,legitimate
+session_003485,2026-01-16T22:59:33.972077,user3485@outlook.com,***,18,10.6,0,0,38,6,0,20,14,1,0,legitimate
+session_003486,2026-01-10T22:59:33.972077,user3486@gmail.com,***,24,6.57,0,0,32,4,0,18,10,1,0,legitimate
+session_003487,2026-01-28T22:59:33.972077,user3487@yahoo.com,***,31,6.37,0,0,31,10,0,18,11,1,0,legitimate
+session_003488,2026-01-21T22:59:33.972077,..%2F..%2F..%2Fetc%2Fpasswd,test,2,1.03,0,0,27,1,1,27,4,1,1,path_traversal
+session_003489,2026-01-27T22:59:33.972077,user3489@outlook.com,***,35,10.27,0,0,35,10,0,20,13,1,0,legitimate
+session_003490,2026-01-19T22:59:33.973077,..%2F..%2F..%2Fetc%2Fpasswd,test,1,0.39,0,0,27,1,1,27,4,1,1,path_traversal
+session_003491,2026-01-28T22:59:33.973077,user3491@company.com,***,32,17.18,0,0,35,3,0,20,11,1,0,legitimate
+session_003492,2026-02-03T22:59:33.973077,user3492@yahoo.com,***,5,15.56,0,0,36,10,0,18,10,1,0,legitimate
+session_003493,2026-01-18T22:59:33.973077,administrator,pass161,1,0.69,0,0,6,1,0,13,7,1,1,brute_force
+session_003494,2026-02-05T22:59:33.973077,user3494@company.com,***,27,19.39,0,0,42,8,0,20,13,1,0,legitimate
+session_003495,2026-02-01T22:59:33.973077,<body onload=alert('XSS')>,,1,0.95,0,0,26,1,1,26,0,1,1,xss
+session_003496,2026-01-24T22:59:33.973077,user3496@gmail.com,***,5,9.04,0,0,39,4,0,18,13,1,0,legitimate
+session_003497,2026-01-09T22:59:33.973077,' OR 1=1--,,3,1.3,0,0,8,1,0,10,0,1,1,sql_injection
+session_003498,2026-01-16T22:59:33.973077,user3498@company.com,***,13,11.92,0,0,39,2,0,20,10,1,0,legitimate
+session_003499,2026-01-19T22:59:33.973077,user3499@yahoo.com,***,27,2.47,0,0,27,3,0,18,9,1,0,legitimate
+session_003500,2026-01-22T22:59:33.973077,user3500@company.com,***,32,10.7,0,0,39,6,0,20,11,1,0,legitimate
+session_003501,2026-01-31T22:59:33.973077,user3501@company.com,***,20,6.97,0,0,28,2,0,20,8,1,0,legitimate
+session_003502,2026-02-05T22:59:33.973077,user3502@gmail.com,***,11,9.94,0,0,27,7,1,18,8,1,0,legitimate
+session_003503,2026-02-02T22:59:33.973077,user3503@gmail.com,***,31,11.25,0,0,28,9,0,18,8,1,0,legitimate
+session_003504,2026-01-12T22:59:33.973077,bot3504@automated.com,botpass8466,0,0.45,1,21,0,0,1,21,11,1,1,bot
+session_003505,2026-02-03T22:59:33.973077,user3505@company.com,***,46,9.59,0,0,31,6,0,20,11,1,0,legitimate
+session_003506,2026-01-16T22:59:33.973077,....//....//....//etc/passwd,test,2,1.02,0,0,28,1,1,28,4,1,1,path_traversal
+session_003507,2026-01-16T22:59:33.973077,user3507@company.com,***,5,12.74,0,0,32,4,0,20,12,1,0,legitimate
+session_003508,2026-01-24T22:59:33.973077,user3508@gmail.com,***,43,17.88,0,0,33,2,0,18,11,1,0,legitimate
+session_003509,2026-02-01T22:59:33.973077,user3509@company.com,***,15,16.56,0,0,31,5,1,20,8,1,0,legitimate
+session_003510,2026-01-14T22:59:33.973077,user3510@company.com,***,16,14.94,0,0,36,4,0,20,13,1,0,legitimate
+session_003511,2026-02-07T22:59:33.973077,javascript:alert(1),test,0,0.95,0,0,19,0,1,19,4,1,1,xss
+session_003512,2026-01-16T22:59:33.973077,user3512@company.com,***,9,14.89,0,0,39,4,1,20,14,1,0,legitimate
+session_003513,2026-02-05T22:59:33.973077,user3513@gmail.com,***,49,14.23,0,0,26,5,0,18,8,1,0,legitimate
+session_003514,2026-02-04T22:59:33.973077,test@test.com; rm -rf /,`cat /etc/shadow`,1,0.32,0,0,24,2,1,23,17,1,1,command_injection
+session_003515,2026-01-09T22:59:33.973077,user3515@gmail.com,***,10,9.08,0,0,35,7,0,18,9,1,0,legitimate
+session_003516,2026-01-29T22:59:33.973077,user3516@gmail.com,***,19,12.66,0,0,36,5,1,18,10,1,0,legitimate
+session_003517,2026-01-26T22:59:33.973077,user3517@yahoo.com,***,46,6.92,0,0,42,6,0,18,15,1,0,legitimate
+session_003518,2026-01-26T22:59:33.973077,user3518@yahoo.com,***,7,13.35,0,0,32,7,0,18,11,1,0,legitimate
+session_003519,2026-01-20T22:59:33.973077,user3519@outlook.com,***,47,13.17,0,0,42,2,0,20,16,1,0,legitimate
+session_003520,2026-01-23T22:59:33.973077,user3520@company.com,***,11,14.77,0,0,40,4,0,20,13,1,0,legitimate
+session_003521,2026-01-14T22:59:33.973077,bot3521@automated.com,botpass5972,0,0.31,1,21,0,0,1,21,11,1,1,bot
+session_003522,2026-01-28T22:59:33.973077,user3522@outlook.com,***,41,18.5,0,0,36,6,0,20,11,1,0,legitimate
+session_003523,2026-01-27T22:59:33.973077,user3523@gmail.com,***,21,15.71,0,0,35,5,0,18,16,1,0,legitimate
+session_003524,2026-02-03T22:59:33.973077,user3524@outlook.com,***,36,14.83,0,0,35,9,0,20,9,1,0,legitimate
+session_003525,2026-01-17T22:59:33.973077,user3525@outlook.com,***,46,16.77,0,0,37,9,0,20,10,1,0,legitimate
+session_003526,2026-01-23T22:59:33.973077,user3526@outlook.com,***,27,14.08,0,0,42,9,1,20,14,1,0,legitimate
+session_003527,2026-02-08T22:59:33.973077,admin,pass86,0,0.82,0,0,5,1,0,5,6,1,1,brute_force
+session_003528,2026-01-29T22:59:33.973077,user3528@yahoo.com,***,13,3.26,0,0,31,8,0,18,10,1,0,legitimate
+session_003529,2026-01-14T22:59:33.973077,test@test.com; rm -rf /,`cat /etc/shadow`,0,0.57,0,0,18,0,1,23,17,1,1,command_injection
+session_003530,2026-01-11T22:59:33.973077,user3530@yahoo.com,***,14,13.7,0,0,33,8,0,18,13,1,0,legitimate
+session_003531,2026-01-25T22:59:33.973077,user3531@gmail.com,***,30,15.68,0,0,35,9,1,18,14,1,0,legitimate
+session_003532,2026-01-20T22:59:33.973077,admin,pass321,1,0.61,0,0,4,1,0,5,7,1,1,brute_force
+session_003533,2026-01-16T22:59:33.973077,user3533@gmail.com,***,22,11.49,0,0,34,4,0,18,10,1,0,legitimate
+session_003534,2026-01-25T22:59:33.973077,user3534@gmail.com,***,41,11.99,0,0,32,3,0,18,11,1,0,legitimate
+session_003535,2026-02-07T22:59:33.973077,user3535@yahoo.com,***,16,17.92,0,0,40,5,0,18,16,1,0,legitimate
+session_003536,2026-01-12T22:59:33.973077,user3536@company.com,***,24,8.46,0,0,40,2,1,20,11,1,0,legitimate
+session_003537,2026-01-27T22:59:33.973077,user3537@gmail.com,***,12,8.87,0,0,33,4,0,18,12,1,0,legitimate
+session_003538,2026-02-04T22:59:33.973077,user3538@outlook.com,***,19,5.0,0,0,36,5,0,20,15,1,0,legitimate
+session_003539,2026-02-02T22:59:33.973077,user3539@company.com,***,18,5.43,0,0,39,2,0,20,15,1,0,legitimate
+session_003540,2026-02-01T22:59:33.973077,user3540@yahoo.com,***,6,4.9,0,0,29,6,0,18,9,1,0,legitimate
+session_003541,2026-01-24T22:59:33.973077,user3541@gmail.com,***,10,12.38,0,0,40,10,0,18,14,1,0,legitimate
+session_003542,2026-01-26T22:59:33.973077,user3542@outlook.com,***,45,13.07,0,0,36,9,0,20,12,1,0,legitimate
+session_003543,2026-02-06T22:59:33.973077,user3543@company.com,***,27,3.37,0,0,40,4,1,20,16,1,0,legitimate
+session_003544,2026-02-07T22:59:33.973077,user3544@outlook.com,***,49,12.76,0,0,37,8,0,20,9,1,0,legitimate
+session_003545,2026-02-02T22:59:33.973077,user3545@company.com,***,7,17.73,0,0,40,5,0,20,16,1,0,legitimate
+session_003546,2026-01-27T22:59:33.973077,user3546@outlook.com,***,41,16.03,0,0,38,10,0,20,9,1,0,legitimate
+session_003547,2026-02-03T22:59:33.973077,test,pass91,0,0.5,0,0,10,0,0,4,6,1,1,brute_force
+session_003548,2026-02-04T22:59:33.973077,test,pass645,0,0.65,0,0,9,0,0,4,7,1,1,brute_force
+session_003549,2026-01-28T22:59:33.973077,root,pass963,0,0.96,0,0,5,1,0,4,7,1,1,brute_force
+session_003550,2026-01-16T22:59:33.973077,user3550@yahoo.com,***,45,13.01,0,0,34,6,0,18,9,1,0,legitimate
+session_003551,2026-01-15T22:59:33.973077,bot3551@automated.com,botpass3428,0,0.4,1,21,0,0,1,21,11,1,1,bot
+session_003552,2026-01-24T22:59:33.973077,admin'--,123,1,0.54,0,0,6,0,1,8,3,1,1,sql_injection
+session_003553,2026-01-24T22:59:33.973077,user3553@outlook.com,***,18,6.17,0,0,34,8,1,20,13,1,0,legitimate
+session_003554,2026-01-30T22:59:33.973077,admin'/*,test,3,0.88,0,0,8,1,0,8,4,1,1,sql_injection
+session_003555,2026-01-29T22:59:33.973077,user3555@gmail.com,***,20,16.18,0,0,38,2,0,18,10,1,0,legitimate
+session_003556,2026-01-26T22:59:33.973077,user3556@outlook.com,***,13,15.96,0,0,36,7,0,20,14,1,0,legitimate
+session_003557,2026-01-20T22:59:33.973077,user3557@outlook.com,***,49,17.11,0,0,46,9,1,20,16,1,0,legitimate
+session_003558,2026-01-15T22:59:33.973077,bot3558@automated.com,botpass9520,0,0.2,1,21,0,0,1,21,11,1,1,bot
+session_003559,2026-02-05T22:59:33.973077,user3559@yahoo.com,***,27,4.18,0,0,26,7,0,18,8,1,0,legitimate
+session_003560,2026-02-07T22:59:33.973077,admin' OR '1'='1'--,admin,2,0.87,0,0,15,0,0,19,5,1,1,sql_injection
+session_003561,2026-01-13T22:59:33.973077,user3561@outlook.com,***,15,3.81,0,0,29,9,1,20,8,1,0,legitimate
+session_003562,2026-01-25T22:59:33.973077,..\..\..\windows\system32,test,1,0.74,0,0,25,0,1,25,4,1,1,path_traversal
+session_003563,2026-01-19T22:59:33.973077,user3563@yahoo.com,***,37,10.4,0,0,36,5,0,18,12,1,0,legitimate
+session_003564,2026-01-15T22:59:33.973077,user3564@company.com,***,20,4.43,0,0,37,9,0,20,16,1,0,legitimate
+session_003565,2026-02-02T22:59:33.973077,user3565@gmail.com,***,32,16.11,0,0,37,6,0,18,16,1,0,legitimate
+session_003566,2026-01-16T22:59:33.973077,bot3566@automated.com,botpass6947,0,0.18,1,21,0,0,1,21,11,1,1,bot
+session_003567,2026-01-13T22:59:33.973077,..%2F..%2F..%2Fetc%2Fpasswd,test,2,0.39,0,0,27,1,1,27,4,1,1,path_traversal
+session_003568,2026-02-04T22:59:33.973077,user3568@company.com,***,7,10.67,0,0,35,2,0,20,8,1,0,legitimate
+session_003569,2026-02-01T22:59:33.973077,user3569@company.com,***,23,16.22,0,0,34,9,0,20,13,1,0,legitimate
+session_003570,2026-01-25T22:59:33.973077,user3570@gmail.com,***,10,16.65,0,0,30,2,1,18,10,1,0,legitimate
+session_003571,2026-01-25T22:59:33.973077,admin'/*,admin,0,0.28,0,0,9,2,1,8,5,1,1,sql_injection
+session_003572,2026-02-06T22:59:33.973077,..\..\..\windows\system32,test,1,0.25,0,0,25,1,1,25,4,1,1,path_traversal
+session_003573,2026-01-20T22:59:33.973077,test@test.com| nc -e /bin/sh,; ls -la,1,0.32,0,0,22,2,1,28,8,1,1,command_injection
+session_003574,2026-01-30T22:59:33.973077,user3574@company.com,***,7,10.33,0,0,41,5,0,20,13,1,0,legitimate
+session_003575,2026-01-10T22:59:33.973077,user3575@yahoo.com,***,29,4.4,0,0,36,6,0,18,11,1,0,legitimate
+session_003576,2026-01-09T22:59:33.973077,user3576@company.com,***,47,13.29,0,0,36,8,1,20,8,1,0,legitimate
+session_003577,2026-01-26T22:59:33.973077,user3577@outlook.com,***,44,17.28,0,0,35,10,0,20,14,1,0,legitimate
+session_003578,2026-01-17T22:59:33.973077,user3578@gmail.com,***,39,4.32,0,0,40,3,1,18,16,1,0,legitimate
+session_003579,2026-01-12T22:59:33.973077,test@test.com| nc -e /bin/sh,`cat /etc/shadow`,0,0.63,0,0,16,2,1,28,17,1,1,command_injection
+session_003580,2026-01-24T22:59:33.973077,user3580@company.com,***,9,17.64,0,0,31,5,1,20,8,1,0,legitimate
+session_003581,2026-01-29T22:59:33.973077,<svg onload=alert(1)>,pass,1,0.32,0,0,21,0,1,21,4,1,1,xss
+session_003582,2026-01-15T22:59:33.973077,user3582@outlook.com,***,28,19.07,0,0,34,4,0,20,8,1,0,legitimate
+session_003583,2026-01-15T22:59:33.973077,user3583@outlook.com,***,35,11.89,0,0,32,6,0,20,10,1,0,legitimate
+session_003584,2026-01-17T22:59:33.973077,user3584@outlook.com,***,49,15.96,0,0,41,2,0,20,11,1,0,legitimate
+session_003585,2026-02-06T22:59:33.973077,user3585@yahoo.com,***,27,5.46,0,0,30,6,0,18,9,1,0,legitimate
+session_003586,2026-01-25T22:59:33.973077,user3586@gmail.com,***,39,5.8,0,0,36,5,0,18,11,1,0,legitimate
+session_003587,2026-01-18T22:59:33.973077,user3587@company.com,***,49,13.37,0,0,44,4,0,20,16,1,0,legitimate
+session_003588,2026-01-19T22:59:33.973077,<input onfocus=alert(1) autofocus>,,2,0.54,0,0,34,0,1,34,0,1,1,xss
+session_003589,2026-01-18T22:59:33.973077,bot3589@automated.com,botpass3400,0,0.44,1,21,0,0,1,21,11,1,1,bot
+session_003590,2026-02-08T22:59:33.973077,' OR 'a'='a,123,0,0.93,1,11,17,1,1,11,3,1,1,sql_injection
+session_003591,2026-02-05T22:59:33.973077,..\..\..\windows\system32,test,1,1.03,0,0,25,1,1,25,4,1,1,path_traversal
+session_003592,2026-01-24T22:59:33.973077,bot3592@automated.com,botpass5615,0,0.3,1,21,0,0,1,21,11,1,1,bot
+session_003593,2026-01-15T22:59:33.973077,user3593@gmail.com,***,30,10.0,0,0,40,9,1,18,14,1,0,legitimate
+session_003594,2026-01-26T22:59:33.973077,user3594@gmail.com,***,47,12.62,0,0,28,9,0,18,8,1,0,legitimate
+session_003595,2026-01-28T22:59:33.973077,test@test.com; rm -rf /,; ls -la,2,0.52,0,0,13,0,1,23,8,1,1,command_injection
+session_003596,2026-01-26T22:59:33.973077,user3596@gmail.com,***,28,8.72,0,0,39,8,0,18,12,1,0,legitimate
+session_003597,2026-01-14T22:59:33.973077,user3597@company.com,***,31,15.07,0,0,34,3,1,20,13,1,0,legitimate
+session_003598,2026-01-10T22:59:33.973077,user3598@gmail.com,***,41,17.7,0,0,44,8,0,18,16,1,0,legitimate
+session_003599,2026-01-09T22:59:33.973077,user3599@gmail.com,***,30,19.67,0,0,34,6,0,18,11,1,0,legitimate
+session_003600,2026-01-21T22:59:33.973077,user3600@yahoo.com,***,45,15.54,0,0,35,2,1,18,16,1,0,legitimate
+session_003601,2026-02-02T22:59:33.973077,user3601@outlook.com,***,15,16.62,0,0,40,6,0,20,11,1,0,legitimate
+session_003602,2026-01-27T22:59:33.973077,user3602@outlook.com,***,47,6.63,0,0,38,3,1,20,14,1,0,legitimate
+session_003603,2026-01-22T22:59:33.973077,user3603@gmail.com,***,17,2.02,0,0,29,6,0,18,8,1,0,legitimate
+session_003604,2026-01-10T22:59:33.973077,user3604@company.com,***,49,18.31,0,0,45,6,1,20,15,1,0,legitimate
+session_003605,2026-01-11T22:59:33.973077,user3605@company.com,***,22,2.3,0,0,42,3,0,20,16,1,0,legitimate
+session_003606,2026-01-18T22:59:33.973077,user3606@company.com,***,22,12.72,0,0,44,7,0,20,14,1,0,legitimate
+session_003607,2026-02-02T22:59:33.973077,test@test.com; ls -la,`cat /etc/shadow`,2,0.72,0,0,16,2,1,21,17,1,1,command_injection
+session_003608,2026-01-15T22:59:33.974077,user3608@yahoo.com,***,35,18.56,0,0,29,5,0,18,8,1,0,legitimate
+session_003609,2026-01-22T22:59:33.974077,user3609@gmail.com,***,16,14.64,0,0,32,7,0,18,10,1,0,legitimate
+session_003610,2026-01-29T22:59:33.974077,user3610@gmail.com,***,46,9.47,0,0,37,8,0,18,11,1,0,legitimate
+session_003611,2026-01-21T22:59:33.974077,bot3611@automated.com,botpass9700,0,0.48,1,21,0,0,1,21,11,1,1,bot
+session_003612,2026-01-11T22:59:33.974077,user3612@gmail.com,***,17,4.88,0,0,37,3,1,18,9,1,0,legitimate
+session_003613,2026-01-29T22:59:33.974077,user3613@gmail.com,***,40,19.41,0,0,39,2,1,18,12,1,0,legitimate
+session_003614,2026-01-21T22:59:33.974077,' OR 1=1--,,0,1.36,1,10,18,0,0,10,0,1,1,sql_injection
+session_003615,2026-01-16T22:59:33.974077,user3615@gmail.com,***,20,16.25,0,0,33,4,0,18,8,1,0,legitimate
+session_003616,2026-01-29T22:59:33.974077,user3616@outlook.com,***,18,19.62,0,0,37,9,0,20,9,1,0,legitimate
+session_003617,2026-01-12T22:59:33.974077,user3617@yahoo.com,***,40,15.03,0,0,40,6,0,18,16,1,0,legitimate
+session_003618,2026-02-03T22:59:33.974077,user3618@company.com,***,49,2.34,0,0,33,10,0,20,10,1,0,legitimate
+session_003619,2026-01-21T22:59:33.974077,user3619@outlook.com,***,22,10.78,0,0,37,5,1,20,12,1,0,legitimate
+session_003620,2026-01-29T22:59:33.974077,user3620@gmail.com,***,14,13.3,0,0,37,3,0,18,12,1,0,legitimate
+session_003621,2026-01-23T22:59:33.974077,user3621@yahoo.com,***,44,12.32,0,0,39,3,0,18,12,1,0,legitimate
+session_003622,2026-01-14T22:59:33.974077,user3622@yahoo.com,***,5,16.79,0,0,28,6,0,18,9,1,0,legitimate
+session_003623,2026-02-05T22:59:33.974077,test@test.com; ls -la,`cat /etc/shadow`,2,0.37,0,0,13,1,1,21,17,1,1,command_injection
+session_003624,2026-01-15T22:59:33.974077,administrator,pass568,0,0.91,0,0,5,2,0,13,7,1,1,brute_force
+session_003625,2026-01-17T22:59:33.974077,user3625@company.com,***,26,13.35,0,0,33,10,0,20,11,1,0,legitimate
+session_003626,2026-01-19T22:59:33.974077,bot3626@automated.com,botpass3442,0,0.5,1,21,0,0,1,21,11,1,1,bot
+session_003627,2026-02-02T22:59:33.974077,..%2F..%2F..%2Fetc%2Fpasswd,test,1,0.9,0,0,27,1,1,27,4,1,1,path_traversal
+session_003628,2026-01-15T22:59:33.974077,user3628@outlook.com,***,12,19.71,0,0,38,2,0,20,14,1,0,legitimate
+session_003629,2026-01-29T22:59:33.974077,admin'--,,2,0.41,1,8,13,2,1,8,0,1,1,sql_injection
+session_003630,2026-01-19T22:59:33.974077,user3630@yahoo.com,***,29,8.3,0,0,38,7,0,18,16,1,0,legitimate
+session_003631,2026-01-18T22:59:33.974077,user3631@outlook.com,***,12,8.1,0,0,35,7,0,20,8,1,0,legitimate
+session_003632,2026-02-01T22:59:33.974077,user3632@yahoo.com,***,40,9.02,0,0,35,9,1,18,12,1,0,legitimate
+session_003633,2026-01-13T22:59:33.974077,root,pass211,0,0.34,0,0,3,2,0,4,7,1,1,brute_force
+session_003634,2026-01-12T22:59:33.974077,user3634@gmail.com,***,49,10.57,0,0,41,5,0,18,15,1,0,legitimate
+session_003635,2026-01-25T22:59:33.974077,user3635@yahoo.com,***,49,11.81,0,0,35,3,0,18,14,1,0,legitimate
+session_003636,2026-02-03T22:59:33.974077,user3636@gmail.com,***,28,17.99,0,0,38,2,1,18,10,1,0,legitimate
+session_003637,2026-02-02T22:59:33.974077,user3637@gmail.com,***,20,6.65,0,0,41,9,0,18,14,1,0,legitimate
+session_003638,2026-01-24T22:59:33.974077,user3638@gmail.com,***,46,15.57,0,0,40,6,0,18,15,1,0,legitimate
+session_003639,2026-01-24T22:59:33.974077,user3639@outlook.com,***,48,4.73,0,0,42,3,0,20,12,1,0,legitimate
+session_003640,2026-01-30T22:59:33.974077,"'""><script>alert(String.fromCharCode(88,83,83))</script>",test,1,0.41,0,0,56,0,1,56,4,1,1,xss
+session_003641,2026-01-10T22:59:33.974077,<img src=x onerror=alert(1)>,test,2,0.47,0,0,28,0,1,28,4,1,1,xss
+session_003642,2026-01-19T22:59:33.974077,user3642@outlook.com,***,9,6.04,0,0,32,9,1,20,10,1,0,legitimate
+session_003643,2026-01-28T22:59:33.974077,' OR 1=1--,test,3,0.6,0,0,20,0,0,10,4,1,1,sql_injection
+session_003644,2026-01-14T22:59:33.974077,user3644@company.com,***,48,16.98,0,0,35,2,0,20,15,1,0,legitimate
+session_003645,2026-01-13T22:59:33.974077,user3645@yahoo.com,***,17,3.41,0,0,33,9,0,18,8,1,0,legitimate
+session_003646,2026-01-15T22:59:33.974077,user3646@gmail.com,***,43,3.59,0,0,42,4,0,18,16,1,0,legitimate
+session_003647,2026-02-06T22:59:33.974077,user3647@gmail.com,***,22,5.16,0,0,34,4,0,18,14,1,0,legitimate
+session_003648,2026-01-19T22:59:33.974077,user3648@outlook.com,***,18,18.29,0,0,42,5,0,20,14,1,0,legitimate
+session_003649,2026-01-10T22:59:33.974077,user3649@yahoo.com,***,10,4.14,0,0,31,10,0,18,8,1,0,legitimate
+session_003650,2026-01-14T22:59:33.974077,test@test.com; rm -rf /,| cat /etc/passwd,1,0.63,0,0,11,1,1,23,17,1,1,command_injection
+session_003651,2026-01-13T22:59:33.974077,user3651@yahoo.com,***,46,2.43,0,0,31,8,0,18,11,1,0,legitimate
+session_003652,2026-01-10T22:59:33.974077,<iframe src=javascript:alert(1)>,pass,1,0.84,0,0,32,0,1,32,4,1,1,xss
+session_003653,2026-01-09T22:59:33.974077,user3653@company.com,***,16,6.76,0,0,33,2,0,20,11,1,0,legitimate
+session_003654,2026-01-19T22:59:33.974077,user3654@company.com,***,8,12.05,0,0,35,9,1,20,13,1,0,legitimate
+session_003655,2026-01-15T22:59:33.974077,user3655@yahoo.com,***,8,8.94,0,0,39,10,1,18,16,1,0,legitimate
+session_003656,2026-01-28T22:59:33.974077,user3656@company.com,***,39,8.8,0,0,39,2,0,20,13,1,0,legitimate
+session_003657,2026-01-11T22:59:33.974077,user3657@outlook.com,***,17,11.32,0,0,38,3,0,20,10,1,0,legitimate
+session_003658,2026-01-22T22:59:33.974077,user3658@gmail.com,***,13,9.81,0,0,41,2,1,18,15,1,0,legitimate
+session_003659,2026-01-15T22:59:33.974077,user3659@gmail.com,***,14,18.3,0,0,36,8,1,18,10,1,0,legitimate
+session_003660,2026-01-18T22:59:33.974077,<svg onload=alert(1)>,pass,0,0.6,0,0,21,1,1,21,4,1,1,xss
+session_003661,2026-02-04T22:59:33.974077,user3661@outlook.com,***,48,17.86,0,0,39,7,0,20,10,1,0,legitimate
+session_003662,2026-01-12T22:59:33.974077,test@test.com&& whoami,| nc -e /bin/sh,0,0.5,0,0,20,2,1,22,15,1,1,command_injection
+session_003663,2026-01-12T22:59:33.974077,user3663@outlook.com,***,50,16.9,0,0,37,2,0,20,15,1,0,legitimate
+session_003664,2026-01-28T22:59:33.974077,user3664@company.com,***,45,13.98,0,0,39,3,0,20,16,1,0,legitimate
+session_003665,2026-02-05T22:59:33.974077,user3665@gmail.com,***,13,8.85,0,0,30,9,0,18,8,1,0,legitimate
+session_003666,2026-01-27T22:59:33.974077,test@test.com; ls -la,| nc -e /bin/sh,0,0.53,0,0,22,0,1,21,15,1,1,command_injection
+session_003667,2026-01-22T22:59:33.974077,user3667@yahoo.com,***,24,5.48,0,0,39,4,0,18,16,1,0,legitimate
+session_003668,2026-01-20T22:59:33.974077,<body onload=alert('XSS')>,test,0,0.59,0,0,26,1,1,26,4,1,1,xss
+session_003669,2026-01-30T22:59:33.974077,admin'--,,2,1.15,0,0,7,1,0,8,0,1,1,sql_injection
+session_003670,2026-01-28T22:59:33.974077,user3670@company.com,***,23,16.25,0,0,37,10,0,20,8,1,0,legitimate
+session_003671,2026-01-19T22:59:33.974077,<img src=x onerror=alert(1)>,test,1,0.72,0,0,28,1,1,28,4,1,1,xss
+session_003672,2026-01-14T22:59:33.974077,bot3672@automated.com,botpass8904,0,0.38,1,21,0,0,1,21,11,1,1,bot
+session_003673,2026-01-23T22:59:33.974077,user3673@company.com,***,10,17.64,0,0,33,5,0,20,8,1,0,legitimate
+session_003674,2026-01-13T22:59:33.974077,user3674@outlook.com,***,16,9.7,0,0,41,5,1,20,16,1,0,legitimate
+session_003675,2026-02-05T22:59:33.974077,user3675@yahoo.com,***,6,11.67,0,0,33,2,0,18,11,1,0,legitimate
+session_003676,2026-01-13T22:59:33.974077,user3676@yahoo.com,***,27,11.18,0,0,34,2,1,18,13,1,0,legitimate
+session_003677,2026-01-23T22:59:33.974077,user3677@outlook.com,***,45,7.67,0,0,41,10,0,20,11,1,0,legitimate
+session_003678,2026-01-10T22:59:33.974077,user3678@company.com,***,19,12.12,0,0,38,6,0,20,11,1,0,legitimate
+session_003679,2026-01-28T22:59:33.974077,user3679@gmail.com,***,13,4.15,0,0,35,2,0,18,14,1,0,legitimate
+session_003680,2026-01-12T22:59:33.974077,user3680@yahoo.com,***,47,11.62,0,0,42,5,0,18,16,1,0,legitimate
+session_003681,2026-01-09T22:59:33.974077,user3681@outlook.com,***,20,2.3,0,0,39,3,0,20,14,1,0,legitimate
+session_003682,2026-01-28T22:59:33.974077,test,pass991,1,0.85,0,0,8,0,0,4,7,1,1,brute_force
+session_003683,2026-01-18T22:59:33.974077,user3683@outlook.com,***,28,4.95,0,0,38,4,0,20,13,1,0,legitimate
+session_003684,2026-01-28T22:59:33.974077,user3684@gmail.com,***,25,11.61,0,0,33,10,0,18,10,1,0,legitimate
+session_003685,2026-02-08T22:59:33.974077,user3685@company.com,***,28,6.0,0,0,33,7,0,20,13,1,0,legitimate
+session_003686,2026-01-24T22:59:33.974077,user3686@yahoo.com,***,46,19.17,0,0,36,5,0,18,12,1,0,legitimate
+session_003687,2026-01-23T22:59:33.974077,user3687@company.com,***,7,9.06,0,0,37,7,1,20,14,1,0,legitimate
+session_003688,2026-01-24T22:59:33.974077,user3688@outlook.com,***,17,7.98,0,0,34,5,0,20,14,1,0,legitimate
+session_003689,2026-01-22T22:59:33.974077,user3689@company.com,***,44,2.9,0,0,34,6,1,20,9,1,0,legitimate
+session_003690,2026-01-30T22:59:33.974077,user3690@yahoo.com,***,44,9.51,0,0,33,5,0,18,10,1,0,legitimate
+session_003691,2026-01-21T22:59:33.974077,user3691@yahoo.com,***,26,19.16,0,0,33,4,0,18,9,1,0,legitimate
+session_003692,2026-01-13T22:59:33.974077,user3692@outlook.com,***,48,10.48,0,0,40,4,0,20,16,1,0,legitimate
+session_003693,2026-01-17T22:59:33.974077,bot3693@automated.com,botpass9075,0,0.13,1,21,0,0,1,21,11,1,1,bot
+session_003694,2026-01-20T22:59:33.974077,../../../etc/passwd,test,0,1.05,0,0,19,0,1,19,4,1,1,path_traversal
+session_003695,2026-01-18T22:59:33.974077,user3695@yahoo.com,***,24,4.21,0,0,33,6,1,18,15,1,0,legitimate
+session_003696,2026-01-16T22:59:33.974077,user3696@gmail.com,***,48,11.85,0,0,36,5,1,18,10,1,0,legitimate
+session_003697,2026-01-23T22:59:33.974077,test,pass33,0,0.84,0,0,9,0,0,4,6,1,1,brute_force
+session_003698,2026-01-28T22:59:33.974077,admin,pass873,1,0.96,0,0,10,2,0,5,7,1,1,brute_force
+session_003699,2026-02-07T22:59:33.974077,....//....//....//etc/passwd,test,1,0.69,0,0,28,0,1,28,4,1,1,path_traversal
+session_003700,2026-02-04T22:59:33.974077,user3700@gmail.com,***,18,2.09,0,0,43,4,0,18,15,1,0,legitimate
+session_003701,2026-01-16T22:59:33.974077,<iframe src=javascript:alert(1)>,,0,0.77,0,0,32,1,1,32,0,1,1,xss
+session_003702,2026-01-13T22:59:33.974077,user3702@company.com,***,37,12.68,0,0,34,5,0,20,13,1,0,legitimate
+session_003703,2026-01-14T22:59:33.974077,user3703@gmail.com,***,32,9.56,0,0,34,4,0,18,10,1,0,legitimate
+session_003704,2026-01-09T22:59:33.974077,administrator,pass231,1,0.77,0,0,4,0,0,13,7,1,1,brute_force
+session_003705,2026-02-04T22:59:33.974077,../../../etc/passwd,test,2,0.56,0,0,19,0,1,19,4,1,1,path_traversal
+session_003706,2026-01-24T22:59:33.974077,user3706@outlook.com,***,43,12.51,0,0,40,2,0,20,14,1,0,legitimate
+session_003707,2026-01-11T22:59:33.974077,user3707@company.com,***,26,19.96,0,0,39,9,0,20,11,1,0,legitimate
+session_003708,2026-01-25T22:59:33.974077,user3708@yahoo.com,***,21,9.8,0,0,33,3,1,18,10,1,0,legitimate
+session_003709,2026-02-03T22:59:33.974077,<svg onload=alert(1)>,,1,0.38,0,0,21,0,1,21,0,1,1,xss
+session_003710,2026-02-05T22:59:33.974077,user3710@gmail.com,***,43,14.36,0,0,36,4,0,18,10,1,0,legitimate
+session_003711,2026-01-23T22:59:33.974077,user3711@gmail.com,***,20,19.65,0,0,39,3,1,18,15,1,0,legitimate
+session_003712,2026-01-19T22:59:33.974077,bot3712@automated.com,botpass1703,0,0.15,1,21,0,0,1,21,11,1,1,bot
+session_003713,2026-01-12T22:59:33.974077,user3713@gmail.com,***,50,15.17,0,0,37,8,1,18,15,1,0,legitimate
+session_003714,2026-01-09T22:59:33.974077,user3714@outlook.com,***,49,3.39,0,0,43,5,1,20,14,1,0,legitimate
+session_003715,2026-02-04T22:59:33.974077,user3715@gmail.com,***,26,7.21,0,0,43,3,0,18,16,1,0,legitimate
+session_003716,2026-01-18T22:59:33.974077,user3716@company.com,***,45,5.32,0,0,41,3,0,20,14,1,0,legitimate
+session_003717,2026-02-04T22:59:33.974077,user3717@gmail.com,***,5,15.57,0,0,42,9,0,18,16,1,0,legitimate
+session_003718,2026-01-17T22:59:33.974077,user3718@gmail.com,***,26,3.61,0,0,42,8,1,18,15,1,0,legitimate
+session_003719,2026-01-09T22:59:33.974077,<body onload=alert('XSS')>,,0,0.44,0,0,26,1,1,26,0,1,1,xss
+session_003720,2026-02-01T22:59:33.974077,user3720@company.com,***,12,2.96,0,0,41,4,0,20,13,1,0,legitimate
+session_003721,2026-02-04T22:59:33.974077,user3721@yahoo.com,***,45,11.22,0,0,39,4,0,18,12,1,0,legitimate
+session_003722,2026-01-14T22:59:33.974077,user3722@outlook.com,***,11,11.27,0,0,33,4,1,20,8,1,0,legitimate
+session_003723,2026-01-20T22:59:33.974077,user3723@company.com,***,43,15.69,0,0,34,2,0,20,14,1,0,legitimate
+session_003724,2026-01-22T22:59:33.974077,<script>alert('XSS')</script>,pass,0,0.45,0,0,29,1,1,29,4,1,1,xss
+session_003725,2026-01-29T22:59:33.974077,user3725@company.com,***,22,3.27,0,0,31,4,0,20,11,1,0,legitimate
+session_003726,2026-01-27T22:59:33.974077,user3726@gmail.com,***,35,3.06,0,0,37,8,0,18,9,1,0,legitimate
+session_003727,2026-01-15T22:59:33.975077,user3727@outlook.com,***,24,6.21,0,0,36,10,0,20,16,1,0,legitimate
+session_003728,2026-01-17T22:59:33.975077,user3728@outlook.com,***,44,19.78,0,0,34,8,0,20,9,1,0,legitimate
+session_003729,2026-01-18T22:59:33.975077,user3729@company.com,***,38,5.12,0,0,38,10,0,20,11,1,0,legitimate
+session_003730,2026-02-06T22:59:33.975077,....//....//....//etc/passwd,test,1,0.72,0,0,28,0,1,28,4,1,1,path_traversal
+session_003731,2026-01-31T22:59:33.975077,user3731@gmail.com,***,8,9.58,0,0,31,8,0,18,9,1,0,legitimate
+session_003732,2026-02-08T22:59:33.975077,user3732@outlook.com,***,20,11.18,0,0,35,9,0,20,11,1,0,legitimate
+session_003733,2026-01-27T22:59:33.975077,user3733@outlook.com,***,25,2.49,0,0,30,10,0,20,9,1,0,legitimate
+session_003734,2026-01-26T22:59:33.975077,user3734@outlook.com,***,22,8.21,0,0,34,8,0,20,8,1,0,legitimate
+session_003735,2026-01-13T22:59:33.975077,user3735@outlook.com,***,44,5.38,0,0,33,7,1,20,12,1,0,legitimate
+session_003736,2026-02-07T22:59:33.975077,user3736@yahoo.com,***,45,11.77,0,0,38,8,1,18,15,1,0,legitimate
+session_003737,2026-01-11T22:59:33.975077,user3737@yahoo.com,***,45,13.01,0,0,37,9,0,18,15,1,0,legitimate
+session_003738,2026-01-24T22:59:33.975077,<svg onload=alert(1)>,,1,0.58,0,0,21,1,1,21,0,1,1,xss
+session_003739,2026-02-08T22:59:33.975077,<input onfocus=alert(1) autofocus>,test,1,0.75,0,0,34,1,1,34,4,1,1,xss
+session_003740,2026-02-07T22:59:33.975077,user3740@gmail.com,***,22,11.18,0,0,40,9,0,18,15,1,0,legitimate
+session_003741,2026-01-21T22:59:33.975077,<img src=x onerror=alert(1)>,pass,2,0.5,0,0,28,1,1,28,4,1,1,xss
+session_003742,2026-01-15T22:59:33.975077,user3742@company.com,***,38,3.54,0,0,39,5,0,20,9,1,0,legitimate
+session_003743,2026-01-25T22:59:33.975077,<svg onload=alert(1)>,,2,0.75,0,0,21,1,1,21,0,1,1,xss
+session_003744,2026-02-04T22:59:33.975077,user3744@outlook.com,***,44,4.69,0,0,41,2,1,20,12,1,0,legitimate
+session_003745,2026-01-17T22:59:33.975077,user3745@company.com,***,30,9.51,0,0,31,2,0,20,10,1,0,legitimate
+session_003746,2026-02-02T22:59:33.975077,user3746@company.com,***,46,18.59,0,0,32,4,1,20,8,1,0,legitimate
+session_003747,2026-01-18T22:59:33.975077,user3747@company.com,***,8,2.94,0,0,33,4,1,20,8,1,0,legitimate
+session_003748,2026-02-04T22:59:33.975077,user3748@gmail.com,***,28,17.08,0,0,30,10,0,18,8,1,0,legitimate
+session_003749,2026-01-11T22:59:33.975077,user3749@yahoo.com,***,33,4.95,0,0,37,4,0,18,14,1,0,legitimate
+session_003750,2026-01-18T22:59:33.975077,user3750@gmail.com,***,9,4.98,0,0,38,5,0,18,16,1,0,legitimate
+session_003751,2026-02-06T22:59:33.975077,user3751@gmail.com,***,35,10.25,0,0,37,9,0,18,13,1,0,legitimate
+session_003752,2026-01-18T22:59:33.975077,test@test.com; rm -rf /,| cat /etc/passwd,0,0.5,0,0,11,2,1,23,17,1,1,command_injection
+session_003753,2026-01-17T22:59:33.975077,user3753@outlook.com,***,22,10.48,0,0,29,2,0,20,8,1,0,legitimate
+session_003754,2026-01-11T22:59:33.975077,user3754@company.com,***,19,11.41,0,0,40,6,0,20,11,1,0,legitimate
+session_003755,2026-01-26T22:59:33.975077,user3755@outlook.com,***,8,19.8,0,0,38,4,0,20,9,1,0,legitimate
+session_003756,2026-01-25T22:59:33.975077,bot3756@automated.com,botpass6906,0,0.48,1,21,0,0,1,21,11,1,1,bot
+session_003757,2026-01-18T22:59:33.975077,user3757@gmail.com,***,40,3.79,0,0,30,6,0,18,8,1,0,legitimate
+session_003758,2026-02-05T22:59:33.975077,user3758@gmail.com,***,24,11.81,0,0,34,4,0,18,16,1,0,legitimate
+session_003759,2026-01-25T22:59:33.975077,user3759@outlook.com,***,37,8.08,0,0,37,5,0,20,16,1,0,legitimate
+session_003760,2026-01-09T22:59:33.975077,user3760@outlook.com,***,30,11.0,0,0,37,10,0,20,8,1,0,legitimate
+session_003761,2026-02-03T22:59:33.975077,user3761@yahoo.com,***,8,2.61,0,0,38,10,1,18,13,1,0,legitimate
+session_003762,2026-02-04T22:59:33.975077,..\..\..\windows\system32,test,2,1.01,0,0,25,1,1,25,4,1,1,path_traversal
+session_003763,2026-01-24T22:59:33.975077,user3763@outlook.com,***,27,16.68,0,0,38,9,0,20,15,1,0,legitimate
+session_003764,2026-02-03T22:59:33.975077,user3764@gmail.com,***,13,11.95,0,0,43,2,0,18,15,1,0,legitimate
+session_003765,2026-01-25T22:59:33.975077,user3765@outlook.com,***,11,2.08,0,0,36,3,0,20,9,1,0,legitimate
+session_003766,2026-01-18T22:59:33.975077,..\..\..\windows\system32,test,2,0.55,0,0,25,1,1,25,4,1,1,path_traversal
+session_003767,2026-01-15T22:59:33.975077,user3767@company.com,***,37,13.26,0,0,39,10,0,20,11,1,0,legitimate
+session_003768,2026-02-07T22:59:33.975077,user3768@company.com,***,25,17.94,0,0,37,5,0,20,8,1,0,legitimate
+session_003769,2026-01-18T22:59:33.975077,user3769@gmail.com,***,46,17.42,0,0,37,7,0,18,14,1,0,legitimate
+session_003770,2026-01-11T22:59:33.975077,bot3770@automated.com,botpass4608,0,0.48,1,21,0,0,1,21,11,1,1,bot
+session_003771,2026-02-02T22:59:33.975077,../../../etc/passwd,test,0,1.14,0,0,19,1,1,19,4,1,1,path_traversal
+session_003772,2026-01-19T22:59:33.975077,user3772@yahoo.com,***,31,7.57,0,0,38,2,0,18,14,1,0,legitimate
+session_003773,2026-01-17T22:59:33.975077,user3773@gmail.com,***,30,10.29,0,0,41,6,0,18,16,1,0,legitimate
+session_003774,2026-01-18T22:59:33.975077,admin' OR '1'='1,,2,0.44,1,16,15,1,1,16,0,1,1,sql_injection
+session_003775,2026-01-24T22:59:33.975077,user3775@outlook.com,***,17,4.11,0,0,44,10,0,20,16,1,0,legitimate
+session_003776,2026-01-27T22:59:33.975077,user3776@yahoo.com,***,26,14.09,0,0,31,10,0,18,13,1,0,legitimate
+session_003777,2026-01-17T22:59:33.975077,user3777@company.com,***,18,12.7,0,0,35,8,0,20,13,1,0,legitimate
+session_003778,2026-02-02T22:59:33.975077,user3778@outlook.com,***,8,19.94,0,0,46,2,0,20,16,1,0,legitimate
+session_003779,2026-02-03T22:59:33.975077,user3779@gmail.com,***,13,6.53,0,0,35,6,0,18,13,1,0,legitimate
+session_003780,2026-01-21T22:59:33.975077,user3780@yahoo.com,***,33,18.69,0,0,40,9,0,18,15,1,0,legitimate
+session_003781,2026-02-03T22:59:33.975077,user3781@company.com,***,14,15.53,0,0,44,8,1,20,14,1,0,legitimate
+session_003782,2026-01-19T22:59:33.975077,user3782@yahoo.com,***,41,15.27,0,0,38,3,1,18,10,1,0,legitimate
+session_003783,2026-01-19T22:59:33.975077,bot3783@automated.com,botpass6451,0,0.32,1,21,0,0,1,21,11,1,1,bot
+session_003784,2026-01-27T22:59:33.975077,user3784@company.com,***,47,11.95,0,0,31,7,0,20,11,1,0,legitimate
+session_003785,2026-01-25T22:59:33.975077,user3785@company.com,***,45,2.41,0,0,35,6,1,20,11,1,0,legitimate
+session_003786,2026-02-01T22:59:33.975077,user3786@yahoo.com,***,9,6.46,0,0,31,4,0,18,12,1,0,legitimate
+session_003787,2026-02-03T22:59:33.975077,user3787@outlook.com,***,9,11.48,0,0,36,10,0,20,12,1,0,legitimate
+session_003788,2026-01-14T22:59:33.975077,bot3788@automated.com,botpass7246,0,0.35,1,21,0,0,1,21,11,1,1,bot
+session_003789,2026-01-19T22:59:33.975077,user3789@yahoo.com,***,38,4.48,0,0,37,10,1,18,11,1,0,legitimate
+session_003790,2026-01-19T22:59:33.975077,user3790@outlook.com,***,38,6.32,0,0,39,3,0,20,13,1,0,legitimate
+session_003791,2026-02-04T22:59:33.975077,user3791@gmail.com,***,50,17.66,0,0,40,8,1,18,16,1,0,legitimate
+session_003792,2026-02-02T22:59:33.975077,user3792@outlook.com,***,6,14.63,0,0,39,5,0,20,16,1,0,legitimate
+session_003793,2026-01-20T22:59:33.975077,....//....//....//etc/passwd,test,1,0.61,0,0,28,0,1,28,4,1,1,path_traversal
+session_003794,2026-01-28T22:59:33.975077,test@test.com; rm -rf /,| nc -e /bin/sh,0,0.71,0,0,18,1,1,23,15,1,1,command_injection
+session_003795,2026-01-14T22:59:33.975077,user3795@gmail.com,***,7,10.61,0,0,38,8,1,18,15,1,0,legitimate
+session_003796,2026-01-14T22:59:33.975077,test@test.com| cat /etc/passwd,; rm -rf /,0,0.6,0,0,10,0,1,30,10,1,1,command_injection
+session_003797,2026-01-09T22:59:33.975077,"'""><script>alert(String.fromCharCode(88,83,83))</script>",,2,0.88,0,0,56,0,1,56,0,1,1,xss
+session_003798,2026-01-13T22:59:33.975077,user3798@gmail.com,***,28,19.97,0,0,32,2,0,18,11,1,0,legitimate
+session_003799,2026-01-24T22:59:33.975077,user3799@company.com,***,43,7.58,0,0,36,6,0,20,16,1,0,legitimate
+session_003800,2026-01-21T22:59:33.975077,user3800@company.com,***,35,4.57,0,0,39,4,0,20,12,1,0,legitimate
+session_003801,2026-01-19T22:59:33.975077,user3801@outlook.com,***,47,13.45,0,0,46,6,0,20,16,1,0,legitimate
+session_003802,2026-01-27T22:59:33.975077,user3802@company.com,***,49,2.37,0,0,34,7,0,20,10,1,0,legitimate
+session_003803,2026-02-05T22:59:33.975077,user3803@outlook.com,***,44,13.52,0,0,33,10,1,20,11,1,0,legitimate
+session_003804,2026-01-17T22:59:33.975077,../../../etc/passwd,test,2,0.79,0,0,19,0,1,19,4,1,1,path_traversal
+session_003805,2026-01-17T22:59:33.975077,user3805@outlook.com,***,34,13.57,0,0,39,3,0,20,9,1,0,legitimate
+session_003806,2026-01-22T22:59:33.975077,user3806@gmail.com,***,25,12.03,0,0,42,5,0,18,16,1,0,legitimate
+session_003807,2026-02-08T22:59:33.975077,user3807@outlook.com,***,27,12.72,0,0,38,10,0,20,12,1,0,legitimate
+session_003808,2026-01-31T22:59:33.975077,user3808@outlook.com,***,46,17.09,0,0,38,6,1,20,14,1,0,legitimate
+session_003809,2026-01-22T22:59:33.975077,user3809@yahoo.com,***,40,16.66,0,0,36,8,0,18,10,1,0,legitimate
+session_003810,2026-01-27T22:59:33.975077,user3810@company.com,***,29,9.89,0,0,44,6,0,20,15,1,0,legitimate
+session_003811,2026-01-09T22:59:33.975077,user3811@yahoo.com,***,40,2.89,0,0,39,10,0,18,16,1,0,legitimate
+session_003812,2026-01-28T22:59:33.975077,user3812@outlook.com,***,50,7.57,0,0,31,6,0,20,10,1,0,legitimate
+session_003813,2026-01-24T22:59:33.975077,user3813@outlook.com,***,47,2.14,0,0,38,10,1,20,11,1,0,legitimate
+session_003814,2026-02-05T22:59:33.975077,admin' UNION SELECT,,3,0.11,1,19,8,2,0,19,0,1,1,sql_injection
+session_003815,2026-01-31T22:59:33.975077,user3815@outlook.com,***,45,18.71,0,0,39,4,0,20,16,1,0,legitimate
+session_003816,2026-02-01T22:59:33.975077,user3816@company.com,***,38,3.04,0,0,33,6,0,20,8,1,0,legitimate
+session_003817,2026-01-25T22:59:33.975077,test@test.com`cat /etc/shadow`,; rm -rf /,1,0.68,0,0,20,0,1,30,10,1,1,command_injection
+session_003818,2026-01-20T22:59:33.975077,bot3818@automated.com,botpass7527,0,0.41,1,21,0,0,1,21,11,1,1,bot
+session_003819,2026-01-25T22:59:33.975077,root,pass784,0,0.46,0,0,5,2,0,4,7,1,1,brute_force
+session_003820,2026-02-07T22:59:33.975077,user3820@company.com,***,24,4.75,0,0,37,10,0,20,15,1,0,legitimate
+session_003821,2026-01-25T22:59:33.975077,user3821@yahoo.com,***,38,5.35,0,0,38,10,0,18,11,1,0,legitimate
+session_003822,2026-01-16T22:59:33.975077,user3822@yahoo.com,***,22,18.63,0,0,40,6,0,18,14,1,0,legitimate
+session_003823,2026-01-12T22:59:33.975077,1' AND '1'='1,test,2,1.21,1,13,10,1,0,13,4,1,1,sql_injection
+session_003824,2026-01-29T22:59:33.975077,user3824@company.com,***,26,15.22,0,0,42,10,0,20,13,1,0,legitimate
+session_003825,2026-01-10T22:59:33.975077,user3825@company.com,***,35,9.69,0,0,41,9,0,20,13,1,0,legitimate
+session_003826,2026-01-15T22:59:33.975077,user3826@gmail.com,***,49,19.2,0,0,30,10,0,18,11,1,0,legitimate
+session_003827,2026-02-05T22:59:33.975077,user3827@gmail.com,***,6,7.42,0,0,38,9,0,18,10,1,0,legitimate
+session_003828,2026-02-02T22:59:33.975077,user3828@outlook.com,***,23,3.15,0,0,39,4,0,20,9,1,0,legitimate
+session_003829,2026-02-03T22:59:33.975077,user3829@company.com,***,23,4.58,0,0,35,8,0,20,9,1,0,legitimate
+session_003830,2026-02-06T22:59:33.975077,user3830@outlook.com,***,50,19.38,0,0,30,5,1,20,8,1,0,legitimate
+session_003831,2026-01-16T22:59:33.975077,user3831@gmail.com,***,26,14.33,0,0,37,5,0,18,14,1,0,legitimate
+session_003832,2026-02-03T22:59:33.975077,user3832@yahoo.com,***,14,18.59,0,0,34,10,0,18,12,1,0,legitimate
+session_003833,2026-01-10T22:59:33.975077,test@test.com; ls -la,| cat /etc/passwd,0,0.42,0,0,15,0,1,21,17,1,1,command_injection
+session_003834,2026-01-13T22:59:33.975077,user3834@company.com,***,41,6.68,0,0,35,9,0,20,14,1,0,legitimate
+session_003835,2026-02-03T22:59:33.975077,bot3835@automated.com,botpass9500,0,0.13,1,21,0,0,1,21,11,1,1,bot
+session_003836,2026-01-11T22:59:33.975077,bot3836@automated.com,botpass2276,0,0.37,1,21,0,0,1,21,11,1,1,bot
+session_003837,2026-02-03T22:59:33.975077,user3837@yahoo.com,***,43,17.51,0,0,39,4,1,18,14,1,0,legitimate
+session_003838,2026-02-07T22:59:33.975077,user3838@outlook.com,***,40,14.8,0,0,33,5,0,20,11,1,0,legitimate
+session_003839,2026-01-26T22:59:33.975077,test@test.com| cat /etc/passwd,| cat /etc/passwd,1,0.32,0,0,17,0,1,30,17,1,1,command_injection
+session_003840,2026-02-07T22:59:33.975077,user3840@gmail.com,***,9,13.3,0,0,28,6,0,18,10,1,0,legitimate
+session_003841,2026-02-06T22:59:33.975077,user3841@company.com,***,49,16.17,0,0,31,3,0,20,8,1,0,legitimate
+session_003842,2026-01-12T22:59:33.975077,user3842@gmail.com,***,45,13.08,0,0,30,7,1,18,9,1,0,legitimate
+session_003843,2026-01-31T22:59:33.975077,user3843@gmail.com,***,26,11.9,0,0,36,9,0,18,14,1,0,legitimate
+session_003844,2026-01-31T22:59:33.975077,user3844@outlook.com,***,13,6.43,0,0,35,7,0,20,12,1,0,legitimate
+session_003845,2026-01-22T22:59:33.976077,user3845@company.com,***,6,15.96,0,0,35,3,0,20,15,1,0,legitimate
+session_003846,2026-01-30T22:59:33.976077,..\..\..\windows\system32,test,1,1.06,0,0,25,1,1,25,4,1,1,path_traversal
+session_003847,2026-01-26T22:59:33.976077,user3847@outlook.com,***,19,3.84,0,0,43,2,0,20,14,1,0,legitimate
+session_003848,2026-01-22T22:59:33.976077,user3848@outlook.com,***,8,15.93,0,0,38,8,0,20,11,1,0,legitimate
+session_003849,2026-02-04T22:59:33.976077,user3849@outlook.com,***,27,7.77,0,0,32,9,0,20,12,1,0,legitimate
+session_003850,2026-01-15T22:59:33.976077,test@test.com| cat /etc/passwd,| nc -e /bin/sh,2,0.66,0,0,10,1,1,30,15,1,1,command_injection
+session_003851,2026-01-13T22:59:33.976077,user3851@company.com,***,50,3.81,0,0,34,5,0,20,12,1,0,legitimate
+session_003852,2026-01-19T22:59:33.976077,user3852@yahoo.com,***,14,5.62,0,0,41,3,0,18,14,1,0,legitimate
+session_003853,2026-01-24T22:59:33.976077,test@test.com&& whoami,; rm -rf /,1,0.66,0,0,24,2,1,22,10,1,1,command_injection
+session_003854,2026-01-25T22:59:33.976077,user3854@company.com,***,33,2.77,0,0,35,4,1,20,12,1,0,legitimate
+session_003855,2026-01-22T22:59:33.976077,user3855@yahoo.com,***,50,5.33,0,0,41,9,0,18,15,1,0,legitimate
+session_003856,2026-01-14T22:59:33.976077,user3856@outlook.com,***,32,7.8,0,0,36,2,0,20,9,1,0,legitimate
+session_003857,2026-01-18T22:59:33.976077,admin' UNION SELECT,test,2,1.41,1,19,12,0,1,19,4,1,1,sql_injection
+session_003858,2026-01-29T22:59:33.976077,test@test.com; rm -rf /,`cat /etc/shadow`,2,0.2,0,0,24,0,1,23,17,1,1,command_injection
+session_003859,2026-01-11T22:59:33.976077,....//....//....//etc/passwd,test,2,0.5,0,0,28,0,1,28,4,1,1,path_traversal
+session_003860,2026-01-19T22:59:33.976077,user3860@outlook.com,***,37,15.8,0,0,39,10,0,20,11,1,0,legitimate
+session_003861,2026-01-12T22:59:33.976077,user3861@outlook.com,***,20,16.44,0,0,36,7,1,20,11,1,0,legitimate
+session_003862,2026-01-21T22:59:33.976077,user3862@outlook.com,***,38,8.52,0,0,36,9,0,20,12,1,0,legitimate
+session_003863,2026-02-08T22:59:33.976077,user3863@outlook.com,***,7,12.18,0,0,34,6,0,20,10,1,0,legitimate
+session_003864,2026-02-06T22:59:33.976077,user3864@company.com,***,47,13.21,0,0,38,2,1,20,9,1,0,legitimate
+session_003865,2026-01-31T22:59:33.976077,user3865@outlook.com,***,39,12.35,0,0,43,9,1,20,15,1,0,legitimate
+session_003866,2026-01-15T22:59:33.976077,user3866@company.com,***,28,11.15,0,0,28,8,0,20,8,1,0,legitimate
+session_003867,2026-01-28T22:59:33.976077,user3867@company.com,***,36,18.03,0,0,30,5,0,20,9,1,0,legitimate
+session_003868,2026-01-11T22:59:33.976077,bot3868@automated.com,botpass1305,0,0.44,1,21,0,0,1,21,11,1,1,bot
+session_003869,2026-01-17T22:59:33.976077,test@test.com&& whoami,| nc -e /bin/sh,1,0.44,0,0,24,0,1,22,15,1,1,command_injection
+session_003870,2026-02-05T22:59:33.976077,user3870@company.com,***,32,9.74,0,0,31,2,0,20,8,1,0,legitimate
+session_003871,2026-01-14T22:59:33.976077,<input onfocus=alert(1) autofocus>,pass,1,0.9,0,0,34,0,1,34,4,1,1,xss
+session_003872,2026-01-19T22:59:33.976077,user3872@outlook.com,***,30,4.15,0,0,36,6,0,20,12,1,0,legitimate
+session_003873,2026-01-29T22:59:33.976077,user3873@outlook.com,***,17,11.51,0,0,42,8,1,20,13,1,0,legitimate
+session_003874,2026-02-06T22:59:33.976077,user3874@gmail.com,***,40,16.76,0,0,35,9,1,18,11,1,0,legitimate
+session_003875,2026-01-22T22:59:33.976077,user3875@company.com,***,15,10.36,0,0,30,7,0,20,10,1,0,legitimate
+session_003876,2026-01-14T22:59:33.976077,user3876@outlook.com,***,49,8.32,0,0,44,8,1,20,15,1,0,legitimate
+session_003877,2026-01-29T22:59:33.976077,admin' OR '1'='1'--,123,0,0.9,1,19,18,0,1,19,3,1,1,sql_injection
+session_003878,2026-01-23T22:59:33.976077,<svg onload=alert(1)>,test,0,0.26,0,0,21,1,1,21,4,1,1,xss
+session_003879,2026-01-20T22:59:33.976077,user3879@yahoo.com,***,11,15.67,0,0,36,7,0,18,16,1,0,legitimate
+session_003880,2026-01-09T22:59:33.976077,user3880@outlook.com,***,20,10.94,0,0,30,8,0,20,10,1,0,legitimate
+session_003881,2026-01-25T22:59:33.976077,user3881@yahoo.com,***,24,19.86,0,0,41,10,0,18,14,1,0,legitimate
+session_003882,2026-01-20T22:59:33.976077,1' AND '1'='1,123,1,1.28,0,0,5,0,0,13,3,1,1,sql_injection
+session_003883,2026-01-16T22:59:33.976077,bot3883@automated.com,botpass1315,0,0.25,1,21,0,0,1,21,11,1,1,bot
+session_003884,2026-01-18T22:59:33.976077,user3884@outlook.com,***,19,5.85,0,0,41,4,0,20,14,1,0,legitimate
+session_003885,2026-01-16T22:59:33.976077,user3885@company.com,***,22,5.28,0,0,35,9,0,20,12,1,0,legitimate
+session_003886,2026-01-21T22:59:33.976077,user3886@company.com,***,39,11.67,0,0,32,7,0,20,12,1,0,legitimate
+session_003887,2026-01-20T22:59:33.976077,user3887@yahoo.com,***,41,3.84,0,0,38,3,0,18,16,1,0,legitimate
+session_003888,2026-02-03T22:59:33.976077,bot3888@automated.com,botpass4047,0,0.43,1,21,0,0,1,21,11,1,1,bot
+session_003889,2026-02-04T22:59:33.976077,'; DROP TABLE users--,,0,1.22,1,21,8,1,0,21,0,1,1,sql_injection
+session_003890,2026-01-14T22:59:33.976077,user3890@outlook.com,***,18,5.71,0,0,43,5,0,20,13,1,0,legitimate
+session_003891,2026-01-31T22:59:33.976077,user3891@yahoo.com,***,40,6.82,0,0,36,4,0,18,13,1,0,legitimate
+session_003892,2026-01-31T22:59:33.976077,user3892@gmail.com,***,44,19.02,0,0,34,7,0,18,13,1,0,legitimate
+session_003893,2026-02-06T22:59:33.976077,user3893@yahoo.com,***,20,2.8,0,0,31,6,0,18,9,1,0,legitimate
+session_003894,2026-01-15T22:59:33.976077,user3894@company.com,***,28,5.46,0,0,43,9,0,20,15,1,0,legitimate
+session_003895,2026-01-27T22:59:33.976077,test@test.com; rm -rf /,`cat /etc/shadow`,0,0.67,0,0,21,2,1,23,17,1,1,command_injection
+session_003896,2026-01-13T22:59:33.976077,user3896@outlook.com,***,29,4.95,0,0,34,7,0,20,10,1,0,legitimate
+session_003897,2026-01-12T22:59:33.976077,../../../etc/passwd,test,0,0.36,0,0,19,0,1,19,4,1,1,path_traversal
+session_003898,2026-02-01T22:59:33.976077,user3898@yahoo.com,***,38,16.12,0,0,30,9,0,18,8,1,0,legitimate
+session_003899,2026-01-17T22:59:33.976077,<body onload=alert('XSS')>,pass,2,0.26,0,0,26,1,1,26,4,1,1,xss
+session_003900,2026-02-07T22:59:33.976077,user3900@gmail.com,***,11,13.91,0,0,32,5,1,18,12,1,0,legitimate
+session_003901,2026-01-15T22:59:33.976077,user3901@outlook.com,***,27,8.69,0,0,35,4,0,20,14,1,0,legitimate
+session_003902,2026-02-05T22:59:33.976077,user3902@outlook.com,***,40,8.07,0,0,43,2,0,20,15,1,0,legitimate
+session_003903,2026-02-07T22:59:33.976077,user3903@yahoo.com,***,38,18.58,0,0,28,5,0,18,10,1,0,legitimate
+session_003904,2026-02-01T22:59:33.976077,<svg onload=alert(1)>,test,2,0.55,0,0,21,1,1,21,4,1,1,xss
+session_003905,2026-01-14T22:59:33.976077,user3905@outlook.com,***,10,6.95,0,0,35,8,0,20,11,1,0,legitimate
+session_003906,2026-01-18T22:59:33.976077,user3906@company.com,***,38,13.01,0,0,44,10,0,20,14,1,0,legitimate
+session_003907,2026-02-07T22:59:33.976077,../../../etc/passwd,test,0,0.74,0,0,19,1,1,19,4,1,1,path_traversal
+session_003908,2026-02-07T22:59:33.976077,user3908@company.com,***,11,13.33,0,0,40,7,0,20,12,1,0,legitimate
+session_003909,2026-01-16T22:59:33.976077,bot3909@automated.com,botpass1111,0,0.48,1,21,0,0,1,21,11,1,1,bot
+session_003910,2026-02-04T22:59:33.976077,test@test.com&& whoami,; rm -rf /,2,0.67,0,0,22,2,1,22,10,1,1,command_injection
+session_003911,2026-01-15T22:59:33.976077,user3911@yahoo.com,***,21,16.96,0,0,42,7,0,18,15,1,0,legitimate
+session_003912,2026-01-30T22:59:33.976077,user3912@company.com,***,46,10.99,0,0,43,9,1,20,14,1,0,legitimate
+session_003913,2026-01-10T22:59:33.976077,1' AND '1'='1,admin,0,0.12,0,0,20,0,1,13,5,1,1,sql_injection
+session_003914,2026-01-23T22:59:33.976077,user3914@company.com,***,47,14.2,0,0,40,4,0,20,11,1,0,legitimate
+session_003915,2026-01-14T22:59:33.976077,user3915@outlook.com,***,26,9.06,0,0,33,5,0,20,13,1,0,legitimate
+session_003916,2026-02-02T22:59:33.976077,user3916@company.com,***,30,13.04,0,0,31,5,0,20,10,1,0,legitimate
+session_003917,2026-02-04T22:59:33.976077,user3917@yahoo.com,***,30,5.4,0,0,33,7,0,18,14,1,0,legitimate
+session_003918,2026-01-19T22:59:33.976077,bot3918@automated.com,botpass9248,0,0.13,1,21,0,0,1,21,11,1,1,bot
+session_003919,2026-01-15T22:59:33.976077,administrator,pass553,0,0.6,0,0,4,2,0,13,7,1,1,brute_force
+session_003920,2026-01-25T22:59:33.976077,user3920@company.com,***,50,7.24,0,0,33,8,1,20,8,1,0,legitimate
+session_003921,2026-01-18T22:59:33.976077,admin' UNION SELECT,,2,0.35,1,19,14,1,0,19,0,1,1,sql_injection
+session_003922,2026-01-27T22:59:33.976077,user3922@outlook.com,***,19,12.93,0,0,37,10,0,20,16,1,0,legitimate
+session_003923,2026-01-30T22:59:33.976077,user3923@outlook.com,***,26,16.72,0,0,31,8,0,20,9,1,0,legitimate
+session_003924,2026-01-28T22:59:33.976077,user3924@yahoo.com,***,34,16.43,0,0,36,2,0,18,9,1,0,legitimate
+session_003925,2026-02-07T22:59:33.976077,user3925@yahoo.com,***,32,9.44,0,0,41,2,0,18,16,1,0,legitimate
+session_003926,2026-01-25T22:59:33.976077,user3926@gmail.com,***,15,10.17,0,0,29,2,0,18,8,1,0,legitimate
+session_003927,2026-01-11T22:59:33.976077,user3927@outlook.com,***,37,11.42,0,0,33,5,0,20,12,1,0,legitimate
+session_003928,2026-01-12T22:59:33.976077,user3928@gmail.com,***,17,11.98,0,0,41,10,1,18,13,1,0,legitimate
+session_003929,2026-01-13T22:59:33.976077,user3929@company.com,***,43,11.75,0,0,36,7,0,20,12,1,0,legitimate
+session_003930,2026-01-17T22:59:33.976077,' UNION SELECT NULL--,admin,1,0.41,1,21,19,0,0,21,5,1,1,sql_injection
+session_003931,2026-02-02T22:59:33.976077,user3931@gmail.com,***,37,4.37,0,0,35,6,0,18,9,1,0,legitimate
+session_003932,2026-02-04T22:59:33.976077,user3932@gmail.com,***,43,10.85,0,0,28,2,1,18,10,1,0,legitimate
+session_003933,2026-01-16T22:59:33.976077,user3933@yahoo.com,***,42,18.46,0,0,36,10,0,18,15,1,0,legitimate
+session_003934,2026-01-14T22:59:33.976077,user3934@gmail.com,***,38,11.14,0,0,35,6,0,18,14,1,0,legitimate
+session_003935,2026-01-28T22:59:33.976077,'; DROP TABLE users--,test,2,1.39,0,0,18,2,1,21,4,1,1,sql_injection
+session_003936,2026-02-05T22:59:33.976077,user3936@yahoo.com,***,42,17.25,0,0,33,2,0,18,9,1,0,legitimate
+session_003937,2026-01-27T22:59:33.976077,user3937@gmail.com,***,48,12.79,0,0,34,7,0,18,15,1,0,legitimate
+session_003938,2026-01-28T22:59:33.976077,user3938@company.com,***,36,9.06,0,0,38,5,0,20,16,1,0,legitimate
+session_003939,2026-01-13T22:59:33.976077,bot3939@automated.com,botpass1513,0,0.12,1,21,0,0,1,21,11,1,1,bot
+session_003940,2026-01-14T22:59:33.976077,..\..\..\windows\system32,test,0,0.52,0,0,25,0,1,25,4,1,1,path_traversal
+session_003941,2026-01-18T22:59:33.976077,bot3941@automated.com,botpass6715,0,0.41,1,21,0,0,1,21,11,1,1,bot
+session_003942,2026-01-17T22:59:33.976077,bot3942@automated.com,botpass3363,0,0.23,1,21,0,0,1,21,11,1,1,bot
+session_003943,2026-01-21T22:59:33.976077,user3943@outlook.com,***,6,15.46,0,0,42,4,0,20,12,1,0,legitimate
+session_003944,2026-01-27T22:59:33.976077,user3944@company.com,***,7,10.5,0,0,29,7,0,20,8,1,0,legitimate
+session_003945,2026-01-24T22:59:33.976077,user3945@outlook.com,***,39,17.82,0,0,29,3,0,20,9,1,0,legitimate
+session_003946,2026-01-11T22:59:33.976077,user3946@gmail.com,***,44,18.47,0,0,32,7,0,18,10,1,0,legitimate
+session_003947,2026-01-20T22:59:33.976077,user3947@yahoo.com,***,22,8.12,0,0,36,9,0,18,11,1,0,legitimate
+session_003948,2026-01-14T22:59:33.976077,../../../etc/passwd,test,1,0.67,0,0,19,0,1,19,4,1,1,path_traversal
+session_003949,2026-02-03T22:59:33.976077,user3949@company.com,***,33,5.8,0,0,36,8,0,20,15,1,0,legitimate
+session_003950,2026-01-11T22:59:33.976077,user3950@yahoo.com,***,48,6.27,0,0,33,3,0,18,12,1,0,legitimate
+session_003951,2026-01-26T22:59:33.976077,bot3951@automated.com,botpass7577,0,0.41,1,21,0,0,1,21,11,1,1,bot
+session_003952,2026-02-04T22:59:33.976077,user3952@yahoo.com,***,39,6.14,0,0,36,4,0,18,9,1,0,legitimate
+session_003953,2026-01-27T22:59:33.976077,user3953@yahoo.com,***,38,9.36,0,0,38,9,0,18,12,1,0,legitimate
+session_003954,2026-02-06T22:59:33.976077,user3954@yahoo.com,***,16,15.51,0,0,43,5,0,18,15,1,0,legitimate
+session_003955,2026-02-04T22:59:33.976077,user3955@gmail.com,***,19,5.02,0,0,31,2,0,18,11,1,0,legitimate
+session_003956,2026-01-13T22:59:33.976077,user3956@company.com,***,40,17.89,0,0,34,10,0,20,11,1,0,legitimate
+session_003957,2026-02-04T22:59:33.976077,user3957@outlook.com,***,49,11.05,0,0,38,3,0,20,9,1,0,legitimate
+session_003958,2026-02-06T22:59:33.976077,user3958@yahoo.com,***,34,4.23,0,0,29,7,0,18,8,1,0,legitimate
+session_003959,2026-01-12T22:59:33.976077,..\..\..\windows\system32,test,1,1.07,0,0,25,1,1,25,4,1,1,path_traversal
+session_003960,2026-01-21T22:59:33.976077,bot3960@automated.com,botpass3867,0,0.17,1,21,0,0,1,21,11,1,1,bot
+session_003961,2026-01-20T22:59:33.976077,user3961@gmail.com,***,43,7.42,0,0,40,10,1,18,14,1,0,legitimate
+session_003962,2026-01-17T22:59:33.976077,user3962@yahoo.com,***,26,3.56,0,0,35,5,0,18,12,1,0,legitimate
+session_003963,2026-01-21T22:59:33.976077,user3963@yahoo.com,***,41,15.08,0,0,38,5,1,18,11,1,0,legitimate
+session_003964,2026-02-07T22:59:33.976077,bot3964@automated.com,botpass2621,0,0.36,1,21,0,0,1,21,11,1,1,bot
+session_003965,2026-01-31T22:59:33.976077,user3965@company.com,***,49,10.72,0,0,42,6,0,20,13,1,0,legitimate
+session_003966,2026-01-26T22:59:33.976077,user3966@company.com,***,30,8.48,0,0,28,3,0,20,8,1,0,legitimate
+session_003967,2026-01-10T22:59:33.977077,user3967@outlook.com,***,13,17.67,0,0,41,5,1,20,12,1,0,legitimate
+session_003968,2026-01-13T22:59:33.977077,user3968@outlook.com,***,6,12.5,0,0,33,10,1,20,13,1,0,legitimate
+session_003969,2026-01-17T22:59:33.977077,admin'/*,123,1,0.86,1,8,12,0,1,8,3,1,1,sql_injection
+session_003970,2026-01-28T22:59:33.977077,user3970@gmail.com,***,17,19.86,0,0,29,4,0,18,11,1,0,legitimate
+session_003971,2026-01-16T22:59:33.977077,user3971@yahoo.com,***,41,2.87,0,0,30,10,0,18,9,1,0,legitimate
+session_003972,2026-01-15T22:59:33.977077,user3972@company.com,***,7,9.86,0,0,32,5,0,20,8,1,0,legitimate
+session_003973,2026-01-09T22:59:33.977077,user3973@outlook.com,***,25,15.09,0,0,31,9,1,20,9,1,0,legitimate
+session_003974,2026-01-24T22:59:33.977077,user3974@gmail.com,***,10,7.34,0,0,38,9,0,18,13,1,0,legitimate
+session_003975,2026-01-28T22:59:33.977077,user3975@company.com,***,18,13.66,0,0,38,8,0,20,13,1,0,legitimate
+session_003976,2026-01-30T22:59:33.977077,user3976@gmail.com,***,32,18.11,0,0,41,3,1,18,14,1,0,legitimate
+session_003977,2026-01-31T22:59:33.977077,user3977@yahoo.com,***,18,3.7,0,0,41,8,0,18,16,1,0,legitimate
+session_003978,2026-02-04T22:59:33.977077,user3978@company.com,***,47,8.47,0,0,32,3,0,20,9,1,0,legitimate
+session_003979,2026-01-12T22:59:33.977077,user3979@company.com,***,11,15.75,0,0,46,9,0,20,16,1,0,legitimate
+session_003980,2026-01-29T22:59:33.977077,<svg onload=alert(1)>,pass,2,0.63,0,0,21,1,1,21,4,1,1,xss
+session_003981,2026-02-07T22:59:33.977077,user3981@company.com,***,10,11.97,0,0,41,5,0,20,11,1,0,legitimate
+session_003982,2026-01-22T22:59:33.977077,user3982@yahoo.com,***,29,3.45,0,0,38,4,1,18,12,1,0,legitimate
+session_003983,2026-01-19T22:59:33.977077,user3983@company.com,***,49,4.55,0,0,36,3,0,20,16,1,0,legitimate
+session_003984,2026-01-25T22:59:33.977077,user3984@company.com,***,20,5.57,0,0,39,8,0,20,12,1,0,legitimate
+session_003985,2026-02-06T22:59:33.977077,user3985@gmail.com,***,15,5.45,0,0,42,6,0,18,15,1,0,legitimate
+session_003986,2026-01-18T22:59:33.977077,user3986@yahoo.com,***,33,4.3,0,0,35,7,0,18,12,1,0,legitimate
+session_003987,2026-01-23T22:59:33.977077,' OR 1=1--,admin,0,0.68,0,0,12,2,0,10,5,1,1,sql_injection
+session_003988,2026-01-28T22:59:33.977077,user3988@gmail.com,***,37,4.55,0,0,31,8,0,18,12,1,0,legitimate
+session_003989,2026-01-18T22:59:33.977077,user3989@company.com,***,20,2.26,0,0,38,10,0,20,8,1,0,legitimate
+session_003990,2026-01-09T22:59:33.977077,"'""><script>alert(String.fromCharCode(88,83,83))</script>",,2,0.57,0,0,56,0,1,56,0,1,1,xss
+session_003991,2026-01-25T22:59:33.977077,test@test.com; ls -la,; rm -rf /,0,0.13,0,0,23,0,1,21,10,1,1,command_injection
+session_003992,2026-01-31T22:59:33.977077,admin,pass573,1,0.76,0,0,9,0,0,5,7,1,1,brute_force
+session_003993,2026-01-25T22:59:33.977077,' OR 'a'='a,,3,0.85,0,0,17,1,1,11,0,1,1,sql_injection
+session_003994,2026-02-08T22:59:33.977077,user3994@outlook.com,***,49,16.5,0,0,36,9,1,20,8,1,0,legitimate
+session_003995,2026-02-04T22:59:33.977077,user3995@gmail.com,***,41,8.42,0,0,35,8,0,18,15,1,0,legitimate
+session_003996,2026-02-04T22:59:33.977077,user3996@company.com,***,15,15.3,0,0,36,5,1,20,8,1,0,legitimate
+session_003997,2026-02-02T22:59:33.977077,user3997@outlook.com,***,32,15.58,0,0,32,6,0,20,11,1,0,legitimate
+session_003998,2026-02-01T22:59:33.977077,user3998@outlook.com,***,7,5.68,0,0,28,3,1,20,8,1,0,legitimate
+session_003999,2026-01-22T22:59:33.977077,user3999@outlook.com,***,31,16.3,0,0,39,3,1,20,9,1,0,legitimate
+session_004000,2026-02-05T22:59:33.977077,user4000@company.com,***,18,10.83,0,0,34,7,0,20,10,1,0,legitimate
+session_004001,2026-01-25T22:59:33.977077,user4001@company.com,***,17,17.81,0,0,35,4,1,20,14,1,0,legitimate
+session_004002,2026-01-26T22:59:33.977077,user4002@yahoo.com,***,20,17.75,0,0,33,4,0,18,13,1,0,legitimate
+session_004003,2026-02-04T22:59:33.977077,user4003@gmail.com,***,50,8.2,0,0,37,5,0,18,10,1,0,legitimate
+session_004004,2026-01-13T22:59:33.977077,' OR 'a'='a,admin,1,0.32,0,0,15,2,0,11,5,1,1,sql_injection
+session_004005,2026-01-22T22:59:33.977077,user4005@yahoo.com,***,45,3.19,0,0,39,7,0,18,13,1,0,legitimate
+session_004006,2026-01-22T22:59:33.977077,user4006@gmail.com,***,17,16.73,0,0,36,7,1,18,8,1,0,legitimate
+session_004007,2026-02-08T22:59:33.977077,user4007@gmail.com,***,13,10.78,0,0,34,8,0,18,8,1,0,legitimate
+session_004008,2026-01-19T22:59:33.977077,test@test.com&& whoami,| cat /etc/passwd,2,0.29,0,0,18,0,1,22,17,1,1,command_injection
+session_004009,2026-01-25T22:59:33.977077,user4009@company.com,***,14,6.82,0,0,36,8,0,20,14,1,0,legitimate
+session_004010,2026-01-10T22:59:33.977077,root,pass149,0,0.76,0,0,10,2,0,4,7,1,1,brute_force
+session_004011,2026-01-29T22:59:33.977077,user4011@gmail.com,***,37,15.08,0,0,36,9,0,18,13,1,0,legitimate
+session_004012,2026-02-08T22:59:33.977077,admin'--,test,0,0.97,0,0,6,0,0,8,4,1,1,sql_injection
+session_004013,2026-01-21T22:59:33.977077,user4013@company.com,***,13,4.88,0,0,44,4,0,20,16,1,0,legitimate
+session_004014,2026-01-22T22:59:33.977077,user4014@company.com,***,30,11.84,0,0,34,10,1,20,11,1,0,legitimate
+session_004015,2026-01-31T22:59:33.977077,user4015@outlook.com,***,40,19.11,0,0,38,6,1,20,11,1,0,legitimate
+session_004016,2026-01-09T22:59:33.977077,user4016@outlook.com,***,8,5.88,0,0,37,3,0,20,10,1,0,legitimate
+session_004017,2026-01-23T22:59:33.977077,user4017@outlook.com,***,22,8.07,0,0,37,7,0,20,13,1,0,legitimate
+session_004018,2026-01-16T22:59:33.977077,user4018@company.com,***,44,5.73,0,0,34,8,1,20,8,1,0,legitimate
+session_004019,2026-01-15T22:59:33.977077,user4019@gmail.com,***,9,3.31,0,0,34,2,0,18,9,1,0,legitimate
+session_004020,2026-01-12T22:59:33.977077,user4020@company.com,***,21,4.4,0,0,41,5,1,20,15,1,0,legitimate
+session_004021,2026-01-21T22:59:33.977077,user4021@outlook.com,***,16,15.71,0,0,37,5,1,20,11,1,0,legitimate
+session_004022,2026-02-01T22:59:33.977077,user4022@outlook.com,***,19,13.92,0,0,38,6,0,20,14,1,0,legitimate
+session_004023,2026-01-27T22:59:33.977077,user4023@company.com,***,20,14.27,0,0,41,8,0,20,11,1,0,legitimate
+session_004024,2026-01-27T22:59:33.977077,bot4024@automated.com,botpass3627,0,0.37,1,21,0,0,1,21,11,1,1,bot
+session_004025,2026-01-12T22:59:33.977077,user4025@gmail.com,***,19,4.81,0,0,31,9,0,18,8,1,0,legitimate
+session_004026,2026-02-06T22:59:33.977077,user4026@gmail.com,***,12,10.72,0,0,36,4,0,18,9,1,0,legitimate
+session_004027,2026-01-20T22:59:33.977077,user4027@company.com,***,41,11.62,0,0,31,8,0,20,9,1,0,legitimate
+session_004028,2026-01-20T22:59:33.977077,user4028@yahoo.com,***,12,3.18,0,0,37,2,0,18,14,1,0,legitimate
+session_004029,2026-01-25T22:59:33.977077,root,pass346,0,0.98,0,0,9,2,0,4,7,1,1,brute_force
+session_004030,2026-01-16T22:59:33.977077,user4030@gmail.com,***,7,5.02,0,0,39,6,0,18,13,1,0,legitimate
+session_004031,2026-02-06T22:59:33.977077,user4031@yahoo.com,***,15,18.88,0,0,34,2,0,18,13,1,0,legitimate
+session_004032,2026-02-06T22:59:33.977077,user4032@gmail.com,***,9,15.58,0,0,40,7,0,18,15,1,0,legitimate
+session_004033,2026-01-27T22:59:33.977077,user4033@gmail.com,***,31,2.56,0,0,28,3,0,18,10,1,0,legitimate
+session_004034,2026-01-27T22:59:33.977077,"'""><script>alert(String.fromCharCode(88,83,83))</script>",,0,0.25,0,0,56,1,1,56,0,1,1,xss
+session_004035,2026-01-10T22:59:33.977077,user4035@outlook.com,***,9,9.66,0,0,40,8,0,20,16,1,0,legitimate
+session_004036,2026-02-02T22:59:33.977077,user4036@outlook.com,***,45,3.01,0,0,40,10,1,20,10,1,0,legitimate
+session_004037,2026-02-02T22:59:33.977077,user4037@gmail.com,***,22,16.99,0,0,33,10,1,18,9,1,0,legitimate
+session_004038,2026-01-28T22:59:33.977077,user4038@outlook.com,***,46,19.82,0,0,36,4,0,20,8,1,0,legitimate
+session_004039,2026-02-02T22:59:33.977077,1' AND '1'='1,123,2,0.82,0,0,18,2,0,13,3,1,1,sql_injection
+session_004040,2026-01-31T22:59:33.977077,user4040@company.com,***,40,11.01,0,0,32,10,0,20,11,1,0,legitimate
+session_004041,2026-01-18T22:59:33.977077,<svg onload=alert(1)>,pass,1,0.85,0,0,21,0,1,21,4,1,1,xss
+session_004042,2026-01-09T22:59:33.977077,user4042@gmail.com,***,50,5.03,0,0,37,5,0,18,10,1,0,legitimate
+session_004043,2026-02-01T22:59:33.977077,user4043@company.com,***,15,7.97,0,0,36,2,1,20,15,1,0,legitimate
+session_004044,2026-01-09T22:59:33.977077,user4044@gmail.com,***,11,10.91,0,0,35,6,0,18,13,1,0,legitimate
+session_004045,2026-02-05T22:59:33.977077,user4045@yahoo.com,***,24,17.52,0,0,35,2,0,18,13,1,0,legitimate
+session_004046,2026-01-11T22:59:33.977077,user4046@yahoo.com,***,11,7.91,0,0,36,4,0,18,15,1,0,legitimate
+session_004047,2026-01-23T22:59:33.977077,user4047@outlook.com,***,45,19.45,0,0,41,3,1,20,11,1,0,legitimate
+session_004048,2026-01-09T22:59:33.977077,user4048@gmail.com,***,32,18.16,0,0,27,8,0,18,8,1,0,legitimate
+session_004049,2026-01-17T22:59:33.977077,user4049@gmail.com,***,35,6.54,0,0,32,8,0,18,11,1,0,legitimate
+session_004050,2026-01-10T22:59:33.977077,user4050@yahoo.com,***,12,14.39,0,0,34,2,0,18,16,1,0,legitimate
+session_004051,2026-01-10T22:59:33.977077,user4051@gmail.com,***,30,5.86,0,0,41,3,0,18,16,1,0,legitimate
+session_004052,2026-02-08T22:59:33.977077,test@test.com| cat /etc/passwd,&& whoami,1,0.35,0,0,14,0,1,30,9,1,1,command_injection
+session_004053,2026-02-03T22:59:33.977077,user4053@yahoo.com,***,34,9.26,0,0,35,2,0,18,12,1,0,legitimate
+session_004054,2026-01-27T22:59:33.977077,user4054@yahoo.com,***,5,16.67,0,0,33,8,0,18,14,1,0,legitimate
+session_004055,2026-01-24T22:59:33.977077,test@test.com| cat /etc/passwd,; rm -rf /,2,0.63,0,0,25,2,1,30,10,1,1,command_injection
+session_004056,2026-01-23T22:59:33.977077,user4056@gmail.com,***,7,10.22,0,0,38,3,0,18,11,1,0,legitimate
+session_004057,2026-01-10T22:59:33.977077,user4057@outlook.com,***,20,10.8,0,0,35,2,0,20,15,1,0,legitimate
+session_004058,2026-01-29T22:59:33.977077,user4058@company.com,***,48,5.87,0,0,44,7,0,20,15,1,0,legitimate
+session_004059,2026-01-11T22:59:33.977077,..\..\..\windows\system32,test,1,0.41,0,0,25,0,1,25,4,1,1,path_traversal
+session_004060,2026-01-23T22:59:33.977077,user4060@outlook.com,***,13,10.98,0,0,44,10,1,20,15,1,0,legitimate
+session_004061,2026-01-24T22:59:33.977077,....//....//....//etc/passwd,test,0,0.22,0,0,28,0,1,28,4,1,1,path_traversal
+session_004062,2026-01-15T22:59:33.977077,user4062@company.com,***,16,8.37,0,0,40,2,0,20,14,1,0,legitimate
+session_004063,2026-01-20T22:59:33.977077,test@test.com| nc -e /bin/sh,`cat /etc/shadow`,0,0.14,0,0,14,2,1,28,17,1,1,command_injection
+session_004064,2026-01-17T22:59:33.977077,administrator,pass203,1,0.97,0,0,8,1,0,13,7,1,1,brute_force
+session_004065,2026-01-11T22:59:33.977077,user4065@outlook.com,***,15,12.01,0,0,38,3,0,20,8,1,0,legitimate
+session_004066,2026-02-01T22:59:33.977077,user4066@gmail.com,***,34,9.54,0,0,33,2,0,18,9,1,0,legitimate
+session_004067,2026-01-09T22:59:33.977077,<input onfocus=alert(1) autofocus>,test,0,0.42,0,0,34,1,1,34,4,1,1,xss
+session_004068,2026-01-14T22:59:33.977077,user4068@yahoo.com,***,38,6.34,0,0,31,4,0,18,11,1,0,legitimate
+session_004069,2026-01-23T22:59:33.977077,user4069@gmail.com,***,13,9.7,0,0,34,9,0,18,12,1,0,legitimate
+session_004070,2026-01-27T22:59:33.977077,user4070@company.com,***,47,15.31,0,0,39,7,1,20,12,1,0,legitimate
+session_004071,2026-01-29T22:59:33.977077,user4071@company.com,***,11,18.5,0,0,33,10,0,20,10,1,0,legitimate
+session_004072,2026-01-13T22:59:33.977077,user4072@company.com,***,48,18.63,0,0,34,3,1,20,13,1,0,legitimate
+session_004073,2026-02-01T22:59:33.977077,../../../etc/passwd,test,1,1.04,0,0,19,0,1,19,4,1,1,path_traversal
+session_004074,2026-01-21T22:59:33.977077,user4074@gmail.com,***,38,17.37,0,0,37,6,0,18,10,1,0,legitimate
+session_004075,2026-02-06T22:59:33.977077,user4075@outlook.com,***,39,6.25,0,0,35,9,0,20,9,1,0,legitimate
+session_004076,2026-01-09T22:59:33.977077,..%2F..%2F..%2Fetc%2Fpasswd,test,1,0.81,0,0,27,1,1,27,4,1,1,path_traversal
+session_004077,2026-01-21T22:59:33.977077,user4077@company.com,***,7,11.66,0,0,36,3,0,20,12,1,0,legitimate
+session_004078,2026-01-18T22:59:33.977077,user4078@outlook.com,***,30,14.22,0,0,34,5,0,20,8,1,0,legitimate
+session_004079,2026-02-06T22:59:33.977077,user4079@company.com,***,47,14.56,0,0,41,10,0,20,12,1,0,legitimate
+session_004080,2026-01-20T22:59:33.977077,test@test.com| nc -e /bin/sh,&& whoami,2,0.78,0,0,25,0,1,28,9,1,1,command_injection
+session_004081,2026-01-29T22:59:33.977077,user4081@yahoo.com,***,6,15.18,0,0,34,5,0,18,8,1,0,legitimate
+session_004082,2026-01-29T22:59:33.977077,root,pass793,0,0.92,0,0,4,0,0,4,7,1,1,brute_force
+session_004083,2026-01-10T22:59:33.978070,1' AND '1'='1,123,1,0.66,1,13,8,2,0,13,3,1,1,sql_injection
+session_004084,2026-01-23T22:59:33.978070,user4084@yahoo.com,***,5,15.19,0,0,35,8,0,18,12,1,0,legitimate
+session_004085,2026-01-11T22:59:33.978070,user4085@company.com,***,35,5.61,0,0,39,7,0,20,12,1,0,legitimate
+session_004086,2026-01-26T22:59:33.978070,user4086@gmail.com,***,10,8.31,0,0,28,8,0,18,10,1,0,legitimate
+session_004087,2026-02-01T22:59:33.978070,user4087@outlook.com,***,46,18.04,0,0,42,9,0,20,16,1,0,legitimate
+session_004088,2026-01-16T22:59:33.978070,user4088@gmail.com,***,46,12.85,0,0,39,4,0,18,14,1,0,legitimate
+session_004089,2026-01-15T22:59:33.978070,<script>alert('XSS')</script>,,0,0.86,0,0,29,1,1,29,0,1,1,xss
+session_004090,2026-02-07T22:59:33.978070,user4090@outlook.com,***,23,2.47,0,0,37,4,0,20,12,1,0,legitimate
+session_004091,2026-01-25T22:59:33.978070,user4091@outlook.com,***,12,9.22,0,0,29,5,0,20,9,1,0,legitimate
+session_004092,2026-02-01T22:59:33.978070,user4092@outlook.com,***,6,6.12,0,0,42,9,0,20,14,1,0,legitimate
+session_004093,2026-02-08T22:59:33.978070,user4093@company.com,***,32,4.17,0,0,36,2,0,20,16,1,0,legitimate
+session_004094,2026-01-09T22:59:33.978070,user4094@company.com,***,28,10.83,0,0,38,4,0,20,14,1,0,legitimate
+session_004095,2026-02-06T22:59:33.978070,user4095@yahoo.com,***,36,4.47,0,0,37,9,0,18,15,1,0,legitimate
+session_004096,2026-02-06T22:59:33.978070,user4096@gmail.com,***,10,16.24,0,0,35,8,0,18,15,1,0,legitimate
+session_004097,2026-01-14T22:59:33.978070,user4097@gmail.com,***,19,12.56,0,0,39,4,0,18,11,1,0,legitimate
+session_004098,2026-01-25T22:59:33.978070,user4098@yahoo.com,***,9,13.16,0,0,32,6,0,18,8,1,0,legitimate
+session_004099,2026-01-15T22:59:33.978070,test@test.com`cat /etc/shadow`,&& whoami,1,0.61,0,0,13,1,1,30,9,1,1,command_injection
+session_004100,2026-01-27T22:59:33.978070,user4100@company.com,***,11,3.2,0,0,37,8,1,20,12,1,0,legitimate
+session_004101,2026-01-13T22:59:33.978070,' UNION SELECT NULL--,admin,1,1.24,1,21,13,0,1,21,5,1,1,sql_injection
+session_004102,2026-01-27T22:59:33.978070,user4102@company.com,***,35,17.76,0,0,34,6,0,20,9,1,0,legitimate
+session_004103,2026-01-17T22:59:33.978070,user4103@outlook.com,***,20,11.13,0,0,35,5,0,20,10,1,0,legitimate
+session_004104,2026-01-19T22:59:33.978070,test@test.com`cat /etc/shadow`,&& whoami,1,0.57,0,0,10,0,1,30,9,1,1,command_injection
+session_004105,2026-01-09T22:59:33.978070,user4105@company.com,***,7,6.84,0,0,41,3,0,20,15,1,0,legitimate
+session_004106,2026-01-14T22:59:33.978070,test@test.com| cat /etc/passwd,; ls -la,2,0.7,0,0,23,2,1,30,8,1,1,command_injection
+session_004107,2026-01-12T22:59:33.978070,user4107@yahoo.com,***,37,7.08,0,0,39,10,0,18,16,1,0,legitimate
+session_004108,2026-01-15T22:59:33.978070,bot4108@automated.com,botpass3493,0,0.32,1,21,0,0,1,21,11,1,1,bot
+session_004109,2026-02-06T22:59:33.978070,user4109@gmail.com,***,6,18.63,0,0,29,4,0,18,8,1,0,legitimate
+session_004110,2026-01-31T22:59:33.978070,user4110@company.com,***,35,3.88,0,0,46,3,1,20,16,1,0,legitimate
+session_004111,2026-01-28T22:59:33.978070,bot4111@automated.com,botpass8520,0,0.48,1,21,0,0,1,21,11,1,1,bot
+session_004112,2026-01-22T22:59:33.978070,user4112@gmail.com,***,21,10.84,0,0,35,4,0,18,15,1,0,legitimate
+session_004113,2026-02-06T22:59:33.978070,user4113@company.com,***,32,13.52,0,0,42,10,0,20,12,1,0,legitimate
+session_004114,2026-01-10T22:59:33.978070,user4114@outlook.com,***,33,14.52,0,0,32,5,0,20,11,1,0,legitimate
+session_004115,2026-01-26T22:59:33.978070,user4115@company.com,***,34,3.66,0,0,28,8,0,20,8,1,0,legitimate
+session_004116,2026-01-21T22:59:33.978070,user4116@company.com,***,44,17.57,0,0,37,2,1,20,11,1,0,legitimate
+session_004117,2026-01-17T22:59:33.978070,user4117@company.com,***,50,12.09,0,0,37,3,0,20,15,1,0,legitimate
+session_004118,2026-01-31T22:59:33.978070,user4118@gmail.com,***,15,5.62,0,0,28,8,0,18,8,1,0,legitimate
+session_004119,2026-01-18T22:59:33.978070,user4119@company.com,***,36,10.25,0,0,34,8,0,20,11,1,0,legitimate
+session_004120,2026-02-08T22:59:33.978070,user4120@company.com,***,37,2.0,0,0,33,6,0,20,11,1,0,legitimate
+session_004121,2026-01-13T22:59:33.978070,user4121@yahoo.com,***,38,5.76,0,0,40,7,1,18,12,1,0,legitimate
+session_004122,2026-01-30T22:59:33.978070,user4122@yahoo.com,***,18,14.01,0,0,39,7,1,18,12,1,0,legitimate
+session_004123,2026-02-03T22:59:33.978070,user4123@gmail.com,***,24,13.99,0,0,26,10,0,18,8,1,0,legitimate
+session_004124,2026-01-22T22:59:33.978070,user4124@company.com,***,32,9.46,0,0,33,7,0,20,8,1,0,legitimate
+session_004125,2026-01-27T22:59:33.978070,user4125@outlook.com,***,18,18.14,0,0,38,2,1,20,11,1,0,legitimate
+session_004126,2026-01-18T22:59:33.978070,test,pass571,0,0.62,0,0,7,2,0,4,7,1,1,brute_force
+session_004127,2026-01-09T22:59:33.978070,user4127@company.com,***,28,11.46,0,0,36,6,0,20,13,1,0,legitimate
+session_004128,2026-02-04T22:59:33.978070,<iframe src=javascript:alert(1)>,test,1,0.59,0,0,32,0,1,32,4,1,1,xss
+session_004129,2026-02-06T22:59:33.978070,user4129@gmail.com,***,35,2.17,0,0,29,8,0,18,10,1,0,legitimate
+session_004130,2026-02-01T22:59:33.978070,admin'/*,,1,0.29,0,0,10,2,0,8,0,1,1,sql_injection
+session_004131,2026-01-25T22:59:33.978070,user4131@outlook.com,***,50,7.69,0,0,43,8,0,20,13,1,0,legitimate
+session_004132,2026-01-20T22:59:33.978070,user4132@gmail.com,***,50,7.26,0,0,33,6,0,18,14,1,0,legitimate
+session_004133,2026-01-23T22:59:33.978070,user4133@company.com,***,48,6.35,0,0,40,8,1,20,12,1,0,legitimate
+session_004134,2026-02-07T22:59:33.978070,admin,pass192,1,0.89,0,0,5,0,0,5,7,1,1,brute_force
+session_004135,2026-01-23T22:59:33.978070,....//....//....//etc/passwd,test,0,0.27,0,0,28,0,1,28,4,1,1,path_traversal
+session_004136,2026-01-21T22:59:33.978070,user4136@yahoo.com,***,12,5.49,0,0,35,3,1,18,13,1,0,legitimate
+session_004137,2026-01-21T22:59:33.978070,user4137@yahoo.com,***,31,18.16,0,0,29,2,0,18,8,1,0,legitimate
+session_004138,2026-01-26T22:59:33.978070,user4138@gmail.com,***,9,2.04,0,0,39,2,0,18,13,1,0,legitimate
+session_004139,2026-01-16T22:59:33.978070,user4139@outlook.com,***,5,10.24,0,0,35,2,0,20,15,1,0,legitimate
+session_004140,2026-01-24T22:59:33.978070,..%2F..%2F..%2Fetc%2Fpasswd,test,2,1.07,0,0,27,0,1,27,4,1,1,path_traversal
+session_004141,2026-01-19T22:59:33.978070,user4141@company.com,***,45,19.5,0,0,45,10,0,20,16,1,0,legitimate
+session_004142,2026-01-22T22:59:33.978070,user4142@company.com,***,32,16.01,0,0,33,3,1,20,9,1,0,legitimate
+session_004143,2026-02-05T22:59:33.978070,user4143@outlook.com,***,28,14.33,0,0,45,8,0,20,16,1,0,legitimate
+session_004144,2026-02-03T22:59:33.978070,user4144@company.com,***,8,15.23,0,0,33,10,0,20,9,1,0,legitimate
+session_004145,2026-01-25T22:59:33.978070,user4145@yahoo.com,***,28,4.71,0,0,29,7,0,18,8,1,0,legitimate
+session_004146,2026-01-14T22:59:33.978070,....//....//....//etc/passwd,test,0,1.06,0,0,28,1,1,28,4,1,1,path_traversal
+session_004147,2026-01-19T22:59:33.978070,user4147@company.com,***,39,4.55,0,0,33,2,0,20,9,1,0,legitimate
+session_004148,2026-01-18T22:59:33.978070,user4148@gmail.com,***,26,18.0,0,0,40,2,0,18,12,1,0,legitimate
+session_004149,2026-01-31T22:59:33.978070,user4149@outlook.com,***,17,3.34,0,0,30,9,1,20,10,1,0,legitimate
+session_004150,2026-01-17T22:59:33.978070,user4150@yahoo.com,***,8,12.47,0,0,40,8,0,18,15,1,0,legitimate
+session_004151,2026-01-27T22:59:33.978070,user4151@gmail.com,***,11,19.89,0,0,33,4,0,18,12,1,0,legitimate
+session_004152,2026-01-17T22:59:33.978070,....//....//....//etc/passwd,test,0,0.23,0,0,28,1,1,28,4,1,1,path_traversal
+session_004153,2026-01-16T22:59:33.978070,test,pass592,1,0.64,0,0,5,2,0,4,7,1,1,brute_force
+session_004154,2026-02-07T22:59:33.978070,user4154@company.com,***,41,16.93,0,0,36,8,0,20,13,1,0,legitimate
+session_004155,2026-01-24T22:59:33.978070,user4155@outlook.com,***,41,19.74,0,0,33,7,0,20,9,1,0,legitimate
+session_004156,2026-01-12T22:59:33.978070,user4156@gmail.com,***,49,6.95,0,0,29,2,0,18,10,1,0,legitimate
+session_004157,2026-01-31T22:59:33.978070,user4157@company.com,***,40,13.4,0,0,36,7,1,20,9,1,0,legitimate
+session_004158,2026-02-02T22:59:33.978070,user4158@gmail.com,***,23,19.55,0,0,26,2,0,18,8,1,0,legitimate
+session_004159,2026-02-06T22:59:33.978070,user4159@outlook.com,***,16,19.86,0,0,38,9,0,20,13,1,0,legitimate
+session_004160,2026-01-18T22:59:33.978070,user4160@gmail.com,***,31,11.78,0,0,38,4,0,18,11,1,0,legitimate
+session_004161,2026-02-07T22:59:33.978070,user4161@company.com,***,24,16.13,0,0,40,8,0,20,12,1,0,legitimate
+session_004162,2026-02-08T22:59:33.978070,user4162@gmail.com,***,45,4.44,0,0,32,10,0,18,14,1,0,legitimate
+session_004163,2026-01-18T22:59:33.978070,user4163@outlook.com,***,26,16.36,0,0,35,4,0,20,15,1,0,legitimate
+session_004164,2026-01-22T22:59:33.978070,bot4164@automated.com,botpass9864,0,0.41,1,21,0,0,1,21,11,1,1,bot
+session_004165,2026-01-24T22:59:33.978070,user4165@gmail.com,***,23,6.58,0,0,39,2,0,18,15,1,0,legitimate
+session_004166,2026-01-28T22:59:33.978070,user4166@outlook.com,***,11,18.1,0,0,41,4,0,20,13,1,0,legitimate
+session_004167,2026-01-22T22:59:33.978070,user4167@outlook.com,***,42,15.93,0,0,36,5,1,20,14,1,0,legitimate
+session_004168,2026-01-26T22:59:33.978070,test@test.com; ls -la,| cat /etc/passwd,0,0.46,0,0,20,2,1,21,17,1,1,command_injection
+session_004169,2026-01-14T22:59:33.978070,user4169@yahoo.com,***,8,10.54,0,0,36,7,1,18,16,1,0,legitimate
+session_004170,2026-01-23T22:59:33.978070,user4170@company.com,***,31,19.44,0,0,28,6,0,20,8,1,0,legitimate
+session_004171,2026-02-04T22:59:33.978070,user4171@gmail.com,***,43,17.6,0,0,32,9,0,18,14,1,0,legitimate
+session_004172,2026-01-26T22:59:33.978070,<iframe src=javascript:alert(1)>,pass,0,1.0,0,0,32,0,1,32,4,1,1,xss
+session_004173,2026-02-01T22:59:33.978070,<svg onload=alert(1)>,pass,2,0.71,0,0,21,1,1,21,4,1,1,xss
+session_004174,2026-01-19T22:59:33.978070,user4174@gmail.com,***,49,8.92,0,0,38,5,0,18,16,1,0,legitimate
+session_004175,2026-02-01T22:59:33.978070,user4175@yahoo.com,***,9,13.63,0,0,33,10,0,18,15,1,0,legitimate
+session_004176,2026-01-27T22:59:33.978070,user4176@outlook.com,***,41,10.41,0,0,37,10,0,20,15,1,0,legitimate
+session_004177,2026-01-10T22:59:33.978070,bot4177@automated.com,botpass9499,0,0.48,1,21,0,0,1,21,11,1,1,bot
+session_004178,2026-02-07T22:59:33.978070,user4178@outlook.com,***,43,13.4,0,0,42,6,0,20,16,1,0,legitimate
+session_004179,2026-01-13T22:59:33.978070,root,pass511,1,0.75,0,0,8,0,0,4,7,1,1,brute_force
+session_004180,2026-01-12T22:59:33.978070,user4180@gmail.com,***,34,12.74,0,0,29,5,0,18,8,1,0,legitimate
+session_004181,2026-02-08T22:59:33.978070,user4181@outlook.com,***,5,14.92,0,0,41,9,1,20,14,1,0,legitimate
+session_004182,2026-01-16T22:59:33.978070,user4182@outlook.com,***,16,6.59,0,0,38,6,1,20,8,1,0,legitimate
+session_004183,2026-01-18T22:59:33.978070,user4183@company.com,***,20,17.48,0,0,46,9,0,20,16,1,0,legitimate
+session_004184,2026-01-09T22:59:33.978070,user4184@outlook.com,***,36,5.28,0,0,36,3,0,20,10,1,0,legitimate
+session_004185,2026-01-13T22:59:33.978070,user4185@company.com,***,16,11.9,0,0,40,9,1,20,10,1,0,legitimate
+session_004186,2026-02-06T22:59:33.978070,admin,pass660,1,0.47,0,0,9,0,0,5,7,1,1,brute_force
+session_004187,2026-02-05T22:59:33.978070,user4187@gmail.com,***,49,13.32,0,0,32,9,1,18,8,1,0,legitimate
+session_004188,2026-01-11T22:59:33.978070,user4188@yahoo.com,***,27,11.61,0,0,28,4,0,18,9,1,0,legitimate
+session_004189,2026-01-16T22:59:33.978070,user4189@outlook.com,***,37,15.71,0,0,36,2,0,20,15,1,0,legitimate
+session_004190,2026-02-07T22:59:33.978070,user4190@outlook.com,***,38,15.68,0,0,30,6,0,20,9,1,0,legitimate
+session_004191,2026-01-14T22:59:33.978070,user4191@company.com,***,39,18.7,0,0,35,7,0,20,11,1,0,legitimate
+session_004192,2026-01-15T22:59:33.978070,user4192@company.com,***,38,3.99,0,0,44,5,1,20,16,1,0,legitimate
+session_004193,2026-01-10T22:59:33.978070,user4193@gmail.com,***,26,5.45,0,0,42,9,1,18,14,1,0,legitimate
+session_004194,2026-01-20T22:59:33.978070,user4194@yahoo.com,***,49,2.75,0,0,35,4,0,18,14,1,0,legitimate
+session_004195,2026-01-20T22:59:33.978070,user4195@gmail.com,***,26,2.59,0,0,38,10,1,18,11,1,0,legitimate
+session_004196,2026-01-17T22:59:33.978070,user4196@yahoo.com,***,28,18.21,0,0,31,9,0,18,11,1,0,legitimate
+session_004197,2026-02-03T22:59:33.978070,user4197@gmail.com,***,26,3.85,0,0,26,10,0,18,8,1,0,legitimate
+session_004198,2026-02-07T22:59:33.978070,user4198@outlook.com,***,9,5.94,0,0,37,5,0,20,14,1,0,legitimate
+session_004199,2026-02-08T22:59:33.978070,user4199@yahoo.com,***,21,3.44,0,0,34,2,0,18,15,1,0,legitimate
+session_004200,2026-01-26T22:59:33.978070,user4200@company.com,***,25,12.58,0,0,31,5,0,20,8,1,0,legitimate
+session_004201,2026-02-04T22:59:33.979077,user4201@gmail.com,***,42,6.6,0,0,31,8,0,18,12,1,0,legitimate
+session_004202,2026-01-18T22:59:33.979077,user4202@company.com,***,29,14.54,0,0,37,10,0,20,8,1,0,legitimate
+session_004203,2026-01-13T22:59:33.979077,user4203@outlook.com,***,50,16.61,0,0,39,3,0,20,9,1,0,legitimate
+session_004204,2026-01-14T22:59:33.979077,user4204@gmail.com,***,37,3.8,0,0,39,4,0,18,16,1,0,legitimate
+session_004205,2026-01-17T22:59:33.979077,user4205@yahoo.com,***,8,16.7,0,0,37,7,0,18,15,1,0,legitimate
+session_004206,2026-02-04T22:59:33.979077,test@test.com| cat /etc/passwd,| cat /etc/passwd,2,0.53,0,0,12,0,1,30,17,1,1,command_injection
+session_004207,2026-02-08T22:59:33.979077,admin' UNION SELECT,,0,1.1,0,0,16,0,0,19,0,1,1,sql_injection
+session_004208,2026-01-27T22:59:33.979077,..\..\..\windows\system32,test,2,1.11,0,0,25,1,1,25,4,1,1,path_traversal
+session_004209,2026-01-22T22:59:33.979077,user4209@gmail.com,***,22,13.96,0,0,36,3,0,18,13,1,0,legitimate
+session_004210,2026-02-02T22:59:33.979077,bot4210@automated.com,botpass4478,0,0.12,1,21,0,0,1,21,11,1,1,bot
+session_004211,2026-01-31T22:59:33.979077,bot4211@automated.com,botpass6027,0,0.3,1,21,0,0,1,21,11,1,1,bot
+session_004212,2026-01-17T22:59:33.979077,user4212@yahoo.com,***,26,2.2,0,0,35,9,0,18,16,1,0,legitimate
+session_004213,2026-02-01T22:59:33.979077,user4213@gmail.com,***,46,4.81,0,0,41,9,1,18,16,1,0,legitimate
+session_004214,2026-01-20T22:59:33.979077,admin' UNION SELECT,,3,1.35,0,0,8,0,0,19,0,1,1,sql_injection
+session_004215,2026-01-11T22:59:33.979077,user4215@outlook.com,***,49,11.78,0,0,37,6,0,20,9,1,0,legitimate
+session_004216,2026-02-03T22:59:33.979077,"'""><script>alert(String.fromCharCode(88,83,83))</script>",,2,0.85,0,0,56,0,1,56,0,1,1,xss
+session_004217,2026-01-11T22:59:33.979077,test,pass277,0,0.34,0,0,4,2,0,4,7,1,1,brute_force
+session_004218,2026-01-22T22:59:33.979077,administrator,pass105,1,0.64,0,0,4,1,0,13,7,1,1,brute_force
+session_004219,2026-02-03T22:59:33.979077,user4219@yahoo.com,***,45,7.57,0,0,38,2,1,18,13,1,0,legitimate
+session_004220,2026-01-30T22:59:33.979077,user4220@company.com,***,31,5.4,0,0,36,9,0,20,16,1,0,legitimate
+session_004221,2026-01-27T22:59:33.979077,bot4221@automated.com,botpass7368,0,0.37,1,21,0,0,1,21,11,1,1,bot
+session_004222,2026-01-19T22:59:33.979077,user4222@yahoo.com,***,6,3.43,0,0,28,6,0,18,10,1,0,legitimate
+session_004223,2026-01-11T22:59:33.979077,test@test.com&& whoami,| nc -e /bin/sh,2,0.13,0,0,24,2,1,22,15,1,1,command_injection
+session_004224,2026-02-05T22:59:33.979077,user4224@company.com,***,13,19.17,0,0,36,3,0,20,16,1,0,legitimate
+session_004225,2026-01-29T22:59:33.979077,user4225@company.com,***,39,18.69,0,0,42,10,0,20,12,1,0,legitimate
+session_004226,2026-01-15T22:59:33.979077,user4226@outlook.com,***,26,4.66,0,0,38,9,0,20,12,1,0,legitimate
+session_004227,2026-01-19T22:59:33.979077,test@test.com&& whoami,&& whoami,0,0.72,0,0,11,0,1,22,9,1,1,command_injection
+session_004228,2026-01-26T22:59:33.979077,test@test.com; ls -la,&& whoami,0,0.52,0,0,16,0,1,21,9,1,1,command_injection
+session_004229,2026-02-01T22:59:33.979077,user4229@company.com,***,50,3.01,0,0,37,7,0,20,13,1,0,legitimate
+session_004230,2026-02-04T22:59:33.979077,user4230@yahoo.com,***,38,15.62,0,0,39,6,1,18,13,1,0,legitimate
+session_004231,2026-01-11T22:59:33.979077,..\..\..\windows\system32,test,2,0.68,0,0,25,0,1,25,4,1,1,path_traversal
+session_004232,2026-01-13T22:59:33.979077,bot4232@automated.com,botpass8671,0,0.43,1,21,0,0,1,21,11,1,1,bot
+session_004233,2026-01-18T22:59:33.979077,user4233@yahoo.com,***,33,7.25,0,0,31,2,0,18,11,1,0,legitimate
+session_004234,2026-01-17T22:59:33.979077,user4234@yahoo.com,***,12,6.69,0,0,38,8,1,18,13,1,0,legitimate
+session_004235,2026-02-05T22:59:33.979077,user4235@company.com,***,15,14.78,0,0,40,9,0,20,16,1,0,legitimate
+session_004236,2026-01-25T22:59:33.979077,user4236@company.com,***,13,8.71,0,0,35,2,1,20,12,1,0,legitimate
+session_004237,2026-02-01T22:59:33.979077,user4237@outlook.com,***,41,17.27,0,0,35,9,0,20,10,1,0,legitimate
+session_004238,2026-02-07T22:59:33.979077,user4238@outlook.com,***,36,18.65,0,0,31,7,0,20,11,1,0,legitimate
+session_004239,2026-02-02T22:59:33.979077,user4239@company.com,***,35,5.23,0,0,41,5,1,20,11,1,0,legitimate
+session_004240,2026-01-23T22:59:33.979077,test@test.com; ls -la,`cat /etc/shadow`,1,0.42,0,0,20,2,1,21,17,1,1,command_injection
+session_004241,2026-02-02T22:59:33.979077,user4241@yahoo.com,***,13,6.16,0,0,33,4,1,18,10,1,0,legitimate
+session_004242,2026-02-01T22:59:33.979077,bot4242@automated.com,botpass7867,0,0.41,1,21,0,0,1,21,11,1,1,bot
+session_004243,2026-02-03T22:59:33.979077,user4243@company.com,***,43,3.01,0,0,33,2,0,20,8,1,0,legitimate
+session_004244,2026-01-16T22:59:33.979077,root,pass116,0,0.61,0,0,5,2,0,4,7,1,1,brute_force
+session_004245,2026-01-27T22:59:33.979077,test@test.com; rm -rf /,| nc -e /bin/sh,0,0.56,0,0,21,0,1,23,15,1,1,command_injection
+session_004246,2026-01-30T22:59:33.979077,' OR 1=1--,admin,1,1.07,0,0,8,0,1,10,5,1,1,sql_injection
+session_004247,2026-02-01T22:59:33.979077,user4247@outlook.com,***,9,5.84,0,0,37,5,0,20,8,1,0,legitimate
+session_004248,2026-02-06T22:59:33.979077,user4248@gmail.com,***,37,2.78,0,0,32,6,0,18,9,1,0,legitimate
+session_004249,2026-01-09T22:59:33.979077,<svg onload=alert(1)>,test,1,0.72,0,0,21,1,1,21,4,1,1,xss
+session_004250,2026-01-27T22:59:33.979077,user4250@yahoo.com,***,19,10.57,0,0,31,2,0,18,10,1,0,legitimate
+session_004251,2026-02-01T22:59:33.979077,test@test.com| cat /etc/passwd,| nc -e /bin/sh,0,0.29,0,0,24,2,1,30,15,1,1,command_injection
+session_004252,2026-01-26T22:59:33.979077,user4252@gmail.com,***,50,2.31,0,0,30,9,1,18,10,1,0,legitimate
+session_004253,2026-01-14T22:59:33.979077,user4253@gmail.com,***,43,12.58,0,0,42,2,0,18,14,1,0,legitimate
+session_004254,2026-01-31T22:59:33.979077,user4254@yahoo.com,***,10,10.12,0,0,34,5,1,18,12,1,0,legitimate
+session_004255,2026-01-14T22:59:33.979077,..\..\..\windows\system32,test,0,0.48,0,0,25,0,1,25,4,1,1,path_traversal
+session_004256,2026-01-31T22:59:33.979077,..\..\..\windows\system32,test,0,1.09,0,0,25,1,1,25,4,1,1,path_traversal
+session_004257,2026-01-10T22:59:33.979077,user4257@outlook.com,***,22,3.29,0,0,32,4,1,20,12,1,0,legitimate
+session_004258,2026-02-08T22:59:33.979077,user4258@outlook.com,***,23,6.95,0,0,33,5,0,20,13,1,0,legitimate
+session_004259,2026-01-17T22:59:33.979077,user4259@outlook.com,***,37,6.73,0,0,33,7,1,20,10,1,0,legitimate
+session_004260,2026-01-28T22:59:33.979077,<script>alert('XSS')</script>,,1,0.4,0,0,29,0,1,29,0,1,1,xss
+session_004261,2026-01-30T22:59:33.979077,root,pass569,1,0.37,0,0,3,2,0,4,7,1,1,brute_force
+session_004262,2026-01-30T22:59:33.979077,user4262@gmail.com,***,16,15.06,0,0,35,8,0,18,12,1,0,legitimate
+session_004263,2026-01-22T22:59:33.979077,user4263@yahoo.com,***,24,16.79,0,0,35,7,0,18,9,1,0,legitimate
+session_004264,2026-01-10T22:59:33.979077,../../../etc/passwd,test,0,0.22,0,0,19,0,1,19,4,1,1,path_traversal
+session_004265,2026-01-27T22:59:33.979077,user4265@yahoo.com,***,31,11.86,0,0,30,7,0,18,9,1,0,legitimate
+session_004266,2026-01-11T22:59:33.979077,user4266@yahoo.com,***,20,19.2,0,0,35,10,1,18,11,1,0,legitimate
+session_004267,2026-01-12T22:59:33.979077,user4267@gmail.com,***,19,16.23,0,0,34,2,1,18,15,1,0,legitimate
+session_004268,2026-01-12T22:59:33.979077,<iframe src=javascript:alert(1)>,pass,0,0.4,0,0,32,1,1,32,4,1,1,xss
+session_004269,2026-02-05T22:59:33.979077,user4269@company.com,***,13,7.79,0,0,37,4,0,20,13,1,0,legitimate
+session_004270,2026-01-23T22:59:33.979077,test@test.com; rm -rf /,&& whoami,0,0.35,0,0,14,0,1,23,9,1,1,command_injection
+session_004271,2026-01-11T22:59:33.979077,user4271@yahoo.com,***,43,7.87,0,0,40,5,0,18,12,1,0,legitimate
+session_004272,2026-01-19T22:59:33.979077,user4272@gmail.com,***,9,12.12,0,0,35,6,0,18,11,1,0,legitimate
+session_004273,2026-01-30T22:59:33.979077,user4273@gmail.com,***,20,5.53,0,0,41,4,0,18,13,1,0,legitimate
+session_004274,2026-01-19T22:59:33.979077,user4274@yahoo.com,***,22,11.06,0,0,35,3,1,18,11,1,0,legitimate
+session_004275,2026-01-16T22:59:33.979077,administrator,pass85,1,0.77,0,0,7,1,0,13,6,1,1,brute_force
+session_004276,2026-01-21T22:59:33.979077,....//....//....//etc/passwd,test,0,0.99,0,0,28,0,1,28,4,1,1,path_traversal
+session_004277,2026-01-14T22:59:33.979077,' OR 1=1--,123,1,0.6,0,0,13,2,0,10,3,1,1,sql_injection
+session_004278,2026-02-05T22:59:33.979077,user4278@outlook.com,***,30,11.58,0,0,40,5,0,20,12,1,0,legitimate
+session_004279,2026-01-29T22:59:33.979077,user4279@gmail.com,***,39,14.6,0,0,32,9,0,18,13,1,0,legitimate
+session_004280,2026-02-01T22:59:33.979077,user4280@company.com,***,38,4.48,0,0,43,9,0,20,15,1,0,legitimate
+session_004281,2026-01-12T22:59:33.979077,test@test.com| nc -e /bin/sh,| cat /etc/passwd,0,0.33,0,0,25,1,1,28,17,1,1,command_injection
+session_004282,2026-01-30T22:59:33.979077,user4282@yahoo.com,***,8,15.17,0,0,34,10,0,18,11,1,0,legitimate
+session_004283,2026-02-03T22:59:33.979077,user4283@company.com,***,17,5.28,0,0,42,9,0,20,14,1,0,legitimate
+session_004284,2026-01-09T22:59:33.979077,user4284@gmail.com,***,7,6.44,0,0,42,9,1,18,15,1,0,legitimate
+session_004285,2026-01-16T22:59:33.979077,user4285@company.com,***,48,15.43,0,0,36,2,0,20,9,1,0,legitimate
+session_004286,2026-01-22T22:59:33.979077,user4286@company.com,***,44,13.64,0,0,44,7,0,20,16,1,0,legitimate
+session_004287,2026-02-08T22:59:33.979077,bot4287@automated.com,botpass1466,0,0.39,1,21,0,0,1,21,11,1,1,bot
+session_004288,2026-01-30T22:59:33.979077,user4288@yahoo.com,***,21,4.99,0,0,26,8,0,18,8,1,0,legitimate
+session_004289,2026-01-10T22:59:33.979077,user4289@company.com,***,13,17.03,0,0,40,2,1,20,15,1,0,legitimate
+session_004290,2026-02-02T22:59:33.979077,<script>alert('XSS')</script>,,1,0.52,0,0,29,0,1,29,0,1,1,xss
+session_004291,2026-01-29T22:59:33.979077,..\..\..\windows\system32,test,1,0.8,0,0,25,1,1,25,4,1,1,path_traversal
+session_004292,2026-02-05T22:59:33.979077,bot4292@automated.com,botpass4677,0,0.35,1,21,0,0,1,21,11,1,1,bot
+session_004293,2026-01-28T22:59:33.979077,../../../etc/passwd,test,1,0.24,0,0,19,0,1,19,4,1,1,path_traversal
+session_004294,2026-01-20T22:59:33.979077,..\..\..\windows\system32,test,1,0.88,0,0,25,1,1,25,4,1,1,path_traversal
+session_004295,2026-01-10T22:59:33.979077,<input onfocus=alert(1) autofocus>,pass,1,0.49,0,0,34,0,1,34,4,1,1,xss
+session_004296,2026-01-22T22:59:33.979077,admin' OR '1'='1,123,1,0.11,0,0,20,1,0,16,3,1,1,sql_injection
+session_004297,2026-01-28T22:59:33.979077,user4297@yahoo.com,***,34,2.97,0,0,39,3,1,18,15,1,0,legitimate
+session_004298,2026-02-05T22:59:33.979077,../../../etc/passwd,test,2,0.65,0,0,19,0,1,19,4,1,1,path_traversal
+session_004299,2026-02-08T22:59:33.979077,..\..\..\windows\system32,test,1,0.9,0,0,25,0,1,25,4,1,1,path_traversal
+session_004300,2026-02-07T22:59:33.979077,../../../etc/passwd,test,1,0.44,0,0,19,1,1,19,4,1,1,path_traversal
+session_004301,2026-01-30T22:59:33.979077,user4301@gmail.com,***,14,14.04,0,0,41,7,0,18,16,1,0,legitimate
+session_004302,2026-01-17T22:59:33.979077,user4302@yahoo.com,***,16,13.71,0,0,28,2,1,18,8,1,0,legitimate
+session_004303,2026-01-22T22:59:33.979077,user4303@gmail.com,***,19,12.62,0,0,30,6,0,18,11,1,0,legitimate
+session_004304,2026-01-18T22:59:33.979077,bot4304@automated.com,botpass6843,0,0.47,1,21,0,0,1,21,11,1,1,bot
+session_004305,2026-01-12T22:59:33.979077,user4305@gmail.com,***,17,13.63,0,0,37,5,0,18,9,1,0,legitimate
+session_004306,2026-01-20T22:59:33.979077,admin'/*,test,0,0.58,1,8,13,2,0,8,4,1,1,sql_injection
+session_004307,2026-01-25T22:59:33.979077,user4307@gmail.com,***,42,18.07,0,0,34,6,0,18,15,1,0,legitimate
+session_004308,2026-01-23T22:59:33.979077,user4308@outlook.com,***,16,15.16,0,0,39,5,0,20,15,1,0,legitimate
+session_004309,2026-01-12T22:59:33.979077,user4309@gmail.com,***,23,9.89,0,0,28,9,1,18,8,1,0,legitimate
+session_004310,2026-01-09T22:59:33.979077,..%2F..%2F..%2Fetc%2Fpasswd,test,1,0.41,0,0,27,0,1,27,4,1,1,path_traversal
+session_004311,2026-01-15T22:59:33.979077,admin' OR '1'='1'--,admin,1,0.83,0,0,10,0,0,19,5,1,1,sql_injection
+session_004312,2026-01-11T22:59:33.979077,<img src=x onerror=alert(1)>,pass,2,0.65,0,0,28,1,1,28,4,1,1,xss
+session_004313,2026-01-26T22:59:33.979077,bot4313@automated.com,botpass5534,0,0.45,1,21,0,0,1,21,11,1,1,bot
+session_004314,2026-01-29T22:59:33.979077,user4314@outlook.com,***,50,7.0,0,0,38,10,0,20,13,1,0,legitimate
+session_004315,2026-01-29T22:59:33.979077,user4315@company.com,***,46,17.46,0,0,37,9,1,20,15,1,0,legitimate
+session_004316,2026-01-14T22:59:33.979077,user4316@yahoo.com,***,12,11.03,0,0,40,8,0,18,12,1,0,legitimate
+session_004317,2026-01-11T22:59:33.979077,user4317@yahoo.com,***,20,9.07,0,0,37,5,0,18,10,1,0,legitimate
+session_004318,2026-02-01T22:59:33.979077,root,pass880,1,0.92,0,0,3,1,0,4,7,1,1,brute_force
+session_004319,2026-01-19T22:59:33.979077,user4319@outlook.com,***,20,5.26,0,0,30,5,0,20,9,1,0,legitimate
+session_004320,2026-01-15T22:59:33.979077,user4320@gmail.com,***,36,5.41,0,0,31,3,1,18,13,1,0,legitimate
+session_004321,2026-02-02T22:59:33.979077,admin'/*,123,1,0.65,1,8,9,1,0,8,3,1,1,sql_injection
+session_004322,2026-01-10T22:59:33.979077,user4322@outlook.com,***,22,8.39,0,0,34,6,1,20,13,1,0,legitimate
+session_004323,2026-02-07T22:59:33.979077,user4323@gmail.com,***,24,18.12,0,0,37,10,0,18,13,1,0,legitimate
+session_004324,2026-02-07T22:59:33.980077,user4324@company.com,***,26,13.37,0,0,45,5,0,20,15,1,0,legitimate
+session_004325,2026-01-21T22:59:33.980077,user4325@outlook.com,***,11,17.26,0,0,36,7,0,20,11,1,0,legitimate
+session_004326,2026-01-27T22:59:33.980077,user4326@company.com,***,48,10.02,0,0,30,6,0,20,9,1,0,legitimate
+session_004327,2026-01-15T22:59:33.980077,user4327@gmail.com,***,26,5.27,0,0,39,2,0,18,13,1,0,legitimate
+session_004328,2026-02-06T22:59:33.980077,user4328@gmail.com,***,44,6.43,0,0,29,4,0,18,9,1,0,legitimate
+session_004329,2026-01-16T22:59:33.980077,user4329@yahoo.com,***,6,12.53,0,0,35,6,0,18,8,1,0,legitimate
+session_004330,2026-01-25T22:59:33.980077,user4330@gmail.com,***,39,11.83,0,0,37,6,1,18,14,1,0,legitimate
+session_004331,2026-02-08T22:59:33.980077,user4331@gmail.com,***,7,2.88,0,0,34,7,1,18,10,1,0,legitimate
+session_004332,2026-02-03T22:59:33.980077,....//....//....//etc/passwd,test,1,1.06,0,0,28,1,1,28,4,1,1,path_traversal
+session_004333,2026-02-03T22:59:33.980077,root,pass288,0,0.97,0,0,7,0,0,4,7,1,1,brute_force
+session_004334,2026-01-25T22:59:33.980077,user4334@company.com,***,37,7.47,0,0,38,6,0,20,8,1,0,legitimate
+session_004335,2026-02-07T22:59:33.980077,user4335@outlook.com,***,17,13.28,0,0,33,7,0,20,13,1,0,legitimate
+session_004336,2026-01-13T22:59:33.980077,admin' UNION SELECT,admin,1,1.09,1,19,16,1,1,19,5,1,1,sql_injection
+session_004337,2026-01-18T22:59:33.980077,....//....//....//etc/passwd,test,0,0.37,0,0,28,1,1,28,4,1,1,path_traversal
+session_004338,2026-01-14T22:59:33.980077,test,pass817,1,0.61,0,0,3,2,0,4,7,1,1,brute_force
+session_004339,2026-02-03T22:59:33.980077,user4339@yahoo.com,***,40,15.98,0,0,35,5,0,18,15,1,0,legitimate
+session_004340,2026-01-12T22:59:33.980077,user4340@yahoo.com,***,13,2.2,0,0,35,10,0,18,13,1,0,legitimate
+session_004341,2026-02-05T22:59:33.980077,user4341@gmail.com,***,6,17.5,0,0,35,6,1,18,11,1,0,legitimate
+session_004342,2026-01-30T22:59:33.980077,<img src=x onerror=alert(1)>,,1,0.56,0,0,28,0,1,28,0,1,1,xss
+session_004343,2026-01-28T22:59:33.980077,user4343@gmail.com,***,17,8.26,0,0,32,9,0,18,12,1,0,legitimate
+session_004344,2026-01-27T22:59:33.980077,....//....//....//etc/passwd,test,1,0.28,0,0,28,0,1,28,4,1,1,path_traversal
+session_004345,2026-01-21T22:59:33.980077,user4345@company.com,***,14,13.92,0,0,41,7,0,20,15,1,0,legitimate
+session_004346,2026-01-13T22:59:33.980077,test@test.com`cat /etc/shadow`,| nc -e /bin/sh,1,0.11,0,0,17,1,1,30,15,1,1,command_injection
+session_004347,2026-02-03T22:59:33.980077,user4347@outlook.com,***,5,17.09,0,0,36,2,0,20,9,1,0,legitimate
+session_004348,2026-02-05T22:59:33.980077,user4348@company.com,***,36,11.84,0,0,41,10,0,20,15,1,0,legitimate
+session_004349,2026-01-09T22:59:33.980077,user4349@outlook.com,***,25,12.43,0,0,34,5,0,20,10,1,0,legitimate
+session_004350,2026-02-06T22:59:33.980077,test,pass479,1,0.31,0,0,7,0,0,4,7,1,1,brute_force
+session_004351,2026-01-11T22:59:33.980077,user4351@outlook.com,***,30,18.42,0,0,38,8,0,20,14,1,0,legitimate
+session_004352,2026-01-12T22:59:33.980077,test,pass692,0,0.42,0,0,4,0,0,4,7,1,1,brute_force
+session_004353,2026-01-31T22:59:33.980077,user4353@company.com,***,12,16.99,0,0,32,9,0,20,10,1,0,legitimate
+session_004354,2026-01-10T22:59:33.980077,user4354@yahoo.com,***,46,4.06,0,0,35,6,0,18,11,1,0,legitimate
+session_004355,2026-02-05T22:59:33.980077,user4355@company.com,***,23,14.89,0,0,38,10,0,20,15,1,0,legitimate
+session_004356,2026-01-18T22:59:33.980077,user4356@company.com,***,27,5.93,0,0,34,8,0,20,12,1,0,legitimate
+session_004357,2026-01-20T22:59:33.980077,bot4357@automated.com,botpass7921,0,0.3,1,21,0,0,1,21,11,1,1,bot
+session_004358,2026-01-21T22:59:33.980077,user4358@yahoo.com,***,27,6.41,0,0,33,5,0,18,8,1,0,legitimate
+session_004359,2026-01-24T22:59:33.980077,..\..\..\windows\system32,test,1,0.37,0,0,25,0,1,25,4,1,1,path_traversal
+session_004360,2026-02-07T22:59:33.980077,<body onload=alert('XSS')>,pass,0,0.58,0,0,26,1,1,26,4,1,1,xss
+session_004361,2026-01-23T22:59:33.980077,user4361@company.com,***,49,8.51,0,0,38,6,0,20,10,1,0,legitimate
+session_004362,2026-01-14T22:59:33.980077,user4362@gmail.com,***,40,16.67,0,0,38,5,1,18,14,1,0,legitimate
+session_004363,2026-02-03T22:59:33.980077,user4363@outlook.com,***,23,17.25,0,0,42,5,0,20,12,1,0,legitimate
+session_004364,2026-02-08T22:59:33.980077,user4364@outlook.com,***,36,6.97,0,0,46,9,0,20,16,1,0,legitimate
+session_004365,2026-01-19T22:59:33.980077,user4365@outlook.com,***,47,5.82,0,0,36,5,1,20,11,1,0,legitimate
+session_004366,2026-01-30T22:59:33.980077,user4366@yahoo.com,***,12,7.4,0,0,39,3,0,18,16,1,0,legitimate
+session_004367,2026-02-07T22:59:33.980077,user4367@company.com,***,49,19.76,0,0,34,5,0,20,13,1,0,legitimate
+session_004368,2026-02-06T22:59:33.980077,user4368@yahoo.com,***,18,17.93,0,0,29,10,0,18,8,1,0,legitimate
+session_004369,2026-01-22T22:59:33.980077,user4369@outlook.com,***,16,15.66,0,0,38,8,0,20,12,1,0,legitimate
+session_004370,2026-01-27T22:59:33.980077,bot4370@automated.com,botpass7524,0,0.12,1,21,0,0,1,21,11,1,1,bot
+session_004371,2026-01-10T22:59:33.980077,user4371@company.com,***,15,2.92,0,0,33,10,1,20,10,1,0,legitimate
+session_004372,2026-01-18T22:59:33.980077,user4372@company.com,***,29,17.8,0,0,35,6,1,20,8,1,0,legitimate
+session_004373,2026-01-31T22:59:33.980077,user4373@gmail.com,***,27,3.9,0,0,38,7,1,18,14,1,0,legitimate
+session_004374,2026-01-27T22:59:33.980077,user4374@gmail.com,***,26,11.99,0,0,29,7,1,18,8,1,0,legitimate
+session_004375,2026-01-14T22:59:33.980077,user4375@yahoo.com,***,12,10.14,0,0,33,3,0,18,13,1,0,legitimate
+session_004376,2026-01-18T22:59:33.980077,user4376@outlook.com,***,40,12.13,0,0,36,4,1,20,15,1,0,legitimate
+session_004377,2026-01-24T22:59:33.980077,user4377@yahoo.com,***,45,10.94,0,0,39,3,0,18,15,1,0,legitimate
+session_004378,2026-01-21T22:59:33.980077,user4378@company.com,***,50,10.25,0,0,37,7,0,20,12,1,0,legitimate
+session_004379,2026-01-26T22:59:33.980077,user4379@yahoo.com,***,11,4.46,0,0,41,8,0,18,15,1,0,legitimate
+session_004380,2026-01-17T22:59:33.980077,<body onload=alert('XSS')>,test,1,0.91,0,0,26,0,1,26,4,1,1,xss
+session_004381,2026-01-12T22:59:33.980077,user4381@company.com,***,23,8.49,0,0,37,5,0,20,9,1,0,legitimate
+session_004382,2026-01-23T22:59:33.980077,test@test.com&& whoami,&& whoami,0,0.77,0,0,15,2,1,22,9,1,1,command_injection
+session_004383,2026-01-27T22:59:33.980077,user4383@gmail.com,***,30,8.82,0,0,38,10,1,18,16,1,0,legitimate
+session_004384,2026-01-28T22:59:33.980077,user4384@yahoo.com,***,12,15.16,0,0,31,6,0,18,8,1,0,legitimate
+session_004385,2026-01-10T22:59:33.980077,user4385@yahoo.com,***,26,4.19,0,0,28,9,0,18,10,1,0,legitimate
+session_004386,2026-02-02T22:59:33.980077,user4386@yahoo.com,***,29,15.6,0,0,31,7,0,18,9,1,0,legitimate
+session_004387,2026-01-15T22:59:33.980077,user4387@yahoo.com,***,24,12.21,0,0,31,7,1,18,9,1,0,legitimate
+session_004388,2026-01-12T22:59:33.980077,user4388@company.com,***,43,6.51,0,0,43,7,0,20,13,1,0,legitimate
+session_004389,2026-01-25T22:59:33.980077,user4389@outlook.com,***,14,3.11,0,0,45,8,1,20,15,1,0,legitimate
+session_004390,2026-02-04T22:59:33.980077,bot4390@automated.com,botpass8307,0,0.35,1,21,0,0,1,21,11,1,1,bot
+session_004391,2026-01-21T22:59:33.980077,user4391@outlook.com,***,40,6.9,0,0,43,9,0,20,16,1,0,legitimate
+session_004392,2026-01-11T22:59:33.980077,user4392@gmail.com,***,7,12.35,0,0,33,2,0,18,15,1,0,legitimate
+session_004393,2026-01-16T22:59:33.980077,user4393@gmail.com,***,30,19.47,0,0,41,8,1,18,16,1,0,legitimate
+session_004394,2026-02-03T22:59:33.980077,user4394@gmail.com,***,39,9.65,0,0,31,5,0,18,11,1,0,legitimate
+session_004395,2026-01-28T22:59:33.980077,..\..\..\windows\system32,test,2,1.12,0,0,25,0,1,25,4,1,1,path_traversal
+session_004396,2026-01-26T22:59:33.980077,test,pass293,1,0.48,0,0,7,2,0,4,7,1,1,brute_force
+session_004397,2026-01-17T22:59:33.980077,user4397@outlook.com,***,48,4.52,0,0,32,2,0,20,11,1,0,legitimate
+session_004398,2026-02-01T22:59:33.980077,user4398@yahoo.com,***,39,8.7,0,0,33,4,1,18,12,1,0,legitimate
+session_004399,2026-02-07T22:59:33.980077,user4399@gmail.com,***,25,19.61,0,0,38,5,1,18,15,1,0,legitimate
+session_004400,2026-01-23T22:59:33.980077,'; DROP TABLE users--,test,2,0.38,1,21,5,2,0,21,4,1,1,sql_injection
+session_004401,2026-01-19T22:59:33.980077,user4401@outlook.com,***,49,6.36,0,0,39,4,1,20,11,1,0,legitimate
+session_004402,2026-01-11T22:59:33.980077,user4402@gmail.com,***,6,17.16,0,0,29,4,1,18,8,1,0,legitimate
+session_004403,2026-01-21T22:59:33.980077,user4403@gmail.com,***,7,17.55,0,0,31,2,0,18,9,1,0,legitimate
+session_004404,2026-01-24T22:59:33.980077,user4404@yahoo.com,***,30,8.06,0,0,35,6,0,18,9,1,0,legitimate
+session_004405,2026-01-10T22:59:33.980077,user4405@yahoo.com,***,24,15.02,0,0,34,8,0,18,10,1,0,legitimate
+session_004406,2026-01-16T22:59:33.980077,user4406@yahoo.com,***,6,16.99,0,0,38,3,0,18,10,1,0,legitimate
+session_004407,2026-01-12T22:59:33.980077,<img src=x onerror=alert(1)>,pass,1,0.76,0,0,28,0,1,28,4,1,1,xss
+session_004408,2026-01-18T22:59:33.980077,test@test.com| nc -e /bin/sh,| nc -e /bin/sh,1,0.27,0,0,19,0,1,28,15,1,1,command_injection
+session_004409,2026-01-27T22:59:33.980077,user4409@yahoo.com,***,24,18.53,0,0,31,2,1,18,13,1,0,legitimate
+session_004410,2026-01-10T22:59:33.980077,bot4410@automated.com,botpass9572,0,0.17,1,21,0,0,1,21,11,1,1,bot
+session_004411,2026-01-11T22:59:33.980077,user4411@company.com,***,48,6.43,0,0,33,2,0,20,8,1,0,legitimate
+session_004412,2026-01-24T22:59:33.980077,bot4412@automated.com,botpass8206,0,0.43,1,21,0,0,1,21,11,1,1,bot
+session_004413,2026-01-29T22:59:33.980077,user4413@yahoo.com,***,23,6.33,0,0,32,2,0,18,13,1,0,legitimate
+session_004414,2026-01-10T22:59:33.980077,user4414@outlook.com,***,6,15.19,0,0,34,6,0,20,10,1,0,legitimate
+session_004415,2026-02-08T22:59:33.980077,user4415@company.com,***,15,11.56,0,0,33,4,1,20,13,1,0,legitimate
+session_004416,2026-01-17T22:59:33.980077,user4416@outlook.com,***,36,6.21,0,0,38,6,1,20,16,1,0,legitimate
+session_004417,2026-01-25T22:59:33.980077,admin' OR '1'='1,,0,0.99,1,16,19,2,1,16,0,1,1,sql_injection
+session_004418,2026-01-09T22:59:33.980077,admin,pass816,1,0.44,0,0,7,0,0,5,7,1,1,brute_force
+session_004419,2026-02-08T22:59:33.980077,user4419@gmail.com,***,7,5.4,0,0,29,10,0,18,11,1,0,legitimate
+session_004420,2026-01-29T22:59:33.980077,user4420@yahoo.com,***,11,7.5,0,0,34,6,0,18,14,1,0,legitimate
+session_004421,2026-01-28T22:59:33.980077,test,pass115,1,0.88,0,0,4,0,0,4,7,1,1,brute_force
+session_004422,2026-01-28T22:59:33.980077,user4422@outlook.com,***,27,4.32,0,0,37,7,1,20,8,1,0,legitimate
+session_004423,2026-01-24T22:59:33.980077,bot4423@automated.com,botpass3009,0,0.38,1,21,0,0,1,21,11,1,1,bot
+session_004424,2026-02-01T22:59:33.980077,user4424@gmail.com,***,17,7.22,0,0,30,7,0,18,10,1,0,legitimate
+session_004425,2026-01-21T22:59:33.980077,user4425@company.com,***,27,4.43,0,0,37,6,0,20,13,1,0,legitimate
+session_004426,2026-01-09T22:59:33.980077,user4426@outlook.com,***,13,8.99,0,0,39,10,0,20,16,1,0,legitimate
+session_004427,2026-02-07T22:59:33.980077,user4427@yahoo.com,***,41,10.57,0,0,33,4,0,18,10,1,0,legitimate
+session_004428,2026-01-25T22:59:33.980077,"'""><script>alert(String.fromCharCode(88,83,83))</script>",pass,2,0.41,0,0,56,1,1,56,4,1,1,xss
+session_004429,2026-01-29T22:59:33.980077,user4429@outlook.com,***,22,14.88,0,0,38,2,0,20,14,1,0,legitimate
+session_004430,2026-02-02T22:59:33.980077,user4430@outlook.com,***,5,15.81,0,0,36,7,0,20,10,1,0,legitimate
+session_004431,2026-02-01T22:59:33.980077,1' AND '1'='1,,1,1.48,0,0,12,2,0,13,0,1,1,sql_injection
+session_004432,2026-01-16T22:59:33.980077,user4432@yahoo.com,***,36,4.32,0,0,40,3,0,18,15,1,0,legitimate
+session_004433,2026-01-22T22:59:33.981077,user4433@yahoo.com,***,13,4.38,0,0,36,6,1,18,16,1,0,legitimate
+session_004434,2026-01-26T22:59:33.981077,user4434@outlook.com,***,31,12.7,0,0,34,7,0,20,8,1,0,legitimate
+session_004435,2026-01-19T22:59:33.981077,user4435@outlook.com,***,23,16.83,0,0,36,7,1,20,16,1,0,legitimate
+session_004436,2026-01-23T22:59:33.981077,user4436@outlook.com,***,38,8.58,0,0,37,10,0,20,8,1,0,legitimate
+session_004437,2026-01-24T22:59:33.981077,user4437@gmail.com,***,5,18.83,0,0,37,6,0,18,11,1,0,legitimate
+session_004438,2026-01-26T22:59:33.981077,user4438@outlook.com,***,46,14.3,0,0,29,2,0,20,9,1,0,legitimate
+session_004439,2026-01-19T22:59:33.981077,user4439@yahoo.com,***,48,8.19,0,0,28,10,0,18,10,1,0,legitimate
+session_004440,2026-01-24T22:59:33.981077,user4440@outlook.com,***,42,15.53,0,0,38,3,0,20,12,1,0,legitimate
+session_004441,2026-01-21T22:59:33.981077,admin,pass215,0,0.4,0,0,4,2,0,5,7,1,1,brute_force
+session_004442,2026-01-26T22:59:33.981077,user4442@company.com,***,11,3.97,0,0,29,8,1,20,8,1,0,legitimate
+session_004443,2026-01-23T22:59:33.981077,user4443@yahoo.com,***,30,18.85,0,0,32,6,1,18,13,1,0,legitimate
+session_004444,2026-01-19T22:59:33.981077,user4444@yahoo.com,***,39,18.56,0,0,35,6,0,18,12,1,0,legitimate
+session_004445,2026-01-28T22:59:33.981077,"'""><script>alert(String.fromCharCode(88,83,83))</script>",test,0,0.61,0,0,56,0,1,56,4,1,1,xss
+session_004446,2026-01-12T22:59:33.981077,bot4446@automated.com,botpass8059,0,0.3,1,21,0,0,1,21,11,1,1,bot
+session_004447,2026-02-07T22:59:33.981077,user4447@company.com,***,49,6.83,0,0,42,8,0,20,14,1,0,legitimate
+session_004448,2026-02-07T22:59:33.981077,user4448@gmail.com,***,25,11.57,0,0,37,4,0,18,11,1,0,legitimate
+session_004449,2026-02-07T22:59:33.981077,admin,pass73,0,0.84,0,0,3,0,0,5,6,1,1,brute_force
+session_004450,2026-01-19T22:59:33.981077,user4450@company.com,***,20,16.7,0,0,32,3,0,20,9,1,0,legitimate
+session_004451,2026-01-15T22:59:33.981077,user4451@outlook.com,***,29,3.61,0,0,44,6,0,20,15,1,0,legitimate
+session_004452,2026-01-14T22:59:33.981077,test@test.com; ls -la,| cat /etc/passwd,2,0.26,0,0,12,2,1,21,17,1,1,command_injection
+session_004453,2026-01-28T22:59:33.981077,user4453@company.com,***,27,6.34,0,0,41,8,0,20,16,1,0,legitimate
+session_004454,2026-01-21T22:59:33.981077,user4454@yahoo.com,***,22,18.77,0,0,27,4,0,18,8,1,0,legitimate
+session_004455,2026-01-20T22:59:33.981077,user4455@company.com,***,5,4.1,0,0,45,9,1,20,16,1,0,legitimate
+session_004456,2026-02-04T22:59:33.981077,<input onfocus=alert(1) autofocus>,test,1,0.99,0,0,34,1,1,34,4,1,1,xss
+session_004457,2026-01-22T22:59:33.981077,user4457@gmail.com,***,10,4.41,0,0,31,7,0,18,10,1,0,legitimate
+session_004458,2026-01-26T22:59:33.981077,administrator,pass692,1,0.39,0,0,7,1,0,13,7,1,1,brute_force
+session_004459,2026-01-30T22:59:33.981077,bot4459@automated.com,botpass5604,0,0.15,1,21,0,0,1,21,11,1,1,bot
+session_004460,2026-01-23T22:59:33.981077,user4460@gmail.com,***,18,12.16,0,0,42,4,0,18,14,1,0,legitimate
+session_004461,2026-01-19T22:59:33.981077,test,pass762,0,0.81,0,0,8,1,0,4,7,1,1,brute_force
+session_004462,2026-01-09T22:59:33.981077,user4462@company.com,***,25,5.05,0,0,40,10,1,20,15,1,0,legitimate
+session_004463,2026-01-22T22:59:33.981077,admin' OR '1'='1,test,1,0.76,1,16,17,0,1,16,4,1,1,sql_injection
+session_004464,2026-02-02T22:59:33.981077,admin'/*,,3,0.88,0,0,9,0,0,8,0,1,1,sql_injection
+session_004465,2026-02-06T22:59:33.981077,user4465@outlook.com,***,50,10.05,0,0,31,2,0,20,8,1,0,legitimate
+session_004466,2026-02-01T22:59:33.981077,user4466@yahoo.com,***,27,10.39,0,0,30,10,0,18,12,1,0,legitimate
+session_004467,2026-01-27T22:59:33.981077,user4467@company.com,***,46,14.4,0,0,33,8,0,20,10,1,0,legitimate
+session_004468,2026-01-17T22:59:33.981077,<input onfocus=alert(1) autofocus>,test,2,0.33,0,0,34,1,1,34,4,1,1,xss
+session_004469,2026-02-03T22:59:33.981077,user4469@company.com,***,9,9.92,0,0,43,3,0,20,13,1,0,legitimate
+session_004470,2026-01-30T22:59:33.981077,user4470@outlook.com,***,38,7.97,0,0,37,5,0,20,15,1,0,legitimate
+session_004471,2026-02-04T22:59:33.981077,user4471@yahoo.com,***,13,4.99,0,0,32,10,1,18,13,1,0,legitimate
+session_004472,2026-01-23T22:59:33.981077,user4472@gmail.com,***,39,12.85,0,0,34,10,0,18,15,1,0,legitimate
+session_004473,2026-01-30T22:59:33.981077,user4473@yahoo.com,***,19,5.24,0,0,36,6,0,18,11,1,0,legitimate
+session_004474,2026-01-15T22:59:33.981077,user4474@yahoo.com,***,40,8.06,0,0,32,7,0,18,9,1,0,legitimate
+session_004475,2026-01-23T22:59:33.981077,user4475@gmail.com,***,50,14.07,0,0,35,10,0,18,12,1,0,legitimate
+session_004476,2026-02-02T22:59:33.981077,user4476@company.com,***,8,16.04,0,0,38,10,0,20,14,1,0,legitimate
+session_004477,2026-02-03T22:59:33.981077,administrator,pass24,1,0.85,0,0,9,0,0,13,6,1,1,brute_force
+session_004478,2026-01-21T22:59:33.981077,user4478@outlook.com,***,25,6.22,0,0,30,8,0,20,9,1,0,legitimate
+session_004479,2026-01-16T22:59:33.981077,user4479@company.com,***,31,7.17,0,0,40,5,0,20,11,1,0,legitimate
+session_004480,2026-01-22T22:59:33.981077,user4480@yahoo.com,***,49,7.36,0,0,30,9,0,18,12,1,0,legitimate
+session_004481,2026-01-29T22:59:33.981077,user4481@gmail.com,***,49,5.91,0,0,34,7,1,18,16,1,0,legitimate
+session_004482,2026-02-06T22:59:33.981077,root,pass575,1,0.88,0,0,4,0,0,4,7,1,1,brute_force
+session_004483,2026-01-11T22:59:33.981077,javascript:alert(1),test,0,0.36,0,0,19,1,1,19,4,1,1,xss
+session_004484,2026-01-22T22:59:33.981077,user4484@yahoo.com,***,19,16.54,0,0,42,3,0,18,15,1,0,legitimate
+session_004485,2026-01-19T22:59:33.981077,user4485@yahoo.com,***,15,11.23,0,0,33,2,0,18,14,1,0,legitimate
+session_004486,2026-01-19T22:59:33.981077,user4486@yahoo.com,***,50,12.67,0,0,35,7,0,18,10,1,0,legitimate
+session_004487,2026-02-06T22:59:33.981077,bot4487@automated.com,botpass6559,0,0.23,1,21,0,0,1,21,11,1,1,bot
+session_004488,2026-01-30T22:59:33.981077,user4488@company.com,***,12,18.89,0,0,42,7,0,20,14,1,0,legitimate
+session_004489,2026-01-18T22:59:33.981077,administrator,pass354,0,0.95,0,0,5,2,0,13,7,1,1,brute_force
+session_004490,2026-01-24T22:59:33.981077,user4490@yahoo.com,***,46,9.82,0,0,37,2,0,18,9,1,0,legitimate
+session_004491,2026-02-07T22:59:33.981077,user4491@yahoo.com,***,42,7.59,0,0,39,5,0,18,15,1,0,legitimate
+session_004492,2026-02-03T22:59:33.981077,user4492@company.com,***,12,11.18,0,0,36,3,1,20,12,1,0,legitimate
+session_004493,2026-02-05T22:59:33.981077,user4493@gmail.com,***,45,7.65,0,0,37,10,1,18,13,1,0,legitimate
+session_004494,2026-01-17T22:59:33.981077,user4494@company.com,***,12,18.97,0,0,39,5,0,20,9,1,0,legitimate
+session_004495,2026-01-17T22:59:33.981077,user4495@company.com,***,20,4.25,0,0,35,8,0,20,11,1,0,legitimate
+session_004496,2026-01-19T22:59:33.981077,user4496@outlook.com,***,24,2.23,0,0,44,10,0,20,16,1,0,legitimate
+session_004497,2026-01-25T22:59:33.981077,"'""><script>alert(String.fromCharCode(88,83,83))</script>",pass,2,0.29,0,0,56,1,1,56,4,1,1,xss
+session_004498,2026-01-30T22:59:33.981077,user4498@gmail.com,***,47,17.62,0,0,35,6,0,18,14,1,0,legitimate
+session_004499,2026-01-24T22:59:33.981077,user4499@outlook.com,***,30,16.12,0,0,35,3,0,20,12,1,0,legitimate
+session_004500,2026-02-06T22:59:33.981077,user4500@yahoo.com,***,36,2.25,0,0,37,10,1,18,14,1,0,legitimate
+session_004501,2026-01-17T22:59:33.981077,<body onload=alert('XSS')>,pass,1,0.31,0,0,26,1,1,26,4,1,1,xss
+session_004502,2026-01-30T22:59:33.981077,user4502@gmail.com,***,19,17.8,0,0,38,6,0,18,11,1,0,legitimate
+session_004503,2026-01-30T22:59:33.981077,..%2F..%2F..%2Fetc%2Fpasswd,test,2,0.53,0,0,27,0,1,27,4,1,1,path_traversal
+session_004504,2026-01-27T22:59:33.981077,user4504@yahoo.com,***,29,2.81,0,0,30,6,1,18,10,1,0,legitimate
+session_004505,2026-01-15T22:59:33.981077,user4505@company.com,***,18,5.64,0,0,35,9,0,20,10,1,0,legitimate
+session_004506,2026-01-17T22:59:33.981077,user4506@company.com,***,35,8.05,0,0,35,8,0,20,12,1,0,legitimate
+session_004507,2026-01-31T22:59:33.981077,user4507@company.com,***,7,18.87,0,0,34,4,0,20,10,1,0,legitimate
+session_004508,2026-02-02T22:59:33.981077,root,pass819,1,0.85,0,0,7,2,0,4,7,1,1,brute_force
+session_004509,2026-01-29T22:59:33.981077,user4509@yahoo.com,***,29,6.48,0,0,35,5,1,18,9,1,0,legitimate
+session_004510,2026-01-09T22:59:33.981077,user4510@yahoo.com,***,50,10.86,0,0,31,6,0,18,9,1,0,legitimate
+session_004511,2026-01-21T22:59:33.981077,user4511@gmail.com,***,11,19.02,0,0,37,7,0,18,14,1,0,legitimate
+session_004512,2026-02-03T22:59:33.981077,user4512@company.com,***,21,6.81,0,0,34,8,0,20,9,1,0,legitimate
+session_004513,2026-01-14T22:59:33.981077,user4513@outlook.com,***,8,13.63,0,0,32,6,1,20,8,1,0,legitimate
+session_004514,2026-02-03T22:59:33.981077,user4514@yahoo.com,***,5,7.51,0,0,35,8,0,18,8,1,0,legitimate
+session_004515,2026-01-31T22:59:33.981077,user4515@gmail.com,***,27,19.76,0,0,34,2,1,18,11,1,0,legitimate
+session_004516,2026-02-05T22:59:33.981077,user4516@gmail.com,***,18,2.32,0,0,41,2,0,18,13,1,0,legitimate
+session_004517,2026-01-14T22:59:33.981077,user4517@company.com,***,9,2.47,0,0,34,2,0,20,14,1,0,legitimate
+session_004518,2026-02-04T22:59:33.981077,user4518@gmail.com,***,16,7.62,0,0,30,10,1,18,10,1,0,legitimate
+session_004519,2026-01-22T22:59:33.981077,user4519@yahoo.com,***,47,8.65,0,0,43,3,1,18,16,1,0,legitimate
+session_004520,2026-02-06T22:59:33.981077,test@test.com; ls -la,| cat /etc/passwd,1,0.17,0,0,15,2,1,21,17,1,1,command_injection
+session_004521,2026-02-07T22:59:33.981077,user4521@gmail.com,***,37,15.74,0,0,32,9,0,18,13,1,0,legitimate
+session_004522,2026-01-11T22:59:33.981077,user4522@outlook.com,***,17,5.34,0,0,43,8,0,20,14,1,0,legitimate
+session_004523,2026-01-29T22:59:33.981077,user4523@gmail.com,***,11,18.03,0,0,30,9,0,18,10,1,0,legitimate
+session_004524,2026-01-26T22:59:33.981077,user4524@yahoo.com,***,14,10.06,0,0,42,2,0,18,16,1,0,legitimate
+session_004525,2026-01-16T22:59:33.981077,test@test.com| cat /etc/passwd,&& whoami,1,0.25,0,0,25,0,1,30,9,1,1,command_injection
+session_004526,2026-01-09T22:59:33.981077,user4526@company.com,***,21,2.32,0,0,39,9,0,20,13,1,0,legitimate
+session_004527,2026-01-12T22:59:33.981077,<img src=x onerror=alert(1)>,pass,2,0.88,0,0,28,1,1,28,4,1,1,xss
+session_004528,2026-01-18T22:59:33.981077,user4528@company.com,***,40,19.18,0,0,37,3,0,20,10,1,0,legitimate
+session_004529,2026-01-15T22:59:33.981077,user4529@outlook.com,***,21,5.22,0,0,34,7,0,20,10,1,0,legitimate
+session_004530,2026-01-22T22:59:33.981077,user4530@outlook.com,***,45,14.0,0,0,37,3,0,20,13,1,0,legitimate
+session_004531,2026-01-11T22:59:33.981077,user4531@company.com,***,32,13.87,0,0,40,3,1,20,15,1,0,legitimate
+session_004532,2026-02-08T22:59:33.981077,user4532@gmail.com,***,19,4.68,0,0,36,4,1,18,10,1,0,legitimate
+session_004533,2026-01-29T22:59:33.981077,user4533@yahoo.com,***,25,16.67,0,0,38,10,1,18,16,1,0,legitimate
+session_004534,2026-01-17T22:59:33.981077,user4534@gmail.com,***,42,14.14,0,0,29,6,1,18,11,1,0,legitimate
+session_004535,2026-02-03T22:59:33.981077,user4535@gmail.com,***,26,19.37,0,0,36,10,1,18,12,1,0,legitimate
+session_004536,2026-02-03T22:59:33.981077,user4536@outlook.com,***,24,14.0,0,0,30,6,0,20,9,1,0,legitimate
+session_004537,2026-01-25T22:59:33.981077,user4537@company.com,***,23,16.34,0,0,45,2,0,20,16,1,0,legitimate
+session_004538,2026-01-18T22:59:33.981077,<iframe src=javascript:alert(1)>,test,0,0.35,0,0,32,1,1,32,4,1,1,xss
+session_004539,2026-01-28T22:59:33.981077,bot4539@automated.com,botpass1086,0,0.43,1,21,0,0,1,21,11,1,1,bot
+session_004540,2026-01-29T22:59:33.981077,user4540@company.com,***,8,18.37,0,0,29,2,0,20,9,1,0,legitimate
+session_004541,2026-02-03T22:59:33.981077,<img src=x onerror=alert(1)>,pass,0,0.32,0,0,28,0,1,28,4,1,1,xss
+session_004542,2026-02-06T22:59:33.981077,user4542@yahoo.com,***,40,4.12,0,0,38,10,1,18,13,1,0,legitimate
+session_004543,2026-01-31T22:59:33.981077,../../../etc/passwd,test,2,0.75,0,0,19,0,1,19,4,1,1,path_traversal
+session_004544,2026-02-05T22:59:33.981077,user4544@company.com,***,28,8.22,0,0,37,10,0,20,12,1,0,legitimate
+session_004545,2026-01-09T22:59:33.981077,user4545@outlook.com,***,22,3.83,0,0,32,4,0,20,9,1,0,legitimate
+session_004546,2026-01-11T22:59:33.981077,user4546@gmail.com,***,47,10.86,0,0,38,10,0,18,10,1,0,legitimate
+session_004547,2026-01-29T22:59:33.981077,test@test.com; ls -la,`cat /etc/shadow`,0,0.71,0,0,18,0,1,21,17,1,1,command_injection
+session_004548,2026-01-15T22:59:33.981077,user4548@yahoo.com,***,17,3.12,0,0,39,2,0,18,16,1,0,legitimate
+session_004549,2026-01-10T22:59:33.981077,..\..\..\windows\system32,test,2,0.36,0,0,25,0,1,25,4,1,1,path_traversal
+session_004550,2026-01-19T22:59:33.982080,user4550@gmail.com,***,10,18.78,0,0,38,10,0,18,16,1,0,legitimate
+session_004551,2026-01-24T22:59:33.982080,admin' OR '1'='1,,0,0.2,0,0,8,1,0,16,0,1,1,sql_injection
+session_004552,2026-01-13T22:59:33.982080,user4552@gmail.com,***,41,6.1,0,0,26,9,1,18,8,1,0,legitimate
+session_004553,2026-01-27T22:59:33.982080,test@test.com; rm -rf /,; rm -rf /,0,0.14,0,0,19,1,1,23,10,1,1,command_injection
+session_004554,2026-01-26T22:59:33.982080,admin' UNION SELECT,123,3,1.09,1,19,10,2,0,19,3,1,1,sql_injection
+session_004555,2026-01-25T22:59:33.982080,user4555@company.com,***,32,3.1,0,0,44,4,0,20,15,1,0,legitimate
+session_004556,2026-01-16T22:59:33.982080,test,pass619,1,0.44,0,0,9,1,0,4,7,1,1,brute_force
+session_004557,2026-01-29T22:59:33.982080,user4557@gmail.com,***,8,5.75,0,0,38,10,0,18,14,1,0,legitimate
+session_004558,2026-01-17T22:59:33.982080,administrator,pass244,0,0.92,0,0,4,0,0,13,7,1,1,brute_force
+session_004559,2026-01-19T22:59:33.982080,user4559@yahoo.com,***,5,11.16,0,0,39,6,0,18,14,1,0,legitimate
+session_004560,2026-02-02T22:59:33.982080,../../../etc/passwd,test,0,0.97,0,0,19,1,1,19,4,1,1,path_traversal
+session_004561,2026-02-08T22:59:33.982080,user4561@yahoo.com,***,33,5.06,0,0,37,9,0,18,14,1,0,legitimate
+session_004562,2026-01-25T22:59:33.982080,'; DROP TABLE users--,test,3,0.64,0,0,20,1,0,21,4,1,1,sql_injection
+session_004563,2026-02-01T22:59:33.982080,user4563@yahoo.com,***,11,12.86,0,0,29,10,0,18,8,1,0,legitimate
+session_004564,2026-01-30T22:59:33.982080,user4564@company.com,***,21,3.36,0,0,32,3,1,20,9,1,0,legitimate
+session_004565,2026-01-09T22:59:33.982080,user4565@company.com,***,35,8.99,0,0,34,7,0,20,12,1,0,legitimate
+session_004566,2026-01-14T22:59:33.982080,admin,pass849,1,0.76,0,0,7,1,0,5,7,1,1,brute_force
+session_004567,2026-01-29T22:59:33.982080,javascript:alert(1),pass,2,0.88,0,0,19,1,1,19,4,1,1,xss
+session_004568,2026-01-16T22:59:33.982080,root,pass955,0,0.94,0,0,8,2,0,4,7,1,1,brute_force
+session_004569,2026-01-27T22:59:33.982080,user4569@company.com,***,48,15.82,0,0,33,3,1,20,12,1,0,legitimate
+session_004570,2026-01-31T22:59:33.982080,user4570@yahoo.com,***,35,19.14,0,0,32,6,0,18,12,1,0,legitimate
+session_004571,2026-02-06T22:59:33.982080,user4571@yahoo.com,***,17,3.09,0,0,32,3,0,18,8,1,0,legitimate
+session_004572,2026-01-22T22:59:33.982080,' OR 1=1--,test,1,1.47,0,0,16,2,1,10,4,1,1,sql_injection
+session_004573,2026-01-16T22:59:33.982080,<img src=x onerror=alert(1)>,test,1,0.6,0,0,28,1,1,28,4,1,1,xss
+session_004574,2026-01-09T22:59:33.982080,user4574@gmail.com,***,9,16.48,0,0,43,6,1,18,15,1,0,legitimate
+session_004575,2026-01-18T22:59:33.982080,user4575@outlook.com,***,32,9.32,0,0,44,6,0,20,16,1,0,legitimate
+session_004576,2026-02-02T22:59:33.982080,"'""><script>alert(String.fromCharCode(88,83,83))</script>",,2,0.94,0,0,56,0,1,56,0,1,1,xss
+session_004577,2026-01-24T22:59:33.982080,user4577@outlook.com,***,36,6.63,0,0,33,7,1,20,8,1,0,legitimate
+session_004578,2026-01-13T22:59:33.982080,user4578@outlook.com,***,7,4.15,0,0,33,9,0,20,8,1,0,legitimate
+session_004579,2026-01-13T22:59:33.982080,user4579@yahoo.com,***,18,14.9,0,0,32,7,0,18,14,1,0,legitimate
+session_004580,2026-01-12T22:59:33.982080,test@test.com; ls -la,| nc -e /bin/sh,2,0.56,0,0,18,0,1,21,15,1,1,command_injection
+session_004581,2026-02-03T22:59:33.982080,user4581@gmail.com,***,5,12.61,0,0,34,2,0,18,16,1,0,legitimate
+session_004582,2026-01-29T22:59:33.982080,..%2F..%2F..%2Fetc%2Fpasswd,test,0,0.77,0,0,27,1,1,27,4,1,1,path_traversal
+session_004583,2026-02-08T22:59:33.982080,user4583@gmail.com,***,31,7.29,0,0,41,8,0,18,15,1,0,legitimate
+session_004584,2026-01-13T22:59:33.982080,user4584@yahoo.com,***,24,6.61,0,0,28,9,0,18,8,1,0,legitimate
+session_004585,2026-01-10T22:59:33.982080,....//....//....//etc/passwd,test,2,1.11,0,0,28,1,1,28,4,1,1,path_traversal
+session_004586,2026-02-05T22:59:33.982080,user4586@company.com,***,41,18.18,0,0,38,10,0,20,14,1,0,legitimate
+session_004587,2026-01-17T22:59:33.982080,user4587@outlook.com,***,22,17.0,0,0,40,2,1,20,15,1,0,legitimate
+session_004588,2026-01-20T22:59:33.982080,user4588@yahoo.com,***,39,14.86,0,0,39,7,0,18,15,1,0,legitimate
+session_004589,2026-01-27T22:59:33.982080,user4589@company.com,***,47,4.65,0,0,45,10,1,20,15,1,0,legitimate
+session_004590,2026-01-26T22:59:33.982080,user4590@gmail.com,***,15,7.36,0,0,37,5,0,18,16,1,0,legitimate
+session_004591,2026-01-13T22:59:33.982080,user4591@company.com,***,12,13.05,0,0,33,5,0,20,9,1,0,legitimate
+session_004592,2026-01-16T22:59:33.982080,user4592@yahoo.com,***,24,18.09,0,0,31,9,1,18,8,1,0,legitimate
+session_004593,2026-02-04T22:59:33.982080,<iframe src=javascript:alert(1)>,,1,0.74,0,0,32,1,1,32,0,1,1,xss
+session_004594,2026-01-10T22:59:33.982080,user4594@outlook.com,***,28,6.36,0,0,38,6,1,20,8,1,0,legitimate
+session_004595,2026-02-04T22:59:33.982080,javascript:alert(1),test,1,0.4,0,0,19,1,1,19,4,1,1,xss
+session_004596,2026-02-04T22:59:33.982080,admin' OR '1'='1,admin,0,1.38,1,16,13,2,1,16,5,1,1,sql_injection
+session_004597,2026-02-02T22:59:33.982080,user4597@company.com,***,47,17.87,0,0,42,6,0,20,12,1,0,legitimate
+session_004598,2026-01-11T22:59:33.982080,user4598@yahoo.com,***,9,19.86,0,0,33,6,0,18,9,1,0,legitimate
+session_004599,2026-02-06T22:59:33.982080,user4599@outlook.com,***,26,11.59,0,0,35,4,0,20,11,1,0,legitimate
+session_004600,2026-01-19T22:59:33.982080,..%2F..%2F..%2Fetc%2Fpasswd,test,0,0.42,0,0,27,0,1,27,4,1,1,path_traversal
+session_004601,2026-01-16T22:59:33.982080,user4601@outlook.com,***,27,10.94,0,0,31,4,0,20,9,1,0,legitimate
+session_004602,2026-02-01T22:59:33.982080,bot4602@automated.com,botpass7178,0,0.34,1,21,0,0,1,21,11,1,1,bot
+session_004603,2026-01-13T22:59:33.982080,admin' UNION SELECT,test,3,0.65,0,0,19,1,1,19,4,1,1,sql_injection
+session_004604,2026-01-21T22:59:33.982080,user4604@gmail.com,***,19,11.04,0,0,38,4,0,18,14,1,0,legitimate
+session_004605,2026-01-19T22:59:33.982080,test@test.com&& whoami,; rm -rf /,0,0.64,0,0,19,1,1,22,10,1,1,command_injection
+session_004606,2026-01-28T22:59:33.982080,user4606@gmail.com,***,17,13.35,0,0,32,8,0,18,10,1,0,legitimate
+session_004607,2026-01-20T22:59:33.982080,bot4607@automated.com,botpass2969,0,0.45,1,21,0,0,1,21,11,1,1,bot
+session_004608,2026-01-30T22:59:33.982080,test@test.com; ls -la,; ls -la,0,0.42,0,0,25,2,1,21,8,1,1,command_injection
+session_004609,2026-01-26T22:59:33.982080,admin,pass169,0,0.32,0,0,4,1,0,5,7,1,1,brute_force
+session_004610,2026-01-26T22:59:33.982080,user4610@yahoo.com,***,35,7.72,0,0,33,3,0,18,12,1,0,legitimate
+session_004611,2026-01-15T22:59:33.982080,user4611@outlook.com,***,17,12.59,0,0,41,9,0,20,15,1,0,legitimate
+session_004612,2026-01-15T22:59:33.982080,user4612@yahoo.com,***,12,17.93,0,0,35,6,0,18,13,1,0,legitimate
+session_004613,2026-01-27T22:59:33.982080,user4613@company.com,***,44,8.25,0,0,45,7,0,20,16,1,0,legitimate
+session_004614,2026-01-25T22:59:33.982080,user4614@outlook.com,***,33,6.71,0,0,45,10,0,20,16,1,0,legitimate
+session_004615,2026-01-13T22:59:33.982080,"'""><script>alert(String.fromCharCode(88,83,83))</script>",pass,2,0.55,0,0,56,0,1,56,4,1,1,xss
+session_004616,2026-02-05T22:59:33.982080,../../../etc/passwd,test,1,0.67,0,0,19,0,1,19,4,1,1,path_traversal
+session_004617,2026-01-29T22:59:33.982080,user4617@outlook.com,***,25,16.83,0,0,39,5,0,20,9,1,0,legitimate
+session_004618,2026-01-16T22:59:33.982080,user4618@yahoo.com,***,48,2.04,0,0,41,4,0,18,15,1,0,legitimate
+session_004619,2026-01-14T22:59:33.982080,user4619@company.com,***,8,9.2,0,0,40,6,0,20,11,1,0,legitimate
+session_004620,2026-01-09T22:59:33.982080,user4620@yahoo.com,***,44,8.08,0,0,30,5,0,18,10,1,0,legitimate
+session_004621,2026-01-17T22:59:33.982080,user4621@outlook.com,***,12,12.45,0,0,38,9,0,20,16,1,0,legitimate
+session_004622,2026-01-13T22:59:33.982080,user4622@gmail.com,***,39,19.29,0,0,35,5,0,18,8,1,0,legitimate
+session_004623,2026-02-07T22:59:33.982080,user4623@gmail.com,***,16,8.82,0,0,37,9,1,18,11,1,0,legitimate
+session_004624,2026-01-09T22:59:33.982080,user4624@gmail.com,***,49,7.06,0,0,30,9,1,18,12,1,0,legitimate
+session_004625,2026-01-30T22:59:33.982080,user4625@yahoo.com,***,13,9.69,0,0,33,6,1,18,15,1,0,legitimate
+session_004626,2026-01-17T22:59:33.982080,user4626@company.com,***,22,18.42,0,0,34,8,0,20,8,1,0,legitimate
+session_004627,2026-01-10T22:59:33.982080,user4627@outlook.com,***,15,19.82,0,0,30,5,0,20,8,1,0,legitimate
+session_004628,2026-01-09T22:59:33.982080,user4628@outlook.com,***,15,5.55,0,0,35,9,0,20,15,1,0,legitimate
+session_004629,2026-01-30T22:59:33.982080,<input onfocus=alert(1) autofocus>,test,2,0.31,0,0,34,0,1,34,4,1,1,xss
+session_004630,2026-01-14T22:59:33.982080,user4630@yahoo.com,***,27,10.4,0,0,31,7,1,18,13,1,0,legitimate
+session_004631,2026-01-22T22:59:33.982080,user4631@gmail.com,***,49,14.86,0,0,37,10,0,18,15,1,0,legitimate
+session_004632,2026-01-20T22:59:33.982080,user4632@gmail.com,***,20,4.24,0,0,29,2,0,18,9,1,0,legitimate
+session_004633,2026-01-23T22:59:33.982080,user4633@company.com,***,14,14.54,0,0,32,2,0,20,11,1,0,legitimate
+session_004634,2026-01-10T22:59:33.982080,user4634@company.com,***,45,3.22,0,0,36,10,0,20,9,1,0,legitimate
+session_004635,2026-01-23T22:59:33.982080,user4635@company.com,***,36,3.32,0,0,35,8,0,20,8,1,0,legitimate
+session_004636,2026-02-04T22:59:33.982080,1' AND '1'='1,admin,0,0.87,0,0,15,1,0,13,5,1,1,sql_injection
+session_004637,2026-01-28T22:59:33.982080,user4637@company.com,***,35,16.57,0,0,39,9,0,20,14,1,0,legitimate
+session_004638,2026-01-24T22:59:33.982080,user4638@company.com,***,16,17.18,0,0,34,8,0,20,10,1,0,legitimate
+session_004639,2026-01-19T22:59:33.982080,test,pass337,0,0.68,0,0,5,0,0,4,7,1,1,brute_force
+session_004640,2026-01-29T22:59:33.982080,user4640@outlook.com,***,35,6.93,0,0,37,8,1,20,13,1,0,legitimate
+session_004641,2026-02-01T22:59:33.982080,user4641@outlook.com,***,20,9.54,0,0,41,7,0,20,14,1,0,legitimate
+session_004642,2026-01-20T22:59:33.982080,user4642@gmail.com,***,6,19.6,0,0,39,6,1,18,14,1,0,legitimate
+session_004643,2026-01-09T22:59:33.982080,user4643@company.com,***,14,15.5,0,0,33,4,0,20,11,1,0,legitimate
+session_004644,2026-01-17T22:59:33.982080,user4644@company.com,***,8,15.6,0,0,35,7,0,20,10,1,0,legitimate
+session_004645,2026-02-01T22:59:33.982080,user4645@company.com,***,31,15.59,0,0,33,7,0,20,8,1,0,legitimate
+session_004646,2026-01-23T22:59:33.982080,' UNION SELECT NULL--,123,0,0.9,1,21,16,2,0,21,3,1,1,sql_injection
+session_004647,2026-01-15T22:59:33.982080,user4647@company.com,***,9,7.08,0,0,39,7,0,20,9,1,0,legitimate
+session_004648,2026-02-07T22:59:33.982080,"'""><script>alert(String.fromCharCode(88,83,83))</script>",test,2,0.93,0,0,56,1,1,56,4,1,1,xss
+session_004649,2026-01-30T22:59:33.982080,user4649@outlook.com,***,10,17.12,0,0,37,6,0,20,10,1,0,legitimate
+session_004650,2026-02-04T22:59:33.982080,user4650@gmail.com,***,5,16.62,0,0,36,3,0,18,15,1,0,legitimate
+session_004651,2026-01-16T22:59:33.982080,"'""><script>alert(String.fromCharCode(88,83,83))</script>",test,0,0.37,0,0,56,1,1,56,4,1,1,xss
+session_004652,2026-01-24T22:59:33.982080,user4652@yahoo.com,***,24,2.6,0,0,37,4,0,18,9,1,0,legitimate
+session_004653,2026-01-24T22:59:33.982080,user4653@yahoo.com,***,22,9.35,0,0,33,10,0,18,9,1,0,legitimate
+session_004654,2026-01-24T22:59:33.982080,user4654@outlook.com,***,42,2.33,0,0,36,6,0,20,13,1,0,legitimate
+session_004655,2026-01-27T22:59:33.982080,user4655@outlook.com,***,33,14.22,0,0,39,3,1,20,11,1,0,legitimate
+session_004656,2026-02-08T22:59:33.982080,user4656@outlook.com,***,17,9.03,0,0,34,7,0,20,14,1,0,legitimate
+session_004657,2026-01-14T22:59:33.982080,user4657@gmail.com,***,32,19.0,0,0,34,9,0,18,11,1,0,legitimate
+session_004658,2026-01-11T22:59:33.982080,user4658@outlook.com,***,45,14.93,0,0,35,2,0,20,13,1,0,legitimate
+session_004659,2026-01-24T22:59:33.982080,bot4659@automated.com,botpass7278,0,0.24,1,21,0,0,1,21,11,1,1,bot
+session_004660,2026-02-05T22:59:33.982080,user4660@gmail.com,***,17,2.59,0,0,28,4,0,18,8,1,0,legitimate
+session_004661,2026-01-27T22:59:33.983069,user4661@company.com,***,24,5.99,0,0,32,3,0,20,11,1,0,legitimate
+session_004662,2026-01-12T22:59:33.983069,user4662@gmail.com,***,38,4.07,0,0,36,5,0,18,16,1,0,legitimate
+session_004663,2026-01-16T22:59:33.983069,user4663@yahoo.com,***,26,8.79,0,0,32,6,0,18,14,1,0,legitimate
+session_004664,2026-01-17T22:59:33.983069,user4664@outlook.com,***,9,16.21,0,0,29,5,1,20,9,1,0,legitimate
+session_004665,2026-01-13T22:59:33.983069,user4665@yahoo.com,***,38,13.91,0,0,30,6,0,18,11,1,0,legitimate
+session_004666,2026-01-14T22:59:33.983069,bot4666@automated.com,botpass4943,0,0.23,1,21,0,0,1,21,11,1,1,bot
+session_004667,2026-01-19T22:59:33.983069,user4667@company.com,***,33,3.29,0,0,43,3,1,20,16,1,0,legitimate
+session_004668,2026-02-03T22:59:33.983069,user4668@yahoo.com,***,41,8.56,0,0,42,4,0,18,15,1,0,legitimate
+session_004669,2026-02-04T22:59:33.983069,' UNION SELECT NULL--,test,3,1.46,1,21,20,1,1,21,4,1,1,sql_injection
+session_004670,2026-01-24T22:59:33.983069,user4670@company.com,***,10,11.27,0,0,30,6,0,20,9,1,0,legitimate
+session_004671,2026-02-08T22:59:33.983069,bot4671@automated.com,botpass5024,0,0.39,1,21,0,0,1,21,11,1,1,bot
+session_004672,2026-01-15T22:59:33.983069,user4672@outlook.com,***,21,16.35,0,0,34,3,0,20,14,1,0,legitimate
+session_004673,2026-01-19T22:59:33.983069,test,pass181,1,0.72,0,0,8,0,0,4,7,1,1,brute_force
+session_004674,2026-02-02T22:59:33.983069,user4674@company.com,***,44,14.21,0,0,33,10,1,20,10,1,0,legitimate
+session_004675,2026-01-27T22:59:33.983069,user4675@yahoo.com,***,21,16.81,0,0,32,4,0,18,10,1,0,legitimate
+session_004676,2026-02-02T22:59:33.983069,user4676@outlook.com,***,22,9.84,0,0,37,4,1,20,8,1,0,legitimate
+session_004677,2026-01-15T22:59:33.983069,user4677@yahoo.com,***,47,18.29,0,0,39,10,0,18,11,1,0,legitimate
+session_004678,2026-01-29T22:59:33.983069,user4678@outlook.com,***,50,8.05,0,0,36,8,0,20,15,1,0,legitimate
+session_004679,2026-01-27T22:59:33.983069,user4679@gmail.com,***,42,18.7,0,0,38,2,1,18,10,1,0,legitimate
+session_004680,2026-01-10T22:59:33.983069,user4680@outlook.com,***,28,14.89,0,0,34,2,0,20,9,1,0,legitimate
+session_004681,2026-01-27T22:59:33.983069,test@test.com| cat /etc/passwd,; rm -rf /,0,0.37,0,0,13,2,1,30,10,1,1,command_injection
+session_004682,2026-01-16T22:59:33.983069,user4682@yahoo.com,***,38,6.33,0,0,38,10,0,18,11,1,0,legitimate
+session_004683,2026-01-25T22:59:33.983069,test@test.com; rm -rf /,| nc -e /bin/sh,0,0.22,0,0,23,0,1,23,15,1,1,command_injection
+session_004684,2026-01-11T22:59:33.983069,user4684@gmail.com,***,38,16.26,0,0,40,2,0,18,14,1,0,legitimate
+session_004685,2026-02-03T22:59:33.983069,user4685@company.com,***,14,12.42,0,0,29,2,0,20,8,1,0,legitimate
+session_004686,2026-01-30T22:59:33.983069,user4686@company.com,***,49,14.15,0,0,43,2,1,20,15,1,0,legitimate
+session_004687,2026-02-02T22:59:33.983069,user4687@company.com,***,40,17.53,0,0,29,9,0,20,8,1,0,legitimate
+session_004688,2026-01-31T22:59:33.983069,user4688@yahoo.com,***,30,10.6,0,0,36,9,1,18,13,1,0,legitimate
+session_004689,2026-02-04T22:59:33.983069,user4689@outlook.com,***,18,15.39,0,0,38,3,0,20,14,1,0,legitimate
+session_004690,2026-01-16T22:59:33.983069,user4690@gmail.com,***,40,14.12,0,0,31,9,0,18,8,1,0,legitimate
+session_004691,2026-02-01T22:59:33.983069,bot4691@automated.com,botpass9862,0,0.32,1,21,0,0,1,21,11,1,1,bot
+session_004692,2026-01-23T22:59:33.983069,user4692@outlook.com,***,32,9.23,0,0,38,4,0,20,9,1,0,legitimate
+session_004693,2026-01-23T22:59:33.983069,bot4693@automated.com,botpass1956,0,0.32,1,21,0,0,1,21,11,1,1,bot
+session_004694,2026-01-24T22:59:33.983069,user4694@outlook.com,***,10,18.8,0,0,36,5,0,20,16,1,0,legitimate
+session_004695,2026-01-21T22:59:33.983069,user4695@outlook.com,***,41,5.58,0,0,40,9,0,20,12,1,0,legitimate
+session_004696,2026-01-29T22:59:33.983069,user4696@outlook.com,***,42,11.04,0,0,37,8,0,20,11,1,0,legitimate
+session_004697,2026-01-11T22:59:33.983069,user4697@yahoo.com,***,20,3.94,0,0,39,5,0,18,12,1,0,legitimate
+session_004698,2026-01-10T22:59:33.983069,user4698@gmail.com,***,38,11.11,0,0,31,10,0,18,8,1,0,legitimate
+session_004699,2026-01-28T22:59:33.983069,admin' UNION SELECT,,2,0.35,1,19,12,0,0,19,0,1,1,sql_injection
+session_004700,2026-01-29T22:59:33.983069,"'""><script>alert(String.fromCharCode(88,83,83))</script>",pass,1,0.84,0,0,56,0,1,56,4,1,1,xss
+session_004701,2026-01-16T22:59:33.983069,user4701@company.com,***,44,9.85,0,0,40,7,0,20,15,1,0,legitimate
+session_004702,2026-01-24T22:59:33.983069,root,pass199,0,0.64,0,0,3,1,0,4,7,1,1,brute_force
+session_004703,2026-01-18T22:59:33.983069,..\..\..\windows\system32,test,0,0.45,0,0,25,0,1,25,4,1,1,path_traversal
+session_004704,2026-01-09T22:59:33.983069,user4704@outlook.com,***,47,4.55,0,0,34,4,1,20,13,1,0,legitimate
+session_004705,2026-01-25T22:59:33.983069,user4705@outlook.com,***,15,10.16,0,0,39,4,1,20,13,1,0,legitimate
+session_004706,2026-02-02T22:59:33.983069,user4706@yahoo.com,***,20,8.28,0,0,38,2,0,18,12,1,0,legitimate
+session_004707,2026-02-08T22:59:33.983069,admin' OR '1'='1,test,0,1.42,0,0,17,2,1,16,4,1,1,sql_injection
+session_004708,2026-01-23T22:59:33.983069,user4708@gmail.com,***,24,10.29,0,0,27,8,0,18,8,1,0,legitimate
+session_004709,2026-01-16T22:59:33.983069,' OR 1=1--,,2,0.96,0,0,5,1,1,10,0,1,1,sql_injection
+session_004710,2026-01-09T22:59:33.983069,admin'--,,2,0.55,0,0,9,0,0,8,0,1,1,sql_injection
+session_004711,2026-01-14T22:59:33.983069,user4711@gmail.com,***,25,13.81,0,0,27,9,1,18,8,1,0,legitimate
+session_004712,2026-01-09T22:59:33.983069,user4712@company.com,***,6,16.52,0,0,39,10,0,20,15,1,0,legitimate
+session_004713,2026-01-17T22:59:33.983069,..%2F..%2F..%2Fetc%2Fpasswd,test,1,0.75,0,0,27,0,1,27,4,1,1,path_traversal
+session_004714,2026-01-20T22:59:33.983069,user4714@company.com,***,20,13.29,0,0,32,8,0,20,10,1,0,legitimate
+session_004715,2026-01-26T22:59:33.983069,....//....//....//etc/passwd,test,2,0.81,0,0,28,0,1,28,4,1,1,path_traversal
+session_004716,2026-02-03T22:59:33.983069,<img src=x onerror=alert(1)>,test,1,0.63,0,0,28,1,1,28,4,1,1,xss
+session_004717,2026-01-24T22:59:33.983069,bot4717@automated.com,botpass7563,0,0.44,1,21,0,0,1,21,11,1,1,bot
+session_004718,2026-01-27T22:59:33.983069,....//....//....//etc/passwd,test,1,0.83,0,0,28,1,1,28,4,1,1,path_traversal
+session_004719,2026-01-19T22:59:33.983069,user4719@outlook.com,***,23,10.34,0,0,33,6,0,20,10,1,0,legitimate
+session_004720,2026-01-28T22:59:33.983069,user4720@gmail.com,***,40,13.32,0,0,33,7,0,18,9,1,0,legitimate
+session_004721,2026-01-21T22:59:33.983069,user4721@company.com,***,13,5.7,0,0,40,5,0,20,12,1,0,legitimate
+session_004722,2026-01-19T22:59:33.983069,user4722@outlook.com,***,18,16.19,0,0,37,9,1,20,10,1,0,legitimate
+session_004723,2026-01-13T22:59:33.983069,user4723@gmail.com,***,14,14.39,0,0,36,6,1,18,16,1,0,legitimate
+session_004724,2026-01-28T22:59:33.983069,user4724@outlook.com,***,37,4.66,0,0,44,10,0,20,15,1,0,legitimate
+session_004725,2026-01-27T22:59:33.983069,test@test.com&& whoami,&& whoami,1,0.63,0,0,21,2,1,22,9,1,1,command_injection
+session_004726,2026-01-17T22:59:33.983069,user4726@yahoo.com,***,38,9.06,0,0,42,4,0,18,14,1,0,legitimate
+session_004727,2026-01-14T22:59:33.983069,user4727@gmail.com,***,49,16.61,0,0,34,2,0,18,10,1,0,legitimate
+session_004728,2026-01-09T22:59:33.983069,user4728@company.com,***,20,16.34,0,0,40,9,0,20,10,1,0,legitimate
+session_004729,2026-01-19T22:59:33.983069,user4729@gmail.com,***,22,11.56,0,0,33,9,0,18,10,1,0,legitimate
+session_004730,2026-01-19T22:59:33.983069,user4730@outlook.com,***,43,17.83,0,0,31,4,0,20,10,1,0,legitimate
+session_004731,2026-02-06T22:59:33.983069,user4731@outlook.com,***,5,3.85,0,0,34,8,0,20,13,1,0,legitimate
+session_004732,2026-02-05T22:59:33.983069,user4732@gmail.com,***,20,17.65,0,0,33,7,0,18,8,1,0,legitimate
+session_004733,2026-02-08T22:59:33.983069,user4733@company.com,***,6,4.79,0,0,33,9,0,20,13,1,0,legitimate
+session_004734,2026-01-10T22:59:33.983069,user4734@yahoo.com,***,45,7.98,0,0,36,6,0,18,16,1,0,legitimate
+session_004735,2026-01-09T22:59:33.983069,user4735@yahoo.com,***,46,13.42,0,0,30,8,0,18,11,1,0,legitimate
+session_004736,2026-01-15T22:59:33.983069,user4736@gmail.com,***,23,17.02,0,0,34,6,0,18,10,1,0,legitimate
+session_004737,2026-01-29T22:59:33.983069,user4737@outlook.com,***,22,9.65,0,0,39,6,0,20,13,1,0,legitimate
+session_004738,2026-01-17T22:59:33.983069,user4738@yahoo.com,***,29,17.11,0,0,34,10,0,18,9,1,0,legitimate
+session_004739,2026-01-16T22:59:33.983069,user4739@yahoo.com,***,20,6.05,0,0,27,9,1,18,9,1,0,legitimate
+session_004740,2026-02-05T22:59:33.983069,user4740@gmail.com,***,21,2.82,0,0,38,3,1,18,16,1,0,legitimate
+session_004741,2026-01-27T22:59:33.983069,user4741@outlook.com,***,30,3.0,0,0,38,2,0,20,8,1,0,legitimate
+session_004742,2026-01-13T22:59:33.983069,user4742@outlook.com,***,26,4.3,0,0,45,10,0,20,16,1,0,legitimate
+session_004743,2026-01-17T22:59:33.983069,user4743@yahoo.com,***,20,8.11,0,0,44,3,0,18,16,1,0,legitimate
+session_004744,2026-02-02T22:59:33.983069,user4744@company.com,***,33,19.6,0,0,40,4,0,20,15,1,0,legitimate
+session_004745,2026-01-24T22:59:33.983069,user4745@yahoo.com,***,48,11.27,0,0,27,10,1,18,9,1,0,legitimate
+session_004746,2026-01-10T22:59:33.983069,user4746@outlook.com,***,41,19.87,0,0,41,4,0,20,13,1,0,legitimate
+session_004747,2026-02-07T22:59:33.983069,user4747@gmail.com,***,34,8.16,0,0,39,9,1,18,13,1,0,legitimate
+session_004748,2026-01-30T22:59:33.983069,user4748@yahoo.com,***,28,19.65,0,0,37,10,1,18,14,1,0,legitimate
+session_004749,2026-01-10T22:59:33.983069,admin' OR '1'='1'--,admin,2,0.74,1,19,6,0,1,19,5,1,1,sql_injection
+session_004750,2026-01-20T22:59:33.983069,user4750@gmail.com,***,38,19.0,0,0,30,2,1,18,11,1,0,legitimate
+session_004751,2026-02-07T22:59:33.983069,user4751@yahoo.com,***,19,4.12,0,0,39,7,1,18,12,1,0,legitimate
+session_004752,2026-01-15T22:59:33.983069,user4752@outlook.com,***,36,10.0,0,0,34,4,0,20,12,1,0,legitimate
+session_004753,2026-01-30T22:59:33.983069,bot4753@automated.com,botpass7018,0,0.14,1,21,0,0,1,21,11,1,1,bot
+session_004754,2026-01-26T22:59:33.983069,user4754@outlook.com,***,7,15.33,0,0,40,6,0,20,13,1,0,legitimate
+session_004755,2026-01-10T22:59:33.983069,user4755@yahoo.com,***,18,15.1,0,0,43,4,0,18,16,1,0,legitimate
+session_004756,2026-02-03T22:59:33.983069,administrator,pass24,1,0.72,0,0,9,0,0,13,6,1,1,brute_force
+session_004757,2026-02-01T22:59:33.983069,user4757@yahoo.com,***,25,16.21,0,0,38,6,0,18,12,1,0,legitimate
+session_004758,2026-02-01T22:59:33.983069,user4758@gmail.com,***,6,7.65,0,0,38,8,0,18,15,1,0,legitimate
+session_004759,2026-01-10T22:59:33.983069,user4759@outlook.com,***,30,7.78,0,0,33,4,1,20,13,1,0,legitimate
+session_004760,2026-01-16T22:59:33.983069,user4760@outlook.com,***,37,15.4,0,0,30,7,0,20,9,1,0,legitimate
+session_004761,2026-01-09T22:59:33.983069,user4761@gmail.com,***,43,14.01,0,0,34,6,0,18,15,1,0,legitimate
+session_004762,2026-01-23T22:59:33.983069,bot4762@automated.com,botpass9358,0,0.31,1,21,0,0,1,21,11,1,1,bot
+session_004763,2026-01-09T22:59:33.983069,user4763@company.com,***,17,18.08,0,0,35,8,0,20,15,1,0,legitimate
+session_004764,2026-01-21T22:59:33.983069,user4764@yahoo.com,***,40,15.45,0,0,40,2,0,18,14,1,0,legitimate
+session_004765,2026-01-16T22:59:33.983069,user4765@company.com,***,43,16.79,0,0,38,8,0,20,10,1,0,legitimate
+session_004766,2026-01-24T22:59:33.983069,user4766@gmail.com,***,21,11.59,0,0,35,9,0,18,13,1,0,legitimate
+session_004767,2026-01-27T22:59:33.983069,user4767@outlook.com,***,15,17.55,0,0,31,2,0,20,11,1,0,legitimate
+session_004768,2026-02-05T22:59:33.983069,user4768@gmail.com,***,30,5.69,0,0,35,3,0,18,9,1,0,legitimate
+session_004769,2026-02-02T22:59:33.983069,user4769@company.com,***,24,17.7,0,0,36,6,0,20,12,1,0,legitimate
+session_004770,2026-01-27T22:59:33.983069,user4770@gmail.com,***,8,8.86,0,0,42,4,0,18,16,1,0,legitimate
+session_004771,2026-01-17T22:59:33.983069,admin' UNION SELECT,,1,0.7,0,0,8,0,0,19,0,1,1,sql_injection
+session_004772,2026-01-30T22:59:33.983069,user4772@gmail.com,***,18,13.86,0,0,33,9,1,18,13,1,0,legitimate
+session_004773,2026-01-12T22:59:33.983069,user4773@outlook.com,***,25,7.44,0,0,34,5,1,20,8,1,0,legitimate
+session_004774,2026-01-15T22:59:33.983069,test@test.com| cat /etc/passwd,`cat /etc/shadow`,0,0.18,0,0,19,0,1,30,17,1,1,command_injection
+session_004775,2026-01-24T22:59:33.983069,user4775@outlook.com,***,18,9.49,0,0,39,8,1,20,15,1,0,legitimate
+session_004776,2026-01-30T22:59:33.983069,user4776@gmail.com,***,26,14.41,0,0,33,3,0,18,15,1,0,legitimate
+session_004777,2026-01-23T22:59:33.983069,../../../etc/passwd,test,2,0.86,0,0,19,0,1,19,4,1,1,path_traversal
+session_004778,2026-01-30T22:59:33.984056,1' AND '1'='1,123,3,0.82,1,13,9,1,1,13,3,1,1,sql_injection
+session_004779,2026-01-21T22:59:33.984056,user4779@gmail.com,***,33,11.62,0,0,36,2,0,18,14,1,0,legitimate
+session_004780,2026-01-28T22:59:33.984056,user4780@gmail.com,***,30,9.2,0,0,40,6,1,18,13,1,0,legitimate
+session_004781,2026-01-11T22:59:33.984056,user4781@gmail.com,***,44,2.82,0,0,38,6,0,18,10,1,0,legitimate
+session_004782,2026-01-29T22:59:33.984056,user4782@outlook.com,***,24,18.0,0,0,34,7,0,20,12,1,0,legitimate
+session_004783,2026-02-08T22:59:33.984056,../../../etc/passwd,test,0,0.27,0,0,19,0,1,19,4,1,1,path_traversal
+session_004784,2026-01-27T22:59:33.984056,user4784@gmail.com,***,36,11.01,0,0,40,7,0,18,12,1,0,legitimate
+session_004785,2026-01-17T22:59:33.984056,test@test.com; rm -rf /,`cat /etc/shadow`,0,0.13,0,0,23,2,1,23,17,1,1,command_injection
+session_004786,2026-01-12T22:59:33.984056,test@test.com; ls -la,; rm -rf /,2,0.4,0,0,18,0,1,21,10,1,1,command_injection
+session_004787,2026-01-21T22:59:33.984056,admin' OR '1'='1'--,admin,3,0.1,0,0,11,2,1,19,5,1,1,sql_injection
+session_004788,2026-02-04T22:59:33.984056,user4788@company.com,***,10,11.49,0,0,29,3,0,20,8,1,0,legitimate
+session_004789,2026-01-15T22:59:33.984056,user4789@company.com,***,14,4.16,0,0,30,4,1,20,8,1,0,legitimate
+session_004790,2026-02-04T22:59:33.984056,user4790@yahoo.com,***,42,6.01,0,0,44,7,0,18,16,1,0,legitimate
+session_004791,2026-01-23T22:59:33.984056,user4791@yahoo.com,***,30,13.44,0,0,30,2,0,18,12,1,0,legitimate
+session_004792,2026-01-13T22:59:33.984056,user4792@outlook.com,***,12,9.63,0,0,38,5,0,20,10,1,0,legitimate
+session_004793,2026-02-04T22:59:33.984056,admin' OR '1'='1,admin,1,1.39,0,0,7,2,1,16,5,1,1,sql_injection
+session_004794,2026-01-26T22:59:33.984056,bot4794@automated.com,botpass3574,0,0.42,1,21,0,0,1,21,11,1,1,bot
+session_004795,2026-02-06T22:59:33.984056,user4795@outlook.com,***,36,12.45,0,0,38,9,0,20,12,1,0,legitimate
+session_004796,2026-02-03T22:59:33.984056,user4796@gmail.com,***,5,16.33,0,0,33,9,0,18,15,1,0,legitimate
+session_004797,2026-01-24T22:59:33.984056,user4797@outlook.com,***,38,10.12,0,0,40,6,1,20,12,1,0,legitimate
+session_004798,2026-01-27T22:59:33.984056,user4798@company.com,***,9,11.89,0,0,36,10,0,20,12,1,0,legitimate
+session_004799,2026-02-07T22:59:33.984056,user4799@yahoo.com,***,12,13.01,0,0,38,5,1,18,15,1,0,legitimate
+session_004800,2026-01-30T22:59:33.984056,bot4800@automated.com,botpass5260,0,0.12,1,21,0,0,1,21,11,1,1,bot
+session_004801,2026-01-29T22:59:33.984056,user4801@outlook.com,***,32,16.81,0,0,38,4,0,20,14,1,0,legitimate
+session_004802,2026-02-05T22:59:33.984056,user4802@company.com,***,28,19.12,0,0,37,8,0,20,16,1,0,legitimate
+session_004803,2026-02-05T22:59:33.984056,<img src=x onerror=alert(1)>,pass,2,0.46,0,0,28,0,1,28,4,1,1,xss
+session_004804,2026-02-05T22:59:33.984056,user4804@gmail.com,***,25,18.68,0,0,31,4,1,18,8,1,0,legitimate
+session_004805,2026-01-13T22:59:33.984056,'; DROP TABLE users--,test,1,0.59,0,0,19,0,0,21,4,1,1,sql_injection
+session_004806,2026-01-20T22:59:33.984056,user4806@gmail.com,***,50,9.31,0,0,34,4,0,18,13,1,0,legitimate
+session_004807,2026-01-20T22:59:33.984056,user4807@company.com,***,48,3.73,0,0,40,10,0,20,10,1,0,legitimate
+session_004808,2026-02-01T22:59:33.984056,user4808@outlook.com,***,29,4.08,0,0,40,7,0,20,11,1,0,legitimate
+session_004809,2026-01-21T22:59:33.984056,../../../etc/passwd,test,0,0.99,0,0,19,1,1,19,4,1,1,path_traversal
+session_004810,2026-01-29T22:59:33.984056,<iframe src=javascript:alert(1)>,test,0,0.84,0,0,32,0,1,32,4,1,1,xss
+session_004811,2026-01-14T22:59:33.984056,user4811@gmail.com,***,40,10.33,0,0,41,9,0,18,14,1,0,legitimate
+session_004812,2026-01-26T22:59:33.984056,user4812@company.com,***,7,14.74,0,0,33,3,0,20,9,1,0,legitimate
+session_004813,2026-02-06T22:59:33.984056,user4813@outlook.com,***,33,7.84,0,0,36,9,0,20,14,1,0,legitimate
+session_004814,2026-01-23T22:59:33.984056,test@test.com&& whoami,| cat /etc/passwd,2,0.65,0,0,14,1,1,22,17,1,1,command_injection
+session_004815,2026-02-07T22:59:33.984056,user4815@yahoo.com,***,14,13.74,0,0,40,9,0,18,13,1,0,legitimate
+session_004816,2026-02-07T22:59:33.984056,test@test.com| nc -e /bin/sh,; ls -la,0,0.28,0,0,12,1,1,28,8,1,1,command_injection
+session_004817,2026-02-02T22:59:33.984056,..\..\..\windows\system32,test,2,0.71,0,0,25,0,1,25,4,1,1,path_traversal
+session_004818,2026-01-21T22:59:33.984056,user4818@outlook.com,***,49,14.41,0,0,34,6,0,20,12,1,0,legitimate
+session_004819,2026-01-15T22:59:33.984056,admin,pass36,0,0.48,0,0,7,2,0,5,6,1,1,brute_force
+session_004820,2026-01-27T22:59:33.984056,user4820@company.com,***,14,17.31,0,0,38,2,0,20,13,1,0,legitimate
+session_004821,2026-02-04T22:59:33.984056,..\..\..\windows\system32,test,2,0.6,0,0,25,0,1,25,4,1,1,path_traversal
+session_004822,2026-01-10T22:59:33.984056,admin'--,123,0,1.39,0,0,8,2,1,8,3,1,1,sql_injection
+session_004823,2026-01-26T22:59:33.984056,user4823@yahoo.com,***,11,14.92,0,0,37,3,0,18,10,1,0,legitimate
+session_004824,2026-02-05T22:59:33.984056,bot4824@automated.com,botpass9570,0,0.24,1,21,0,0,1,21,11,1,1,bot
+session_004825,2026-02-03T22:59:33.984056,admin' OR '1'='1'--,admin,0,1.42,1,19,8,1,1,19,5,1,1,sql_injection
+session_004826,2026-01-20T22:59:33.984056,test@test.com&& whoami,`cat /etc/shadow`,1,0.78,0,0,10,2,1,22,17,1,1,command_injection
+session_004827,2026-01-23T22:59:33.984056,test@test.com; ls -la,&& whoami,2,0.27,0,0,23,2,1,21,9,1,1,command_injection
+session_004828,2026-02-01T22:59:33.984056,user4828@yahoo.com,***,20,6.4,0,0,38,8,0,18,10,1,0,legitimate
+session_004829,2026-01-21T22:59:33.984056,user4829@outlook.com,***,48,12.44,0,0,38,6,0,20,16,1,0,legitimate
+session_004830,2026-01-29T22:59:33.984056,user4830@company.com,***,19,10.28,0,0,39,6,1,20,12,1,0,legitimate
+session_004831,2026-02-05T22:59:33.984056,root,pass860,0,0.84,0,0,6,1,0,4,7,1,1,brute_force
+session_004832,2026-01-23T22:59:33.984056,user4832@yahoo.com,***,47,2.56,0,0,30,10,0,18,10,1,0,legitimate
+session_004833,2026-01-15T22:59:33.984056,..%2F..%2F..%2Fetc%2Fpasswd,test,0,1.17,0,0,27,1,1,27,4,1,1,path_traversal
+session_004834,2026-01-11T22:59:33.984056,user4834@gmail.com,***,25,14.8,0,0,37,4,0,18,10,1,0,legitimate
+session_004835,2026-02-07T22:59:33.984056,"'""><script>alert(String.fromCharCode(88,83,83))</script>",test,2,0.6,0,0,56,0,1,56,4,1,1,xss
+session_004836,2026-01-09T22:59:33.984056,user4836@company.com,***,37,2.64,0,0,36,10,0,20,16,1,0,legitimate
+session_004837,2026-01-30T22:59:33.984056,' UNION SELECT NULL--,test,3,0.25,1,21,9,1,1,21,4,1,1,sql_injection
+session_004838,2026-01-26T22:59:33.984056,user4838@outlook.com,***,13,7.03,0,0,42,10,0,20,16,1,0,legitimate
+session_004839,2026-01-16T22:59:33.984056,user4839@gmail.com,***,49,14.54,0,0,38,10,0,18,15,1,0,legitimate
+session_004840,2026-01-23T22:59:33.984056,../../../etc/passwd,test,1,0.24,0,0,19,1,1,19,4,1,1,path_traversal
+session_004841,2026-01-20T22:59:33.984056,root,pass489,1,0.37,0,0,4,1,0,4,7,1,1,brute_force
+session_004842,2026-01-20T22:59:33.984056,user4842@outlook.com,***,46,18.29,0,0,33,4,0,20,12,1,0,legitimate
+session_004843,2026-01-28T22:59:33.984056,javascript:alert(1),,1,0.39,0,0,19,1,1,19,0,1,1,xss
+session_004844,2026-01-11T22:59:33.984056,user4844@outlook.com,***,34,10.08,0,0,44,4,0,20,14,1,0,legitimate
+session_004845,2026-01-12T22:59:33.984056,bot4845@automated.com,botpass3810,0,0.18,1,21,0,0,1,21,11,1,1,bot
+session_004846,2026-02-08T22:59:33.984056,bot4846@automated.com,botpass6462,0,0.2,1,21,0,0,1,21,11,1,1,bot
+session_004847,2026-02-08T22:59:33.984056,user4847@yahoo.com,***,16,7.5,0,0,36,2,1,18,15,1,0,legitimate
+session_004848,2026-01-22T22:59:33.984056,user4848@company.com,***,5,8.34,0,0,34,7,0,20,12,1,0,legitimate
+session_004849,2026-01-20T22:59:33.984056,user4849@gmail.com,***,27,11.41,0,0,29,6,1,18,8,1,0,legitimate
+session_004850,2026-02-05T22:59:33.984056,user4850@gmail.com,***,21,9.67,0,0,30,4,0,18,8,1,0,legitimate
+session_004851,2026-01-14T22:59:33.984056,user4851@gmail.com,***,39,3.35,0,0,31,2,0,18,8,1,0,legitimate
+session_004852,2026-01-21T22:59:33.984056,user4852@yahoo.com,***,47,12.56,0,0,31,2,0,18,8,1,0,legitimate
+session_004853,2026-01-30T22:59:33.984056,user4853@outlook.com,***,46,16.98,0,0,36,10,0,20,16,1,0,legitimate
+session_004854,2026-01-24T22:59:33.984056,user4854@gmail.com,***,44,4.2,0,0,36,3,0,18,13,1,0,legitimate
+session_004855,2026-01-10T22:59:33.984056,user4855@company.com,***,26,10.89,0,0,41,8,0,20,12,1,0,legitimate
+session_004856,2026-01-31T22:59:33.984056,test@test.com&& whoami,`cat /etc/shadow`,0,0.12,0,0,14,2,1,22,17,1,1,command_injection
+session_004857,2026-01-26T22:59:33.984056,user4857@gmail.com,***,50,9.1,0,0,32,10,0,18,13,1,0,legitimate
+session_004858,2026-01-17T22:59:33.984056,user4858@gmail.com,***,21,3.03,0,0,37,2,1,18,14,1,0,legitimate
+session_004859,2026-01-13T22:59:33.984056,user4859@company.com,***,17,11.33,0,0,40,5,1,20,15,1,0,legitimate
+session_004860,2026-01-18T22:59:33.984056,user4860@gmail.com,***,15,11.0,0,0,42,3,0,18,14,1,0,legitimate
+session_004861,2026-01-22T22:59:33.984056,user4861@company.com,***,19,18.26,0,0,32,5,0,20,8,1,0,legitimate
+session_004862,2026-01-20T22:59:33.984056,user4862@company.com,***,11,15.75,0,0,33,6,0,20,13,1,0,legitimate
+session_004863,2026-02-03T22:59:33.984056,test@test.com| cat /etc/passwd,; rm -rf /,1,0.59,0,0,11,0,1,30,10,1,1,command_injection
+session_004864,2026-02-04T22:59:33.984056,user4864@yahoo.com,***,9,19.91,0,0,34,7,1,18,16,1,0,legitimate
+session_004865,2026-02-06T22:59:33.984056,<iframe src=javascript:alert(1)>,pass,1,0.86,0,0,32,0,1,32,4,1,1,xss
+session_004866,2026-01-26T22:59:33.984056,user4866@yahoo.com,***,50,11.28,0,0,38,2,0,18,10,1,0,legitimate
+session_004867,2026-01-24T22:59:33.984056,user4867@yahoo.com,***,29,7.23,0,0,34,5,0,18,8,1,0,legitimate
+session_004868,2026-01-23T22:59:33.984056,user4868@outlook.com,***,29,19.96,0,0,32,9,0,20,8,1,0,legitimate
+session_004869,2026-01-22T22:59:33.984056,<svg onload=alert(1)>,test,0,0.66,0,0,21,0,1,21,4,1,1,xss
+session_004870,2026-01-29T22:59:33.984056,user4870@gmail.com,***,24,12.82,0,0,37,10,0,18,9,1,0,legitimate
+session_004871,2026-01-14T22:59:33.984056,admin'--,123,3,0.62,0,0,5,2,0,8,3,1,1,sql_injection
+session_004872,2026-01-29T22:59:33.984056,user4872@outlook.com,***,29,8.94,0,0,30,7,0,20,10,1,0,legitimate
+session_004873,2026-01-28T22:59:33.984056,test@test.com; ls -la,; rm -rf /,0,0.38,0,0,13,0,1,21,10,1,1,command_injection
+session_004874,2026-02-05T22:59:33.984056,user4874@outlook.com,***,47,8.81,0,0,28,2,0,20,8,1,0,legitimate
+session_004875,2026-01-12T22:59:33.984056,user4875@yahoo.com,***,21,13.97,0,0,29,5,0,18,9,1,0,legitimate
+session_004876,2026-01-22T22:59:33.984056,user4876@gmail.com,***,8,11.34,0,0,43,5,0,18,15,1,0,legitimate
+session_004877,2026-02-08T22:59:33.984056,user4877@yahoo.com,***,6,2.7,0,0,35,7,0,18,16,1,0,legitimate
+session_004878,2026-01-21T22:59:33.984056,test,pass499,0,0.95,0,0,6,2,0,4,7,1,1,brute_force
+session_004879,2026-01-15T22:59:33.984056,user4879@outlook.com,***,5,9.39,0,0,39,2,0,20,12,1,0,legitimate
+session_004880,2026-01-27T22:59:33.984056,bot4880@automated.com,botpass1448,0,0.14,1,21,0,0,1,21,11,1,1,bot
+session_004881,2026-01-21T22:59:33.984056,../../../etc/passwd,test,2,0.68,0,0,19,1,1,19,4,1,1,path_traversal
+session_004882,2026-01-11T22:59:33.984056,javascript:alert(1),,0,0.89,0,0,19,1,1,19,0,1,1,xss
+session_004883,2026-01-26T22:59:33.984056,user4883@gmail.com,***,50,2.08,0,0,39,7,0,18,12,1,0,legitimate
+session_004884,2026-02-02T22:59:33.984056,user4884@outlook.com,***,35,9.46,0,0,29,3,0,20,9,1,0,legitimate
+session_004885,2026-01-20T22:59:33.984056,admin' OR '1'='1'--,,2,0.54,1,19,13,0,1,19,0,1,1,sql_injection
+session_004886,2026-01-11T22:59:33.984056,bot4886@automated.com,botpass6267,0,0.22,1,21,0,0,1,21,11,1,1,bot
+session_004887,2026-01-26T22:59:33.984056,user4887@company.com,***,37,11.67,0,0,36,3,0,20,12,1,0,legitimate
+session_004888,2026-01-21T22:59:33.984056,user4888@yahoo.com,***,18,2.16,0,0,34,4,1,18,8,1,0,legitimate
+session_004889,2026-01-25T22:59:33.984056,user4889@outlook.com,***,16,12.5,0,0,30,4,0,20,10,1,0,legitimate
+session_004890,2026-01-28T22:59:33.984056,user4890@gmail.com,***,26,2.82,0,0,38,8,0,18,11,1,0,legitimate
+session_004891,2026-02-05T22:59:33.984056,administrator,pass4,0,0.36,0,0,8,2,0,13,5,1,1,brute_force
+session_004892,2026-01-15T22:59:33.984056,user4892@outlook.com,***,26,2.36,0,0,31,4,1,20,10,1,0,legitimate
+session_004893,2026-01-28T22:59:33.984056,1' AND '1'='1,test,1,0.38,0,0,15,2,1,13,4,1,1,sql_injection
+session_004894,2026-01-28T22:59:33.985067,user4894@yahoo.com,***,23,8.65,0,0,38,4,0,18,16,1,0,legitimate
+session_004895,2026-01-22T22:59:33.985067,..\..\..\windows\system32,test,0,0.5,0,0,25,1,1,25,4,1,1,path_traversal
+session_004896,2026-01-30T22:59:33.985067,user4896@outlook.com,***,26,16.21,0,0,45,6,0,20,15,1,0,legitimate
+session_004897,2026-01-20T22:59:33.985067,user4897@outlook.com,***,11,12.39,0,0,35,9,0,20,8,1,0,legitimate
+session_004898,2026-02-03T22:59:33.985067,user4898@outlook.com,***,23,6.47,0,0,40,7,0,20,15,1,0,legitimate
+session_004899,2026-01-21T22:59:33.985067,' OR 'a'='a,test,0,0.47,0,0,15,2,1,11,4,1,1,sql_injection
+session_004900,2026-02-08T22:59:33.985067,user4900@company.com,***,7,6.21,0,0,36,10,0,20,13,1,0,legitimate
+session_004901,2026-02-08T22:59:33.985067,user4901@company.com,***,12,16.0,0,0,36,10,0,20,15,1,0,legitimate
+session_004902,2026-01-29T22:59:33.985067,user4902@gmail.com,***,39,17.29,0,0,35,7,0,18,9,1,0,legitimate
+session_004903,2026-01-24T22:59:33.985067,user4903@gmail.com,***,34,4.43,0,0,38,3,0,18,14,1,0,legitimate
+session_004904,2026-01-30T22:59:33.985067,user4904@yahoo.com,***,18,16.86,0,0,34,9,0,18,10,1,0,legitimate
+session_004905,2026-02-02T22:59:33.985067,user4905@gmail.com,***,32,2.34,0,0,35,6,0,18,10,1,0,legitimate
+session_004906,2026-01-26T22:59:33.985067,user4906@yahoo.com,***,33,14.59,0,0,28,9,0,18,8,1,0,legitimate
+session_004907,2026-01-14T22:59:33.985067,user4907@gmail.com,***,29,14.32,0,0,33,10,0,18,9,1,0,legitimate
+session_004908,2026-01-17T22:59:33.985067,....//....//....//etc/passwd,test,1,0.48,0,0,28,1,1,28,4,1,1,path_traversal
+session_004909,2026-02-02T22:59:33.985067,user4909@gmail.com,***,31,17.51,0,0,36,7,0,18,13,1,0,legitimate
+session_004910,2026-01-24T22:59:33.985067,1' AND '1'='1,admin,2,1.02,0,0,19,0,1,13,5,1,1,sql_injection
+session_004911,2026-01-19T22:59:33.985067,user4911@yahoo.com,***,5,19.1,0,0,34,6,0,18,10,1,0,legitimate
+session_004912,2026-02-04T22:59:33.985067,user4912@yahoo.com,***,13,18.59,0,0,42,3,0,18,16,1,0,legitimate
+session_004913,2026-02-02T22:59:33.985067,user4913@company.com,***,7,15.04,0,0,45,5,0,20,15,1,0,legitimate
+session_004914,2026-01-31T22:59:33.985067,user4914@outlook.com,***,11,2.25,0,0,36,9,0,20,12,1,0,legitimate
+session_004915,2026-01-15T22:59:33.985067,user4915@company.com,***,49,3.77,0,0,40,7,0,20,14,1,0,legitimate
+session_004916,2026-01-11T22:59:33.985067,user4916@yahoo.com,***,23,10.38,0,0,40,9,1,18,14,1,0,legitimate
+session_004917,2026-01-29T22:59:33.985067,user4917@gmail.com,***,14,6.67,0,0,35,6,1,18,9,1,0,legitimate
+session_004918,2026-01-21T22:59:33.985067,user4918@company.com,***,6,9.05,0,0,36,8,0,20,12,1,0,legitimate
+session_004919,2026-01-15T22:59:33.985067,user4919@gmail.com,***,25,13.28,0,0,29,2,0,18,8,1,0,legitimate
+session_004920,2026-01-21T22:59:33.985067,test@test.com| nc -e /bin/sh,&& whoami,0,0.27,0,0,25,0,1,28,9,1,1,command_injection
+session_004921,2026-01-14T22:59:33.985067,user4921@company.com,***,30,3.65,0,0,35,5,0,20,8,1,0,legitimate
+session_004922,2026-01-26T22:59:33.985067,user4922@outlook.com,***,33,12.14,0,0,40,3,0,20,11,1,0,legitimate
+session_004923,2026-02-01T22:59:33.985067,user4923@company.com,***,29,19.69,0,0,29,8,0,20,9,1,0,legitimate
+session_004924,2026-01-09T22:59:33.985067,user4924@yahoo.com,***,42,7.36,0,0,35,9,1,18,9,1,0,legitimate
+session_004925,2026-02-07T22:59:33.985067,../../../etc/passwd,test,2,0.8,0,0,19,1,1,19,4,1,1,path_traversal
+session_004926,2026-02-07T22:59:33.985067,administrator,pass298,1,0.58,0,0,6,1,0,13,7,1,1,brute_force
+session_004927,2026-01-31T22:59:33.985067,user4927@yahoo.com,***,46,11.98,0,0,40,3,0,18,16,1,0,legitimate
+session_004928,2026-01-10T22:59:33.985067,user4928@company.com,***,35,13.3,0,0,33,8,0,20,8,1,0,legitimate
+session_004929,2026-02-01T22:59:33.985067,user4929@company.com,***,35,6.47,0,0,45,9,1,20,16,1,0,legitimate
+session_004930,2026-02-04T22:59:33.985067,user4930@outlook.com,***,17,17.66,0,0,35,7,1,20,13,1,0,legitimate
+session_004931,2026-02-04T22:59:33.985067,user4931@company.com,***,46,7.39,0,0,38,3,0,20,14,1,0,legitimate
+session_004932,2026-02-07T22:59:33.985067,user4932@company.com,***,39,2.81,0,0,39,4,0,20,13,1,0,legitimate
+session_004933,2026-01-18T22:59:33.985067,..%2F..%2F..%2Fetc%2Fpasswd,test,2,0.57,0,0,27,1,1,27,4,1,1,path_traversal
+session_004934,2026-02-07T22:59:33.985067,user4934@gmail.com,***,32,6.74,0,0,35,6,0,18,9,1,0,legitimate
+session_004935,2026-01-11T22:59:33.985067,bot4935@automated.com,botpass8635,0,0.36,1,21,0,0,1,21,11,1,1,bot
+session_004936,2026-01-24T22:59:33.985067,user4936@yahoo.com,***,24,11.15,0,0,34,7,0,18,16,1,0,legitimate
+session_004937,2026-02-07T22:59:33.985067,user4937@gmail.com,***,13,8.55,0,0,40,5,0,18,16,1,0,legitimate
+session_004938,2026-01-26T22:59:33.985067,user4938@outlook.com,***,47,8.88,0,0,35,2,0,20,15,1,0,legitimate
+session_004939,2026-02-05T22:59:33.985067,..\..\..\windows\system32,test,2,0.77,0,0,25,0,1,25,4,1,1,path_traversal
+session_004940,2026-01-23T22:59:33.985067,user4940@outlook.com,***,22,18.5,0,0,37,5,0,20,8,1,0,legitimate
+session_004941,2026-01-10T22:59:33.985067,user4941@yahoo.com,***,9,11.45,0,0,32,7,0,18,11,1,0,legitimate
+session_004942,2026-01-10T22:59:33.985067,user4942@gmail.com,***,42,2.67,0,0,28,8,0,18,9,1,0,legitimate
+session_004943,2026-01-25T22:59:33.985067,root,pass260,0,0.39,0,0,5,2,0,4,7,1,1,brute_force
+session_004944,2026-02-01T22:59:33.985067,user4944@outlook.com,***,13,15.25,0,0,38,5,0,20,13,1,0,legitimate
+session_004945,2026-02-01T22:59:33.985067,admin' UNION SELECT,test,3,1.38,0,0,20,1,1,19,4,1,1,sql_injection
+session_004946,2026-01-17T22:59:33.985067,user4946@gmail.com,***,24,8.08,0,0,39,5,0,18,13,1,0,legitimate
+session_004947,2026-01-10T22:59:33.985067,user4947@outlook.com,***,22,4.47,0,0,37,5,0,20,12,1,0,legitimate
+session_004948,2026-01-21T22:59:33.985067,bot4948@automated.com,botpass7883,0,0.37,1,21,0,0,1,21,11,1,1,bot
+session_004949,2026-01-20T22:59:33.985067,bot4949@automated.com,botpass2020,0,0.42,1,21,0,0,1,21,11,1,1,bot
+session_004950,2026-01-12T22:59:33.985067,test@test.com; ls -la,&& whoami,0,0.18,0,0,18,1,1,21,9,1,1,command_injection
+session_004951,2026-01-23T22:59:33.985067,user4951@gmail.com,***,25,9.67,0,0,36,7,0,18,8,1,0,legitimate
+session_004952,2026-01-25T22:59:33.985067,user4952@yahoo.com,***,13,18.72,0,0,27,3,0,18,8,1,0,legitimate
+session_004953,2026-02-07T22:59:33.985067,user4953@yahoo.com,***,32,9.8,0,0,39,9,0,18,13,1,0,legitimate
+session_004954,2026-01-11T22:59:33.985067,<iframe src=javascript:alert(1)>,test,2,0.48,0,0,32,1,1,32,4,1,1,xss
+session_004955,2026-01-24T22:59:33.985067,administrator,pass105,0,0.9,0,0,5,1,0,13,7,1,1,brute_force
+session_004956,2026-02-07T22:59:33.985067,administrator,pass947,1,0.38,0,0,8,2,0,13,7,1,1,brute_force
+session_004957,2026-01-25T22:59:33.985067,..\..\..\windows\system32,test,2,1.18,0,0,25,0,1,25,4,1,1,path_traversal
+session_004958,2026-01-19T22:59:33.985067,user4958@gmail.com,***,47,17.7,0,0,31,3,0,18,12,1,0,legitimate
+session_004959,2026-02-01T22:59:33.985067,' OR 1=1--,test,0,0.49,0,0,14,1,0,10,4,1,1,sql_injection
+session_004960,2026-02-05T22:59:33.985067,user4960@yahoo.com,***,38,19.97,0,0,32,3,1,18,11,1,0,legitimate
+session_004961,2026-01-31T22:59:33.985067,user4961@gmail.com,***,39,14.27,0,0,34,3,1,18,15,1,0,legitimate
+session_004962,2026-01-20T22:59:33.985067,user4962@outlook.com,***,46,17.19,0,0,39,2,1,20,15,1,0,legitimate
+session_004963,2026-01-16T22:59:33.985067,user4963@yahoo.com,***,13,6.04,0,0,35,3,0,18,12,1,0,legitimate
+session_004964,2026-01-15T22:59:33.985067,user4964@company.com,***,38,4.71,0,0,40,10,0,20,14,1,0,legitimate
+session_004965,2026-02-02T22:59:33.985067,'; DROP TABLE users--,admin,2,1.19,1,21,9,0,0,21,5,1,1,sql_injection
+session_004966,2026-01-26T22:59:33.985067,user4966@yahoo.com,***,31,15.9,0,0,37,10,0,18,13,1,0,legitimate
+session_004967,2026-01-22T22:59:33.985067,user4967@company.com,***,10,18.87,0,0,42,2,0,20,12,1,0,legitimate
+session_004968,2026-01-27T22:59:33.985067,user4968@yahoo.com,***,44,6.0,0,0,38,5,0,18,11,1,0,legitimate
+session_004969,2026-01-22T22:59:33.985067,../../../etc/passwd,test,2,1.0,0,0,19,0,1,19,4,1,1,path_traversal
+session_004970,2026-01-21T22:59:33.985067,user4970@gmail.com,***,24,4.04,0,0,27,6,0,18,8,1,0,legitimate
+session_004971,2026-01-15T22:59:33.985067,user4971@outlook.com,***,37,4.8,0,0,42,5,0,20,14,1,0,legitimate
+session_004972,2026-01-12T22:59:33.985067,user4972@yahoo.com,***,17,3.78,0,0,40,4,0,18,16,1,0,legitimate
+session_004973,2026-02-02T22:59:33.985067,user4973@yahoo.com,***,24,18.49,0,0,36,7,0,18,8,1,0,legitimate
+session_004974,2026-01-20T22:59:33.985067,bot4974@automated.com,botpass7783,0,0.1,1,21,0,0,1,21,11,1,1,bot
+session_004975,2026-01-20T22:59:33.985067,user4975@outlook.com,***,9,14.33,0,0,34,7,0,20,12,1,0,legitimate
+session_004976,2026-01-09T22:59:33.985067,user4976@gmail.com,***,24,4.01,0,0,34,9,0,18,15,1,0,legitimate
+session_004977,2026-01-10T22:59:33.985067,user4977@gmail.com,***,28,9.95,0,0,40,6,0,18,13,1,0,legitimate
+session_004978,2026-01-29T22:59:33.985067,user4978@yahoo.com,***,20,14.97,0,0,40,10,0,18,12,1,0,legitimate
+session_004979,2026-01-10T22:59:33.985067,user4979@outlook.com,***,7,7.05,0,0,36,2,0,20,12,1,0,legitimate
+session_004980,2026-01-15T22:59:33.985067,user4980@company.com,***,17,8.21,0,0,40,4,0,20,10,1,0,legitimate
+session_004981,2026-02-05T22:59:33.985067,bot4981@automated.com,botpass4837,0,0.34,1,21,0,0,1,21,11,1,1,bot
+session_004982,2026-01-23T22:59:33.985067,user4982@company.com,***,18,7.31,0,0,40,3,0,20,16,1,0,legitimate
+session_004983,2026-01-27T22:59:33.985067,<input onfocus=alert(1) autofocus>,pass,0,0.4,0,0,34,0,1,34,4,1,1,xss
+session_004984,2026-01-30T22:59:33.985067,user4984@outlook.com,***,25,14.95,0,0,34,7,0,20,11,1,0,legitimate
+session_004985,2026-02-01T22:59:33.985067,user4985@outlook.com,***,27,6.55,0,0,32,5,0,20,10,1,0,legitimate
+session_004986,2026-01-09T22:59:33.985067,user4986@gmail.com,***,26,2.79,0,0,35,5,0,18,15,1,0,legitimate
+session_004987,2026-01-21T22:59:33.985067,user4987@yahoo.com,***,7,13.29,0,0,28,4,0,18,9,1,0,legitimate
+session_004988,2026-01-28T22:59:33.985067,user4988@yahoo.com,***,11,8.2,0,0,40,6,0,18,15,1,0,legitimate
+session_004989,2026-02-01T22:59:33.985067,<iframe src=javascript:alert(1)>,,1,0.96,0,0,32,0,1,32,0,1,1,xss
+session_004990,2026-01-20T22:59:33.985067,user4990@company.com,***,36,2.95,0,0,36,6,0,20,15,1,0,legitimate
+session_004991,2026-01-19T22:59:33.985067,user4991@yahoo.com,***,29,11.91,0,0,33,9,1,18,10,1,0,legitimate
+session_004992,2026-01-09T22:59:33.985067,user4992@yahoo.com,***,12,7.77,0,0,31,10,1,18,12,1,0,legitimate
+session_004993,2026-01-24T22:59:33.985067,user4993@gmail.com,***,21,2.77,0,0,34,9,0,18,10,1,0,legitimate
+session_004994,2026-01-16T22:59:33.985067,user4994@yahoo.com,***,47,8.11,0,0,34,7,0,18,14,1,0,legitimate
+session_004995,2026-01-25T22:59:33.985067,test@test.com; rm -rf /,&& whoami,2,0.78,0,0,24,1,1,23,9,1,1,command_injection
+session_004996,2026-02-07T22:59:33.985067,"'""><script>alert(String.fromCharCode(88,83,83))</script>",test,1,0.81,0,0,56,0,1,56,4,1,1,xss
+session_004997,2026-02-07T22:59:33.985067,user4997@company.com,***,14,6.39,0,0,44,4,0,20,16,1,0,legitimate
+session_004998,2026-02-04T22:59:33.985067,user4998@yahoo.com,***,11,2.67,0,0,31,9,0,18,8,1,0,legitimate
+session_004999,2026-01-28T22:59:33.985067,user4999@yahoo.com,***,49,12.48,0,0,36,3,0,18,12,1,0,legitimate

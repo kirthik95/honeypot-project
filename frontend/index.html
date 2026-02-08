@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Node Console - Demo UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Canvas -->
+    <canvas id="webgl-canvas"></canvas>
+    <div class="gradient-overlay"></div>
+    <div class="glitter-overlay" aria-hidden="true"></div>
+    
+    <div class="main-container">
+        <nav class="nav">
+            <div class="nav-logo">SHADOW<span class="dot">.</span>NODE</div>
+            <div class="nav-links">
+                <a class="nav-link" href="#">Recon</a>
+                <a class="nav-link" href="#">Ops</a>
+                <a class="nav-link" href="#">Vault</a>
+                <a class="nav-link" href="#">Trace</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-content">
+                <p class="hero-kicker">Midnight Operator Console</p>
+                <h1 class="hero-title">
+                    <span class="title-line">Shadowline</span>
+                    <span class="title-line">Signal Grid</span>
+                </h1>
+                <p class="hero-subtitle">
+                    A cinematic security UI for dark‑ops aesthetics and interactive motion.
+                    Demo only. No data is stored or transmitted.
+                </p>
+                <div class="hero-actions">
+                    <button class="ghost-btn" type="button">Launch Console</button>
+                    <button class="ghost-btn ghost-alt" type="button">View Trace</button>
+                </div>
+            </div>
+
+            <div class="status-row">
+                <div class="status-card">
+                    <span class="status-label">Firewall</span>
+                    <span class="status-value status-amber">Armed</span>
+                    <span class="status-meta">03 signals</span>
+                </div>
+                <div class="status-card">
+                    <span class="status-label">Active Nodes</span>
+                    <span class="status-value status-gold">128</span>
+                    <span class="status-meta">Midnight mesh</span>
+                </div>
+                <div class="status-card">
+                    <span class="status-label">Trace</span>
+                    <span class="status-value status-red">Live</span>
+                    <span class="status-meta">Echo lock</span>
+                </div>
+                <div class="status-card">
+                    <span class="status-label">Integrity</span>
+                    <span class="status-value status-gold">99.98%</span>
+                    <span class="status-meta">Verified</span>
+                </div>
+            </div>
+
+            <div class="terminal-panel" aria-hidden="true">
+                <div class="terminal-header">LIVE TRACE • SECURE CHANNEL</div>
+                <div class="terminal-body">
+                    <span class="terminal-line">[00:12] handshake › signal verified</span>
+                    <span class="terminal-line">[00:13] vault.sync › edge stabilized</span>
+                    <span class="terminal-line">[00:14] trace.route › shadow mesh online</span>
+                    <span class="terminal-line">[00:15] ops.guard › firewall armed</span>
+                </div>
+            </div>
+
+            <div class="login-wrap">
+                <div class="login-card">
+                    <div class="card-header">
+                        <div class="logo-mark" aria-hidden="true">NX</div>
+                        <h2 class="card-title">Operator Login</h2>
+                        <p class="card-subtitle">Demo interface for showcase use only</p>
+                    </div>
+                    
+                    <form id="loginForm" class="login-form">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                class="form-input"
+                                placeholder="Enter your email"
+                                autocomplete="username"
+                                required
+                            >
+                        </div>
+                        
+                        <div class="form-group password-wrapper">
+                            <label for="password" class="form-label">Password</label>
+                            <input 
+                                type="password" 
+                                id="password" 
+                                class="form-input"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+                            <button type="button" class="password-toggle" id="togglePassword">
+                                <span class="eye-icon">VIEW</span>
+                            </button>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="remember" class="checkbox-input">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-text">Remember me</span>
+                            </label>
+                            <a href="#" class="forgot-link">Forgot password?</a>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span class="btn-text">Sign In</span>
+                            <span class="btn-loader"></span>
+                        </button>
+                        
+                        <div class="divider">
+                            <span class="divider-text">OR</span>
+                        </div>
+                        
+                        <div class="social-buttons">
+                            <button type="button" class="social-btn" data-provider="sso">
+                                <span>Continue with SSO</span>
+                            </button>
+                            <button type="button" class="social-btn" data-provider="keycard">
+                                <span>Continue with Keycard</span>
+                            </button>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <p class="footer-text">
+                                <a class="footer-link" href="#">Privacy Policy</a>
+                                <span> / </span>
+                                <a class="footer-link" href="#">Terms of Service</a>
+                                <span> / </span>
+                                <a class="footer-link" href="#">Help</a>
+                            </p>
+                        </div>
+                    </form>
+
+                    <p class="demo-note">Demo UI only. No data is stored or transmitted.</p>
+                    
+                    <div class="security-badge">
+                        <span>256-bit SSL Encrypted</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="intel-section">
+            <div class="section-heading">
+                <h2 class="section-title">Shadow Matrix</h2>
+                <p class="section-subtitle">
+                    Live protocols, stealth routing, and anomaly sweeps tuned for a covert‑ops feel.
+                </p>
+            </div>
+            <div class="intel-grid">
+                <article class="intel-card">
+                    <span class="intel-tag">Stealth Sync</span>
+                    <h3 class="intel-title">Silent Handoff</h3>
+                    <p class="intel-body">Edge-first routing with adaptive failover keeps the trace clean.</p>
+                    <a class="intel-cta" href="#">Read sync notes</a>
+                </article>
+                <article class="intel-card">
+                    <span class="intel-tag">Vault Control</span>
+                    <h3 class="intel-title">Layered Keys</h3>
+                    <p class="intel-body">Segmented access with strict protocol mapping.</p>
+                    <a class="intel-cta" href="#">View access map</a>
+                </article>
+                <article class="intel-card">
+                    <span class="intel-tag">Anomaly Sweep</span>
+                    <h3 class="intel-title">Precision Scan</h3>
+                    <p class="intel-body">Live integrity sweeps with heartbeat verification.</p>
+                    <a class="intel-cta" href="#">Open diagnostics</a>
+                </article>
+                <article class="intel-card">
+                    <span class="intel-tag">Trace Watch</span>
+                    <h3 class="intel-title">Adaptive Shield</h3>
+                    <p class="intel-body">Always-on monitoring with redline escalation.</p>
+                    <a class="intel-cta" href="#">Review reports</a>
+                </article>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <p class="footer-note">Demo interface. No data is stored or transmitted.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="honeypot-minimal.js"></script>
+</body>
+</html>

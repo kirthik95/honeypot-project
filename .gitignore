@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env
+
+# Logs
+logs/
+*.log
+
+# Models (optional – uncomment if too large)
+# models/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node / Firebase
+node_modules/
+.firebase/
