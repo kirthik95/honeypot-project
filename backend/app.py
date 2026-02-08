@@ -9,13 +9,13 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from datetime import datetime
 import os, json, logging, re
-import pandas as pd
 import numpy as np
 from collections import defaultdict
 
-# Optional Azure Blob
+# ---------------- OPTIONAL AZURE BLOB ----------------
 try:
     from azure.storage.blob import BlobServiceClient
+    from azure.core.exceptions import ResourceExistsError
     AZURE_AVAILABLE = True
 except ImportError:
     AZURE_AVAILABLE = False
@@ -76,12 +76,21 @@ class BlobLogger:
                 self.client = BlobServiceClient.from_connection_string(
                     config.AZURE_STORAGE_CONNECTION_STRING
                 )
-                self.client.get_container_client(
+
+                container_client = self.client.get_container_client(
                     config.BLOB_CONTAINER_NAME
-                ).create_container()
+                )
+
+                try:
+                    container_client.create_container()
+                except ResourceExistsError:
+                    pass  # container already exists → OK
+
                 logger.info("Azure Blob Storage connected successfully")
+
             except Exception as e:
                 logger.warning(f"Azure Blob disabled: {e}")
+                self.client = None
 
     def log(self, data: dict):
         ts = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -185,7 +194,6 @@ def track():
     try:
         data = request.get_json() or {}
 
-        # SAFE session_id
         session_id = data.get(
             "session_id", f"session-{int(datetime.now().timestamp())}"
         )
