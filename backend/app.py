@@ -192,13 +192,14 @@ detector = AttackDetector()
 @app.route("/api/track", methods=["POST"])
 def track():
     try:
-        data = request.get_json() or {}
+        data = request.get_json(force=True, silent=True) or {}
 
         session_id = data.get(
             "session_id", f"session-{int(datetime.now().timestamp())}"
         )
         data["session_id"] = session_id
 
+        # ---- Detection ----
         vulns = vuln_detector.detect(data)
         prediction = detector.predict(data)
 
@@ -208,14 +209,18 @@ def track():
         result = {
             **data,
             "vulnerabilities": vulns,
-            "cvss_score": cvss,
+            "cvss_score": float(cvss),
             "severity": severity,
-            "is_attack": prediction["is_attack"] or bool(vulns),
+            "is_attack": bool(prediction["is_attack"] or vulns),
             "risk_level": prediction["risk_level"],
             "timestamp": datetime.now().isoformat()
         }
 
-        blob_logger.log(result)
+        # ---- Logging (never break API) ----
+        try:
+            blob_logger.log(result)
+        except Exception as log_error:
+            logger.warning(f"Logging failed: {log_error}")
 
         return jsonify({
             "success": True,
@@ -223,12 +228,17 @@ def track():
             "is_attack": result["is_attack"],
             "risk_level": result["risk_level"],
             "severity": severity,
-            "cvss_score": cvss,
+            "cvss_score": float(cvss),
             "message": "Attack analyzed and logged"
         })
 
     except Exception as e:
-        return jsonify({"success": False, "error": str(e)}), 500
+        logger.exception("Fatal error in /api/track")
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
+
 
 @app.route("/health")
 def health():
