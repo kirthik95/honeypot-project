@@ -535,6 +535,52 @@ def get_stats():
         # Average CVSS
         avg_cvss = sum(cvss_scores) / len(cvss_scores) if cvss_scores else 0.0
         
+        # Calculate behavioral metrics (NEW!)
+        mouse_movements = []
+        keystrokes = []
+        time_to_submit = []
+        paste_events = 0
+        honeypot_filled = 0
+        rapid_submissions = 0
+        
+        for log in logs:
+            mouse_movements.append(log.get('mouse_movements', 0))
+            keystrokes.append(log.get('keystrokes', 0))
+            time_to_submit.append(log.get('time_to_submit', 0))
+            if log.get('paste_events', 0) > 0:
+                paste_events += log.get('paste_events', 0)
+            if log.get('honeypot_filled', 0) > 0:
+                honeypot_filled += 1
+            if log.get('rapid_submission', 0) == 1:
+                rapid_submissions += 1
+        
+        behavioral_metrics = {
+            "avg_mouse_movements": sum(mouse_movements) / len(mouse_movements) if mouse_movements else 0,
+            "avg_keystrokes": sum(keystrokes) / len(keystrokes) if keystrokes else 0,
+            "avg_time_to_submit": sum(time_to_submit) / len(time_to_submit) if time_to_submit else 0,
+            "total_paste_events": paste_events,
+            "honeypot_filled_count": honeypot_filled,
+            "rapid_submissions_count": rapid_submissions
+        }
+        
+        # Get recent attacks with details (NEW!)
+        recent_attacks = []
+        for log in sorted(logs, key=lambda x: x.get('timestamp', ''), reverse=True)[:20]:
+            vulns = log.get('vulnerabilities', [])
+            attack_type = vulns[0].get('type') if vulns else 'unknown'
+            cve = vulns[0].get('cve_examples', [''])[0] if vulns else ''
+            owasp = vulns[0].get('owasp', '') if vulns else ''
+            
+            recent_attacks.append({
+                "timestamp": log.get('timestamp'),
+                "session_id": log.get('session_id'),
+                "severity": log.get('severity', 'INFO'),
+                "cvss_score": log.get('cvss_score', 0),
+                "attack_type": attack_type,
+                "cve": cve,
+                "owasp": owasp
+            })
+        
         stats = {
             "total_attacks": len(logs),
             "attacks_today": attacks_today,
@@ -542,7 +588,9 @@ def get_stats():
             "severity_distribution": dict(severity_counts),
             "top_cves": top_cves,
             "owasp_top_10": dict(owasp_counts),
-            "avg_cvss_score": round(avg_cvss, 2)
+            "avg_cvss_score": round(avg_cvss, 2),
+            "behavioral_metrics": behavioral_metrics,
+            "recent_attacks": recent_attacks
         }
         
         logger.info(f"📊 Stats requested: {len(logs)} attacks found")
@@ -551,6 +599,50 @@ def get_stats():
     except Exception as e:
         logger.exception("❌ Error in /api/stats")
         return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/clear", methods=["POST"])
+def clear_all_data():
+    """Clear all attack logs - for testing purposes"""
+    try:
+        deleted_count = 0
+        
+        # Delete local files
+        local_dir = blob_logger.local_dir
+        if os.path.exists(local_dir):
+            for filename in os.listdir(local_dir):
+                if filename.endswith('.json'):
+                    filepath = os.path.join(local_dir, filename)
+                    os.remove(filepath)
+                    deleted_count += 1
+        
+        logger.info(f"🗑️  Cleared {deleted_count} local attack logs")
+        
+        # Delete from Azure Blob (if connected)
+        if blob_logger.client:
+            try:
+                container_client = blob_logger.client.get_container_client(
+                    config.BLOB_CONTAINER_NAME
+                )
+                blobs = container_client.list_blobs(name_starts_with="attacks/")
+                for blob in blobs:
+                    container_client.delete_blob(blob.name)
+                logger.info(f"🗑️  Cleared Azure Blob attack logs")
+            except Exception as e:
+                logger.warning(f"Could not clear Azure blobs: {e}")
+        
+        return jsonify({
+            "success": True,
+            "message": f"Cleared {deleted_count} attack logs",
+            "deleted_count": deleted_count
+        })
+    
+    except Exception as e:
+        logger.exception("Error clearing data")
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
 
 
 @app.route("/health")
