@@ -12,7 +12,7 @@ class ClaudeEngine:
                 "Add it to requirements.txt to enable Claude analysis."
             ) from e
 
-        api_key = os.getenv("CLAUDE_API_KEY")
+        api_key = os.getenv("ANTHROPIC_API_KEY") or os.getenv("CLAUDE_API_KEY")
         if not api_key:
             raise RuntimeError("CLAUDE_API_KEY is not set.")
 
