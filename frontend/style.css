@@ -540,6 +540,7 @@ body::after {
     text-transform: uppercase;
     background: linear-gradient(90deg, var(--black-gold) 10%, var(--red) 70%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1.02;
 }
@@ -549,6 +550,7 @@ body::after {
     display: inline-block;
     background: linear-gradient(90deg, var(--black-gold) 10%, var(--red) 72%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 400;
 }
@@ -564,6 +566,7 @@ body::after {
     font-family: var(--font-display);
     background: linear-gradient(90deg, var(--black-gold) 6%, var(--red) 72%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 0.2em;
     margin-bottom: var(--spacing-sm);
@@ -1188,4 +1191,66 @@ body::after {
 *:focus-visible {
     outline: 2px solid var(--gold);
     outline-offset: 2px;
+}
+/* ================================
+   SPATIAL LIGHT FIELD
+   ================================ */
+
+.spatial-light {
+    position: fixed;
+    inset: -20%;
+    pointer-events: none;
+    background:
+        radial-gradient(600px circle at var(--lx, 50%) var(--ly, 40%),
+        rgba(242,236,221,0.25), transparent 60%);
+    mix-blend-mode: screen;
+    transition: background 0.1s ease;
+    z-index: 1;
+}
+
+.orbital-field {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.25;
+    animation: slowRotate 120s linear infinite;
+}
+
+.orbital-svg {
+    width: 900px;
+    height: 900px;
+}
+
+.orbit-ring {
+    fill: none;
+    stroke: rgba(199,150,28,0.4);
+    stroke-width: 1.5;
+    stroke-dasharray: 6 8;
+}
+
+.orbit-ring.faint {
+    stroke: rgba(242,236,221,0.15);
+}
+
+@keyframes slowRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Whole scene perspective */
+.main-container {
+    transform-style: preserve-3d;
+    perspective: 1200px;
+}
+
+.login-card {
+    transform: translateZ(40px);
+}
+
+.hero-content {
+    transform: translateZ(60px);
 }

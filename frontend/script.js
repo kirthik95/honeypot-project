@@ -680,3 +680,13 @@ toastStyle.textContent = `
     }
 `;
 document.head.appendChild(toastStyle);
+// Spatial light follow
+const spatialLight = document.querySelector('.spatial-light');
+if (spatialLight && !prefersReducedMotion) {
+    window.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth) * 100;
+        const y = (e.clientY / window.innerHeight) * 100;
+        spatialLight.style.setProperty('--lx', x + '%');
+        spatialLight.style.setProperty('--ly', y + '%');
+    });
+}

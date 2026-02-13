@@ -1,0 +1,11 @@
+{
+  "venvPath": "backend",
+  "venv": "venv",
+  "exclude": [
+    "**/backend/venv",
+    "**/backend/models",
+    "**/.firebase",
+    "**/.git"
+  ],
+  "reportMissingTypeStubs": "none"
+}

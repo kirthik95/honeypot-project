@@ -1,672 +1,428 @@
-"""
-ADVANCED HONEYPOT BACKEND - COMPLETE VERSION WITH DASHBOARD SUPPORT
-Includes: /api/track, /api/stats, /health, Azure Blob logging, XGBoost ML
-"""
+import os
+from collections import Counter
+from datetime import datetime
+from typing import Any, Dict, List, Optional
 
-from dotenv import load_dotenv
-load_dotenv()
-
-from flask import Flask, request, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
-from datetime import datetime, timedelta
-import os, json, logging, re
-import numpy as np
-import pandas as pd
-from collections import defaultdict
 
-# ---------------- OPTIONAL AZURE BLOB ----------------
-try:
-    from azure.storage.blob import BlobServiceClient
-    from azure.core.exceptions import ResourceExistsError
-    AZURE_AVAILABLE = True
-except ImportError:
-    AZURE_AVAILABLE = False
-    logging.warning("Azure SDK not available - using local storage only")
+from ai.claude_engine import ClaudeEngine
+from deception.deception_engine import DeceptionEngine
+from fusion.risk_engine import RiskEngine
+from honeypot.behavior_detector import AttackDetector
+from honeypot.blob_logger import BlobLogger
+from honeypot.vuln_detector import VulnerabilityDetector
+from intel.nvd_lookup import NVDLookup
+from ml.network_model import NetworkModel
+from ml.web_model import WebAttackModel
 
-import xgboost as xgb
-import joblib
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.preprocessing import LabelEncoder
-
-# ---------------- APP ----------------
 app = Flask(__name__)
 CORS(app)
 
-# ---------------- CONFIG ----------------
-class Config:
-    AZURE_STORAGE_CONNECTION_STRING = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
-    BLOB_CONTAINER_NAME = "honeypot-logs"
-    LOCAL_LOG_DIR = "logs"
 
-    BEHAVIOR_MODEL_PATH = "models/behavior_detector.pkl"
-    ATTACK_CLASSIFIER_PATH = "models/attack_classifier.pkl"
-    VECTORIZER_PATH = "models/tfidf_vectorizer.pkl"
-    LABEL_ENCODER_PATH = "models/label_encoder.pkl"
+def _severity_from_cvss(cvss: float) -> str:
+    if cvss >= 9.0:
+        return "CRITICAL"
+    if cvss >= 7.0:
+        return "HIGH"
+    if cvss >= 4.0:
+        return "MEDIUM"
+    if cvss > 0.0:
+        return "LOW"
+    return "INFO"
 
-    THRESHOLD = 0.5
 
-    BEHAVIOR_FEATURES = [
-        "mouse_movements", "keystrokes", "focus_events", "paste_events",
-        "time_to_submit", "rapid_submission", "honeypot_filled",
-        "honeypot_total_length", "email_length", "password_length",
-        "cookies_enabled"
-    ]
+def _safe_int(value: Any, default: int = 0) -> int:
+    try:
+        return int(value)
+    except Exception:
+        return default
 
-config = Config()
-os.makedirs(config.LOCAL_LOG_DIR, exist_ok=True)
-os.makedirs("models", exist_ok=True)
 
-# ---------------- LOGGING ----------------
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.FileHandler(os.path.join(config.LOCAL_LOG_DIR, "honeypot.log")),
-        logging.StreamHandler()
-    ]
-)
-logger = logging.getLogger(__name__)
+def _safe_float(value: Any, default: float = 0.0) -> float:
+    try:
+        return float(value)
+    except Exception:
+        return default
 
-# ---------------- AZURE / LOCAL LOGGER ----------------
-class BlobLogger:
-    def __init__(self):
-        self.client = None
-        self.local_dir = os.path.join(config.LOCAL_LOG_DIR, "attacks")
-        os.makedirs(self.local_dir, exist_ok=True)
 
-        if AZURE_AVAILABLE and config.AZURE_STORAGE_CONNECTION_STRING:
-            try:
-                self.client = BlobServiceClient.from_connection_string(
-                    config.AZURE_STORAGE_CONNECTION_STRING
-                )
+def _event_is_attack(event: Dict[str, Any]) -> bool:
+    if isinstance(event.get("is_attack"), bool):
+        return bool(event["is_attack"])
+    if event.get("vulnerabilities"):
+        return True
+    return _safe_float(event.get("cvss_score")) > 0.0
 
-                container_client = self.client.get_container_client(
-                    config.BLOB_CONTAINER_NAME
-                )
 
-                try:
-                    container_client.create_container()
-                    logger.info("✅ Created Azure Blob container")
-                except ResourceExistsError:
-                    logger.info("✅ Azure Blob container already exists")
+def _compute_is_bot(payload: Dict[str, Any], behavior_result: Dict[str, Any]) -> bool:
+    # Heuristic: rapid + low interaction OR honeypot field filled.
+    rapid = _safe_int(payload.get("rapid_submission")) == 1
+    honeypot_filled = _safe_int(payload.get("honeypot_filled")) == 1
+    low_mouse = _safe_int(payload.get("mouse_movements")) <= 3
+    low_keys = _safe_int(payload.get("keystrokes")) <= 3
 
-                logger.info("✅ Azure Blob Storage connected successfully")
+    if honeypot_filled:
+        return True
+    if rapid and (low_mouse or low_keys):
+        return True
+    if bool(behavior_result.get("is_attack")) and behavior_result.get("risk_level") in ("medium", "high"):
+        return True
+    return False
 
-            except Exception as e:
-                logger.warning(f"⚠️ Azure Blob disabled: {e}")
-                self.client = None
 
-    def log(self, data: dict):
-        """Save attack log to local file and Azure Blob"""
-        ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-        sid = data.get("session_id", "unknown")
-        filename = f"{ts}_{sid}.json"
+def _redact_for_logging(event: Dict[str, Any]) -> Dict[str, Any]:
+    log_sensitive = os.getenv("LOG_SENSITIVE_FIELDS", "false").strip().lower() == "true"
+    out = dict(event)
+    if "password" in out and not log_sensitive:
+        out["password"] = "[REDACTED]"
+    return out
 
-        # Always save locally
-        local_path = os.path.join(self.local_dir, filename)
-        with open(local_path, "w") as f:
-            json.dump(data, f, indent=2)
-        logger.info(f"📁 Saved locally: {filename}")
 
-        # Try to save to Azure
-        if self.client:
-            try:
-                blob = self.client.get_blob_client(
-                    config.BLOB_CONTAINER_NAME, f"attacks/{filename}"
-                )
-                blob.upload_blob(json.dumps(data, indent=2), overwrite=True)
-                logger.info(f"☁️ Uploaded to Azure: {filename}")
-            except Exception as e:
-                logger.warning(f"⚠️ Azure upload failed: {e}")
+def _top_vuln(vulns: List[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+    if not vulns:
+        return None
+    return max(vulns, key=lambda v: _safe_float(v.get("cvss_score")))
 
-    def get_all_logs(self, limit=1000):
-        """Fetch all attack logs for dashboard stats"""
-        logs = []
-        
-        # Load from local files
-        try:
-            files = sorted(os.listdir(self.local_dir), reverse=True)[:limit]
-            for filename in files:
-                if filename.endswith('.json'):
-                    with open(os.path.join(self.local_dir, filename), 'r') as f:
-                        logs.append(json.load(f))
-        except Exception as e:
-            logger.error(f"Error loading local logs: {e}")
-        
-        # If Azure available, also try to load from there
-        if self.client and not logs:
-            try:
-                container = self.client.get_container_client(config.BLOB_CONTAINER_NAME)
-                blobs = list(container.list_blobs(name_starts_with="attacks/"))[:limit]
-                
-                for blob in blobs:
-                    blob_client = container.get_blob_client(blob.name)
-                    content = blob_client.download_blob().readall()
-                    logs.append(json.loads(content))
-            except Exception as e:
-                logger.warning(f"Could not load from Azure: {e}")
-        
-        return logs
 
-blob_logger = BlobLogger()
+print("[INFO] Initializing engines...")
 
-# ---------------- VULNERABILITY DETECTOR ----------------
-class VulnerabilityDetector:
-    """Pattern-based vulnerability detection"""
-    
-    SQL = [
-        r"union.*select", r"or\s+1\s*=\s*1", r"drop\s+table",
-        r"or\s+'1'\s*=\s*'1", r"admin'\s*--", r"';.*--"
-    ]
-    
-    XSS = [
-        r"<script", r"onerror\s*=", r"javascript:",
-        r"<img.*onerror", r"alert\(", r"<svg.*onload"
-    ]
-    
-    CMD = [
-        r";\s*(ls|cat|rm)", r"\|\s*(ls|cat)", r"/etc/passwd",
-        r"&&\s*whoami", r"`.*`", r"\$\(.*\)"
-    ]
-    
-    PATH = [
-        r"\.\./", r"\.\./\.\./", r"%2e%2e/", r"\.\.\\",
-        r"/etc/", r"/windows/"
-    ]
+try:
+    blob_logger = BlobLogger()
+    print("[OK] Blob Logger initialized")
+except Exception as e:
+    print(f"[ERR] Blob Logger failed: {e}")
+    blob_logger = None
 
-    OWASP_MAP = {
-        'sql_injection': {
-            'owasp': 'A03:2021 – Injection',
-            'cve_examples': ['CVE-2021-44228', 'CVE-2019-16278'],
-            'description': 'SQL Injection Attack Detected'
-        },
-        'xss': {
-            'owasp': 'A03:2021 – Injection',
-            'cve_examples': ['CVE-2021-42013', 'CVE-2020-14882'],
-            'description': 'Cross-Site Scripting (XSS) Attack Detected'
-        },
-        'command_injection': {
-            'owasp': 'A03:2021 – Injection',
-            'cve_examples': ['CVE-2021-44228', 'CVE-2021-3156'],
-            'description': 'Command Injection Attack Detected'
-        },
-        'path_traversal': {
-            'owasp': 'A01:2021 – Broken Access Control',
-            'cve_examples': ['CVE-2021-41773', 'CVE-2020-5902'],
-            'description': 'Path Traversal Attack Detected'
-        },
-        'bot_attack': {
-            'owasp': 'A07:2021 – Identification and Authentication Failures',
-            'cve_examples': ['CVE-2021-35587'],
-            'description': 'Automated Bot Attack Detected'
-        }
-    }
+try:
+    vuln_detector = VulnerabilityDetector()
+    print("[OK] Vulnerability Detector initialized")
+except Exception as e:
+    print(f"[ERR] Vulnerability Detector failed: {e}")
+    vuln_detector = None
 
-    def detect(self, data):
-        """Detect vulnerabilities in input data"""
-        text = " ".join([
-            str(data.get("email", "")),
-            str(data.get("password", "")),
-            str(data.get("username", ""))
-        ]).lower()
+try:
+    behavior_detector = AttackDetector()
+    print("[OK] Behavior Detector initialized")
+except Exception as e:
+    print(f"[ERR] Behavior Detector failed: {e}")
+    behavior_detector = None
 
-        vulns = []
-        
-        # Check SQL Injection
-        if any(re.search(p, text, re.IGNORECASE) for p in self.SQL):
-            vulns.append({
-                "type": "sql_injection",
-                "severity": "CRITICAL",
-                "cvss_score": 9.8,
-                **self.OWASP_MAP['sql_injection']
-            })
-        
-        # Check XSS
-        if any(re.search(p, text, re.IGNORECASE) for p in self.XSS):
-            vulns.append({
-                "type": "xss",
-                "severity": "HIGH",
-                "cvss_score": 7.2,
-                **self.OWASP_MAP['xss']
-            })
-        
-        # Check Command Injection
-        if any(re.search(p, text, re.IGNORECASE) for p in self.CMD):
-            vulns.append({
-                "type": "command_injection",
-                "severity": "CRITICAL",
-                "cvss_score": 9.8,
-                **self.OWASP_MAP['command_injection']
-            })
-        
-        # Check Path Traversal
-        if any(re.search(p, text, re.IGNORECASE) for p in self.PATH):
-            vulns.append({
-                "type": "path_traversal",
-                "severity": "HIGH",
-                "cvss_score": 7.5,
-                **self.OWASP_MAP['path_traversal']
-            })
-        
-        # Check Bot behavior
-        if data.get("honeypot_filled", 0) > 0:
-            vulns.append({
-                "type": "bot_attack",
-                "severity": "MEDIUM",
-                "cvss_score": 5.3,
-                **self.OWASP_MAP['bot_attack']
-            })
+try:
+    network_model = NetworkModel()
+    print("[OK] Network Model initialized")
+except Exception as e:
+    print(f"[WARN] Network Model unavailable: {e}")
+    network_model = None
 
-        return vulns
+try:
+    web_model = WebAttackModel()
+    print("[OK] Web Attack Model initialized")
+except Exception as e:
+    print(f"[WARN] Web Attack Model unavailable: {e}")
+    web_model = None
 
-vuln_detector = VulnerabilityDetector()
+try:
+    claude = ClaudeEngine()
+    print("[OK] Claude Engine initialized")
+except Exception as e:
+    print(f"[WARN] Claude Engine unavailable: {e}")
+    claude = None
 
-# ---------------- ML DETECTOR ----------------
-class AttackDetector:
-    def __init__(self):
-        self.behavior = None
-        self.vectorizer = None
-        self.classifier = None
-        self.encoder = None
-        self.load()
+try:
+    nvd = NVDLookup()
+    print("[OK] NVD Lookup initialized")
+except Exception as e:
+    print(f"[WARN] NVD Lookup unavailable: {e}")
+    nvd = None
 
-    def load(self):
-        """Load or train ML models"""
-        if os.path.exists(config.BEHAVIOR_MODEL_PATH):
-            try:
-                self.behavior = joblib.load(config.BEHAVIOR_MODEL_PATH)
-                logger.info("✅ Loaded behavior model from disk")
-            except:
-                logger.warning("⚠️ Could not load behavior model, retraining...")
-                self.train_behavior()
-        else:
-            self.train_behavior()
+try:
+    risk_engine = RiskEngine()
+    print("[OK] Risk Engine initialized")
+except Exception as e:
+    print(f"[WARN] Risk Engine unavailable: {e}")
+    risk_engine = None
 
-        if os.path.exists(config.ATTACK_CLASSIFIER_PATH):
-            try:
-                self.classifier = joblib.load(config.ATTACK_CLASSIFIER_PATH)
-                self.vectorizer = joblib.load(config.VECTORIZER_PATH)
-                self.encoder = joblib.load(config.LABEL_ENCODER_PATH)
-                logger.info("✅ Loaded attack classifier from disk")
-            except:
-                logger.warning("⚠️ Could not load classifier, retraining...")
-                self.train_classifier()
-        else:
-            self.train_classifier()
+try:
+    deception_engine = DeceptionEngine()
+    print("[OK] Deception Engine initialized")
+except Exception as e:
+    print(f"[WARN] Deception Engine unavailable: {e}")
+    deception_engine = None
 
-    def train_behavior(self):
-        """Train behavioral detection model"""
-        logger.info("🤖 Training behavior detection model...")
-        
-        # Generate synthetic data (legitimate vs bot behavior)
-        np.random.seed(42)
-        n = 1000
-        
-        # Legitimate users: more mouse, longer time
-        legit = np.column_stack([
-            np.random.randint(50, 500, n//2),  # mouse_movements
-            np.random.randint(10, 100, n//2),  # keystrokes
-            np.random.randint(2, 10, n//2),    # focus_events
-            np.random.randint(0, 2, n//2),     # paste_events
-            np.random.uniform(5, 60, n//2),    # time_to_submit
-            np.zeros(n//2),                     # rapid_submission
-            np.zeros(n//2),                     # honeypot_filled
-            np.zeros(n//2),                     # honeypot_total_length
-            np.random.randint(10, 50, n//2),   # email_length
-            np.random.randint(8, 20, n//2),    # password_length
-            np.ones(n//2)                       # cookies_enabled
-        ])
-        
-        # Bots: low mouse, fast time, honeypot filled
-        bots = np.column_stack([
-            np.random.randint(0, 10, n//2),
-            np.random.randint(0, 10, n//2),
-            np.random.randint(0, 2, n//2),
-            np.random.randint(2, 10, n//2),
-            np.random.uniform(0.1, 3, n//2),
-            np.ones(n//2),
-            np.random.randint(1, 4, n//2),
-            np.random.randint(10, 100, n//2),
-            np.random.randint(5, 100, n//2),
-            np.random.randint(1, 100, n//2),
-            np.random.randint(0, 2, n//2)
-        ])
-        
-        X = np.vstack([legit, bots])
-        y = np.hstack([np.zeros(n//2), np.ones(n//2)])
-        
-        # Shuffle
-        idx = np.random.permutation(len(X))
-        X, y = X[idx], y[idx]
-        
-        self.behavior = xgb.XGBClassifier(
-            max_depth=6,
-            learning_rate=0.1,
-            n_estimators=100,
-            random_state=42
-        )
-        self.behavior.fit(X, y)
-        joblib.dump(self.behavior, config.BEHAVIOR_MODEL_PATH)
-        logger.info("✅ Behavior model trained and saved")
+print("[INFO] Engine init complete.\n")
 
-    def train_classifier(self):
-        """Train attack type classifier"""
-        logger.info("🤖 Training attack classifier...")
-        
-        texts = [
-            "admin' OR '1'='1", "admin'--", "UNION SELECT",
-            "<script>alert(1)</script>", "javascript:alert",
-            "; cat /etc/passwd", "| ls -la",
-            "user@example.com", "john.doe@company.com", "test@test.com"
-        ]
-        labels = [
-            "attack", "attack", "attack",
-            "attack", "attack",
-            "attack", "attack",
-            "legit", "legit", "legit"
-        ]
-        
-        self.vectorizer = TfidfVectorizer(max_features=50)
-        X = self.vectorizer.fit_transform(texts)
-        
-        self.encoder = LabelEncoder()
-        y = self.encoder.fit_transform(labels)
-        
-        self.classifier = xgb.XGBClassifier(max_depth=4, learning_rate=0.1)
-        self.classifier.fit(X, y)
-        
-        joblib.dump(self.classifier, config.ATTACK_CLASSIFIER_PATH)
-        joblib.dump(self.vectorizer, config.VECTORIZER_PATH)
-        joblib.dump(self.encoder, config.LABEL_ENCODER_PATH)
-        logger.info("✅ Attack classifier trained and saved")
 
-    def predict(self, data):
-        """Predict if submission is an attack"""
-        try:
-            features = [data.get(f, 0) for f in config.BEHAVIOR_FEATURES]
-            prob = self.behavior.predict_proba([features])[0][1]
-            
-            return {
-                "is_attack": bool(prob >= config.THRESHOLD),
-                "confidence": float(prob),
-                "risk_level": "high" if prob > 0.7 else "medium" if prob > 0.3 else "low"
-            }
-        except Exception as e:
-            logger.error(f"Prediction error: {e}")
-            return {"is_attack": False, "confidence": 0.0, "risk_level": "unknown"}
-
-detector = AttackDetector()
-
-# ---------------- API ROUTES ----------------
 @app.route("/api/track", methods=["POST"])
 def track():
-    """Main endpoint to receive and analyze attacks"""
     try:
         data = request.get_json(force=True, silent=True) or {}
+        if not isinstance(data, dict):
+            data = {}
 
-        session_id = data.get(
-            "session_id", f"session-{int(datetime.now().timestamp())}"
-        )
+        session_id = str(data.get("session_id") or f"session-{int(datetime.now().timestamp())}")
+        timestamp = datetime.now().isoformat()
+
+        # Run detectors on the raw payload.
         data["session_id"] = session_id
+        vulnerabilities: List[Dict[str, Any]] = []
+        if vuln_detector:
+            vulnerabilities = vuln_detector.detect(data)
 
-        # Pattern-based detection
-        vulns = vuln_detector.detect(data)
-        
-        # ML-based detection
-        prediction = detector.predict(data)
+        behavior_result: Dict[str, Any] = {"is_attack": False, "risk_level": "low", "confidence": 0.0}
+        if behavior_detector:
+            behavior_result = behavior_detector.predict(data)
 
-        # Calculate CVSS
-        cvss = max([v["cvss_score"] for v in vulns], default=0.0)
-        
-        # Determine severity
-        if cvss >= 9.0:
-            severity = "CRITICAL"
-        elif cvss >= 7.0:
-            severity = "HIGH"
-        elif cvss >= 4.0:
-            severity = "MEDIUM"
+        is_bot = _compute_is_bot(data, behavior_result)
+        is_attack = bool(vulnerabilities) or bool(behavior_result.get("is_attack")) or is_bot
+
+        primary = _top_vuln(vulnerabilities)
+        cvss = _safe_float(primary.get("cvss_score") if primary else 0.0)
+        cvss_vector = str(primary.get("cvss_vector")) if primary and primary.get("cvss_vector") else "N/A"
+
+        if primary:
+            attack_type = str(primary.get("attack_type") or "unknown")
+            owasp = primary.get("owasp")
+            remediation = str(primary.get("remediation") or "")
+            threat_keyword = str(primary.get("keyword") or primary.get("name") or attack_type)
+        elif is_bot:
+            attack_type = "bot"
+            owasp = "A07:2021 Identification and Authentication Failures"
+            remediation = "Add bot protections (rate limiting, CAPTCHA, device fingerprinting) and lockout policies."
+            threat_keyword = ""
         else:
-            severity = "LOW" if cvss > 0 else "INFO"
+            attack_type = "legitimate"
+            owasp = None
+            remediation = ""
+            threat_keyword = ""
 
-        # Build result
-        result = {
-            **data,
-            "vulnerabilities": vulns,
-            "cvss_score": float(cvss),
-            "severity": severity,
-            "is_attack": bool(prediction["is_attack"] or vulns),
-            "risk_level": prediction["risk_level"],
-            "timestamp": datetime.now().isoformat()
-        }
+        if cvss <= 0.0 and is_attack:
+            # Provide a non-CVSS severity signal for behavioral attacks.
+            risk_level = str(behavior_result.get("risk_level") or "low")
+            severity = "HIGH" if risk_level == "high" else "MEDIUM" if risk_level == "medium" else "LOW"
+        else:
+            severity = _severity_from_cvss(cvss)
 
-        # Log attack
-        try:
-            blob_logger.log(result)
-            logger.info(f"🚨 Attack logged: {session_id} - {severity} - CVSS {cvss}")
-        except Exception as log_error:
-            logger.warning(f"Logging failed: {log_error}")
+        cve_references: List[str] = []
+        if nvd and threat_keyword and attack_type not in ("legitimate", "bot"):
+            cve_references = nvd.fetch_cves(threat_keyword, limit=3)
 
-        # Return response
-        return jsonify({
+        response = {
             "success": True,
             "session_id": session_id,
-            "is_attack": result["is_attack"],
-            "risk_level": result["risk_level"],
+            "is_attack": bool(is_attack),
+            "is_bot": bool(is_bot),
+            "attack_type": attack_type,
             "severity": severity,
             "cvss_score": float(cvss),
-            "vulnerabilities": vulns,
-            "message": "Attack analyzed and logged"
-        })
+            "cvss_vector": cvss_vector,
+            "cve_references": cve_references,
+            "remediation": remediation,
+            "risk_level": str(behavior_result.get("risk_level") or "low"),
+            "confidence": _safe_float(behavior_result.get("confidence")),
+            "owasp": owasp,
+            "vulnerabilities": vulnerabilities,
+            "timestamp": timestamp,
+            "analyzed_by": "pattern+behavior",
+        }
 
+        # Log (redact sensitive fields by default).
+        log_event = dict(data)
+        log_event.update(response)
+        log_event["timestamp"] = timestamp
+        if blob_logger:
+            blob_logger.log(_redact_for_logging(log_event))
+
+        return jsonify(response)
     except Exception as e:
-        logger.exception("❌ Fatal error in /api/track")
-        return jsonify({
-            "success": False,
-            "error": str(e)
-        }), 500
+        print(f"[ERR] Error in /api/track: {e}")
+        return jsonify({"success": False, "error": str(e)}), 500
 
 
-@app.route("/api/stats", methods=["GET"])
-def get_stats():
-    """Get attack statistics for dashboard"""
+@app.route("/api/analyze", methods=["POST"])
+def analyze():
     try:
-        # Load all attack logs
-        logs = blob_logger.get_all_logs(limit=1000)
-        
-        if not logs:
-            return jsonify({
-                "total_attacks": 0,
-                "attacks_today": 0,
-                "vulnerability_distribution": {},
-                "severity_distribution": {},
-                "top_cves": [],
-                "owasp_top_10": {},
-                "avg_cvss_score": 0.0
-            })
-        
-        # Calculate stats
-        today = datetime.now().date()
-        attacks_today = 0
-        
-        vuln_counts = defaultdict(int)
-        severity_counts = defaultdict(int)
-        cve_counts = defaultdict(int)
-        owasp_counts = defaultdict(int)
-        cvss_scores = []
-        
-        for log in logs:
-            # Count today's attacks
-            try:
-                log_date = datetime.fromisoformat(log.get('timestamp', '')).date()
-                if log_date == today:
-                    attacks_today += 1
-            except:
-                pass
-            
-            # Count severity
-            severity = log.get('severity', 'UNKNOWN')
-            severity_counts[severity] += 1
-            
-            # Count CVSS
-            cvss = log.get('cvss_score', 0)
-            if cvss > 0:
-                cvss_scores.append(cvss)
-            
-            # Count vulnerabilities
-            vulns = log.get('vulnerabilities', [])
-            for v in vulns:
-                vuln_type = v.get('type', 'unknown')
-                vuln_counts[vuln_type] += 1
-                
-                # Count CVEs
-                for cve in v.get('cve_examples', []):
-                    cve_counts[cve] += 1
-                
-                # Count OWASP
-                owasp = v.get('owasp', 'Unknown')
-                owasp_counts[owasp] += 1
-        
-        # Top CVEs
-        top_cves = [
-            {"cve": cve, "count": count}
-            for cve, count in sorted(cve_counts.items(), key=lambda x: x[1], reverse=True)[:10]
-        ]
-        
-        # Average CVSS
-        avg_cvss = sum(cvss_scores) / len(cvss_scores) if cvss_scores else 0.0
-        
-        # Calculate behavioral metrics (NEW!)
-        mouse_movements = []
-        keystrokes = []
-        time_to_submit = []
-        paste_events = 0
-        honeypot_filled = 0
-        rapid_submissions = 0
-        
-        for log in logs:
-            mouse_movements.append(log.get('mouse_movements', 0))
-            keystrokes.append(log.get('keystrokes', 0))
-            time_to_submit.append(log.get('time_to_submit', 0))
-            if log.get('paste_events', 0) > 0:
-                paste_events += log.get('paste_events', 0)
-            if log.get('honeypot_filled', 0) > 0:
-                honeypot_filled += 1
-            if log.get('rapid_submission', 0) == 1:
-                rapid_submissions += 1
-        
-        behavioral_metrics = {
-            "avg_mouse_movements": sum(mouse_movements) / len(mouse_movements) if mouse_movements else 0,
-            "avg_keystrokes": sum(keystrokes) / len(keystrokes) if keystrokes else 0,
-            "avg_time_to_submit": sum(time_to_submit) / len(time_to_submit) if time_to_submit else 0,
-            "total_paste_events": paste_events,
-            "honeypot_filled_count": honeypot_filled,
-            "rapid_submissions_count": rapid_submissions
+        data = request.get_json(force=True, silent=True) or {}
+        if not isinstance(data, dict):
+            data = {}
+
+        network_result: Dict[str, Any] = {"label": 0, "confidence": 0}
+        if network_model:
+            network_result = network_model.predict(data.get("network_features", [0] * 11))
+
+        web_result: Dict[str, Any] = {"label": "benign", "confidence": 0}
+        if web_model:
+            web_result = web_model.predict(data.get("payload", ""))
+
+        risk_score = 0
+        if risk_engine:
+            risk_score = risk_engine.calculate(network_result, web_result)
+
+        keyword = str(data.get("threat_keyword") or "").strip()
+        cves: List[str] = []
+        if nvd and keyword:
+            cves = nvd.fetch_cves(keyword, limit=3)
+
+        ai_analysis = "Claude analysis not available"
+        if claude:
+            ai_analysis = claude.analyze({"network": network_result, "web": web_result, "risk_score": risk_score, "cves": cves})
+
+        deception_strategy = "No deception deployed"
+        if deception_engine:
+            deception_strategy = deception_engine.deploy(keyword)
+
+        advanced_result = {
+            "network": network_result,
+            "web": web_result,
+            "risk_score": risk_score,
+            "cves": cves,
+            "ai_analysis": ai_analysis,
+            "deception": deception_strategy,
+            "timestamp": datetime.now().isoformat(),
         }
-        
-        # Get recent attacks with details (NEW!)
-        recent_attacks = []
-        for log in sorted(logs, key=lambda x: x.get('timestamp', ''), reverse=True)[:20]:
-            vulns = log.get('vulnerabilities', [])
-            attack_type = vulns[0].get('type') if vulns else 'unknown'
-            cve = vulns[0].get('cve_examples', [''])[0] if vulns else ''
-            owasp = vulns[0].get('owasp', '') if vulns else ''
-            
-            recent_attacks.append({
-                "timestamp": log.get('timestamp'),
-                "session_id": log.get('session_id'),
-                "severity": log.get('severity', 'INFO'),
-                "cvss_score": log.get('cvss_score', 0),
-                "attack_type": attack_type,
-                "cve": cve,
-                "owasp": owasp
-            })
-        
-        stats = {
-            "total_attacks": len(logs),
-            "attacks_today": attacks_today,
-            "vulnerability_distribution": dict(vuln_counts),
-            "severity_distribution": dict(severity_counts),
-            "top_cves": top_cves,
-            "owasp_top_10": dict(owasp_counts),
-            "avg_cvss_score": round(avg_cvss, 2),
-            "behavioral_metrics": behavioral_metrics,
-            "recent_attacks": recent_attacks
-        }
-        
-        logger.info(f"📊 Stats requested: {len(logs)} attacks found")
-        return jsonify(stats)
-        
+
+        if blob_logger:
+            blob_logger.log(advanced_result)
+
+        return jsonify(advanced_result)
     except Exception as e:
-        logger.exception("❌ Error in /api/stats")
+        print(f"[ERR] Error in /api/analyze: {e}")
         return jsonify({"error": str(e)}), 500
 
 
-@app.route("/api/clear", methods=["POST"])
-def clear_all_data():
-    """Clear all attack logs - for testing purposes"""
+@app.route("/api/stats", methods=["GET"])
+def stats():
     try:
-        deleted_count = 0
-        
-        # Delete local files
-        local_dir = blob_logger.local_dir
-        if os.path.exists(local_dir):
-            for filename in os.listdir(local_dir):
-                if filename.endswith('.json'):
-                    filepath = os.path.join(local_dir, filename)
-                    os.remove(filepath)
-                    deleted_count += 1
-        
-        logger.info(f"🗑️  Cleared {deleted_count} local attack logs")
-        
-        # Delete from Azure Blob (if connected)
-        if blob_logger.client:
-            try:
-                container_client = blob_logger.client.get_container_client(
-                    config.BLOB_CONTAINER_NAME
-                )
-                blobs = container_client.list_blobs(name_starts_with="attacks/")
-                for blob in blobs:
-                    container_client.delete_blob(blob.name)
-                logger.info(f"🗑️  Cleared Azure Blob attack logs")
-            except Exception as e:
-                logger.warning(f"Could not clear Azure blobs: {e}")
-        
-        return jsonify({
-            "success": True,
-            "message": f"Cleared {deleted_count} attack logs",
-            "deleted_count": deleted_count
-        })
-    
+        logs: List[Dict[str, Any]] = []
+        if blob_logger:
+            logs = blob_logger.get_all_logs(limit=1000)
+
+        # Only include events that look like /api/track events.
+        track_events = [e for e in logs if isinstance(e, dict) and e.get("session_id")]
+        attack_events = [e for e in track_events if _event_is_attack(e)]
+
+        cvss_scores = [_safe_float(e.get("cvss_score")) for e in attack_events if _safe_float(e.get("cvss_score")) > 0.0]
+        avg_cvss = sum(cvss_scores) / len(cvss_scores) if cvss_scores else 0.0
+
+        severity_distribution = {"CRITICAL": 0, "HIGH": 0, "MEDIUM": 0, "LOW": 0}
+        for e in attack_events:
+            sev = str(e.get("severity") or _severity_from_cvss(_safe_float(e.get("cvss_score"))))
+            if sev in severity_distribution:
+                severity_distribution[sev] += 1
+
+        vulnerability_distribution: Dict[str, int] = Counter()
+        owasp_top_10: Dict[str, int] = Counter()
+        cve_counter: Counter[str] = Counter()
+
+        for e in attack_events:
+            at = e.get("attack_type")
+            if isinstance(at, str) and at:
+                vulnerability_distribution[at] += 1
+
+            owasp = e.get("owasp")
+            if isinstance(owasp, str) and owasp:
+                owasp_top_10[owasp] += 1
+
+            cves = e.get("cve_references")
+            if isinstance(cves, list):
+                for cve in cves:
+                    if isinstance(cve, str) and cve.startswith("CVE-"):
+                        cve_counter[cve] += 1
+
+        behavioral_metrics = {
+            "avg_mouse_movements": 0.0,
+            "avg_keystrokes": 0.0,
+            "avg_time_to_submit": 0.0,
+            "total_paste_events": 0,
+            "honeypot_filled_count": 0,
+            "rapid_submissions_count": 0,
+        }
+
+        if track_events:
+            behavioral_metrics["avg_mouse_movements"] = sum(_safe_float(e.get("mouse_movements")) for e in track_events) / len(track_events)
+            behavioral_metrics["avg_keystrokes"] = sum(_safe_float(e.get("keystrokes")) for e in track_events) / len(track_events)
+            behavioral_metrics["avg_time_to_submit"] = sum(_safe_float(e.get("time_to_submit")) for e in track_events) / len(track_events)
+            behavioral_metrics["total_paste_events"] = sum(_safe_int(e.get("paste_events")) for e in track_events)
+            behavioral_metrics["honeypot_filled_count"] = sum(1 for e in track_events if _safe_int(e.get("honeypot_filled")) == 1)
+            behavioral_metrics["rapid_submissions_count"] = sum(1 for e in track_events if _safe_int(e.get("rapid_submission")) == 1)
+
+        # Recent attacks for the table.
+        recent_attacks: List[Dict[str, Any]] = []
+        for e in sorted(attack_events, key=lambda x: str(x.get("timestamp", "")), reverse=True)[:20]:
+            cves = e.get("cve_references") if isinstance(e.get("cve_references"), list) else []
+            recent_attacks.append(
+                {
+                    "timestamp": e.get("timestamp"),
+                    "session_id": e.get("session_id"),
+                    "severity": e.get("severity"),
+                    "cvss_score": _safe_float(e.get("cvss_score")),
+                    "attack_type": e.get("attack_type"),
+                    "cve": cves[0] if cves else None,
+                    "owasp": e.get("owasp"),
+                }
+            )
+
+        top_cves = [{"cve": cve, "count": count} for cve, count in cve_counter.most_common(10)]
+
+        return jsonify(
+            {
+                "total_events": len(track_events),
+                "total_attacks": len(attack_events),
+                "avg_cvss_score": float(avg_cvss),
+                "severity_distribution": severity_distribution,
+                "behavioral_metrics": behavioral_metrics,
+                "vulnerability_distribution": dict(vulnerability_distribution),
+                "top_cves": top_cves,
+                "owasp_top_10": dict(owasp_top_10),
+                "recent_attacks": recent_attacks,
+            }
+        )
     except Exception as e:
-        logger.exception("Error clearing data")
-        return jsonify({
-            "success": False,
-            "error": str(e)
-        }), 500
+        print(f"[ERR] Error in /api/stats: {e}")
+        return jsonify(
+            {
+                "total_events": 0,
+                "total_attacks": 0,
+                "avg_cvss_score": 0.0,
+                "severity_distribution": {"CRITICAL": 0, "HIGH": 0, "MEDIUM": 0, "LOW": 0},
+                "behavioral_metrics": {},
+                "vulnerability_distribution": {},
+                "top_cves": [],
+                "owasp_top_10": {},
+                "recent_attacks": [],
+            }
+        )
+
+
+@app.route("/api/clear", methods=["POST"])
+def clear_data():
+    try:
+        if not blob_logger:
+            return jsonify({"success": False, "error": "Blob logger not configured"}), 500
+
+        cleared = blob_logger.clear_all_logs()
+        return jsonify({"success": True, "message": f"Cleared {cleared} logs"})
+    except Exception as e:
+        print(f"[ERR] Error in /api/clear: {e}")
+        return jsonify({"success": False, "error": str(e)}), 500
 
 
 @app.route("/health")
 def health():
-    """Health check endpoint"""
-    return jsonify({
-        "status": "healthy",
-        "timestamp": datetime.now().isoformat(),
-        "behavior_model_loaded": detector.behavior is not None,
-        "attack_classifier_loaded": detector.classifier is not None,
-        "azure_blob_connected": blob_logger.client is not None
-    })
+    return jsonify(
+        {
+            "status": "healthy",
+            "blob_logger": blob_logger is not None,
+            "vuln_detector": vuln_detector is not None,
+            "behavior_detector": behavior_detector is not None,
+            "network_model": network_model is not None,
+            "web_model": web_model is not None,
+            "claude": claude is not None,
+            "nvd": nvd is not None,
+            "risk_engine": risk_engine is not None,
+            "deception_engine": deception_engine is not None,
+        }
+    )
 
 
-# ---------------- RUN ----------------
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    
-    print("\n" + "="*60)
-    print("🎯 HONEYPOT BACKEND SERVER")
-    print("="*60)
-    print(f"📍 Port: {port}")
-    print(f"🤖 ML Models: Loaded")
-    print(f"☁️  Azure Blob: {'Connected' if blob_logger.client else 'Local only'}")
-    print("="*60 + "\n")
-    
-    app.run(host="0.0.0.0", port=port)
+    app.run(host="0.0.0.0", port=5000, debug=True)

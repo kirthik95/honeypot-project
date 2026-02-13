@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Processing Authentication...</title>
+    <title>Security Analysis in Progress...</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
@@ -15,6 +15,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            padding: 20px;
         }
         
         .container {
@@ -23,7 +24,8 @@
             background: rgba(242, 236, 221, 0.03);
             border: 1px solid rgba(242, 236, 221, 0.08);
             border-radius: 16px;
-            max-width: 500px;
+            max-width: 600px;
+            width: 100%;
         }
         
         .spinner {
@@ -79,46 +81,247 @@
             color: rgba(242, 236, 221, 0.4);
             font-family: 'Courier New', monospace;
         }
+
+        /* AI Analysis Display */
+        .analysis-box {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(177, 18, 18, 0.1);
+            border: 1px solid rgba(177, 18, 18, 0.3);
+            border-radius: 8px;
+            text-align: left;
+            display: none;
+        }
+
+        .analysis-box.visible {
+            display: block;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .analysis-title {
+            font-size: 14px;
+            color: #b11212;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .analysis-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(242, 236, 221, 0.05);
+            font-size: 12px;
+        }
+
+        .analysis-item:last-child {
+            border-bottom: none;
+        }
+
+        .analysis-label {
+            color: rgba(242, 236, 221, 0.5);
+        }
+
+        .analysis-value {
+            color: #f2ecdd;
+            font-weight: 600;
+        }
+
+        .severity-badge {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .severity-critical {
+            background: rgba(177, 18, 18, 0.3);
+            color: #b11212;
+            border: 1px solid rgba(177, 18, 18, 0.5);
+        }
+
+        .severity-high {
+            background: rgba(255, 107, 53, 0.3);
+            color: #ff6b35;
+            border: 1px solid rgba(255, 107, 53, 0.5);
+        }
+
+        .severity-medium {
+            background: rgba(199, 150, 28, 0.3);
+            color: #c7961c;
+            border: 1px solid rgba(199, 150, 28, 0.5);
+        }
+
+        .cve-list {
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+        }
+
+        .cve-item {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            color: #c7961c;
+            padding: 2px 0;
+        }
+
+        .ai-badge {
+            display: inline-block;
+            padding: 2px 6px;
+            background: rgba(199, 150, 28, 0.2);
+            border: 1px solid rgba(199, 150, 28, 0.3);
+            border-radius: 3px;
+            font-size: 9px;
+            color: #c7961c;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="spinner"></div>
-        <h1>Authenticating Credentials</h1>
-        <p>Establishing secure connection and verifying permissions...</p>
+        <h1>Security Analysis in Progress</h1>
+        <p>Advanced threat detection and authentication verification...</p>
+        
+        <!-- AI Analysis Details (Hidden initially, shown via JS) -->
+        <div class="analysis-box" id="analysisBox">
+            <div class="analysis-title">
+                🤖 AI Threat Analysis <span class="ai-badge">CLAUDE AI</span>
+            </div>
+            <div class="analysis-item">
+                <span class="analysis-label">Attack Type:</span>
+                <span class="analysis-value" id="attackType">-</span>
+            </div>
+            <div class="analysis-item">
+                <span class="analysis-label">Severity:</span>
+                <span class="analysis-value">
+                    <span class="severity-badge" id="severityBadge">-</span>
+                </span>
+            </div>
+            <div class="analysis-item">
+                <span class="analysis-label">CVSS 3.1 Score:</span>
+                <span class="analysis-value" id="cvssScore">-</span>
+            </div>
+            <div class="analysis-item">
+                <span class="analysis-label">CVSS Vector:</span>
+                <span class="analysis-value" id="cvssVector" style="font-size: 10px; font-family: monospace;">-</span>
+            </div>
+            <div class="analysis-item">
+                <span class="analysis-label">CVE References:</span>
+                <div class="cve-list" id="cveList">
+                    <div class="cve-item">Loading...</div>
+                </div>
+            </div>
+        </div>
+
         <div class="progress"><div class="progress-bar"></div></div>
-        <div class="status" id="status">Initializing security protocols...</div>
+        <div class="status" id="status">Initializing AI security protocols...</div>
     </div>
 
     <script>
+        function resolveSiblingPage(filename) {
+            try {
+                return new URL(filename, window.location.href).toString();
+            } catch (_) {
+                return filename;
+            }
+        }
+
         const messages = [
-            'Initializing security protocols...',
+            'Initializing AI security protocols...',
+            'Running Claude AI vulnerability analysis...',
+            'Calculating CVSS 3.1 threat score...',
+            'Querying NVD database for CVE references...',
             'Verifying SSL certificates...',
             'Establishing encrypted tunnel...',
-            'Authenticating with server...',
             'Checking firewall rules...',
-            'Validating session token...',
-            'Loading user profile...',
-            'Synchronizing security keys...',
-            'Processing encryption...',
-            'Almost ready...'
+            'Processing behavioral patterns...',
+            'Analyzing attack payload complexity...',
+            'Generating security report...',
+            'Almost complete...'
         ];
         
         let i = 0;
         const statusEl = document.getElementById('status');
         
-        setInterval(() => {
+        // Update status messages
+        const statusInterval = setInterval(() => {
             if (i < messages.length) {
                 statusEl.textContent = messages[i++];
             } else {
-                statusEl.textContent = 'Connection timeout. Please try again later.';
-                setTimeout(() => window.location.href = '/', 3000);
+                statusEl.textContent = 'Security analysis complete. Session terminated.';
+                setTimeout(() => window.location.href = resolveSiblingPage('index.html'), 3000);
             }
-        }, 9000);
+        }, 8000);
+
+        // Display AI analysis details if available
+        try {
+            const attackDetails = sessionStorage.getItem('attack_details');
+            if (attackDetails) {
+                const details = JSON.parse(attackDetails);
+                
+                // Show analysis box after 2 seconds
+                setTimeout(() => {
+                    const analysisBox = document.getElementById('analysisBox');
+                    analysisBox.classList.add('visible');
+
+                    // Populate details
+                    document.getElementById('attackType').textContent = 
+                        details.attack_type.replace(/_/g, ' ').toUpperCase();
+
+                    const severityBadge = document.getElementById('severityBadge');
+                    severityBadge.textContent = details.severity;
+                    severityBadge.className = 'severity-badge severity-' + details.severity.toLowerCase();
+
+                    document.getElementById('cvssScore').textContent = 
+                        details.cvss_score + ' / 10.0';
+
+                    document.getElementById('cvssVector').textContent = 
+                        details.cvss_vector || 'N/A';
+
+                    // Display CVEs
+                    const cveList = document.getElementById('cveList');
+                    if (details.cve_references && details.cve_references.length > 0) {
+                        cveList.innerHTML = details.cve_references
+                            .map(cve => `<div class="cve-item">• ${cve}</div>`)
+                            .join('');
+                    } else {
+                        cveList.innerHTML = '<div class="cve-item">No CVE references available</div>';
+                    }
+
+                    // Clear from storage
+                    sessionStorage.removeItem('attack_details');
+                }, 2000);
+            }
+        } catch (e) {
+            console.error('Error displaying attack details:', e);
+        }
         
         // Prevent navigation
         history.pushState(null, '', location.href);
         window.onpopstate = () => history.pushState(null, '', location.href);
+
+        // Auto-redirect after 90 seconds
+        setTimeout(() => {
+            clearInterval(statusInterval);
+            statusEl.textContent = 'Session terminated. Redirecting...';
+            setTimeout(() => window.location.href = resolveSiblingPage('index.html'), 3000);
+        }, 90000);
     </script>
 </body>
 </html>

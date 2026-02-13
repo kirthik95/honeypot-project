@@ -9,6 +9,15 @@
 <body>
     <!-- Background Canvas -->
     <canvas id="webgl-canvas"></canvas>
+    <div class="spatial-light"></div>
+<div class="orbital-field" aria-hidden="true">
+    <svg viewBox="0 0 800 800" class="orbital-svg">
+        <circle cx="400" cy="400" r="260" class="orbit-ring" />
+        <circle cx="400" cy="400" r="180" class="orbit-ring faint" />
+        <circle cx="400" cy="400" r="90" class="orbit-ring faint" />
+    </svg>
+</div>
+
     <div class="gradient-overlay"></div>
     <div class="glitter-overlay" aria-hidden="true"></div>
     
