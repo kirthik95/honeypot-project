@@ -97,7 +97,9 @@ try:
     vuln_detector = VulnerabilityDetector()
     print("[OK] Vulnerability Detector initialized")
 except Exception as e:
-    print(f"[ERR] Vulnerability Detector failed: {e}")
+    # The ML WebAttackModel is now the primary web payload detector.
+    # The vulnerability detector is treated as an optional CVSS/enrichment engine.
+    print(f"[WARN] Vulnerability Detector unavailable: {e}")
     vuln_detector = None
 
 try:
@@ -168,18 +170,61 @@ def track():
         if vuln_detector:
             vulnerabilities = vuln_detector.detect(data)
 
+        # Primary web attack classification via XGBoost model trained on SecOps CSV payloads.
+        web_result: Dict[str, Any] = {"label": "benign", "confidence": 0.0}
+        if web_model:
+            # Build a unified payload string from likely text fields.
+            candidate_fields = ["email", "username", "password", "payload", "query", "input", "comment", "filename", "path"]
+            parts: List[str] = []
+            for key in candidate_fields:
+                val = data.get(key)
+                if val is not None:
+                    parts.append(str(val))
+            payload_text = " ".join(parts)
+            if payload_text.strip():
+                web_result = web_model.predict(payload_text)
+
         behavior_result: Dict[str, Any] = {"is_attack": False, "risk_level": "low", "confidence": 0.0}
         if behavior_detector:
             behavior_result = behavior_detector.predict(data)
 
         is_bot = _compute_is_bot(data, behavior_result)
-        is_attack = bool(vulnerabilities) or bool(behavior_result.get("is_attack")) or is_bot
+        # ML model is the primary signal; behavior + bot heuristics are supporting.
+        ml_label = str(web_result.get("label") or "benign").lower()
+        ml_confidence = _safe_float(web_result.get("confidence"))
+
+        ml_attack = ml_label not in ("benign", "normal") and ml_confidence >= 50.0
+        is_attack = ml_attack or bool(behavior_result.get("is_attack")) or is_bot
 
         primary = _top_vuln(vulnerabilities)
         cvss = _safe_float(primary.get("cvss_score") if primary else 0.0)
         cvss_vector = str(primary.get("cvss_vector")) if primary and primary.get("cvss_vector") else "N/A"
 
-        if primary:
+        attack_type = "legitimate"
+        owasp = None
+        remediation = ""
+        threat_keyword = ""
+
+        if ml_attack:
+            # Map ML labels from the XGBoost model to attack metadata.
+            label_map = {
+                "sqli": ("sql_injection", "A03:2021 Injection", "SQL Injection", "Use parameterized queries and strict server-side validation."),
+                "sql_injection": ("sql_injection", "A03:2021 Injection", "SQL Injection", "Use parameterized queries and strict server-side validation."),
+                "xss": ("xss", "A03:2021 Injection", "Cross-Site Scripting", "Encode output, sanitize HTML, and enforce a strong CSP."),
+                "os_command": ("command_injection", "A03:2021 Injection", "Command Injection", "Never pass user input to shell, use allowlists and safe OS APIs."),
+                "command_injection": ("command_injection", "A03:2021 Injection", "Command Injection", "Never pass user input to shell, use allowlists and safe OS APIs."),
+                "path_traversal": ("path_traversal", "A01:2021 Broken Access Control", "Path Traversal", "Normalize paths and block traversal sequences like ../ and ..\\\\."),
+                "ssrf": ("ssrf", "A10:2021 Server-Side Request Forgery (SSRF)", "SSRF", "Block internal IPs and metadata services; use outbound allowlists."),
+            }
+            mapped = label_map.get(ml_label)
+            if mapped:
+                attack_type, owasp, threat_keyword, remediation = mapped
+            else:
+                attack_type = ml_label or "unknown"
+                threat_keyword = ml_label or "web attack"
+                remediation = "Review the payload and apply standard input validation, output encoding, and least-privilege controls."
+
+        elif primary:
             attack_type = str(primary.get("attack_type") or "unknown")
             owasp = primary.get("owasp")
             remediation = str(primary.get("remediation") or "")
@@ -217,12 +262,14 @@ def track():
             "cvss_vector": cvss_vector,
             "cve_references": cve_references,
             "remediation": remediation,
+            "ml_label": ml_label,
+            "ml_confidence": ml_confidence,
             "risk_level": str(behavior_result.get("risk_level") or "low"),
             "confidence": _safe_float(behavior_result.get("confidence")),
             "owasp": owasp,
             "vulnerabilities": vulnerabilities,
             "timestamp": timestamp,
-            "analyzed_by": "pattern+behavior",
+            "analyzed_by": "ml+behavior+pattern",
         }
 
         # Log (redact sensitive fields by default).
@@ -266,6 +313,20 @@ def analyze():
         if claude:
             ai_analysis = claude.analyze({"network": network_result, "web": web_result, "risk_score": risk_score, "cves": cves})
 
+        # Helpful reference links for analysts to pivot into public research.
+        reference_links = {
+            "medium": [],
+            "hackerone": [],
+        }
+        if cves:
+            # Provide search URLs rather than scraping live content, so this stays reliable.
+            for cve in cves:
+                reference_links["medium"].append(f"https://medium.com/search?q={cve}")
+                reference_links["hackerone"].append(f"https://hackerone.com/reports/search?query={cve}")
+        elif keyword:
+            reference_links["medium"].append(f"https://medium.com/search?q={keyword}")
+            reference_links["hackerone"].append(f"https://hackerone.com/reports/search?query={keyword}")
+
         deception_strategy = "No deception deployed"
         if deception_engine:
             deception_strategy = deception_engine.deploy(keyword)
@@ -276,6 +337,7 @@ def analyze():
             "risk_score": risk_score,
             "cves": cves,
             "ai_analysis": ai_analysis,
+            "reference_links": reference_links,
             "deception": deception_strategy,
             "timestamp": datetime.now().isoformat(),
         }

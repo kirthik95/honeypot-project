@@ -223,6 +223,18 @@ class EnhancedVulnerabilityDetector:
         return field_name.lower() in stored_fields
 
 
+class VulnerabilityDetector(EnhancedVulnerabilityDetector):
+    """
+    Backwards‑compatible alias so existing imports like:
+
+        from honeypot.vuln_detector import VulnerabilityDetector
+
+    continue to work. The implementation is provided by
+    `EnhancedVulnerabilityDetector` above.
+    """
+    pass
+
+
 # Example usage and testing
 if __name__ == "__main__":
     detector = EnhancedVulnerabilityDetector()
