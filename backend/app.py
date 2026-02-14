@@ -15,7 +15,7 @@ from honeypot.vuln_detector import VulnerabilityDetector
 from intel.nvd_lookup import NVDLookup
 from ml.network_model import NetworkModel
 from ml.web_model import WebAttackModel
-
+from honeypot.dynamic_cvss_calculator import DynamicCVSSCalculator
 app = Flask(__name__)
 CORS(app)
 
@@ -150,7 +150,12 @@ try:
 except Exception as e:
     print(f"[WARN] Deception Engine unavailable: {e}")
     deception_engine = None
-
+try:
+    cvss_calculator = DynamicCVSSCalculator()
+    print("[OK] Dynamic CVSS Calculator initialized")
+except Exception as e:
+    print(f"[WARN] Dynamic CVSS Calculator unavailable: {e}")
+    cvss_calculator = None
 print("[INFO] Engine init complete.\n")
 
 
@@ -197,8 +202,18 @@ def track():
         is_attack = ml_attack or bool(behavior_result.get("is_attack")) or is_bot
 
         primary = _top_vuln(vulnerabilities)
-        cvss = _safe_float(primary.get("cvss_score") if primary else 0.0)
-        cvss_vector = str(primary.get("cvss_vector")) if primary and primary.get("cvss_vector") else "N/A"
+        if primary and cvss_calculator:
+            payload = str(primary.get("evidence", {}).get("match", ""))
+            cvss_result = cvss_calculator.calculate_cvss(
+                attack_type=str(primary.get("attack_type", "")),
+                payload=payload,
+                context={"field": str(primary.get("evidence", {}).get("field", ""))},
+            )
+            cvss = _safe_float(cvss_result.get("cvss_score"))
+            cvss_vector = str(cvss_result.get("cvss_vector") or "N/A")
+        else:
+            cvss = _safe_float(primary.get("cvss_score") if primary else 0.0)
+            cvss_vector = str(primary.get("cvss_vector")) if primary and primary.get("cvss_vector") else "N/A"
 
         attack_type = "legitimate"
         owasp = None
@@ -519,6 +534,7 @@ def health():
             "nvd": nvd is not None,
             "risk_engine": risk_engine is not None,
             "deception_engine": deception_engine is not None,
+            "cvss_calculator": cvss_calculator is not None,
         }
     )
 
