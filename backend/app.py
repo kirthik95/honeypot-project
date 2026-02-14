@@ -6,7 +6,7 @@ from typing import Any, Dict, List, Optional
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 
-from ai.claude_engine import ClaudeEngine
+from ai.claude_engine import AIEngine
 from deception.deception_engine import DeceptionEngine
 from fusion.risk_engine import RiskEngine
 from honeypot.behavior_detector import AttackDetector
@@ -124,11 +124,11 @@ except Exception as e:
     web_model = None
 
 try:
-    claude = ClaudeEngine()
-    print("[OK] Claude Engine initialized")
+    ai_engine = AIEngine()
+    print("[OK] OpenAI AI Engine initialized")
 except Exception as e:
-    print(f"[WARN] Claude Engine unavailable: {e}")
-    claude = None
+    print(f"[WARN] AI Engine unavailable: {e}")
+    ai_engine = None
 
 try:
     nvd = NVDLookup()
@@ -247,10 +247,46 @@ def track():
         else:
             severity = _severity_from_cvss(cvss)
 
+        # FIX 1: Use attack_type for CVE lookup (not threat_keyword)
         cve_references: List[str] = []
-        if nvd and threat_keyword and attack_type not in ("legitimate", "bot"):
-            cve_references = nvd.fetch_cves(threat_keyword, limit=3)
+        if nvd and attack_type not in ("legitimate", "bot", "unknown", ""):
+            search_terms = {
+                "sql_injection": "sql injection",
+                "xss": "cross site scripting",
+                "command_injection": "command injection",
+                "path_traversal": "path traversal",
+                "ssrf": "server side request forgery",
+            }
+            search_term = search_terms.get(attack_type, attack_type.replace("_", " "))
+            print(f"[INFO] NVD lookup for '{search_term}'")
+            cve_references = nvd.fetch_cves(search_term, limit=3)
+            print(f"[INFO] Found {len(cve_references)} CVEs")
 
+        # FIX 2: AI analysis in /api/track with proper detection data
+        ai_analysis = None
+        if ai_engine and is_attack and attack_type not in ("legitimate", "bot", "unknown", ""):
+            payload_sample = (data.get("email") or data.get("username") or data.get("payload") or "")[:100]
+            ai_detection_data = {
+                "attack_type": attack_type,
+                "severity": severity,
+                "cvss_score": cvss,
+                "cvss_vector": cvss_vector,
+                "ml_label": ml_label,
+                "ml_confidence": ml_confidence,
+                "is_bot": is_bot,
+                "cve_references": cve_references,
+                "owasp": owasp,
+                "payload_sample": payload_sample,
+            }
+            try:
+                print(f"[INFO] Calling AI analysis for {attack_type}")
+                ai_analysis = ai_engine.analyze(ai_detection_data)
+                print(f"[INFO] AI analysis completed: {len(ai_analysis)} chars")
+            except Exception as e:
+                print(f"[WARN] AI analysis failed: {e}")
+                ai_analysis = None
+
+        # FIX 3: Include ai_analysis in response
         response = {
             "success": True,
             "session_id": session_id,
@@ -270,6 +306,7 @@ def track():
             "vulnerabilities": vulnerabilities,
             "timestamp": timestamp,
             "analyzed_by": "ml+behavior+pattern",
+            "ai_analysis": ai_analysis,
         }
 
         # Log (redact sensitive fields by default).
@@ -309,9 +346,9 @@ def analyze():
         if nvd and keyword:
             cves = nvd.fetch_cves(keyword, limit=3)
 
-        ai_analysis = "Claude analysis not available"
-        if claude:
-            ai_analysis = claude.analyze({"network": network_result, "web": web_result, "risk_score": risk_score, "cves": cves})
+        ai_analysis = "AI analysis not available"
+        if ai_engine:
+            ai_analysis = ai_engine.analyze({"network": network_result, "web": web_result, "risk_score": risk_score, "cves": cves})
 
         # Helpful reference links for analysts to pivot into public research.
         reference_links = {
@@ -478,7 +515,7 @@ def health():
             "behavior_detector": behavior_detector is not None,
             "network_model": network_model is not None,
             "web_model": web_model is not None,
-            "claude": claude is not None,
+            "ai_engine": ai_engine is not None,
             "nvd": nvd is not None,
             "risk_engine": risk_engine is not None,
             "deception_engine": deception_engine is not None,
