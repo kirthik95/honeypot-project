@@ -237,14 +237,3 @@ if __name__ == "__main__":
     
     result = engine.analyze(cmd_detection)
     print(result)
-    def rule_based_explanation(self, detection):
-        threat_type = detection.get("web", {}).get("label", "unknown")
-
-        explanations = {
-            "sql_injection": "Detected SQL manipulation patterns indicating database injection attempt.",
-            "xss": "Detected script-based payload indicating cross-site scripting attempt.",
-            "command_injection": "Detected shell execution patterns suggesting command injection.",
-            "path_traversal": "Detected directory traversal patterns targeting system paths."
-        }
-
-        return explanations.get(threat_type, "Threat detected based on anomaly analysis.")
