@@ -202,20 +202,47 @@ def track():
         is_attack = ml_attack or bool(behavior_result.get("is_attack")) or is_bot
 
         primary = _top_vuln(vulnerabilities)
-        if primary and cvss_calculator:
-            payload = str(primary.get("evidence", {}).get("match", ""))
+
+        attack_for_cvss = None
+        payload_for_cvss = ""
+
+        # 1️⃣ Pattern-based attack
+        if primary:
+            attack_for_cvss = str(primary.get("attack_type") or "")
+            payload_for_cvss = str(primary.get("evidence", {}).get("match", ""))
+
+        # 2️⃣ ML-based attack (fallback)
+        elif ml_attack:
+        
+            attack_for_cvss = ml_label
+            
+            candidate_fields = ["email", "username", "password", "payload", "query", "input"]
+            payload_parts = []
+            for key in candidate_fields:
+                if data.get(key):
+                    payload_parts.append(str(data.get(key)))
+            payload_for_cvss = " ".join(payload_parts)
+
+        # 3️⃣ Calculate dynamic CVSS
+        if attack_for_cvss and cvss_calculator:
             cvss_result = cvss_calculator.calculate_cvss(
-                attack_type=str(primary.get("attack_type", "")),
-                payload=payload,
-                context={"field": str(primary.get("evidence", {}).get("field", ""))},
+                attack_type=attack_for_cvss,
+                payload=payload_for_cvss,
+                context={"field": "web_input"}
             )
             cvss = _safe_float(cvss_result.get("cvss_score"))
             cvss_vector = str(cvss_result.get("cvss_vector") or "N/A")
         else:
-            cvss = _safe_float(primary.get("cvss_score") if primary else 0.0)
-            cvss_vector = str(primary.get("cvss_vector")) if primary and primary.get("cvss_vector") else "N/A"
-
-        attack_type = "legitimate"
+            cvss = 0.0
+            cvss_vector = "N/A"
+        if primary:
+            attack_type= primary.get("attack_type","unknown")
+        elif ml_attack:
+            attack_type=ml_label
+        elif is_bot:
+            attack_type="bot_attack"
+        else:
+            attack_type='legitimate'
         owasp = None
         remediation = ""
         threat_keyword = ""
