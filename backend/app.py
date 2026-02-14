@@ -15,6 +15,7 @@ from honeypot.vuln_detector import VulnerabilityDetector
 from intel.nvd_lookup import NVDLookup
 from ml.network_model import NetworkModel
 from ml.web_model import WebAttackModel
+from ml.continuous_learning import ContinuousLearningEngine  # ← ADD THIS LINE
 from honeypot.dynamic_cvss_calculator import DynamicCVSSCalculator
 app = Flask(__name__)
 CORS(app)
@@ -151,6 +152,14 @@ except Exception as e:
     print(f"[WARN] Deception Engine unavailable: {e}")
     deception_engine = None
 try:
+    learning_engine = ContinuousLearningEngine(
+        min_samples_for_retrain=100  # Retrain every 100 attacks
+    )
+    print("[OK] Continuous Learning Engine initialized")
+except Exception as e:
+    print(f"[WARN] Learning Engine unavailable: {e}")
+    learning_engine = None
+try:
     cvss_calculator = DynamicCVSSCalculator()
     print("[OK] Dynamic CVSS Calculator initialized")
 except Exception as e:
@@ -242,7 +251,7 @@ def track():
         elif is_bot:
             attack_type="bot_attack"
         else:
-            attack_type='legitimate'
+            attack_type='legitimate'  
         owasp = None
         remediation = ""
         threat_keyword = ""
@@ -357,8 +366,13 @@ def track():
         log_event["timestamp"] = timestamp
         if blob_logger:
             blob_logger.log(_redact_for_logging(log_event))
-
+        if learning_engine and is_attack:
+            retrained = learning_engine.auto_retrain_if_needed(log_event)
+            if retrained:
+                print("[LEARNING] 🎓 Model retrained! Restart Flask to load new model.")
+        
         return jsonify(response)
+        
     except Exception as e:
         print(f"[ERR] Error in /api/track: {e}")
         return jsonify({"success": False, "error": str(e)}), 500
