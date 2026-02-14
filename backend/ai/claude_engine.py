@@ -32,8 +32,12 @@ class AIEngine:
 
         # Initialize OpenAI client if available
         if OPENAI_AVAILABLE and self.openai_key and OPENAI_CLIENT_CLASS is not None:
-            self.client = OPENAI_CLIENT_CLASS(api_key=self.openai_key)
-            print("[OK] OpenAI client initialized")
+            try:
+                self.client = OPENAI_CLIENT_CLASS(api_key=self.openai_key)
+                print("[OK] OpenAI client initialized")
+            except Exception as e:
+                self.client = None
+                print(f"[WARN] OpenAI client init failed - using fallback methods: {e}")
         else:
             print("[WARN] OpenAI not available - using fallback methods")
 
