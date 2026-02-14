@@ -55,6 +55,33 @@ def _event_is_attack(event: Dict[str, Any]) -> bool:
     return _safe_float(event.get("cvss_score")) > 0.0
 
 
+def _is_track_event(event: Dict[str, Any]) -> bool:
+    source = str(event.get("event_source") or "").strip().lower()
+    if source:
+        return source == "track"
+
+    # Legacy fallback for old logs without event_source:
+    # exclude /api/analyze-shaped entries and keep /api/track-shaped entries.
+    if not event.get("session_id"):
+        return False
+    if any(k in event for k in ("network", "web", "risk_score", "reference_links", "deception", "event_timestamp")):
+        return False
+    return any(
+        k in event
+        for k in (
+            "analyzed_by",
+            "mouse_movements",
+            "keystrokes",
+            "time_to_submit",
+            "rapid_submission",
+            "honeypot_filled",
+            "vulnerabilities",
+            "is_attack",
+            "is_bot",
+        )
+    )
+
+
 def _compute_is_bot(payload: Dict[str, Any], behavior_result: Dict[str, Any]) -> bool:
     # Heuristic: rapid + low interaction OR honeypot field filled.
     rapid = _safe_int(payload.get("rapid_submission")) == 1
@@ -208,7 +235,8 @@ def track():
         ml_confidence = _safe_float(web_result.get("confidence"))
 
         ml_attack = ml_label not in ("benign", "normal") and ml_confidence >= 50.0
-        is_attack = ml_attack or bool(behavior_result.get("is_attack")) or is_bot
+        pattern_attack = bool(vulnerabilities)
+        is_attack = ml_attack or pattern_attack or bool(behavior_result.get("is_attack")) or is_bot
 
         primary = _top_vuln(vulnerabilities)
 
@@ -364,6 +392,7 @@ def track():
         log_event = dict(data)
         log_event.update(response)
         log_event["timestamp"] = timestamp
+        log_event["event_source"] = "track"
         if blob_logger:
             blob_logger.log(_redact_for_logging(log_event))
         if learning_engine and is_attack:
@@ -501,6 +530,7 @@ def analyze():
             "reference_links": reference_links,
             "deception": deception_strategy,
             "timestamp": datetime.now().isoformat(),
+            "event_source": "analyze",
         }
 
         if blob_logger:
@@ -519,8 +549,8 @@ def stats():
         if blob_logger:
             logs = blob_logger.get_all_logs(limit=1000)
 
-        # Only include events that look like /api/track events.
-        track_events = [e for e in logs if isinstance(e, dict) and e.get("session_id")]
+        # Only include /api/track events in dashboard stats.
+        track_events = [e for e in logs if isinstance(e, dict) and _is_track_event(e)]
         attack_events = [e for e in track_events if _event_is_attack(e)]
 
         cvss_scores = [_safe_float(e.get("cvss_score")) for e in attack_events if _safe_float(e.get("cvss_score")) > 0.0]
