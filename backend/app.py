@@ -384,13 +384,74 @@ def analyze():
             risk_score = risk_engine.calculate(network_result, web_result)
 
         keyword = str(data.get("threat_keyword") or "").strip()
-        cves: List[str] = []
-        if nvd and keyword:
+        attack_type_input = str(data.get("attack_type") or "").strip().lower()
+        severity_input = str(data.get("severity") or "").strip().upper()
+        cvss_score = _safe_float(data.get("cvss_score"))
+        cvss_vector = str(data.get("cvss_vector") or "N/A")
+        owasp = str(data.get("owasp") or "").strip() or None
+        session_id = str(data.get("session_id") or "").strip()
+        event_timestamp = str(data.get("timestamp") or "").strip()
+
+        provided_cves: List[str] = []
+        raw_cves = data.get("cve_references")
+        if isinstance(raw_cves, list):
+            provided_cves = [cve for cve in raw_cves if isinstance(cve, str) and cve.startswith("CVE-")]
+        single_cve = data.get("cve")
+        if isinstance(single_cve, str) and single_cve.startswith("CVE-") and single_cve not in provided_cves:
+            provided_cves.append(single_cve)
+
+        if not keyword:
+            keyword = attack_type_input or str(single_cve or "").strip()
+
+        cves: List[str] = list(provided_cves)
+        if nvd and keyword and not cves:
             cves = nvd.fetch_cves(keyword, limit=3)
+
+        label_map = {
+            "sqli": "sql_injection",
+            "sql_injection": "sql_injection",
+            "xss": "xss",
+            "os_command": "command_injection",
+            "command_injection": "command_injection",
+            "path_traversal": "path_traversal",
+            "ssrf": "ssrf",
+            "bot_attack": "bot",
+        }
+
+        mapped_input_type = label_map.get(attack_type_input, attack_type_input)
+        web_label = str(web_result.get("label") or "benign").lower()
+        mapped_web_type = label_map.get(web_label, web_label)
+
+        attack_type = mapped_input_type or (mapped_web_type if mapped_web_type not in ("benign", "normal") else "unknown")
+
+        valid_severities = {"CRITICAL", "HIGH", "MEDIUM", "LOW", "INFO"}
+        if severity_input in valid_severities:
+            severity = severity_input
+        elif cvss_score > 0.0:
+            severity = _severity_from_cvss(cvss_score)
+        elif attack_type in ("bot", "unknown", "legitimate", ""):
+            severity = "LOW"
+        else:
+            severity = "MEDIUM"
+
+        ai_detection_data = {
+            "attack_type": attack_type or "unknown",
+            "severity": severity,
+            "cvss_score": float(cvss_score),
+            "cvss_vector": cvss_vector,
+            "owasp": owasp,
+            "cve_references": cves,
+            "threat_keyword": keyword,
+            "session_id": session_id,
+            "timestamp": event_timestamp or datetime.now().isoformat(),
+            "network": network_result,
+            "web": web_result,
+            "risk_score": risk_score,
+        }
 
         ai_analysis = "AI analysis not available"
         if ai_engine:
-            ai_analysis = ai_engine.analyze({"network": network_result, "web": web_result, "risk_score": risk_score, "cves": cves})
+            ai_analysis = ai_engine.analyze(ai_detection_data)
 
         # Helpful reference links for analysts to pivot into public research.
         reference_links = {
@@ -414,6 +475,13 @@ def analyze():
             "network": network_result,
             "web": web_result,
             "risk_score": risk_score,
+            "attack_type": attack_type or "unknown",
+            "severity": severity,
+            "cvss_score": float(cvss_score),
+            "cvss_vector": cvss_vector,
+            "owasp": owasp,
+            "session_id": session_id,
+            "event_timestamp": event_timestamp,
             "cves": cves,
             "ai_analysis": ai_analysis,
             "reference_links": reference_links,
