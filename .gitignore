@@ -11,6 +11,7 @@ venv/
 # Logs
 logs/
 *.log
+local_logs/
 
 # Models (optional – uncomment if too large)
 # models/

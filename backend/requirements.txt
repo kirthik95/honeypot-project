@@ -15,9 +15,6 @@ numpy==1.26.4
 # AI Integration - USING OPENAI
 openai==2.20.0
 
-# Cloud Storage
-azure-storage-blob==12.19.0
-
 # Utilities
 python-dotenv==1.0.1
 requests==2.32.3
