@@ -47,6 +47,20 @@ def _safe_float(value: Any, default: float = 0.0) -> float:
         return default
 
 
+def _safe_bool(value: Any, default: bool = False) -> bool:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, (int, float)):
+        return value != 0
+    if isinstance(value, str):
+        normalized = value.strip().lower()
+        if normalized in ("1", "true", "yes", "y", "on"):
+            return True
+        if normalized in ("0", "false", "no", "n", "off"):
+            return False
+    return default
+
+
 def _event_is_attack(event: Dict[str, Any]) -> bool:
     if isinstance(event.get("is_attack"), bool):
         return bool(event["is_attack"])
@@ -204,6 +218,9 @@ def track():
 
         session_id = str(data.get("session_id") or f"session-{int(datetime.now().timestamp())}")
         timestamp = datetime.now().isoformat()
+        client_detected_attack = _safe_bool(data.get("client_detected_attack"))
+        client_attack_type = str(data.get("client_attack_type") or "").strip().lower()
+        client_severity = str(data.get("client_severity") or "").strip().upper()
 
         # Run detectors on the raw payload.
         data["session_id"] = session_id
@@ -236,7 +253,7 @@ def track():
 
         ml_attack = ml_label not in ("benign", "normal") and ml_confidence >= 50.0
         pattern_attack = bool(vulnerabilities)
-        is_attack = ml_attack or pattern_attack or bool(behavior_result.get("is_attack")) or is_bot
+        is_attack = client_detected_attack or ml_attack or pattern_attack or bool(behavior_result.get("is_attack")) or is_bot
 
         primary = _top_vuln(vulnerabilities)
 
@@ -253,6 +270,14 @@ def track():
         
             attack_for_cvss = ml_label
             
+            candidate_fields = ["email", "username", "password", "payload", "query", "input"]
+            payload_parts = []
+            for key in candidate_fields:
+                if data.get(key):
+                    payload_parts.append(str(data.get(key)))
+            payload_for_cvss = " ".join(payload_parts)
+        elif client_detected_attack:
+            attack_for_cvss = client_attack_type or "credential_payload_probe"
             candidate_fields = ["email", "username", "password", "payload", "query", "input"]
             payload_parts = []
             for key in candidate_fields:
@@ -276,6 +301,8 @@ def track():
             attack_type= primary.get("attack_type","unknown")
         elif ml_attack:
             attack_type=ml_label
+        elif client_detected_attack:
+            attack_type = client_attack_type or "credential_payload_probe"
         elif is_bot:
             attack_type="bot_attack"
         else:
@@ -308,6 +335,43 @@ def track():
             owasp = primary.get("owasp")
             remediation = str(primary.get("remediation") or "")
             threat_keyword = str(primary.get("keyword") or primary.get("name") or attack_type)
+        elif client_detected_attack:
+            client_map = {
+                "sql_injection": (
+                    "sql_injection",
+                    "A03:2021 Injection",
+                    "SQL Injection Probe",
+                    "Keep parameterized queries in place and treat credential fields as hostile input on the server.",
+                ),
+                "xss": (
+                    "xss",
+                    "A03:2021 Injection",
+                    "Cross-Site Scripting Probe",
+                    "Encode reflected output, sanitize any rendered HTML, and keep a strict CSP on auth flows.",
+                ),
+                "command_injection": (
+                    "command_injection",
+                    "A03:2021 Injection",
+                    "Command Injection Probe",
+                    "Never pass auth input into shell commands; enforce allowlists and safe process APIs.",
+                ),
+                "path_traversal": (
+                    "path_traversal",
+                    "A01:2021 Broken Access Control",
+                    "Path Traversal Probe",
+                    "Normalize file paths, block traversal sequences, and keep auth handlers isolated from filesystem operations.",
+                ),
+                "credential_payload_probe": (
+                    "credential_payload_probe",
+                    "A03:2021 Injection",
+                    "Credential Payload Probe",
+                    "Keep server-side validation, escape any reflected values, and review blocked login probes in the dashboard.",
+                ),
+            }
+            attack_type, owasp, threat_keyword, remediation = client_map.get(
+                client_attack_type or "credential_payload_probe",
+                client_map["credential_payload_probe"],
+            )
         elif is_bot:
             attack_type = "bot"
             owasp = "A07:2021 Identification and Authentication Failures"
@@ -321,8 +385,11 @@ def track():
 
         if cvss <= 0.0 and is_attack:
             # Provide a non-CVSS severity signal for behavioral attacks.
-            risk_level = str(behavior_result.get("risk_level") or "low")
-            severity = "HIGH" if risk_level == "high" else "MEDIUM" if risk_level == "medium" else "LOW"
+            if client_detected_attack and client_severity in {"CRITICAL", "HIGH", "MEDIUM", "LOW", "INFO"}:
+                severity = client_severity
+            else:
+                risk_level = str(behavior_result.get("risk_level") or "low")
+                severity = "HIGH" if risk_level == "high" else "MEDIUM" if risk_level == "medium" else "LOW"
         else:
             severity = _severity_from_cvss(cvss)
 
@@ -383,6 +450,7 @@ def track():
             "confidence": _safe_float(behavior_result.get("confidence")),
             "owasp": owasp,
             "vulnerabilities": vulnerabilities,
+            "client_detected_attack": bool(client_detected_attack),
             "timestamp": timestamp,
             "analyzed_by": "ml+behavior+pattern",
             "ai_analysis": ai_analysis,

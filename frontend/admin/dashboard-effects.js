@@ -2,8 +2,6 @@
     'use strict';
 
     var palettes = {
-        zeus: { a: '#d7e9ff', b: '#2f6dff', c: '#79b2ff', g: 'rgba(79,142,255,0.56)', scan: 'rgba(211,232,255,0.74)', ddos: 'rgba(72,132,255,0.86)', atk: 'rgba(121,178,255,0.84)' },
-        helios: { a: '#ffe5bd', b: '#ff8737', c: '#ff452d', g: 'rgba(255,118,42,0.50)', scan: 'rgba(255,229,189,0.70)', ddos: 'rgba(255,135,55,0.80)', atk: 'rgba(255,69,45,0.82)' },
         hades: { a: '#f8e8d2', b: '#ff8f34', c: '#cf39ff', g: 'rgba(255,108,46,0.56)', scan: 'rgba(248,232,210,0.74)', ddos: 'rgba(255,143,52,0.86)', atk: 'rgba(207,57,255,0.84)' }
     };
 
@@ -62,7 +60,7 @@
             ctx.save(); ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.clip();
             var g = ctx.createLinearGradient(0, cy - R, 0, cy + R); g.addColorStop(0, p.a); g.addColorStop(0.5, p.b); g.addColorStop(1, p.c); ctx.globalAlpha = 0.88; ctx.fillStyle = g; ctx.fillRect(cx - R, top, 2 * R, cy + R - top + 2); ctx.globalAlpha = 1;
             var a1 = R * (0.055 + (1 - lv) * 0.015), l1 = R * 0.95; ctx.beginPath(); ctx.moveTo(cx - R, top); for (var x = -R; x <= R; x += 3) ctx.lineTo(cx + x, top + Math.sin((x / l1) * Math.PI * 2 + phase) * a1); ctx.lineTo(cx + R, cy + R + 2); ctx.lineTo(cx - R, cy + R + 2); ctx.closePath(); ctx.fillStyle = 'rgba(242,236,221,0.24)'; ctx.fill();
-            var wave2 = state.mode === 'hades' ? 'rgba(255,136,48,0.26)' : state.mode === 'zeus' ? 'rgba(96,162,255,0.24)' : 'rgba(255,146,86,0.24)';
+            var wave2 = 'rgba(255,136,48,0.26)';
             var a2 = R * (0.035 + lv * 0.01), l2 = R * 1.2; ctx.beginPath(); ctx.moveTo(cx - R, top); for (var x2 = -R; x2 <= R; x2 += 3) ctx.lineTo(cx + x2, top + Math.sin((x2 / l2) * Math.PI * 2 - phase * 1.4) * a2); ctx.lineTo(cx + R, cy + R + 2); ctx.lineTo(cx - R, cy + R + 2); ctx.closePath(); ctx.fillStyle = wave2; ctx.fill();
             if (!reduced) {
                 if (bubbles.length < 24) bubbles.push(bub(R));
@@ -193,14 +191,8 @@
             return 'rgba(' + r + ',' + g2 + ',' + b + ',' + alpha + ')';
         }
 
-        function lanePalette(mode) {
-            if (mode === 'hades') {
-                return { OAS: '#f8e7cf', ODS: '#ff8f34', MAV: '#f14bff', WAV: '#b34dff', IDS: '#ffb45c', VUL: '#d94a2f', KAS: '#ff733f', RMN: '#8d45ff' };
-            }
-            if (mode === 'helios') {
-                return { OAS: '#ffcc78', ODS: '#ff6045', MAV: '#ff9954', WAV: '#ffd58e', IDS: '#ff5d3a', VUL: '#ffe77a', KAS: '#ff8755', RMN: '#ffb16d' };
-            }
-            return { OAS: '#b2d6ff', ODS: '#4584ff', MAV: '#8ec0ff', WAV: '#2b67f4', IDS: '#9bc9ff', VUL: '#6f9cff', KAS: '#5e90ff', RMN: '#7bb2ff' };
+        function lanePalette() {
+            return { OAS: '#f8e7cf', ODS: '#ff8f34', MAV: '#f14bff', WAV: '#b34dff', IDS: '#ffb45c', VUL: '#d94a2f', KAS: '#ff733f', RMN: '#8d45ff' };
         }
 
         function laneColor(lane, mode) {
@@ -327,8 +319,8 @@
         }
 
         function drawGrid(cx, cy, R, mode) {
-            var latCol = mode === 'hades' ? 'rgba(255,214,168,0.12)' : mode === 'helios' ? 'rgba(255,192,136,0.09)' : 'rgba(192,224,255,0.10)';
-            var lonCol = mode === 'hades' ? 'rgba(214,64,255,0.10)' : mode === 'helios' ? 'rgba(255,120,80,0.08)' : 'rgba(91,153,255,0.09)';
+            var latCol = 'rgba(255,214,168,0.12)';
+            var lonCol = 'rgba(214,64,255,0.10)';
 
             ctx.lineWidth = 1;
             for (var la = -60; la <= 60; la += 15) {
@@ -364,8 +356,8 @@
             var col = laneColor(link.lane, mode);
             ctx.save();
             ctx.lineWidth = link.w;
-            ctx.strokeStyle = hexToRgba(col, mode === 'hades' ? 0.72 : 0.64);
-            ctx.shadowBlur = mode === 'hades' ? 15 : 11;
+            ctx.strokeStyle = hexToRgba(col, 0.72);
+            ctx.shadowBlur = 15;
             ctx.shadowColor = hexToRgba(col, 0.66);
             ctx.setLineDash(link.dash ? [2.5, 5.5] : []);
             ctx.beginPath();
@@ -416,7 +408,7 @@
 
             if (pr.z > 0.08 && (active || idx % 3 === 0)) {
                 ctx.font = '9px Orbitron, monospace';
-                ctx.fillStyle = hexToRgba(mode === 'hades' ? '#ffe7c8' : '#cfdfff', active ? 0.82 : 0.40);
+                ctx.fillStyle = hexToRgba('#ffe7c8', active ? 0.82 : 0.40);
                 ctx.fillText(node.n, pr.x + 5, pr.y - 4);
             }
         }
@@ -430,7 +422,7 @@
             ctx.clearRect(0, 0, w, h);
             drawStars(now, w, h);
 
-            if (animate && !g.drag && !state.reduced) { g.ry += dt * (g.mode === 'hades' ? 0.15 : 0.20); g.dY *= 0.92; g.dX *= 0.92; }
+            if (animate && !g.drag && !state.reduced) { g.ry += dt * 0.15; g.dY *= 0.92; g.dX *= 0.92; }
             g.ry += g.dY * dt;
             g.rx = clamp(g.rx + g.dX * dt, -0.48, 0.46);
             if (animate && !g.lowPower && now > g.rewireAt && !g.drag) {
@@ -448,19 +440,9 @@
             ctx.fill();
 
             var sph = ctx.createRadialGradient(cx - R * 0.30, cy - R * 0.34, R * 0.20, cx, cy, R);
-            if (g.mode === 'hades') {
-                sph.addColorStop(0, 'rgba(255,214,168,0.22)');
-                sph.addColorStop(0.45, 'rgba(74,14,58,0.88)');
-                sph.addColorStop(1, 'rgba(10,4,14,0.98)');
-            } else if (g.mode === 'helios') {
-                sph.addColorStop(0, 'rgba(255,231,196,0.16)');
-                sph.addColorStop(0.45, 'rgba(46,20,12,0.86)');
-                sph.addColorStop(1, 'rgba(8,3,2,0.98)');
-            } else {
-                sph.addColorStop(0, 'rgba(226,238,255,0.18)');
-                sph.addColorStop(0.45, 'rgba(12,23,46,0.86)');
-                sph.addColorStop(1, 'rgba(3,6,14,0.98)');
-            }
+            sph.addColorStop(0, 'rgba(255,214,168,0.22)');
+            sph.addColorStop(0.45, 'rgba(74,14,58,0.88)');
+            sph.addColorStop(1, 'rgba(10,4,14,0.98)');
             ctx.fillStyle = sph;
             ctx.beginPath();
             ctx.arc(cx, cy, R, 0, Math.PI * 2);
@@ -471,7 +453,7 @@
             ctx.arc(cx, cy, R, 0, Math.PI * 2);
             ctx.clip();
 
-            ctx.fillStyle = g.mode === 'hades' ? 'rgba(255,132,56,0.06)' : g.mode === 'helios' ? 'rgba(255,120,60,0.05)' : 'rgba(130,172,255,0.05)';
+            ctx.fillStyle = 'rgba(255,132,56,0.06)';
             for (var yy = cy - R; yy <= cy + R; yy += 4) ctx.fillRect(cx - R, yy, R * 2, 1);
 
             drawGrid(cx, cy, R, g.mode);
@@ -487,13 +469,13 @@
             ctx.restore();
 
             ctx.lineWidth = 1.8;
-            ctx.strokeStyle = g.mode === 'hades' ? 'rgba(255,195,132,0.36)' : 'rgba(232,238,255,0.30)';
+            ctx.strokeStyle = 'rgba(255,195,132,0.36)';
             ctx.beginPath();
             ctx.arc(cx, cy, R, 0, Math.PI * 2);
             ctx.stroke();
 
             ctx.lineWidth = 1.2;
-            ctx.strokeStyle = g.mode === 'hades' ? 'rgba(214,76,255,0.34)' : hexToRgba(p.b, 0.30);
+            ctx.strokeStyle = 'rgba(214,76,255,0.34)';
             ctx.beginPath();
             ctx.arc(cx, cy, R + 10, 0, Math.PI * 2);
             ctx.stroke();
@@ -608,7 +590,7 @@
                     if (state.reduced) return;
                     var x = chart.ctx;
                     x.save();
-                    x.shadowBlur = state.mode === 'hades' ? 20 : 14;
+                    x.shadowBlur = 20;
                     x.shadowColor = pick(state.mode).g;
                 },
                 afterDatasetDraw: function (chart) { chart.ctx.restore(); }
@@ -619,12 +601,8 @@
 
     function chartColors(n, p, mode) {
         var out = [];
-        if (mode === 'hades') {
-            var hadesSet = ['rgba(255,143,52,0.88)', 'rgba(207,57,255,0.84)', 'rgba(248,232,210,0.80)', 'rgba(216,74,44,0.86)'];
-            for (var h = 0; h < n; h++) out.push(hadesSet[h % hadesSet.length]);
-            return out;
-        }
-        for (var i = 0; i < n; i++) out.push(i % 3 === 0 ? p.b : i % 3 === 1 ? p.a : p.c);
+        var hadesSet = ['rgba(255,143,52,0.88)', 'rgba(207,57,255,0.84)', 'rgba(248,232,210,0.80)', 'rgba(216,74,44,0.86)'];
+        for (var h = 0; h < n; h++) out.push(hadesSet[h % hadesSet.length]);
         return out;
     }
 
@@ -638,16 +616,14 @@
         if (c.vulnChart) {
             var labels = (c.vulnChart.data && c.vulnChart.data.labels) || [];
             c.vulnChart.data.datasets[0].backgroundColor = chartColors(Math.max(1, labels.length), p, state.mode);
-            c.vulnChart.data.datasets[0].borderColor = state.mode === 'hades' ? 'rgba(247,221,197,0.86)' : p.a; c.vulnChart.data.datasets[0].borderWidth = 1.2;
+            c.vulnChart.data.datasets[0].borderColor = 'rgba(247,221,197,0.86)'; c.vulnChart.data.datasets[0].borderWidth = 1.2;
             c.vulnChart.data.datasets[0].borderRadius = 10; c.vulnChart.data.datasets[0].borderSkipped = false;
             c.vulnChart.options.animation = state.reduced ? false : { duration: 620, easing: 'easeOutQuart' };
             c.vulnChart.options.interaction = { mode: 'nearest', intersect: false };
             c.vulnChart.update(updateMode);
         }
         if (c.severityChart) {
-            c.severityChart.data.datasets[0].backgroundColor = state.mode === 'hades'
-                ? ['rgba(199,52,36,0.92)', 'rgba(255,143,52,0.88)', 'rgba(207,57,255,0.84)', 'rgba(248,232,210,0.80)']
-                : [p.c, p.b, p.a, 'rgba(30,168,150,0.86)'];
+            c.severityChart.data.datasets[0].backgroundColor = ['rgba(199,52,36,0.92)', 'rgba(255,143,52,0.88)', 'rgba(207,57,255,0.84)', 'rgba(248,232,210,0.80)'];
             c.severityChart.data.datasets[0].hoverOffset = 16; c.severityChart.data.datasets[0].borderColor = 'rgba(8,8,10,0.4)'; c.severityChart.data.datasets[0].borderWidth = 2;
             c.severityChart.options.cutout = '58%'; c.severityChart.options.animation = state.reduced ? false : { duration: 680, easing: 'easeOutCubic' };
             c.severityChart.update(updateMode);
@@ -655,7 +631,7 @@
         if (c.cveChart) {
             var labels2 = (c.cveChart.data && c.cveChart.data.labels) || [];
             c.cveChart.data.datasets[0].backgroundColor = chartColors(Math.max(1, labels2.length), p, state.mode).reverse();
-            c.cveChart.data.datasets[0].borderColor = state.mode === 'hades' ? 'rgba(246,217,190,0.82)' : p.b; c.cveChart.data.datasets[0].borderWidth = 1;
+            c.cveChart.data.datasets[0].borderColor = 'rgba(246,217,190,0.82)'; c.cveChart.data.datasets[0].borderWidth = 1;
             c.cveChart.data.datasets[0].borderRadius = 8; c.cveChart.data.datasets[0].barPercentage = 0.74;
             c.cveChart.options.animation = state.reduced ? false : { duration: 640, easing: 'easeOutQuart' };
             c.cveChart.options.interaction = { mode: 'nearest', intersect: false };

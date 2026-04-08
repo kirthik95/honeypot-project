@@ -10,10 +10,11 @@
    ========================================================= */
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const COLOR_SILVER = '242, 236, 221';
-const COLOR_GOLD = '199, 150, 28';
-const COLOR_RED = '177, 18, 18';
-const COLOR_BLACK = '5,5,5';
+const COLOR_SILVER = '255, 248, 239';
+const COLOR_GOLD = '239, 192, 123';
+const COLOR_RED = '15, 52, 96';
+const COLOR_SAGE = '22, 33, 62';
+const COLOR_BLACK = '26, 26, 46';
 const enableDragonCursor = false;
 
 // Elements
@@ -21,10 +22,40 @@ const card = document.querySelector('.login-card');
 const submitBtn = document.querySelector('.submit-btn');
 const title = document.querySelector('.card-title');
 const canvas = document.getElementById('webgl-canvas');
+const parallaxLayers = Array.from(document.querySelectorAll('[data-parallax]')).map((el) => ({
+    el,
+    depth: Number.parseFloat(el.dataset.parallax || '0')
+}));
 
 // Guard
 if (!card || !submitBtn || !title || !canvas) {
     console.warn('Interactive layer: required elements not found.');
+}
+
+// -----------------------------------------
+// Scene parallax
+// -----------------------------------------
+let scenePointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+let parallaxFrame = 0;
+
+function renderSceneParallax() {
+    const nx = scenePointer.x / window.innerWidth - 0.5;
+    const ny = scenePointer.y / window.innerHeight - 0.5;
+
+    for (const layer of parallaxLayers) {
+        const shiftX = nx * layer.depth * 54;
+        const shiftY = ny * layer.depth * 34;
+        layer.el.style.transform = `translate3d(${shiftX}px, ${shiftY}px, 0)`;
+    }
+
+    parallaxFrame = 0;
+}
+
+function queueSceneParallax() {
+    if (prefersReducedMotion || !parallaxLayers.length || parallaxFrame) {
+        return;
+    }
+    parallaxFrame = requestAnimationFrame(renderSceneParallax);
 }
 
 // -----------------------------------------
@@ -64,8 +95,8 @@ if (!prefersReducedMotion && enableDragonCursor) {
             left: 0;
             pointer-events: none;
             z-index: 3;
-            mix-blend-mode: screen;
-            filter: drop-shadow(0 0 20px rgba(242, 236, 221,0.6));
+            mix-blend-mode: soft-light;
+            filter: drop-shadow(0 0 20px rgba(${COLOR_GOLD},0.35));
             transition: opacity 200ms ease;
             opacity: 0.95;
             animation: dragonPulse 3.6s ease-in-out infinite;
@@ -80,24 +111,24 @@ if (!prefersReducedMotion && enableDragonCursor) {
         .dragon-follower .dragon-spine,
         .dragon-follower .dragon-whisker {
             fill: none;
-            stroke: rgba(242, 236, 221,0.9);
+            stroke: rgba(${COLOR_GOLD},0.9);
             stroke-width: 2.6;
             stroke-linecap: round;
             stroke-linejoin: round;
         }
         .dragon-follower .dragon-head,
         .dragon-follower .dragon-jaw {
-            fill: rgba(5,5,5,0.88);
-            stroke: rgba(177,18,18,0.95);
+            fill: rgba(${COLOR_BLACK},0.88);
+            stroke: rgba(${COLOR_RED},0.95);
             stroke-width: 2.4;
             stroke-linejoin: round;
         }
         .dragon-follower .dragon-eye {
-            fill: rgba(177,18,18,1);
+            fill: rgba(${COLOR_RED},1);
         }
         @keyframes dragonPulse {
-            0%, 100% { filter: drop-shadow(0 0 18px rgba(242, 236, 221,0.55)); }
-            50% { filter: drop-shadow(0 0 28px rgba(177,18,18,0.65)); }
+            0%, 100% { filter: drop-shadow(0 0 18px rgba(${COLOR_GOLD},0.4)); }
+            50% { filter: drop-shadow(0 0 28px rgba(${COLOR_SAGE},0.45)); }
         }
     `;
     document.head.appendChild(dragonStyle);
@@ -113,11 +144,11 @@ if (!prefersReducedMotion && card) {
         position:absolute;
         inset:-40%;
         background: radial-gradient(600px circle at var(--gx, 50%) var(--gy, 50%),
-            rgba(242, 236, 221,0.24), transparent 50%);
+            rgba(${COLOR_GOLD},0.18), rgba(${COLOR_SAGE},0.12) 30%, transparent 56%);
         opacity: 0;
         transition: opacity 200ms ease;
         pointer-events:none;
-        mix-blend-mode: screen;
+        mix-blend-mode: soft-light;
     `;
     card.appendChild(glow);
 
@@ -225,7 +256,7 @@ function createSnow(count = 200) {
     const list = [];
     for (let i = 0; i < count; i += 1) {
         const roll = Math.random();
-        const color = roll > 0.96 ? COLOR_RED : (roll > 0.8 ? COLOR_GOLD : COLOR_SILVER);
+        const color = roll > 0.92 ? COLOR_RED : (roll > 0.72 ? COLOR_GOLD : (roll > 0.48 ? COLOR_SAGE : COLOR_SILVER));
         list.push({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
@@ -569,13 +600,13 @@ if (!prefersReducedMotion) {
         background: linear-gradient(
             180deg,
             transparent 0%,
-            rgba(242, 236, 221,0.05) 40%,
-            rgba(242, 236, 221,0.16) 50%,
-            rgba(242, 236, 221,0.05) 60%,
+            rgba(${COLOR_GOLD},0.04) 36%,
+            rgba(${COLOR_SILVER},0.18) 50%,
+            rgba(${COLOR_SAGE},0.05) 62%,
             transparent 100%
         );
-        mix-blend-mode: screen;
-        opacity: 0.18;
+        mix-blend-mode: soft-light;
+        opacity: 0.2;
         animation: shimmerScan 9s linear infinite;
         z-index: 2;
     `;
@@ -619,9 +650,9 @@ const fxStyle = document.createElement('style');
 fxStyle.textContent = `
     .focus-glow {
         box-shadow:
-            0 25px 70px rgba(0, 0, 0, 0.65),
-            0 0 0 1px rgba(242, 236, 221, 0.34) inset,
-            0 0 120px rgba(242, 236, 221, 0.26);
+            0 25px 70px rgba(${COLOR_GOLD}, 0.18),
+            0 0 0 1px rgba(${COLOR_SILVER}, 0.52) inset,
+            0 0 120px rgba(${COLOR_SAGE}, 0.14);
     }
 `;
 document.head.appendChild(fxStyle);
@@ -649,15 +680,16 @@ function showToast(message, type = 'info') {
         right: 24px;
         max-width: 360px;
         padding: 14px 18px;
-        background: ${type === 'info' ? 'rgba(242, 236, 221,0.92)' : 'rgba(177,18,18,0.92)'};
-        color: #0b0b0e;
+        background: ${type === 'info' ? 'rgba(255, 248, 239,0.96)' : 'rgba(201, 121, 89,0.92)'};
+        color: ${type === 'info' ? 'rgb(59, 47, 36)' : 'rgb(255, 250, 243)'};
         border-radius: 12px;
         font-size: 14px;
         font-weight: 600;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+        box-shadow: 0 14px 34px rgba(166, 132, 96, 0.22);
         z-index: 9999;
         letter-spacing: 0.03em;
         animation: toastIn 220ms ease-out;
+        border: 1px solid rgba(150, 119, 88, 0.14);
     `;
     toast.textContent = message;
     document.body.appendChild(toast);
@@ -667,6 +699,8 @@ function showToast(message, type = 'info') {
         setTimeout(() => toast.remove(), 240);
     }, 1800);
 }
+
+window.showToast = showToast;
 
 const toastStyle = document.createElement('style');
 toastStyle.textContent = `
@@ -682,6 +716,25 @@ toastStyle.textContent = `
 document.head.appendChild(toastStyle);
 // Spatial light follow
 const spatialLight = document.querySelector('.spatial-light');
+if (!prefersReducedMotion && parallaxLayers.length) {
+    queueSceneParallax();
+
+    window.addEventListener('mousemove', (e) => {
+        scenePointer = { x: e.clientX, y: e.clientY };
+        queueSceneParallax();
+    });
+
+    window.addEventListener('mouseleave', () => {
+        scenePointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+        queueSceneParallax();
+    });
+
+    window.addEventListener('resize', () => {
+        scenePointer = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+        queueSceneParallax();
+    });
+}
+
 if (spatialLight && !prefersReducedMotion) {
     window.addEventListener('mousemove', (e) => {
         const x = (e.clientX / window.innerWidth) * 100;
