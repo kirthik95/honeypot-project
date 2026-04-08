@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security Testing Studio</title>
+    <title>Security Lab | Shadow Node</title>
     <script src="domain-gate.js"></script>
     <script src="auth-utils.js"></script>
     <script>
@@ -14,30 +14,32 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         :root {
-            --navy-1: #090f1d;
-            --navy-2: #111a31;
-            --navy-3: #17325b;
-            --gold: #efc07b;
-            --gold-soft: #f6deb3;
-            --ivory: #fff4dc;
-            --steel: #9ab0d7;
-            --ink: rgba(255, 244, 220, 0.88);
-            --muted: rgba(255, 244, 220, 0.62);
-            --line: rgba(239, 192, 123, 0.16);
-            --panel: linear-gradient(155deg, rgba(13, 20, 38, 0.9), rgba(17, 27, 49, 0.84) 52%, rgba(8, 15, 29, 0.94) 100%);
-            --panel-soft: linear-gradient(150deg, rgba(17, 25, 46, 0.76), rgba(18, 28, 50, 0.68));
-            --shadow: 0 36px 90px rgba(3, 6, 18, 0.5);
+            --bg-1: #07101f;
+            --bg-2: #0d1730;
+            --bg-3: #12264b;
+            --panel: rgba(10, 18, 35, 0.78);
+            --panel-strong: rgba(10, 18, 35, 0.9);
+            --line: rgba(238, 192, 124, 0.16);
+            --line-strong: rgba(238, 192, 124, 0.28);
+            --gold: #eebf7c;
+            --gold-deep: #bf8650;
+            --ivory: #fff2d9;
+            --steel: #adc2e8;
+            --mist: rgba(255, 242, 217, 0.72);
+            --muted: rgba(255, 242, 217, 0.56);
+            --danger: #ff6b57;
+            --shadow: 0 30px 70px rgba(2, 6, 18, 0.42);
             --radius-xl: 32px;
             --radius-lg: 24px;
             --radius-md: 18px;
-            --transition: 320ms cubic-bezier(0.22, 1, 0.36, 1);
+            --transition: 260ms cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         html {
@@ -46,19 +48,19 @@
 
         body {
             font-family: 'Space Grotesk', sans-serif;
-            color: var(--ink);
-            background:
-                radial-gradient(900px circle at 14% 4%, rgba(239, 192, 123, 0.16), transparent 34%),
-                radial-gradient(1000px circle at 86% 14%, rgba(23, 50, 91, 0.52), transparent 38%),
-                linear-gradient(135deg, var(--navy-1) 0%, var(--navy-2) 48%, var(--navy-3) 100%);
+            color: var(--ivory);
             min-height: 100vh;
+            background:
+                radial-gradient(950px circle at 15% 8%, rgba(238, 192, 124, 0.16), transparent 34%),
+                radial-gradient(1000px circle at 88% 12%, rgba(65, 102, 164, 0.24), transparent 34%),
+                linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 42%, var(--bg-3) 100%);
             overflow-x: hidden;
             position: relative;
         }
 
         body::before,
         body::after {
-            content: '';
+            content: "";
             position: fixed;
             inset: 0;
             pointer-events: none;
@@ -66,93 +68,110 @@
 
         body::before {
             background-image:
-                linear-gradient(rgba(239, 192, 123, 0.035) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(239, 192, 123, 0.035) 1px, transparent 1px);
+                linear-gradient(rgba(238, 192, 124, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(238, 192, 124, 0.03) 1px, transparent 1px);
             background-size: 72px 72px;
-            opacity: 0.3;
-            z-index: 0;
+            opacity: 0.26;
         }
 
         body::after {
-            background: repeating-linear-gradient(
-                0deg,
-                rgba(255, 255, 255, 0.012) 0,
-                rgba(255, 255, 255, 0.012) 1px,
-                transparent 1px,
-                transparent 3px
-            );
-            opacity: 0.12;
-            z-index: 0;
+            background: radial-gradient(circle at var(--mx, 50%) var(--my, 35%), rgba(238, 192, 124, 0.12), transparent 24%);
+            mix-blend-mode: screen;
+            opacity: 0.7;
         }
 
-        .aurora,
-        .halo,
+        .orb,
         .beam {
             position: fixed;
-            inset: -20%;
+            inset: 0;
             pointer-events: none;
         }
 
-        .aurora {
+        .orb {
             background:
-                radial-gradient(620px circle at var(--mx, 50%) var(--my, 40%), rgba(239, 192, 123, 0.12), transparent 50%),
-                radial-gradient(760px circle at calc(var(--mx, 50%) + 14%) calc(var(--my, 40%) - 18%), rgba(154, 176, 215, 0.12), transparent 56%);
-            mix-blend-mode: screen;
-            z-index: 0;
-        }
-
-        .halo {
-            background: radial-gradient(circle at 50% 30%, rgba(239, 192, 123, 0.08), transparent 44%);
-            animation: haloPulse 12s ease-in-out infinite alternate;
-            z-index: 0;
+                radial-gradient(420px circle at 80% 20%, rgba(173, 194, 232, 0.16), transparent 48%),
+                radial-gradient(360px circle at 12% 74%, rgba(191, 134, 80, 0.12), transparent 46%);
+            filter: blur(12px);
         }
 
         .beam {
-            background: linear-gradient(
-                180deg,
-                transparent 0%,
-                rgba(255, 244, 220, 0.06) 42%,
-                rgba(239, 192, 123, 0.06) 50%,
-                transparent 62%
-            );
-            mix-blend-mode: screen;
-            opacity: 0.22;
-            animation: beamDrift 10s linear infinite;
-            z-index: 0;
-        }
-
-        @keyframes haloPulse {
-            from { transform: scale(1); opacity: 0.36; }
-            to { transform: scale(1.08); opacity: 0.62; }
+            background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.04) 46%, transparent 72%);
+            opacity: 0.3;
+            animation: beamDrift 12s linear infinite;
         }
 
         @keyframes beamDrift {
-            from { transform: translateY(-18%); }
-            to { transform: translateY(18%); }
+            from { transform: translateY(-16%); }
+            to { transform: translateY(16%); }
         }
 
-        .page-shell {
+        .shell {
+            width: min(1320px, calc(100% - 40px));
+            margin: 0 auto;
             position: relative;
             z-index: 1;
-            width: min(1380px, calc(100% - 48px));
-            margin: 0 auto;
-            padding: 28px 0 56px;
+            padding: 28px 0 52px;
+        }
+
+        .topbar,
+        .hero,
+        .service-card,
+        .roadmap,
+        .signal-wall,
+        .premium-panel,
+        .cta-band {
+            background: linear-gradient(160deg, rgba(13, 21, 39, 0.92), rgba(13, 21, 39, 0.74) 46%, rgba(8, 15, 30, 0.92));
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .topbar::before,
+        .hero::before,
+        .service-card::before,
+        .roadmap::before,
+        .signal-wall::before,
+        .premium-panel::before,
+        .cta-band::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(140deg, rgba(255, 255, 255, 0.06), transparent 34%),
+                radial-gradient(circle at 84% 16%, rgba(238, 192, 124, 0.08), transparent 24%);
+            pointer-events: none;
+        }
+
+        .topbar,
+        .hero > *,
+        .service-card > *,
+        .roadmap > *,
+        .signal-wall > *,
+        .premium-panel > *,
+        .cta-band > * {
+            position: relative;
+            z-index: 1;
         }
 
         .topbar {
+            border-radius: 999px;
+            padding: 14px 18px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
             gap: 16px;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
         }
 
         .brand {
             font-family: 'Orbitron', sans-serif;
-            font-size: 30px;
+            font-size: 28px;
             letter-spacing: 0.14em;
-            color: var(--gold-soft);
             text-transform: uppercase;
+            color: var(--gold);
         }
 
         .brand span {
@@ -163,725 +182,539 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
-        .session-chip,
-        .ghost-button,
-        .solid-button {
+        .pill,
+        .button {
             border-radius: 999px;
-            border: 1px solid rgba(239, 192, 123, 0.18);
-            font-size: 12px;
-            letter-spacing: 0.14em;
+            border: 1px solid rgba(238, 192, 124, 0.2);
+            padding: 11px 16px;
+            font-size: 11px;
+            letter-spacing: 0.16em;
             text-transform: uppercase;
-            padding: 12px 18px;
         }
 
-        .session-chip {
+        .pill {
             color: var(--muted);
             background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(18px);
         }
 
-        .ghost-button,
-        .solid-button {
-            cursor: pointer;
-            transition: transform var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition), color var(--transition);
+        .button {
             font-family: 'Orbitron', sans-serif;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition);
         }
 
-        .ghost-button {
+        .button-primary {
+            background: linear-gradient(135deg, var(--gold-deep), var(--gold));
+            color: #09111f;
+            box-shadow: 0 16px 32px rgba(238, 192, 124, 0.2);
+        }
+
+        .button-secondary {
             background: rgba(255, 255, 255, 0.04);
-            color: var(--gold-soft);
+            color: var(--ivory);
         }
 
-        .ghost-button:hover {
+        .button:hover {
             transform: translateY(-2px);
-            border-color: rgba(239, 192, 123, 0.3);
-            background: rgba(239, 192, 123, 0.08);
+            border-color: var(--line-strong);
         }
 
-        .solid-button {
-            background: linear-gradient(135deg, rgba(201, 135, 88, 0.94), rgba(239, 192, 123, 0.94));
-            color: #0b1222;
-            box-shadow: 0 16px 34px rgba(239, 192, 123, 0.18);
-        }
-
-        .solid-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 44px rgba(239, 192, 123, 0.24);
-        }
-
-        .hero-panel,
-        .module-card,
-        .console-panel,
-        .journey-panel,
-        .lab-card {
-            background: var(--panel);
-            border: 1px solid var(--line);
-            box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-panel {
+        .hero {
             border-radius: var(--radius-xl);
             padding: clamp(28px, 4vw, 44px);
-            min-height: 480px;
             display: grid;
-            grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
-            gap: 28px;
-            align-items: stretch;
-            margin-bottom: 28px;
+            grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+            gap: 26px;
+            margin-bottom: 22px;
         }
 
-        .hero-panel::before,
-        .module-card::before,
-        .console-panel::before,
-        .journey-panel::before,
-        .lab-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                linear-gradient(140deg, rgba(255, 255, 255, 0.08), transparent 42%),
-                radial-gradient(circle at 82% 18%, rgba(239, 192, 123, 0.08), transparent 28%);
-            pointer-events: none;
-        }
-
-        .hero-copy,
-        .hero-preview,
-        .module-card > *,
-        .console-panel > *,
-        .journey-panel > *,
-        .lab-card > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .eyebrow {
+        .eyebrow,
+        .mini-tag {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 10px 14px;
+            border: 1px solid rgba(238, 192, 124, 0.18);
             border-radius: 999px;
-            border: 1px solid rgba(239, 192, 123, 0.16);
-            background: rgba(255, 255, 255, 0.05);
-            color: rgba(255, 244, 220, 0.72);
-            font-size: 11px;
+            padding: 10px 14px;
+            background: rgba(255, 255, 255, 0.04);
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            margin-bottom: 18px;
+            font-size: 11px;
+            color: var(--mist);
         }
 
-        .hero-title {
+        .hero h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: clamp(54px, 7vw, 92px);
-            line-height: 0.95;
-            letter-spacing: 0.06em;
+            font-size: clamp(50px, 7vw, 90px);
+            line-height: 0.93;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
-            margin-bottom: 18px;
-            text-shadow: 0 16px 38px rgba(0, 0, 0, 0.28);
+            margin: 18px 0 18px;
         }
 
-        .hero-title .warm {
+        .hero h1 span:first-child {
             display: block;
-            background: linear-gradient(110deg, #c48254 0%, #efc07b 42%, #fff4dc 100%);
+            background: linear-gradient(100deg, var(--gold-deep), var(--gold), var(--ivory));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .hero-title .cool {
+        .hero h1 span:last-child {
             display: block;
-            background: linear-gradient(110deg, #9ab0d7 0%, #f6e6c5 48%, #efc07b 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--steel);
         }
 
-        .hero-subtitle {
-            max-width: 640px;
+        .hero p {
+            max-width: 650px;
             font-size: 18px;
-            line-height: 1.7;
-            color: var(--muted);
-            margin-bottom: 28px;
+            line-height: 1.75;
+            color: var(--mist);
+        }
+
+        .hero-actions,
+        .mini-tags,
+        .proof-grid,
+        .services,
+        .detail-grid,
+        .assurance-grid {
+            display: grid;
+            gap: 16px;
         }
 
         .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            margin-bottom: 28px;
+            margin-top: 24px;
+            grid-template-columns: repeat(2, max-content);
         }
 
-        .metric-ribbon {
-            display: grid;
+        .proof-grid {
+            margin-top: 24px;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 14px;
         }
 
-        .metric-pill {
+        .proof-card,
+        .signal-item {
             padding: 16px 18px;
-            border-radius: 22px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(239, 192, 123, 0.12);
+            border-radius: 20px;
+            border: 1px solid rgba(238, 192, 124, 0.12);
+            background: rgba(255, 255, 255, 0.04);
         }
 
-        .metric-label {
-            font-size: 10px;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: rgba(255, 244, 220, 0.42);
+        .proof-card strong,
+        .count {
+            display: block;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            color: var(--gold);
             margin-bottom: 8px;
         }
 
-        .metric-value {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 22px;
-            color: var(--gold-soft);
+        .proof-card span,
+        .muted {
+            color: var(--muted);
+            line-height: 1.6;
         }
 
-        .hero-preview {
+        .command-board {
+            border-radius: 28px;
+            padding: 22px;
+            background: linear-gradient(160deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(238, 192, 124, 0.14);
             display: grid;
             gap: 16px;
             align-content: start;
         }
 
-        .preview-card {
-            border-radius: 24px;
-            padding: 18px 20px;
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
-            border: 1px solid rgba(239, 192, 123, 0.12);
+        .display {
+            border-radius: 22px;
+            background: rgba(7, 13, 26, 0.82);
+            border: 1px solid rgba(173, 194, 232, 0.16);
+            padding: 18px;
         }
 
-        .preview-card h3 {
-            font-size: 12px;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: rgba(255, 244, 220, 0.5);
-            margin-bottom: 10px;
+        .display code,
+        .log {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            line-height: 1.8;
+            color: #d9e6ff;
         }
 
-        .preview-card p {
-            color: var(--muted);
-            line-height: 1.7;
-        }
-
-        .preview-grid {
-            display: grid;
+        .mini-tags {
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 14px;
         }
 
-        .preview-stat {
-            border-radius: 20px;
-            padding: 16px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(239, 192, 123, 0.1);
-        }
-
-        .preview-stat .number {
-            display: block;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 28px;
-            color: var(--gold-soft);
-            margin-bottom: 6px;
-        }
-
-        .preview-stat .caption {
-            font-size: 11px;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: rgba(255, 244, 220, 0.44);
-        }
-
-        .module-grid,
-        .lab-grid {
-            display: grid;
+        .services,
+        .detail-grid {
+            margin-top: 22px;
             grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 18px;
-            margin-bottom: 28px;
         }
 
-        .module-card,
-        .lab-card {
-            border-radius: 26px;
-            padding: 22px;
-            min-height: 220px;
-            transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
-        }
-
-        .module-card:hover,
-        .lab-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(239, 192, 123, 0.24);
-            box-shadow: 0 28px 60px rgba(3, 6, 18, 0.44), 0 0 80px rgba(239, 192, 123, 0.06);
-        }
-
-        .module-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 18px;
-            display: grid;
-            place-items: center;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 18px;
-            margin-bottom: 18px;
-            background: linear-gradient(135deg, rgba(201, 135, 88, 0.22), rgba(239, 192, 123, 0.14));
-            color: var(--gold-soft);
-            border: 1px solid rgba(239, 192, 123, 0.14);
-        }
-
-        .module-card h3,
-        .lab-card h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 20px;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            color: var(--ivory);
-            margin-bottom: 12px;
-        }
-
-        .module-card p,
-        .lab-card p {
-            color: var(--muted);
-            line-height: 1.7;
-            margin-bottom: 18px;
-        }
-
-        .module-tag,
-        .lab-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 10px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(239, 192, 123, 0.12);
-            color: rgba(255, 244, 220, 0.68);
-            font-size: 10px;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-        }
-
-        .experience-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
-            gap: 18px;
-            margin-bottom: 28px;
-        }
-
-        .console-panel,
-        .journey-panel {
-            border-radius: 28px;
+        .service-card,
+        .roadmap,
+        .signal-wall,
+        .premium-panel,
+        .cta-band {
+            border-radius: var(--radius-lg);
             padding: 24px;
         }
 
-        .section-label {
-            font-size: 11px;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: rgba(255, 244, 220, 0.48);
-            margin-bottom: 10px;
-        }
-
-        .section-title {
+        .service-card h3,
+        .roadmap h2,
+        .signal-wall h2,
+        .premium-panel h2,
+        .cta-band h2 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 28px;
-            color: var(--ivory);
-            margin-bottom: 16px;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
         }
 
-        .console-feed {
+        .service-card p,
+        .roadmap p,
+        .premium-panel p,
+        .cta-band p {
+            color: var(--mist);
+            line-height: 1.7;
+        }
+
+        .service-icon {
+            width: 52px;
+            height: 52px;
             display: grid;
-            gap: 10px;
+            place-items: center;
+            border-radius: 18px;
+            margin-bottom: 16px;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--gold);
+            background: linear-gradient(135deg, rgba(191, 134, 80, 0.24), rgba(238, 192, 124, 0.12));
+            border: 1px solid rgba(238, 192, 124, 0.14);
+        }
+
+        .detail-grid {
+            align-items: start;
+            margin-bottom: 22px;
+        }
+
+        .roadmap {
+            grid-column: span 2;
+        }
+
+        .route-list {
+            list-style: none;
+            display: grid;
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        .route-list li {
+            padding: 16px 0 16px 24px;
+            border-top: 1px solid rgba(238, 192, 124, 0.12);
+            position: relative;
+            color: var(--mist);
+        }
+
+        .route-list li::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold-deep), var(--gold));
+            position: absolute;
+            left: 0;
+            top: 22px;
+            box-shadow: 0 0 0 6px rgba(238, 192, 124, 0.08);
+        }
+
+        .signal-feed {
+            display: grid;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .assurance-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            margin-top: 18px;
+        }
+
+        .cta-band {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) max-content;
+            align-items: center;
+            gap: 18px;
             margin-top: 22px;
         }
 
-        .console-line {
-            display: flex;
-            gap: 14px;
-            align-items: flex-start;
-            padding: 14px 16px;
-            border-radius: 18px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(239, 192, 123, 0.08);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            color: rgba(255, 244, 220, 0.8);
-        }
-
-        .console-timestamp {
-            color: rgba(239, 192, 123, 0.74);
-            min-width: 78px;
-        }
-
-        .journey-list {
-            display: grid;
-            gap: 14px;
-            margin-top: 16px;
-        }
-
-        .journey-step {
-            padding: 18px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(239, 192, 123, 0.1);
-        }
-
-        .journey-step strong {
-            display: block;
-            font-size: 13px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--gold-soft);
-            margin-bottom: 8px;
-        }
-
-        .journey-step span {
-            color: var(--muted);
-            line-height: 1.65;
-            font-size: 14px;
-        }
-
-        .footer {
-            padding: 18px 0 8px;
-            color: rgba(255, 244, 220, 0.42);
-            font-size: 12px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
-        [data-depth] {
-            will-change: transform;
-            transition: transform 180ms linear;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 720ms cubic-bezier(0.22, 1, 0.36, 1), transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        body.page-ready .reveal {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        body.page-ready .reveal.delay-1 { transition-delay: 80ms; }
-        body.page-ready .reveal.delay-2 { transition-delay: 160ms; }
-        body.page-ready .reveal.delay-3 { transition-delay: 240ms; }
-        body.page-ready .reveal.delay-4 { transition-delay: 320ms; }
-
-        @media (max-width: 1100px) {
-            .hero-panel,
-            .experience-grid {
+        @media (max-width: 1080px) {
+            .hero,
+            .detail-grid,
+            .services,
+            .proof-grid {
                 grid-template-columns: 1fr;
             }
 
-            .module-grid,
-            .lab-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+            .roadmap {
+                grid-column: span 1;
+            }
+
+            .cta-band {
+                grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 720px) {
-            .page-shell {
-                width: min(100% - 28px, 1280px);
-                padding-top: 20px;
+            .shell {
+                width: min(100% - 22px, 100%);
+                padding-top: 18px;
             }
 
             .topbar {
-                flex-direction: column;
+                border-radius: 28px;
                 align-items: flex-start;
             }
 
-            .topbar-actions {
-                width: 100%;
-                flex-wrap: wrap;
+            .brand {
+                font-size: 22px;
             }
 
-            .hero-title {
-                font-size: 44px;
-            }
-
-            .metric-ribbon,
-            .module-grid,
-            .lab-grid,
-            .preview-grid {
+            .hero-actions {
                 grid-template-columns: 1fr;
             }
-        }
 
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
+            .mini-tags,
+            .assurance-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .button {
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <div class="aurora" aria-hidden="true"></div>
-    <div class="halo" aria-hidden="true"></div>
-    <div class="beam" aria-hidden="true"></div>
+    <div class="orb"></div>
+    <div class="beam"></div>
 
-    <div class="page-shell">
-        <header class="topbar reveal" data-depth="0.05">
-            <div class="brand">SHADOW<span>.NODE</span></div>
+    <main class="shell">
+        <header class="topbar">
+            <div class="brand">Shadow<span>.Node</span></div>
             <div class="topbar-actions">
-                <div class="session-chip" id="sessionChip">Authorized User Session</div>
-                <button class="ghost-button" type="button" id="logoutButton">Sign Out</button>
+                <div class="pill" id="sessionChip">User Session</div>
+                <button class="button button-secondary" id="logoutButton" type="button">Logout</button>
             </div>
         </header>
 
-        <section class="hero-panel reveal delay-1" data-depth="0.12">
-            <div class="hero-copy">
-                <div class="eyebrow">Authorized Security Testing Workspace</div>
-                <h1 class="hero-title">
-                    <span class="warm">Security Testing</span>
-                    <span class="cool">Studio</span>
-                </h1>
-                <p class="hero-subtitle">
-                    A premium exploration surface for safe payload review, interface hardening, and guided testing flows.
-                    Built as a controlled environment for authenticated user sessions.
+        <section class="hero">
+            <div>
+                <div class="eyebrow">Premium Security Experience</div>
+                <h1><span>Security Lab</span><span>Command Atelier</span></h1>
+                <p>
+                    A polished operator workspace that blends cyber-services credibility with Shadow Node's cinematic lab UI.
+                    Every panel is tuned for premium depth, cleaner structure, and a sharper enterprise-ready feel.
                 </p>
-
                 <div class="hero-actions">
-                    <button class="solid-button" type="button" onclick="document.getElementById('labModules').scrollIntoView({ behavior: 'smooth' })">Open Test Matrix</button>
-                    <button class="ghost-button" type="button" onclick="document.getElementById('liveConsole').scrollIntoView({ behavior: 'smooth' })">View Live Console</button>
+                    <a class="button button-primary" href="#services">Explore Tracks</a>
+                    <a class="button button-secondary" href="#signals">View Signals</a>
                 </div>
-
-                <div class="metric-ribbon">
-                    <div class="metric-pill">
-                        <div class="metric-label">Safe Lab Runs</div>
-                        <div class="metric-value" id="metricRuns">24</div>
+                <div class="proof-grid">
+                    <div class="proof-card">
+                        <strong class="count" data-count="24">24</strong>
+                        <span>Scenario modules styled as premium guided engagements.</span>
                     </div>
-                    <div class="metric-pill">
-                        <div class="metric-label">Payload Reviews</div>
-                        <div class="metric-value" id="metricPayloads">18</div>
+                    <div class="proof-card">
+                        <strong class="count" data-count="96">96</strong>
+                        <span>Validation checkpoints for cleaner analyst confidence.</span>
                     </div>
-                    <div class="metric-pill">
-                        <div class="metric-label">Risk Tracks</div>
-                        <div class="metric-value" id="metricTracks">06</div>
+                    <div class="proof-card">
+                        <strong class="count" data-count="99">99</strong>
+                        <span>Signal integrity focus across monitoring, replay, and reporting.</span>
                     </div>
                 </div>
             </div>
 
-            <aside class="hero-preview" data-depth="0.06">
-                <div class="preview-card">
-                    <h3>Session Focus</h3>
-                    <p>Explore security testing lanes, inspect UI attack surfaces, and review safe simulation flows without exposing the admin control plane.</p>
+            <aside class="command-board">
+                <div class="mini-tag">Operator Experience Layer</div>
+                <div class="display">
+                    <div class="log" id="consoleFeed">
+                        &gt; intake.ready :: executive surface aligned<br>
+                        &gt; premium.routing :: role isolated and verified<br>
+                        &gt; threat.canvas :: motion layer synchronized<br>
+                        &gt; evidence.stream :: prepared for analyst review
+                    </div>
                 </div>
-
-                <div class="preview-grid">
-                    <div class="preview-stat">
-                        <span class="number">L2</span>
-                        <span class="caption">Access Tier</span>
+                <div class="mini-tags">
+                    <div class="signal-item">
+                        <strong class="count" data-count="4">4</strong>
+                        <span class="muted">Core service lanes</span>
                     </div>
-                    <div class="preview-stat">
-                        <span class="number">4</span>
-                        <span class="caption">Lab Zones</span>
-                    </div>
-                    <div class="preview-stat">
-                        <span class="number">93%</span>
-                        <span class="caption">Surface Visibility</span>
-                    </div>
-                    <div class="preview-stat">
-                        <span class="number">Live</span>
-                        <span class="caption">Signal State</span>
+                    <div class="signal-item">
+                        <strong class="count" data-count="12">12</strong>
+                        <span class="muted">Premium visual accents</span>
                     </div>
                 </div>
             </aside>
         </section>
 
-        <section class="module-grid reveal delay-2" id="labModules">
-            <article class="module-card" data-depth="0.08">
-                <div class="module-icon">01</div>
-                <h3>Payload Review</h3>
-                <p>Inspect login inputs, query strings, and form vectors with controlled review cues before anything touches protected routes.</p>
-                <div class="module-tag">Input Integrity Lane</div>
+        <section class="services" id="services">
+            <article class="service-card">
+                <div class="service-icon">01</div>
+                <h3>Threat Posture Review</h3>
+                <p>Premium briefing cards with concise signal framing, attack-lane clarity, and executive-friendly context.</p>
             </article>
-
-            <article class="module-card" data-depth="0.1">
-                <div class="module-icon">02</div>
-                <h3>App Surface Scan</h3>
-                <p>Map exposure points across UI touchpoints, client-side transitions, and auth boundaries with guided checkpoints.</p>
-                <div class="module-tag">Boundary Mapping</div>
+            <article class="service-card">
+                <div class="service-icon">02</div>
+                <h3>Surface Discovery</h3>
+                <p>Sharper inventory presentation, calmer spacing, and stronger hierarchy for reconnaissance and asset review.</p>
             </article>
-
-            <article class="module-card" data-depth="0.12">
-                <div class="module-icon">03</div>
-                <h3>Scenario Forge</h3>
-                <p>Prototype safe demo cases for brute force, tampering, and validation failures without granting escalation paths.</p>
-                <div class="module-tag">Safe Simulation</div>
+            <article class="service-card">
+                <div class="service-icon">03</div>
+                <h3>Scenario Design</h3>
+                <p>Guided engagement pathways inspired by premium cyber-services sites without losing the current Shadow Node identity.</p>
             </article>
-
-            <article class="module-card" data-depth="0.14">
-                <div class="module-icon">04</div>
-                <h3>Evidence Stream</h3>
-                <p>Track the visual testing story with session notes, routed outcomes, and operator-facing review breadcrumbs.</p>
-                <div class="module-tag">Audit Narrative</div>
+            <article class="service-card">
+                <div class="service-icon">04</div>
+                <h3>Evidence Narrative</h3>
+                <p>Cleaner evidence storytelling with assurance tone, premium palettes, and reduced visual clutter.</p>
             </article>
         </section>
 
-        <section class="experience-grid reveal delay-3">
-            <div class="console-panel" id="liveConsole" data-depth="0.09">
-                <div class="section-label">Live Studio Feed</div>
-                <h2 class="section-title">Testing Console</h2>
-                <p class="hero-subtitle">A curated live log showing how the user workspace validates flows, isolates bad payloads, and keeps admin operations separate.</p>
+        <section class="detail-grid">
+            <article class="roadmap">
+                <div class="eyebrow">Engagement Blueprint</div>
+                <h2>From first signal to final confidence</h2>
+                <p>
+                    The page now feels closer to a premium security services studio: strong hero, trust-led sectioning,
+                    curated outcomes, and a more intentional operator journey.
+                </p>
+                <ol class="route-list">
+                    <li>Validate the session and land the user in a polished, premium opening state.</li>
+                    <li>Guide attention into service lanes instead of cluttered utility controls.</li>
+                    <li>Surface live signal language and assurance framing for a stronger enterprise feel.</li>
+                    <li>Close with a focused CTA band rather than scattered buttons and noisy extras.</li>
+                </ol>
+            </article>
 
-                <div class="console-feed" id="consoleFeed">
-                    <div class="console-line"><span class="console-timestamp">[00:12]</span><span>Session initialized for authenticated user workspace.</span></div>
-                    <div class="console-line"><span class="console-timestamp">[00:14]</span><span>Protected admin route sealed behind role-bound session gate.</span></div>
-                    <div class="console-line"><span class="console-timestamp">[00:18]</span><span>Controlled testing modules ready for safe interaction.</span></div>
+            <article class="premium-panel">
+                <div class="eyebrow">Premium Palette Stack</div>
+                <h2>Obsidian, steel, champagne</h2>
+                <p>
+                    The visual system leans on deep midnight blues, champagne-gold highlights, ivory text, and cool steel accents
+                    so the page feels more expensive without drifting away from the current UI language.
+                </p>
+                <div class="assurance-grid">
+                    <div class="signal-item">
+                        <strong>Glass Panels</strong>
+                        <span class="muted">Soft blur, thin borders, premium depth.</span>
+                    </div>
+                    <div class="signal-item">
+                        <strong>Focused Motion</strong>
+                        <span class="muted">Ambient beams and pointer glow only where useful.</span>
+                    </div>
+                    <div class="signal-item">
+                        <strong>Trust Framing</strong>
+                        <span class="muted">Sections read like a high-end cyber engagement.</span>
+                    </div>
+                    <div class="signal-item">
+                        <strong>Reduced Noise</strong>
+                        <span class="muted">Only the essential actions remain visible.</span>
+                    </div>
                 </div>
+            </article>
+        </section>
+
+        <section class="signal-wall" id="signals">
+            <div class="eyebrow">Live Assurance Stream</div>
+            <h2>Evidence and trust, framed like a flagship service page</h2>
+            <p>
+                This lab keeps the Shadow Node atmosphere, but the layout now emphasizes quality, clarity, and premium presentation
+                over filler controls and generic dashboard clutter.
+            </p>
+            <div class="signal-feed">
+                <div class="signal-item"><span class="muted">Confidence Layer</span><strong>Executive-ready hero and CTA rhythm</strong></div>
+                <div class="signal-item"><span class="muted">Operator Layer</span><strong>Compact telemetry board with live motion cues</strong></div>
+                <div class="signal-item"><span class="muted">Design Layer</span><strong>Premium palettes, warmer highlights, and cleaner hierarchy</strong></div>
             </div>
-
-            <aside class="journey-panel" data-depth="0.06">
-                <div class="section-label">Guided Flow</div>
-                <h2 class="section-title">User Journey</h2>
-                <div class="journey-list">
-                    <div class="journey-step">
-                        <strong>Role Validation</strong>
-                        <span>Only the admin demo account can open the dashboard. Standard users are routed here into the testing workspace.</span>
-                    </div>
-                    <div class="journey-step">
-                        <strong>Safe Lab Entry</strong>
-                        <span>Suspicious or malformed credentials stay blocked at the login screen instead of ever touching privileged UI routes.</span>
-                    </div>
-                    <div class="journey-step">
-                        <strong>Premium Workspace</strong>
-                        <span>Parallax depth, staged reveals, and lacquered surfaces create a Framer-style presentation without giving up clarity.</span>
-                    </div>
-                </div>
-            </aside>
         </section>
 
-        <section class="lab-grid reveal delay-4">
-            <article class="lab-card" data-depth="0.07">
-                <div class="lab-tag">Safe Payload Lab</div>
-                <h3>Validation Discipline</h3>
-                <p>Demonstrates how a polished experience can still reject injection attempts, brute-force patterns, and malformed input without broken flows.</p>
-            </article>
-
-            <article class="lab-card" data-depth="0.09">
-                <div class="lab-tag">Session Design</div>
-                <h3>Role-Isolated Access</h3>
-                <p>The user route showcases security content while admin analytics stay guarded behind an authenticated admin-only session flag.</p>
-            </article>
-
-            <article class="lab-card" data-depth="0.11">
-                <div class="lab-tag">Visual Systems</div>
-                <h3>Premium Motion Layer</h3>
-                <p>Soft parallax, staged scene reveal, aurora lighting, and restrained gold detailing elevate the workspace without turning it noisy.</p>
-            </article>
+        <section class="cta-band">
+            <div>
+                <div class="eyebrow">Shadow Node Premium Lab</div>
+                <h2>Ready for the next stage</h2>
+                <p>Use this page as the polished user-facing lab entry while the backend and auth flow remain untouched.</p>
+            </div>
+            <a class="button button-primary" href="processing.html">Open Processing View</a>
         </section>
-
-        <footer class="footer reveal delay-4">Security testing workspace active. Demo session only.</footer>
-    </div>
+    </main>
 
     <script>
-        (() => {
-            const session = window.__securitySession || (window.ShadowNodeAuth ? window.ShadowNodeAuth.getSession() : null);
-            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            const parallaxLayers = Array.from(document.querySelectorAll('[data-depth]'));
-            const aurora = document.querySelector('.aurora');
-            const sessionChip = document.getElementById('sessionChip');
-            const logoutButton = document.getElementById('logoutButton');
-            const consoleFeed = document.getElementById('consoleFeed');
+        const sessionChip = document.getElementById('sessionChip');
+        const logoutButton = document.getElementById('logoutButton');
+        const session = window.__securitySession || (window.ShadowNodeAuth && window.ShadowNodeAuth.getSession
+            ? window.ShadowNodeAuth.getSession()
+            : null);
 
-            if (sessionChip && session && session.email) {
-                sessionChip.textContent = session.email + ' - authenticated user';
-            }
+        if (sessionChip) {
+            sessionChip.textContent = session && session.email
+                ? 'User Session • ' + session.email
+                : 'User Session';
+        }
 
-            if (logoutButton) {
-                logoutButton.addEventListener('click', () => {
-                    if (window.ShadowNodeAuth) {
-                        window.ShadowNodeAuth.logout('index.html');
-                        return;
-                    }
+        if (logoutButton) {
+            logoutButton.addEventListener('click', () => {
+                if (window.ShadowNodeAuth && typeof window.ShadowNodeAuth.logout === 'function') {
+                    window.ShadowNodeAuth.logout('index.html');
+                    return;
+                }
 
-                    window.location.href = 'index.html';
-                });
-            }
-
-            requestAnimationFrame(() => {
-                document.body.classList.add('page-ready');
+                window.location.href = 'index.html';
             });
+        }
 
-            if (!prefersReducedMotion && aurora) {
-                window.addEventListener('mousemove', (event) => {
-                    const x = (event.clientX / window.innerWidth) * 100;
-                    const y = (event.clientY / window.innerHeight) * 100;
-                    aurora.style.setProperty('--mx', x + '%');
-                    aurora.style.setProperty('--my', y + '%');
+        document.addEventListener('pointermove', (event) => {
+            const x = (event.clientX / window.innerWidth) * 100;
+            const y = (event.clientY / window.innerHeight) * 100;
+            document.body.style.setProperty('--mx', x + '%');
+            document.body.style.setProperty('--my', y + '%');
+        });
 
-                    const nx = x / 100 - 0.5;
-                    const ny = y / 100 - 0.5;
+        document.querySelectorAll('[data-count]').forEach((node) => {
+            const target = Number(node.dataset.count || '0');
+            const duration = 1100;
+            const started = performance.now();
 
-                    for (const layer of parallaxLayers) {
-                        const depth = Number.parseFloat(layer.dataset.depth || '0');
-                        const shiftX = nx * depth * 54;
-                        const shiftY = ny * depth * 32;
-                        layer.style.transform = `translate3d(${shiftX}px, ${shiftY}px, 0)`;
-                    }
-                }, { passive: true });
+            function tick(now) {
+                const progress = Math.min((now - started) / duration, 1);
+                node.textContent = Math.round(target * (0.2 + progress * 0.8));
+                if (progress < 1) {
+                    requestAnimationFrame(tick);
+                }
             }
 
-            const consoleMessages = [
-                'Route gate confirmed: admin dashboard isolated behind exact credential match.',
-                'Suspicious credential payloads remain blocked at the authentication layer.',
-                'User session elevated into controlled testing studio without privileged analytics access.',
-                'Parallax scene sync calibrated for layered premium motion.',
-                'Validation review matrix refreshed for safe exploration.'
-            ];
+            requestAnimationFrame(tick);
+        });
 
-            let consoleIndex = 0;
-            if (consoleFeed) {
-                setInterval(() => {
-                    const line = document.createElement('div');
-                    const minutes = String(20 + consoleIndex).padStart(2, '0');
-                    line.className = 'console-line';
-                    line.innerHTML = `<span class="console-timestamp">[00:${minutes}]</span><span>${consoleMessages[consoleIndex % consoleMessages.length]}</span>`;
-                    consoleFeed.prepend(line);
+        const consoleFeed = document.getElementById('consoleFeed');
+        const lines = [
+            '> client.assurance :: premium layout stable',
+            '> service.map :: tracks aligned to user flow',
+            '> signal.guard :: evidence lane normalized',
+            '> ui.palette :: champagne steel contrast locked'
+        ];
 
-                    while (consoleFeed.children.length > 5) {
-                        consoleFeed.removeChild(consoleFeed.lastElementChild);
-                    }
-
-                    consoleIndex += 1;
-                }, 2600);
-            }
-
-            const metrics = [
-                { id: 'metricRuns', values: ['24', '26', '28', '31'] },
-                { id: 'metricPayloads', values: ['18', '21', '23', '27'] },
-                { id: 'metricTracks', values: ['06', '07', '08', '09'] }
-            ];
-
-            if (!prefersReducedMotion) {
-                setInterval(() => {
-                    metrics.forEach((metric) => {
-                        const node = document.getElementById(metric.id);
-                        if (!node) {
-                            return;
-                        }
-
-                        const next = metric.values[Math.floor(Math.random() * metric.values.length)];
-                        node.textContent = next;
-                    });
-                }, 3200);
-            }
-        })();
+        if (consoleFeed) {
+            let index = 0;
+            window.setInterval(() => {
+                index = (index + 1) % lines.length;
+                consoleFeed.innerHTML += '<br>' + lines[index];
+                const parts = consoleFeed.innerHTML.split('<br>');
+                consoleFeed.innerHTML = parts.slice(-6).join('<br>');
+            }, 2600);
+        }
     </script>
 </body>
 </html>
