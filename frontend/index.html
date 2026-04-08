@@ -1,506 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shadow Node Console — Secure Access</title>
-  <script src="domain-gate.js"></script>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:        #0a0a0f;
-      --surface:   rgba(255,255,255,0.04);
-      --border:    rgba(255,255,255,0.08);
-      --green:     #00ff88;
-      --cyan:      #00ffcc;
-      --red:       #ff4444;
-      --orange:    #ff8800;
-      --yellow:    #ffcc00;
-      --text:      #c8d6e5;
-      --text-dim:  rgba(200,214,229,0.45);
-      --font:      'Courier New', Courier, monospace;
-    }
-
-    html, body {
-      height: 100%;
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font);
-      overflow: hidden;
-    }
-
-    /* ── Grid overlay ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(0,255,136,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,255,136,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* ── Radial glow behind card ── */
-    body::after {
-      content: '';
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(ellipse at center,
-        rgba(0,255,136,0.07) 0%,
-        rgba(0,255,204,0.04) 40%,
-        transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* ── Scanline ── */
-    .scanline {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(0,255,136,0.4), transparent);
-      animation: scanline 6s linear infinite;
-      z-index: 2;
-      pointer-events: none;
-    }
-    @keyframes scanline {
-      0%   { top: 0;    opacity: 1; }
-      95%  { opacity: 0.6; }
-      100% { top: 100%; opacity: 0; }
-    }
-
-    /* ── Page wrapper ── */
-    .page {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 24px;
-    }
-
-    /* ── Top status bar ── */
-    .status-bar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 8px 20px;
-      background: rgba(10,10,15,0.9);
-      border-bottom: 1px solid var(--border);
-      font-size: 10px;
-      color: var(--text-dim);
-      letter-spacing: 0.05em;
-      z-index: 10;
-    }
-    .status-bar .logo-text {
-      color: var(--green);
-      font-weight: bold;
-      letter-spacing: 0.15em;
-    }
-    .status-bar .indicators {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-    }
-    .indicator {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 6px var(--green);
-      animation: pulse-dot 2s ease-in-out infinite;
-    }
-    .dot.red   { background: var(--red);    box-shadow: 0 0 6px var(--red); }
-    .dot.orange{ background: var(--orange); box-shadow: 0 0 6px var(--orange); }
-    @keyframes pulse-dot {
-      0%,100% { opacity: 1; }
-      50%      { opacity: 0.3; }
-    }
-
-    /* ── Card ── */
-    .card {
-      width: 100%;
-      max-width: 440px;
-      background: rgba(255,255,255,0.035);
-      border: 1px solid rgba(0,255,136,0.18);
-      border-radius: 12px;
-      padding: 40px 36px 36px;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow:
-        0 0 0 1px rgba(0,255,136,0.04),
-        0 20px 60px rgba(0,0,0,0.6),
-        inset 0 1px 0 rgba(255,255,255,0.06);
-      animation: card-in 0.6s cubic-bezier(0.16,1,0.3,1) both;
-    }
-    @keyframes card-in {
-      from { opacity: 0; transform: translateY(24px) scale(0.97); }
-      to   { opacity: 1; transform: translateY(0)    scale(1); }
-    }
-
-    /* ── Header ── */
-    .card-header {
-      text-align: center;
-      margin-bottom: 32px;
-    }
-    .logo-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 56px;
-      height: 56px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, rgba(0,255,136,0.15), rgba(0,255,204,0.08));
-      border: 1px solid rgba(0,255,136,0.3);
-      margin-bottom: 16px;
-      font-size: 26px;
-      box-shadow: 0 0 20px rgba(0,255,136,0.15);
-    }
-    .card-title {
-      font-size: 20px;
-      font-weight: bold;
-      color: var(--green);
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      text-shadow: 0 0 20px rgba(0,255,136,0.5);
-    }
-    .card-subtitle {
-      margin-top: 6px;
-      font-size: 10px;
-      color: var(--text-dim);
-      letter-spacing: 0.12em;
-    }
-
-    /* ── Divider ── */
-    .divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(0,255,136,0.2), transparent);
-      margin-bottom: 28px;
-    }
-
-    /* ── Form ── */
-    .form-group {
-      margin-bottom: 18px;
-    }
-    .form-label {
-      display: block;
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      color: var(--text-dim);
-      text-transform: uppercase;
-      margin-bottom: 7px;
-    }
-    .form-input-wrap {
-      position: relative;
-    }
-    .form-input-wrap .field-icon {
-      position: absolute;
-      left: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 14px;
-      color: var(--text-dim);
-      pointer-events: none;
-      transition: color 0.2s;
-    }
-    .form-input {
-      width: 100%;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 7px;
-      padding: 11px 14px 11px 38px;
-      color: var(--text);
-      font-family: var(--font);
-      font-size: 13px;
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
-    }
-    .form-input::placeholder { color: var(--text-dim); }
-    .form-input:focus {
-      border-color: rgba(0,255,136,0.5);
-      background: rgba(0,255,136,0.04);
-      box-shadow: 0 0 0 3px rgba(0,255,136,0.08), 0 0 12px rgba(0,255,136,0.1);
-    }
-    .form-input-wrap:focus-within .field-icon {
-      color: var(--green);
-    }
-
-    /* password toggle */
-    .pw-toggle {
-      position: absolute;
-      right: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      color: var(--text-dim);
-      cursor: pointer;
-      font-size: 13px;
-      padding: 2px;
-      transition: color 0.2s;
-    }
-    .pw-toggle:hover { color: var(--green); }
-
-    /* ── Honeypot (visually hidden) ── */
-    #honeypot-field {
-      position: absolute;
-      left: -9999px;
-      opacity: 0;
-      height: 0;
-      width: 0;
-      tabindex: -1;
-    }
-
-    /* ── Submit button ── */
-    .btn-submit {
-      width: 100%;
-      margin-top: 8px;
-      padding: 13px;
-      background: linear-gradient(135deg, rgba(0,255,136,0.18), rgba(0,255,204,0.1));
-      border: 1px solid rgba(0,255,136,0.4);
-      border-radius: 7px;
-      color: var(--green);
-      font-family: var(--font);
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.2s;
-    }
-    .btn-submit::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(0,255,136,0.3), rgba(0,255,204,0.2));
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-    .btn-submit:hover { box-shadow: 0 0 20px rgba(0,255,136,0.25); }
-    .btn-submit:hover::before { opacity: 1; }
-    .btn-submit:active { transform: scale(0.98); }
-    .btn-submit .btn-text { position: relative; z-index: 1; }
-    .btn-submit .spinner {
-      display: none;
-      width: 14px;
-      height: 14px;
-      border: 2px solid rgba(0,255,136,0.3);
-      border-top-color: var(--green);
-      border-radius: 50%;
-      animation: spin 0.7s linear infinite;
-      margin: 0 auto;
-    }
-    .btn-submit.loading .btn-text { display: none; }
-    .btn-submit.loading .spinner { display: block; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    /* ── Result panel ── */
-    #result-panel {
-      display: none;
-      margin-top: 20px;
-      padding: 14px 16px;
-      border-radius: 8px;
-      font-size: 12px;
-      line-height: 1.6;
-      animation: slide-in 0.35s cubic-bezier(0.16,1,0.3,1) both;
-    }
-    @keyframes slide-in {
-      from { opacity: 0; transform: translateY(-8px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    #result-panel.attack {
-      background: rgba(255,68,68,0.12);
-      border: 1px solid rgba(255,68,68,0.35);
-      color: #ff8888;
-    }
-    #result-panel.bot {
-      background: rgba(255,204,0,0.1);
-      border: 1px solid rgba(255,204,0,0.3);
-      color: #ffdd55;
-    }
-    #result-panel.ok {
-      background: rgba(0,255,136,0.08);
-      border: 1px solid rgba(0,255,136,0.25);
-      color: var(--green);
-    }
-    #result-panel.err {
-      background: rgba(255,136,0,0.1);
-      border: 1px solid rgba(255,136,0,0.3);
-      color: var(--orange);
-    }
-    .result-label {
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      opacity: 0.7;
-      margin-bottom: 4px;
-    }
-    .result-value { font-weight: bold; }
-
-    /* ── Footer ── */
-    .card-footer {
-      margin-top: 24px;
-      text-align: center;
-      font-size: 9px;
-      color: var(--text-dim);
-      letter-spacing: 0.08em;
-    }
-    .card-footer a {
-      color: rgba(0,255,136,0.5);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .card-footer a:hover { color: var(--green); }
-
-    /* ── Corner decorations ── */
-    .corner {
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      border-color: rgba(0,255,136,0.35);
-      border-style: solid;
-    }
-    .corner.tl { top: -1px; left: -1px;  border-width: 2px 0 0 2px; border-radius: 12px 0 0 0; }
-    .corner.tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; border-radius: 0 12px 0 0; }
-    .corner.bl { bottom: -1px; left: -1px;  border-width: 0 0 2px 2px; border-radius: 0 0 0 12px; }
-    .corner.br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; border-radius: 0 0 12px 0; }
-
-    /* ── System time ── */
-    #sys-time { font-variant-numeric: tabular-nums; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Node Console - Demo UI</title>
+    <script src="domain-gate.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="scanline"></div>
-
-  <!-- Status bar -->
-  <div class="status-bar">
-    <span class="logo-text">SHADOW NODE</span>
-    <div class="indicators">
-      <div class="indicator"><div class="dot"></div><span>SYSTEM ONLINE</span></div>
-      <div class="indicator"><div class="dot orange"></div><span>MONITORING ACTIVE</span></div>
-      <div class="indicator"><div class="dot red"></div><span>THREAT DETECTION</span></div>
-      <span id="sys-time"></span>
-    </div>
-  </div>
-
-  <!-- Main -->
-  <div class="page">
-    <div class="card" style="position:relative;">
-      <!-- Corner decorations -->
-      <div class="corner tl"></div>
-      <div class="corner tr"></div>
-      <div class="corner bl"></div>
-      <div class="corner br"></div>
-
-      <div class="card-header">
-        <div class="logo-icon">⬡</div>
-        <div class="card-title">Shadow Node</div>
-        <div class="card-subtitle">SECURE TERMINAL ACCESS v2.4.1 // CLASSIFIED</div>
-      </div>
-
-      <div class="divider"></div>
-
-      <form id="login-form" autocomplete="off" novalidate>
-        <!-- Real honeypot field — bots fill this, humans never see it -->
-        <input
-          type="text"
-          name="website"
-          id="honeypot-field"
-          autocomplete="off"
-          tabindex="-1"
-          aria-hidden="true"
-          style="position:absolute;left:-9999px;opacity:0;height:0;width:0;"
-        />
-
-        <div class="form-group">
-          <label class="form-label" for="email">// User Identifier</label>
-          <div class="form-input-wrap">
-            <span class="field-icon">@</span>
-            <input
-              class="form-input"
-              type="email"
-              id="email"
-              name="email"
-              placeholder="operator@shadownode.io"
-              autocomplete="email"
-              spellcheck="false"
-              required
-            />
-          </div>
+    <canvas id="webgl-canvas"></canvas>
+    <div class="spatial-light"></div>
+    <div class="orbital-shell" data-parallax="-0.08">
+        <div class="orbital-field" aria-hidden="true">
+            <svg viewBox="0 0 800 800" class="orbital-svg">
+                <circle cx="400" cy="400" r="260" class="orbit-ring" />
+                <circle cx="400" cy="400" r="180" class="orbit-ring faint" />
+                <circle cx="400" cy="400" r="90" class="orbit-ring faint" />
+            </svg>
         </div>
-
-        <div class="form-group">
-          <label class="form-label" for="password">// Auth Token</label>
-          <div class="form-input-wrap">
-            <span class="field-icon">🔒</span>
-            <input
-              class="form-input"
-              type="password"
-              id="password"
-              name="password"
-              placeholder="••••••••••••"
-              autocomplete="current-password"
-              required
-            />
-            <button type="button" class="pw-toggle" id="pw-toggle" aria-label="Toggle password visibility">👁</button>
-          </div>
-        </div>
-
-        <button type="submit" class="btn-submit" id="submit-btn">
-          <span class="btn-text">▶ AUTHENTICATE</span>
-          <div class="spinner"></div>
-        </button>
-
-        <div id="result-panel"></div>
-      </form>
-
-      <div class="card-footer">
-        UNAUTHORIZED ACCESS IS MONITORED AND LOGGED &nbsp;|&nbsp;
-        <a href="admin/dashboard.html">Admin Portal</a>
-      </div>
     </div>
-  </div>
 
-  <script>
-    // Inject backend URL (override via window.BACKEND_URL before this script)
-    window.BACKEND_URL = window.BACKEND_URL || 'https://honeypot-backend-9c81.onrender.com';
-  </script>
-  <script src="honeypot-advanced.js"></script>
-  <script>
-    // System clock
-    const sysTime = document.getElementById('sys-time');
-    function updateClock() {
-      sysTime.textContent = new Date().toISOString().replace('T',' ').slice(0,19) + ' UTC';
-    }
-    updateClock();
-    setInterval(updateClock, 1000);
+    <div class="gradient-overlay"></div>
+    <div class="glitter-overlay" aria-hidden="true"></div>
 
-    // Password toggle
-    const pwToggle = document.getElementById('pw-toggle');
-    const pwInput  = document.getElementById('password');
-    pwToggle.addEventListener('click', () => {
-      const show = pwInput.type === 'password';
-      pwInput.type = show ? 'text' : 'password';
-      pwToggle.textContent = show ? '🙈' : '👁';
-    });
-  </script>
+    <div class="main-container">
+        <nav class="nav" data-parallax="0.04">
+            <div class="nav-logo">SHADOW<span class="dot">.</span>NODE</div>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-content" data-parallax="0.14">
+                <p class="hero-kicker">Midnight Operator Console</p>
+                <h1 class="hero-title">
+                    <span class="title-line">Shadowline</span>
+                    <span class="title-line">Signal Grid</span>
+                </h1>
+                <p class="hero-subtitle">
+                    A cinematic security UI for premium command-center styling and layered motion.
+                    Demo only. No data is stored or transmitted.
+                </p>
+            </div>
+
+            <div class="status-row" data-parallax="0.09">
+                <div class="status-card">
+                    <span class="status-label">Firewall</span>
+                    <span class="status-value status-amber">Armed</span>
+                    <span class="status-meta">03 signals</span>
+                </div>
+                <div class="status-card">
+                    <span class="status-label">Active Nodes</span>
+                    <span class="status-value status-gold">128</span>
+                    <span class="status-meta">Midnight mesh</span>
+                </div>
+                <div class="status-card">
+                    <span class="status-label">Trace</span>
+                    <span class="status-value status-red">Live</span>
+                    <span class="status-meta">Echo lock</span>
+                </div>
+                <div class="status-card">
+                    <span class="status-label">Integrity</span>
+                    <span class="status-value status-gold">99.98%</span>
+                    <span class="status-meta">Verified</span>
+                </div>
+            </div>
+
+            <div class="terminal-panel" aria-hidden="true" data-parallax="0.12">
+                <div class="terminal-header">LIVE TRACE - SECURE CHANNEL</div>
+                <div class="terminal-body">
+                    <span class="terminal-line">[00:12] handshake > signal verified</span>
+                    <span class="terminal-line">[00:13] vault.sync > edge stabilized</span>
+                    <span class="terminal-line">[00:14] trace.route > shadow mesh online</span>
+                    <span class="terminal-line">[00:15] ops.guard > firewall armed</span>
+                </div>
+            </div>
+
+            <div class="login-wrap" data-parallax="0.08">
+                <div class="login-card">
+                    <div class="card-header">
+                        <div class="logo-mark" aria-hidden="true">NX</div>
+                        <h2 class="card-title">Operator Login</h2>
+                        <p class="card-subtitle">Demo interface for showcase use only</p>
+                    </div>
+
+                    <form id="loginForm" class="login-form">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                class="form-input"
+                                placeholder="Enter your email"
+                                autocomplete="username"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group password-wrapper">
+                            <label for="password" class="form-label">Password</label>
+                            <input
+                                type="password"
+                                id="password"
+                                class="form-input"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+                            <button type="button" class="password-toggle" id="togglePassword">
+                                <span class="eye-icon">VIEW</span>
+                            </button>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span class="btn-text">Sign In</span>
+                            <span class="btn-loader"></span>
+                        </button>
+
+                        <p class="auth-feedback" id="authFeedback" aria-live="polite"></p>
+                    </form>
+
+                    <p class="demo-note">Demo UI only. No data is stored or transmitted.</p>
+
+                    <div class="security-badge">
+                        <span>256-bit SSL Encrypted</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="intel-section">
+            <div class="section-heading" data-parallax="0.05">
+                <h2 class="section-title">Shadow Matrix</h2>
+                <p class="section-subtitle">
+                    Live protocols, stealth routing, and anomaly sweeps tuned for a refined high-security feel.
+                </p>
+            </div>
+            <div class="intel-grid">
+                <article class="intel-card">
+                    <span class="intel-tag">Stealth Sync</span>
+                    <h3 class="intel-title">Silent Handoff</h3>
+                    <p class="intel-body">Edge-first routing with adaptive failover keeps the trace clean.</p>
+                </article>
+                <article class="intel-card">
+                    <span class="intel-tag">Vault Control</span>
+                    <h3 class="intel-title">Layered Keys</h3>
+                    <p class="intel-body">Segmented access with strict protocol mapping.</p>
+                </article>
+                <article class="intel-card">
+                    <span class="intel-tag">Anomaly Sweep</span>
+                    <h3 class="intel-title">Precision Scan</h3>
+                    <p class="intel-body">Live integrity sweeps with heartbeat verification.</p>
+                </article>
+                <article class="intel-card">
+                    <span class="intel-tag">Trace Watch</span>
+                    <h3 class="intel-title">Adaptive Shield</h3>
+                    <p class="intel-body">Always-on monitoring with redline escalation.</p>
+                </article>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <p class="footer-note">Demo interface. No data is stored or transmitted.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="auth-utils.js"></script>
+    <script src="honeypot-minimal.js"></script>
 </body>
 </html>
