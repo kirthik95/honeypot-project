@@ -494,6 +494,143 @@
                 text-align: center;
             }
         }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
+            margin: 28px 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(160deg, rgba(13, 21, 39, 0.92), rgba(13, 21, 39, 0.74) 46%, rgba(8, 15, 30, 0.92));
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            padding: 28px 24px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(18px);
+            transition: transform var(--transition), border-color var(--transition);
+            position: relative;
+        }
+
+        .benefit-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(140deg, rgba(255, 255, 255, 0.06), transparent 34%),
+                radial-gradient(circle at 84% 16%, rgba(238, 192, 124, 0.08), transparent 24%);
+            border-radius: var(--radius-lg);
+            pointer-events: none;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--line-strong);
+        }
+
+        .benefit-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .benefit-card h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 18px;
+            letter-spacing: 0.06em;
+            color: var(--ivory);
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefit-card p {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefit-arrow {
+            color: var(--gold);
+            font-size: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .services-categories {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px;
+            margin: 28px 0;
+        }
+
+        .service-category {
+            background: linear-gradient(160deg, rgba(13, 21, 39, 0.92), rgba(13, 21, 39, 0.74) 46%, rgba(8, 15, 30, 0.92));
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            padding: 28px 24px;
+            box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(18px);
+            position: relative;
+        }
+
+        .service-category::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(140deg, rgba(255, 255, 255, 0.06), transparent 34%),
+                radial-gradient(circle at 84% 16%, rgba(238, 192, 124, 0.08), transparent 24%);
+            border-radius: var(--radius-lg);
+            pointer-events: none;
+        }
+
+        .service-category h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 18px;
+            letter-spacing: 0.06em;
+            color: var(--gold);
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+            border-bottom: 2px solid rgba(238, 192, 124, 0.24);
+            padding-bottom: 12px;
+        }
+
+        .service-category ul {
+            list-style: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-category li {
+            color: var(--mist);
+            font-size: 14px;
+            line-height: 1.8;
+            padding: 8px 0;
+        }
+
+        @media (max-width: 1080px) {
+            .benefits-grid,
+            .services-categories {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 720px) {
+            .benefits-grid,
+            .services-categories {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -628,26 +765,179 @@
         </section>
 
         <section class="signal-wall" id="signals">
-            <div class="eyebrow">Live Assurance Stream</div>
-            <h2>Evidence and trust, framed like a flagship service page</h2>
-            <p>
-                This lab keeps the Shadow Node atmosphere, but the layout now emphasizes quality, clarity, and premium presentation
-                over filler controls and generic dashboard clutter.
-            </p>
-            <div class="signal-feed">
-                <div class="signal-item"><span class="muted">Confidence Layer</span><strong>Executive-ready hero and CTA rhythm</strong></div>
-                <div class="signal-item"><span class="muted">Operator Layer</span><strong>Compact telemetry board with live motion cues</strong></div>
-                <div class="signal-item"><span class="muted">Design Layer</span><strong>Premium palettes, warmer highlights, and cleaner hierarchy</strong></div>
+            <div style="text-align: center; margin-bottom: 36px;">
+                <h2 style="font-size: 48px; margin-bottom: 16px;">Trusted Security Partner for your Business</h2>
+                <p style="font-size: 16px; max-width: 800px; margin: 0 auto; color: var(--mist);">
+                    We help you focus on your core business while we take care of your security by delivering specialized cybersecurity services with the utmost quality.
+                </p>
             </div>
-        </section>
 
-        <section class="cta-band">
-            <div>
-                <div class="eyebrow">Shadow Node Premium Lab</div>
-                <h2>Ready for the next stage</h2>
-                <p>Use this page as the polished user-facing lab entry while the backend and auth flow remain untouched.</p>
+            <div class="cta-band" style="margin-bottom: 36px; background: linear-gradient(135deg, rgba(238, 192, 124, 0.12), rgba(191, 134, 80, 0.08)); border-color: rgba(238, 192, 124, 0.32);">
+                <div>
+                    <h3 style="color: var(--gold); margin-bottom: 12px; font-family: 'Orbitron', sans-serif; letter-spacing: 0.06em;">Get a FREE Roadmap</h3>
+                    <h2 style="margin-bottom: 8px;">Secure Your Business in 7 Days</h2>
+                    <p>We help in building a customized security program to meet your business needs and align with industry best practices.</p>
+                </div>
             </div>
-            <a class="button button-primary" href="processing.html">Open Processing View</a>
+
+            <div style="margin-bottom: 48px;">
+                <h3 style="text-align: center; font-family: 'Orbitron', sans-serif; letter-spacing: 0.06em; margin-bottom: 12px; font-size: 24px;">Why Choose Us?</h3>
+                <p style="text-align: center; color: var(--muted); margin-bottom: 28px;">Benefits of engaging with Shadow Node Security</p>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🏆</span>
+                        <h4>Top Notch Quality</h4>
+                        <p>No compromise on quality; customer satisfaction guaranteed.</p>
+                        <span class="benefit-arrow">→</span>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">👥</span>
+                        <h4>Industry Experts</h4>
+                        <p>Seasoned experts with decades of experience across multiple domains.</p>
+                        <span class="benefit-arrow">→</span>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">💰</span>
+                        <h4>Fair Pricing</h4>
+                        <p>Our solutions are affordable and easy on your pocket.</p>
+                        <span class="benefit-arrow">→</span>
+                    </div>
+                    <div class="benefit-card">
+                        <span class="benefit-icon">⏰</span>
+                        <h4>Always Available</h4>
+                        <p>High-quality support. Night or day, rain or snow, we've got your back.</p>
+                        <span class="benefit-arrow">→</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-grid" style="margin-bottom: 36px;">
+                <article class="premium-panel">
+                    <div class="eyebrow">CERT-In Empanelled Auditor</div>
+                    <h2>Trusted by Enterprise & Government</h2>
+                    <p style="margin-bottom: 16px;">
+                        We are a CERT-In empanelled security organization, authorized to conduct vulnerability assessments and penetration testing for government and private sector organizations.
+                    </p>
+                    <div class="assurance-grid">
+                        <div class="signal-item">
+                            <strong>Premium Delivery</strong>
+                            <span class="muted">Top-notch quality guaranteed on every engagement.</span>
+                        </div>
+                        <div class="signal-item">
+                            <strong>Expert Team</strong>
+                            <span class="muted">Certified professionals with decades of combined experience.</span>
+                        </div>
+                        <div class="signal-item">
+                            <strong>Fair Value</strong>
+                            <span class="muted">Competitive pricing balanced with premium service.</span>
+                        </div>
+                        <div class="signal-item">
+                            <strong>24/7 Support</strong>
+                            <span class="muted">Always ready to assist with your security needs.</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="premium-panel">
+                    <div class="eyebrow">By The Numbers</div>
+                    <h2>Our Track Record</h2>
+                    <div class="assurance-grid">
+                        <div class="signal-item">
+                            <strong class="count" data-count="500">500</strong>
+                            <span class="muted">Projects Done</span>
+                        </div>
+                        <div class="signal-item">
+                            <strong class="count" data-count="2500">2500</strong>
+                            <span class="muted">Happy Clients</span>
+                        </div>
+                        <div class="signal-item">
+                            <strong class="count" data-count="50">50</strong>
+                            <span class="muted">Certifications</span>
+                        </div>
+                        <div class="signal-item">
+                            <strong class="count" data-count="100">100</strong>
+                            <span class="muted">Million+ Assets Secured</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div style="margin-bottom: 36px;">
+                <div style="text-align: center; margin-bottom: 28px;">
+                    <h3 style="font-family: 'Orbitron', sans-serif; letter-spacing: 0.06em; margin-bottom: 8px; font-size: 28px;">Our Services</h3>
+                    <p style="color: var(--muted); font-size: 14px;">Comprehensive security solutions tailored to your needs</p>
+                </div>
+                <div class="services-categories">
+                    <div class="service-category">
+                        <h4>Software Security</h4>
+                        <ul>
+                            <li>Application Security</li>
+                            <li>Secure Code Review</li>
+                            <li>Architecture Review</li>
+                            <li>DevSecOps</li>
+                        </ul>
+                    </div>
+                    <div class="service-category">
+                        <h4>Infrastructure Security</h4>
+                        <ul>
+                            <li>Network Security</li>
+                            <li>Configuration Review</li>
+                            <li>Cloud Security</li>
+                            <li>Design Review</li>
+                        </ul>
+                    </div>
+                    <div class="service-category">
+                        <h4>Risk & Compliance</h4>
+                        <ul>
+                            <li>ISO 27001</li>
+                            <li>PCI DSS</li>
+                            <li>SOC 2</li>
+                            <li>GDPR</li>
+                        </ul>
+                    </div>
+                    <div class="service-category">
+                        <h4>Managed IT & Security Services</h4>
+                        <ul>
+                            <li>Cyber SOC</li>
+                            <li>Incident Response</li>
+                            <li>Infrastructure Hardening</li>
+                            <li>Secure Migrations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(160deg, rgba(13, 21, 39, 0.92), rgba(13, 21, 39, 0.74) 46%, rgba(8, 15, 30, 0.92)); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 36px; text-align: center; margin-top: 36px;">
+                <h2 style="margin-bottom: 12px;">What We Deliver</h2>
+                <p style="color: var(--mist); margin-bottom: 24px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Customized security programs tailored to your business needs, aligned with industry best practices and frameworks.
+                </p>
+                <div class="route-list" style="max-width: 600px; margin: 0 auto; list-style: none; border: none;">
+                    <div style="padding: 12px 0; border-top: 1px solid rgba(238, 192, 124, 0.12); position: relative; color: var(--mist); padding-left: 24px;">
+                        <strong style="color: var(--gold);">✓ Assess Current Security Posture</strong>
+                    </div>
+                    <div style="padding: 12px 0; border-top: 1px solid rgba(238, 192, 124, 0.12); position: relative; color: var(--mist); padding-left: 24px;">
+                        <strong style="color: var(--gold);">✓ Perform Gap Analysis</strong>
+                    </div>
+                    <div style="padding: 12px 0; border-top: 1px solid rgba(238, 192, 124, 0.12); position: relative; color: var(--mist); padding-left: 24px;">
+                        <strong style="color: var(--gold);">✓ Identify Critical Risks</strong>
+                    </div>
+                    <div style="padding: 12px 0; border-top: 1px solid rgba(238, 192, 124, 0.12); position: relative; color: var(--mist); padding-left: 24px;">
+                        <strong style="color: var(--gold);">✓ Build Tailored Security Roadmap</strong>
+                    </div>
+                    <div style="padding: 12px 0; border-top: 1px solid rgba(238, 192, 124, 0.12); position: relative; color: var(--mist); padding-left: 24px;">
+                        <strong style="color: var(--gold);">✓ Execute, Monitor & Enhance</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-band" style="margin-top: 36px; background: linear-gradient(135deg, rgba(238, 192, 124, 0.12), rgba(191, 134, 80, 0.08)); border-color: rgba(238, 192, 124, 0.32);">
+                <div>
+                    <div class="eyebrow">Ready to Partner with Us</div>
+                    <h2>Start Your Free Security Roadmap</h2>
+                    <p>No credit card required. Our team will contact you within 24 hours to schedule your assessment.</p>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -673,6 +963,22 @@
 
                 window.location.href = 'index.html';
             });
+        }
+
+        function contactServices() {
+            const email = session && session.email ? session.email : prompt('Enter your email to request a free security assessment:');
+            if (email) {
+                alert(`Thank you! We'll send a free 7-day security roadmap assessment to ${email} within 24 hours.`);
+                console.log('Contact request from:', email);
+            }
+        }
+
+        function requestRoadmap() {
+            const email = session && session.email ? session.email : prompt('Enter your email to get your free 7-day roadmap:');
+            if (email) {
+                alert(`Perfect! We'll send your customized security roadmap to ${email} within 24 hours.`);
+                console.log('Roadmap request from:', email);
+            }
         }
 
         document.addEventListener('pointermove', (event) => {

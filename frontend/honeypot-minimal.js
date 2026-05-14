@@ -305,6 +305,6 @@
         }
 
         setSubmitState(false, 'Sign In');
-        setFeedback('error', 'Invalid credentials. Access is limited to authorized demo accounts.');
+        setFeedback('error', 'Invalid credentials.');
     }, true);
 })();

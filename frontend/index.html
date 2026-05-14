@@ -6,6 +6,83 @@
     <title>Shadow Node Console - Demo UI</title>
     <script src="domain-gate.js"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Colin's Premium CSS Additions */
+        :root {
+            --mouse-x: 50%;
+            --mouse-y: 50%;
+            --glow-x: 0.5;
+            --glow-y: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .hero-content::before {
+            background: radial-gradient(
+                circle at calc(var(--glow-x) * 100%) calc(var(--glow-y) * 100%),
+                rgba(239, 192, 123, 0.15),
+                transparent 50%
+            );
+        }
+
+        .login-card {
+            transform-origin: center center;
+            transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease;
+        }
+
+        .login-card:hover {
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(239, 192, 123, 0.3) inset;
+        }
+
+        .status-card, .intel-card, .service-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .status-card:hover, .intel-card:hover, .service-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Premium scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(10, 18, 35, 0.6);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #c98758, #efc07b);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #efc07b, #8ea1c7);
+        }
+
+        /* Smooth entry animations */
+        .main-container {
+            animation: premiumEntry 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
+
+        @keyframes premiumEntry {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body>
     <canvas id="webgl-canvas"></canvas>
@@ -163,6 +240,7 @@
         </footer>
     </div>
 
+    <!-- Application Scripts -->
     <script src="script.js"></script>
     <script src="auth-utils.js"></script>
     <script src="honeypot-minimal.js"></script>
