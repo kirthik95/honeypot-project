@@ -264,10 +264,19 @@
                     : 'unknown';
 
             if (window.ShadowNodeAuth && typeof window.ShadowNodeAuth.pushLocalAttackEvent === 'function') {
+                const attackSample = [rawEmail, rawPassword].filter(Boolean).join(' ');
+                const cvssDetails = typeof window.ShadowNodeAuth.calculateAttackCvss === 'function'
+                    ? window.ShadowNodeAuth.calculateAttackCvss(clientAttackType, attackSample, {
+                        field: 'password',
+                        stored: false
+                    })
+                    : null;
+
                 window.ShadowNodeAuth.pushLocalAttackEvent({
                     session_id: sessionId,
-                    severity: 'MEDIUM',
-                    cvss_score: 0,
+                    severity: cvssDetails && cvssDetails.severity ? cvssDetails.severity : 'MEDIUM',
+                    cvss_score: cvssDetails && Number.isFinite(cvssDetails.cvss_score) ? cvssDetails.cvss_score : 0,
+                    cvss_vector: cvssDetails && cvssDetails.cvss_vector ? cvssDetails.cvss_vector : 'N/A',
                     attack_type: clientAttackType,
                     cve: null,
                     owasp: resolveClientOwasp(clientAttackType)

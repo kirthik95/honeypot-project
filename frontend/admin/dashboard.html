@@ -2490,72 +2490,172 @@
                 session_id: attack.session_id || 'local-demo',
                 severity: attack.severity || 'MEDIUM',
                 cvss_score: Number(attack.cvss_score || 0),
+                cvss_vector: attack.cvss_vector || 'N/A',
                 attack_type: attack.attack_type || 'credential_payload_probe',
                 cve: attack.cve || null,
                 owasp: attack.owasp || 'A03:2021 Injection'
             }));
         }
 
-        function mergeDashboardData(remoteData) {
-            const baseData = remoteData && typeof remoteData === 'object' ? remoteData : {};
-            const localAttacks = getLocalDashboardAttacks();
-            const remoteRecent = Array.isArray(baseData.recent_attacks) ? baseData.recent_attacks.slice() : [];
-            const remoteKeys = new Set(
-                remoteRecent.map((attack) => [
-                    attack && attack.session_id ? String(attack.session_id) : '',
-                    attack && attack.attack_type ? String(attack.attack_type) : '',
-                    attack && attack.severity ? String(attack.severity) : ''
-                ].join('|'))
-            );
-            const distinctLocalAttacks = localAttacks.filter((attack) => {
-                const key = [
-                    attack.session_id || '',
-                    attack.attack_type || '',
-                    attack.severity || ''
-                ].join('|');
-                return !remoteKeys.has(key);
-            });
-            const severityDistribution = Object.assign(
-                { CRITICAL: 0, HIGH: 0, MEDIUM: 0, LOW: 0 },
-                baseData.severity_distribution || {}
-            );
-            const vulnerabilityDistribution = Object.assign({}, baseData.vulnerability_distribution || {});
-            const owaspTop10 = Object.assign({}, baseData.owasp_top_10 || {});
-            const remoteAttackCount = Number(baseData.total_attacks || 0);
-            const remoteEventCount = Number(baseData.total_events || 0);
-            const remoteCvssTotal = Number(baseData.avg_cvss_score || 0) * remoteAttackCount;
-            const localCvssTotal = distinctLocalAttacks.reduce((sum, attack) => sum + Number(attack.cvss_score || 0), 0);
+        function attackMergeKey(attack) {
+            const sessionId = attack && attack.session_id ? String(attack.session_id) : '';
+            const attackType = attack && attack.attack_type ? String(attack.attack_type) : '';
+            return `${sessionId}|${attackType}`;
+        }
 
-            distinctLocalAttacks.forEach((attack) => {
-                const severity = String(attack.severity || 'MEDIUM').toUpperCase();
-                const attackType = String(attack.attack_type || 'credential_payload_probe');
-                const owasp = String(attack.owasp || '').trim();
+        function normalizeDashboardAttack(attack) {
+            if (window.ShadowNodeAuth && typeof window.ShadowNodeAuth.normalizeAttackEvent === 'function') {
+                return window.ShadowNodeAuth.normalizeAttackEvent(attack);
+            }
 
+            return {
+                timestamp: attack && attack.timestamp ? String(attack.timestamp) : new Date().toISOString(),
+                session_id: attack && attack.session_id ? String(attack.session_id) : 'local-demo',
+                severity: attack && attack.severity ? String(attack.severity).toUpperCase() : 'MEDIUM',
+                cvss_score: Number(attack && attack.cvss_score ? attack.cvss_score : 0),
+                cvss_vector: attack && attack.cvss_vector ? String(attack.cvss_vector) : 'N/A',
+                attack_type: attack && attack.attack_type ? String(attack.attack_type) : 'credential_payload_probe',
+                cve: attack && attack.cve ? String(attack.cve) : null,
+                owasp: attack && attack.owasp ? String(attack.owasp) : 'A03:2021 Injection'
+            };
+        }
+
+        function severityFromScore(score) {
+            const value = Number(score) || 0;
+            if (window.ShadowNodeAuth && typeof window.ShadowNodeAuth.severityFromCvss === 'function') {
+                return window.ShadowNodeAuth.severityFromCvss(value);
+            }
+
+            if (value >= 9.0) return 'CRITICAL';
+            if (value >= 7.0) return 'HIGH';
+            if (value >= 4.0) return 'MEDIUM';
+            if (value > 0.0) return 'LOW';
+            return 'INFO';
+        }
+
+        function aggregateAttackMetrics(attacks) {
+            const severityDistribution = { CRITICAL: 0, HIGH: 0, MEDIUM: 0, LOW: 0 };
+            const vulnerabilityDistribution = {};
+            const owaspTop10 = {};
+            let scoreTotal = 0;
+            let scoreCount = 0;
+
+            attacks.forEach((attack) => {
+                const normalized = normalizeDashboardAttack(attack);
+                const score = Number(normalized.cvss_score || 0);
+                if (score > 0) {
+                    scoreTotal += score;
+                    scoreCount += 1;
+                }
+
+                const severity = String(normalized.severity || severityFromScore(score)).toUpperCase();
                 if (severityDistribution[severity] !== undefined) {
                     severityDistribution[severity] += 1;
                 }
 
+                const attackType = String(normalized.attack_type || 'credential_payload_probe');
                 vulnerabilityDistribution[attackType] = (vulnerabilityDistribution[attackType] || 0) + 1;
 
+                const owasp = String(normalized.owasp || '').trim();
                 if (owasp) {
                     owaspTop10[owasp] = (owaspTop10[owasp] || 0) + 1;
                 }
             });
 
-            const mergedAttackCount = remoteAttackCount + distinctLocalAttacks.length;
+            return {
+                avgCvss: scoreCount ? scoreTotal / scoreCount : 0,
+                severityDistribution,
+                vulnerabilityDistribution,
+                owaspTop10,
+            };
+        }
+
+        function mergeDashboardData(remoteData) {
+            const baseData = remoteData && typeof remoteData === 'object' ? remoteData : {};
+            const localAttacks = getLocalDashboardAttacks().map(normalizeDashboardAttack);
+            const remoteRecent = Array.isArray(baseData.recent_attacks) ? baseData.recent_attacks.map(normalizeDashboardAttack) : [];
+            const remoteAttackCount = Number(baseData.total_attacks || 0);
+            const remoteEventCount = Number(baseData.total_events || 0);
+            const remoteCvssTotal = Number(baseData.avg_cvss_score || 0) * remoteAttackCount;
+            const mergedAttackMap = new Map();
+            const localUniqueAttacks = [];
+
+            const ingestAttack = (attack, preferLocal) => {
+                const normalized = normalizeDashboardAttack(attack);
+                const key = attackMergeKey(normalized);
+                if (!key) {
+                    return;
+                }
+
+                const existing = mergedAttackMap.get(key);
+                if (!existing) {
+                    mergedAttackMap.set(key, normalized);
+                    return;
+                }
+
+                const existingScore = Number(existing.cvss_score || 0);
+                const nextScore = Number(normalized.cvss_score || 0);
+                if (preferLocal && nextScore >= existingScore) {
+                    mergedAttackMap.set(key, normalized);
+                }
+            };
+
+            remoteRecent.forEach((attack) => ingestAttack(attack, false));
+            localAttacks.forEach((attack) => {
+                const normalized = normalizeDashboardAttack(attack);
+                const key = attackMergeKey(normalized);
+                if (!mergedAttackMap.has(key)) {
+                    localUniqueAttacks.push(normalized);
+                }
+                ingestAttack(normalized, true);
+            });
+
+            const mergedAttacks = Array.from(mergedAttackMap.values()).sort((a, b) => {
+                const left = new Date(a && a.timestamp ? a.timestamp : 0).getTime();
+                const right = new Date(b && b.timestamp ? b.timestamp : 0).getTime();
+                return right - left;
+            });
+
+            const visibleMetrics = aggregateAttackMetrics(mergedAttacks);
+            const localCvssTotal = localUniqueAttacks.reduce((sum, attack) => sum + Number(attack.cvss_score || 0), 0);
+            const mergedAttackCount = remoteAttackCount + localUniqueAttacks.length;
+            const hasRemoteCvss = Number(baseData.avg_cvss_score || 0) > 0;
+            const severityDistribution = hasRemoteCvss
+                ? Object.assign({ CRITICAL: 0, HIGH: 0, MEDIUM: 0, LOW: 0 }, baseData.severity_distribution || {})
+                : visibleMetrics.severityDistribution;
+            const vulnerabilityDistribution = hasRemoteCvss
+                ? Object.assign({}, baseData.vulnerability_distribution || {})
+                : visibleMetrics.vulnerabilityDistribution;
+            const owaspTop10 = hasRemoteCvss
+                ? Object.assign({}, baseData.owasp_top_10 || {})
+                : visibleMetrics.owaspTop10;
+
+            if (hasRemoteCvss) {
+                localUniqueAttacks.forEach((attack) => {
+                    const severity = String(attack.severity || severityFromScore(attack.cvss_score)).toUpperCase();
+                    const attackType = String(attack.attack_type || 'credential_payload_probe');
+                    const owasp = String(attack.owasp || '').trim();
+
+                    if (severityDistribution[severity] !== undefined) {
+                        severityDistribution[severity] += 1;
+                    }
+
+                    vulnerabilityDistribution[attackType] = (vulnerabilityDistribution[attackType] || 0) + 1;
+
+                    if (owasp) {
+                        owaspTop10[owasp] = (owaspTop10[owasp] || 0) + 1;
+                    }
+                });
+            }
 
             return Object.assign({}, baseData, {
-                total_events: remoteEventCount + distinctLocalAttacks.length,
-                total_attacks: mergedAttackCount,
-                avg_cvss_score: mergedAttackCount ? (remoteCvssTotal + localCvssTotal) / mergedAttackCount : 0,
+                total_events: hasRemoteCvss ? remoteEventCount + localUniqueAttacks.length : mergedAttacks.length,
+                total_attacks: hasRemoteCvss ? mergedAttackCount : mergedAttacks.length,
+                avg_cvss_score: hasRemoteCvss && mergedAttackCount ? (remoteCvssTotal + localCvssTotal) / mergedAttackCount : visibleMetrics.avgCvss,
                 severity_distribution: severityDistribution,
                 vulnerability_distribution: vulnerabilityDistribution,
                 owasp_top_10: owaspTop10,
-                recent_attacks: distinctLocalAttacks.concat(remoteRecent).sort((a, b) => {
-                    const left = new Date(a && a.timestamp ? a.timestamp : 0).getTime();
-                    const right = new Date(b && b.timestamp ? b.timestamp : 0).getTime();
-                    return right - left;
-                })
+                recent_attacks: mergedAttacks
             });
         }
 

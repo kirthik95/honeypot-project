@@ -192,6 +192,7 @@
             font-weight: 600;
         }
     </style>
+    <script src="auth-utils.js"></script>
 </head>
 <body>
     <div class="container">
@@ -283,17 +284,32 @@
 
                     // Populate details
                     document.getElementById('attackType').textContent = 
-                        details.attack_type.replace(/_/g, ' ').toUpperCase();
+                        (details.attack_type || 'unknown').replace(/_/g, ' ').toUpperCase();
 
                     const severityBadge = document.getElementById('severityBadge');
-                    severityBadge.textContent = details.severity;
-                    severityBadge.className = 'severity-badge severity-' + details.severity.toLowerCase();
+                    const attackSample = [
+                        details.payload,
+                        details.email,
+                        details.username,
+                        details.password
+                    ].filter(Boolean).join(' ');
+                    const cvssAnalysis = window.ShadowNodeAuth && typeof window.ShadowNodeAuth.calculateAttackCvss === 'function'
+                        ? window.ShadowNodeAuth.calculateAttackCvss(details.attack_type, attackSample, details)
+                        : null;
+                    const cvssScore = Number(details.cvss_score || 0) > 0
+                        ? Number(details.cvss_score)
+                        : (cvssAnalysis ? cvssAnalysis.cvss_score : 0);
+                    const cvssVector = details.cvss_vector || (cvssAnalysis ? cvssAnalysis.cvss_vector : 'N/A');
+                    const severity = details.severity || (cvssAnalysis ? cvssAnalysis.severity : 'INFO');
+
+                    severityBadge.textContent = severity;
+                    severityBadge.className = 'severity-badge severity-' + severity.toLowerCase();
 
                     document.getElementById('cvssScore').textContent = 
-                        details.cvss_score + ' / 10.0';
+                        cvssScore.toFixed(1) + ' / 10.0';
 
                     document.getElementById('cvssVector').textContent = 
-                        details.cvss_vector || 'N/A';
+                        cvssVector || 'N/A';
 
                     // Display CVEs
                     const cveList = document.getElementById('cveList');
