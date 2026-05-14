@@ -234,6 +234,7 @@
         const isUser = normalizedEmail === USER_CREDENTIALS.email && normalizedPassword === USER_CREDENTIALS.password;
         const isSuspicious = detectSuspiciousInput(rawEmail, rawPassword);
         const clientAttackType = isSuspicious ? resolveClientAttackType(rawEmail, rawPassword) : '';
+        let clientCvssDetails = null;
 
         const payload = {
             session_id: sessionId,
@@ -265,7 +266,7 @@
 
             if (window.ShadowNodeAuth && typeof window.ShadowNodeAuth.pushLocalAttackEvent === 'function') {
                 const attackSample = [rawEmail, rawPassword].filter(Boolean).join(' ');
-                const cvssDetails = typeof window.ShadowNodeAuth.calculateAttackCvss === 'function'
+                clientCvssDetails = typeof window.ShadowNodeAuth.calculateAttackCvss === 'function'
                     ? window.ShadowNodeAuth.calculateAttackCvss(clientAttackType, attackSample, {
                         field: 'password',
                         stored: false
@@ -274,9 +275,9 @@
 
                 window.ShadowNodeAuth.pushLocalAttackEvent({
                     session_id: sessionId,
-                    severity: cvssDetails && cvssDetails.severity ? cvssDetails.severity : 'MEDIUM',
-                    cvss_score: cvssDetails && Number.isFinite(cvssDetails.cvss_score) ? cvssDetails.cvss_score : 0,
-                    cvss_vector: cvssDetails && cvssDetails.cvss_vector ? cvssDetails.cvss_vector : 'N/A',
+                    severity: clientCvssDetails && clientCvssDetails.severity ? clientCvssDetails.severity : 'MEDIUM',
+                    cvss_score: clientCvssDetails && Number.isFinite(clientCvssDetails.cvss_score) ? clientCvssDetails.cvss_score : 0,
+                    cvss_vector: clientCvssDetails && clientCvssDetails.cvss_vector ? clientCvssDetails.cvss_vector : 'N/A',
                     attack_type: clientAttackType,
                     cve: null,
                     owasp: resolveClientOwasp(clientAttackType)
@@ -285,6 +286,29 @@
         }
 
         const attemptRequest = sendAttemptToBackend(payload);
+        if (isSuspicious && window.ShadowNodeAuth && typeof window.ShadowNodeAuth.updateLocalAttackEvent === 'function') {
+            attemptRequest.then((result) => {
+                if (!result || typeof result !== 'object') {
+                    return;
+                }
+
+                const cveReferences = Array.isArray(result.cve_references)
+                    ? result.cve_references.filter((cve) => typeof cve === 'string' && cve.startsWith('CVE-'))
+                    : [];
+
+                window.ShadowNodeAuth.updateLocalAttackEvent(sessionId, {
+                    severity: result.severity || (clientCvssDetails && clientCvssDetails.severity) || 'MEDIUM',
+                    cvss_score: Number.isFinite(Number(result.cvss_score))
+                        ? Number(result.cvss_score)
+                        : (clientCvssDetails && Number.isFinite(clientCvssDetails.cvss_score) ? clientCvssDetails.cvss_score : 0),
+                    cvss_vector: result.cvss_vector || (clientCvssDetails && clientCvssDetails.cvss_vector) || 'N/A',
+                    attack_type: result.attack_type || clientAttackType,
+                    cve: cveReferences[0] || null,
+                    cve_references: cveReferences,
+                    owasp: result.owasp || resolveClientOwasp(clientAttackType)
+                });
+            }).catch(() => {});
+        }
         setSubmitState(true, 'Authorizing...');
 
         if (isAdmin) {

@@ -105,6 +105,17 @@
             .join(' ');
     }
 
+    function normalizeCveReferences(value) {
+        if (Array.isArray(value)) {
+            return value
+                .map(asText)
+                .filter((item) => item && item.startsWith('CVE-'));
+        }
+
+        const single = asText(value);
+        return single && single.startsWith('CVE-') ? [single] : [];
+    }
+
     function calculateAttackCvss(attackType, payload, context) {
         const type = normalizeAttackType(attackType);
         const fallback = CVSS_BASE_SCORES[type] || CVSS_BASE_SCORES.unknown;
@@ -223,7 +234,14 @@
         }
 
         if (!base.cve) {
-            base.cve = null;
+            const cveReferences = normalizeCveReferences(base.cve_references || base.cves || base.cve);
+            base.cve_references = cveReferences;
+            base.cve = cveReferences.length ? cveReferences[0] : null;
+        } else {
+            base.cve_references = normalizeCveReferences(base.cve_references || base.cves || base.cve);
+            if (!base.cve_references.length) {
+                base.cve_references = [asText(base.cve)].filter(Boolean);
+            }
         }
 
         return base;
@@ -305,6 +323,31 @@
         }
     }
 
+    function updateLocalAttackEvent(sessionId, patch) {
+        const targetSessionId = asText(sessionId);
+        if (!targetSessionId) {
+            return null;
+        }
+
+        const current = getLocalAttackEvents();
+        let updated = null;
+        const next = current.map((entry) => {
+            if (asText(entry.session_id) !== targetSessionId) {
+                return entry;
+            }
+
+            const merged = normalizeAttackEvent(Object.assign({}, entry, patch || {}));
+            updated = merged;
+            return merged;
+        });
+
+        if (updated) {
+            saveLocalAttackEvents(next.slice(0, 50));
+        }
+
+        return updated;
+    }
+
     function pushLocalAttackEvent(event) {
         const nextEvent = normalizeAttackEvent(Object.assign({
             timestamp: new Date().toISOString(),
@@ -357,9 +400,11 @@
         calculateAttackCvss,
         getLocalAttackEvents,
         pushLocalAttackEvent,
+        updateLocalAttackEvent,
         clearLocalAttackEvents,
         normalizeAttackType,
         normalizeAttackEvent,
+        normalizeCveReferences,
         severityFromCvss,
         requireRole,
         logout
