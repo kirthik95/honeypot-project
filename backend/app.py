@@ -5,6 +5,9 @@ from typing import Any, Dict, List, Optional
 
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+from dotenv import load_dotenv
+
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
 from ai.claude_engine import AIEngine
 from deception.deception_engine import DeceptionEngine
@@ -739,6 +742,7 @@ def health():
             "web_model": web_model is not None,
             "ai_engine": ai_engine is not None,
             "nvd": nvd is not None,
+            "nvd_api_key_configured": bool(os.getenv("NVD_API_KEY")),
             "risk_engine": risk_engine is not None,
             "deception_engine": deception_engine is not None,
             "cvss_calculator": cvss_calculator is not None,
