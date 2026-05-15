@@ -225,6 +225,35 @@
             max-height: 300px;
         }
 
+        .chart-empty-state {
+            position: absolute;
+            left: 24px;
+            right: 24px;
+            top: 74px;
+            bottom: 24px;
+            display: none;
+            place-items: center;
+            border: 1px dashed rgba(242, 236, 221, 0.16);
+            border-radius: 12px;
+            background: rgba(5, 5, 10, 0.22);
+            color: rgba(242, 236, 221, 0.55);
+            font-size: 12px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-align: center;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .chart-container.has-empty-state .chart-empty-state {
+            display: grid;
+        }
+
+        .chart-container.has-empty-state canvas {
+            opacity: 0.14;
+            filter: saturate(0.6);
+        }
+
         .cvss-gauge-container {
             display: flex;
             justify-content: center;
@@ -1839,6 +1868,7 @@
     <div class="chart-container">
         <h3 class="chart-title">Top CVE References</h3>
         <canvas id="cveChart"></canvas>
+        <div class="chart-empty-state" id="cveChartEmptyState">No CVE references available yet</div>
     </div>
 
     <!-- Recent Attacks Table -->
@@ -2309,6 +2339,83 @@
             return `${ts}::${sid}`;
         }
 
+        function normalizeCveReferences(value) {
+            if (window.ShadowNodeAuth && typeof window.ShadowNodeAuth.normalizeCveReferences === 'function') {
+                return window.ShadowNodeAuth.normalizeCveReferences(value);
+            }
+
+            if (Array.isArray(value)) {
+                return value
+                    .map((entry) => String(entry || '').trim())
+                    .filter(Boolean);
+            }
+
+            const text = String(value || '').trim();
+            return text ? [text] : [];
+        }
+
+        function getAttackCveReferences(attack) {
+            if (!attack || typeof attack !== 'object') {
+                return [];
+            }
+
+            const directReferences = Array.isArray(attack.cve_references) && attack.cve_references.length
+                ? attack.cve_references
+                : null;
+
+            return normalizeCveReferences(directReferences || attack.cves || attack.cve);
+        }
+
+        function aggregateTopCves(attacks, limit = 10) {
+            const counts = new Map();
+
+            (Array.isArray(attacks) ? attacks : []).forEach((attack) => {
+                getAttackCveReferences(attack).forEach((cve) => {
+                    const key = String(cve || '').trim().toUpperCase();
+                    if (!key) {
+                        return;
+                    }
+
+                    counts.set(key, (counts.get(key) || 0) + 1);
+                });
+            });
+
+            const maxItems = Number.isFinite(Number(limit)) ? Math.max(0, Math.floor(Number(limit))) : 10;
+            return Array.from(counts.entries())
+                .map(([cve, count]) => ({ cve, count }))
+                .sort((a, b) => b.count - a.count || a.cve.localeCompare(b.cve))
+                .slice(0, maxItems);
+        }
+
+        function normalizeTopCveEntries(entries) {
+            if (!Array.isArray(entries)) {
+                return [];
+            }
+
+            return entries.map((entry) => {
+                if (!entry) {
+                    return null;
+                }
+
+                if (Array.isArray(entry)) {
+                    const label = String(entry[0] || '').trim().toUpperCase();
+                    const count = Number(entry[1] || 0);
+                    return label ? { cve: label, count: Number.isFinite(count) ? count : 0 } : null;
+                }
+
+                if (typeof entry === 'object') {
+                    const label = String(
+                        entry.cve || entry.cve_reference || entry.cve_id || entry.reference || entry.name || ''
+                    ).trim().toUpperCase();
+                    const count = Number(entry.count ?? entry.total ?? entry.occurrences ?? entry.value ?? 0);
+                    return label ? { cve: label, count: Number.isFinite(count) ? count : 0 } : null;
+                }
+
+                const label = String(entry || '').trim().toUpperCase();
+                return label ? { cve: label, count: 0 } : null;
+            }).filter(Boolean).sort((a, b) => b.count - a.count || a.cve.localeCompare(b.cve));
+        }
+
         function rememberAttackKey(key) {
             if (!key || seenAttackKeys.has(key)) return;
             seenAttackKeys.add(key);
@@ -2371,7 +2478,8 @@
             const sev = attack && attack.severity ? attack.severity : 'UNKNOWN';
             const cvss = Number(attack && attack.cvss_score ? attack.cvss_score : 0);
             const type = attack && attack.attack_type ? attack.attack_type : 'unknown';
-            const cve = attack && attack.cve ? `Primary CVE reference: ${attack.cve}` : 'No CVE reference available.';
+            const cveReferences = getAttackCveReferences(attack);
+            const cve = cveReferences.length ? `Primary CVE reference: ${cveReferences[0]}` : 'No CVE reference available.';
             const owasp = attack && attack.owasp ? `OWASP mapping: ${attack.owasp}` : 'OWASP mapping unavailable.';
 
             const severityHint =
@@ -2401,6 +2509,7 @@
             const sev = attack && attack.severity ? attack.severity : 'UNKNOWN';
             const cvss = Number(attack && attack.cvss_score ? attack.cvss_score : 0);
             const type = attack && attack.attack_type ? attack.attack_type : 'unknown';
+            const cveReferences = getAttackCveReferences(attack);
 
             aiMeta.innerHTML = `
                 <span class="ai-pill">Session: ${sid}</span>
@@ -2416,10 +2525,10 @@
             analyzeAbortController = new AbortController();
 
             const payload = {
-                threat_keyword: (attack && (attack.attack_type || attack.cve || attack.owasp)) ? (attack.attack_type || attack.cve || attack.owasp) : '',
+                threat_keyword: (attack && (attack.attack_type || cveReferences[0] || attack.owasp)) ? (attack.attack_type || cveReferences[0] || attack.owasp) : '',
                 payload: [
                     attack && attack.attack_type ? String(attack.attack_type) : '',
-                    attack && attack.cve ? String(attack.cve) : '',
+                    cveReferences[0] ? String(cveReferences[0]) : '',
                     attack && attack.owasp ? String(attack.owasp) : '',
                 ].filter(Boolean).join(' '),
                 attack_type: type,
@@ -2427,8 +2536,8 @@
                 cvss_score: Number.isFinite(cvss) ? cvss : 0,
                 cvss_vector: '',
                 owasp: attack && attack.owasp ? String(attack.owasp) : '',
-                cve: attack && attack.cve ? String(attack.cve) : '',
-                cve_references: attack && attack.cve ? [String(attack.cve)] : [],
+                cve: cveReferences[0] || '',
+                cve_references: cveReferences,
                 session_id: sidFull,
                 timestamp: attack && attack.timestamp ? String(attack.timestamp) : '',
                 network_features: Array(11).fill(0),
@@ -2485,16 +2594,25 @@
                 return [];
             }
 
-            return window.ShadowNodeAuth.getLocalAttackEvents().map((attack) => ({
-                timestamp: attack.timestamp || new Date().toISOString(),
-                session_id: attack.session_id || 'local-demo',
-                severity: attack.severity || 'MEDIUM',
-                cvss_score: Number(attack.cvss_score || 0),
-                cvss_vector: attack.cvss_vector || 'N/A',
-                attack_type: attack.attack_type || 'credential_payload_probe',
-                cve: attack.cve || null,
-                owasp: attack.owasp || 'A03:2021 Injection'
-            }));
+            return window.ShadowNodeAuth.getLocalAttackEvents().map((attack) => {
+                const cveReferences = normalizeCveReferences(
+                    (Array.isArray(attack.cve_references) && attack.cve_references.length ? attack.cve_references : null)
+                    || attack.cves
+                    || attack.cve
+                );
+
+                return {
+                    timestamp: attack.timestamp || new Date().toISOString(),
+                    session_id: attack.session_id || 'local-demo',
+                    severity: attack.severity || 'MEDIUM',
+                    cvss_score: Number(attack.cvss_score || 0),
+                    cvss_vector: attack.cvss_vector || 'N/A',
+                    attack_type: attack.attack_type || 'credential_payload_probe',
+                    cve: cveReferences[0] || null,
+                    cve_references: cveReferences,
+                    owasp: attack.owasp || 'A03:2021 Injection'
+                };
+            });
         }
 
         function attackMergeKey(attack) {
@@ -2508,6 +2626,14 @@
                 return window.ShadowNodeAuth.normalizeAttackEvent(attack);
             }
 
+            const cveReferences = normalizeCveReferences(
+                attack && (
+                    (Array.isArray(attack.cve_references) && attack.cve_references.length ? attack.cve_references : null)
+                    || attack.cves
+                    || attack.cve
+                )
+            );
+
             return {
                 timestamp: attack && attack.timestamp ? String(attack.timestamp) : new Date().toISOString(),
                 session_id: attack && attack.session_id ? String(attack.session_id) : 'local-demo',
@@ -2515,7 +2641,8 @@
                 cvss_score: Number(attack && attack.cvss_score ? attack.cvss_score : 0),
                 cvss_vector: attack && attack.cvss_vector ? String(attack.cvss_vector) : 'N/A',
                 attack_type: attack && attack.attack_type ? String(attack.attack_type) : 'credential_payload_probe',
-                cve: attack && attack.cve ? String(attack.cve) : null,
+                cve: cveReferences[0] || null,
+                cve_references: cveReferences,
                 owasp: attack && attack.owasp ? String(attack.owasp) : 'A03:2021 Injection'
             };
         }
@@ -2629,6 +2756,10 @@
             const owaspTop10 = hasRemoteCvss
                 ? Object.assign({}, baseData.owasp_top_10 || {})
                 : visibleMetrics.owaspTop10;
+            const normalizedRemoteTopCves = normalizeTopCveEntries(baseData.top_cves);
+            const topCves = normalizedRemoteTopCves.length
+                ? normalizedRemoteTopCves
+                : aggregateTopCves(mergedAttacks);
 
             if (hasRemoteCvss) {
                 localUniqueAttacks.forEach((attack) => {
@@ -2655,6 +2786,7 @@
                 severity_distribution: severityDistribution,
                 vulnerability_distribution: vulnerabilityDistribution,
                 owasp_top_10: owaspTop10,
+                top_cves: topCves,
                 recent_attacks: mergedAttacks
             });
         }
@@ -2802,6 +2934,7 @@
                 }
 
                 data = mergeDashboardData(data);
+                const recentAttacks = Array.isArray(data.recent_attacks) ? data.recent_attacks : [];
 
                 // Update statistics with animated counters
                 animateCounter('totalAttacks', data.total_attacks || 0);
@@ -2843,9 +2976,22 @@
                 severityChart.update('none');
 
                 // Update CVE Chart
-                const topCves = data.top_cves || [];
-                cveChart.data.labels = topCves.map(c => c.cve);
-                cveChart.data.datasets[0].data = topCves.map(c => c.count);
+                const normalizedTopCves = normalizeTopCveEntries(data.top_cves);
+                const topCves = normalizedTopCves.length ? normalizedTopCves : aggregateTopCves(recentAttacks);
+                const cveEmptyState = document.getElementById('cveChartEmptyState');
+                const hasTopCves = topCves.length > 0;
+                const cveContainer = cveEmptyState ? cveEmptyState.parentElement : null;
+
+                if (cveContainer) {
+                    cveContainer.classList.toggle('has-empty-state', !hasTopCves);
+                }
+
+                if (cveEmptyState) {
+                    cveEmptyState.textContent = hasTopCves ? '' : 'No CVE references available yet';
+                }
+
+                cveChart.data.labels = hasTopCves ? topCves.map(c => c.cve) : [];
+                cveChart.data.datasets[0].data = hasTopCves ? topCves.map(c => c.count) : [];
                 cveChart.update('none');
 
                 // Update OWASP List
@@ -2860,7 +3006,7 @@
 
                 // Update Recent Attacks Table
                 const recentBody = document.getElementById('recentAttacksBody');
-                const recent = data.recent_attacks || [];
+                const recent = recentAttacks;
                 if (window.DashboardEffects && typeof window.DashboardEffects.updateThreatFeed === 'function') {
                     window.DashboardEffects.updateThreatFeed(recent, data);
                 }
